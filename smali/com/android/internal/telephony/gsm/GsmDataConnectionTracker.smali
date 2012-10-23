@@ -756,22 +756,22 @@
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/IccRecords;->getOperatorNumeric()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 2415
-    .local v5, operator:Ljava/lang/String;
+    .local v4, operator:Ljava/lang/String;
     iget-object v6, p0, Lcom/android/internal/telephony/DataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
 
     invoke-virtual {v6}, Lcom/android/internal/telephony/PhoneBase;->getServiceState()Landroid/telephony/ServiceState;
 
     move-result-object v6
 
-    invoke-virtual {v6}, Landroid/telephony/ServiceState;->getNetworkType()I
+    invoke-virtual {v6}, Landroid/telephony/ServiceState;->getRilRadioTechnology()I
 
-    move-result v4
+    move-result v5
 
     .line 2417
-    .local v4, networkType:I
+    .local v5, radioTech:I
     iget-boolean v6, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->canSetPreferApn:Z
 
     if-eqz v6, :cond_be
@@ -799,7 +799,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
@@ -840,7 +840,7 @@
 
     iget-object v6, v6, Lcom/android/internal/telephony/ApnSetting;->numeric:Ljava/lang/String;
 
-    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
@@ -857,7 +857,7 @@
 
     iget v6, v6, Lcom/android/internal/telephony/ApnSetting;->bearer:I
 
-    if-ne v6, v4, :cond_b4
+    if-ne v6, v5, :cond_b4
 
     .line 2425
     :cond_97
@@ -944,7 +944,7 @@
 
     iget v6, v0, Lcom/android/internal/telephony/ApnSetting;->bearer:I
 
-    if-ne v6, v4, :cond_c8
+    if-ne v6, v5, :cond_c8
 
     .line 2443
     :cond_e2
@@ -4241,7 +4241,7 @@
 
     move-result v20
 
-    if-eqz v20, :cond_2ed
+    if-eqz v20, :cond_2ee
 
     invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4515,7 +4515,7 @@
 
     move-result v20
 
-    if-eqz v20, :cond_2cb
+    if-eqz v20, :cond_2cc
 
     .line 1279
     move-object/from16 v0, v19
@@ -4588,7 +4588,7 @@
 
     move-result v20
 
-    if-nez v20, :cond_2bf
+    if-nez v20, :cond_2c0
 
     .line 1284
     :cond_1c9
@@ -4850,7 +4850,7 @@
 
     move-object/from16 v20, v0
 
-    const-string v21, "linkPropertiesChanged"
+    const-string/jumbo v21, "linkPropertiesChanged"
 
     invoke-virtual {v3}, Lcom/android/internal/telephony/ApnContext;->getApnType()Ljava/lang/String;
 
@@ -4864,7 +4864,7 @@
     .end local v3           #apnContext:Lcom/android/internal/telephony/ApnContext;
     .end local v6           #car:Landroid/net/LinkProperties$CompareResult;,"Landroid/net/LinkProperties$CompareResult<Landroid/net/LinkAddress;>;"
     .end local v16           #needToClean:Z
-    :cond_2bf
+    :cond_2c0
     const-string/jumbo v20, "onDataStateChanged(ar): no changes"
 
     move-object/from16 v0, p0
@@ -4876,7 +4876,7 @@
     goto/16 :goto_7f
 
     .line 1322
-    :cond_2cb
+    :cond_2cc
     new-instance v20, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
@@ -4915,12 +4915,12 @@
     .end local v14           #i$:Ljava/util/Iterator;
     .end local v17           #newState:Lcom/android/internal/telephony/DataCallState;
     .end local v19           #result:Lcom/android/internal/telephony/DataConnection$UpdateLinkPropertyResult;
-    :cond_2ed
+    :cond_2ee
     invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v20
 
-    if-eqz v20, :cond_31d
+    if-eqz v20, :cond_31e
 
     .line 1334
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->getCellLocationId()I
@@ -4967,7 +4967,7 @@
 
     .line 1340
     .end local v7           #cid:I
-    :cond_31d
+    :cond_31e
     new-instance v20, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v20 .. v20}, Ljava/lang/StringBuilder;-><init>()V
@@ -5000,12 +5000,12 @@
     move-result-object v13
 
     .restart local v13       #i$:Ljava/util/Iterator;
-    :goto_33e
+    :goto_33f
     invoke-interface {v13}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v20
 
-    if-eqz v20, :cond_354
+    if-eqz v20, :cond_355
 
     invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -5023,11 +5023,11 @@
 
     invoke-direct {v0, v1, v3}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->cleanUpConnection(ZLcom/android/internal/telephony/ApnContext;)V
 
-    goto :goto_33e
+    goto :goto_33f
 
     .line 1345
     .end local v3           #apnContext:Lcom/android/internal/telephony/ApnContext;
-    :cond_354
+    :cond_355
     const-string/jumbo v20, "onDataStateChanged(ar): X"
 
     move-object/from16 v0, p0

@@ -191,6 +191,7 @@ public final class ExtraTelephony {
 
     public static final class Mms {
 
+        public static final String ACCOUNT = "account";
         public static final String ADDRESSES = "addresses";
         public static final String BIND_ID = "bind_id";
         public static final String DATE_FULL = "date_full";
@@ -300,6 +301,7 @@ _L6:
               goto _L9
         }
 
+        public static final String ACCOUNT = "account";
         public static final String ADDRESSES = "addresses";
         public static final String BIND_ID = "bind_id";
         public static final String DELETED = "deleted";

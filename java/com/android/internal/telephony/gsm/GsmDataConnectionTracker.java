@@ -151,7 +151,7 @@ _L5:
         return arraylist;
 _L2:
         String s1 = super.mPhone.mIccRecords.getOperatorNumeric();
-        int i = super.mPhone.getServiceState().getNetworkType();
+        int i = super.mPhone.getServiceState().getRilRadioTechnology();
         if(canSetPreferApn && super.mPreferredApn != null && super.mPreferredApn.canHandleType(s)) {
             log((new StringBuilder()).append("buildWaitingApns: Preferred APN:").append(s1).append(":").append(super.mPreferredApn.numeric).append(":").append(super.mPreferredApn).toString());
             Iterator iterator;

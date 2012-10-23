@@ -12,6 +12,7 @@ import android.os.Looper;
 import android.util.Base64;
 import android.util.Log;
 import com.android.internal.http.HttpDateTime;
+import com.android.internal.os.RuntimeInit;
 import java.io.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
@@ -142,6 +143,12 @@ public final class AndroidHttpClient
         return ((InputStream) (obj1));
     }
 
+    private static String getUserAgent(String s) {
+        if(s == null)
+            s = RuntimeInit.getDefaultUserAgent();
+        return s;
+    }
+
     private static boolean isBinaryContent(HttpUriRequest httpurirequest) {
         boolean flag;
         Header aheader[];
@@ -219,7 +226,7 @@ label0:
             sslsessioncache = null;
         else
             sslsessioncache = new SSLSessionCache(context);
-        HttpProtocolParams.setUserAgent(basichttpparams, s);
+        HttpProtocolParams.setUserAgent(basichttpparams, getUserAgent(s));
         schemeregistry = new SchemeRegistry();
         schemeregistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
         schemeregistry.register(new Scheme("https", SSLCertificateSocketFactory.getHttpSocketFactory(60000, sslsessioncache), 443));

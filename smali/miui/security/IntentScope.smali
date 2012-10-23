@@ -18,7 +18,7 @@
     return-void
 .end method
 
-.method public static processInentScope(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)Landroid/content/Intent;
+.method public static processIntentScope(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)Landroid/content/Intent;
     .registers 3
     .parameter "context"
     .parameter "intent"

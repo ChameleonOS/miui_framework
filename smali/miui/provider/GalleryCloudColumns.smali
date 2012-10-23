@@ -130,6 +130,8 @@
 
 .field public static final INDEX_LOCAL_FLAG:I = 0x23
 
+.field public static final INDEX_MICRO_THUMBNAIL_FILE:I = 0x29
+
 .field public static final INDEX_MIME_TYPE:I = 0x4
 
 .field public static final INDEX_SERVER_ID:I = 0xa
@@ -165,6 +167,8 @@
 .field public static final LOCAL_FLAG_INVALID:I = -0x1
 
 .field public static final LOCAL_FLAG_SYNCED:I = 0x0
+
+.field public static final MICRO_THUMBNAIL_FILE:Ljava/lang/String; = "microthumbfile"
 
 .field public static final MIME_TYPE:Ljava/lang/String; = "mimeType"
 

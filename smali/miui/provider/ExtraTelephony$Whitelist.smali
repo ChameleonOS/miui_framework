@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 943
+    .line 955
     const-string v0, "content://firewall/whitelist"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -48,7 +48,7 @@
     .registers 1
 
     .prologue
-    .line 939
+    .line 951
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

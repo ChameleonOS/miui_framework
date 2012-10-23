@@ -25,7 +25,7 @@
     .line 8
     new-array v0, v3, [B
 
-    fill-array-data v0, :array_218e
+    fill-array-data v0, :array_2192
 
     sput-object v0, Lmiui/util/AllPinyinConstants;->FILE_TAG:[B
 
@@ -1126,13 +1126,13 @@
 
     const/16 v1, 0xb6
 
-    const-string v2, "lin"
+    const-string/jumbo v2, "lin"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb7
 
-    const-string v2, "ling"
+    const-string/jumbo v2, "ling"
 
     aput-object v2, v0, v1
 
@@ -6322,7 +6322,7 @@
 
     const/16 v1, 0x418
 
-    const-string v2, "lin,sen"
+    const-string/jumbo v2, "lin,sen"
 
     aput-object v2, v0, v1
 
@@ -7132,7 +7132,7 @@
 
     const/16 v1, 0x49f
 
-    const-string v2, "lin,ren"
+    const-string/jumbo v2, "lin,ren"
 
     aput-object v2, v0, v1
 
@@ -7905,7 +7905,7 @@
     .line 8
     nop
 
-    :array_218e
+    :array_2192
     .array-data 0x1
         0x50t
         0x55t

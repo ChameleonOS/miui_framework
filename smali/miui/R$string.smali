@@ -15,6 +15,10 @@
 
 
 # static fields
+.field public static final activate:I = 0x60c01ea
+
+.field public static final activate_fail_notification_title:I = 0x60c01ec
+
 .field public static final activating:I = 0x60c01dd
 
 .field public static final all_resources:I = 0x60c0027
@@ -29,7 +33,9 @@
 
 .field public static final android_common_name_suffixes:I = 0x60c019d
 
-.field public static final android_config_defaultDreamComponent:I = 0x60c01e6
+.field public static final android_config_defaultDreamComponent:I = 0x60c01ee
+
+.field public static final android_date_time_set:I = 0x60c01ef
 
 .field public static final android_dial_number_using:I = 0x60c01a0
 
@@ -164,6 +170,10 @@
 .field public static final callNoAnswerTimeFormat:I = 0x60c003f
 
 .field public static final caller_info_name_delimiter:I = 0x60c016c
+
+.field public static final check_phone_error_title:I = 0x60c01e6
+
+.field public static final check_phone_io_error:I = 0x60c01e7
 
 .field public static final childrens_day:I = 0x60c0066
 
@@ -843,6 +853,8 @@
 
 .field public static final perm_activate_lab:I = 0x60c01cf
 
+.field public static final perm_auto_backup:I = 0x60c01eb
+
 .field public static final perm_get_user_info_dspt:I = 0x60c01d3
 
 .field public static final perm_get_user_info_lab:I = 0x60c01d2
@@ -929,7 +941,13 @@
 
 .field public static final select_all:I = 0x60c0177
 
+.field public static final send_sms_for_sync_notice:I = 0x60c01e9
+
+.field public static final send_sms_for_sync_title:I = 0x60c01e8
+
 .field public static final sim_account_name:I = 0x60c01a7
+
+.field public static final sim_changed_reactivate_notice:I = 0x60c01ed
 
 .field public static final slight_cold:I = 0x60c006c
 
@@ -995,7 +1013,7 @@
     .registers 1
 
     .prologue
-    .line 1521
+    .line 1527
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

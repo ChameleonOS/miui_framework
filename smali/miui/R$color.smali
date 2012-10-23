@@ -35,6 +35,8 @@
 
 .field public static final darker_transparent:I = 0x6070021
 
+.field public static final editor_custom_action_button_text_color:I = 0x6070022
+
 .field public static final guide_popup_window_textColor:I = 0x6070002
 
 .field public static final information_done:I = 0x6070012
@@ -89,7 +91,7 @@
     .registers 1
 
     .prologue
-    .line 391
+    .line 392
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

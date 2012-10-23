@@ -21,6 +21,33 @@ public interface ICloudManagerService
                 return mRemote;
             }
 
+            public void cancelNotification(int i, ICloudManagerResponse icloudmanagerresponse) throws RemoteException {
+                Parcel parcel;
+                Parcel parcel1;
+                parcel = Parcel.obtain();
+                parcel1 = Parcel.obtain();
+                IBinder ibinder;
+                parcel.writeInterfaceToken("miui.net.ICloudManagerService");
+                parcel.writeInt(i);
+                if(icloudmanagerresponse == null)
+                    break MISSING_BLOCK_LABEL_69;
+                ibinder = icloudmanagerresponse.asBinder();
+_L1:
+                parcel.writeStrongBinder(ibinder);
+                mRemote.transact(7, parcel, parcel1, 0);
+                parcel1.readException();
+                parcel1.recycle();
+                parcel.recycle();
+                return;
+                ibinder = null;
+                  goto _L1
+                Exception exception;
+                exception;
+                parcel1.recycle();
+                parcel.recycle();
+                throw exception;
+            }
+
             public void getActivatedPhone(ICloudManagerResponse icloudmanagerresponse) throws RemoteException {
                 Parcel parcel;
                 Parcel parcel1;
@@ -47,7 +74,7 @@ _L1:
                 throw exception;
             }
 
-            public void getFindDeviceToken(ICloudManagerResponse icloudmanagerresponse) throws RemoteException {
+            public void getActivatedStatus(ICloudManagerResponse icloudmanagerresponse) throws RemoteException {
                 Parcel parcel;
                 Parcel parcel1;
                 parcel = Parcel.obtain();
@@ -59,7 +86,33 @@ _L1:
                 ibinder = icloudmanagerresponse.asBinder();
 _L1:
                 parcel.writeStrongBinder(ibinder);
-                mRemote.transact(5, parcel, parcel1, 0);
+                mRemote.transact(2, parcel, parcel1, 0);
+                parcel1.readException();
+                parcel1.recycle();
+                parcel.recycle();
+                return;
+                ibinder = null;
+                  goto _L1
+                Exception exception;
+                exception;
+                parcel1.recycle();
+                parcel.recycle();
+                throw exception;
+            }
+
+            public void getFindDeviceToken(ICloudManagerResponse icloudmanagerresponse) throws RemoteException {
+                Parcel parcel;
+                Parcel parcel1;
+                parcel = Parcel.obtain();
+                parcel1 = Parcel.obtain();
+                IBinder ibinder;
+                parcel.writeInterfaceToken("miui.net.ICloudManagerService");
+                if(icloudmanagerresponse == null)
+                    break MISSING_BLOCK_LABEL_60;
+                ibinder = icloudmanagerresponse.asBinder();
+_L1:
+                parcel.writeStrongBinder(ibinder);
+                mRemote.transact(6, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
                 parcel.recycle();
@@ -89,7 +142,7 @@ _L1:
                 ibinder = icloudmanagerresponse.asBinder();
 _L1:
                 parcel.writeStrongBinder(ibinder);
-                mRemote.transact(3, parcel, parcel1, 0);
+                mRemote.transact(4, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
                 parcel.recycle();
@@ -121,7 +174,7 @@ _L3:
                 ibinder = icloudmanagerresponse.asBinder();
 _L4:
                 parcel.writeStrongBinder(ibinder);
-                mRemote.transact(2, parcel, parcel1, 0);
+                mRemote.transact(3, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
                 parcel.recycle();
@@ -150,7 +203,7 @@ _L2:
                 ibinder = icloudmanagerresponse.asBinder();
 _L1:
                 parcel.writeStrongBinder(ibinder);
-                mRemote.transact(4, parcel, parcel1, 0);
+                mRemote.transact(5, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
                 parcel.recycle();
@@ -193,19 +246,21 @@ _L1:
         public boolean onTransact(int i, Parcel parcel, Parcel parcel1, int j) throws RemoteException {
             boolean flag = true;
             i;
-            JVM INSTR lookupswitch 6: default 64
-        //                       1: 87
-        //                       2: 111
-        //                       3: 168
-        //                       4: 192
-        //                       5: 216
-        //                       1598968902: 78;
-               goto _L1 _L2 _L3 _L4 _L5 _L6 _L7
+            JVM INSTR lookupswitch 8: default 80
+        //                       1: 103
+        //                       2: 127
+        //                       3: 151
+        //                       4: 208
+        //                       5: 232
+        //                       6: 256
+        //                       7: 280
+        //                       1598968902: 94;
+               goto _L1 _L2 _L3 _L4 _L5 _L6 _L7 _L8 _L9
 _L1:
             flag = super.onTransact(i, parcel, parcel1, j);
-_L9:
+_L11:
             return flag;
-_L7:
+_L9:
             parcel1.writeString("miui.net.ICloudManagerService");
             continue; /* Loop/switch isn't completed */
 _L2:
@@ -215,6 +270,11 @@ _L2:
             continue; /* Loop/switch isn't completed */
 _L3:
             parcel.enforceInterface("miui.net.ICloudManagerService");
+            getActivatedStatus(ICloudManagerResponse.Stub.asInterface(parcel.readStrongBinder()));
+            parcel1.writeNoException();
+            continue; /* Loop/switch isn't completed */
+_L4:
+            parcel.enforceInterface("miui.net.ICloudManagerService");
             Account account;
             if(parcel.readInt() != 0)
                 account = (Account)Account.CREATOR.createFromParcel(parcel);
@@ -223,30 +283,37 @@ _L3:
             getSubSyncAutomatically(account, parcel.readString(), ICloudManagerResponse.Stub.asInterface(parcel.readStrongBinder()));
             parcel1.writeNoException();
             continue; /* Loop/switch isn't completed */
-_L4:
+_L5:
             parcel.enforceInterface("miui.net.ICloudManagerService");
             getSmsGateway(ICloudManagerResponse.Stub.asInterface(parcel.readStrongBinder()));
             parcel1.writeNoException();
             continue; /* Loop/switch isn't completed */
-_L5:
+_L6:
             parcel.enforceInterface("miui.net.ICloudManagerService");
             getUserSecurity(ICloudManagerResponse.Stub.asInterface(parcel.readStrongBinder()));
             parcel1.writeNoException();
             continue; /* Loop/switch isn't completed */
-_L6:
+_L7:
             parcel.enforceInterface("miui.net.ICloudManagerService");
             getFindDeviceToken(ICloudManagerResponse.Stub.asInterface(parcel.readStrongBinder()));
             parcel1.writeNoException();
-            if(true) goto _L9; else goto _L8
+            continue; /* Loop/switch isn't completed */
 _L8:
+            parcel.enforceInterface("miui.net.ICloudManagerService");
+            cancelNotification(parcel.readInt(), ICloudManagerResponse.Stub.asInterface(parcel.readStrongBinder()));
+            parcel1.writeNoException();
+            if(true) goto _L11; else goto _L10
+_L10:
         }
 
         private static final String DESCRIPTOR = "miui.net.ICloudManagerService";
+        static final int TRANSACTION_cancelNotification = 7;
         static final int TRANSACTION_getActivatedPhone = 1;
-        static final int TRANSACTION_getFindDeviceToken = 5;
-        static final int TRANSACTION_getSmsGateway = 3;
-        static final int TRANSACTION_getSubSyncAutomatically = 2;
-        static final int TRANSACTION_getUserSecurity = 4;
+        static final int TRANSACTION_getActivatedStatus = 2;
+        static final int TRANSACTION_getFindDeviceToken = 6;
+        static final int TRANSACTION_getSmsGateway = 4;
+        static final int TRANSACTION_getSubSyncAutomatically = 3;
+        static final int TRANSACTION_getUserSecurity = 5;
 
         public Stub() {
             attachInterface(this, "miui.net.ICloudManagerService");
@@ -254,7 +321,11 @@ _L8:
     }
 
 
+    public abstract void cancelNotification(int i, ICloudManagerResponse icloudmanagerresponse) throws RemoteException;
+
     public abstract void getActivatedPhone(ICloudManagerResponse icloudmanagerresponse) throws RemoteException;
+
+    public abstract void getActivatedStatus(ICloudManagerResponse icloudmanagerresponse) throws RemoteException;
 
     public abstract void getFindDeviceToken(ICloudManagerResponse icloudmanagerresponse) throws RemoteException;
 

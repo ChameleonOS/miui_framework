@@ -1946,15 +1946,15 @@
 
     .line 147
     :cond_20
-    const-string v0, "%s@%s.png"
+    const-string v0, "%s#%s.png"
 
     const/4 v1, 0x2
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    aput-object p1, v1, v2
+    aput-object p0, v1, v2
 
-    aput-object p0, v1, v3
+    aput-object p1, v1, v3
 
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 

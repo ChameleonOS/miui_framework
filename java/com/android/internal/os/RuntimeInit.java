@@ -152,7 +152,7 @@ _L1:
         return mApplicationObject;
     }
 
-    private static String getDefaultUserAgent() {
+    public static String getDefaultUserAgent() {
         StringBuilder stringbuilder = new StringBuilder(64);
         stringbuilder.append("Dalvik/");
         stringbuilder.append(System.getProperty("java.vm.version"));
@@ -169,9 +169,9 @@ _L1:
                 stringbuilder.append(s2);
             }
         }
-        s1 = Build.ID;
+        s1 = android.os.Build.VERSION.INCREMENTAL;
         if(s1.length() > 0) {
-            stringbuilder.append(" Build/");
+            stringbuilder.append(" MIUI/");
             stringbuilder.append(s1);
         }
         stringbuilder.append(")");

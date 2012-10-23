@@ -57,6 +57,7 @@ public class Build extends android.os.Build {
     public static final boolean IS_DESIRE;
     public static final boolean IS_FAST_GPU_DEVICE;
     public static final boolean IS_FINAL_USER_BUILD;
+    public static final boolean IS_FULL_SOURCE_CODE_DEVICE;
     public static final boolean IS_GALAXYS2;
     public static final boolean IS_GALAXYS_NEXUS;
     public static final boolean IS_HTC_HD2;
@@ -69,6 +70,7 @@ public class Build extends android.os.Build {
     public static final boolean IS_MIONE_PLUS_CDMA;
     public static final boolean IS_MITWO;
     public static final boolean IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE;
+    public static final boolean IS_NEXUS_7;
     public static final boolean IS_NEXUS_ONE;
     public static final boolean IS_NEXUS_S;
     public static final boolean IS_P990;
@@ -92,6 +94,7 @@ public class Build extends android.os.Build {
         boolean flag6;
         boolean flag7;
         boolean flag8;
+        boolean flag9;
         if("htcleo".equals(DEVICE) || "leo".equals(DEVICE))
             flag1 = true;
         else
@@ -112,6 +115,7 @@ public class Build extends android.os.Build {
         IS_XIAOMI = flag3;
         IS_NEXUS_ONE = "passion".equals(DEVICE);
         IS_NEXUS_S = "crespo".equals(DEVICE);
+        IS_NEXUS_7 = "grouper".equals(DEVICE);
         IS_GALAXYS_NEXUS = "maguro".equals(DEVICE);
         IS_P990 = "p990".equals(DEVICE);
         IS_T959 = DEVICE.startsWith("vibrant");
@@ -144,7 +148,12 @@ public class Build extends android.os.Build {
             flag8 = false;
         IS_MIONE_PLUS_CDMA = flag8;
         if(IS_XIAOMI || IS_GALAXYS_NEXUS || IS_NEXUS_S)
+            flag9 = true;
+        else
+            flag9 = false;
+        SHOW_MAGNIFIER_WHEN_INPUT = flag9;
+        if(IS_XIAOMI || IS_GALAXYS_NEXUS || IS_NEXUS_S || IS_NEXUS_7)
             flag = true;
-        SHOW_MAGNIFIER_WHEN_INPUT = flag;
+        IS_FULL_SOURCE_CODE_DEVICE = flag;
     }
 }

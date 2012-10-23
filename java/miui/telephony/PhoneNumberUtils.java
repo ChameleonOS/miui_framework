@@ -705,15 +705,13 @@ _L9:
     }
 
     public static String formatNumberWithIp(Context context, String s) {
-        int i;
+        boolean flag;
         String s2;
-        i = 1;
-        int j;
         if(android.provider.Settings.System.getInt(context.getContentResolver(), "button_autoip", 0) != 0)
-            j = i;
+            flag = true;
         else
-            j = 0;
-        if(j != 0) goto _L2; else goto _L1
+            flag = false;
+        if(flag) goto _L2; else goto _L1
 _L1:
         s2 = s;
 _L4:
@@ -721,6 +719,7 @@ _L4:
 _L2:
         String s3;
         PhoneNumber phonenumber;
+        boolean flag1;
         String s1 = miui.provider.ExtraSettings.System.getString(context.getContentResolver(), "current_areacode", null);
         if(s1 == null || s1.length() < 2) {
             s2 = s;
@@ -739,16 +738,23 @@ _L2:
         if(phonenumber.getPrefix().length() == 0) {
             String s4 = phonenumber.getLocationAreaCode(context);
             String s5;
+            boolean flag2;
             if(s1.startsWith("0"))
-                s5 = s1.substring(i);
+                s5 = s1.substring(1);
             else
                 s5 = s1;
-            if(android.provider.Settings.System.getInt(context.getContentResolver(), "button_add_zero_prefix", 0) == 0)
-                i = 0;
-            if(!TextUtils.isEmpty(s4) && !s5.equals(s4)) {
+            if(android.provider.Settings.System.getInt(context.getContentResolver(), "button_add_zero_prefix", 0) != 0)
+                flag1 = true;
+            else
+                flag1 = false;
+            if(android.provider.Settings.System.getInt(context.getContentResolver(), "button_auto_ip_support_local_numbers", 0) != 0)
+                flag2 = true;
+            else
+                flag2 = false;
+            if(!TextUtils.isEmpty(s4) && (flag2 || !s5.equals(s4))) {
                 if(!s.startsWith("+86"))
                     break; /* Loop/switch isn't completed */
-                if(phonenumber.getAreaCode().length() > 0 || phonenumber.isNormalMobileNumber() && i != 0)
+                if(phonenumber.getAreaCode().length() > 0 || phonenumber.isNormalMobileNumber() && flag1)
                     s = (new StringBuilder()).append(s3).append("0").append(s.substring(3)).toString();
                 else
                     s = (new StringBuilder()).append(s3).append(s.substring(3)).toString();
@@ -760,12 +766,12 @@ _L5:
         if(true) goto _L4; else goto _L3
 _L3:
         if(s.startsWith("0086")) {
-            if(phonenumber.getAreaCode().length() > 0 || phonenumber.isNormalMobileNumber() && i != 0)
+            if(phonenumber.getAreaCode().length() > 0 || phonenumber.isNormalMobileNumber() && flag1)
                 s = (new StringBuilder()).append(s3).append("0").append(s.substring(4)).toString();
             else
                 s = (new StringBuilder()).append(s3).append(s.substring(4)).toString();
         } else
-        if(phonenumber.isNormalMobileNumber() && i != 0)
+        if(phonenumber.isNormalMobileNumber() && flag1)
             s = (new StringBuilder()).append(s3).append("0").append(s).toString();
         else
             s = (new StringBuilder()).append(s3).append(s.replace("+", "00")).toString();

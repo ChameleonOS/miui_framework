@@ -180,24 +180,24 @@ _L12:
 
     static  {
         String as[] = new String[3];
-        as[0] = "persist.sys.haptic.long.weak";
-        as[1] = "persist.sys.haptic.long.normal";
-        as[2] = "persist.sys.haptic.long.strong";
+        as[0] = "sys.haptic.long.weak";
+        as[1] = "sys.haptic.long.normal";
+        as[2] = "sys.haptic.long.strong";
         LONG_PRESS_PATTERN_PROPERTY = as;
         String as1[] = new String[3];
-        as1[0] = "persist.sys.haptic.tap.weak";
-        as1[1] = "persist.sys.haptic.tap.normal";
-        as1[2] = "persist.sys.haptic.tap.strong";
+        as1[0] = "sys.haptic.tap.weak";
+        as1[1] = "sys.haptic.tap.normal";
+        as1[2] = "sys.haptic.tap.strong";
         KEYBOARD_TAP_PATTERN_PROPERTY = as1;
         String as2[] = new String[3];
-        as2[0] = "persist.sys.haptic.down.weak";
-        as2[1] = "persist.sys.haptic.down.normal";
-        as2[2] = "persist.sys.haptic.down.strong";
+        as2[0] = "sys.haptic.down.weak";
+        as2[1] = "sys.haptic.down.normal";
+        as2[2] = "sys.haptic.down.strong";
         VIRTUAL_DOWN_PATTERN_PROPERTY = as2;
         String as3[] = new String[3];
-        as3[0] = "persist.sys.haptic.up.weak";
-        as3[1] = "persist.sys.haptic.up.normal";
-        as3[2] = "persist.sys.haptic.up.strong";
+        as3[0] = "sys.haptic.up.weak";
+        as3[1] = "sys.haptic.up.normal";
+        as3[2] = "sys.haptic.up.strong";
         VIRTUAL_UP_PATTERN_PROPERTY = as3;
     }
 

@@ -5,15 +5,17 @@
 package com.android.internal.telephony.cdma;
 
 import android.app.PendingIntent;
-import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.*;
 import android.content.res.Resources;
-import android.os.Message;
-import android.os.SystemProperties;
+import android.os.*;
 import android.preference.PreferenceManager;
+import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 import com.android.internal.telephony.*;
+import com.android.internal.telephony.cdma.sms.BearerData;
+import com.android.internal.telephony.cdma.sms.CdmaSmsAddress;
 import com.android.internal.telephony.cdma.sms.UserData;
+import java.io.*;
 import java.util.*;
 
 // Referenced classes of package com.android.internal.telephony.cdma:
@@ -75,13 +77,14 @@ _L4:
     }
 
     private void handleServiceCategoryProgramData(SmsMessage smsmessage) {
-        List list = smsmessage.getSmsCbProgramData();
-        if(list == null) {
+        ArrayList arraylist = smsmessage.getSmsCbProgramData();
+        if(arraylist == null) {
             Log.e("CDMA", "handleServiceCategoryProgramData: program data list is null!");
         } else {
             Intent intent = new Intent("android.provider.Telephony.SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED");
-            intent.putExtra("program_data_list", (android.telephony.cdma.CdmaSmsCbProgramData[])(android.telephony.cdma.CdmaSmsCbProgramData[])list.toArray());
-            dispatch(intent, "android.permission.RECEIVE_SMS");
+            intent.putExtra("sender", smsmessage.getOriginatingAddress());
+            intent.putParcelableArrayListExtra("program_data", arraylist);
+            dispatch(intent, "android.permission.RECEIVE_SMS", mScpResultsReceiver);
         }
     }
 
@@ -324,4 +327,74 @@ _L3:
     private final boolean mCheckForDuplicatePortsInOmadmWapPush = Resources.getSystem().getBoolean(0x1110033);
     private byte mLastAcknowledgedSmsFingerprint[];
     private byte mLastDispatchedSmsFingerprint[];
+    private final BroadcastReceiver mScpResultsReceiver = new BroadcastReceiver() {
+
+        public void onReceive(Context context, Intent intent) {
+            String s;
+            ArrayList arraylist;
+            int i = getResultCode();
+            boolean flag;
+            if(i == -1 || i == 1)
+                flag = true;
+            else
+                flag = false;
+            if(!flag) {
+                Log.e("CDMA", (new StringBuilder()).append("SCP results error: result code = ").append(i).toString());
+            } else {
+                Bundle bundle = getResultExtras(false);
+                if(bundle == null) {
+                    Log.e("CDMA", "SCP results error: missing extras");
+                } else {
+                    s = bundle.getString("sender");
+                    if(s == null) {
+                        Log.e("CDMA", "SCP results error: missing sender extra.");
+                    } else {
+label0:
+                        {
+                            arraylist = bundle.getParcelableArrayList("results");
+                            if(arraylist != null)
+                                break label0;
+                            Log.e("CDMA", "SCP results error: missing results extra.");
+                        }
+                    }
+                }
+            }
+_L1:
+            return;
+            byte abyte0[];
+            ByteArrayOutputStream bytearrayoutputstream;
+            DataOutputStream dataoutputstream;
+            BearerData bearerdata = new BearerData();
+            bearerdata.messageType = 2;
+            bearerdata.messageId = SmsMessage.getNextMessageId();
+            bearerdata.serviceCategoryProgramResults = arraylist;
+            abyte0 = BearerData.encode(bearerdata);
+            bytearrayoutputstream = new ByteArrayOutputStream(100);
+            dataoutputstream = new DataOutputStream(bytearrayoutputstream);
+            dataoutputstream.writeInt(4102);
+            dataoutputstream.writeInt(0);
+            dataoutputstream.writeInt(0);
+            CdmaSmsAddress cdmasmsaddress = CdmaSmsAddress.parse(PhoneNumberUtils.cdmaCheckAndProcessPlusCode(s));
+            dataoutputstream.write(cdmasmsaddress.digitMode);
+            dataoutputstream.write(cdmasmsaddress.numberMode);
+            dataoutputstream.write(((SmsAddress) (cdmasmsaddress)).ton);
+            dataoutputstream.write(cdmasmsaddress.numberPlan);
+            dataoutputstream.write(cdmasmsaddress.numberOfDigits);
+            dataoutputstream.write(((SmsAddress) (cdmasmsaddress)).origBytes, 0, ((SmsAddress) (cdmasmsaddress)).origBytes.length);
+            dataoutputstream.write(0);
+            dataoutputstream.write(0);
+            dataoutputstream.write(0);
+            dataoutputstream.write(abyte0.length);
+            dataoutputstream.write(abyte0, 0, abyte0.length);
+            
+// JavaClassFileOutputException: get_constant: invalid tag
+
+        final CdmaSMSDispatcher this$0;
+
+             {
+                this$0 = CdmaSMSDispatcher.this;
+                super();
+            }
+    };
+
 }

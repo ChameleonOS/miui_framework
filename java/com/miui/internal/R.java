@@ -192,6 +192,8 @@ public final class R {
 
     public static final class string {
 
+        public static final int activate = 0x60c01ea;
+        public static final int activate_fail_notification_title = 0x60c01ec;
         public static final int activating = 0x60c01dd;
         public static final int all_resources = 0x60c0027;
         public static final int android_byteShort = 0x60c01de;
@@ -199,7 +201,8 @@ public final class R {
         public static final int android_common_name_conjunctions = 0x60c019f;
         public static final int android_common_name_prefixes = 0x60c019c;
         public static final int android_common_name_suffixes = 0x60c019d;
-        public static final int android_config_defaultDreamComponent = 0x60c01e6;
+        public static final int android_config_defaultDreamComponent = 0x60c01ee;
+        public static final int android_date_time_set = 0x60c01ef;
         public static final int android_dial_number_using = 0x60c01a0;
         public static final int android_ellipsis = 0x60c0190;
         public static final int android_factorytest_reboot = 0x60c018c;
@@ -267,6 +270,8 @@ public final class R {
         public static final int autumn_equinox = 0x60c007d;
         public static final int callNoAnswerTimeFormat = 0x60c003f;
         public static final int caller_info_name_delimiter = 0x60c016c;
+        public static final int check_phone_error_title = 0x60c01e6;
+        public static final int check_phone_io_error = 0x60c01e7;
         public static final int childrens_day = 0x60c0066;
         public static final int chinese_youth_day = 0x60c0065;
         public static final int christmas_dad = 0x60c006b;
@@ -606,6 +611,7 @@ public final class R {
         public static final int payphone = 0x60c003e;
         public static final int perm_activate_dspt = 0x60c01d0;
         public static final int perm_activate_lab = 0x60c01cf;
+        public static final int perm_auto_backup = 0x60c01eb;
         public static final int perm_get_user_info_dspt = 0x60c01d3;
         public static final int perm_get_user_info_lab = 0x60c01d2;
         public static final int perm_tigger_toggle_dspt = 0x60c01e3;
@@ -649,7 +655,10 @@ public final class R {
         public static final int sdcard_status_changed_dialog_title = 0x60c0003;
         public static final int select = 0x60c01ac;
         public static final int select_all = 0x60c0177;
+        public static final int send_sms_for_sync_notice = 0x60c01e9;
+        public static final int send_sms_for_sync_title = 0x60c01e8;
         public static final int sim_account_name = 0x60c01a7;
+        public static final int sim_changed_reactivate_notice = 0x60c01ed;
         public static final int slight_cold = 0x60c006c;
         public static final int slight_heat = 0x60c0078;
         public static final int solar_calendar = 0x60c01b5;
@@ -1002,7 +1011,7 @@ public final class R {
         public static final int android_ic_lock_idle_lock = 0x6020200;
         public static final int android_ic_lockscreen_chevron_left = 0x602014f;
         public static final int android_ic_lockscreen_chevron_right = 0x602014e;
-        public static final int android_ic_lockscreen_glowdot = 0x6020203;
+        public static final int android_ic_lockscreen_glowdot = 0x602020a;
         public static final int android_ic_lockscreen_handle_pressed = 0x6020150;
         public static final int android_ic_menu_archive = 0x602015e;
         public static final int android_ic_menu_forward = 0x60201d1;
@@ -1028,6 +1037,7 @@ public final class R {
         public static final int android_notify_panel_notification_icon_bg_tile = 0x602012e;
         public static final int android_overscroll_edge = 0x602013c;
         public static final int android_overscroll_glow = 0x602013d;
+        public static final int android_quickcontact_badge_overlay_dark = 0x602020b;
         public static final int android_scrubber_control_disabled_holo = 0x6020143;
         public static final int android_scrubber_control_selector_holo = 0x6020144;
         public static final int android_scrubber_primary_holo = 0x6020141;
@@ -1166,7 +1176,7 @@ public final class R {
         public static final int ic_expanded_preference_last_normal = 0x602004c;
         public static final int ic_expanded_preference_middle_normal = 0x602004d;
         public static final int ic_key_home = 0x6020120;
-        public static final int ic_list_sync_anim = 0x6020204;
+        public static final int ic_list_sync_anim = 0x6020203;
         public static final int ic_lock_airplane_mode = 0x602011a;
         public static final int ic_lock_airplane_mode_off = 0x602011b;
         public static final int ic_lock_audio_vol = 0x602014c;
@@ -1201,8 +1211,8 @@ public final class R {
         public static final int ic_menu_moreoverflow_normal_holo_light = 0x6020153;
         public static final int ic_menu_share = 0x6020198;
         public static final int ic_menu_trash_holo_light = 0x6020116;
-        public static final int ic_sync_anim_holo = 0x6020205;
-        public static final int ic_sync_error_holo = 0x6020206;
+        public static final int ic_sync_anim_holo = 0x6020204;
+        public static final int ic_sync_error_holo = 0x6020205;
         public static final int ic_vidcontrol_pause = 0x60201d7;
         public static final int ic_vidcontrol_play = 0x60201d6;
         public static final int ic_vidcontrol_reload = 0x60201d8;
@@ -1392,7 +1402,7 @@ public final class R {
         public static final int resource_operation_view_bg = 0x60201b7;
         public static final int resource_preview_bg = 0x60200c3;
         public static final int resource_preview_empty = 0x60201ba;
-        public static final int resource_preview_font_bg = 0x6020207;
+        public static final int resource_preview_font_bg = 0x6020206;
         public static final int resource_ringtone_play_bg = 0x60201f3;
         public static final int resource_ringtone_play_fg = 0x60201f4;
         public static final int resource_spinner_inner = 0x60201f5;
@@ -1458,6 +1468,9 @@ public final class R {
         public static final int sliding_panel_visualization_dot_bar = 0x6020106;
         public static final int sliding_panel_visualization_shadow_dot_bar = 0x6020107;
         public static final int sortable_list_dragging_item_shadow = 0x6020108;
+        public static final int spinner_bg = 0x6020207;
+        public static final int spinner_bg_n = 0x6020208;
+        public static final int spinner_bg_p = 0x6020209;
         public static final int stat_sys_call_record = 0x6020109;
         public static final int tab_bg = 0x60201b8;
         public static final int tab_divider = 0x60201b9;
@@ -1550,6 +1563,7 @@ public final class R {
         public static final int button_text_color_disabled = 0x6070005;
         public static final int button_text_shadow = 0x6070006;
         public static final int darker_transparent = 0x6070021;
+        public static final int editor_custom_action_button_text_color = 0x6070022;
         public static final int guide_popup_window_textColor = 0x6070002;
         public static final int information_done = 0x6070012;
         public static final int information_error = 0x607000f;
@@ -1590,6 +1604,7 @@ public final class R {
         public static final int android_config_use_strict_phone_number_comparation = 0x609000c;
         public static final int android_config_voice_capable = 0x6090009;
         public static final int android_config_wimaxEnabled = 0x6090008;
+        public static final int android_preferences_prefer_dual_pane = 0x6090013;
         public static final int config_enableUsbModeSelection = 0x6090000;
         public static final int config_has_antispam = 0x609000d;
         public static final int config_show_status_bar_battery_for_keyguard = 0x6090001;

@@ -73,6 +73,7 @@ public class GalleryCloudColumns {
     public static final int INDEX_ID = 0;
     public static final int INDEX_LOCAL_FILE = 38;
     public static final int INDEX_LOCAL_FLAG = 35;
+    public static final int INDEX_MICRO_THUMBNAIL_FILE = 41;
     public static final int INDEX_MIME_TYPE = 4;
     public static final int INDEX_SERVER_ID = 10;
     public static final int INDEX_SERVER_STATUS = 12;
@@ -91,6 +92,7 @@ public class GalleryCloudColumns {
     public static final int LOCAL_FLAG_FORCE_CREATE = 4;
     public static final int LOCAL_FLAG_INVALID = -1;
     public static final int LOCAL_FLAG_SYNCED = 0;
+    public static final String MICRO_THUMBNAIL_FILE = "microthumbfile";
     public static final String MIME_TYPE = "mimeType";
     public static final String SERVER_ID = "serverId";
     public static final String SERVER_STATUS = "serverStatus";

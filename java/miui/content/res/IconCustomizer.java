@@ -324,9 +324,9 @@ _L3:
             s2 = String.format("%s.png", aobj1);
         } else {
             Object aobj[] = new Object[2];
-            aobj[0] = s1;
-            aobj[1] = s;
-            s2 = String.format("%s@%s.png", aobj);
+            aobj[0] = s;
+            aobj[1] = s1;
+            s2 = String.format("%s#%s.png", aobj);
         }
         return s2;
     }

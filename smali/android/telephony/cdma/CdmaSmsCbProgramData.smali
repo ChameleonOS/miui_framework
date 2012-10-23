@@ -56,7 +56,7 @@
 
 .field private final mCategoryName:Ljava/lang/String;
 
-.field private final mLanguage:Ljava/lang/String;
+.field private final mLanguage:I
 
 .field private final mMaxMessages:I
 
@@ -78,7 +78,7 @@
     return-void
 .end method
 
-.method public constructor <init>(IILjava/lang/String;IILjava/lang/String;)V
+.method public constructor <init>(IIIIILjava/lang/String;)V
     .registers 7
     .parameter "operation"
     .parameter "category"
@@ -98,7 +98,7 @@
     iput p2, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mCategory:I
 
     .line 101
-    iput-object p3, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:Ljava/lang/String;
+    iput p3, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:I
 
     .line 102
     iput p4, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mMaxMessages:I
@@ -136,11 +136,11 @@
     iput v0, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mCategory:I
 
     .line 111
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result-object v0
+    move-result v0
 
-    iput-object v0, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:Ljava/lang/String;
+    iput v0, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:I
 
     .line 112
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -209,14 +209,14 @@
     return-object v0
 .end method
 
-.method public getLanguageCode()Ljava/lang/String;
+.method public getLanguage()I
     .registers 2
 
     .prologue
     .line 154
-    iget-object v0, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:Ljava/lang/String;
+    iget v0, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public getMaxMessages()I
@@ -278,9 +278,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:Ljava/lang/String;
+    iget v1, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -350,9 +350,9 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 127
-    iget-object v0, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:Ljava/lang/String;
+    iget v0, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mLanguage:I
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 128
     iget v0, p0, Landroid/telephony/cdma/CdmaSmsCbProgramData;->mMaxMessages:I

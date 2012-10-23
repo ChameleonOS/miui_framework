@@ -17,7 +17,7 @@ import com.android.internal.telephony.cdma.sms.UserData;
 import com.android.internal.util.BitwiseInputStream;
 import com.android.internal.util.HexDump;
 import java.io.*;
-import java.util.List;
+import java.util.ArrayList;
 
 public class SmsMessage extends SmsMessageBase {
     public static class SubmitPdu extends com.android.internal.telephony.SmsMessageBase.SubmitPduBase {
@@ -182,7 +182,7 @@ _L1:
      * @deprecated Method getNextMessageId is deprecated
      */
 
-    private static int getNextMessageId() {
+    static int getNextMessageId() {
         com/android/internal/telephony/cdma/SmsMessage;
         JVM INSTR monitorenter ;
         int i;
@@ -542,7 +542,12 @@ _L2:
     }
 
     int getMessageType() {
-        return mEnvelope.messageType;
+        int i;
+        if(mEnvelope.serviceCategory != 0)
+            i = 1;
+        else
+            i = 0;
+        return i;
     }
 
     int getNumOfVoicemails() {
@@ -554,7 +559,7 @@ _L2:
         return 0;
     }
 
-    List getSmsCbProgramData() {
+    ArrayList getSmsCbProgramData() {
         return mBearerData.serviceCategoryProgramData;
     }
 

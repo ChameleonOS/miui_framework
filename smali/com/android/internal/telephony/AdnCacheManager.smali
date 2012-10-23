@@ -274,7 +274,7 @@
     const/16 v1, 0x6f3a
 
     .line 33
-    invoke-virtual {p3}, Lcom/android/internal/telephony/AdnRecord;->isEmpty()Z
+    invoke-virtual {p2}, Lcom/android/internal/telephony/AdnRecord;->isEmpty()Z
 
     move-result v0
 
@@ -296,7 +296,7 @@
 
     .line 35
     :cond_11
-    invoke-virtual {p2}, Lcom/android/internal/telephony/AdnRecord;->isEmpty()Z
+    invoke-virtual {p3}, Lcom/android/internal/telephony/AdnRecord;->isEmpty()Z
 
     move-result v0
 

@@ -9,8 +9,7 @@ import android.content.res.Resources;
 import android.util.*;
 import com.android.internal.util.XmlUtils;
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import miui.util.DisplayUtils;
@@ -48,25 +47,30 @@ public final class ThemeZipFile {
 
     private InputStream getInputStreamInner(String s, int ai[]) {
         InputStream inputstream = getZipInputStream(s, ai);
+        if(inputstream != null) goto _L2; else goto _L1
+_L1:
         int i = s.indexOf("dpi/");
-        InputStream inputstream1;
-        if(i < 0) {
-            inputstream1 = inputstream;
-        } else {
-            String s1 = s.substring(i + 3);
-            for(; s.charAt(i) != '-'; i--);
-            String s2 = s.substring(0, i);
-            for(int j = -1 + sDensities.length; inputstream == null && j >= 0; j--) {
-                Object aobj[] = new Object[3];
-                aobj[0] = s2;
-                aobj[1] = DisplayUtils.getDensitySuffix(sDensities[j]);
-                aobj[2] = s1;
-                inputstream = getZipInputStream(String.format("%s%s%s", aobj), ai);
-            }
-
-            inputstream1 = inputstream;
-        }
+        if(i >= 0) goto _L4; else goto _L3
+_L3:
+        InputStream inputstream1 = inputstream;
+_L6:
         return inputstream1;
+_L4:
+        String s1 = s.substring(i + 3);
+        for(; s.charAt(i) != '-'; i--);
+        String s2 = s.substring(0, i);
+        for(int j = -1 + sDensities.length; inputstream == null && j >= 0; j--) {
+            Object aobj[] = new Object[3];
+            aobj[0] = s2;
+            aobj[1] = DisplayUtils.getDensitySuffix(sDensities[j]);
+            aobj[2] = s1;
+            inputstream = getZipInputStream(String.format("%s%s%s", aobj), ai);
+        }
+
+_L2:
+        inputstream1 = inputstream;
+        if(true) goto _L6; else goto _L5
+_L5:
     }
 
     private static final String getPackageName(String s) {
@@ -102,19 +106,33 @@ _L3:
 _L1:
         return inputstream;
 _L2:
-        InputStream inputstream1;
-        ZipEntry zipentry = mZipFile.getEntry(s);
-        if(zipentry == null)
-            continue; /* Loop/switch isn't completed */
-        if(ai != null && ai.length > 0)
-            ai[0] = (int)zipentry.getSize();
-        inputstream1 = mZipFile.getInputStream(zipentry);
-        inputstream = inputstream1;
+        ZipEntry zipentry = null;
+        if(!s.endsWith("#*.png")) goto _L4; else goto _L3
+_L3:
+        String s1 = s.substring(0, s.length() - "#*.png".length());
+        Enumeration enumeration = mZipFile.entries();
+        ZipEntry zipentry2;
+        do {
+            if(!enumeration.hasMoreElements())
+                break MISSING_BLOCK_LABEL_96;
+            zipentry2 = (ZipEntry)enumeration.nextElement();
+        } while(zipentry2.isDirectory() || !zipentry2.getName().startsWith(s1));
+        zipentry = zipentry2;
+_L5:
+        if(zipentry != null) {
+            if(ai != null && ai.length > 0)
+                ai[0] = (int)zipentry.getSize();
+            inputstream = mZipFile.getInputStream(zipentry);
+        }
         continue; /* Loop/switch isn't completed */
+_L4:
+        ZipEntry zipentry1 = mZipFile.getEntry(s);
+        zipentry = zipentry1;
+          goto _L5
         Exception exception;
         exception;
-        if(true) goto _L1; else goto _L3
-_L3:
+        if(true) goto _L1; else goto _L6
+_L6:
     }
 
     private boolean isValid() {
@@ -139,7 +157,7 @@ _L2:
         aobj[0] = DisplayUtils.getDensitySuffix(sDensities[i]);
         obj = getZipInputStream(String.format("theme_values%s.xml", aobj), null);
         if(obj == null)
-            break MISSING_BLOCK_LABEL_123;
+            break MISSING_BLOCK_LABEL_124;
         XmlPullParser xmlpullparser;
         BufferedInputStream bufferedinputstream;
         xmlpullparser = XmlPullParserFactory.newInstance().newPullParser();
@@ -177,7 +195,7 @@ _L4:
         catch(IOException ioexception) {
             ioexception.printStackTrace();
         }
-        break MISSING_BLOCK_LABEL_123;
+        break MISSING_BLOCK_LABEL_124;
         exception;
         obj = bufferedinputstream;
           goto _L3
@@ -351,6 +369,7 @@ _L4:
     private static final String ATTR_NAME = "name";
     private static final String ATTR_PACKAGE = "package";
     static boolean DBG = false;
+    private static final String FUZZY_SEARCH_ICON_SUFFIX = "#*.png";
     static String TAG = "ThemeZipFile";
     private static final String TAG_BOOLEAN = "bool";
     private static final String TAG_COLOR = "color";

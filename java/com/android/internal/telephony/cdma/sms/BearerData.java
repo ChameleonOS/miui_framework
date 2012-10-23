@@ -7,6 +7,7 @@ package com.android.internal.telephony.cdma.sms;
 import android.content.res.Resources;
 import android.telephony.SmsCbCmasInfo;
 import android.telephony.cdma.CdmaSmsCbProgramData;
+import android.telephony.cdma.CdmaSmsCbProgramResults;
 import android.text.format.Time;
 import android.util.Log;
 import android.util.SparseIntArray;
@@ -929,22 +930,22 @@ _L3:
         for(flag = false; k >= 48; flag = true) {
             int l = bitwiseinputstream.read(4);
             int i1 = bitwiseinputstream.read(8) << 8 | bitwiseinputstream.read(8);
-            String s1 = getLanguageCodeForValue(bitwiseinputstream.read(8));
             int j1 = bitwiseinputstream.read(8);
-            int k1 = bitwiseinputstream.read(4);
-            int l1 = bitwiseinputstream.read(8);
-            int i2 = k - 48;
-            int j2 = getBitsForNumFields(j, l1);
-            if(i2 < j2)
-                throw new CodingException((new StringBuilder()).append("category name is ").append(j2).append(" bits in length,").append(" but there are only ").append(i2).append(" bits available").toString());
+            int k1 = bitwiseinputstream.read(8);
+            int l1 = bitwiseinputstream.read(4);
+            int i2 = bitwiseinputstream.read(8);
+            int j2 = k - 48;
+            int k2 = getBitsForNumFields(j, i2);
+            if(j2 < k2)
+                throw new CodingException((new StringBuilder()).append("category name is ").append(k2).append(" bits in length,").append(" but there are only ").append(j2).append(" bits available").toString());
             UserData userdata = new UserData();
             userdata.msgEncoding = j;
             userdata.msgEncodingSet = true;
-            userdata.numFields = l1;
-            userdata.payload = bitwiseinputstream.readByteArray(j2);
-            k = i2 - j2;
+            userdata.numFields = i2;
+            userdata.payload = bitwiseinputstream.readByteArray(k2);
+            k = j2 - k2;
             decodeUserDataPayload(userdata, false);
-            arraylist.add(new CdmaSmsCbProgramData(l, i1, s1, j1, k1, userdata.payloadStr));
+            arraylist.add(new CdmaSmsCbProgramData(l, i1, j1, k1, l1, userdata.payloadStr));
         }
 
         if(!flag || k > 0) {
@@ -1193,6 +1194,10 @@ _L7:
         if(bearerdata.messageStatusSet) {
             bitwiseoutputstream.write(8, 20);
             encodeMsgStatus(bearerdata, bitwiseoutputstream);
+        }
+        if(bearerdata.serviceCategoryProgramResults != null) {
+            bitwiseoutputstream.write(8, 19);
+            encodeScpResults(bearerdata, bitwiseoutputstream);
         }
         abyte1 = bitwiseoutputstream.toByteArray();
         abyte0 = abyte1;
@@ -1490,6 +1495,20 @@ _L5:
             l = 0;
         bitwiseoutputstream.write(1, l);
         bitwiseoutputstream.write(4, 0);
+    }
+
+    private static void encodeScpResults(BearerData bearerdata, BitwiseOutputStream bitwiseoutputstream) throws com.android.internal.util.BitwiseOutputStream.AccessException {
+        ArrayList arraylist = bearerdata.serviceCategoryProgramResults;
+        bitwiseoutputstream.write(8, 4 * arraylist.size());
+        for(Iterator iterator = arraylist.iterator(); iterator.hasNext(); bitwiseoutputstream.skip(4)) {
+            CdmaSmsCbProgramResults cdmasmscbprogramresults = (CdmaSmsCbProgramResults)iterator.next();
+            int i = cdmasmscbprogramresults.getCategory();
+            bitwiseoutputstream.write(8, i >> 8);
+            bitwiseoutputstream.write(8, i);
+            bitwiseoutputstream.write(8, cdmasmscbprogramresults.getLanguage());
+            bitwiseoutputstream.write(4, cdmasmscbprogramresults.getCategoryResult());
+        }
+
     }
 
     private static void encodeUserData(BearerData bearerdata, BitwiseOutputStream bitwiseoutputstream) throws com.android.internal.util.BitwiseOutputStream.AccessException, CodingException {
@@ -1924,7 +1943,8 @@ _L7:
     public boolean privacyIndicatorSet;
     public boolean readAckReq;
     public boolean reportReq;
-    public List serviceCategoryProgramData;
+    public ArrayList serviceCategoryProgramData;
+    public ArrayList serviceCategoryProgramResults;
     public boolean userAckReq;
     public UserData userData;
     public int userResponseCode;

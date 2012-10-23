@@ -387,7 +387,7 @@
 
     move-result-object v1
 
-    const-string v2, "lineNumber"
+    const-string/jumbo v2, "lineNumber"
 
     invoke-virtual {v1, v2, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -3045,7 +3045,7 @@
 
     move-result-object v4
 
-    const-string v9, "lineNumber"
+    const-string/jumbo v9, "lineNumber"
 
     invoke-virtual {v4, v9}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
@@ -3075,20 +3075,20 @@
 
     .line 789
     .local v48, numberOfMessageLevels:I
-    if-ltz v47, :cond_7fe
+    if-ltz v47, :cond_7ff
 
     move/from16 v0, v47
 
     move/from16 v1, v48
 
-    if-lt v0, v1, :cond_800
+    if-lt v0, v1, :cond_801
 
     .line 790
-    :cond_7fe
+    :cond_7ff
     const/16 v47, 0x0
 
     .line 793
-    :cond_800
+    :cond_801
     invoke-static {}, Landroid/webkit/ConsoleMessage$MessageLevel;->values()[Landroid/webkit/ConsoleMessage$MessageLevel;
 
     move-result-object v4
@@ -3177,7 +3177,7 @@
     goto/16 :goto_6
 
     .line 805
-    :pswitch_853
+    :pswitch_854
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3187,7 +3187,7 @@
     goto/16 :goto_6
 
     .line 808
-    :pswitch_85c
+    :pswitch_85d
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3197,7 +3197,7 @@
     goto/16 :goto_6
 
     .line 811
-    :pswitch_865
+    :pswitch_866
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3207,7 +3207,7 @@
     goto/16 :goto_6
 
     .line 814
-    :pswitch_86e
+    :pswitch_86f
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3217,7 +3217,7 @@
     goto/16 :goto_6
 
     .line 817
-    :pswitch_877
+    :pswitch_878
     move-object/from16 v0, v43
 
     move-object/from16 v1, v42
@@ -3235,7 +3235,7 @@
     .end local v47           #msgLevel:I
     .end local v48           #numberOfMessageLevels:I
     .end local v60           #sourceID:Ljava/lang/String;
-    :pswitch_880
+    :pswitch_881
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -3258,7 +3258,7 @@
     goto/16 :goto_6
 
     .line 831
-    :pswitch_895
+    :pswitch_896
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -3300,7 +3300,7 @@
 
     .line 839
     .end local v33           #data:Landroid/webkit/CallbackProxy$UploadFileMessageData;
-    :pswitch_8ba
+    :pswitch_8bb
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebBackForwardListClient:Landroid/webkit/WebBackForwardListClient;
@@ -3323,7 +3323,7 @@
     goto/16 :goto_6
 
     .line 846
-    :pswitch_8cf
+    :pswitch_8d0
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebBackForwardListClient:Landroid/webkit/WebBackForwardListClient;
@@ -3350,7 +3350,7 @@
     goto/16 :goto_6
 
     .line 852
-    :pswitch_8e8
+    :pswitch_8e9
     invoke-virtual/range {p1 .. p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v4
@@ -3420,7 +3420,7 @@
     .end local v52           #password:Ljava/lang/String;
     .end local v53           #realm:Ljava/lang/String;
     .end local v65           #username:Ljava/lang/String;
-    :pswitch_924
+    :pswitch_925
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebChromeClient:Landroid/webkit/WebChromeClient;
@@ -3437,7 +3437,7 @@
     goto/16 :goto_6
 
     .line 866
-    :pswitch_933
+    :pswitch_934
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
@@ -3481,7 +3481,7 @@
     .line 874
     .end local v59           #searchBox:Landroid/webkit/SearchBoxImpl;
     .end local v63           #suggestions:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    :pswitch_959
+    :pswitch_95a
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebViewClient:Landroid/webkit/WebViewClient;
@@ -3551,7 +3551,7 @@
     .end local v28           #account:Ljava/lang/String;
     .end local v29           #args:Ljava/lang/String;
     .end local v53           #realm:Ljava/lang/String;
-    :pswitch_995
+    :pswitch_996
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
@@ -3587,7 +3587,7 @@
     .line 890
     .end local v59           #searchBox:Landroid/webkit/SearchBoxImpl;
     .end local v64           #supported:Ljava/lang/Boolean;
-    :pswitch_9b2
+    :pswitch_9b3
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mWebView:Landroid/webkit/WebViewClassic;
@@ -3641,8 +3641,6 @@
     goto/16 :goto_6
 
     .line 313
-    nop
-
     :pswitch_data_9e4
     .packed-switch 0x64
         :pswitch_f
@@ -3678,17 +3676,17 @@
         :pswitch_466
         :pswitch_496
         :pswitch_86
-        :pswitch_880
-        :pswitch_895
-        :pswitch_8ba
-        :pswitch_8cf
-        :pswitch_8e8
-        :pswitch_924
-        :pswitch_933
-        :pswitch_959
+        :pswitch_881
+        :pswitch_896
+        :pswitch_8bb
+        :pswitch_8d0
+        :pswitch_8e9
+        :pswitch_925
+        :pswitch_934
+        :pswitch_95a
         :pswitch_1f9
-        :pswitch_995
-        :pswitch_9b2
+        :pswitch_996
+        :pswitch_9b3
         :pswitch_1dc
         :pswitch_e
         :pswitch_e
@@ -3751,11 +3749,11 @@
     .line 803
     :pswitch_data_ab2
     .packed-switch 0x1
-        :pswitch_853
-        :pswitch_85c
-        :pswitch_865
-        :pswitch_86e
-        :pswitch_877
+        :pswitch_854
+        :pswitch_85d
+        :pswitch_866
+        :pswitch_86f
+        :pswitch_878
     .end packed-switch
 .end method
 

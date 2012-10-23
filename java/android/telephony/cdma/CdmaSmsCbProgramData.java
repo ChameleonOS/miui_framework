@@ -10,19 +10,19 @@ import android.os.Parcelable;
 public class CdmaSmsCbProgramData
     implements Parcelable {
 
-    public CdmaSmsCbProgramData(int i, int j, String s, int k, int l, String s1) {
+    public CdmaSmsCbProgramData(int i, int j, int k, int l, int i1, String s) {
         mOperation = i;
         mCategory = j;
-        mLanguage = s;
-        mMaxMessages = k;
-        mAlertOption = l;
-        mCategoryName = s1;
+        mLanguage = k;
+        mMaxMessages = l;
+        mAlertOption = i1;
+        mCategoryName = s;
     }
 
     CdmaSmsCbProgramData(Parcel parcel) {
         mOperation = parcel.readInt();
         mCategory = parcel.readInt();
-        mLanguage = parcel.readString();
+        mLanguage = parcel.readInt();
         mMaxMessages = parcel.readInt();
         mAlertOption = parcel.readInt();
         mCategoryName = parcel.readString();
@@ -44,7 +44,7 @@ public class CdmaSmsCbProgramData
         return mCategoryName;
     }
 
-    public String getLanguageCode() {
+    public int getLanguage() {
         return mLanguage;
     }
 
@@ -63,7 +63,7 @@ public class CdmaSmsCbProgramData
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(mOperation);
         parcel.writeInt(mCategory);
-        parcel.writeString(mLanguage);
+        parcel.writeInt(mLanguage);
         parcel.writeInt(mMaxMessages);
         parcel.writeInt(mAlertOption);
         parcel.writeString(mCategoryName);
@@ -106,7 +106,7 @@ public class CdmaSmsCbProgramData
     private final int mAlertOption;
     private final int mCategory;
     private final String mCategoryName;
-    private final String mLanguage;
+    private final int mLanguage;
     private final int mMaxMessages;
     private final int mOperation;
 

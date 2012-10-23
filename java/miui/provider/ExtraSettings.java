@@ -202,6 +202,8 @@ _L2:
         public static final int AUTOIP_SWITCH_DEFAULT = 0;
         public static final String AUTO_COUNTRY_CODE = "auto_country_code";
         public static final int AUTO_COUNTRY_CODE_DEFAULT = 0;
+        public static final String AUTO_IP_SUPPORT_LOCAL_NUMBERS = "button_auto_ip_support_local_numbers";
+        public static final int AUTO_IP_SUPPORT_LOCAL_NUMBERS_DEFAULT = 0;
         public static final String BACK_KEY_LONG_PRESS_TIMEOUT = "back_key_long_press_timeout";
         public static final int BACK_KEY_LONG_PRESS_TIMEOUT_DEFAULT = 1500;
         public static final String BATTERY_INDICATOR_STYLE = "battery_indicator_style";
@@ -305,6 +307,10 @@ _L2:
         public static final int MMS_SYNC_WILD_MSG_STATE_INIT = 0;
         public static final int MMS_SYNC_WILD_MSG_STATE_MSG_FOUND = 1;
         public static final String MMS_SYNC_WILD_NUMBERS = "mms_sync_wild_numbers";
+        public static final String MMS_UPLOAD_OLD_MSG_ACCOUNTS = "mms_upload_old_msg_accounts";
+        public static final String MMS_UPLOAD_OLD_MSG_STATE = "mms_upload_old_msg_state";
+        public static final int MMS_UPLOAD_OLD_MSG_STATE_INIT = 0;
+        public static final int MMS_UPLOAD_OLD_MSG_STATE_NEED_PROMPT = 1;
         public static final String RECENT_APPS_KEY_SHOW = "recent_apps_key_show";
         public static final String SCREENSHOT_NOTIFICATION_ENABLED = "screenshot_notification_enabled";
         public static final String SCREEN_BUTTONS_TIMEOUT = "screen_buttons_timeout";

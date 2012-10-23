@@ -207,68 +207,147 @@ _L16:
     }
 
     private static final boolean isIdeographic(char c, boolean flag) {
-        boolean flag1;
-        flag1 = true;
-        break MISSING_BLOCK_LABEL_2;
-label0:
-        while(true)  {
-            do {
-                do
-                    return flag1;
-                while(c >= '\u2E80' && c <= '\u2FFF' || c == '\u3000');
-                if(c < '\u3040' || c > '\u309F')
-                    break;
-                if(!flag) {
-                    switch(c) {
-                    case 12353: 
-                    case 12355: 
-                    case 12357: 
-                    case 12359: 
-                    case 12361: 
-                    case 12387: 
-                    case 12419: 
-                    case 12421: 
-                    case 12423: 
-                    case 12430: 
-                    case 12437: 
-                    case 12438: 
-                    case 12443: 
-                    case 12444: 
-                    case 12445: 
-                    case 12446: 
-                        flag1 = false;
-                        break;
-                    }
-                    continue label0;
-                }
-            } while(true);
-            if(c >= '\u30A0' && c <= '\u30FF') {
-                if(!flag)
-                    switch(c) {
-                    case 12448: 
-                    case 12449: 
-                    case 12451: 
-                    case 12453: 
-                    case 12455: 
-                    case 12457: 
-                    case 12483: 
-                    case 12515: 
-                    case 12517: 
-                    case 12519: 
-                    case 12526: 
-                    case 12533: 
-                    case 12534: 
-                    case 12539: 
-                    case 12540: 
-                    case 12541: 
-                    case 12542: 
-                        flag1 = false;
-                        break;
-                    }
-            } else
-            if((c < '\u3400' || c > '\u4DB5') && (c < '\u4E00' || c > '\u9FBB') && (c < '\uF900' || c > '\uFAD9') && (c < '\uA000' || c > '\uA48F') && (c < '\uA490' || c > '\uA4CF') && (c < '\uFE62' || c > '\uFE66') && (c < '\uFF10' || c > '\uFF19'))
-                flag1 = false;
+        if(c < '\u2E80' || c > '\u2FFF') goto _L2; else goto _L1
+_L1:
+        flag = true;
+_L4:
+        return flag;
+_L2:
+        if(c != '\u3000')
+            break; /* Loop/switch isn't completed */
+        flag = true;
+        if(true) goto _L4; else goto _L3
+_L3:
+        if(c < '\u3040' || c > '\u309F') goto _L6; else goto _L5
+_L5:
+        if(flag) goto _L8; else goto _L7
+_L7:
+        c;
+        JVM INSTR lookupswitch 16: default 188
+    //                   12353: 193
+    //                   12355: 193
+    //                   12357: 193
+    //                   12359: 193
+    //                   12361: 193
+    //                   12387: 193
+    //                   12419: 193
+    //                   12421: 193
+    //                   12423: 193
+    //                   12430: 193
+    //                   12437: 193
+    //                   12438: 193
+    //                   12443: 193
+    //                   12444: 193
+    //                   12445: 193
+    //                   12446: 193;
+           goto _L8 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9 _L9
+_L8:
+        flag = true;
+        continue; /* Loop/switch isn't completed */
+_L9:
+        flag = false;
+        continue; /* Loop/switch isn't completed */
+_L6:
+        if(c < '\u30A0' || c > '\u30FF') goto _L11; else goto _L10
+_L10:
+        if(flag) goto _L13; else goto _L12
+_L12:
+        c;
+        JVM INSTR lookupswitch 17: default 364
+    //                   12448: 369
+    //                   12449: 369
+    //                   12451: 369
+    //                   12453: 369
+    //                   12455: 369
+    //                   12457: 369
+    //                   12483: 369
+    //                   12515: 369
+    //                   12517: 369
+    //                   12519: 369
+    //                   12526: 369
+    //                   12533: 369
+    //                   12534: 369
+    //                   12539: 369
+    //                   12540: 369
+    //                   12541: 369
+    //                   12542: 369;
+           goto _L13 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14 _L14
+_L13:
+        flag = true;
+        continue; /* Loop/switch isn't completed */
+_L14:
+        flag = false;
+        continue; /* Loop/switch isn't completed */
+_L11:
+        if(c < '\u3001' || c > '\u3017') goto _L16; else goto _L15
+_L15:
+        c;
+        JVM INSTR lookupswitch 4: default 432
+    //                   12298: 503
+    //                   12302: 503
+    //                   12304: 503
+    //                   12310: 503;
+           goto _L17 _L18 _L18 _L18 _L18
+_L17:
+        switch(c) {
+        case 12289: 
+        case 12290: 
+        case 12299: 
+        case 12303: 
+        case 12305: 
+        case 12311: 
+            continue; /* Loop/switch isn't completed */
         }
+        break; /* Loop/switch isn't completed */
+_L18:
+        flag = false;
+        continue; /* Loop/switch isn't completed */
+_L16:
+        if(c == '\uFE5D') {
+            flag = false;
+            continue; /* Loop/switch isn't completed */
+        }
+        if(c == '\uFE5E')
+            continue; /* Loop/switch isn't completed */
+        if(c >= '\uFF01' && c <= '\uFF1F') {
+            if(c == '\uFF08') {
+                flag = false;
+                continue; /* Loop/switch isn't completed */
+            }
+            switch(c) {
+            case 65281: 
+            case 65289: 
+            case 65292: 
+            case 65306: 
+            case 65307: 
+            case 65311: 
+                continue; /* Loop/switch isn't completed */
+            }
+        }
+        if(c >= '\u3400' && c <= '\u4DB5')
+            flag = true;
+        else
+        if(c >= '\u4E00' && c <= '\u9FBB')
+            flag = true;
+        else
+        if(c >= '\uF900' && c <= '\uFAD9')
+            flag = true;
+        else
+        if(c >= '\uA000' && c <= '\uA48F')
+            flag = true;
+        else
+        if(c >= '\uA490' && c <= '\uA4CF')
+            flag = true;
+        else
+        if(c >= '\uFE62' && c <= '\uFE66')
+            flag = true;
+        else
+        if(c >= '\uFF10' && c <= '\uFF19')
+            flag = true;
+        else
+            flag = false;
+        if(true) goto _L4; else goto _L19
+_L19:
     }
 
     private int out(CharSequence charsequence, int i, int j, int k, int l, int i1, int j1, 
@@ -446,7 +525,7 @@ _L10:
         Layout.TabStops tabstops;
         int l5;
         if(i1 > j)
-            break MISSING_BLOCK_LABEL_1644;
+            break MISSING_BLOCK_LABEL_1719;
         j1 = TextUtils.indexOf(charsequence, '\n', i1, j);
         if(j1 < 0)
             k1 = j;
@@ -521,7 +600,7 @@ _L5:
         int k7;
         char c;
         if(l5 >= k1)
-            break MISSING_BLOCK_LABEL_1496;
+            break MISSING_BLOCK_LABEL_1571;
         int k6;
         int l6;
         int i7;
@@ -593,7 +672,7 @@ _L3:
             i5 = j7;
         if(l6 > k5)
             k5 = l6;
-        if(c == ' ' || c == '\t' || (c == '.' || c == ',' || c == ':' || c == ';') && (k7 - 1 < i3 || !Character.isDigit(ac[k7 - 1 - i1])) && (k7 + 1 >= i6 || !Character.isDigit(ac[(k7 + 1) - i1])) || (c == '/' || c == '-') && (k7 + 1 >= i6 || !Character.isDigit(ac[(k7 + 1) - i1])) || c >= '\u2E80' && isIdeographic(c, true) && k7 + 1 < i6 && isIdeographic(ac[(k7 + 1) - i1], false)) {
+        if(c == ' ' || c == '\t' || (c == '.' || c == ',' || c == ':' || c == ';') && (k7 - 1 < i3 || !Character.isDigit(ac[k7 - 1 - i1])) && (k7 + 1 >= i6 || !Character.isDigit(ac[(k7 + 1) - i1])) || (c == '/' || c == '-') && (k7 + 1 >= i6 || !Character.isDigit(ac[(k7 + 1) - i1])) || c >= '\u2E80' && isIdeographic(c, true) && k7 + 1 < i6 && (ac[(k7 + 1) - i1] < '\u2E80' || isIdeographic(ac[(k7 + 1) - i1], false)) || c < '\u2E80' && k7 + 1 < i6 && ac[(k7 + 1) - i1] >= '\u2E80' && !isIdeographic(c, true) && isIdeographic(ac[(k7 + 1) - i1], false)) {
             f4 = f3;
             j3 = k7 + 1;
             if(j5 < i4)
@@ -607,7 +686,7 @@ _L3:
         }
 _L7:
         if(mLineCount < mMaximumVisibleLineCount)
-            break MISSING_BLOCK_LABEL_1490;
+            break MISSING_BLOCK_LABEL_1565;
 _L2:
         l5 = i6;
           goto _L5
@@ -689,7 +768,7 @@ _L6:
         }
         k1;
         if(k1 != j)
-            break MISSING_BLOCK_LABEL_1749;
+            break MISSING_BLOCK_LABEL_1824;
         if((j == i || charsequence.charAt(j - 1) == '\n') && mLineCount < mMaximumVisibleLineCount) {
             textpaint.getFontMetricsInt(fontmetricsint);
             out(charsequence, j, j, fontmetricsint.ascent, fontmetricsint.descent, fontmetricsint.top, fontmetricsint.bottom, l, f, f1, null, null, fontmetricsint, false, flag2, null, 1, true, j, flag, flag1, null, null, i, truncateat, f2, 0.0F, textpaint, false);

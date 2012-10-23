@@ -55,13 +55,13 @@ public class AdnCacheManager {
     }
 
     public void handleUpdateAdnRecord(int i, AdnRecord adnrecord, AdnRecord adnrecord1) {
-        if(!adnrecord1.isEmpty() || i != 28474) goto _L2; else goto _L1
+        if(!adnrecord.isEmpty() || i != 28474) goto _L2; else goto _L1
 _L1:
         mFreeAdn = -1 + mFreeAdn;
 _L4:
         return;
 _L2:
-        if(adnrecord.isEmpty() && i == 28474)
+        if(adnrecord1.isEmpty() && i == 28474)
             mFreeAdn = 1 + mFreeAdn;
         if(true) goto _L4; else goto _L3
 _L3:

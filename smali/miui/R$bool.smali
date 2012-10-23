@@ -33,6 +33,8 @@
 
 .field public static final android_config_wimaxEnabled:I = 0x6090008
 
+.field public static final android_preferences_prefer_dual_pane:I = 0x6090013
+
 .field public static final config_enableUsbModeSelection:I = 0x6090000
 
 .field public static final config_has_antispam:I = 0x609000d

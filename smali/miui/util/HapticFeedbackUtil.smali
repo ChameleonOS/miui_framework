@@ -57,15 +57,15 @@
     .line 26
     new-array v0, v5, [Ljava/lang/String;
 
-    const-string/jumbo v1, "persist.sys.haptic.long.weak"
+    const-string/jumbo v1, "sys.haptic.long.weak"
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "persist.sys.haptic.long.normal"
+    const-string/jumbo v1, "sys.haptic.long.normal"
 
     aput-object v1, v0, v3
 
-    const-string/jumbo v1, "persist.sys.haptic.long.strong"
+    const-string/jumbo v1, "sys.haptic.long.strong"
 
     aput-object v1, v0, v4
 
@@ -74,15 +74,15 @@
     .line 32
     new-array v0, v5, [Ljava/lang/String;
 
-    const-string/jumbo v1, "persist.sys.haptic.tap.weak"
+    const-string/jumbo v1, "sys.haptic.tap.weak"
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "persist.sys.haptic.tap.normal"
+    const-string/jumbo v1, "sys.haptic.tap.normal"
 
     aput-object v1, v0, v3
 
-    const-string/jumbo v1, "persist.sys.haptic.tap.strong"
+    const-string/jumbo v1, "sys.haptic.tap.strong"
 
     aput-object v1, v0, v4
 
@@ -91,15 +91,15 @@
     .line 38
     new-array v0, v5, [Ljava/lang/String;
 
-    const-string/jumbo v1, "persist.sys.haptic.down.weak"
+    const-string/jumbo v1, "sys.haptic.down.weak"
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "persist.sys.haptic.down.normal"
+    const-string/jumbo v1, "sys.haptic.down.normal"
 
     aput-object v1, v0, v3
 
-    const-string/jumbo v1, "persist.sys.haptic.down.strong"
+    const-string/jumbo v1, "sys.haptic.down.strong"
 
     aput-object v1, v0, v4
 
@@ -108,15 +108,15 @@
     .line 44
     new-array v0, v5, [Ljava/lang/String;
 
-    const-string/jumbo v1, "persist.sys.haptic.up.weak"
+    const-string/jumbo v1, "sys.haptic.up.weak"
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "persist.sys.haptic.up.normal"
+    const-string/jumbo v1, "sys.haptic.up.normal"
 
     aput-object v1, v0, v3
 
-    const-string/jumbo v1, "persist.sys.haptic.up.strong"
+    const-string/jumbo v1, "sys.haptic.up.strong"
 
     aput-object v1, v0, v4
 

@@ -12,7 +12,7 @@ public class IntentScope {
     public IntentScope() {
     }
 
-    public static Intent processInentScope(Context context, Intent intent, String s) {
+    public static Intent processIntentScope(Context context, Intent intent, String s) {
         if(intent != null)
             intent.setPackage(s);
         return intent;

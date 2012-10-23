@@ -91,7 +91,7 @@
 
 .field public static final android_ic_lockscreen_chevron_right:I = 0x602014e
 
-.field public static final android_ic_lockscreen_glowdot:I = 0x6020203
+.field public static final android_ic_lockscreen_glowdot:I = 0x602020a
 
 .field public static final android_ic_lockscreen_handle_pressed:I = 0x6020150
 
@@ -142,6 +142,8 @@
 .field public static final android_overscroll_edge:I = 0x602013c
 
 .field public static final android_overscroll_glow:I = 0x602013d
+
+.field public static final android_quickcontact_badge_overlay_dark:I = 0x602020b
 
 .field public static final android_scrubber_control_disabled_holo:I = 0x6020143
 
@@ -419,7 +421,7 @@
 
 .field public static final ic_key_home:I = 0x6020120
 
-.field public static final ic_list_sync_anim:I = 0x6020204
+.field public static final ic_list_sync_anim:I = 0x6020203
 
 .field public static final ic_lock_airplane_mode:I = 0x602011a
 
@@ -489,9 +491,9 @@
 
 .field public static final ic_menu_trash_holo_light:I = 0x6020116
 
-.field public static final ic_sync_anim_holo:I = 0x6020205
+.field public static final ic_sync_anim_holo:I = 0x6020204
 
-.field public static final ic_sync_error_holo:I = 0x6020206
+.field public static final ic_sync_error_holo:I = 0x6020205
 
 .field public static final ic_vidcontrol_pause:I = 0x60201d7
 
@@ -871,7 +873,7 @@
 
 .field public static final resource_preview_empty:I = 0x60201ba
 
-.field public static final resource_preview_font_bg:I = 0x6020207
+.field public static final resource_preview_font_bg:I = 0x6020206
 
 .field public static final resource_ringtone_play_bg:I = 0x60201f3
 
@@ -1003,6 +1005,12 @@
 
 .field public static final sortable_list_dragging_item_shadow:I = 0x6020108
 
+.field public static final spinner_bg:I = 0x6020207
+
+.field public static final spinner_bg_n:I = 0x6020208
+
+.field public static final spinner_bg_p:I = 0x6020209
+
 .field public static final stat_sys_call_record:I = 0x6020109
 
 .field public static final tab_bg:I = 0x60201b8
@@ -1061,7 +1069,7 @@
     .registers 1
 
     .prologue
-    .line 502
+    .line 504
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final ACCOUNT:Ljava/lang/String; = "account"
+
 .field public static final ADDRESSES:Ljava/lang/String; = "addresses"
 
 .field public static final BIND_ID:Ljava/lang/String; = "bind_id"
@@ -47,7 +49,7 @@
     .registers 1
 
     .prologue
-    .line 222
+    .line 228
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -209,6 +209,11 @@ _L1:
         mContext.sendOrderedBroadcast(intent, s, mResultReceiver, this, -1, null, null);
     }
 
+    public void dispatch(Intent intent, String s, BroadcastReceiver broadcastreceiver) {
+        mWakeLock.acquire(5000L);
+        mContext.sendOrderedBroadcast(intent, s, broadcastreceiver, this, -1, null, null);
+    }
+
     protected void dispatchBroadcastMessage(SmsCbMessage smscbmessage) {
         if(smscbmessage.isEmergencyMessage()) {
             Intent intent = new Intent("android.provider.Telephony.SMS_EMERGENCY_CB_RECEIVED");
