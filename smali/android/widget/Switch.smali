@@ -80,7 +80,7 @@
     .registers 3
 
     .prologue
-    .line 101
+    .line 112
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -101,12 +101,12 @@
     .parameter "context"
 
     .prologue
-    .line 111
+    .line 122
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/Switch;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 112
+    .line 123
     return-void
 .end method
 
@@ -116,12 +116,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 122
+    .line 133
     const v0, 0x10103da
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/Switch;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 123
+    .line 134
     return-void
 .end method
 
@@ -136,36 +136,36 @@
 
     const/4 v6, 0x0
 
-    .line 135
+    .line 146
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/CompoundButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 79
+    .line 90
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v4
 
     iput-object v4, p0, Landroid/widget/Switch;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 98
+    .line 109
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v4, p0, Landroid/widget/Switch;->mTempRect:Landroid/graphics/Rect;
 
-    .line 137
+    .line 148
     new-instance v4, Landroid/text/TextPaint;
 
     invoke-direct {v4, v7}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object v4, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
-    .line 138
+    .line 149
     invoke-virtual {p0}, Landroid/widget/Switch;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 139
+    .line 150
     .local v3, res:Landroid/content/res/Resources;
     iget-object v4, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
@@ -177,7 +177,7 @@
 
     iput v5, v4, Landroid/text/TextPaint;->density:F
 
-    .line 140
+    .line 151
     iget-object v4, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v3}, Landroid/content/res/Resources;->getCompatibilityInfo()Landroid/content/res/CompatibilityInfo;
@@ -188,14 +188,14 @@
 
     invoke-virtual {v4, v5}, Landroid/text/TextPaint;->setCompatibilityScaling(F)V
 
-    .line 142
+    .line 153
     sget-object v4, Lcom/android/internal/R$styleable;->Switch:[I
 
     invoke-virtual {p1, p2, v4, p3, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 145
+    .line 156
     .local v0, a:Landroid/content/res/TypedArray;
     const/4 v4, 0x2
 
@@ -205,7 +205,7 @@
 
     iput-object v4, p0, Landroid/widget/Switch;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 146
+    .line 157
     const/4 v4, 0x4
 
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -214,21 +214,21 @@
 
     iput-object v4, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 147
+    .line 158
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v4
 
     iput-object v4, p0, Landroid/widget/Switch;->mTextOn:Ljava/lang/CharSequence;
 
-    .line 148
+    .line 159
     invoke-virtual {v0, v7}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v4
 
     iput-object v4, p0, Landroid/widget/Switch;->mTextOff:Ljava/lang/CharSequence;
 
-    .line 149
+    .line 160
     const/4 v4, 0x7
 
     invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -237,7 +237,7 @@
 
     iput v4, p0, Landroid/widget/Switch;->mThumbTextPadding:I
 
-    .line 151
+    .line 162
     const/4 v4, 0x5
 
     invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -246,7 +246,7 @@
 
     iput v4, p0, Landroid/widget/Switch;->mSwitchMinWidth:I
 
-    .line 153
+    .line 164
     const/4 v4, 0x6
 
     invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -255,30 +255,30 @@
 
     iput v4, p0, Landroid/widget/Switch;->mSwitchPadding:I
 
-    .line 156
+    .line 167
     const/4 v4, 0x3
 
     invoke-virtual {v0, v4, v6}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
-    .line 158
+    .line 169
     .local v1, appearance:I
     if-eqz v1, :cond_71
 
-    .line 159
+    .line 170
     invoke-virtual {p0, p1, v1}, Landroid/widget/Switch;->setSwitchTextAppearance(Landroid/content/Context;I)V
 
-    .line 161
+    .line 172
     :cond_71
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 163
+    .line 174
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v2
 
-    .line 164
+    .line 175
     .local v2, config:Landroid/view/ViewConfiguration;
     invoke-virtual {v2}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
@@ -286,24 +286,24 @@
 
     iput v4, p0, Landroid/widget/Switch;->mTouchSlop:I
 
-    .line 165
+    .line 176
     invoke-virtual {v2}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
     move-result v4
 
     iput v4, p0, Landroid/widget/Switch;->mMinFlingVelocity:I
 
-    .line 168
+    .line 179
     invoke-virtual {p0}, Landroid/widget/Switch;->refreshDrawableState()V
 
-    .line 169
+    .line 180
     invoke-virtual {p0}, Landroid/widget/Switch;->isChecked()Z
 
     move-result v4
 
     invoke-virtual {p0, v4}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 170
+    .line 181
     return-void
 .end method
 
@@ -312,10 +312,10 @@
     .parameter "newCheckedState"
 
     .prologue
-    .line 668
+    .line 679
     invoke-virtual {p0, p1}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 669
+    .line 680
     return-void
 .end method
 
@@ -324,24 +324,24 @@
     .parameter "ev"
 
     .prologue
-    .line 631
+    .line 642
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 632
+    .line 643
     .local v0, cancel:Landroid/view/MotionEvent;
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->setAction(I)V
 
-    .line 633
+    .line 644
     invoke-super {p0, v0}, Landroid/widget/CompoundButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 634
+    .line 645
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 635
+    .line 646
     return-void
 .end method
 
@@ -349,7 +349,7 @@
     .registers 3
 
     .prologue
-    .line 672
+    .line 683
     iget v0, p0, Landroid/widget/Switch;->mThumbPosition:F
 
     invoke-direct {p0}, Landroid/widget/Switch;->getThumbScrollRange()I
@@ -379,19 +379,19 @@
     .registers 3
 
     .prologue
-    .line 773
+    .line 784
     iget-object v0, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v0, :cond_6
 
-    .line 774
+    .line 785
     const/4 v0, 0x0
 
-    .line 777
+    .line 788
     :goto_5
     return v0
 
-    .line 776
+    .line 787
     :cond_6
     iget-object v0, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -399,7 +399,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 777
+    .line 788
     iget v0, p0, Landroid/widget/Switch;->mSwitchWidth:I
 
     iget v1, p0, Landroid/widget/Switch;->mThumbWidth:I
@@ -427,21 +427,21 @@
     .parameter "y"
 
     .prologue
-    .line 554
+    .line 565
     iget-object v4, p0, Landroid/widget/Switch;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
     iget-object v5, p0, Landroid/widget/Switch;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 555
+    .line 566
     iget v4, p0, Landroid/widget/Switch;->mSwitchTop:I
 
     iget v5, p0, Landroid/widget/Switch;->mTouchSlop:I
 
     sub-int v3, v4, v5
 
-    .line 556
+    .line 567
     .local v3, thumbTop:I
     iget v4, p0, Landroid/widget/Switch;->mSwitchLeft:I
 
@@ -459,7 +459,7 @@
 
     sub-int v1, v4, v5
 
-    .line 557
+    .line 568
     .local v1, thumbLeft:I
     iget v4, p0, Landroid/widget/Switch;->mThumbWidth:I
 
@@ -481,7 +481,7 @@
 
     add-int v2, v4, v5
 
-    .line 559
+    .line 570
     .local v2, thumbRight:I
     iget v4, p0, Landroid/widget/Switch;->mSwitchBottom:I
 
@@ -489,7 +489,7 @@
 
     add-int v0, v4, v5
 
-    .line 560
+    .line 571
     .local v0, thumbBottom:I
     int-to-float v4, v1
 
@@ -531,7 +531,7 @@
     .parameter "text"
 
     .prologue
-    .line 541
+    .line 552
     iget-object v0, p0, Landroid/widget/Switch;->mSwitchTransformationMethod:Landroid/text/method/TransformationMethod2;
 
     if-eqz v0, :cond_24
@@ -542,7 +542,7 @@
 
     move-result-object v1
 
-    .line 545
+    .line 556
     .local v1, transformed:Ljava/lang/CharSequence;
     :goto_a
     new-instance v0, Landroid/text/StaticLayout;
@@ -579,7 +579,7 @@
     :cond_24
     move-object v1, p1
 
-    .line 541
+    .line 552
     goto :goto_a
 .end method
 
@@ -589,41 +589,41 @@
     .parameter "styleIndex"
 
     .prologue
-    .line 226
+    .line 237
     const/4 v0, 0x0
 
-    .line 227
+    .line 238
     .local v0, tf:Landroid/graphics/Typeface;
     packed-switch p1, :pswitch_data_12
 
-    .line 241
+    .line 252
     :goto_4
     invoke-virtual {p0, v0, p2}, Landroid/widget/Switch;->setSwitchTypeface(Landroid/graphics/Typeface;I)V
 
-    .line 242
+    .line 253
     return-void
 
-    .line 229
+    .line 240
     :pswitch_8
     sget-object v0, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
-    .line 230
+    .line 241
     goto :goto_4
 
-    .line 233
+    .line 244
     :pswitch_b
     sget-object v0, Landroid/graphics/Typeface;->SERIF:Landroid/graphics/Typeface;
 
-    .line 234
+    .line 245
     goto :goto_4
 
-    .line 237
+    .line 248
     :pswitch_e
     sget-object v0, Landroid/graphics/Typeface;->MONOSPACE:Landroid/graphics/Typeface;
 
     goto :goto_4
 
-    .line 227
+    .line 238
     nop
 
     :pswitch_data_12
@@ -643,10 +643,10 @@
 
     const/4 v4, 0x0
 
-    .line 643
+    .line 654
     iput v4, p0, Landroid/widget/Switch;->mTouchMode:I
 
-    .line 645
+    .line 656
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v5
@@ -661,29 +661,29 @@
 
     move v0, v3
 
-    .line 647
+    .line 658
     .local v0, commitChange:Z
     :goto_11
     invoke-direct {p0, p1}, Landroid/widget/Switch;->cancelSuperTouch(Landroid/view/MotionEvent;)V
 
-    .line 649
+    .line 660
     if-eqz v0, :cond_41
 
-    .line 651
+    .line 662
     iget-object v5, p0, Landroid/widget/Switch;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     const/16 v6, 0x3e8
 
     invoke-virtual {v5, v6}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 652
+    .line 663
     iget-object v5, p0, Landroid/widget/Switch;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v5}, Landroid/view/VelocityTracker;->getXVelocity()F
 
     move-result v2
 
-    .line 653
+    .line 664
     .local v2, xvel:F
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
@@ -697,7 +697,7 @@
 
     if-lez v5, :cond_3c
 
-    .line 654
+    .line 665
     const/4 v5, 0x0
 
     cmpl-float v5, v2, v5
@@ -706,12 +706,12 @@
 
     move v1, v3
 
-    .line 658
+    .line 669
     .local v1, newState:Z
     :goto_34
     invoke-direct {p0, v1}, Landroid/widget/Switch;->animateThumbToCheckedState(Z)V
 
-    .line 662
+    .line 673
     .end local v1           #newState:Z
     .end local v2           #xvel:F
     :goto_37
@@ -721,7 +721,7 @@
     :cond_38
     move v0, v4
 
-    .line 645
+    .line 656
     goto :goto_11
 
     .restart local v0       #commitChange:Z
@@ -729,10 +729,10 @@
     :cond_3a
     move v1, v4
 
-    .line 654
+    .line 665
     goto :goto_34
 
-    .line 656
+    .line 667
     :cond_3c
     invoke-direct {p0}, Landroid/widget/Switch;->getTargetCheckedState()Z
 
@@ -741,7 +741,7 @@
     .restart local v1       #newState:Z
     goto :goto_34
 
-    .line 660
+    .line 671
     .end local v1           #newState:Z
     .end local v2           #xvel:F
     :cond_41
@@ -760,15 +760,15 @@
     .registers 3
 
     .prologue
-    .line 791
+    .line 802
     invoke-super {p0}, Landroid/widget/CompoundButton;->drawableStateChanged()V
 
-    .line 793
+    .line 804
     invoke-virtual {p0}, Landroid/widget/Switch;->getDrawableState()[I
 
     move-result-object v0
 
-    .line 797
+    .line 808
     .local v0, myDrawableState:[I
     iget-object v1, p0, Landroid/widget/Switch;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -778,7 +778,7 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 798
+    .line 809
     :cond_10
     iget-object v1, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -788,11 +788,11 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 800
+    .line 811
     :cond_19
     invoke-virtual {p0}, Landroid/widget/Switch;->invalidate()V
 
-    .line 801
+    .line 812
     return-void
 .end method
 
@@ -800,7 +800,7 @@
     .registers 4
 
     .prologue
-    .line 765
+    .line 776
     invoke-super {p0}, Landroid/widget/CompoundButton;->getCompoundPaddingRight()I
 
     move-result v1
@@ -809,7 +809,7 @@
 
     add-int v0, v1, v2
 
-    .line 766
+    .line 777
     .local v0, padding:I
     invoke-virtual {p0}, Landroid/widget/Switch;->getText()Ljava/lang/CharSequence;
 
@@ -821,12 +821,12 @@
 
     if-nez v1, :cond_15
 
-    .line 767
+    .line 778
     iget v1, p0, Landroid/widget/Switch;->mSwitchPadding:I
 
     add-int/2addr v0, v1
 
-    .line 769
+    .line 780
     :cond_15
     return v0
 .end method
@@ -835,7 +835,7 @@
     .registers 2
 
     .prologue
-    .line 335
+    .line 346
     iget v0, p0, Landroid/widget/Switch;->mSwitchMinWidth:I
 
     return v0
@@ -845,7 +845,7 @@
     .registers 2
 
     .prologue
-    .line 310
+    .line 321
     iget v0, p0, Landroid/widget/Switch;->mSwitchPadding:I
 
     return v0
@@ -855,7 +855,7 @@
     .registers 2
 
     .prologue
-    .line 457
+    .line 468
     iget-object v0, p0, Landroid/widget/Switch;->mTextOff:Ljava/lang/CharSequence;
 
     return-object v0
@@ -865,7 +865,7 @@
     .registers 2
 
     .prologue
-    .line 438
+    .line 449
     iget-object v0, p0, Landroid/widget/Switch;->mTextOn:Ljava/lang/CharSequence;
 
     return-object v0
@@ -875,7 +875,7 @@
     .registers 2
 
     .prologue
-    .line 429
+    .line 440
     iget-object v0, p0, Landroid/widget/Switch;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -885,7 +885,7 @@
     .registers 2
 
     .prologue
-    .line 358
+    .line 369
     iget v0, p0, Landroid/widget/Switch;->mThumbTextPadding:I
 
     return v0
@@ -895,7 +895,7 @@
     .registers 2
 
     .prologue
-    .line 392
+    .line 403
     iget-object v0, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -905,20 +905,20 @@
     .registers 2
 
     .prologue
-    .line 810
+    .line 821
     invoke-super {p0}, Landroid/widget/CompoundButton;->jumpDrawablesToCurrentState()V
 
-    .line 811
+    .line 822
     iget-object v0, p0, Landroid/widget/Switch;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
-    .line 812
+    .line 823
     iget-object v0, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
 
-    .line 813
+    .line 824
     return-void
 .end method
 
@@ -927,14 +927,14 @@
     .parameter "extraSpace"
 
     .prologue
-    .line 782
+    .line 793
     add-int/lit8 v1, p1, 0x1
 
     invoke-super {p0, v1}, Landroid/widget/CompoundButton;->onCreateDrawableState(I)[I
 
     move-result-object v0
 
-    .line 783
+    .line 794
     .local v0, drawableState:[I
     invoke-virtual {p0}, Landroid/widget/Switch;->isChecked()Z
 
@@ -942,12 +942,12 @@
 
     if-eqz v1, :cond_11
 
-    .line 784
+    .line 795
     sget-object v1, Landroid/widget/Switch;->CHECKED_STATE_SET:[I
 
     invoke-static {v0, v1}, Landroid/widget/Switch;->mergeDrawableStates([I[I)[I
 
-    .line 786
+    .line 797
     :cond_11
     return-object v0
 .end method
@@ -957,33 +957,33 @@
     .parameter "canvas"
 
     .prologue
-    .line 719
+    .line 730
     invoke-super/range {p0 .. p1}, Landroid/widget/CompoundButton;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 722
+    .line 733
     move-object/from16 v0, p0
 
     iget v6, v0, Landroid/widget/Switch;->mSwitchLeft:I
 
-    .line 723
+    .line 734
     .local v6, switchLeft:I
     move-object/from16 v0, p0
 
     iget v9, v0, Landroid/widget/Switch;->mSwitchTop:I
 
-    .line 724
+    .line 735
     .local v9, switchTop:I
     move-object/from16 v0, p0
 
     iget v7, v0, Landroid/widget/Switch;->mSwitchRight:I
 
-    .line 725
+    .line 736
     .local v7, switchRight:I
     move-object/from16 v0, p0
 
     iget v1, v0, Landroid/widget/Switch;->mSwitchBottom:I
 
-    .line 727
+    .line 738
     .local v1, switchBottom:I
     move-object/from16 v0, p0
 
@@ -991,7 +991,7 @@
 
     invoke-virtual {v13, v6, v9, v7, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 728
+    .line 739
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
@@ -1000,10 +1000,10 @@
 
     invoke-virtual {v13, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 730
+    .line 741
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 732
+    .line 743
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
@@ -1014,7 +1014,7 @@
 
     invoke-virtual {v13, v14}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 733
+    .line 744
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/Switch;->mTempRect:Landroid/graphics/Rect;
@@ -1023,7 +1023,7 @@
 
     add-int v3, v6, v13
 
-    .line 734
+    .line 745
     .local v3, switchInnerLeft:I
     move-object/from16 v0, p0
 
@@ -1033,7 +1033,7 @@
 
     add-int v5, v9, v13
 
-    .line 735
+    .line 746
     .local v5, switchInnerTop:I
     move-object/from16 v0, p0
 
@@ -1043,7 +1043,7 @@
 
     sub-int v4, v7, v13
 
-    .line 736
+    .line 747
     .local v4, switchInnerRight:I
     move-object/from16 v0, p0
 
@@ -1053,13 +1053,13 @@
 
     sub-int v2, v1, v13
 
-    .line 737
+    .line 748
     .local v2, switchInnerBottom:I
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v3, v9, v4, v1}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 739
+    .line 750
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/Switch;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
@@ -1070,7 +1070,7 @@
 
     invoke-virtual {v13, v14}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 740
+    .line 751
     move-object/from16 v0, p0
 
     iget v13, v0, Landroid/widget/Switch;->mThumbPosition:F
@@ -1081,7 +1081,7 @@
 
     float-to-int v11, v13
 
-    .line 741
+    .line 752
     .local v11, thumbPos:I
     move-object/from16 v0, p0
 
@@ -1093,7 +1093,7 @@
 
     add-int v10, v13, v11
 
-    .line 742
+    .line 753
     .local v10, thumbLeft:I
     add-int v13, v3, v11
 
@@ -1111,7 +1111,7 @@
 
     add-int v12, v13, v14
 
-    .line 744
+    .line 755
     .local v12, thumbRight:I
     move-object/from16 v0, p0
 
@@ -1119,7 +1119,7 @@
 
     invoke-virtual {v13, v10, v9, v12, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 745
+    .line 756
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/Switch;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
@@ -1128,14 +1128,14 @@
 
     invoke-virtual {v13, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 748
+    .line 759
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/Switch;->mTextColors:Landroid/content/res/ColorStateList;
 
     if-eqz v13, :cond_b5
 
-    .line 749
+    .line 760
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
@@ -1164,7 +1164,7 @@
 
     invoke-virtual {v13, v14}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 752
+    .line 763
     :cond_b5
     move-object/from16 v0, p0
 
@@ -1176,7 +1176,7 @@
 
     iput-object v14, v13, Landroid/text/TextPaint;->drawableState:[I
 
-    .line 754
+    .line 765
     invoke-direct/range {p0 .. p0}, Landroid/widget/Switch;->getTargetCheckedState()Z
 
     move-result v13
@@ -1187,7 +1187,7 @@
 
     iget-object v8, v0, Landroid/widget/Switch;->mOnLayout:Landroid/text/Layout;
 
-    .line 756
+    .line 767
     .local v8, switchText:Landroid/text/Layout;
     :goto_c9
     add-int v13, v10, v12
@@ -1222,18 +1222,18 @@
 
     invoke-virtual {v0, v13, v14}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 758
+    .line 769
     move-object/from16 v0, p1
 
     invoke-virtual {v8, v0}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 760
+    .line 771
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 761
+    .line 772
     return-void
 
-    .line 754
+    .line 765
     .end local v8           #switchText:Landroid/text/Layout;
     :cond_ef
     move-object/from16 v0, p0
@@ -1248,10 +1248,10 @@
     .parameter "event"
 
     .prologue
-    .line 817
+    .line 828
     invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 818
+    .line 829
     const-class v0, Landroid/widget/Switch;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1260,7 +1260,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 819
+    .line 830
     return-void
 .end method
 
@@ -1269,10 +1269,10 @@
     .parameter "info"
 
     .prologue
-    .line 823
+    .line 834
     invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 824
+    .line 835
     const-class v3, Landroid/widget/Switch;
 
     invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -1281,7 +1281,7 @@
 
     invoke-virtual {p1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 825
+    .line 836
     invoke-virtual {p0}, Landroid/widget/Switch;->isChecked()Z
 
     move-result v3
@@ -1290,7 +1290,7 @@
 
     iget-object v2, p0, Landroid/widget/Switch;->mTextOn:Ljava/lang/CharSequence;
 
-    .line 826
+    .line 837
     .local v2, switchText:Ljava/lang/CharSequence;
     :goto_14
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1299,12 +1299,12 @@
 
     if-nez v3, :cond_27
 
-    .line 827
+    .line 838
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 828
+    .line 839
     .local v1, oldText:Ljava/lang/CharSequence;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1312,23 +1312,23 @@
 
     if-eqz v3, :cond_2b
 
-    .line 829
+    .line 840
     invoke-virtual {p1, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 836
+    .line 847
     .end local v1           #oldText:Ljava/lang/CharSequence;
     :cond_27
     :goto_27
     return-void
 
-    .line 825
+    .line 836
     .end local v2           #switchText:Ljava/lang/CharSequence;
     :cond_28
     iget-object v2, p0, Landroid/widget/Switch;->mTextOff:Ljava/lang/CharSequence;
 
     goto :goto_14
 
-    .line 831
+    .line 842
     .restart local v1       #oldText:Ljava/lang/CharSequence;
     .restart local v2       #switchText:Ljava/lang/CharSequence;
     :cond_2b
@@ -1336,7 +1336,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 832
+    .line 843
     .local v0, newText:Ljava/lang/StringBuilder;
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
@@ -1350,7 +1350,7 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 833
+    .line 844
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_27
@@ -1365,10 +1365,10 @@
     .parameter "bottom"
 
     .prologue
-    .line 684
+    .line 695
     invoke-super/range {p0 .. p5}, Landroid/widget/CompoundButton;->onLayout(ZIIII)V
 
-    .line 686
+    .line 697
     invoke-virtual {p0}, Landroid/widget/Switch;->isChecked()Z
 
     move-result v4
@@ -1384,7 +1384,7 @@
     :goto_e
     iput v4, p0, Landroid/widget/Switch;->mThumbPosition:F
 
-    .line 688
+    .line 699
     invoke-virtual {p0}, Landroid/widget/Switch;->getWidth()I
 
     move-result v4
@@ -1395,21 +1395,21 @@
 
     sub-int v2, v4, v5
 
-    .line 689
+    .line 700
     .local v2, switchRight:I
     iget v4, p0, Landroid/widget/Switch;->mSwitchWidth:I
 
     sub-int v1, v2, v4
 
-    .line 690
+    .line 701
     .local v1, switchLeft:I
     const/4 v3, 0x0
 
-    .line 691
+    .line 702
     .local v3, switchTop:I
     const/4 v0, 0x0
 
-    .line 692
+    .line 703
     .local v0, switchBottom:I
     invoke-virtual {p0}, Landroid/widget/Switch;->getGravity()I
 
@@ -1419,33 +1419,33 @@
 
     sparse-switch v4, :sswitch_data_66
 
-    .line 695
+    .line 706
     invoke-virtual {p0}, Landroid/widget/Switch;->getPaddingTop()I
 
     move-result v3
 
-    .line 696
+    .line 707
     iget v4, p0, Landroid/widget/Switch;->mSwitchHeight:I
 
     add-int v0, v3, v4
 
-    .line 711
+    .line 722
     :goto_31
     iput v1, p0, Landroid/widget/Switch;->mSwitchLeft:I
 
-    .line 712
+    .line 723
     iput v3, p0, Landroid/widget/Switch;->mSwitchTop:I
 
-    .line 713
+    .line 724
     iput v0, p0, Landroid/widget/Switch;->mSwitchBottom:I
 
-    .line 714
+    .line 725
     iput v2, p0, Landroid/widget/Switch;->mSwitchRight:I
 
-    .line 715
+    .line 726
     return-void
 
-    .line 686
+    .line 697
     .end local v0           #switchBottom:I
     .end local v1           #switchLeft:I
     .end local v2           #switchRight:I
@@ -1455,7 +1455,7 @@
 
     goto :goto_e
 
-    .line 700
+    .line 711
     .restart local v0       #switchBottom:I
     .restart local v1       #switchLeft:I
     .restart local v2       #switchRight:I
@@ -1485,15 +1485,15 @@
 
     sub-int v3, v4, v5
 
-    .line 702
+    .line 713
     iget v4, p0, Landroid/widget/Switch;->mSwitchHeight:I
 
     add-int v0, v3, v4
 
-    .line 703
+    .line 714
     goto :goto_31
 
-    .line 706
+    .line 717
     :sswitch_57
     invoke-virtual {p0}, Landroid/widget/Switch;->getHeight()I
 
@@ -1505,14 +1505,14 @@
 
     sub-int v0, v4, v5
 
-    .line 707
+    .line 718
     iget v4, p0, Landroid/widget/Switch;->mSwitchHeight:I
 
     sub-int v3, v0, v4
 
     goto :goto_31
 
-    .line 692
+    .line 703
     :sswitch_data_66
     .sparse-switch
         0x10 -> :sswitch_3c
@@ -1526,36 +1526,36 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 472
+    .line 483
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v6
 
-    .line 473
+    .line 484
     .local v6, widthMode:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
-    .line 474
+    .line 485
     .local v0, heightMode:I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v7
 
-    .line 475
+    .line 486
     .local v7, widthSize:I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 478
+    .line 489
     .local v1, heightSize:I
     iget-object v8, p0, Landroid/widget/Switch;->mOnLayout:Landroid/text/Layout;
 
     if-nez v8, :cond_1c
 
-    .line 479
+    .line 490
     iget-object v8, p0, Landroid/widget/Switch;->mTextOn:Ljava/lang/CharSequence;
 
     invoke-direct {p0, v8}, Landroid/widget/Switch;->makeLayout(Ljava/lang/CharSequence;)Landroid/text/Layout;
@@ -1564,13 +1564,13 @@
 
     iput-object v8, p0, Landroid/widget/Switch;->mOnLayout:Landroid/text/Layout;
 
-    .line 481
+    .line 492
     :cond_1c
     iget-object v8, p0, Landroid/widget/Switch;->mOffLayout:Landroid/text/Layout;
 
     if-nez v8, :cond_28
 
-    .line 482
+    .line 493
     iget-object v8, p0, Landroid/widget/Switch;->mTextOff:Ljava/lang/CharSequence;
 
     invoke-direct {p0, v8}, Landroid/widget/Switch;->makeLayout(Ljava/lang/CharSequence;)Landroid/text/Layout;
@@ -1579,7 +1579,7 @@
 
     iput-object v8, p0, Landroid/widget/Switch;->mOffLayout:Landroid/text/Layout;
 
-    .line 485
+    .line 496
     :cond_28
     iget-object v8, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -1587,7 +1587,7 @@
 
     invoke-virtual {v8, v9}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 486
+    .line 497
     iget-object v8, p0, Landroid/widget/Switch;->mOnLayout:Landroid/text/Layout;
 
     invoke-virtual {v8}, Landroid/text/Layout;->getWidth()I
@@ -1604,7 +1604,7 @@
 
     move-result v2
 
-    .line 487
+    .line 498
     .local v2, maxTextWidth:I
     iget v8, p0, Landroid/widget/Switch;->mSwitchMinWidth:I
 
@@ -1632,7 +1632,7 @@
 
     move-result v5
 
-    .line 489
+    .line 500
     .local v5, switchWidth:I
     iget-object v8, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -1640,7 +1640,7 @@
 
     move-result v4
 
-    .line 491
+    .line 502
     .local v4, switchHeight:I
     iget v8, p0, Landroid/widget/Switch;->mThumbTextPadding:I
 
@@ -1650,84 +1650,84 @@
 
     iput v8, p0, Landroid/widget/Switch;->mThumbWidth:I
 
-    .line 493
+    .line 504
     sparse-switch v6, :sswitch_data_8c
 
-    .line 507
+    .line 518
     :goto_66
     sparse-switch v0, :sswitch_data_96
 
-    .line 521
+    .line 532
     :goto_69
     iput v5, p0, Landroid/widget/Switch;->mSwitchWidth:I
 
-    .line 522
+    .line 533
     iput v4, p0, Landroid/widget/Switch;->mSwitchHeight:I
 
-    .line 524
+    .line 535
     invoke-super {p0, p1, p2}, Landroid/widget/CompoundButton;->onMeasure(II)V
 
-    .line 525
+    .line 536
     invoke-virtual {p0}, Landroid/widget/Switch;->getMeasuredHeight()I
 
     move-result v3
 
-    .line 526
+    .line 537
     .local v3, measuredHeight:I
     if-ge v3, v4, :cond_7d
 
-    .line 527
+    .line 538
     invoke-virtual {p0}, Landroid/widget/Switch;->getMeasuredWidthAndState()I
 
     move-result v8
 
     invoke-virtual {p0, v8, v4}, Landroid/widget/Switch;->setMeasuredDimension(II)V
 
-    .line 529
+    .line 540
     :cond_7d
     return-void
 
-    .line 495
+    .line 506
     .end local v3           #measuredHeight:I
     :sswitch_7e
     invoke-static {v7, v5}, Ljava/lang/Math;->min(II)I
 
     move-result v7
 
-    .line 496
+    .line 507
     goto :goto_66
 
-    .line 499
+    .line 510
     :sswitch_83
     move v7, v5
 
-    .line 500
+    .line 511
     goto :goto_66
 
-    .line 509
+    .line 520
     :sswitch_85
     invoke-static {v1, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    .line 510
+    .line 521
     goto :goto_69
 
-    .line 513
+    .line 524
     :sswitch_8a
     move v1, v4
 
-    .line 514
+    .line 525
     goto :goto_69
 
-    .line 493
+    .line 504
     :sswitch_data_8c
     .sparse-switch
         -0x80000000 -> :sswitch_7e
         0x0 -> :sswitch_83
     .end sparse-switch
 
-    .line 507
+    .line 518
     :sswitch_data_96
     .sparse-switch
         -0x80000000 -> :sswitch_85
@@ -1740,10 +1740,10 @@
     .parameter "event"
 
     .prologue
-    .line 533
+    .line 544
     invoke-super {p0, p1}, Landroid/widget/CompoundButton;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 534
+    .line 545
     invoke-virtual {p0}, Landroid/widget/Switch;->isChecked()Z
 
     move-result v1
@@ -1756,7 +1756,7 @@
 
     move-result-object v0
 
-    .line 535
+    .line 546
     .local v0, text:Ljava/lang/CharSequence;
     :goto_f
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1765,18 +1765,18 @@
 
     if-nez v1, :cond_1c
 
-    .line 536
+    .line 547
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 538
+    .line 549
     :cond_1c
     return-void
 
-    .line 534
+    .line 545
     .end local v0           #text:Ljava/lang/CharSequence;
     :cond_1d
     iget-object v1, p0, Landroid/widget/Switch;->mOffLayout:Landroid/text/Layout;
@@ -1797,21 +1797,21 @@
 
     const/4 v5, 0x1
 
-    .line 565
+    .line 576
     iget-object v6, p0, Landroid/widget/Switch;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v6, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 566
+    .line 577
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 567
+    .line 578
     .local v0, action:I
     packed-switch v0, :pswitch_data_a2
 
-    .line 627
+    .line 638
     :cond_e
     :goto_e
     :pswitch_e
@@ -1823,19 +1823,19 @@
     :goto_12
     return v5
 
-    .line 569
+    .line 580
     :pswitch_13
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
 
-    .line 570
+    .line 581
     .local v3, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
 
-    .line 571
+    .line 582
     .local v4, y:F
     invoke-virtual {p0}, Landroid/widget/Switch;->isEnabled()Z
 
@@ -1849,18 +1849,18 @@
 
     if-eqz v6, :cond_e
 
-    .line 572
+    .line 583
     iput v5, p0, Landroid/widget/Switch;->mTouchMode:I
 
-    .line 573
+    .line 584
     iput v3, p0, Landroid/widget/Switch;->mTouchX:F
 
-    .line 574
+    .line 585
     iput v4, p0, Landroid/widget/Switch;->mTouchY:F
 
     goto :goto_e
 
-    .line 580
+    .line 591
     .end local v3           #x:F
     .end local v4           #y:F
     :pswitch_2e
@@ -1870,19 +1870,19 @@
 
     goto :goto_e
 
-    .line 586
+    .line 597
     :pswitch_34
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v3
 
-    .line 587
+    .line 598
     .restart local v3       #x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
 
-    .line 588
+    .line 599
     .restart local v4       #y:F
     iget v6, p0, Landroid/widget/Switch;->mTouchX:F
 
@@ -1916,26 +1916,26 @@
 
     if-lez v6, :cond_e
 
-    .line 590
+    .line 601
     :cond_5a
     iput v8, p0, Landroid/widget/Switch;->mTouchMode:I
 
-    .line 591
+    .line 602
     invoke-virtual {p0}, Landroid/widget/Switch;->getParent()Landroid/view/ViewParent;
 
     move-result-object v6
 
     invoke-interface {v6, v5}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 592
+    .line 603
     iput v3, p0, Landroid/widget/Switch;->mTouchX:F
 
-    .line 593
+    .line 604
     iput v4, p0, Landroid/widget/Switch;->mTouchY:F
 
     goto :goto_12
 
-    .line 600
+    .line 611
     .end local v3           #x:F
     .end local v4           #y:F
     :pswitch_68
@@ -1943,13 +1943,13 @@
 
     move-result v3
 
-    .line 601
+    .line 612
     .restart local v3       #x:F
     iget v6, p0, Landroid/widget/Switch;->mTouchX:F
 
     sub-float v1, v3, v6
 
-    .line 602
+    .line 613
     .local v1, dx:F
     const/4 v6, 0x0
 
@@ -1971,7 +1971,7 @@
 
     move-result v2
 
-    .line 604
+    .line 615
     .local v2, newPos:F
     iget v6, p0, Landroid/widget/Switch;->mThumbPosition:F
 
@@ -1979,18 +1979,18 @@
 
     if-eqz v6, :cond_12
 
-    .line 605
+    .line 616
     iput v2, p0, Landroid/widget/Switch;->mThumbPosition:F
 
-    .line 606
+    .line 617
     iput v3, p0, Landroid/widget/Switch;->mTouchX:F
 
-    .line 607
+    .line 618
     invoke-virtual {p0}, Landroid/widget/Switch;->invalidate()V
 
     goto :goto_12
 
-    .line 617
+    .line 628
     .end local v1           #dx:F
     .end local v2           #newPos:F
     .end local v3           #x:F
@@ -1999,25 +1999,25 @@
 
     if-ne v6, v8, :cond_98
 
-    .line 618
+    .line 629
     invoke-direct {p0, p1}, Landroid/widget/Switch;->stopDrag(Landroid/view/MotionEvent;)V
 
     goto/16 :goto_12
 
-    .line 621
+    .line 632
     :cond_98
     const/4 v5, 0x0
 
     iput v5, p0, Landroid/widget/Switch;->mTouchMode:I
 
-    .line 622
+    .line 633
     iget-object v5, p0, Landroid/widget/Switch;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v5}, Landroid/view/VelocityTracker;->clear()V
 
     goto/16 :goto_e
 
-    .line 567
+    .line 578
     :pswitch_data_a2
     .packed-switch 0x0
         :pswitch_13
@@ -2026,7 +2026,7 @@
         :pswitch_8f
     .end packed-switch
 
-    .line 580
+    .line 591
     :pswitch_data_ae
     .packed-switch 0x0
         :pswitch_e
@@ -2040,10 +2040,10 @@
     .parameter "checked"
 
     .prologue
-    .line 677
+    .line 688
     invoke-super {p0, p1}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    .line 678
+    .line 689
     if-eqz p1, :cond_10
 
     invoke-direct {p0}, Landroid/widget/Switch;->getThumbScrollRange()I
@@ -2055,13 +2055,13 @@
     :goto_a
     iput v0, p0, Landroid/widget/Switch;->mThumbPosition:F
 
-    .line 679
+    .line 690
     invoke-virtual {p0}, Landroid/widget/Switch;->invalidate()V
 
-    .line 680
+    .line 691
     return-void
 
-    .line 678
+    .line 689
     :cond_10
     const/4 v0, 0x0
 
@@ -2073,13 +2073,13 @@
     .parameter "pixels"
 
     .prologue
-    .line 322
+    .line 333
     iput p1, p0, Landroid/widget/Switch;->mSwitchMinWidth:I
 
-    .line 323
+    .line 334
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 324
+    .line 335
     return-void
 .end method
 
@@ -2088,13 +2088,13 @@
     .parameter "pixels"
 
     .prologue
-    .line 298
+    .line 309
     iput p1, p0, Landroid/widget/Switch;->mSwitchPadding:I
 
-    .line 299
+    .line 310
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 300
+    .line 311
     return-void
 .end method
 
@@ -2110,14 +2110,14 @@
 
     const/4 v8, 0x0
 
-    .line 179
+    .line 190
     sget-object v6, Lcom/android/internal/R$styleable;->TextAppearance:[I
 
     invoke-virtual {p1, p2, v6}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
     move-result-object v1
 
-    .line 186
+    .line 197
     .local v1, appearance:Landroid/content/res/TypedArray;
     const/4 v6, 0x3
 
@@ -2125,24 +2125,24 @@
 
     move-result-object v2
 
-    .line 188
+    .line 199
     .local v2, colors:Landroid/content/res/ColorStateList;
     if-eqz v2, :cond_53
 
-    .line 189
+    .line 200
     iput-object v2, p0, Landroid/widget/Switch;->mTextColors:Landroid/content/res/ColorStateList;
 
-    .line 195
+    .line 206
     :goto_12
     invoke-virtual {v1, v8, v8}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v4
 
-    .line 197
+    .line 208
     .local v4, ts:I
     if-eqz v4, :cond_2c
 
-    .line 198
+    .line 209
     int-to-float v6, v4
 
     iget-object v7, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
@@ -2155,23 +2155,23 @@
 
     if-eqz v6, :cond_2c
 
-    .line 199
+    .line 210
     iget-object v6, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
     int-to-float v7, v4
 
     invoke-virtual {v6, v7}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 200
+    .line 211
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 206
+    .line 217
     :cond_2c
     invoke-virtual {v1, v10, v9}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v5
 
-    .line 208
+    .line 219
     .local v5, typefaceIndex:I
     const/4 v6, 0x2
 
@@ -2179,22 +2179,22 @@
 
     move-result v3
 
-    .line 211
+    .line 222
     .local v3, styleIndex:I
     invoke-direct {p0, v5, v3}, Landroid/widget/Switch;->setSwitchTypefaceByIndex(II)V
 
-    .line 213
+    .line 224
     const/4 v6, 0x7
 
     invoke-virtual {v1, v6, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v0
 
-    .line 215
+    .line 226
     .local v0, allCaps:Z
     if-eqz v0, :cond_5a
 
-    .line 216
+    .line 227
     new-instance v6, Landroid/text/method/AllCapsTransformationMethod;
 
     invoke-virtual {p0}, Landroid/widget/Switch;->getContext()Landroid/content/Context;
@@ -2205,19 +2205,19 @@
 
     iput-object v6, p0, Landroid/widget/Switch;->mSwitchTransformationMethod:Landroid/text/method/TransformationMethod2;
 
-    .line 217
+    .line 228
     iget-object v6, p0, Landroid/widget/Switch;->mSwitchTransformationMethod:Landroid/text/method/TransformationMethod2;
 
     invoke-interface {v6, v10}, Landroid/text/method/TransformationMethod2;->setLengthChangesAllowed(Z)V
 
-    .line 222
+    .line 233
     :goto_4f
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 223
+    .line 234
     return-void
 
-    .line 192
+    .line 203
     .end local v0           #allCaps:Z
     .end local v3           #styleIndex:I
     .end local v4           #ts:I
@@ -2231,7 +2231,7 @@
 
     goto :goto_12
 
-    .line 219
+    .line 230
     .restart local v0       #allCaps:Z
     .restart local v3       #styleIndex:I
     .restart local v4       #ts:I
@@ -2249,7 +2249,7 @@
     .parameter "tf"
 
     .prologue
-    .line 282
+    .line 293
     iget-object v0, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getTypeface()Landroid/graphics/Typeface;
@@ -2258,18 +2258,18 @@
 
     if-eq v0, p1, :cond_13
 
-    .line 283
+    .line 294
     iget-object v0, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 285
+    .line 296
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 286
+    .line 297
     invoke-virtual {p0}, Landroid/widget/Switch;->invalidate()V
 
-    .line 288
+    .line 299
     :cond_13
     return-void
 .end method
@@ -2284,36 +2284,36 @@
 
     const/4 v2, 0x0
 
-    .line 251
+    .line 262
     if-lez p2, :cond_36
 
-    .line 252
+    .line 263
     if-nez p1, :cond_2d
 
-    .line 253
+    .line 264
     invoke-static {p2}, Landroid/graphics/Typeface;->defaultFromStyle(I)Landroid/graphics/Typeface;
 
     move-result-object p1
 
-    .line 258
+    .line 269
     :goto_a
     invoke-virtual {p0, p1}, Landroid/widget/Switch;->setSwitchTypeface(Landroid/graphics/Typeface;)V
 
-    .line 260
+    .line 271
     if-eqz p1, :cond_32
 
     invoke-virtual {p1}, Landroid/graphics/Typeface;->getStyle()I
 
     move-result v1
 
-    .line 261
+    .line 272
     .local v1, typefaceStyle:I
     :goto_13
     xor-int/lit8 v4, v1, -0x1
 
     and-int v0, p2, v4
 
-    .line 262
+    .line 273
     .local v0, need:I
     iget-object v4, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
@@ -2326,7 +2326,7 @@
     :cond_1e
     invoke-virtual {v4, v2}, Landroid/text/TextPaint;->setFakeBoldText(Z)V
 
-    .line 263
+    .line 274
     iget-object v4, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
     and-int/lit8 v2, v0, 0x2
@@ -2338,13 +2338,13 @@
     :goto_29
     invoke-virtual {v4, v2}, Landroid/text/TextPaint;->setTextSkewX(F)V
 
-    .line 269
+    .line 280
     .end local v0           #need:I
     .end local v1           #typefaceStyle:I
     :goto_2c
     return-void
 
-    .line 255
+    .line 266
     :cond_2d
     invoke-static {p1, p2}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
 
@@ -2355,7 +2355,7 @@
     :cond_32
     move v1, v2
 
-    .line 260
+    .line 271
     goto :goto_13
 
     .restart local v0       #need:I
@@ -2363,10 +2363,10 @@
     :cond_34
     move v2, v3
 
-    .line 263
+    .line 274
     goto :goto_29
 
-    .line 265
+    .line 276
     .end local v0           #need:I
     .end local v1           #typefaceStyle:I
     :cond_36
@@ -2374,12 +2374,12 @@
 
     invoke-virtual {v4, v2}, Landroid/text/TextPaint;->setFakeBoldText(Z)V
 
-    .line 266
+    .line 277
     iget-object v2, p0, Landroid/widget/Switch;->mTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setTextSkewX(F)V
 
-    .line 267
+    .line 278
     invoke-virtual {p0, p1}, Landroid/widget/Switch;->setSwitchTypeface(Landroid/graphics/Typeface;)V
 
     goto :goto_2c
@@ -2390,13 +2390,13 @@
     .parameter "textOff"
 
     .prologue
-    .line 466
+    .line 477
     iput-object p1, p0, Landroid/widget/Switch;->mTextOff:Ljava/lang/CharSequence;
 
-    .line 467
+    .line 478
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 468
+    .line 479
     return-void
 .end method
 
@@ -2405,13 +2405,13 @@
     .parameter "textOn"
 
     .prologue
-    .line 447
+    .line 458
     iput-object p1, p0, Landroid/widget/Switch;->mTextOn:Ljava/lang/CharSequence;
 
-    .line 448
+    .line 459
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 449
+    .line 460
     return-void
 .end method
 
@@ -2420,13 +2420,13 @@
     .parameter "thumb"
 
     .prologue
-    .line 404
+    .line 415
     iput-object p1, p0, Landroid/widget/Switch;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 405
+    .line 416
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 406
+    .line 417
     return-void
 .end method
 
@@ -2435,7 +2435,7 @@
     .parameter "resId"
 
     .prologue
-    .line 417
+    .line 428
     invoke-virtual {p0}, Landroid/widget/Switch;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2450,7 +2450,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/Switch;->setThumbDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 418
+    .line 429
     return-void
 .end method
 
@@ -2459,13 +2459,13 @@
     .parameter "pixels"
 
     .prologue
-    .line 346
+    .line 357
     iput p1, p0, Landroid/widget/Switch;->mThumbTextPadding:I
 
-    .line 347
+    .line 358
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 348
+    .line 359
     return-void
 .end method
 
@@ -2474,13 +2474,13 @@
     .parameter "track"
 
     .prologue
-    .line 369
+    .line 380
     iput-object p1, p0, Landroid/widget/Switch;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 370
+    .line 381
     invoke-virtual {p0}, Landroid/widget/Switch;->requestLayout()V
 
-    .line 371
+    .line 382
     return-void
 .end method
 
@@ -2489,7 +2489,7 @@
     .parameter "resId"
 
     .prologue
-    .line 381
+    .line 392
     invoke-virtual {p0}, Landroid/widget/Switch;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2504,7 +2504,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/Switch;->setTrackDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 382
+    .line 393
     return-void
 .end method
 
@@ -2513,7 +2513,7 @@
     .parameter "who"
 
     .prologue
-    .line 805
+    .line 816
     invoke-super {p0, p1}, Landroid/widget/CompoundButton;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0

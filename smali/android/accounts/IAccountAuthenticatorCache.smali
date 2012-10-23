@@ -7,6 +7,9 @@
 .method public abstract dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 .end method
 
+.method public abstract generateServicesMap()V
+.end method
+
 .method public abstract getAllServices()Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -53,7 +53,7 @@ _L1:
             }
 
             public void addProximityAlert(double d, double d1, float f, long l, 
-                    PendingIntent pendingintent) throws RemoteException {
+                    PendingIntent pendingintent, String s) throws RemoteException {
                 Parcel parcel;
                 Parcel parcel1;
                 parcel = Parcel.obtain();
@@ -64,10 +64,11 @@ _L1:
                 parcel.writeFloat(f);
                 parcel.writeLong(l);
                 if(pendingintent == null)
-                    break MISSING_BLOCK_LABEL_95;
+                    break MISSING_BLOCK_LABEL_102;
                 parcel.writeInt(1);
                 pendingintent.writeToParcel(parcel, 0);
 _L1:
+                parcel.writeString(s);
                 mRemote.transact(13, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
@@ -371,13 +372,14 @@ _L1:
                 return "android.location.ILocationManager";
             }
 
-            public Location getLastKnownLocation(String s) throws RemoteException {
+            public Location getLastKnownLocation(String s, String s1) throws RemoteException {
                 Parcel parcel;
                 Parcel parcel1;
                 parcel = Parcel.obtain();
                 parcel1 = Parcel.obtain();
                 parcel.writeInterfaceToken("android.location.ILocationManager");
                 parcel.writeString(s);
+                parcel.writeString(s1);
                 mRemote.transact(17, parcel, parcel1, 0);
                 parcel1.readException();
                 if(parcel1.readInt() == 0) goto _L2; else goto _L1
@@ -616,7 +618,7 @@ _L1:
                 throw exception;
             }
 
-            public void removeUpdates(ILocationListener ilocationlistener) throws RemoteException {
+            public void removeUpdates(ILocationListener ilocationlistener, String s) throws RemoteException {
                 Parcel parcel;
                 Parcel parcel1;
                 parcel = Parcel.obtain();
@@ -624,10 +626,11 @@ _L1:
                 IBinder ibinder;
                 parcel.writeInterfaceToken("android.location.ILocationManager");
                 if(ilocationlistener == null)
-                    break MISSING_BLOCK_LABEL_60;
+                    break MISSING_BLOCK_LABEL_69;
                 ibinder = ilocationlistener.asBinder();
 _L1:
                 parcel.writeStrongBinder(ibinder);
+                parcel.writeString(s);
                 mRemote.transact(7, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
@@ -642,17 +645,18 @@ _L1:
                 throw exception;
             }
 
-            public void removeUpdatesPI(PendingIntent pendingintent) throws RemoteException {
+            public void removeUpdatesPI(PendingIntent pendingintent, String s) throws RemoteException {
                 Parcel parcel;
                 Parcel parcel1;
                 parcel = Parcel.obtain();
                 parcel1 = Parcel.obtain();
                 parcel.writeInterfaceToken("android.location.ILocationManager");
                 if(pendingintent == null)
-                    break MISSING_BLOCK_LABEL_57;
+                    break MISSING_BLOCK_LABEL_66;
                 parcel.writeInt(1);
                 pendingintent.writeToParcel(parcel, 0);
 _L1:
+                parcel.writeString(s);
                 mRemote.transact(8, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
@@ -703,7 +707,8 @@ _L1:
                   goto _L2
             }
 
-            public void requestLocationUpdates(String s, Criteria criteria, long l, float f, boolean flag, ILocationListener ilocationlistener) throws RemoteException {
+            public void requestLocationUpdates(String s, Criteria criteria, long l, float f, boolean flag, ILocationListener ilocationlistener, 
+                    String s1) throws RemoteException {
                 int i;
                 Parcel parcel;
                 Parcel parcel1;
@@ -725,10 +730,11 @@ _L3:
                     i = 0;
                 parcel.writeInt(i);
                 if(ilocationlistener == null)
-                    break MISSING_BLOCK_LABEL_151;
+                    break MISSING_BLOCK_LABEL_158;
                 ibinder = ilocationlistener.asBinder();
 _L4:
                 parcel.writeStrongBinder(ibinder);
+                parcel.writeString(s1);
                 mRemote.transact(5, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
@@ -745,7 +751,8 @@ _L2:
                   goto _L4
             }
 
-            public void requestLocationUpdatesPI(String s, Criteria criteria, long l, float f, boolean flag, PendingIntent pendingintent) throws RemoteException {
+            public void requestLocationUpdatesPI(String s, Criteria criteria, long l, float f, boolean flag, PendingIntent pendingintent, 
+                    String s1) throws RemoteException {
                 int i;
                 Parcel parcel;
                 Parcel parcel1;
@@ -766,10 +773,11 @@ _L3:
                     i = 0;
                 parcel.writeInt(i);
                 if(pendingintent == null)
-                    break MISSING_BLOCK_LABEL_150;
+                    break MISSING_BLOCK_LABEL_157;
                 parcel.writeInt(1);
                 pendingintent.writeToParcel(parcel, 0);
 _L4:
+                parcel.writeString(s1);
                 mRemote.transact(6, parcel, parcel1, 0);
                 parcel1.readException();
                 parcel1.recycle();
@@ -957,31 +965,31 @@ _L1:
         //                       3: 389
         //                       4: 464
         //                       5: 543
-        //                       6: 641
-        //                       7: 761
-        //                       8: 788
-        //                       9: 837
-        //                       10: 886
-        //                       11: 913
-        //                       12: 940
-        //                       13: 1052
-        //                       14: 1133
-        //                       15: 1182
-        //                       16: 1233
-        //                       17: 1279
-        //                       18: 1330
-        //                       19: 1397
-        //                       20: 1439
-        //                       21: 1537
-        //                       22: 1659
-        //                       23: 1829
-        //                       24: 1853
-        //                       25: 1910
-        //                       26: 1934
-        //                       27: 1980
-        //                       28: 2004
-        //                       29: 2077
-        //                       30: 2101
+        //                       6: 645
+        //                       7: 769
+        //                       8: 800
+        //                       9: 853
+        //                       10: 902
+        //                       11: 929
+        //                       12: 956
+        //                       13: 1068
+        //                       14: 1157
+        //                       15: 1206
+        //                       16: 1257
+        //                       17: 1303
+        //                       18: 1358
+        //                       19: 1425
+        //                       20: 1467
+        //                       21: 1565
+        //                       22: 1687
+        //                       23: 1857
+        //                       24: 1881
+        //                       25: 1938
+        //                       26: 1962
+        //                       27: 2008
+        //                       28: 2032
+        //                       29: 2105
+        //                       30: 2129
         //                       1598968902: 274;
                goto _L1 _L2 _L3 _L4 _L5 _L6 _L7 _L8 _L9 _L10 _L11 _L12 _L13 _L14 _L15 _L16 _L17 _L18 _L19 _L20 _L21 _L22 _L23 _L24 _L25 _L26 _L27 _L28 _L29 _L30 _L31 _L32
 _L1:
@@ -1021,7 +1029,7 @@ _L4:
             parcel.enforceInterface("android.location.ILocationManager");
             Criteria criteria3;
             boolean flag18;
-            String s12;
+            String s13;
             if(parcel.readInt() != 0)
                 criteria3 = (Criteria)Criteria.CREATOR.createFromParcel(parcel);
             else
@@ -1030,14 +1038,14 @@ _L4:
                 flag18 = true;
             else
                 flag18 = false;
-            s12 = getBestProvider(criteria3, flag18);
+            s13 = getBestProvider(criteria3, flag18);
             parcel1.writeNoException();
-            parcel1.writeString(s12);
+            parcel1.writeString(s13);
             flag1 = true;
             continue; /* Loop/switch isn't completed */
 _L5:
             parcel.enforceInterface("android.location.ILocationManager");
-            String s11 = parcel.readString();
+            String s12 = parcel.readString();
             Criteria criteria2;
             boolean flag17;
             int k3;
@@ -1045,7 +1053,7 @@ _L5:
                 criteria2 = (Criteria)Criteria.CREATOR.createFromParcel(parcel);
             else
                 criteria2 = null;
-            flag17 = providerMeetsCriteria(s11, criteria2);
+            flag17 = providerMeetsCriteria(s12, criteria2);
             parcel1.writeNoException();
             if(flag17)
                 k3 = 1;
@@ -1056,7 +1064,7 @@ _L5:
             continue; /* Loop/switch isn't completed */
 _L6:
             parcel.enforceInterface("android.location.ILocationManager");
-            String s10 = parcel.readString();
+            String s11 = parcel.readString();
             Criteria criteria1;
             long l4;
             float f2;
@@ -1071,13 +1079,13 @@ _L6:
                 flag16 = true;
             else
                 flag16 = false;
-            requestLocationUpdates(s10, criteria1, l4, f2, flag16, ILocationListener.Stub.asInterface(parcel.readStrongBinder()));
+            requestLocationUpdates(s11, criteria1, l4, f2, flag16, ILocationListener.Stub.asInterface(parcel.readStrongBinder()), parcel.readString());
             parcel1.writeNoException();
             flag1 = true;
             continue; /* Loop/switch isn't completed */
 _L7:
             parcel.enforceInterface("android.location.ILocationManager");
-            String s9 = parcel.readString();
+            String s10 = parcel.readString();
             Criteria criteria;
             long l3;
             float f1;
@@ -1097,13 +1105,13 @@ _L7:
                 pendingintent3 = (PendingIntent)PendingIntent.CREATOR.createFromParcel(parcel);
             else
                 pendingintent3 = null;
-            requestLocationUpdatesPI(s9, criteria, l3, f1, flag15, pendingintent3);
+            requestLocationUpdatesPI(s10, criteria, l3, f1, flag15, pendingintent3, parcel.readString());
             parcel1.writeNoException();
             flag1 = true;
             continue; /* Loop/switch isn't completed */
 _L8:
             parcel.enforceInterface("android.location.ILocationManager");
-            removeUpdates(ILocationListener.Stub.asInterface(parcel.readStrongBinder()));
+            removeUpdates(ILocationListener.Stub.asInterface(parcel.readStrongBinder()), parcel.readString());
             parcel1.writeNoException();
             flag1 = true;
             continue; /* Loop/switch isn't completed */
@@ -1114,7 +1122,7 @@ _L9:
                 pendingintent2 = (PendingIntent)PendingIntent.CREATOR.createFromParcel(parcel);
             else
                 pendingintent2 = null;
-            removeUpdatesPI(pendingintent2);
+            removeUpdatesPI(pendingintent2, parcel.readString());
             parcel1.writeNoException();
             flag1 = true;
             continue; /* Loop/switch isn't completed */
@@ -1144,8 +1152,8 @@ _L12:
             continue; /* Loop/switch isn't completed */
 _L13:
             parcel.enforceInterface("android.location.ILocationManager");
-            String s7 = parcel.readString();
             String s8 = parcel.readString();
+            String s9 = parcel.readString();
             Bundle bundle2;
             boolean flag13;
             int i3;
@@ -1153,7 +1161,7 @@ _L13:
                 bundle2 = (Bundle)Bundle.CREATOR.createFromParcel(parcel);
             else
                 bundle2 = null;
-            flag13 = sendExtraCommand(s7, s8, bundle2);
+            flag13 = sendExtraCommand(s8, s9, bundle2);
             parcel1.writeNoException();
             if(flag13)
                 i3 = 1;
@@ -1175,11 +1183,13 @@ _L14:
             float f = parcel.readFloat();
             long l2 = parcel.readLong();
             PendingIntent pendingintent1;
+            String s7;
             if(parcel.readInt() != 0)
                 pendingintent1 = (PendingIntent)PendingIntent.CREATOR.createFromParcel(parcel);
             else
                 pendingintent1 = null;
-            addProximityAlert(d6, d7, f, l2, pendingintent1);
+            s7 = parcel.readString();
+            addProximityAlert(d6, d7, f, l2, pendingintent1, s7);
             parcel1.writeNoException();
             flag1 = true;
             continue; /* Loop/switch isn't completed */
@@ -1220,7 +1230,7 @@ _L17:
             continue; /* Loop/switch isn't completed */
 _L18:
             parcel.enforceInterface("android.location.ILocationManager");
-            Location location2 = getLastKnownLocation(parcel.readString());
+            Location location2 = getLastKnownLocation(parcel.readString(), parcel.readString());
             parcel1.writeNoException();
             if(location2 != null) {
                 parcel1.writeInt(1);
@@ -1464,7 +1474,7 @@ _L33:
     public abstract boolean addGpsStatusListener(IGpsStatusListener igpsstatuslistener) throws RemoteException;
 
     public abstract void addProximityAlert(double d, double d1, float f, long l, 
-            PendingIntent pendingintent) throws RemoteException;
+            PendingIntent pendingintent, String s) throws RemoteException;
 
     public abstract void addTestProvider(String s, boolean flag, boolean flag1, boolean flag2, boolean flag3, boolean flag4, boolean flag5, 
             boolean flag6, int i, int j) throws RemoteException;
@@ -1486,7 +1496,7 @@ _L33:
     public abstract String getFromLocationName(String s, double d, double d1, double d2, 
             double d3, int i, GeocoderParams geocoderparams, List list) throws RemoteException;
 
-    public abstract Location getLastKnownLocation(String s) throws RemoteException;
+    public abstract Location getLastKnownLocation(String s, String s1) throws RemoteException;
 
     public abstract Bundle getProviderInfo(String s) throws RemoteException;
 
@@ -1504,15 +1514,17 @@ _L33:
 
     public abstract void removeTestProvider(String s) throws RemoteException;
 
-    public abstract void removeUpdates(ILocationListener ilocationlistener) throws RemoteException;
+    public abstract void removeUpdates(ILocationListener ilocationlistener, String s) throws RemoteException;
 
-    public abstract void removeUpdatesPI(PendingIntent pendingintent) throws RemoteException;
+    public abstract void removeUpdatesPI(PendingIntent pendingintent, String s) throws RemoteException;
 
     public abstract void reportLocation(Location location, boolean flag) throws RemoteException;
 
-    public abstract void requestLocationUpdates(String s, Criteria criteria, long l, float f, boolean flag, ILocationListener ilocationlistener) throws RemoteException;
+    public abstract void requestLocationUpdates(String s, Criteria criteria, long l, float f, boolean flag, ILocationListener ilocationlistener, 
+            String s1) throws RemoteException;
 
-    public abstract void requestLocationUpdatesPI(String s, Criteria criteria, long l, float f, boolean flag, PendingIntent pendingintent) throws RemoteException;
+    public abstract void requestLocationUpdatesPI(String s, Criteria criteria, long l, float f, boolean flag, PendingIntent pendingintent, 
+            String s1) throws RemoteException;
 
     public abstract boolean sendExtraCommand(String s, String s1, Bundle bundle) throws RemoteException;
 

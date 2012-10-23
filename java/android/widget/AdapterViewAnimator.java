@@ -492,7 +492,10 @@ _L3:
     }
 
     public Parcelable onSaveInstanceState() {
-        return new SavedState(super.onSaveInstanceState(), mWhichChild);
+        Parcelable parcelable = super.onSaveInstanceState();
+        if(mRemoteViewsAdapter != null)
+            mRemoteViewsAdapter.saveRemoteViewsCache();
+        return new SavedState(parcelable, mWhichChild);
     }
 
     public boolean onTouchEvent(MotionEvent motionevent) {
@@ -638,10 +641,16 @@ _L5:
     }
 
     public void setRemoteViewsAdapter(Intent intent) {
-        if(mRemoteViewsAdapter == null || !(new android.content.Intent.FilterComparison(intent)).equals(new android.content.Intent.FilterComparison(mRemoteViewsAdapter.getRemoteViewsServiceIntent()))) {
-            mDeferNotifyDataSetChanged = false;
-            mRemoteViewsAdapter = new RemoteViewsAdapter(getContext(), intent, this);
-        }
+        if(mRemoteViewsAdapter == null || !(new android.content.Intent.FilterComparison(intent)).equals(new android.content.Intent.FilterComparison(mRemoteViewsAdapter.getRemoteViewsServiceIntent()))) goto _L2; else goto _L1
+_L1:
+        return;
+_L2:
+        mDeferNotifyDataSetChanged = false;
+        mRemoteViewsAdapter = new RemoteViewsAdapter(getContext(), intent, this);
+        if(mRemoteViewsAdapter.isDataReady())
+            setAdapter(mRemoteViewsAdapter);
+        if(true) goto _L1; else goto _L3
+_L3:
     }
 
     public void setSelection(int i) {

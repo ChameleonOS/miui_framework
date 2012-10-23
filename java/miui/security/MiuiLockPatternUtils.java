@@ -6,6 +6,7 @@ package miui.security;
 
 import android.content.Context;
 import android.os.Environment;
+import android.os.FileObserver;
 import android.util.Log;
 import com.android.internal.widget.LockPatternUtils;
 import java.io.*;
@@ -14,6 +15,26 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MiuiLockPatternUtils extends LockPatternUtils {
+    private static class PasswordFileObserver extends FileObserver {
+
+        public void onEvent(int i, String s) {
+            if("access_control.key".equals(s)) {
+                Log.d("MiuiLockPatternUtils", "access control password file changed");
+                AtomicBoolean atomicboolean = MiuiLockPatternUtils.sHaveNonZeroACFile;
+                boolean flag;
+                if((new File(MiuiLockPatternUtils.sLockACFilename)).length() > 0L)
+                    flag = true;
+                else
+                    flag = false;
+                atomicboolean.set(flag);
+            }
+        }
+
+        public PasswordFileObserver(String s, int i) {
+            super(s, i);
+        }
+    }
+
 
     public MiuiLockPatternUtils(Context context) {
         super(context);
@@ -27,6 +48,8 @@ public class MiuiLockPatternUtils extends LockPatternUtils {
             else
                 flag = false;
             atomicboolean.set(flag);
+            sPasswordObserver = new PasswordFileObserver(s, 904);
+            sPasswordObserver.startWatching();
         }
     }
 
@@ -72,10 +95,13 @@ public class MiuiLockPatternUtils extends LockPatternUtils {
         return sHaveNonZeroACFile.get();
     }
 
-    public static final String LOCK_AC_FILE = "access_control.key";
+    private static final String LOCK_AC_FILE = "access_control.key";
     private static final String SYSTEM_DIRECTORY = "/system/";
     private static final String TAG = "MiuiLockPatternUtils";
-    public static final AtomicBoolean sHaveNonZeroACFile = new AtomicBoolean(false);
-    public static String sLockACFilename;
+    private static final AtomicBoolean sHaveNonZeroACFile = new AtomicBoolean(false);
+    private static String sLockACFilename;
+    private static FileObserver sPasswordObserver;
+
+
 
 }

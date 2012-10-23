@@ -66,9 +66,6 @@
     iput-boolean p2, p0, Landroid/content/ContentService;->mFactoryTest:Z
 
     .line 135
-    invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
-
-    .line 136
     return-void
 .end method
 
@@ -136,24 +133,24 @@
     throw v1
 .end method
 
-.method public static main(Landroid/content/Context;Z)Landroid/content/IContentService;
+.method public static main(Landroid/content/Context;Z)Landroid/content/ContentService;
     .registers 4
     .parameter "context"
     .parameter "factoryTest"
 
     .prologue
-    .line 528
+    .line 531
     new-instance v0, Landroid/content/ContentService;
 
     invoke-direct {v0, p0, p1}, Landroid/content/ContentService;-><init>(Landroid/content/Context;Z)V
 
-    .line 529
+    .line 532
     .local v0, service:Landroid/content/ContentService;
     const-string v1, "content"
 
     invoke-static {v1, v0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 530
+    .line 533
     return-object v0
 .end method
 
@@ -167,7 +164,7 @@
     .parameter "pollFrequency"
 
     .prologue
-    .line 328
+    .line 331
     iget-object v0, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.WRITE_SYNC_SETTINGS"
@@ -176,18 +173,18 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 330
+    .line 333
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v2
 
-    .line 332
+    .line 335
     .local v2, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v7
 
-    .line 334
+    .line 337
     .local v7, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
@@ -210,13 +207,13 @@
     :try_end_21
     .catchall {:try_start_12 .. :try_end_21} :catchall_25
 
-    .line 337
+    .line 340
     invoke-static {v7, v8}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 339
+    .line 342
     return-void
 
-    .line 337
+    .line 340
     :catchall_25
     move-exception v0
 
@@ -231,25 +228,25 @@
     .parameter "callback"
 
     .prologue
-    .line 504
+    .line 507
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 506
+    .line 509
     .local v0, identityToken:J
     :try_start_4
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 507
+    .line 510
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_13
 
     if-eqz p2, :cond_13
 
-    .line 508
+    .line 511
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v3
@@ -258,14 +255,14 @@
     :try_end_13
     .catchall {:try_start_4 .. :try_end_13} :catchall_17
 
-    .line 511
+    .line 514
     :cond_13
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 513
+    .line 516
     return-void
 
-    .line 511
+    .line 514
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_17
     move-exception v3
@@ -281,44 +278,44 @@
     .parameter "authority"
 
     .prologue
-    .line 259
+    .line 262
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 263
+    .line 266
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 265
+    .line 268
     .local v0, identityToken:J
     :try_start_8
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 266
+    .line 269
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_14
 
-    .line 267
+    .line 270
     invoke-virtual {v2, p1, v3, p2}, Landroid/content/SyncManager;->clearScheduledSyncOperations(Landroid/accounts/Account;ILjava/lang/String;)V
 
-    .line 268
+    .line 271
     invoke-virtual {v2, p1, v3, p2}, Landroid/content/SyncManager;->cancelActiveSync(Landroid/accounts/Account;ILjava/lang/String;)V
     :try_end_14
     .catchall {:try_start_8 .. :try_end_14} :catchall_18
 
-    .line 271
+    .line 274
     :cond_14
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 273
+    .line 276
     return-void
 
-    .line 271
+    .line 274
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_18
     move-exception v4
@@ -659,7 +656,7 @@
     .end annotation
 
     .prologue
-    .line 456
+    .line 459
     iget-object v3, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v4, "android.permission.READ_SYNC_STATS"
@@ -668,18 +665,18 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 458
+    .line 461
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v2
 
-    .line 460
+    .line 463
     .local v2, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 462
+    .line 465
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
@@ -696,7 +693,7 @@
 
     move-result-object v3
 
-    .line 464
+    .line 467
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
     return-object v3
@@ -715,7 +712,7 @@
     .parameter "providerName"
 
     .prologue
-    .line 370
+    .line 373
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.READ_SYNC_SETTINGS"
@@ -724,29 +721,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 372
+    .line 375
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 374
+    .line 377
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 376
+    .line 379
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 377
+    .line 380
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_24
 
-    .line 378
+    .line 381
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -757,23 +754,23 @@
 
     move-result v4
 
-    .line 382
+    .line 385
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 384
+    .line 387
     :goto_23
     return v4
 
-    .line 382
+    .line 385
     :cond_24
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 384
+    .line 387
     const/4 v4, -0x1
 
     goto :goto_23
 
-    .line 382
+    .line 385
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_29
     move-exception v4
@@ -787,7 +784,7 @@
     .registers 8
 
     .prologue
-    .line 405
+    .line 408
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.READ_SYNC_SETTINGS"
@@ -796,29 +793,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 407
+    .line 410
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 409
+    .line 412
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 411
+    .line 414
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 412
+    .line 415
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_24
 
-    .line 413
+    .line 416
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -829,23 +826,23 @@
 
     move-result v4
 
-    .line 416
+    .line 419
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 418
+    .line 421
     :goto_23
     return v4
 
-    .line 416
+    .line 419
     :cond_24
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 418
+    .line 421
     const/4 v4, 0x0
 
     goto :goto_23
 
-    .line 416
+    .line 419
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_29
     move-exception v4
@@ -873,7 +870,7 @@
     .end annotation
 
     .prologue
-    .line 356
+    .line 359
     iget-object v3, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v4, "android.permission.READ_SYNC_SETTINGS"
@@ -882,18 +879,18 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 358
+    .line 361
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v2
 
-    .line 360
+    .line 363
     .local v2, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 362
+    .line 365
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
@@ -910,7 +907,7 @@
 
     move-result-object v3
 
-    .line 365
+    .line 368
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
     return-object v3
@@ -927,19 +924,19 @@
     .registers 5
 
     .prologue
-    .line 282
+    .line 285
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 284
+    .line 287
     .local v0, identityToken:J
     :try_start_4
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 285
+    .line 288
     .local v2, syncManager:Landroid/content/SyncManager;
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncAdapterTypes()[Landroid/content/SyncAdapterType;
     :try_end_b
@@ -947,7 +944,7 @@
 
     move-result-object v3
 
-    .line 287
+    .line 290
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
     return-object v3
@@ -967,7 +964,7 @@
     .parameter "providerName"
 
     .prologue
-    .line 292
+    .line 295
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.READ_SYNC_SETTINGS"
@@ -976,29 +973,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 294
+    .line 297
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 296
+    .line 299
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 298
+    .line 301
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 299
+    .line 302
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_24
 
-    .line 300
+    .line 303
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -1009,23 +1006,23 @@
 
     move-result v4
 
-    .line 304
+    .line 307
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 306
+    .line 309
     :goto_23
     return v4
 
-    .line 304
+    .line 307
     :cond_24
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 306
+    .line 309
     const/4 v4, 0x0
 
     goto :goto_23
 
-    .line 304
+    .line 307
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_29
     move-exception v4
@@ -1041,7 +1038,7 @@
     .parameter "authority"
 
     .prologue
-    .line 469
+    .line 472
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.READ_SYNC_STATS"
@@ -1050,29 +1047,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 471
+    .line 474
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 473
+    .line 476
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 475
+    .line 478
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 476
+    .line 479
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_24
 
-    .line 477
+    .line 480
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -1083,23 +1080,23 @@
 
     move-result-object v4
 
-    .line 481
+    .line 484
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 483
+    .line 486
     :goto_23
     return-object v4
 
-    .line 481
+    .line 484
     :cond_24
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 483
+    .line 486
     const/4 v4, 0x0
 
     goto :goto_23
 
-    .line 481
+    .line 484
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_29
     move-exception v4
@@ -1115,7 +1112,7 @@
     .parameter "authority"
 
     .prologue
-    .line 438
+    .line 441
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.READ_SYNC_STATS"
@@ -1124,29 +1121,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 440
+    .line 443
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 442
+    .line 445
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 444
+    .line 447
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 445
+    .line 448
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_24
 
-    .line 446
+    .line 449
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -1157,23 +1154,23 @@
 
     move-result v4
 
-    .line 450
+    .line 453
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 452
+    .line 455
     :goto_23
     return v4
 
-    .line 450
+    .line 453
     :cond_24
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 452
+    .line 455
     const/4 v4, 0x0
 
     goto :goto_23
 
-    .line 450
+    .line 453
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_29
     move-exception v4
@@ -1189,7 +1186,7 @@
     .parameter "authority"
 
     .prologue
-    .line 487
+    .line 490
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.READ_SYNC_STATS"
@@ -1198,29 +1195,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 489
+    .line 492
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 491
+    .line 494
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 493
+    .line 496
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 494
+    .line 497
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_24
 
-    .line 495
+    .line 498
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -1231,23 +1228,23 @@
 
     move-result v4
 
-    .line 498
+    .line 501
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 500
+    .line 503
     :goto_23
     return v4
 
-    .line 498
+    .line 501
     :cond_24
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 500
+    .line 503
     const/4 v4, 0x0
 
     goto :goto_23
 
-    .line 498
+    .line 501
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_29
     move-exception v4
@@ -1265,7 +1262,7 @@
     .parameter "syncToNetwork"
 
     .prologue
-    .line 163
+    .line 166
     const-string v2, "ContentService"
 
     const/4 v3, 0x2
@@ -1276,7 +1273,7 @@
 
     if-eqz v2, :cond_3b
 
-    .line 164
+    .line 167
     const-string v2, "ContentService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1325,26 +1322,26 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
+    .line 171
     :cond_3b
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v20
 
-    .line 171
+    .line 174
     .local v20, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v11
 
-    .line 173
+    .line 176
     .local v11, identityToken:J
     :try_start_43
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 174
+    .line 177
     .local v7, calls:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentService$ObserverCall;>;"
     move-object/from16 v0, p0
 
@@ -1356,7 +1353,7 @@
     :try_end_4f
     .catchall {:try_start_43 .. :try_end_4f} :catchall_b6
 
-    .line 175
+    .line 178
     :try_start_4f
     move-object/from16 v0, p0
 
@@ -1372,18 +1369,18 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/content/ContentService$ObserverNode;->collectObserversLocked(Landroid/net/Uri;ILandroid/database/IContentObserver;ZLjava/util/ArrayList;)V
 
-    .line 177
+    .line 180
     monitor-exit v21
     :try_end_5e
     .catchall {:try_start_4f .. :try_end_5e} :catchall_b3
 
-    .line 178
+    .line 181
     :try_start_5e
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v15
 
-    .line 179
+    .line 182
     .local v15, numCalls:I
     const/4 v10, 0x0
 
@@ -1391,7 +1388,7 @@
     :goto_63
     if-ge v10, v15, :cond_100
 
-    .line 180
+    .line 183
     invoke-virtual {v7, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v17
@@ -1400,7 +1397,7 @@
     :try_end_6b
     .catchall {:try_start_5e .. :try_end_6b} :catchall_b6
 
-    .line 182
+    .line 185
     .local v17, oc:Landroid/content/ContentService$ObserverCall;
     :try_start_6b
     move-object/from16 v0, v17
@@ -1415,7 +1412,7 @@
 
     invoke-interface {v2, v3, v0}, Landroid/database/IContentObserver;->onChange(ZLandroid/net/Uri;)V
 
-    .line 183
+    .line 186
     const-string v2, "ContentService"
 
     const/4 v3, 0x2
@@ -1426,7 +1423,7 @@
 
     if-eqz v2, :cond_b0
 
-    .line 184
+    .line 187
     const-string v2, "ContentService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1474,14 +1471,14 @@
     .catchall {:try_start_6b .. :try_end_b0} :catchall_b6
     .catch Landroid/os/RemoteException; {:try_start_6b .. :try_end_b0} :catch_bb
 
-    .line 179
+    .line 182
     :cond_b0
     :goto_b0
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_63
 
-    .line 177
+    .line 180
     .end local v10           #i:I
     .end local v15           #numCalls:I
     .end local v17           #oc:Landroid/content/ContentService$ObserverCall;
@@ -1498,7 +1495,7 @@
     :try_end_b6
     .catchall {:try_start_b5 .. :try_end_b6} :catchall_b6
 
-    .line 212
+    .line 215
     .end local v7           #calls:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentService$ObserverCall;>;"
     :catchall_b6
     move-exception v2
@@ -1507,7 +1504,7 @@
 
     throw v2
 
-    .line 186
+    .line 189
     .restart local v7       #calls:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentService$ObserverCall;>;"
     .restart local v10       #i:I
     .restart local v15       #numCalls:I
@@ -1515,7 +1512,7 @@
     :catch_bb
     move-exception v9
 
-    .line 187
+    .line 190
     .local v9, ex:Landroid/os/RemoteException;
     :try_start_bc
     move-object/from16 v0, p0
@@ -1526,7 +1523,7 @@
     :try_end_c1
     .catchall {:try_start_bc .. :try_end_c1} :catchall_b6
 
-    .line 188
+    .line 191
     :try_start_c1
     const-string v2, "ContentService"
 
@@ -1534,7 +1531,7 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 189
+    .line 192
     move-object/from16 v0, v17
 
     iget-object v2, v0, Landroid/content/ContentService$ObserverCall;->mObserver:Landroid/database/IContentObserver;
@@ -1543,7 +1540,7 @@
 
     move-result-object v8
 
-    .line 190
+    .line 193
     .local v8, binder:Landroid/os/IBinder;
     move-object/from16 v0, v17
 
@@ -1554,13 +1551,13 @@
 
     move-result-object v14
 
-    .line 192
+    .line 195
     .local v14, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/content/ContentService$ObserverNode$ObserverEntry;>;"
     invoke-virtual {v14}, Ljava/util/ArrayList;->size()I
 
     move-result v16
 
-    .line 193
+    .line 196
     .local v16, numList:I
     const/4 v13, 0x0
 
@@ -1570,14 +1567,14 @@
 
     if-ge v13, v0, :cond_fb
 
-    .line 194
+    .line 197
     invoke-virtual {v14, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v18
 
     check-cast v18, Landroid/content/ContentService$ObserverNode$ObserverEntry;
 
-    .line 195
+    .line 198
     .local v18, oe:Landroid/content/ContentService$ObserverNode$ObserverEntry;
     move-object/from16 v0, v18
 
@@ -1589,22 +1586,22 @@
 
     if-ne v2, v8, :cond_f8
 
-    .line 196
+    .line 199
     invoke-virtual {v14, v13}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 197
+    .line 200
     add-int/lit8 v13, v13, -0x1
 
-    .line 198
+    .line 201
     add-int/lit8 v16, v16, -0x1
 
-    .line 193
+    .line 196
     :cond_f8
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_dd
 
-    .line 201
+    .line 204
     .end local v18           #oe:Landroid/content/ContentService$ObserverNode$ObserverEntry;
     :cond_fb
     monitor-exit v3
@@ -1625,22 +1622,22 @@
     :try_start_ff
     throw v2
 
-    .line 204
+    .line 207
     .end local v9           #ex:Landroid/os/RemoteException;
     .end local v17           #oc:Landroid/content/ContentService$ObserverCall;
     :cond_100
     if-eqz p4, :cond_114
 
-    .line 205
+    .line 208
     invoke-direct/range {p0 .. p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v19
 
-    .line 206
+    .line 209
     .local v19, syncManager:Landroid/content/SyncManager;
     if-eqz v19, :cond_114
 
-    .line 207
+    .line 210
     const/4 v2, 0x0
 
     invoke-virtual/range {p1 .. p1}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
@@ -1655,12 +1652,12 @@
     :try_end_114
     .catchall {:try_start_ff .. :try_end_114} :catchall_b6
 
-    .line 212
+    .line 215
     .end local v19           #syncManager:Landroid/content/SyncManager;
     :cond_114
     invoke-static {v11, v12}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 214
+    .line 217
     return-void
 .end method
 
@@ -1716,12 +1713,12 @@
     .parameter "observer"
 
     .prologue
-    .line 140
+    .line 143
     if-eqz p3, :cond_4
 
     if-nez p1, :cond_c
 
-    .line 141
+    .line 144
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1731,13 +1728,13 @@
 
     throw v0
 
-    .line 143
+    .line 146
     :cond_c
     iget-object v7, p0, Landroid/content/ContentService;->mRootNode:Landroid/content/ContentService$ObserverNode;
 
     monitor-enter v7
 
-    .line 144
+    .line 147
     :try_start_f
     iget-object v0, p0, Landroid/content/ContentService;->mRootNode:Landroid/content/ContentService$ObserverNode;
 
@@ -1759,13 +1756,13 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/content/ContentService$ObserverNode;->addObserverLocked(Landroid/net/Uri;Landroid/database/IContentObserver;ZLjava/lang/Object;II)V
 
-    .line 148
+    .line 151
     monitor-exit v7
 
-    .line 149
+    .line 152
     return-void
 
-    .line 148
+    .line 151
     :catchall_23
     move-exception v0
 
@@ -1783,7 +1780,7 @@
     .parameter "extras"
 
     .prologue
-    .line 342
+    .line 345
     iget-object v3, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v4, "android.permission.WRITE_SYNC_SETTINGS"
@@ -1792,18 +1789,18 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 344
+    .line 347
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v2
 
-    .line 346
+    .line 349
     .local v2, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 348
+    .line 351
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
@@ -1818,13 +1815,13 @@
     :try_end_1d
     .catchall {:try_start_12 .. :try_end_1d} :catchall_21
 
-    .line 351
+    .line 354
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 353
+    .line 356
     return-void
 
-    .line 351
+    .line 354
     :catchall_21
     move-exception v3
 
@@ -1838,25 +1835,25 @@
     .parameter "callback"
 
     .prologue
-    .line 516
+    .line 519
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 518
+    .line 521
     .local v0, identityToken:J
     :try_start_4
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 519
+    .line 522
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_13
 
     if-eqz p1, :cond_13
 
-    .line 520
+    .line 523
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v3
@@ -1865,14 +1862,14 @@
     :try_end_13
     .catchall {:try_start_4 .. :try_end_13} :catchall_17
 
-    .line 523
+    .line 526
     :cond_13
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 525
+    .line 528
     return-void
 
-    .line 523
+    .line 526
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_17
     move-exception v3
@@ -1889,32 +1886,32 @@
     .parameter "extras"
 
     .prologue
-    .line 235
+    .line 238
     invoke-static {p3}, Landroid/content/ContentResolver;->validateSyncExtrasBundle(Landroid/os/Bundle;)V
 
-    .line 236
+    .line 239
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v2
 
-    .line 240
+    .line 243
     .local v2, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v8
 
-    .line 242
+    .line 245
     .local v8, identityToken:J
     :try_start_b
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v0
 
-    .line 243
+    .line 246
     .local v0, syncManager:Landroid/content/SyncManager;
     if-eqz v0, :cond_1a
 
-    .line 244
+    .line 247
     const-wide/16 v5, 0x0
 
     const/4 v7, 0x0
@@ -1929,14 +1926,14 @@
     :try_end_1a
     .catchall {:try_start_b .. :try_end_1a} :catchall_1e
 
-    .line 248
+    .line 251
     :cond_1a
     invoke-static {v8, v9}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 250
+    .line 253
     return-void
 
-    .line 248
+    .line 251
     .end local v0           #syncManager:Landroid/content/SyncManager;
     :catchall_1e
     move-exception v1
@@ -1953,7 +1950,7 @@
     .parameter "syncable"
 
     .prologue
-    .line 388
+    .line 391
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.WRITE_SYNC_SETTINGS"
@@ -1962,29 +1959,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 390
+    .line 393
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 392
+    .line 395
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 394
+    .line 397
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 395
+    .line 398
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_1f
 
-    .line 396
+    .line 399
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -1993,14 +1990,14 @@
     :try_end_1f
     .catchall {:try_start_12 .. :try_end_1f} :catchall_23
 
-    .line 400
+    .line 403
     :cond_1f
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 402
+    .line 405
     return-void
 
-    .line 400
+    .line 403
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_23
     move-exception v4
@@ -2015,7 +2012,7 @@
     .parameter "flag"
 
     .prologue
-    .line 422
+    .line 425
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.WRITE_SYNC_SETTINGS"
@@ -2024,29 +2021,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 424
+    .line 427
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 426
+    .line 429
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 428
+    .line 431
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 429
+    .line 432
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_1f
 
-    .line 430
+    .line 433
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -2055,14 +2052,14 @@
     :try_end_1f
     .catchall {:try_start_12 .. :try_end_1f} :catchall_23
 
-    .line 433
+    .line 436
     :cond_1f
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 435
+    .line 438
     return-void
 
-    .line 433
+    .line 436
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_23
     move-exception v4
@@ -2079,7 +2076,7 @@
     .parameter "sync"
 
     .prologue
-    .line 310
+    .line 313
     iget-object v4, p0, Landroid/content/ContentService;->mContext:Landroid/content/Context;
 
     const-string v5, "android.permission.WRITE_SYNC_SETTINGS"
@@ -2088,29 +2085,29 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 312
+    .line 315
     invoke-static {}, Landroid/os/UserId;->getCallingUserId()I
 
     move-result v3
 
-    .line 314
+    .line 317
     .local v3, userId:I
     invoke-static {}, Landroid/content/ContentService;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 316
+    .line 319
     .local v0, identityToken:J
     :try_start_12
     invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
 
     move-result-object v2
 
-    .line 317
+    .line 320
     .local v2, syncManager:Landroid/content/SyncManager;
     if-eqz v2, :cond_1f
 
-    .line 318
+    .line 321
     invoke-virtual {v2}, Landroid/content/SyncManager;->getSyncStorageEngine()Landroid/content/SyncStorageEngine;
 
     move-result-object v4
@@ -2119,14 +2116,14 @@
     :try_end_1f
     .catchall {:try_start_12 .. :try_end_1f} :catchall_23
 
-    .line 322
+    .line 325
     :cond_1f
     invoke-static {v0, v1}, Landroid/content/ContentService;->restoreCallingIdentity(J)V
 
-    .line 324
+    .line 327
     return-void
 
-    .line 322
+    .line 325
     .end local v2           #syncManager:Landroid/content/SyncManager;
     :catchall_23
     move-exception v4
@@ -2136,15 +2133,26 @@
     throw v4
 .end method
 
+.method public systemReady()V
+    .registers 1
+
+    .prologue
+    .line 138
+    invoke-direct {p0}, Landroid/content/ContentService;->getSyncManager()Landroid/content/SyncManager;
+
+    .line 139
+    return-void
+.end method
+
 .method public unregisterContentObserver(Landroid/database/IContentObserver;)V
     .registers 4
     .parameter "observer"
 
     .prologue
-    .line 152
+    .line 155
     if-nez p1, :cond_a
 
-    .line 153
+    .line 156
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "You must pass a valid observer"
@@ -2153,25 +2161,25 @@
 
     throw v0
 
-    .line 155
+    .line 158
     :cond_a
     iget-object v1, p0, Landroid/content/ContentService;->mRootNode:Landroid/content/ContentService$ObserverNode;
 
     monitor-enter v1
 
-    .line 156
+    .line 159
     :try_start_d
     iget-object v0, p0, Landroid/content/ContentService;->mRootNode:Landroid/content/ContentService$ObserverNode;
 
     invoke-virtual {v0, p1}, Landroid/content/ContentService$ObserverNode;->removeObserverLocked(Landroid/database/IContentObserver;)Z
 
-    .line 158
+    .line 161
     monitor-exit v1
 
-    .line 159
+    .line 162
     return-void
 
-    .line 158
+    .line 161
     :catchall_14
     move-exception v0
 

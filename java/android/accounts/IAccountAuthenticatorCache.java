@@ -17,6 +17,8 @@ public interface IAccountAuthenticatorCache {
 
     public abstract void dump(FileDescriptor filedescriptor, PrintWriter printwriter, String as[]);
 
+    public abstract void generateServicesMap();
+
     public abstract Collection getAllServices();
 
     public abstract android.content.pm.RegisteredServicesCache.ServiceInfo getServiceInfo(AuthenticatorDescription authenticatordescription);

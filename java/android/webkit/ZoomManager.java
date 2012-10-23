@@ -525,16 +525,16 @@ _L3:
         return mMinZoomScale;
     }
 
-    public ScaleGestureDetector getMultiTouchGestureDetector() {
-        return mScaleDetector;
-    }
-
     public final float getReadingLevelScale() {
         return computeScaleWithLimits(computeReadingLevelScale(getZoomOverviewScale()));
     }
 
     public final float getScale() {
         return mActualScale;
+    }
+
+    public ScaleGestureDetector getScaleGestureDetector() {
+        return mScaleDetector;
     }
 
     public final float getTextWrapScale() {

@@ -598,7 +598,6 @@ _L1:
         mAuthenticatorCache = iaccountauthenticatorcache;
         mAuthenticatorCache.setListener(this, null);
         sThis.set(this);
-        initUser(0);
         IntentFilter intentfilter = new IntentFilter();
         intentfilter.addAction("android.intent.action.PACKAGE_REMOVED");
         intentfilter.addDataScheme("package");
@@ -2584,6 +2583,11 @@ _L1:
         exception;
         restoreCallingIdentity(l);
         throw exception;
+    }
+
+    public void systemReady() {
+        mAuthenticatorCache.generateServicesMap();
+        initUser(0);
     }
 
     public void updateAppPermission(Account account, String s, int i, boolean flag) throws RemoteException {

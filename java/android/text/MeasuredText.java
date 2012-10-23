@@ -273,7 +273,7 @@ _L6:
     }
 
     void setPos(int i) {
-        mPos = i;
+        mPos = i - mTextStart;
     }
 
     private static final boolean localLOGV;

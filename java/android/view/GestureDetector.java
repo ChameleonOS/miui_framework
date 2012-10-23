@@ -5,7 +5,6 @@
 package android.view;
 
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.os.Handler;
 import android.os.Message;
 
@@ -122,15 +121,6 @@ _L5:
     }
 
     public GestureDetector(Context context, OnGestureListener ongesturelistener, Handler handler) {
-        boolean flag;
-        if(context != null && context.getApplicationInfo().targetSdkVersion >= 8)
-            flag = true;
-        else
-            flag = false;
-        this(context, ongesturelistener, handler, flag);
-    }
-
-    public GestureDetector(Context context, OnGestureListener ongesturelistener, Handler handler, boolean flag) {
         InputEventConsistencyVerifier inputeventconsistencyverifier;
         if(InputEventConsistencyVerifier.isInstrumentationEnabled())
             inputeventconsistencyverifier = new InputEventConsistencyVerifier(this, 0);
@@ -144,7 +134,11 @@ _L5:
         mListener = ongesturelistener;
         if(ongesturelistener instanceof OnDoubleTapListener)
             setOnDoubleTapListener((OnDoubleTapListener)ongesturelistener);
-        init(context, flag);
+        init(context);
+    }
+
+    public GestureDetector(Context context, OnGestureListener ongesturelistener, Handler handler, boolean flag) {
+        this(context, ongesturelistener, handler);
     }
 
     public GestureDetector(OnGestureListener ongesturelistener) {
@@ -169,17 +163,27 @@ _L5:
             mInLongPress = false;
     }
 
+    private void cancelTaps() {
+        mHandler.removeMessages(1);
+        mHandler.removeMessages(2);
+        mHandler.removeMessages(3);
+        mIsDoubleTapping = false;
+        mAlwaysInTapRegion = false;
+        mAlwaysInBiggerTapRegion = false;
+        if(mInLongPress)
+            mInLongPress = false;
+    }
+
     private void dispatchLongPress() {
         mHandler.removeMessages(3);
         mInLongPress = true;
         mListener.onLongPress(mCurrentDownEvent);
     }
 
-    private void init(Context context, boolean flag) {
+    private void init(Context context) {
         if(mListener == null)
             throw new NullPointerException("OnGestureListener must not be null");
         mIsLongpressEnabled = true;
-        mIgnoreMultitouch = flag;
         int i;
         int j;
         int k;
@@ -222,64 +226,91 @@ _L5:
     }
 
     public boolean onTouchEvent(MotionEvent motionevent) {
-        int i;
-        float f;
-        float f1;
-        boolean flag;
+        float f2;
+        float f3;
+        boolean flag1;
         if(mInputEventConsistencyVerifier != null)
             mInputEventConsistencyVerifier.onTouchEvent(motionevent, 0);
-        i = motionevent.getAction();
-        f = motionevent.getY();
-        f1 = motionevent.getX();
+        int i = motionevent.getAction();
         if(mVelocityTracker == null)
             mVelocityTracker = VelocityTracker.obtain();
         mVelocityTracker.addMovement(motionevent);
-        flag = false;
+        boolean flag;
+        int j;
+        float f;
+        float f1;
+        int k;
+        int l;
+        if((i & 0xff) == 6)
+            flag = true;
+        else
+            flag = false;
+        if(flag)
+            j = motionevent.getActionIndex();
+        else
+            j = -1;
+        f = 0.0F;
+        f1 = 0.0F;
+        k = motionevent.getPointerCount();
+        l = 0;
+        while(l < k)  {
+            if(j != l) {
+                f += motionevent.getX(l);
+                f1 += motionevent.getY(l);
+            }
+            l++;
+        }
+        int i1;
+        if(flag)
+            i1 = k - 1;
+        else
+            i1 = k;
+        f2 = f / (float)i1;
+        f3 = f1 / (float)i1;
+        flag1 = false;
         i & 0xff;
-        JVM INSTR tableswitch 0 6: default 104
-    //                   0 214
-    //                   1 709
-    //                   2 461
-    //                   3 933
-    //                   4 104
-    //                   5 128
-    //                   6 142;
+        JVM INSTR tableswitch 0 6: default 212
+    //                   0 301
+    //                   1 792
+    //                   2 561
+    //                   3 1027
+    //                   4 212
+    //                   5 243
+    //                   6 274;
            goto _L1 _L2 _L3 _L4 _L5 _L1 _L6 _L7
 _L1:
-        if(!flag && mInputEventConsistencyVerifier != null)
+        if(!flag1 && mInputEventConsistencyVerifier != null)
             mInputEventConsistencyVerifier.onUnhandledEvent(motionevent, 0);
-        return flag;
+        return flag1;
 _L6:
-        if(mIgnoreMultitouch)
-            cancel();
+        mLastFocusX = f2;
+        mDownFocusX = f2;
+        mLastFocusY = f3;
+        mDownFocusY = f3;
+        cancelTaps();
         continue; /* Loop/switch isn't completed */
 _L7:
-        if(mIgnoreMultitouch && motionevent.getPointerCount() == 2) {
-            int i1;
-            if((0xff00 & i) >> 8 == 0)
-                i1 = 1;
-            else
-                i1 = 0;
-            mLastMotionX = motionevent.getX(i1);
-            mLastMotionY = motionevent.getY(i1);
-            mVelocityTracker.recycle();
-            mVelocityTracker = VelocityTracker.obtain();
-        }
+        mLastFocusX = f2;
+        mDownFocusX = f2;
+        mLastFocusY = f3;
+        mDownFocusY = f3;
         continue; /* Loop/switch isn't completed */
 _L2:
         if(mDoubleTapListener != null) {
-            boolean flag1 = mHandler.hasMessages(3);
-            if(flag1)
+            boolean flag2 = mHandler.hasMessages(3);
+            if(flag2)
                 mHandler.removeMessages(3);
-            if(mCurrentDownEvent != null && mPreviousUpEvent != null && flag1 && isConsideredDoubleTap(mCurrentDownEvent, mPreviousUpEvent, motionevent)) {
+            if(mCurrentDownEvent != null && mPreviousUpEvent != null && flag2 && isConsideredDoubleTap(mCurrentDownEvent, mPreviousUpEvent, motionevent)) {
                 mIsDoubleTapping = true;
-                flag = false | mDoubleTapListener.onDoubleTap(mCurrentDownEvent) | mDoubleTapListener.onDoubleTapEvent(motionevent);
+                flag1 = false | mDoubleTapListener.onDoubleTap(mCurrentDownEvent) | mDoubleTapListener.onDoubleTapEvent(motionevent);
             } else {
                 mHandler.sendEmptyMessageDelayed(3, DOUBLE_TAP_TIMEOUT);
             }
         }
-        mLastMotionX = f1;
-        mLastMotionY = f;
+        mLastFocusX = f2;
+        mDownFocusX = f2;
+        mLastFocusY = f3;
+        mDownFocusY = f3;
         if(mCurrentDownEvent != null)
             mCurrentDownEvent.recycle();
         mCurrentDownEvent = MotionEvent.obtain(motionevent);
@@ -292,35 +323,35 @@ _L2:
             mHandler.sendEmptyMessageAtTime(2, mCurrentDownEvent.getDownTime() + (long)TAP_TIMEOUT + (long)LONGPRESS_TIMEOUT);
         }
         mHandler.sendEmptyMessageAtTime(1, mCurrentDownEvent.getDownTime() + (long)TAP_TIMEOUT);
-        flag |= mListener.onDown(motionevent);
+        flag1 |= mListener.onDown(motionevent);
         continue; /* Loop/switch isn't completed */
 _L4:
-        if(!mInLongPress && (!mIgnoreMultitouch || motionevent.getPointerCount() <= 1)) {
-            float f4 = mLastMotionX - f1;
-            float f5 = mLastMotionY - f;
+        if(!mInLongPress) {
+            float f6 = mLastFocusX - f2;
+            float f7 = mLastFocusY - f3;
             if(mIsDoubleTapping)
-                flag = false | mDoubleTapListener.onDoubleTapEvent(motionevent);
+                flag1 = false | mDoubleTapListener.onDoubleTapEvent(motionevent);
             else
             if(mAlwaysInTapRegion) {
-                int j = (int)(f1 - mCurrentDownEvent.getX());
-                int k = (int)(f - mCurrentDownEvent.getY());
-                int l = j * j + k * k;
-                if(l > mTouchSlopSquare) {
-                    flag = mListener.onScroll(mCurrentDownEvent, motionevent, f4, f5);
-                    mLastMotionX = f1;
-                    mLastMotionY = f;
+                int k1 = (int)(f2 - mDownFocusX);
+                int l1 = (int)(f3 - mDownFocusY);
+                int i2 = k1 * k1 + l1 * l1;
+                if(i2 > mTouchSlopSquare) {
+                    flag1 = mListener.onScroll(mCurrentDownEvent, motionevent, f6, f7);
+                    mLastFocusX = f2;
+                    mLastFocusY = f3;
                     mAlwaysInTapRegion = false;
                     mHandler.removeMessages(3);
                     mHandler.removeMessages(1);
                     mHandler.removeMessages(2);
                 }
-                if(l > mDoubleTapTouchSlopSquare)
+                if(i2 > mDoubleTapTouchSlopSquare)
                     mAlwaysInBiggerTapRegion = false;
             } else
-            if(Math.abs(f4) >= 1.0F || Math.abs(f5) >= 1.0F) {
-                flag = mListener.onScroll(mCurrentDownEvent, motionevent, f4, f5);
-                mLastMotionX = f1;
-                mLastMotionY = f;
+            if(Math.abs(f6) >= 1.0F || Math.abs(f7) >= 1.0F) {
+                flag1 = mListener.onScroll(mCurrentDownEvent, motionevent, f6, f7);
+                mLastFocusX = f2;
+                mLastFocusY = f3;
             }
         }
         continue; /* Loop/switch isn't completed */
@@ -330,7 +361,7 @@ _L3:
         motionevent1 = MotionEvent.obtain(motionevent);
         if(!mIsDoubleTapping) goto _L9; else goto _L8
 _L8:
-        flag = false | mDoubleTapListener.onDoubleTapEvent(motionevent);
+        flag1 = false | mDoubleTapListener.onDoubleTapEvent(motionevent);
 _L10:
         if(mPreviousUpEvent != null)
             mPreviousUpEvent.recycle();
@@ -349,14 +380,15 @@ _L9:
             mInLongPress = false;
         } else
         if(mAlwaysInTapRegion) {
-            flag = mListener.onSingleTapUp(motionevent);
+            flag1 = mListener.onSingleTapUp(motionevent);
         } else {
             VelocityTracker velocitytracker = mVelocityTracker;
+            int j1 = motionevent.getPointerId(0);
             velocitytracker.computeCurrentVelocity(1000, mMaximumFlingVelocity);
-            float f2 = velocitytracker.getYVelocity();
-            float f3 = velocitytracker.getXVelocity();
-            if(Math.abs(f2) > (float)mMinimumFlingVelocity || Math.abs(f3) > (float)mMinimumFlingVelocity)
-                flag = mListener.onFling(mCurrentDownEvent, motionevent, f3, f2);
+            float f4 = velocitytracker.getYVelocity(j1);
+            float f5 = velocitytracker.getXVelocity(j1);
+            if(Math.abs(f4) > (float)mMinimumFlingVelocity || Math.abs(f5) > (float)mMinimumFlingVelocity)
+                flag1 = mListener.onFling(mCurrentDownEvent, motionevent, f5, f4);
         }
         if(true) goto _L10; else goto _L5
 _L5:
@@ -385,14 +417,15 @@ _L11:
     private OnDoubleTapListener mDoubleTapListener;
     private int mDoubleTapSlopSquare;
     private int mDoubleTapTouchSlopSquare;
+    private float mDownFocusX;
+    private float mDownFocusY;
     private final Handler mHandler;
-    private boolean mIgnoreMultitouch;
     private boolean mInLongPress;
     private final InputEventConsistencyVerifier mInputEventConsistencyVerifier;
     private boolean mIsDoubleTapping;
     private boolean mIsLongpressEnabled;
-    private float mLastMotionX;
-    private float mLastMotionY;
+    private float mLastFocusX;
+    private float mLastFocusY;
     private final OnGestureListener mListener;
     private int mMaximumFlingVelocity;
     private int mMinimumFlingVelocity;

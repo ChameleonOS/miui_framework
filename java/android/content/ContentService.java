@@ -17,7 +17,7 @@ import java.util.*;
 
 // Referenced classes of package android.content:
 //            SyncManager, Context, SyncStorageEngine, ContentResolver, 
-//            IContentService, ISyncStatusObserver, SyncAdapterType, SyncStatusInfo
+//            ISyncStatusObserver, SyncAdapterType, SyncStatusInfo
 
 public final class ContentService extends IContentService.Stub {
     public static final class ObserverNode {
@@ -284,7 +284,6 @@ label0:
         mSyncManager = null;
         mContext = context;
         mFactoryTest = flag;
-        getSyncManager();
     }
 
     private SyncManager getSyncManager() {
@@ -308,7 +307,7 @@ label0:
         throw exception;
     }
 
-    public static IContentService main(Context context, boolean flag) {
+    public static ContentService main(Context context, boolean flag) {
         ContentService contentservice = new ContentService(context, flag);
         ServiceManager.addService("content", contentservice);
         return contentservice;
@@ -845,6 +844,10 @@ _L6:
         exception;
         restoreCallingIdentity(l);
         throw exception;
+    }
+
+    public void systemReady() {
+        getSyncManager();
     }
 
     public void unregisterContentObserver(IContentObserver icontentobserver) {

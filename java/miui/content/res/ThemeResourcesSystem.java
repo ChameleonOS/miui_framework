@@ -35,7 +35,7 @@ public final class ThemeResourcesSystem extends ThemeResources {
         ThemeZipFile.ThemeFileInfo themefileinfo = null;
         if(!s1.equals("sym_def_app_icon.png")) goto _L2; else goto _L1
 _L1:
-        themefileinfo = sIcons.getThemeFileStream(s1);
+        themefileinfo = getIconStream(s);
 _L6:
         ThemeZipFile.ThemeFileInfo themefileinfo1;
         if(themefileinfo == null)

@@ -23,8 +23,8 @@ import java.util.Map;
 
 // Referenced classes of package android.webkit:
 //            WebViewProvider, WebViewFactoryProvider, WebViewFactory, PluginList, 
-//            WebBackForwardList, WebSettings, ValueCallback, DownloadListener, 
-//            WebChromeClient, WebViewClient
+//            WebViewUtils, WebBackForwardList, WebSettings, ValueCallback, 
+//            DownloadListener, WebChromeClient, WebViewClient
 
 public class WebView extends AbsoluteLayout
     implements android.view.ViewTreeObserver.OnGlobalFocusChangeListener, android.view.ViewGroup.OnHierarchyChangeListener {
@@ -473,12 +473,12 @@ public class WebView extends AbsoluteLayout
 
     public void loadUrl(String s) {
         checkThread();
-        mProvider.loadUrl(s);
+        mProvider.loadUrl(WebViewUtils.processUrl(s));
     }
 
     public void loadUrl(String s, Map map) {
         checkThread();
-        mProvider.loadUrl(s, map);
+        mProvider.loadUrl(WebViewUtils.processUrl(s), map);
     }
 
     protected void onAttachedToWindow() {

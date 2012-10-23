@@ -127,7 +127,9 @@ _L2:
                         mOnTimedTextListener.onTimedText(mMediaPlayer, null);
                     else
                     if(message.obj instanceof Parcel) {
-                        TimedText timedtext = new TimedText((Parcel)message.obj);
+                        Parcel parcel = (Parcel)message.obj;
+                        TimedText timedtext = new TimedText(parcel);
+                        parcel.recycle();
                         mOnTimedTextListener.onTimedText(mMediaPlayer, timedtext);
                     }
                 break;

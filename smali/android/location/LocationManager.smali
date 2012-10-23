@@ -39,6 +39,8 @@
 
 
 # instance fields
+.field private final mContext:Landroid/content/Context;
+
 .field private final mGpsStatus:Landroid/location/GpsStatus;
 
 .field private final mGpsStatusListeners:Ljava/util/HashMap;
@@ -81,51 +83,55 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/location/ILocationManager;)V
-    .registers 3
+.method public constructor <init>(Landroid/content/Context;Landroid/location/ILocationManager;)V
+    .registers 4
+    .parameter "context"
     .parameter "service"
 
     .prologue
-    .line 263
+    .line 266
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
+    .line 57
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/location/LocationManager;->mGpsStatusListeners:Ljava/util/HashMap;
 
-    .line 58
+    .line 59
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/location/LocationManager;->mNmeaListeners:Ljava/util/HashMap;
 
-    .line 60
+    .line 61
     new-instance v0, Landroid/location/GpsStatus;
 
     invoke-direct {v0}, Landroid/location/GpsStatus;-><init>()V
 
     iput-object v0, p0, Landroid/location/LocationManager;->mGpsStatus:Landroid/location/GpsStatus;
 
-    .line 164
+    .line 167
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
 
-    .line 264
-    iput-object p1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
+    .line 267
+    iput-object p2, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
-    .line 265
+    .line 268
+    iput-object p1, p0, Landroid/location/LocationManager;->mContext:Landroid/content/Context;
+
+    .line 269
     return-void
 .end method
 
 .method private _requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;)V
-    .registers 17
+    .registers 18
     .parameter "provider"
     .parameter "criteria"
     .parameter "minTime"
@@ -134,17 +140,17 @@
     .parameter "intent"
 
     .prologue
-    .line 832
+    .line 837
     const-wide/16 v0, 0x0
 
     cmp-long v0, p3, v0
 
     if-gez v0, :cond_8
 
-    .line 833
+    .line 838
     const-wide/16 p3, 0x0
 
-    .line 835
+    .line 840
     :cond_8
     const/4 v0, 0x0
 
@@ -152,13 +158,19 @@
 
     if-gez v0, :cond_e
 
-    .line 836
+    .line 841
     const/4 p5, 0x0
 
-    .line 840
+    .line 845
     :cond_e
     :try_start_e
     iget-object v0, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
+
+    iget-object v1, p0, Landroid/location/LocationManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v8
 
     move-object v1, p1
 
@@ -168,35 +180,35 @@
 
     move v5, p5
 
-    move v6, p6
+    move/from16 v6, p6
 
     move-object/from16 v7, p7
 
-    invoke-interface/range {v0 .. v7}, Landroid/location/ILocationManager;->requestLocationUpdatesPI(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;)V
-    :try_end_1a
-    .catch Landroid/os/RemoteException; {:try_start_e .. :try_end_1a} :catch_1b
+    invoke-interface/range {v0 .. v8}, Landroid/location/ILocationManager;->requestLocationUpdatesPI(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;Ljava/lang/String;)V
+    :try_end_21
+    .catch Landroid/os/RemoteException; {:try_start_e .. :try_end_21} :catch_22
 
-    .line 844
-    :goto_1a
+    .line 850
+    :goto_21
     return-void
 
-    .line 841
-    :catch_1b
-    move-exception v8
+    .line 847
+    :catch_22
+    move-exception v9
 
-    .line 842
-    .local v8, ex:Landroid/os/RemoteException;
+    .line 848
+    .local v9, ex:Landroid/os/RemoteException;
     const-string v0, "LocationManager"
 
     const-string/jumbo v1, "requestLocationUpdates: RemoteException"
 
-    invoke-static {v0, v1, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, v1, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1a
+    goto :goto_21
 .end method
 
 .method private _requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/LocationListener;Landroid/os/Looper;)V
-    .registers 21
+    .registers 22
     .parameter "provider"
     .parameter "criteria"
     .parameter "minTime"
@@ -206,17 +218,17 @@
     .parameter "looper"
 
     .prologue
-    .line 646
+    .line 650
     const-wide/16 v2, 0x0
 
     cmp-long v2, p3, v2
 
     if-gez v2, :cond_8
 
-    .line 647
+    .line 651
     const-wide/16 p3, 0x0
 
-    .line 649
+    .line 653
     :cond_8
     const/4 v2, 0x0
 
@@ -224,19 +236,19 @@
 
     if-gez v2, :cond_f
 
-    .line 650
+    .line 654
     const/16 p5, 0x0
 
-    .line 654
+    .line 658
     :cond_f
     :try_start_f
-    iget-object v11, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
+    iget-object v12, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
 
-    monitor-enter v11
+    monitor-enter v12
     :try_end_12
-    .catch Landroid/os/RemoteException; {:try_start_f .. :try_end_12} :catch_3f
+    .catch Landroid/os/RemoteException; {:try_start_f .. :try_end_12} :catch_46
 
-    .line 655
+    .line 659
     :try_start_12
     iget-object v2, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
 
@@ -248,11 +260,11 @@
 
     check-cast v9, Landroid/location/LocationManager$ListenerTransport;
 
-    .line 656
+    .line 660
     .local v9, transport:Landroid/location/LocationManager$ListenerTransport;
     if-nez v9, :cond_27
 
-    .line 657
+    .line 661
     new-instance v9, Landroid/location/LocationManager$ListenerTransport;
 
     .end local v9           #transport:Landroid/location/LocationManager$ListenerTransport;
@@ -262,7 +274,7 @@
 
     invoke-direct {v9, p0, v0, v1}, Landroid/location/LocationManager$ListenerTransport;-><init>(Landroid/location/LocationManager;Landroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 659
+    .line 663
     .restart local v9       #transport:Landroid/location/LocationManager$ListenerTransport;
     :cond_27
     iget-object v2, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
@@ -271,55 +283,61 @@
 
     invoke-virtual {v2, v0, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 660
+    .line 664
     iget-object v2, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
+
+    iget-object v3, p0, Landroid/location/LocationManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v10
 
     move-object v3, p1
 
     move-object v4, p2
 
-    move-wide v5, p3
+    move-wide/from16 v5, p3
 
     move/from16 v7, p5
 
     move/from16 v8, p6
 
-    invoke-interface/range {v2 .. v9}, Landroid/location/ILocationManager;->requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/ILocationListener;)V
+    invoke-interface/range {v2 .. v10}, Landroid/location/ILocationManager;->requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/ILocationListener;Ljava/lang/String;)V
 
-    .line 661
-    monitor-exit v11
+    .line 666
+    monitor-exit v12
 
-    .line 665
+    .line 670
     .end local v9           #transport:Landroid/location/LocationManager$ListenerTransport;
-    :goto_3b
+    :goto_42
     return-void
 
-    .line 661
-    :catchall_3c
+    .line 666
+    :catchall_43
     move-exception v2
 
-    monitor-exit v11
-    :try_end_3e
-    .catchall {:try_start_12 .. :try_end_3e} :catchall_3c
+    monitor-exit v12
+    :try_end_45
+    .catchall {:try_start_12 .. :try_end_45} :catchall_43
 
-    :try_start_3e
+    :try_start_45
     throw v2
-    :try_end_3f
-    .catch Landroid/os/RemoteException; {:try_start_3e .. :try_end_3f} :catch_3f
+    :try_end_46
+    .catch Landroid/os/RemoteException; {:try_start_45 .. :try_end_46} :catch_46
 
-    .line 662
-    :catch_3f
-    move-exception v10
+    .line 667
+    :catch_46
+    move-exception v11
 
-    .line 663
-    .local v10, ex:Landroid/os/RemoteException;
+    .line 668
+    .local v11, ex:Landroid/os/RemoteException;
     const-string v2, "LocationManager"
 
     const-string/jumbo v3, "requestLocationUpdates: DeadObjectException"
 
-    invoke-static {v2, v3, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v2, v3, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_3b
+    goto :goto_42
 .end method
 
 .method static synthetic access$100(Landroid/location/LocationManager;)Landroid/location/ILocationManager;
@@ -327,7 +345,7 @@
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 54
     iget-object v0, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
     return-object v0
@@ -338,7 +356,7 @@
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 54
     iget-object v0, p0, Landroid/location/LocationManager;->mGpsStatus:Landroid/location/GpsStatus;
 
     return-object v0
@@ -350,14 +368,14 @@
     .parameter "info"
 
     .prologue
-    .line 268
+    .line 272
     new-instance v0, Lcom/android/internal/location/DummyLocationProvider;
 
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
     invoke-direct {v0, p1, v1}, Lcom/android/internal/location/DummyLocationProvider;-><init>(Ljava/lang/String;Landroid/location/ILocationManager;)V
 
-    .line 270
+    .line 274
     .local v0, provider:Lcom/android/internal/location/DummyLocationProvider;
     const-string/jumbo v1, "network"
 
@@ -367,7 +385,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setRequiresNetwork(Z)V
 
-    .line 271
+    .line 275
     const-string/jumbo v1, "satellite"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -376,7 +394,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setRequiresSatellite(Z)V
 
-    .line 272
+    .line 276
     const-string v1, "cell"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -385,7 +403,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setRequiresCell(Z)V
 
-    .line 273
+    .line 277
     const-string v1, "cost"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -394,7 +412,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setHasMonetaryCost(Z)V
 
-    .line 274
+    .line 278
     const-string v1, "altitude"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -403,7 +421,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setSupportsAltitude(Z)V
 
-    .line 275
+    .line 279
     const-string/jumbo v1, "speed"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -412,7 +430,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setSupportsSpeed(Z)V
 
-    .line 276
+    .line 280
     const-string v1, "bearing"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -421,7 +439,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setSupportsBearing(Z)V
 
-    .line 277
+    .line 281
     const-string/jumbo v1, "power"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -430,7 +448,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setPowerRequirement(I)V
 
-    .line 278
+    .line 282
     const-string v1, "accuracy"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -439,7 +457,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/location/DummyLocationProvider;->setAccuracy(I)V
 
-    .line 279
+    .line 283
     return-object v0
 .end method
 
@@ -450,7 +468,7 @@
     .parameter "listener"
 
     .prologue
-    .line 1451
+    .line 1457
     iget-object v3, p0, Landroid/location/LocationManager;->mGpsStatusListeners:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -459,22 +477,22 @@
 
     if-eqz v3, :cond_a
 
-    .line 1453
+    .line 1459
     const/4 v1, 0x1
 
-    .line 1466
+    .line 1472
     :cond_9
     :goto_9
     return v1
 
-    .line 1456
+    .line 1462
     :cond_a
     :try_start_a
     new-instance v2, Landroid/location/LocationManager$GpsStatusListenerTransport;
 
     invoke-direct {v2, p0, p1}, Landroid/location/LocationManager$GpsStatusListenerTransport;-><init>(Landroid/location/LocationManager;Landroid/location/GpsStatus$Listener;)V
 
-    .line 1457
+    .line 1463
     .local v2, transport:Landroid/location/LocationManager$GpsStatusListenerTransport;
     iget-object v3, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -482,11 +500,11 @@
 
     move-result v1
 
-    .line 1458
+    .line 1464
     .local v1, result:Z
     if-eqz v1, :cond_9
 
-    .line 1459
+    .line 1465
     iget-object v3, p0, Landroid/location/LocationManager;->mGpsStatusListeners:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -495,13 +513,13 @@
 
     goto :goto_9
 
-    .line 1461
+    .line 1467
     .end local v1           #result:Z
     .end local v2           #transport:Landroid/location/LocationManager$GpsStatusListenerTransport;
     :catch_1d
     move-exception v0
 
-    .line 1462
+    .line 1468
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "LocationManager"
 
@@ -509,7 +527,7 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1463
+    .line 1469
     const/4 v1, 0x0
 
     .restart local v1       #result:Z
@@ -521,7 +539,7 @@
     .parameter "listener"
 
     .prologue
-    .line 1497
+    .line 1503
     iget-object v3, p0, Landroid/location/LocationManager;->mNmeaListeners:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -530,22 +548,22 @@
 
     if-eqz v3, :cond_a
 
-    .line 1499
+    .line 1505
     const/4 v1, 0x1
 
-    .line 1512
+    .line 1518
     :cond_9
     :goto_9
     return v1
 
-    .line 1502
+    .line 1508
     :cond_a
     :try_start_a
     new-instance v2, Landroid/location/LocationManager$GpsStatusListenerTransport;
 
     invoke-direct {v2, p0, p1}, Landroid/location/LocationManager$GpsStatusListenerTransport;-><init>(Landroid/location/LocationManager;Landroid/location/GpsStatus$NmeaListener;)V
 
-    .line 1503
+    .line 1509
     .local v2, transport:Landroid/location/LocationManager$GpsStatusListenerTransport;
     iget-object v3, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -553,11 +571,11 @@
 
     move-result v1
 
-    .line 1504
+    .line 1510
     .local v1, result:Z
     if-eqz v1, :cond_9
 
-    .line 1505
+    .line 1511
     iget-object v3, p0, Landroid/location/LocationManager;->mNmeaListeners:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -566,13 +584,13 @@
 
     goto :goto_9
 
-    .line 1507
+    .line 1513
     .end local v1           #result:Z
     .end local v2           #transport:Landroid/location/LocationManager$GpsStatusListenerTransport;
     :catch_1d
     move-exception v0
 
-    .line 1508
+    .line 1514
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "LocationManager"
 
@@ -580,7 +598,7 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1509
+    .line 1515
     const/4 v1, 0x0
 
     .restart local v1       #result:Z
@@ -588,7 +606,7 @@
 .end method
 
 .method public addProximityAlert(DDFJLandroid/app/PendingIntent;)V
-    .registers 19
+    .registers 20
     .parameter "latitude"
     .parameter "longitude"
     .parameter "radius"
@@ -596,41 +614,47 @@
     .parameter "intent"
 
     .prologue
-    .line 1089
+    .line 1095
     :try_start_0
     iget-object v0, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
+
+    iget-object v1, p0, Landroid/location/LocationManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v9
 
     move-wide v1, p1
 
     move-wide v3, p3
 
-    move v5, p5
+    move/from16 v5, p5
 
     move-wide/from16 v6, p6
 
     move-object/from16 v8, p8
 
-    invoke-interface/range {v0 .. v8}, Landroid/location/ILocationManager;->addProximityAlert(DDFJLandroid/app/PendingIntent;)V
-    :try_end_c
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_c} :catch_d
+    invoke-interface/range {v0 .. v9}, Landroid/location/ILocationManager;->addProximityAlert(DDFJLandroid/app/PendingIntent;Ljava/lang/String;)V
+    :try_end_13
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_13} :catch_14
 
-    .line 1094
-    :goto_c
+    .line 1100
+    :goto_13
     return-void
 
-    .line 1091
-    :catch_d
-    move-exception v9
+    .line 1097
+    :catch_14
+    move-exception v10
 
-    .line 1092
-    .local v9, ex:Landroid/os/RemoteException;
+    .line 1098
+    .local v10, ex:Landroid/os/RemoteException;
     const-string v0, "LocationManager"
 
     const-string v1, "addProximityAlert: RemoteException"
 
-    invoke-static {v0, v1, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, v1, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_c
+    goto :goto_13
 .end method
 
 .method public addTestProvider(Ljava/lang/String;ZZZZZZZII)V
@@ -647,7 +671,7 @@
     .parameter "accuracy"
 
     .prologue
-    .line 1188
+    .line 1194
     :try_start_0
     iget-object v0, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -675,15 +699,15 @@
     :try_end_16
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_16} :catch_17
 
-    .line 1194
+    .line 1200
     :goto_16
     return-void
 
-    .line 1191
+    .line 1197
     :catch_17
     move-exception v11
 
-    .line 1192
+    .line 1198
     .local v11, ex:Landroid/os/RemoteException;
     const-string v0, "LocationManager"
 
@@ -699,7 +723,7 @@
     .parameter "provider"
 
     .prologue
-    .line 1284
+    .line 1290
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -707,15 +731,15 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 1289
+    .line 1295
     :goto_5
     return-void
 
-    .line 1285
+    .line 1291
     :catch_6
     move-exception v0
 
-    .line 1286
+    .line 1292
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -731,7 +755,7 @@
     .parameter "provider"
 
     .prologue
-    .line 1246
+    .line 1252
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -739,15 +763,15 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 1250
+    .line 1256
     :goto_5
     return-void
 
-    .line 1247
+    .line 1253
     :catch_6
     move-exception v0
 
-    .line 1248
+    .line 1254
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -763,7 +787,7 @@
     .parameter "provider"
 
     .prologue
-    .line 1325
+    .line 1331
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -771,15 +795,15 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 1329
+    .line 1335
     :goto_5
     return-void
 
-    .line 1326
+    .line 1332
     :catch_6
     move-exception v0
 
-    .line 1327
+    .line 1333
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -803,7 +827,7 @@
     .end annotation
 
     .prologue
-    .line 294
+    .line 298
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -813,15 +837,15 @@
 
     move-result-object v1
 
-    .line 298
+    .line 302
     :goto_6
     return-object v1
 
-    .line 295
+    .line 299
     :catch_7
     move-exception v0
 
-    .line 296
+    .line 300
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -829,7 +853,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 298
+    .line 302
     const/4 v1, 0x0
 
     goto :goto_6
@@ -841,10 +865,10 @@
     .parameter "enabledOnly"
 
     .prologue
-    .line 390
+    .line 394
     if-nez p1, :cond_a
 
-    .line 391
+    .line 395
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "criteria==null"
@@ -853,7 +877,7 @@
 
     throw v1
 
-    .line 394
+    .line 398
     :cond_a
     :try_start_a
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
@@ -864,15 +888,15 @@
 
     move-result-object v1
 
-    .line 398
+    .line 402
     :goto_10
     return-object v1
 
-    .line 395
+    .line 399
     :catch_11
     move-exception v0
 
-    .line 396
+    .line 400
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -880,7 +904,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 398
+    .line 402
     const/4 v1, 0x0
 
     goto :goto_10
@@ -891,23 +915,23 @@
     .parameter "status"
 
     .prologue
-    .line 1543
+    .line 1549
     if-nez p1, :cond_7
 
-    .line 1544
+    .line 1550
     new-instance p1, Landroid/location/GpsStatus;
 
     .end local p1
     invoke-direct {p1}, Landroid/location/GpsStatus;-><init>()V
 
-    .line 1546
+    .line 1552
     .restart local p1
     :cond_7
     iget-object v0, p0, Landroid/location/LocationManager;->mGpsStatus:Landroid/location/GpsStatus;
 
     invoke-virtual {p1, v0}, Landroid/location/GpsStatus;->setStatus(Landroid/location/GpsStatus;)V
 
-    .line 1547
+    .line 1553
     return-object p1
 .end method
 
@@ -916,10 +940,10 @@
     .parameter "provider"
 
     .prologue
-    .line 1152
+    .line 1158
     if-nez p1, :cond_b
 
-    .line 1153
+    .line 1159
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "provider==null"
@@ -928,26 +952,32 @@
 
     throw v1
 
-    .line 1156
+    .line 1162
     :cond_b
     :try_start_b
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
-    invoke-interface {v1, p1}, Landroid/location/ILocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
-    :try_end_10
-    .catch Landroid/os/RemoteException; {:try_start_b .. :try_end_10} :catch_12
+    iget-object v2, p0, Landroid/location/LocationManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1, p1, v2}, Landroid/location/ILocationManager;->getLastKnownLocation(Ljava/lang/String;Ljava/lang/String;)Landroid/location/Location;
+    :try_end_16
+    .catch Landroid/os/RemoteException; {:try_start_b .. :try_end_16} :catch_18
 
     move-result-object v1
 
-    .line 1159
-    :goto_11
+    .line 1165
+    :goto_17
     return-object v1
 
-    .line 1157
-    :catch_12
+    .line 1163
+    :catch_18
     move-exception v0
 
-    .line 1158
+    .line 1164
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -955,10 +985,10 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1159
+    .line 1165
     const/4 v1, 0x0
 
-    goto :goto_11
+    goto :goto_17
 .end method
 
 .method public getProvider(Ljava/lang/String;)Landroid/location/LocationProvider;
@@ -968,10 +998,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 330
+    .line 334
     if-nez p1, :cond_c
 
-    .line 331
+    .line 335
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v3, "name==null"
@@ -980,7 +1010,7 @@
 
     throw v2
 
-    .line 334
+    .line 338
     :cond_c
     :try_start_c
     iget-object v3, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
@@ -989,16 +1019,16 @@
 
     move-result-object v1
 
-    .line 335
+    .line 339
     .local v1, info:Landroid/os/Bundle;
     if-nez v1, :cond_15
 
-    .line 342
+    .line 346
     .end local v1           #info:Landroid/os/Bundle;
     :goto_14
     return-object v2
 
-    .line 338
+    .line 342
     .restart local v1       #info:Landroid/os/Bundle;
     :cond_15
     invoke-direct {p0, p1, v1}, Landroid/location/LocationManager;->createProvider(Ljava/lang/String;Landroid/os/Bundle;)Landroid/location/LocationProvider;
@@ -1009,12 +1039,12 @@
 
     goto :goto_14
 
-    .line 339
+    .line 343
     .end local v1           #info:Landroid/os/Bundle;
     :catch_1a
     move-exception v0
 
-    .line 340
+    .line 344
     .local v0, ex:Landroid/os/RemoteException;
     const-string v3, "LocationManager"
 
@@ -1042,10 +1072,10 @@
     .end annotation
 
     .prologue
-    .line 356
+    .line 360
     if-nez p1, :cond_a
 
-    .line 357
+    .line 361
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "criteria==null"
@@ -1054,7 +1084,7 @@
 
     throw v1
 
-    .line 360
+    .line 364
     :cond_a
     :try_start_a
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
@@ -1065,15 +1095,15 @@
 
     move-result-object v1
 
-    .line 364
+    .line 368
     :goto_10
     return-object v1
 
-    .line 361
+    .line 365
     :catch_11
     move-exception v0
 
-    .line 362
+    .line 366
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -1081,7 +1111,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 364
+    .line 368
     const/4 v1, 0x0
 
     goto :goto_10
@@ -1103,7 +1133,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 311
+    .line 315
     :try_start_1
     iget-object v2, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -1115,15 +1145,15 @@
 
     move-result-object v1
 
-    .line 315
+    .line 319
     :goto_8
     return-object v1
 
-    .line 312
+    .line 316
     :catch_9
     move-exception v0
 
-    .line 313
+    .line 317
     .local v0, ex:Landroid/os/RemoteException;
     const-string v2, "LocationManager"
 
@@ -1139,10 +1169,10 @@
     .parameter "provider"
 
     .prologue
-    .line 1125
+    .line 1131
     if-nez p1, :cond_b
 
-    .line 1126
+    .line 1132
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "provider==null"
@@ -1151,7 +1181,7 @@
 
     throw v1
 
-    .line 1129
+    .line 1135
     :cond_b
     :try_start_b
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
@@ -1162,15 +1192,15 @@
 
     move-result v1
 
-    .line 1132
+    .line 1138
     :goto_11
     return v1
 
-    .line 1130
+    .line 1136
     :catch_12
     move-exception v0
 
-    .line 1131
+    .line 1137
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -1178,7 +1208,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1132
+    .line 1138
     const/4 v1, 0x0
 
     goto :goto_11
@@ -1189,7 +1219,7 @@
     .parameter "listener"
 
     .prologue
-    .line 1476
+    .line 1482
     :try_start_0
     iget-object v2, p0, Landroid/location/LocationManager;->mGpsStatusListeners:Ljava/util/HashMap;
 
@@ -1199,28 +1229,28 @@
 
     check-cast v1, Landroid/location/LocationManager$GpsStatusListenerTransport;
 
-    .line 1477
+    .line 1483
     .local v1, transport:Landroid/location/LocationManager$GpsStatusListenerTransport;
     if-eqz v1, :cond_f
 
-    .line 1478
+    .line 1484
     iget-object v2, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
     invoke-interface {v2, v1}, Landroid/location/ILocationManager;->removeGpsStatusListener(Landroid/location/IGpsStatusListener;)V
     :try_end_f
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_f} :catch_10
 
-    .line 1483
+    .line 1489
     .end local v1           #transport:Landroid/location/LocationManager$GpsStatusListenerTransport;
     :cond_f
     :goto_f
     return-void
 
-    .line 1480
+    .line 1486
     :catch_10
     move-exception v0
 
-    .line 1481
+    .line 1487
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "LocationManager"
 
@@ -1236,7 +1266,7 @@
     .parameter "listener"
 
     .prologue
-    .line 1522
+    .line 1528
     :try_start_0
     iget-object v2, p0, Landroid/location/LocationManager;->mNmeaListeners:Ljava/util/HashMap;
 
@@ -1246,28 +1276,28 @@
 
     check-cast v1, Landroid/location/LocationManager$GpsStatusListenerTransport;
 
-    .line 1523
+    .line 1529
     .local v1, transport:Landroid/location/LocationManager$GpsStatusListenerTransport;
     if-eqz v1, :cond_f
 
-    .line 1524
+    .line 1530
     iget-object v2, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
     invoke-interface {v2, v1}, Landroid/location/ILocationManager;->removeGpsStatusListener(Landroid/location/IGpsStatusListener;)V
     :try_end_f
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_f} :catch_10
 
-    .line 1529
+    .line 1535
     .end local v1           #transport:Landroid/location/LocationManager$GpsStatusListenerTransport;
     :cond_f
     :goto_f
     return-void
 
-    .line 1526
+    .line 1532
     :catch_10
     move-exception v0
 
-    .line 1527
+    .line 1533
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "LocationManager"
 
@@ -1283,7 +1313,7 @@
     .parameter "intent"
 
     .prologue
-    .line 1107
+    .line 1113
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -1291,15 +1321,15 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 1111
+    .line 1117
     :goto_5
     return-void
 
-    .line 1108
+    .line 1114
     :catch_6
     move-exception v0
 
-    .line 1109
+    .line 1115
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -1315,7 +1345,7 @@
     .parameter "provider"
 
     .prologue
-    .line 1208
+    .line 1214
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -1323,15 +1353,15 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 1212
+    .line 1218
     :goto_5
     return-void
 
-    .line 1209
+    .line 1215
     :catch_6
     move-exception v0
 
-    .line 1210
+    .line 1216
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -1347,10 +1377,10 @@
     .parameter "intent"
 
     .prologue
-    .line 1024
+    .line 1030
     if-nez p1, :cond_a
 
-    .line 1025
+    .line 1031
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "intent==null"
@@ -1359,24 +1389,30 @@
 
     throw v1
 
-    .line 1031
+    .line 1037
     :cond_a
     :try_start_a
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
-    invoke-interface {v1, p1}, Landroid/location/ILocationManager;->removeUpdatesPI(Landroid/app/PendingIntent;)V
-    :try_end_f
-    .catch Landroid/os/RemoteException; {:try_start_a .. :try_end_f} :catch_10
+    iget-object v2, p0, Landroid/location/LocationManager;->mContext:Landroid/content/Context;
 
-    .line 1035
-    :goto_f
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1, p1, v2}, Landroid/location/ILocationManager;->removeUpdatesPI(Landroid/app/PendingIntent;Ljava/lang/String;)V
+    :try_end_15
+    .catch Landroid/os/RemoteException; {:try_start_a .. :try_end_15} :catch_16
+
+    .line 1041
+    :goto_15
     return-void
 
-    .line 1032
-    :catch_10
+    .line 1038
+    :catch_16
     move-exception v0
 
-    .line 1033
+    .line 1039
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -1384,7 +1420,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_f
+    goto :goto_15
 .end method
 
 .method public removeUpdates(Landroid/location/LocationListener;)V
@@ -1392,10 +1428,10 @@
     .parameter "listener"
 
     .prologue
-    .line 999
+    .line 1005
     if-nez p1, :cond_b
 
-    .line 1000
+    .line 1006
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v3, "listener==null"
@@ -1404,7 +1440,7 @@
 
     throw v2
 
-    .line 1006
+    .line 1012
     :cond_b
     :try_start_b
     iget-object v2, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
@@ -1415,28 +1451,34 @@
 
     check-cast v1, Landroid/location/LocationManager$ListenerTransport;
 
-    .line 1007
+    .line 1013
     .local v1, transport:Landroid/location/LocationManager$ListenerTransport;
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_20
 
-    .line 1008
+    .line 1014
     iget-object v2, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
-    invoke-interface {v2, v1}, Landroid/location/ILocationManager;->removeUpdates(Landroid/location/ILocationListener;)V
-    :try_end_1a
-    .catch Landroid/os/RemoteException; {:try_start_b .. :try_end_1a} :catch_1b
+    iget-object v3, p0, Landroid/location/LocationManager;->mContext:Landroid/content/Context;
 
-    .line 1013
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v1, v3}, Landroid/location/ILocationManager;->removeUpdates(Landroid/location/ILocationListener;Ljava/lang/String;)V
+    :try_end_20
+    .catch Landroid/os/RemoteException; {:try_start_b .. :try_end_20} :catch_21
+
+    .line 1019
     .end local v1           #transport:Landroid/location/LocationManager$ListenerTransport;
-    :cond_1a
-    :goto_1a
+    :cond_20
+    :goto_20
     return-void
 
-    .line 1010
-    :catch_1b
+    .line 1016
+    :catch_21
     move-exception v0
 
-    .line 1011
+    .line 1017
     .local v0, ex:Landroid/os/RemoteException;
     const-string v2, "LocationManager"
 
@@ -1444,7 +1486,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1a
+    goto :goto_20
 .end method
 
 .method public requestLocationUpdates(JFLandroid/location/Criteria;Landroid/app/PendingIntent;)V
@@ -1455,10 +1497,10 @@
     .parameter "intent"
 
     .prologue
-    .line 821
+    .line 826
     if-nez p4, :cond_a
 
-    .line 822
+    .line 827
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "criteria==null"
@@ -1467,11 +1509,11 @@
 
     throw v0
 
-    .line 824
+    .line 829
     :cond_a
     if-nez p5, :cond_14
 
-    .line 825
+    .line 830
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "intent==null"
@@ -1480,7 +1522,7 @@
 
     throw v0
 
-    .line 827
+    .line 832
     :cond_14
     const/4 v1, 0x0
 
@@ -1498,7 +1540,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;)V
 
-    .line 828
+    .line 833
     return-void
 .end method
 
@@ -1511,10 +1553,10 @@
     .parameter "looper"
 
     .prologue
-    .line 635
+    .line 639
     if-nez p4, :cond_a
 
-    .line 636
+    .line 640
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "criteria==null"
@@ -1523,11 +1565,11 @@
 
     throw v0
 
-    .line 638
+    .line 642
     :cond_a
     if-nez p5, :cond_15
 
-    .line 639
+    .line 643
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "listener==null"
@@ -1536,7 +1578,7 @@
 
     throw v0
 
-    .line 641
+    .line 645
     :cond_15
     const/4 v1, 0x0
 
@@ -1556,7 +1598,7 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 642
+    .line 646
     return-void
 .end method
 
@@ -1568,10 +1610,10 @@
     .parameter "intent"
 
     .prologue
-    .line 745
+    .line 750
     if-nez p1, :cond_b
 
-    .line 746
+    .line 751
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "provider==null"
@@ -1580,11 +1622,11 @@
 
     throw v0
 
-    .line 748
+    .line 753
     :cond_b
     if-nez p5, :cond_15
 
-    .line 749
+    .line 754
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "intent==null"
@@ -1593,7 +1635,7 @@
 
     throw v0
 
-    .line 751
+    .line 756
     :cond_15
     const/4 v2, 0x0
 
@@ -1611,7 +1653,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;)V
 
-    .line 752
+    .line 757
     return-void
 .end method
 
@@ -1625,10 +1667,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 476
+    .line 480
     if-nez p1, :cond_c
 
-    .line 477
+    .line 481
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "provider==null"
@@ -1637,11 +1679,11 @@
 
     throw v0
 
-    .line 479
+    .line 483
     :cond_c
     if-nez p5, :cond_17
 
-    .line 480
+    .line 484
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "listener==null"
@@ -1650,7 +1692,7 @@
 
     throw v0
 
-    .line 482
+    .line 486
     :cond_17
     const/4 v6, 0x0
 
@@ -1668,7 +1710,7 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 483
+    .line 487
     return-void
 .end method
 
@@ -1681,10 +1723,10 @@
     .parameter "looper"
 
     .prologue
-    .line 561
+    .line 565
     if-nez p1, :cond_b
 
-    .line 562
+    .line 566
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "provider==null"
@@ -1693,11 +1735,11 @@
 
     throw v0
 
-    .line 564
+    .line 568
     :cond_b
     if-nez p5, :cond_16
 
-    .line 565
+    .line 569
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "listener==null"
@@ -1706,7 +1748,7 @@
 
     throw v0
 
-    .line 567
+    .line 571
     :cond_16
     const/4 v2, 0x0
 
@@ -1726,7 +1768,7 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 568
+    .line 572
     return-void
 .end method
 
@@ -1736,10 +1778,10 @@
     .parameter "intent"
 
     .prologue
-    .line 981
+    .line 987
     if-nez p1, :cond_a
 
-    .line 982
+    .line 988
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "criteria==null"
@@ -1748,11 +1790,11 @@
 
     throw v0
 
-    .line 984
+    .line 990
     :cond_a
     if-nez p2, :cond_14
 
-    .line 985
+    .line 991
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "intent==null"
@@ -1761,7 +1803,7 @@
 
     throw v0
 
-    .line 987
+    .line 993
     :cond_14
     const/4 v1, 0x0
 
@@ -1779,7 +1821,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;)V
 
-    .line 988
+    .line 994
     return-void
 .end method
 
@@ -1790,10 +1832,10 @@
     .parameter "looper"
 
     .prologue
-    .line 913
+    .line 919
     if-nez p1, :cond_a
 
-    .line 914
+    .line 920
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "criteria==null"
@@ -1802,11 +1844,11 @@
 
     throw v0
 
-    .line 916
+    .line 922
     :cond_a
     if-nez p2, :cond_15
 
-    .line 917
+    .line 923
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "listener==null"
@@ -1815,7 +1857,7 @@
 
     throw v0
 
-    .line 919
+    .line 925
     :cond_15
     const/4 v1, 0x0
 
@@ -1835,7 +1877,7 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 920
+    .line 926
     return-void
 .end method
 
@@ -1845,10 +1887,10 @@
     .parameter "intent"
 
     .prologue
-    .line 946
+    .line 952
     if-nez p1, :cond_b
 
-    .line 947
+    .line 953
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "provider==null"
@@ -1857,11 +1899,11 @@
 
     throw v0
 
-    .line 949
+    .line 955
     :cond_b
     if-nez p2, :cond_15
 
-    .line 950
+    .line 956
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "intent==null"
@@ -1870,7 +1912,7 @@
 
     throw v0
 
-    .line 952
+    .line 958
     :cond_15
     const/4 v2, 0x0
 
@@ -1888,7 +1930,7 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;)V
 
-    .line 953
+    .line 959
     return-void
 .end method
 
@@ -1899,10 +1941,10 @@
     .parameter "looper"
 
     .prologue
-    .line 874
+    .line 880
     if-nez p1, :cond_b
 
-    .line 875
+    .line 881
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "provider==null"
@@ -1911,11 +1953,11 @@
 
     throw v0
 
-    .line 877
+    .line 883
     :cond_b
     if-nez p2, :cond_16
 
-    .line 878
+    .line 884
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "listener==null"
@@ -1924,7 +1966,7 @@
 
     throw v0
 
-    .line 880
+    .line 886
     :cond_16
     const/4 v2, 0x0
 
@@ -1944,7 +1986,7 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/location/LocationManager;->_requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 881
+    .line 887
     return-void
 .end method
 
@@ -1955,7 +1997,7 @@
     .parameter "extras"
 
     .prologue
-    .line 1563
+    .line 1569
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -1965,15 +2007,15 @@
 
     move-result v1
 
-    .line 1566
+    .line 1572
     :goto_6
     return v1
 
-    .line 1564
+    .line 1570
     :catch_7
     move-exception v0
 
-    .line 1565
+    .line 1571
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -1981,7 +2023,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1566
+    .line 1572
     const/4 v1, 0x0
 
     goto :goto_6
@@ -1993,7 +2035,7 @@
     .parameter "userResponse"
 
     .prologue
-    .line 1578
+    .line 1584
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -2003,15 +2045,15 @@
 
     move-result v1
 
-    .line 1581
+    .line 1587
     :goto_6
     return v1
 
-    .line 1579
+    .line 1585
     :catch_7
     move-exception v0
 
-    .line 1580
+    .line 1586
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -2019,7 +2061,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1581
+    .line 1587
     const/4 v1, 0x0
 
     goto :goto_6
@@ -2031,7 +2073,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 1266
+    .line 1272
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -2039,15 +2081,15 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 1270
+    .line 1276
     :goto_5
     return-void
 
-    .line 1267
+    .line 1273
     :catch_6
     move-exception v0
 
-    .line 1268
+    .line 1274
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -2064,7 +2106,7 @@
     .parameter "loc"
 
     .prologue
-    .line 1228
+    .line 1234
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -2072,15 +2114,15 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 1232
+    .line 1238
     :goto_5
     return-void
 
-    .line 1229
+    .line 1235
     :catch_6
     move-exception v0
 
-    .line 1230
+    .line 1236
     .local v0, ex:Landroid/os/RemoteException;
     const-string v1, "LocationManager"
 
@@ -2099,7 +2141,7 @@
     .parameter "updateTime"
 
     .prologue
-    .line 1307
+    .line 1313
     :try_start_0
     iget-object v0, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
 
@@ -2115,15 +2157,15 @@
     :try_end_9
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_9} :catch_a
 
-    .line 1311
+    .line 1317
     :goto_9
     return-void
 
-    .line 1308
+    .line 1314
     :catch_a
     move-exception v6
 
-    .line 1309
+    .line 1315
     .local v6, ex:Landroid/os/RemoteException;
     const-string v0, "LocationManager"
 

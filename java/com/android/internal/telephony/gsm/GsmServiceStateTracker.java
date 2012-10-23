@@ -1411,7 +1411,7 @@ _L3:
                 flag = true;
             else
                 flag = false;
-            if(!TextUtils.isEmpty(s1) && (i & 2) == 2)
+            if(!TextUtils.isEmpty(s1) && (mEmergencyOnly || (i & 2) == 2))
                 flag1 = true;
             else
                 flag1 = false;

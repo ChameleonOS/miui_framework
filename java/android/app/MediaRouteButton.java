@@ -60,7 +60,7 @@ public class MediaRouteButton extends View {
     }
 
     public MediaRouteButton(Context context, AttributeSet attributeset) {
-        this(context, null, 0x10103ad);
+        this(context, attributeset, 0x10103ad);
     }
 
     public MediaRouteButton(Context context, AttributeSet attributeset, int i) {

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 4653
+    .line 4655
     iput-object p1, p0, Landroid/view/ViewRootImpl$TakenSurfaceHolder;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct {p0}, Lcom/android/internal/view/BaseSurfaceHolder;-><init>()V
@@ -38,7 +38,7 @@
     .registers 2
 
     .prologue
-    .line 4679
+    .line 4681
     iget-object v0, p0, Landroid/view/ViewRootImpl$TakenSurfaceHolder;->this$0:Landroid/view/ViewRootImpl;
 
     iget-boolean v0, v0, Landroid/view/ViewRootImpl;->mIsCreating:Z
@@ -50,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 4656
+    .line 4658
     iget-object v0, p0, Landroid/view/ViewRootImpl$TakenSurfaceHolder;->this$0:Landroid/view/ViewRootImpl;
 
     iget-boolean v0, v0, Landroid/view/ViewRootImpl;->mDrawingAllowed:Z
@@ -62,7 +62,7 @@
     .registers 1
 
     .prologue
-    .line 4662
+    .line 4664
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .registers 3
 
     .prologue
-    .line 4675
+    .line 4677
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Shouldn\'t be here"
@@ -86,7 +86,7 @@
     .parameter "height"
 
     .prologue
-    .line 4684
+    .line 4686
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Currently only support sizing from layout"
@@ -101,7 +101,7 @@
     .parameter "format"
 
     .prologue
-    .line 4665
+    .line 4667
     iget-object v0, p0, Landroid/view/ViewRootImpl$TakenSurfaceHolder;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v0, v0, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
@@ -110,7 +110,7 @@
 
     invoke-interface {v0, p1}, Lcom/android/internal/view/RootViewSurfaceTaker;->setSurfaceFormat(I)V
 
-    .line 4666
+    .line 4668
     return-void
 .end method
 
@@ -119,7 +119,7 @@
     .parameter "screenOn"
 
     .prologue
-    .line 4689
+    .line 4691
     iget-object v0, p0, Landroid/view/ViewRootImpl$TakenSurfaceHolder;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v0, v0, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
@@ -128,7 +128,7 @@
 
     invoke-interface {v0, p1}, Lcom/android/internal/view/RootViewSurfaceTaker;->setSurfaceKeepScreenOn(Z)V
 
-    .line 4690
+    .line 4692
     return-void
 .end method
 
@@ -137,7 +137,7 @@
     .parameter "type"
 
     .prologue
-    .line 4669
+    .line 4671
     iget-object v0, p0, Landroid/view/ViewRootImpl$TakenSurfaceHolder;->this$0:Landroid/view/ViewRootImpl;
 
     iget-object v0, v0, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
@@ -146,6 +146,6 @@
 
     invoke-interface {v0, p1}, Lcom/android/internal/view/RootViewSurfaceTaker;->setSurfaceType(I)V
 
-    .line 4670
+    .line 4672
     return-void
 .end method

@@ -53,7 +53,7 @@ public class ResolverActivity extends AlertActivity
                 textview1.setVisibility(8);
             }
             if(displayresolveinfo.displayIcon == null)
-                displayresolveinfo.displayIcon = loadIconForResolveInfo(displayresolveinfo.ri);
+                displayresolveinfo.displayIcon = displayresolveinfo.ri.loadIcon(mPm);
             imageview.setImageDrawable(displayresolveinfo.displayIcon);
         }
 

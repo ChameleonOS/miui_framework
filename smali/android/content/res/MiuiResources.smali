@@ -718,7 +718,7 @@
 
     .line 130
     .local v2, info:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_43
 
     .line 132
     const/4 v3, 0x0
@@ -728,60 +728,66 @@
     :try_start_20
     iget v5, v2, Lmiui/content/res/ThemeZipFile$ThemeFileInfo;->mDensity:I
 
-    if-lez v5, :cond_2e
+    if-lez v5, :cond_35
+
+    iget v5, p1, Landroid/util/TypedValue;->density:I
+
+    const v6, 0xffff
+
+    if-eq v5, v6, :cond_35
 
     .line 134
     new-instance v4, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v4}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-    :try_end_29
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_20 .. :try_end_29} :catch_47
+    :try_end_30
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_20 .. :try_end_30} :catch_4e
 
     .line 135
     .end local v3           #opts:Landroid/graphics/BitmapFactory$Options;
     .local v4, opts:Landroid/graphics/BitmapFactory$Options;
-    :try_start_29
+    :try_start_30
     iget v5, v2, Lmiui/content/res/ThemeZipFile$ThemeFileInfo;->mDensity:I
 
     iput v5, v4, Landroid/graphics/BitmapFactory$Options;->inDensity:I
-    :try_end_2d
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_29 .. :try_end_2d} :catch_49
+    :try_end_34
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_30 .. :try_end_34} :catch_50
 
     move-object v3, v4
 
     .line 137
     .end local v4           #opts:Landroid/graphics/BitmapFactory$Options;
     .restart local v3       #opts:Landroid/graphics/BitmapFactory$Options;
-    :cond_2e
-    :try_start_2e
+    :cond_35
+    :try_start_35
     iget-object v5, v2, Lmiui/content/res/ThemeZipFile$ThemeFileInfo;->mInput:Ljava/io/InputStream;
 
     invoke-static {p0, p1, v5, v1, v3}, Landroid/graphics/drawable/Drawable;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;
-    :try_end_33
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_2e .. :try_end_33} :catch_47
+    :try_end_3a
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_35 .. :try_end_3a} :catch_4e
 
     move-result-object v0
 
     .line 141
-    :goto_34
-    :try_start_34
+    :goto_3b
+    :try_start_3b
     iget-object v5, v2, Lmiui/content/res/ThemeZipFile$ThemeFileInfo;->mInput:Ljava/io/InputStream;
 
     invoke-virtual {v5}, Ljava/io/InputStream;->close()V
-    :try_end_39
-    .catch Ljava/lang/Exception; {:try_start_34 .. :try_end_39} :catch_3a
+    :try_end_40
+    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_40} :catch_41
 
     goto :goto_9
 
     .line 142
-    :catch_3a
+    :catch_41
     move-exception v5
 
     goto :goto_9
 
     .line 146
     .end local v3           #opts:Landroid/graphics/BitmapFactory$Options;
-    :cond_3c
+    :cond_43
     iget-object v5, p0, Landroid/content/res/MiuiResources;->mSkipFiles:Landroid/util/SparseArray;
 
     const/4 v6, 0x1
@@ -796,21 +802,21 @@
 
     .line 138
     .restart local v3       #opts:Landroid/graphics/BitmapFactory$Options;
-    :catch_47
+    :catch_4e
     move-exception v5
 
-    goto :goto_34
+    goto :goto_3b
 
     .end local v3           #opts:Landroid/graphics/BitmapFactory$Options;
     .restart local v4       #opts:Landroid/graphics/BitmapFactory$Options;
-    :catch_49
+    :catch_50
     move-exception v5
 
     move-object v3, v4
 
     .end local v4           #opts:Landroid/graphics/BitmapFactory$Options;
     .restart local v3       #opts:Landroid/graphics/BitmapFactory$Options;
-    goto :goto_34
+    goto :goto_3b
 .end method
 
 .method public final newTheme()Landroid/content/res/Resources$Theme;

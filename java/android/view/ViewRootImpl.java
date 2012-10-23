@@ -3930,26 +3930,28 @@ _L1:
 _L4:
         return null;
 _L2:
-        if(mCurScrollY != 0 || mTranslator != null) {
-            mTempRect.set(rect);
-            rect = mTempRect;
-            if(mCurScrollY != 0)
-                rect.offset(0, -mCurScrollY);
-            if(mTranslator != null)
-                mTranslator.translateRectInAppWindowToScreen(rect);
-            if(mAttachInfo.mScalingRequired)
-                rect.inset(-1, -1);
+        if(!rect.isEmpty()) {
+            if(mCurScrollY != 0 || mTranslator != null) {
+                mTempRect.set(rect);
+                rect = mTempRect;
+                if(mCurScrollY != 0)
+                    rect.offset(0, -mCurScrollY);
+                if(mTranslator != null)
+                    mTranslator.translateRectInAppWindowToScreen(rect);
+                if(mAttachInfo.mScalingRequired)
+                    rect.inset(-1, -1);
+            }
+            Rect rect1 = mDirty;
+            if(!rect1.isEmpty() && !rect1.contains(rect)) {
+                mAttachInfo.mSetIgnoreDirtyState = true;
+                mAttachInfo.mIgnoreDirtyState = true;
+            }
+            rect1.union(rect.left, rect.top, rect.right, rect.bottom);
+            float f = mAttachInfo.mApplicationScale;
+            rect1.intersect(0, 0, (int)(0.5F + f * (float)mWidth), (int)(0.5F + f * (float)mHeight));
+            if(!mWillDrawSoon)
+                scheduleTraversals();
         }
-        Rect rect1 = mDirty;
-        if(!rect1.isEmpty() && !rect1.contains(rect)) {
-            mAttachInfo.mSetIgnoreDirtyState = true;
-            mAttachInfo.mIgnoreDirtyState = true;
-        }
-        rect1.union(rect.left, rect.top, rect.right, rect.bottom);
-        float f = mAttachInfo.mApplicationScale;
-        rect1.intersect(0, 0, (int)(0.5F + f * (float)mWidth), (int)(0.5F + f * (float)mHeight));
-        if(!mWillDrawSoon)
-            scheduleTraversals();
         if(true) goto _L4; else goto _L3
 _L3:
     }

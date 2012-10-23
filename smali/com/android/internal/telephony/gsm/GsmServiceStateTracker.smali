@@ -8881,23 +8881,23 @@
 
     move-result v6
 
-    if-nez v6, :cond_103
+    if-nez v6, :cond_107
 
     .line 528
     :cond_87
     iget-boolean v6, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mEmergencyOnly:Z
 
-    if-nez v6, :cond_10a
+    if-nez v6, :cond_10e
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
-    if-nez v6, :cond_10a
+    if-nez v6, :cond_10e
 
     and-int/lit8 v6, v2, 0x1
 
-    if-ne v6, v7, :cond_10a
+    if-ne v6, v7, :cond_10e
 
     move v4, v7
 
@@ -8908,17 +8908,22 @@
 
     move-result v6
 
-    if-nez v6, :cond_10c
+    if-nez v6, :cond_110
+
+    iget-boolean v6, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mEmergencyOnly:Z
+
+    if-nez v6, :cond_a4
 
     and-int/lit8 v6, v2, 0x2
 
-    if-ne v6, v11, :cond_10c
+    if-ne v6, v11, :cond_110
 
+    :cond_a4
     move v3, v7
 
     .line 534
     .local v3, showPlmn:Z
-    :goto_a1
+    :goto_a5
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -9017,7 +9022,7 @@
     .end local v0           #intent:Landroid/content/Intent;
     .end local v3           #showPlmn:Z
     .end local v4           #showSpn:Z
-    :cond_103
+    :cond_107
     iput v2, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->curSpnRule:I
 
     .line 548
@@ -9029,16 +9034,16 @@
     .line 550
     return-void
 
-    :cond_10a
+    :cond_10e
     move v4, v8
 
     .line 528
     goto :goto_96
 
     .restart local v4       #showSpn:Z
-    :cond_10c
+    :cond_110
     move v3, v8
 
     .line 530
-    goto :goto_a1
+    goto :goto_a5
 .end method

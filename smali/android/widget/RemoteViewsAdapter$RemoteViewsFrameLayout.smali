@@ -9,29 +9,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0xa
     name = "RemoteViewsFrameLayout"
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Landroid/widget/RemoteViewsAdapter;
-
-
 # direct methods
-.method public constructor <init>(Landroid/widget/RemoteViewsAdapter;Landroid/content/Context;)V
-    .registers 3
-    .parameter
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 2
     .parameter "context"
 
     .prologue
-    .line 250
-    iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->this$0:Landroid/widget/RemoteViewsAdapter;
+    .line 272
+    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 251
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    .line 252
+    .line 273
     return-void
 .end method
 
@@ -42,11 +34,11 @@
     .parameter "view"
 
     .prologue
-    .line 262
+    .line 283
     :try_start_0
     invoke-virtual {p0}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->removeAllViews()V
 
-    .line 263
+    .line 284
     invoke-virtual {p0}, Landroid/widget/RemoteViewsAdapter$RemoteViewsFrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -59,15 +51,15 @@
     :try_end_e
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_e} :catch_f
 
-    .line 267
+    .line 288
     :goto_e
     return-void
 
-    .line 264
+    .line 285
     :catch_f
     move-exception v0
 
-    .line 265
+    .line 286
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "RemoteViewsAdapter"
 

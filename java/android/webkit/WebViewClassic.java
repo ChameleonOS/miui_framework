@@ -2322,9 +2322,9 @@ _L3:
 
     private void ensureSelectionHandles() {
         if(mSelectHandleCenter == null) {
-            mSelectHandleCenter = mContext.getResources().getDrawable(0x10805bb);
-            mSelectHandleLeft = mContext.getResources().getDrawable(0x10805ba);
-            mSelectHandleRight = mContext.getResources().getDrawable(0x10805bc);
+            mSelectHandleCenter = mContext.getResources().getDrawable(0x10805bb).mutate();
+            mSelectHandleLeft = mContext.getResources().getDrawable(0x10805ba).mutate();
+            mSelectHandleRight = mContext.getResources().getDrawable(0x10805bc).mutate();
             mHandleAlpha.setAlpha(mHandleAlpha.getAlpha());
             mSelectHandleCenterOffset = new Point(0, -mSelectHandleCenter.getIntrinsicHeight());
             mSelectHandleLeftOffset = new Point(0, -mSelectHandleLeft.getIntrinsicHeight());
@@ -2542,7 +2542,7 @@ _L1:
         int l1;
         int i2;
         int j2;
-        scalegesturedetector = mZoomManager.getMultiTouchGestureDetector();
+        scalegesturedetector = mZoomManager.getScaleGestureDetector();
         l = motionevent.getEventTime();
         i1 = Math.min(j, -1 + getViewWidth());
         j1 = Math.min(k, -1 + getViewHeightWithTitle());
@@ -3064,22 +3064,61 @@ _L6:
     }
 
     private void onHandleUiTouchEvent(MotionEvent motionevent) {
-        ScaleGestureDetector scalegesturedetector;
+        int i;
+        float f2;
+        float f3;
+        ScaleGestureDetector scalegesturedetector = mZoomManager.getScaleGestureDetector();
+        i = motionevent.getActionMasked();
+        boolean flag;
+        boolean flag1;
+        int j;
         float f;
         float f1;
-        scalegesturedetector = mZoomManager.getMultiTouchGestureDetector();
-        f = motionevent.getX();
-        f1 = motionevent.getY();
+        int k;
+        int l;
+        if(i == 6)
+            flag = true;
+        else
+            flag = false;
+        if(i == 6 || i == 5)
+            flag1 = true;
+        else
+            flag1 = false;
+        if(flag)
+            j = motionevent.getActionIndex();
+        else
+            j = -1;
+        f = 0.0F;
+        f1 = 0.0F;
+        k = motionevent.getPointerCount();
+        l = 0;
+        while(l < k)  {
+            if(j != l) {
+                f += motionevent.getX(l);
+                f1 += motionevent.getY(l);
+            }
+            l++;
+        }
+        int i1;
+        if(flag)
+            i1 = k - 1;
+        else
+            i1 = k;
+        f2 = f / (float)i1;
+        f3 = f1 / (float)i1;
+        if(flag1) {
+            mLastTouchX = Math.round(f2);
+            mLastTouchY = Math.round(f3);
+            mLastTouchTime = motionevent.getEventTime();
+            mWebView.cancelLongPress();
+            mPrivateHandler.removeMessages(4);
+        }
         if(scalegesturedetector == null) goto _L2; else goto _L1
 _L1:
         scalegesturedetector.onTouchEvent(motionevent);
         if(!scalegesturedetector.isInProgress()) goto _L2; else goto _L3
 _L3:
         mLastTouchTime = motionevent.getEventTime();
-        f = scalegesturedetector.getFocusX();
-        f1 = scalegesturedetector.getFocusY();
-        mWebView.cancelLongPress();
-        mPrivateHandler.removeMessages(4);
         if(mZoomManager.supportsPanDuringZoom()) goto _L5; else goto _L4
 _L4:
         return;
@@ -3088,25 +3127,18 @@ _L5:
         if(mVelocityTracker == null)
             mVelocityTracker = VelocityTracker.obtain();
 _L2:
-        int i;
-        i = motionevent.getActionMasked();
         if(i != 5)
             break; /* Loop/switch isn't completed */
         cancelTouch();
         i = 0;
-_L9:
-        handleTouchEventCommon(motionevent, i, Math.round(f), Math.round(f1));
+_L8:
+        handleTouchEventCommon(motionevent, i, Math.round(f2), Math.round(f3));
         if(true) goto _L7; else goto _L6
+_L6:
+        continue; /* Loop/switch isn't completed */
 _L7:
         break; /* Loop/switch isn't completed */
-_L6:
-        if(i != 6 || motionevent.getPointerCount() < 2)
-            continue; /* Loop/switch isn't completed */
-        mLastTouchX = Math.round(f);
-        mLastTouchY = Math.round(f1);
-        if(true) goto _L9; else goto _L8
-_L8:
-        if(i != 2 || f >= 0.0F && f1 >= 0.0F) goto _L9; else goto _L4
+        if(i != 2 || f2 >= 0.0F && f3 >= 0.0F) goto _L8; else goto _L4
     }
 
     private void onZoomAnimationEnd() {
@@ -5887,7 +5919,7 @@ _L1:
 _L4:
         return flag;
 _L2:
-        ScaleGestureDetector scalegesturedetector = mZoomManager.getMultiTouchGestureDetector();
+        ScaleGestureDetector scalegesturedetector = mZoomManager.getScaleGestureDetector();
         if(scalegesturedetector != null && scalegesturedetector.isInProgress())
             flag = false;
         else

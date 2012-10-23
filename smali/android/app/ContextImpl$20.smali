@@ -1,5 +1,5 @@
 .class final Landroid/app/ContextImpl$20;
-.super Landroid/app/ContextImpl$StaticServiceFetcher;
+.super Landroid/app/ContextImpl$ServiceFetcher;
 .source "ContextImpl.java"
 
 
@@ -20,15 +20,16 @@
 
     .prologue
     .line 369
-    invoke-direct {p0}, Landroid/app/ContextImpl$StaticServiceFetcher;-><init>()V
+    invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public createStaticService()Ljava/lang/Object;
-    .registers 4
+.method public createService(Landroid/app/ContextImpl;)Ljava/lang/Object;
+    .registers 5
+    .parameter "ctx"
 
     .prologue
     .line 371
@@ -46,7 +47,7 @@
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Landroid/location/LocationManager;-><init>(Landroid/location/ILocationManager;)V
+    invoke-direct {v1, p1, v2}, Landroid/location/LocationManager;-><init>(Landroid/content/Context;Landroid/location/ILocationManager;)V
 
     return-object v1
 .end method

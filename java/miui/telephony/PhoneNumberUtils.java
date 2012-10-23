@@ -241,21 +241,26 @@ _L3:
         public static String getHashString(String s) {
             PhoneNumber phonenumber = parse(s);
             String s1;
+            String s2;
+            if(phonenumber.isSmsPrefix())
+                s1 = (new StringBuilder()).append(phonenumber.getPrefix()).append(phonenumber.getEffectiveNumber()).toString();
+            else
+                s1 = phonenumber.getEffectiveNumber();
             if(!phonenumber.isChineseNumber()) {
                 Object aobj5[] = new Object[4];
                 aobj5[0] = Character.valueOf('\001');
                 aobj5[1] = phonenumber.getCountryCode();
-                aobj5[2] = phonenumber.getEffectiveNumber();
+                aobj5[2] = s1;
                 aobj5[3] = phonenumber.getPostDialString();
-                s1 = String.format("%c(00%s)%s%s", aobj5);
+                s2 = String.format("%c(00%s)%s%s", aobj5);
             } else
             if(phonenumber.isNormalMobileNumber()) {
                 Object aobj4[] = new Object[4];
                 aobj4[0] = Character.valueOf('\001');
                 aobj4[1] = "86";
-                aobj4[2] = phonenumber.getEffectiveNumber();
+                aobj4[2] = s1;
                 aobj4[3] = phonenumber.getPostDialString();
-                s1 = String.format("%c(00%s)%s%s", aobj4);
+                s2 = String.format("%c(00%s)%s%s", aobj4);
             } else
             if(!TextUtils.isEmpty(phonenumber.getCountryCode())) {
                 if(!TextUtils.isEmpty(phonenumber.getAreaCode())) {
@@ -263,16 +268,16 @@ _L3:
                     aobj3[0] = Character.valueOf('\001');
                     aobj3[1] = "86";
                     aobj3[2] = phonenumber.getAreaCode();
-                    aobj3[3] = phonenumber.getEffectiveNumber();
+                    aobj3[3] = s1;
                     aobj3[4] = phonenumber.getPostDialString();
-                    s1 = String.format("%c(00%s)%s-%s%s", aobj3);
+                    s2 = String.format("%c(00%s)%s-%s%s", aobj3);
                 } else {
                     Object aobj2[] = new Object[4];
                     aobj2[0] = Character.valueOf('\001');
                     aobj2[1] = "86";
-                    aobj2[2] = phonenumber.getEffectiveNumber();
+                    aobj2[2] = s1;
                     aobj2[3] = phonenumber.getPostDialString();
-                    s1 = String.format("%c(00%s)%s%s", aobj2);
+                    s2 = String.format("%c(00%s)%s%s", aobj2);
                 }
             } else
             if(!TextUtils.isEmpty(phonenumber.getAreaCode())) {
@@ -280,20 +285,20 @@ _L3:
                 aobj1[0] = Character.valueOf('\001');
                 aobj1[1] = "86";
                 aobj1[2] = phonenumber.getAreaCode();
-                aobj1[3] = phonenumber.getEffectiveNumber();
+                aobj1[3] = s1;
                 aobj1[4] = phonenumber.getPostDialString();
-                s1 = String.format("%c(00%s)%s-%s%s", aobj1);
+                s2 = String.format("%c(00%s)%s-%s%s", aobj1);
             } else {
                 Object aobj[] = new Object[5];
                 aobj[0] = Character.valueOf('\001');
                 aobj[1] = "86";
                 aobj[2] = Character.valueOf('\002');
-                aobj[3] = phonenumber.getEffectiveNumber();
+                aobj[3] = s1;
                 aobj[4] = phonenumber.getPostDialString();
-                s1 = String.format("%c(00%s)%c%s%s", aobj);
+                s2 = String.format("%c(00%s)%c%s%s", aobj);
             }
             phonenumber.recycle();
-            return s1;
+            return s2;
         }
 
         public static String getLocation(Context context, CharSequence charsequence) {

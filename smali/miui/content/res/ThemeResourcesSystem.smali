@@ -106,45 +106,43 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_16
 
     .line 92
-    sget-object v1, Lmiui/content/res/ThemeResourcesSystem;->sIcons:Lmiui/content/res/ThemeResources;
-
-    invoke-virtual {v1, p2}, Lmiui/content/res/ThemeResources;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    invoke-virtual {p0, p1}, Lmiui/content/res/ThemeResourcesSystem;->getIconStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
     .line 98
-    :cond_10
-    if-nez v0, :cond_16
+    :cond_e
+    if-nez v0, :cond_14
 
     .line 99
     invoke-virtual {p0, p1}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStreamInner(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
-    :cond_16
+    :cond_14
     move-object v1, v0
 
     .line 101
-    :goto_17
+    :goto_15
     return-object v1
 
     .line 94
-    :cond_18
+    :cond_16
     const-string v1, "default_wallpaper.jpg"
 
     invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_e
 
     .line 95
     const/4 v1, 0x0
 
-    goto :goto_17
+    goto :goto_15
 .end method
 
 .method public static getTopLevelThemeResources(Landroid/content/res/Resources;)Lmiui/content/res/ThemeResourcesSystem;

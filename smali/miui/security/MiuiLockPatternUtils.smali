@@ -3,16 +3,26 @@
 .source "MiuiLockPatternUtils.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lmiui/security/MiuiLockPatternUtils$PasswordFileObserver;
+    }
+.end annotation
+
+
 # static fields
-.field public static final LOCK_AC_FILE:Ljava/lang/String; = "access_control.key"
+.field private static final LOCK_AC_FILE:Ljava/lang/String; = "access_control.key"
 
 .field private static final SYSTEM_DIRECTORY:Ljava/lang/String; = "/system/"
 
 .field private static final TAG:Ljava/lang/String; = "MiuiLockPatternUtils"
 
-.field public static final sHaveNonZeroACFile:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private static final sHaveNonZeroACFile:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public static sLockACFilename:Ljava/lang/String;
+.field private static sLockACFilename:Ljava/lang/String;
+
+.field private static sPasswordObserver:Landroid/os/FileObserver;
 
 
 # direct methods
@@ -20,7 +30,7 @@
     .registers 2
 
     .prologue
-    .line 28
+    .line 29
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -33,102 +43,139 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 9
+    .registers 10
     .parameter "context"
 
     .prologue
-    .line 34
+    .line 50
     invoke-direct {p0, p1}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
-    .line 35
-    sget-object v1, Lmiui/security/MiuiLockPatternUtils;->sLockACFilename:Ljava/lang/String;
+    .line 51
+    sget-object v2, Lmiui/security/MiuiLockPatternUtils;->sLockACFilename:Ljava/lang/String;
 
-    if-nez v1, :cond_4e
+    if-nez v2, :cond_5c
 
-    .line 36
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 52
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    const-string v3, "/system/"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "/system/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 39
+    .line 55
     .local v0, dataSystemDirectory:Ljava/lang/String;
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "access_control.key"
+    const-string v3, "access_control.key"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    sput-object v1, Lmiui/security/MiuiLockPatternUtils;->sLockACFilename:Ljava/lang/String;
+    sput-object v2, Lmiui/security/MiuiLockPatternUtils;->sLockACFilename:Ljava/lang/String;
 
-    .line 40
-    sget-object v2, Lmiui/security/MiuiLockPatternUtils;->sHaveNonZeroACFile:Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 56
+    sget-object v3, Lmiui/security/MiuiLockPatternUtils;->sHaveNonZeroACFile:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    new-instance v1, Ljava/io/File;
+    new-instance v2, Ljava/io/File;
 
-    sget-object v3, Lmiui/security/MiuiLockPatternUtils;->sLockACFilename:Ljava/lang/String;
+    sget-object v4, Lmiui/security/MiuiLockPatternUtils;->sLockACFilename:Ljava/lang/String;
 
-    invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/io/File;->length()J
+    invoke-virtual {v2}, Ljava/io/File;->length()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v1, v3, v5
+    cmp-long v2, v4, v6
 
-    if-lez v1, :cond_4f
+    if-lez v2, :cond_5d
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     :goto_4b
-    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {v3, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 42
+    .line 57
+    const/16 v1, 0x388
+
+    .line 59
+    .local v1, fileObserverMask:I
+    new-instance v2, Lmiui/security/MiuiLockPatternUtils$PasswordFileObserver;
+
+    invoke-direct {v2, v0, v1}, Lmiui/security/MiuiLockPatternUtils$PasswordFileObserver;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lmiui/security/MiuiLockPatternUtils;->sPasswordObserver:Landroid/os/FileObserver;
+
+    .line 60
+    sget-object v2, Lmiui/security/MiuiLockPatternUtils;->sPasswordObserver:Landroid/os/FileObserver;
+
+    invoke-virtual {v2}, Landroid/os/FileObserver;->startWatching()V
+
+    .line 62
     .end local v0           #dataSystemDirectory:Ljava/lang/String;
-    :cond_4e
+    .end local v1           #fileObserverMask:I
+    :cond_5c
     return-void
 
-    .line 40
+    .line 56
     .restart local v0       #dataSystemDirectory:Ljava/lang/String;
-    :cond_4f
-    const/4 v1, 0x0
+    :cond_5d
+    const/4 v2, 0x0
 
     goto :goto_4b
+.end method
+
+.method static synthetic access$000()Ljava/lang/String;
+    .registers 1
+
+    .prologue
+    .line 22
+    sget-object v0, Lmiui/security/MiuiLockPatternUtils;->sLockACFilename:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100()Ljava/util/concurrent/atomic/AtomicBoolean;
+    .registers 1
+
+    .prologue
+    .line 22
+    sget-object v0, Lmiui/security/MiuiLockPatternUtils;->sHaveNonZeroACFile:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    return-object v0
 .end method
 
 
@@ -150,7 +197,7 @@
     .local p1, pattern:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     const/4 v5, 0x1
 
-    .line 53
+    .line 73
     :try_start_1
     new-instance v3, Ljava/io/RandomAccessFile;
 
@@ -160,7 +207,7 @@
 
     invoke-direct {v3, v6, v7}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 54
+    .line 74
     .local v3, raf:Ljava/io/RandomAccessFile;
     invoke-virtual {v3}, Ljava/io/RandomAccessFile;->length()J
 
@@ -170,7 +217,7 @@
 
     new-array v4, v6, [B
 
-    .line 55
+    .line 75
     .local v4, stored:[B
     const/4 v6, 0x0
 
@@ -180,21 +227,21 @@
 
     move-result v1
 
-    .line 56
+    .line 76
     .local v1, got:I
     invoke-virtual {v3}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 57
+    .line 77
     if-gtz v1, :cond_1e
 
-    .line 65
+    .line 85
     .end local v1           #got:I
     .end local v3           #raf:Ljava/io/RandomAccessFile;
     .end local v4           #stored:[B
     :goto_1d
     return v5
 
-    .line 61
+    .line 81
     .restart local v1       #got:I
     .restart local v3       #raf:Ljava/io/RandomAccessFile;
     .restart local v4       #stored:[B
@@ -212,23 +259,23 @@
 
     goto :goto_1d
 
-    .line 62
+    .line 82
     .end local v1           #got:I
     .end local v3           #raf:Ljava/io/RandomAccessFile;
     .end local v4           #stored:[B
     :catch_27
     move-exception v0
 
-    .line 63
+    .line 83
     .local v0, fnfe:Ljava/io/FileNotFoundException;
     goto :goto_1d
 
-    .line 64
+    .line 84
     .end local v0           #fnfe:Ljava/io/FileNotFoundException;
     :catch_29
     move-exception v2
 
-    .line 65
+    .line 85
     .local v2, ioe:Ljava/io/IOException;
     goto :goto_1d
 .end method
@@ -247,13 +294,13 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 103
     .local p1, pattern:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     invoke-static {p1}, Lcom/android/internal/widget/LockPatternUtils;->patternToHash(Ljava/util/List;)[B
 
     move-result-object v1
 
-    .line 86
+    .line 106
     .local v1, hash:[B
     :try_start_4
     new-instance v3, Ljava/io/RandomAccessFile;
@@ -264,25 +311,25 @@
 
     invoke-direct {v3, v4, v5}, Ljava/io/RandomAccessFile;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 88
+    .line 108
     .local v3, raf:Ljava/io/RandomAccessFile;
     if-nez p1, :cond_19
 
-    .line 89
+    .line 109
     const-wide/16 v4, 0x0
 
     invoke-virtual {v3, v4, v5}, Ljava/io/RandomAccessFile;->setLength(J)V
 
-    .line 93
+    .line 113
     :goto_15
     invoke-virtual {v3}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 101
+    .line 121
     .end local v3           #raf:Ljava/io/RandomAccessFile;
     :goto_18
     return-void
 
-    .line 91
+    .line 111
     .restart local v3       #raf:Ljava/io/RandomAccessFile;
     :cond_19
     const/4 v4, 0x0
@@ -296,12 +343,12 @@
 
     goto :goto_15
 
-    .line 94
+    .line 114
     .end local v3           #raf:Ljava/io/RandomAccessFile;
     :catch_1f
     move-exception v0
 
-    .line 96
+    .line 116
     .local v0, fnfe:Ljava/io/FileNotFoundException;
     const-string v4, "MiuiLockPatternUtils"
 
@@ -329,12 +376,12 @@
 
     goto :goto_18
 
-    .line 97
+    .line 117
     .end local v0           #fnfe:Ljava/io/FileNotFoundException;
     :catch_3b
     move-exception v2
 
-    .line 99
+    .line 119
     .local v2, ioe:Ljava/io/IOException;
     const-string v4, "MiuiLockPatternUtils"
 
@@ -367,7 +414,7 @@
     .registers 2
 
     .prologue
-    .line 74
+    .line 94
     sget-object v0, Lmiui/security/MiuiLockPatternUtils;->sHaveNonZeroACFile:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z

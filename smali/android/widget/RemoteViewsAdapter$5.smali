@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/widget/RemoteViewsAdapter;->notifyDataSetChanged()V
+    value = Landroid/widget/RemoteViewsAdapter;->onNotifyDataSetChanged()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1127
+    .line 1216
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$5;->this$0:Landroid/widget/RemoteViewsAdapter;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -38,15 +38,57 @@
 
 # virtual methods
 .method public run()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 1130
+    .line 1219
     iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$5;->this$0:Landroid/widget/RemoteViewsAdapter;
 
-    #calls: Landroid/widget/RemoteViewsAdapter;->onNotifyDataSetChanged()V
-    invoke-static {v0}, Landroid/widget/RemoteViewsAdapter;->access$100(Landroid/widget/RemoteViewsAdapter;)V
+    #getter for: Landroid/widget/RemoteViewsAdapter;->mCache:Landroid/widget/RemoteViewsAdapter$FixedSizeRemoteViewsCache;
+    invoke-static {v0}, Landroid/widget/RemoteViewsAdapter;->access$400(Landroid/widget/RemoteViewsAdapter;)Landroid/widget/RemoteViewsAdapter$FixedSizeRemoteViewsCache;
 
-    .line 1131
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 1220
+    :try_start_7
+    iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$5;->this$0:Landroid/widget/RemoteViewsAdapter;
+
+    #getter for: Landroid/widget/RemoteViewsAdapter;->mCache:Landroid/widget/RemoteViewsAdapter$FixedSizeRemoteViewsCache;
+    invoke-static {v0}, Landroid/widget/RemoteViewsAdapter;->access$400(Landroid/widget/RemoteViewsAdapter;)Landroid/widget/RemoteViewsAdapter$FixedSizeRemoteViewsCache;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/RemoteViewsAdapter$FixedSizeRemoteViewsCache;->commitTemporaryMetaData()V
+
+    .line 1221
+    monitor-exit v1
+    :try_end_11
+    .catchall {:try_start_7 .. :try_end_11} :catchall_1c
+
+    .line 1223
+    iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$5;->this$0:Landroid/widget/RemoteViewsAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/RemoteViewsAdapter;->superNotifyDataSetChanged()V
+
+    .line 1224
+    iget-object v0, p0, Landroid/widget/RemoteViewsAdapter$5;->this$0:Landroid/widget/RemoteViewsAdapter;
+
+    #calls: Landroid/widget/RemoteViewsAdapter;->enqueueDeferredUnbindServiceMessage()V
+    invoke-static {v0}, Landroid/widget/RemoteViewsAdapter;->access$700(Landroid/widget/RemoteViewsAdapter;)V
+
+    .line 1225
     return-void
+
+    .line 1221
+    :catchall_1c
+    move-exception v0
+
+    :try_start_1d
+    monitor-exit v1
+    :try_end_1e
+    .catchall {:try_start_1d .. :try_end_1e} :catchall_1c
+
+    throw v0
 .end method

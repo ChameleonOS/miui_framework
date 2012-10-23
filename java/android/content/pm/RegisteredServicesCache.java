@@ -384,7 +384,7 @@ _L3:
         super.finalize();
     }
 
-    void generateServicesMap() {
+    public void generateServicesMap() {
         ArrayList arraylist;
         Iterator iterator;
         PackageManager packagemanager = mContext.getPackageManager();

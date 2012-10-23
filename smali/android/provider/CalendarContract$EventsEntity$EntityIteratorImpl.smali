@@ -767,7 +767,7 @@
 
     iget-object v1, v0, Landroid/provider/CalendarContract$EventsEntity$EntityIteratorImpl;->mResolver:Landroid/content/ContentResolver;
 
-    if-eqz v1, :cond_2bb
+    if-eqz v1, :cond_2b3
 
     .line 1421
     move-object/from16 v0, p0
@@ -805,7 +805,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2d6
+    if-eqz v1, :cond_2ce
 
     .line 1433
     new-instance v7, Landroid/content/ContentValues;
@@ -885,43 +885,35 @@
 
     const/4 v2, 0x5
 
-    invoke-interface {v14, v2}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v14, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v7, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v7, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1446
     const-string v1, "attendeeIdNamespace"
 
     const/4 v2, 0x6
 
-    invoke-interface {v14, v2}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v14, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v7, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-virtual {v7, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1448
     sget-object v1, Landroid/provider/CalendarContract$Attendees;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v9, v1, v7}, Landroid/content/Entity;->addSubValue(Landroid/net/Uri;Landroid/content/ContentValues;)V
-    :try_end_2b5
-    .catchall {:try_start_24b .. :try_end_2b5} :catchall_2b6
+    :try_end_2ad
+    .catchall {:try_start_24b .. :try_end_2ad} :catchall_2ae
 
     goto :goto_24b
 
     .line 1451
     .end local v7           #attendeeValues:Landroid/content/ContentValues;
-    :catchall_2b6
+    :catchall_2ae
     move-exception v1
 
     invoke-interface {v14}, Landroid/database/Cursor;->close()V
@@ -929,7 +921,7 @@
     throw v1
 
     .line 1426
-    :cond_2bb
+    :cond_2b3
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/provider/CalendarContract$EventsEntity$EntityIteratorImpl;->mProvider:Landroid/content/ContentProviderClient;
@@ -961,7 +953,7 @@
     goto/16 :goto_24b
 
     .line 1451
-    :cond_2d6
+    :cond_2ce
     invoke-interface {v14}, Landroid/database/Cursor;->close()V
 
     .line 1454
@@ -969,7 +961,7 @@
 
     iget-object v1, v0, Landroid/provider/CalendarContract$EventsEntity$EntityIteratorImpl;->mResolver:Landroid/content/ContentResolver;
 
-    if-eqz v1, :cond_32e
+    if-eqz v1, :cond_326
 
     .line 1455
     move-object/from16 v0, p0
@@ -1001,13 +993,13 @@
     move-result-object v14
 
     .line 1466
-    :goto_2f8
-    :try_start_2f8
+    :goto_2f0
+    :try_start_2f0
     invoke-interface {v14}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_348
+    if-eqz v1, :cond_340
 
     .line 1467
     new-instance v12, Landroid/content/ContentValues;
@@ -1052,14 +1044,14 @@
     sget-object v1, Landroid/provider/CalendarContract$ExtendedProperties;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v9, v1, v12}, Landroid/content/Entity;->addSubValue(Landroid/net/Uri;Landroid/content/ContentValues;)V
-    :try_end_328
-    .catchall {:try_start_2f8 .. :try_end_328} :catchall_329
+    :try_end_320
+    .catchall {:try_start_2f0 .. :try_end_320} :catchall_321
 
-    goto :goto_2f8
+    goto :goto_2f0
 
     .line 1477
     .end local v12           #extendedValues:Landroid/content/ContentValues;
-    :catchall_329
+    :catchall_321
     move-exception v1
 
     invoke-interface {v14}, Landroid/database/Cursor;->close()V
@@ -1067,7 +1059,7 @@
     throw v1
 
     .line 1460
-    :cond_32e
+    :cond_326
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroid/provider/CalendarContract$EventsEntity$EntityIteratorImpl;->mProvider:Landroid/content/ContentProviderClient;
@@ -1096,10 +1088,10 @@
 
     move-result-object v14
 
-    goto :goto_2f8
+    goto :goto_2f0
 
     .line 1477
-    :cond_348
+    :cond_340
     invoke-interface {v14}, Landroid/database/Cursor;->close()V
 
     .line 1480

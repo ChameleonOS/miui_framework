@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 109
+    .line 108
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .parameter "detector"
 
     .prologue
-    .line 112
+    .line 111
     const/4 v0, 0x0
 
     return v0
@@ -46,7 +46,7 @@
     .parameter "detector"
 
     .prologue
-    .line 116
+    .line 115
     const/4 v0, 0x1
 
     return v0
@@ -57,6 +57,6 @@
     .parameter "detector"
 
     .prologue
-    .line 121
+    .line 120
     return-void
 .end method

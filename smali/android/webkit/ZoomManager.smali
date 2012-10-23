@@ -1951,16 +1951,6 @@
     return v0
 .end method
 
-.method public getMultiTouchGestureDetector()Landroid/view/ScaleGestureDetector;
-    .registers 2
-
-    .prologue
-    .line 772
-    iget-object v0, p0, Landroid/webkit/ZoomManager;->mScaleDetector:Landroid/view/ScaleGestureDetector;
-
-    return-object v0
-.end method
-
 .method public final getReadingLevelScale()F
     .registers 2
 
@@ -1989,6 +1979,16 @@
     iget v0, p0, Landroid/webkit/ZoomManager;->mActualScale:F
 
     return v0
+.end method
+
+.method public getScaleGestureDetector()Landroid/view/ScaleGestureDetector;
+    .registers 2
+
+    .prologue
+    .line 772
+    iget-object v0, p0, Landroid/webkit/ZoomManager;->mScaleDetector:Landroid/view/ScaleGestureDetector;
+
+    return-object v0
 .end method
 
 .method public final getTextWrapScale()F

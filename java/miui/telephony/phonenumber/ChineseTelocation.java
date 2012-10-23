@@ -70,7 +70,7 @@ _L4:
 _L2:
         abyte1 = new byte[mFile.readInt()];
         mFile.read(abyte1);
-        if("2344453f7a6ff34e610abad9ee41a48ddbf6430d".equals(new String(abyte1)))
+        if("1469b751a02f88d66bf98dc1ee131904f4073126".equals(new String(abyte1)))
             break MISSING_BLOCK_LABEL_194;
         Log.w("ChineseTelocation", "Unmatched digest for /etc/telocation.td, NO mobile telocation supported!");
         if(false || mFile == null) goto _L4; else goto _L5
@@ -476,7 +476,7 @@ _L3:
     private ContentObserver mSettingObserver;
 
     static  {
-        FILE_HEADER_SIZE = 0 + (4 + (4 + (4 + TelocationConstants.FILE_TAG.length + "2344453f7a6ff34e610abad9ee41a48ddbf6430d".getBytes().length)));
+        FILE_HEADER_SIZE = 0 + (4 + (4 + (4 + TelocationConstants.FILE_TAG.length + "1469b751a02f88d66bf98dc1ee131904f4073126".getBytes().length)));
         AREA_CODES_INDEX = new short[1000];
         Arrays.fill(AREA_CODES_INDEX, (short)0);
         for(int i = 1; i < 327; i++) {

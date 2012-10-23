@@ -33,17 +33,17 @@
     .parameter "viewAncestor"
 
     .prologue
-    .line 4715
+    .line 4717
     invoke-direct {p0}, Landroid/view/IWindow$Stub;-><init>()V
 
-    .line 4716
+    .line 4718
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
-    .line 4717
+    .line 4719
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .parameter "permission"
 
     .prologue
-    .line 4758
+    .line 4760
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -72,15 +72,15 @@
 
     move-result v1
 
-    .line 4761
+    .line 4763
     :goto_10
     return v1
 
-    .line 4760
+    .line 4762
     :catch_11
     move-exception v0
 
-    .line 4761
+    .line 4763
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, -0x1
 
@@ -94,7 +94,7 @@
     .parameter "reason"
 
     .prologue
-    .line 4797
+    .line 4799
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -103,14 +103,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4798
+    .line 4800
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_d
 
-    .line 4799
+    .line 4801
     invoke-virtual {v0, p1}, Landroid/view/ViewRootImpl;->dispatchCloseSystemDialogs(Ljava/lang/String;)V
 
-    .line 4801
+    .line 4803
     :cond_d
     return-void
 .end method
@@ -120,7 +120,7 @@
     .parameter "visible"
 
     .prologue
-    .line 4729
+    .line 4731
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -129,14 +129,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4730
+    .line 4732
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_d
 
-    .line 4731
+    .line 4733
     invoke-virtual {v0, p1}, Landroid/view/ViewRootImpl;->dispatchAppVisibility(Z)V
 
-    .line 4733
+    .line 4735
     :cond_d
     return-void
 .end method
@@ -146,7 +146,7 @@
     .parameter "event"
 
     .prologue
-    .line 4825
+    .line 4827
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -155,14 +155,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4826
+    .line 4828
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_d
 
-    .line 4827
+    .line 4829
     invoke-virtual {v0, p1}, Landroid/view/ViewRootImpl;->dispatchDragEvent(Landroid/view/DragEvent;)V
 
-    .line 4829
+    .line 4831
     :cond_d
     return-void
 .end method
@@ -171,7 +171,7 @@
     .registers 3
 
     .prologue
-    .line 4743
+    .line 4745
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -180,14 +180,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4744
+    .line 4746
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_d
 
-    .line 4745
+    .line 4747
     invoke-virtual {v0}, Landroid/view/ViewRootImpl;->dispatchGetNewSurface()V
 
-    .line 4747
+    .line 4749
     :cond_d
     return-void
 .end method
@@ -197,7 +197,7 @@
     .parameter "on"
 
     .prologue
-    .line 4736
+    .line 4738
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -206,14 +206,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4737
+    .line 4739
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_d
 
-    .line 4738
+    .line 4740
     invoke-virtual {v0, p1}, Landroid/view/ViewRootImpl;->dispatchScreenStateChange(Z)V
 
-    .line 4740
+    .line 4742
     :cond_d
     return-void
 .end method
@@ -226,7 +226,7 @@
     .parameter "localChanges"
 
     .prologue
-    .line 4833
+    .line 4835
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -235,14 +235,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4834
+    .line 4836
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_d
 
-    .line 4835
+    .line 4837
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/view/ViewRootImpl;->dispatchSystemUiVisibilityChanged(IIII)V
 
-    .line 4838
+    .line 4840
     :cond_d
     return-void
 .end method
@@ -257,10 +257,10 @@
     .parameter "sync"
 
     .prologue
-    .line 4815
+    .line 4817
     if-eqz p6, :cond_c
 
-    .line 4817
+    .line 4819
     :try_start_2
     sget-object v0, Landroid/view/ViewRootImpl;->sWindowSession:Landroid/view/IWindowSession;
 
@@ -274,12 +274,12 @@
     :try_end_c
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_c} :catch_d
 
-    .line 4821
+    .line 4823
     :cond_c
     :goto_c
     return-void
 
-    .line 4818
+    .line 4820
     :catch_d
     move-exception v0
 
@@ -295,10 +295,10 @@
     .parameter "sync"
 
     .prologue
-    .line 4805
+    .line 4807
     if-eqz p5, :cond_b
 
-    .line 4807
+    .line 4809
     :try_start_2
     sget-object v0, Landroid/view/ViewRootImpl;->sWindowSession:Landroid/view/IWindowSession;
 
@@ -310,12 +310,12 @@
     :try_end_b
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_b} :catch_c
 
-    .line 4811
+    .line 4813
     :cond_b
     :goto_b
     return-void
 
-    .line 4808
+    .line 4810
     :catch_c
     move-exception v0
 
@@ -326,7 +326,7 @@
     .registers 3
 
     .prologue
-    .line 4841
+    .line 4843
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -335,14 +335,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4842
+    .line 4844
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_d
 
-    .line 4843
+    .line 4845
     invoke-virtual {v0}, Landroid/view/ViewRootImpl;->dispatchDoneAnimating()V
 
-    .line 4845
+    .line 4847
     :cond_d
     return-void
 .end method
@@ -354,7 +354,7 @@
     .parameter "out"
 
     .prologue
-    .line 4766
+    .line 4768
     iget-object v5, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v5}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -363,18 +363,18 @@
 
     check-cast v4, Landroid/view/ViewRootImpl;
 
-    .line 4767
+    .line 4769
     .local v4, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v4, :cond_4f
 
-    .line 4768
+    .line 4770
     iget-object v3, v4, Landroid/view/ViewRootImpl;->mView:Landroid/view/View;
 
-    .line 4769
+    .line 4771
     .local v3, view:Landroid/view/View;
     if-eqz v3, :cond_4f
 
-    .line 4770
+    .line 4772
     const-string v5, "android.permission.DUMP"
 
     invoke-static {v5}, Landroid/view/ViewRootImpl$W;->checkCallingPermission(Ljava/lang/String;)I
@@ -383,7 +383,7 @@
 
     if-eqz v5, :cond_41
 
-    .line 4772
+    .line 4774
     new-instance v5, Ljava/lang/SecurityException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -426,11 +426,11 @@
 
     throw v5
 
-    .line 4777
+    .line 4779
     :cond_41
     const/4 v0, 0x0
 
-    .line 4779
+    .line 4781
     .local v0, clientStream:Ljava/io/OutputStream;
     :try_start_42
     new-instance v1, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;
@@ -440,7 +440,7 @@
     .catchall {:try_start_42 .. :try_end_47} :catchall_5f
     .catch Ljava/io/IOException; {:try_start_42 .. :try_end_47} :catch_50
 
-    .line 4780
+    .line 4782
     .end local v0           #clientStream:Ljava/io/OutputStream;
     .local v1, clientStream:Ljava/io/OutputStream;
     :try_start_47
@@ -449,29 +449,29 @@
     .catchall {:try_start_47 .. :try_end_4a} :catchall_6d
     .catch Ljava/io/IOException; {:try_start_47 .. :try_end_4a} :catch_70
 
-    .line 4784
+    .line 4786
     if-eqz v1, :cond_4f
 
-    .line 4786
+    .line 4788
     :try_start_4c
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
     :try_end_4f
     .catch Ljava/io/IOException; {:try_start_4c .. :try_end_4f} :catch_6b
 
-    .line 4794
+    .line 4796
     .end local v1           #clientStream:Ljava/io/OutputStream;
     .end local v3           #view:Landroid/view/View;
     :cond_4f
     :goto_4f
     return-void
 
-    .line 4781
+    .line 4783
     .restart local v0       #clientStream:Ljava/io/OutputStream;
     .restart local v3       #view:Landroid/view/View;
     :catch_50
     move-exception v2
 
-    .line 4782
+    .line 4784
     .local v2, e:Ljava/io/IOException;
     :goto_51
     :try_start_51
@@ -479,10 +479,10 @@
     :try_end_54
     .catchall {:try_start_51 .. :try_end_54} :catchall_5f
 
-    .line 4784
+    .line 4786
     if-eqz v0, :cond_4f
 
-    .line 4786
+    .line 4788
     :try_start_56
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
     :try_end_59
@@ -490,18 +490,18 @@
 
     goto :goto_4f
 
-    .line 4787
+    .line 4789
     :catch_5a
     move-exception v2
 
-    .line 4788
+    .line 4790
     .end local v0           #clientStream:Ljava/io/OutputStream;
     :goto_5b
     invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_4f
 
-    .line 4784
+    .line 4786
     .end local v2           #e:Ljava/io/IOException;
     .restart local v0       #clientStream:Ljava/io/OutputStream;
     :catchall_5f
@@ -510,28 +510,28 @@
     :goto_60
     if-eqz v0, :cond_65
 
-    .line 4786
+    .line 4788
     :try_start_62
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;->close()V
     :try_end_65
     .catch Ljava/io/IOException; {:try_start_62 .. :try_end_65} :catch_66
 
-    .line 4784
+    .line 4786
     :cond_65
     :goto_65
     throw v5
 
-    .line 4787
+    .line 4789
     :catch_66
     move-exception v2
 
-    .line 4788
+    .line 4790
     .restart local v2       #e:Ljava/io/IOException;
     invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_65
 
-    .line 4787
+    .line 4789
     .end local v0           #clientStream:Ljava/io/OutputStream;
     .end local v2           #e:Ljava/io/IOException;
     .restart local v1       #clientStream:Ljava/io/OutputStream;
@@ -540,7 +540,7 @@
 
     goto :goto_5b
 
-    .line 4784
+    .line 4786
     :catchall_6d
     move-exception v5
 
@@ -550,7 +550,7 @@
     .restart local v0       #clientStream:Ljava/io/OutputStream;
     goto :goto_60
 
-    .line 4781
+    .line 4783
     .end local v0           #clientStream:Ljava/io/OutputStream;
     .restart local v1       #clientStream:Ljava/io/OutputStream;
     :catch_70
@@ -573,7 +573,7 @@
     .parameter "newConfig"
 
     .prologue
-    .line 4721
+    .line 4723
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -582,7 +582,7 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4722
+    .line 4724
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_13
 
@@ -598,10 +598,10 @@
 
     move-object v6, p6
 
-    .line 4723
+    .line 4725
     invoke-virtual/range {v0 .. v6}, Landroid/view/ViewRootImpl;->dispatchResized(IILandroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/content/res/Configuration;)V
 
-    .line 4726
+    .line 4728
     :cond_13
     return-void
 .end method
@@ -612,7 +612,7 @@
     .parameter "inTouchMode"
 
     .prologue
-    .line 4750
+    .line 4752
     iget-object v1, p0, Landroid/view/ViewRootImpl$W;->mViewAncestor:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -621,14 +621,14 @@
 
     check-cast v0, Landroid/view/ViewRootImpl;
 
-    .line 4751
+    .line 4753
     .local v0, viewAncestor:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_d
 
-    .line 4752
+    .line 4754
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewRootImpl;->windowFocusChanged(ZZ)V
 
-    .line 4754
+    .line 4756
     :cond_d
     return-void
 .end method

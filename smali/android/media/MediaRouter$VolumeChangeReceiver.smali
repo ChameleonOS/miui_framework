@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 1661
+    .line 1673
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1665
+    .line 1677
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
@@ -48,7 +48,7 @@
 
     if-eqz v3, :cond_17
 
-    .line 1666
+    .line 1678
     const-string v3, "android.media.EXTRA_VOLUME_STREAM_TYPE"
 
     const/4 v4, -0x1
@@ -57,19 +57,19 @@
 
     move-result v2
 
-    .line 1668
+    .line 1680
     .local v2, streamType:I
     const/4 v3, 0x3
 
     if-eq v2, v3, :cond_18
 
-    .line 1679
+    .line 1691
     .end local v2           #streamType:I
     :cond_17
     :goto_17
     return-void
 
-    .line 1672
+    .line 1684
     .restart local v2       #streamType:I
     :cond_18
     const-string v3, "android.media.EXTRA_VOLUME_STREAM_VALUE"
@@ -78,7 +78,7 @@
 
     move-result v0
 
-    .line 1673
+    .line 1685
     .local v0, newVolume:I
     const-string v3, "android.media.EXTRA_PREV_VOLUME_STREAM_VALUE"
 
@@ -86,11 +86,11 @@
 
     move-result v1
 
-    .line 1675
+    .line 1687
     .local v1, oldVolume:I
     if-eq v0, v1, :cond_17
 
-    .line 1676
+    .line 1688
     invoke-static {v0}, Landroid/media/MediaRouter;->systemVolumeChanged(I)V
 
     goto :goto_17

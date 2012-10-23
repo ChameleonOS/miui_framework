@@ -1591,7 +1591,7 @@
     return-void
 .end method
 
-.method generateServicesMap()V
+.method public generateServicesMap()V
     .registers 16
 
     .prologue

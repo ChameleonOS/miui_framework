@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 1626
+    .line 1628
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 1629
+    .line 1631
     new-instance v0, Landroid/media/MediaPlayer$TrackInfo;
 
     invoke-direct {v0, p1}, Landroid/media/MediaPlayer$TrackInfo;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1626
+    .line 1628
     invoke-virtual {p0, p1}, Landroid/media/MediaPlayer$TrackInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/media/MediaPlayer$TrackInfo;
 
     move-result-object v0
@@ -71,7 +71,7 @@
     .parameter "size"
 
     .prologue
-    .line 1634
+    .line 1636
     new-array v0, p1, [Landroid/media/MediaPlayer$TrackInfo;
 
     return-object v0
@@ -82,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1626
+    .line 1628
     invoke-virtual {p0, p1}, Landroid/media/MediaPlayer$TrackInfo$1;->newArray(I)[Landroid/media/MediaPlayer$TrackInfo;
 
     move-result-object v0

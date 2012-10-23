@@ -548,11 +548,11 @@ _L5:
                     contentvalues2.put("attendeeRelationship", Integer.valueOf(cursor2.getInt(2)));
                     contentvalues2.put("attendeeType", Integer.valueOf(cursor2.getInt(3)));
                     contentvalues2.put("attendeeStatus", Integer.valueOf(cursor2.getInt(4)));
-                    contentvalues2.put("attendeeIdentity", Integer.valueOf(cursor2.getInt(5)));
-                    contentvalues2.put("attendeeIdNamespace", Integer.valueOf(cursor2.getInt(6)));
+                    contentvalues2.put("attendeeIdentity", cursor2.getString(5));
+                    contentvalues2.put("attendeeIdNamespace", cursor2.getString(6));
                 }
 
-                break MISSING_BLOCK_LABEL_950;
+                break MISSING_BLOCK_LABEL_944;
                 exception1;
                 cursor2.close();
                 throw exception1;
@@ -582,7 +582,7 @@ _L5:
                     contentvalues3.put("value", cursor3.getString(2));
                 }
 
-                break MISSING_BLOCK_LABEL_1148;
+                break MISSING_BLOCK_LABEL_1142;
                 exception2;
                 cursor3.close();
                 throw exception2;

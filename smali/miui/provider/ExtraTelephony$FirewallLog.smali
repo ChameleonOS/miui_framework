@@ -62,6 +62,8 @@
 
 .field public static final REASON_FILTER_SMS:I = 0x10000
 
+.field public static final REASON_IMPORT_CALLLOG:I = 0x40000
+
 .field public static final REASON_IMPORT_SMS:I = 0x20000
 
 .field public static final REASON_NONE:I = 0x0

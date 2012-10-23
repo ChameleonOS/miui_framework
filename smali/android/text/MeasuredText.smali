@@ -1128,12 +1128,16 @@
 .end method
 
 .method setPos(I)V
-    .registers 2
+    .registers 3
     .parameter "pos"
 
     .prologue
     .line 86
-    iput p1, p0, Landroid/text/MeasuredText;->mPos:I
+    iget v0, p0, Landroid/text/MeasuredText;->mTextStart:I
+
+    sub-int v0, p1, v0
+
+    iput v0, p0, Landroid/text/MeasuredText;->mPos:I
 
     .line 87
     return-void

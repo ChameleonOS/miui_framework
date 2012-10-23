@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 613
+    .line 620
     iput-object p1, p0, Landroid/preference/PreferenceActivity$4;->this$0:Landroid/preference/PreferenceActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,18 +42,18 @@
     .parameter "v"
 
     .prologue
-    .line 615
+    .line 622
     iget-object v0, p0, Landroid/preference/PreferenceActivity$4;->this$0:Landroid/preference/PreferenceActivity;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setResult(I)V
 
-    .line 616
+    .line 623
     iget-object v0, p0, Landroid/preference/PreferenceActivity$4;->this$0:Landroid/preference/PreferenceActivity;
 
     invoke-virtual {v0}, Landroid/preference/PreferenceActivity;->finish()V
 
-    .line 617
+    .line 624
     return-void
 .end method

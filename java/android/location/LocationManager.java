@@ -5,6 +5,7 @@
 package android.location;
 
 import android.app.PendingIntent;
+import android.content.Context;
 import android.os.*;
 import android.util.Log;
 import com.android.internal.location.DummyLocationProvider;
@@ -256,9 +257,10 @@ _L5:
     }
 
 
-    public LocationManager(ILocationManager ilocationmanager) {
+    public LocationManager(Context context, ILocationManager ilocationmanager) {
         mListeners = new HashMap();
         mService = ilocationmanager;
+        mContext = context;
     }
 
     private void _requestLocationUpdates(String s, Criteria criteria, long l, float f, boolean flag, PendingIntent pendingintent) {
@@ -266,7 +268,9 @@ _L5:
             l = 0L;
         if(f < 0.0F)
             f = 0.0F;
-        mService.requestLocationUpdatesPI(s, criteria, l, f, flag, pendingintent);
+        ILocationManager ilocationmanager = mService;
+        String s1 = mContext.getPackageName();
+        ilocationmanager.requestLocationUpdatesPI(s, criteria, l, f, flag, pendingintent, s1);
 _L1:
         return;
         RemoteException remoteexception;
@@ -288,8 +292,10 @@ _L1:
         if(listenertransport == null)
             listenertransport = new ListenerTransport(locationlistener, looper);
         mListeners.put(locationlistener, listenertransport);
-        mService.requestLocationUpdates(s, criteria, l, f, flag, listenertransport);
-        break MISSING_BLOCK_LABEL_116;
+        ILocationManager ilocationmanager = mService;
+        String s1 = mContext.getPackageName();
+        ilocationmanager.requestLocationUpdates(s, criteria, l, f, flag, listenertransport, s1);
+        break MISSING_BLOCK_LABEL_131;
         RemoteException remoteexception;
         remoteexception;
         Log.e("LocationManager", "requestLocationUpdates: DeadObjectException", remoteexception);
@@ -353,7 +359,7 @@ _L3:
 
     public void addProximityAlert(double d, double d1, float f, long l, 
             PendingIntent pendingintent) {
-        mService.addProximityAlert(d, d1, f, l, pendingintent);
+        mService.addProximityAlert(d, d1, f, l, pendingintent, mContext.getPackageName());
 _L1:
         return;
         RemoteException remoteexception;
@@ -441,7 +447,7 @@ _L1:
     public Location getLastKnownLocation(String s) {
         if(s == null)
             throw new IllegalArgumentException("provider==null");
-        Location location1 = mService.getLastKnownLocation(s);
+        Location location1 = mService.getLastKnownLocation(s, mContext.getPackageName());
         Location location = location1;
 _L2:
         return location;
@@ -561,7 +567,7 @@ _L1:
     public void removeUpdates(PendingIntent pendingintent) {
         if(pendingintent == null)
             throw new IllegalArgumentException("intent==null");
-        mService.removeUpdatesPI(pendingintent);
+        mService.removeUpdatesPI(pendingintent, mContext.getPackageName());
 _L1:
         return;
         RemoteException remoteexception;
@@ -575,7 +581,7 @@ _L1:
             throw new IllegalArgumentException("listener==null");
         ListenerTransport listenertransport = (ListenerTransport)mListeners.remove(locationlistener);
         if(listenertransport != null)
-            mService.removeUpdates(listenertransport);
+            mService.removeUpdates(listenertransport, mContext.getPackageName());
 _L1:
         return;
         RemoteException remoteexception;
@@ -751,6 +757,7 @@ _L1:
     public static final String PASSIVE_PROVIDER = "passive";
     public static final String PROVIDERS_CHANGED_ACTION = "android.location.PROVIDERS_CHANGED";
     private static final String TAG = "LocationManager";
+    private final Context mContext;
     private final GpsStatus mGpsStatus = new GpsStatus();
     private final HashMap mGpsStatusListeners = new HashMap();
     private HashMap mListeners;

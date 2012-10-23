@@ -390,6 +390,25 @@ _L26:
         }
     }
 
+    private static String decodeCharset(byte abyte0[], int i, int j, int k, String s) throws CodingException {
+        if(j < 0 || i + j * k > abyte0.length) {
+            int l = i % k;
+            int i1 = (abyte0.length - i - l) / k;
+            if(i1 < 0)
+                throw new CodingException((new StringBuilder()).append(s).append(" decode failed: offset out of range").toString());
+            Log.e("SMS", (new StringBuilder()).append(s).append(" decode error: offset = ").append(i).append(" numFields = ").append(j).append(" data.length = ").append(abyte0.length).append(" maxNumFields = ").append(i1).toString());
+            j = i1;
+        }
+        String s1;
+        try {
+            s1 = new String(abyte0, i, j * k, s);
+        }
+        catch(UnsupportedEncodingException unsupportedencodingexception) {
+            throw new CodingException((new StringBuilder()).append(s).append(" decode failed: ").append(unsupportedencodingexception).toString());
+        }
+        return s1;
+    }
+
     private static void decodeCmasUserData(BearerData bearerdata, int i) throws com.android.internal.util.BitwiseInputStream.AccessException, CodingException {
         BitwiseInputStream bitwiseinputstream;
         int k;
@@ -698,16 +717,7 @@ _L3:
     }
 
     private static String decodeLatin(byte abyte0[], int i, int j) throws CodingException {
-        if(j < 0 || j + i > abyte0.length)
-            throw new CodingException("ISO-8859-1 decode failed: offset or length out of range");
-        String s;
-        try {
-            s = new String(abyte0, i, j, "ISO-8859-1");
-        }
-        catch(UnsupportedEncodingException unsupportedencodingexception) {
-            throw new CodingException((new StringBuilder()).append("ISO-8859-1 decode failed: ").append(unsupportedencodingexception).toString());
-        }
-        return s;
+        return decodeCharset(abyte0, i, j, 1, "ISO-8859-1");
     }
 
     private static boolean decodeMessageId(BearerData bearerdata, BitwiseInputStream bitwiseinputstream) throws com.android.internal.util.BitwiseInputStream.AccessException, CodingException {
@@ -1071,30 +1081,11 @@ _L7:
     }
 
     private static String decodeUtf16(byte abyte0[], int i, int j) throws CodingException {
-        int k = j * 2;
-        if(k < 0 || k + i > abyte0.length)
-            throw new CodingException("UTF-16 decode failed: offset or length out of range");
-        String s;
-        try {
-            s = new String(abyte0, i, k, "utf-16be");
-        }
-        catch(UnsupportedEncodingException unsupportedencodingexception) {
-            throw new CodingException((new StringBuilder()).append("UTF-16 decode failed: ").append(unsupportedencodingexception).toString());
-        }
-        return s;
+        return decodeCharset(abyte0, i, j - (i + i % 2) / 2, 2, "utf-16be");
     }
 
     private static String decodeUtf8(byte abyte0[], int i, int j) throws CodingException {
-        if(j < 0 || j + i > abyte0.length)
-            throw new CodingException("UTF-8 decode failed: offset or length out of range");
-        String s;
-        try {
-            s = new String(abyte0, i, j, "UTF-8");
-        }
-        catch(UnsupportedEncodingException unsupportedencodingexception) {
-            throw new CodingException((new StringBuilder()).append("UTF-8 decode failed: ").append(unsupportedencodingexception).toString());
-        }
-        return s;
+        return decodeCharset(abyte0, i, j, 1, "UTF-8");
     }
 
     private static boolean decodeValidityAbs(BearerData bearerdata, BitwiseInputStream bitwiseinputstream) throws com.android.internal.util.BitwiseInputStream.AccessException, CodingException {
@@ -1220,15 +1211,14 @@ _L1:
         byte abyte1[] = encodeUtf16(userdata.payloadStr);
         int i = 1 + abyte0.length;
         int j = (i + 1) / 2;
-        int k = i % 2;
-        int l = abyte1.length / 2;
+        int k = abyte1.length / 2;
         userdata.msgEncoding = 4;
         userdata.msgEncodingSet = true;
-        userdata.numFields = j + l;
+        userdata.numFields = j + k;
         userdata.payload = new byte[2 * userdata.numFields];
         userdata.payload[0] = (byte)abyte0.length;
         System.arraycopy(abyte0, 0, userdata.payload, 1, abyte0.length);
-        System.arraycopy(abyte1, 0, userdata.payload, i + k, abyte1.length);
+        System.arraycopy(abyte1, 0, userdata.payload, i, abyte1.length);
     }
 
     private static byte[] encode7bitAscii(String s, boolean flag) throws CodingException {

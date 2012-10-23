@@ -265,7 +265,7 @@ _L2:
         public static final String ENABLE_ASSIST_MENU_LONG_PRESS = "enable_assist_menu_key_long_press";
         public static final int ENABLE_ASSIST_MENU_LONG_PRESS_DEFAULT = 1;
         public static final String ENABLE_SCREEN_ON_PROXIMITY_SENSOR = "enable_screen_on_proximity_sensor";
-        public static final boolean ENABLE_SCREEN_ON_PROXIMITY_SENSOR_DEFAULT = true;
+        public static final boolean ENABLE_SCREEN_ON_PROXIMITY_SENSOR_DEFAULT = false;
         public static final String ENABLE_SNAPSHOT_SCREENLOCK = "enable_snapshot_screenlock";
         public static final int ENABLE_SNAPSHOT_SCREENLOCK_DEFAULT = 0;
         public static final String ENABLE_TELOCATION = "enable_telocation";

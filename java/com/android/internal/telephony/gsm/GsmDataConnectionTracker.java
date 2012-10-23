@@ -465,16 +465,28 @@ _L4:
     }
 
     private boolean dataConnectionNotInUse(DataConnectionAc dataconnectionac) {
-        Iterator iterator = super.mApnContexts.values().iterator();
+        Iterator iterator;
+        log((new StringBuilder()).append("dataConnectionNotInUse: check if dcac is inuse dc=").append(dataconnectionac.dataConnection).toString());
+        iterator = super.mApnContexts.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
-        if(((ApnContext)iterator.next()).getDataConnectionAc() != dataconnectionac) goto _L4; else goto _L3
+        ApnContext apncontext1 = (ApnContext)iterator.next();
+        if(apncontext1.getDataConnectionAc() != dataconnectionac) goto _L4; else goto _L3
 _L3:
-        boolean flag = false;
+        boolean flag;
+        log((new StringBuilder()).append("dataConnectionNotInUse: in use by apnContext=").append(apncontext1).toString());
+        flag = false;
 _L6:
         return flag;
 _L2:
+        ApnContext apncontext;
+        for(Iterator iterator1 = dataconnectionac.getApnListSync().iterator(); iterator1.hasNext(); dataconnectionac.removeApnContextSync(apncontext)) {
+            apncontext = (ApnContext)iterator1.next();
+            log((new StringBuilder()).append("dataConnectionNotInUse: removing apnContext=").append(apncontext).toString());
+        }
+
+        log("dataConnectionNotInUse: not in use return true");
         flag = true;
         if(true) goto _L6; else goto _L5
 _L5:
@@ -2107,9 +2119,9 @@ _L5:
     }
 
     protected void onDisconnectDone(int i, AsyncResult asyncresult) {
-        log((new StringBuilder()).append("onDisconnectDone: EVENT_DISCONNECT_DONE connId=").append(i).toString());
         if(asyncresult.userObj instanceof ApnContext) {
             ApnContext apncontext = (ApnContext)asyncresult.userObj;
+            log((new StringBuilder()).append("onDisconnectDone: EVENT_DISCONNECT_DONE apnContext=").append(apncontext).toString());
             apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.IDLE);
             if(apncontext.getApnSetting() != null)
                 FirewallManager.getInstance().onDataDisconnected(0, FirewallManager.encodeApnSetting(apncontext.getApnSetting()));
@@ -2128,7 +2140,7 @@ _L5:
                 apncontext.setDataConnectionAc(null);
             }
         } else {
-            loge("Invalid ar in onDisconnectDone");
+            loge("onDisconnectDone: Invalid ar in onDisconnectDone, ignore");
         }
     }
 

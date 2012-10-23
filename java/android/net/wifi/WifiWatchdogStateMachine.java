@@ -450,9 +450,9 @@ _L5:
         boolean flag;
         arppeer = new ArpPeer(s, inetaddress, s1, inetaddress1);
         if(i != 0)
-            break MISSING_BLOCK_LABEL_366;
+            break MISSING_BLOCK_LABEL_374;
         if(arppeer.doArp(mArpPingTimeoutMs) == null)
-            break MISSING_BLOCK_LABEL_360;
+            break MISSING_BLOCK_LABEL_368;
         flag = true;
 _L3:
         if(DBG)
@@ -462,6 +462,7 @@ _L2:
           goto _L1
         j = 0;
         k = 0;
+        IllegalArgumentException illegalargumentexception;
         SocketException socketexception;
         int j;
         int k;
@@ -469,7 +470,7 @@ _L2:
         for(; k < mNumArpPings; k++) {
             if(arppeer.doArp(mArpPingTimeoutMs) != null)
                 j++;
-            break MISSING_BLOCK_LABEL_375;
+            break MISSING_BLOCK_LABEL_383;
         }
 
         if(DBG)
@@ -482,6 +483,9 @@ _L2:
           goto _L2
         socketexception;
         loge((new StringBuilder()).append("ARP test initiation failure: ").append(socketexception).toString());
+        flag = true;
+          goto _L1
+        illegalargumentexception;
         flag = true;
 _L1:
         return flag;

@@ -32,19 +32,19 @@
     .parameter "groupable"
 
     .prologue
-    .line 1398
+    .line 1410
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1399
+    .line 1411
     iput p1, p0, Landroid/media/MediaRouter$RouteCategory;->mNameResId:I
 
-    .line 1400
+    .line 1412
     iput p2, p0, Landroid/media/MediaRouter$RouteCategory;->mTypes:I
 
-    .line 1401
+    .line 1413
     iput-boolean p3, p0, Landroid/media/MediaRouter$RouteCategory;->mGroupable:Z
 
-    .line 1402
+    .line 1414
     return-void
 .end method
 
@@ -55,19 +55,19 @@
     .parameter "groupable"
 
     .prologue
-    .line 1392
+    .line 1404
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1393
+    .line 1405
     iput-object p1, p0, Landroid/media/MediaRouter$RouteCategory;->mName:Ljava/lang/CharSequence;
 
-    .line 1394
+    .line 1406
     iput p2, p0, Landroid/media/MediaRouter$RouteCategory;->mTypes:I
 
-    .line 1395
+    .line 1407
     iput-boolean p3, p0, Landroid/media/MediaRouter$RouteCategory;->mGroupable:Z
 
-    .line 1396
+    .line 1408
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .registers 2
 
     .prologue
-    .line 1408
+    .line 1420
     sget-object v0, Landroid/media/MediaRouter;->sStatic:Landroid/media/MediaRouter$Static;
 
     iget-object v0, v0, Landroid/media/MediaRouter$Static;->mResources:Landroid/content/res/Resources;
@@ -94,7 +94,7 @@
     .parameter "context"
 
     .prologue
-    .line 1418
+    .line 1430
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -111,19 +111,19 @@
     .parameter "res"
 
     .prologue
-    .line 1422
+    .line 1434
     iget v0, p0, Landroid/media/MediaRouter$RouteCategory;->mNameResId:I
 
     if-eqz v0, :cond_b
 
-    .line 1423
+    .line 1435
     iget v0, p0, Landroid/media/MediaRouter$RouteCategory;->mNameResId:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 1425
+    .line 1437
     :goto_a
     return-object v0
 
@@ -151,24 +151,24 @@
     .end annotation
 
     .prologue
-    .line 1442
+    .line 1454
     .local p1, out:Ljava/util/List;,"Ljava/util/List<Landroid/media/MediaRouter$RouteInfo;>;"
     if-nez p1, :cond_1c
 
-    .line 1443
+    .line 1455
     new-instance p1, Ljava/util/ArrayList;
 
     .end local p1           #out:Ljava/util/List;,"Ljava/util/List<Landroid/media/MediaRouter$RouteInfo;>;"
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1448
+    .line 1460
     .restart local p1       #out:Ljava/util/List;,"Ljava/util/List<Landroid/media/MediaRouter$RouteInfo;>;"
     :goto_7
     invoke-static {}, Landroid/media/MediaRouter;->getRouteCountStatic()I
 
     move-result v0
 
-    .line 1449
+    .line 1461
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -176,27 +176,27 @@
     :goto_c
     if-ge v1, v0, :cond_20
 
-    .line 1450
+    .line 1462
     invoke-static {v1}, Landroid/media/MediaRouter;->getRouteAtStatic(I)Landroid/media/MediaRouter$RouteInfo;
 
     move-result-object v2
 
-    .line 1451
+    .line 1463
     .local v2, route:Landroid/media/MediaRouter$RouteInfo;
     iget-object v3, v2, Landroid/media/MediaRouter$RouteInfo;->mCategory:Landroid/media/MediaRouter$RouteCategory;
 
     if-ne v3, p0, :cond_19
 
-    .line 1452
+    .line 1464
     invoke-interface {p1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1449
+    .line 1461
     :cond_19
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_c
 
-    .line 1445
+    .line 1457
     .end local v0           #count:I
     .end local v1           #i:I
     .end local v2           #route:Landroid/media/MediaRouter$RouteInfo;
@@ -205,7 +205,7 @@
 
     goto :goto_7
 
-    .line 1455
+    .line 1467
     .restart local v0       #count:I
     .restart local v1       #i:I
     :cond_20
@@ -216,7 +216,7 @@
     .registers 2
 
     .prologue
-    .line 1462
+    .line 1474
     iget v0, p0, Landroid/media/MediaRouter$RouteCategory;->mTypes:I
 
     return v0
@@ -226,7 +226,7 @@
     .registers 2
 
     .prologue
-    .line 1474
+    .line 1486
     iget-boolean v0, p0, Landroid/media/MediaRouter$RouteCategory;->mGroupable:Z
 
     return v0
@@ -236,7 +236,7 @@
     .registers 3
 
     .prologue
-    .line 1478
+    .line 1490
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

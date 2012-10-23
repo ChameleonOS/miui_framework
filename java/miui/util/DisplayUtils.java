@@ -44,8 +44,8 @@ label1:
     public static String getDensityName(int i) {
         i;
         JVM INSTR lookupswitch 6: default 60
-    //                   -1: 136
-    //                   0: 130
+    //                   0: 136
+    //                   1: 130
     //                   120: 107
     //                   160: 112
     //                   240: 118
@@ -100,6 +100,7 @@ _L9:
     }
 
     private static final int DENSITIES[];
+    public static final int DENSITY_NONE = 1;
 
     static  {
         int ai[] = new int[6];
@@ -107,8 +108,8 @@ _L9:
         ai[1] = 240;
         ai[2] = 160;
         ai[3] = 120;
-        ai[4] = 0;
-        ai[5] = -1;
+        ai[4] = 1;
+        ai[5] = 0;
         DENSITIES = ai;
     }
 }

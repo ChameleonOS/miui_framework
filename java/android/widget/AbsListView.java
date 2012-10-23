@@ -2864,6 +2864,8 @@ _L3:
             savedstate.checkIdState = longsparsearray;
         }
         savedstate.checkedItemCount = mCheckedItemCount;
+        if(mRemoteAdapter != null)
+            mRemoteAdapter.saveRemoteViewsCache();
         return savedstate;
     }
 
@@ -3991,10 +3993,16 @@ _L5:
     }
 
     public void setRemoteViewsAdapter(Intent intent) {
-        if(mRemoteAdapter == null || !(new FilterComparison(intent)).equals(new FilterComparison(mRemoteAdapter.getRemoteViewsServiceIntent()))) {
-            mDeferNotifyDataSetChanged = false;
-            mRemoteAdapter = new RemoteViewsAdapter(getContext(), intent, this);
-        }
+        if(mRemoteAdapter == null || !(new FilterComparison(intent)).equals(new FilterComparison(mRemoteAdapter.getRemoteViewsServiceIntent()))) goto _L2; else goto _L1
+_L1:
+        return;
+_L2:
+        mDeferNotifyDataSetChanged = false;
+        mRemoteAdapter = new RemoteViewsAdapter(getContext(), intent, this);
+        if(mRemoteAdapter.isDataReady())
+            setAdapter(mRemoteAdapter);
+        if(true) goto _L1; else goto _L3
+_L3:
     }
 
     public void setScrollIndicators(View view, View view1) {

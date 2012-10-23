@@ -62,31 +62,36 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 96
     const/4 v13, 0x2
 
     move/from16 v0, p3
 
-    if-ne v0, v13, :cond_26
+    if-ne v0, v13, :cond_2a
 
-    .line 97
+    .line 100
     if-eqz p8, :cond_a
 
     invoke-virtual/range {p8 .. p8}, Ljava/io/File;->mkdirs()Z
 
-    .line 147
+    .line 148
     :cond_a
     :goto_a
     const-wide/16 v13, 0x0
 
     cmp-long v13, p4, v13
 
-    if-ltz v13, :cond_25
+    if-ltz v13, :cond_29
 
-    if-eqz p8, :cond_25
+    if-eqz p8, :cond_29
 
-    .line 149
-    :try_start_12
+    .line 151
+    const-wide/16 v13, 0x1c0
+
+    and-long p4, p4, v13
+
+    .line 152
+    :try_start_16
     sget-object v13, Llibcore/io/Libcore;->os:Llibcore/io/Os;
 
     invoke-virtual/range {p8 .. p8}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -98,75 +103,75 @@
     long-to-int v15, v0
 
     invoke-interface {v13, v14, v15}, Llibcore/io/Os;->chmod(Ljava/lang/String;I)V
-    :try_end_1e
-    .catch Llibcore/io/ErrnoException; {:try_start_12 .. :try_end_1e} :catch_e0
+    :try_end_22
+    .catch Llibcore/io/ErrnoException; {:try_start_16 .. :try_end_22} :catch_e4
 
-    .line 153
-    :goto_1e
+    .line 156
+    :goto_22
     move-object/from16 v0, p8
 
     move-wide/from16 v1, p6
 
     invoke-virtual {v0, v1, v2}, Ljava/io/File;->setLastModified(J)Z
 
-    .line 155
-    :cond_25
+    .line 158
+    :cond_29
     return-void
 
-    .line 99
-    :cond_26
+    .line 102
+    :cond_2a
     const/4 v9, 0x0
 
-    .line 103
+    .line 106
     .local v9, out:Ljava/io/FileOutputStream;
-    if-eqz p8, :cond_3e
+    if-eqz p8, :cond_42
 
-    .line 104
-    :try_start_29
+    .line 107
+    :try_start_2d
     invoke-virtual/range {p8 .. p8}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     move-result-object v11
 
-    .line 105
+    .line 108
     .local v11, parent:Ljava/io/File;
     invoke-virtual {v11}, Ljava/io/File;->exists()Z
 
     move-result v13
 
-    if-nez v13, :cond_36
+    if-nez v13, :cond_3a
 
-    .line 110
+    .line 111
     invoke-virtual {v11}, Ljava/io/File;->mkdirs()Z
 
-    .line 112
-    :cond_36
+    .line 113
+    :cond_3a
     new-instance v10, Ljava/io/FileOutputStream;
 
     move-object/from16 v0, p8
 
     invoke-direct {v10, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-    :try_end_3d
-    .catch Ljava/io/IOException; {:try_start_29 .. :try_end_3d} :catch_8f
+    :try_end_41
+    .catch Ljava/io/IOException; {:try_start_2d .. :try_end_41} :catch_93
 
     .end local v9           #out:Ljava/io/FileOutputStream;
     .local v10, out:Ljava/io/FileOutputStream;
     move-object v9, v10
 
-    .line 118
+    .line 119
     .end local v10           #out:Ljava/io/FileOutputStream;
     .end local v11           #parent:Ljava/io/File;
     .restart local v9       #out:Ljava/io/FileOutputStream;
-    :cond_3e
-    :goto_3e
+    :cond_42
+    :goto_42
     const v13, 0x8000
 
     new-array v3, v13, [B
 
-    .line 119
+    .line 120
     .local v3, buffer:[B
     move-wide/from16 v7, p1
 
-    .line 120
+    .line 121
     .local v7, origSize:J
     new-instance v6, Ljava/io/FileInputStream;
 
@@ -176,40 +181,40 @@
 
     invoke-direct {v6, v13}, Ljava/io/FileInputStream;-><init>(Ljava/io/FileDescriptor;)V
 
-    .line 121
+    .line 122
     .local v6, in:Ljava/io/FileInputStream;
-    :goto_4e
+    :goto_52
     const-wide/16 v13, 0x0
 
     cmp-long v13, p1, v13
 
-    if-lez v13, :cond_88
+    if-lez v13, :cond_8c
 
-    .line 122
+    .line 123
     array-length v13, v3
 
     int-to-long v13, v13
 
     cmp-long v13, p1, v13
 
-    if-lez v13, :cond_ad
+    if-lez v13, :cond_b1
 
     array-length v12, v3
 
-    .line 123
+    .line 124
     .local v12, toRead:I
-    :goto_5b
+    :goto_5f
     const/4 v13, 0x0
 
     invoke-virtual {v6, v3, v13, v12}, Ljava/io/FileInputStream;->read([BII)I
 
     move-result v5
 
-    .line 124
-    .local v5, got:I
-    if-gtz v5, :cond_b1
-
     .line 125
+    .local v5, got:I
+    if-gtz v5, :cond_b5
+
+    .line 126
     const-string v13, "FullBackup"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -246,24 +251,24 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 143
+    .line 144
     .end local v5           #got:I
     .end local v12           #toRead:I
-    :cond_88
+    :cond_8c
     if-eqz v9, :cond_a
 
     invoke-virtual {v9}, Ljava/io/FileOutputStream;->close()V
 
     goto/16 :goto_a
 
-    .line 114
+    .line 115
     .end local v3           #buffer:[B
     .end local v6           #in:Ljava/io/FileInputStream;
     .end local v7           #origSize:J
-    :catch_8f
+    :catch_93
     move-exception v4
 
-    .line 115
+    .line 116
     .local v4, e:Ljava/io/IOException;
     const-string v13, "FullBackup"
 
@@ -291,49 +296,49 @@
 
     invoke-static {v13, v14, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_3e
+    goto :goto_42
 
-    .line 122
+    .line 123
     .end local v4           #e:Ljava/io/IOException;
     .restart local v3       #buffer:[B
     .restart local v6       #in:Ljava/io/FileInputStream;
     .restart local v7       #origSize:J
-    :cond_ad
+    :cond_b1
     move-wide/from16 v0, p1
 
     long-to-int v12, v0
 
-    goto :goto_5b
+    goto :goto_5f
 
-    .line 129
+    .line 130
     .restart local v5       #got:I
     .restart local v12       #toRead:I
-    :cond_b1
-    if-eqz v9, :cond_b7
+    :cond_b5
+    if-eqz v9, :cond_bb
 
-    .line 131
+    .line 132
     const/4 v13, 0x0
 
-    :try_start_b4
+    :try_start_b8
     invoke-virtual {v9, v3, v13, v5}, Ljava/io/FileOutputStream;->write([BII)V
-    :try_end_b7
-    .catch Ljava/io/IOException; {:try_start_b4 .. :try_end_b7} :catch_bb
+    :try_end_bb
+    .catch Ljava/io/IOException; {:try_start_b8 .. :try_end_bb} :catch_bf
 
-    .line 141
-    :cond_b7
-    :goto_b7
+    .line 142
+    :cond_bb
+    :goto_bb
     int-to-long v13, v5
 
     sub-long p1, p1, v13
 
-    .line 142
-    goto :goto_4e
+    .line 143
+    goto :goto_52
 
-    .line 132
-    :catch_bb
+    .line 133
+    :catch_bf
     move-exception v4
 
-    .line 135
+    .line 136
     .restart local v4       #e:Ljava/io/IOException;
     const-string v13, "FullBackup"
 
@@ -361,18 +366,18 @@
 
     invoke-static {v13, v14, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 136
+    .line 137
     invoke-virtual {v9}, Ljava/io/FileOutputStream;->close()V
 
-    .line 137
+    .line 138
     const/4 v9, 0x0
 
-    .line 138
+    .line 139
     invoke-virtual/range {p8 .. p8}, Ljava/io/File;->delete()Z
 
-    goto :goto_b7
+    goto :goto_bb
 
-    .line 150
+    .line 153
     .end local v3           #buffer:[B
     .end local v4           #e:Ljava/io/IOException;
     .end local v5           #got:I
@@ -380,12 +385,12 @@
     .end local v7           #origSize:J
     .end local v9           #out:Ljava/io/FileOutputStream;
     .end local v12           #toRead:I
-    :catch_e0
+    :catch_e4
     move-exception v4
 
-    .line 151
+    .line 154
     .local v4, e:Llibcore/io/ErrnoException;
     invoke-virtual {v4}, Llibcore/io/ErrnoException;->rethrowAsIOException()Ljava/io/IOException;
 
-    goto/16 :goto_1e
+    goto/16 :goto_22
 .end method

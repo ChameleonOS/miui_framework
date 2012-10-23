@@ -8,6 +8,7 @@ import android.net.LocalSocket;
 import android.net.LocalSocketAddress;
 import java.io.*;
 import java.nio.charset.Charsets;
+import java.nio.charset.ModifiedUtf8;
 import java.util.ArrayList;
 
 public class KeyStore {
@@ -199,12 +200,24 @@ _L11:
         return abyte2;
     }
 
-    private static byte[] getBytes(String s) {
-        return s.getBytes(Charsets.UTF_8);
-    }
-
     public static KeyStore getInstance() {
         return new KeyStore();
+    }
+
+    private static byte[] getKeyBytes(String s) {
+        byte abyte0[];
+        try {
+            abyte0 = new byte[(int)ModifiedUtf8.countBytes(s, false)];
+            ModifiedUtf8.encode(abyte0, 0, s);
+        }
+        catch(UTFDataFormatException utfdataformatexception) {
+            throw new RuntimeException(utfdataformatexception);
+        }
+        return abyte0;
+    }
+
+    private static byte[] getPasswordBytes(String s) {
+        return s.getBytes(Charsets.UTF_8);
     }
 
     private byte[] getPubkey(byte abyte0[]) {
@@ -217,6 +230,10 @@ _L11:
         else
             abyte2 = (byte[])arraylist.get(0);
         return abyte2;
+    }
+
+    private static byte[] getUidBytes(int i) {
+        return Integer.toString(i).getBytes(Charsets.UTF_8);
     }
 
     private boolean grant(byte abyte0[], byte abyte1[]) {
@@ -275,8 +292,15 @@ _L11:
         return abyte3;
     }
 
-    private static String toString(byte abyte0[]) {
-        return new String(abyte0, Charsets.UTF_8);
+    private static String toKeyString(byte abyte0[]) {
+        String s;
+        try {
+            s = ModifiedUtf8.decode(abyte0, new char[abyte0.length], 0, abyte0.length);
+        }
+        catch(UTFDataFormatException utfdataformatexception) {
+            throw new RuntimeException(utfdataformatexception);
+        }
+        return s;
     }
 
     private boolean ungrant(byte abyte0[], byte abyte1[]) {
@@ -313,23 +337,23 @@ _L11:
     }
 
     public boolean contains(String s) {
-        return contains(getBytes(s));
+        return contains(getKeyBytes(s));
     }
 
     public boolean delKey(String s) {
-        return delKey(getBytes(s));
+        return delKey(getKeyBytes(s));
     }
 
     public boolean delete(String s) {
-        return delete(getBytes(s));
+        return delete(getKeyBytes(s));
     }
 
     public boolean generate(String s) {
-        return generate(getBytes(s));
+        return generate(getKeyBytes(s));
     }
 
     public byte[] get(String s) {
-        return get(getBytes(s));
+        return get(getKeyBytes(s));
     }
 
     public int getLastError() {
@@ -337,15 +361,15 @@ _L11:
     }
 
     public byte[] getPubkey(String s) {
-        return getPubkey(getBytes(s));
+        return getPubkey(getKeyBytes(s));
     }
 
     public boolean grant(String s, int i) {
-        return grant(getBytes(s), Integer.toString(i).getBytes());
+        return grant(getKeyBytes(s), getUidBytes(i));
     }
 
     public boolean importKey(String s, byte abyte0[]) {
-        return importKey(getBytes(s), abyte0);
+        return importKey(getKeyBytes(s), abyte0);
     }
 
     public boolean isEmpty() {
@@ -365,11 +389,11 @@ _L11:
     }
 
     public boolean password(String s) {
-        return password(getBytes(s));
+        return password(getPasswordBytes(s));
     }
 
     public boolean put(String s, byte abyte0[]) {
-        return put(getBytes(s), abyte0);
+        return put(getKeyBytes(s), abyte0);
     }
 
     public boolean reset() {
@@ -381,7 +405,7 @@ _L11:
     }
 
     public String[] saw(String s) {
-        byte abyte0[][] = saw(getBytes(s));
+        byte abyte0[][] = saw(getKeyBytes(s));
         String as[];
         if(abyte0 == null) {
             as = null;
@@ -389,7 +413,7 @@ _L11:
             as = new String[abyte0.length];
             int i = 0;
             while(i < abyte0.length)  {
-                as[i] = toString(abyte0[i]);
+                as[i] = toKeyString(abyte0[i]);
                 i++;
             }
         }
@@ -409,7 +433,7 @@ _L11:
     }
 
     public byte[] sign(String s, byte abyte0[]) {
-        return sign(getBytes(s), abyte0);
+        return sign(getKeyBytes(s), abyte0);
     }
 
     public State state() {
@@ -436,15 +460,15 @@ _L5:
     }
 
     public boolean ungrant(String s, int i) {
-        return ungrant(getBytes(s), Integer.toString(i).getBytes());
+        return ungrant(getKeyBytes(s), getUidBytes(i));
     }
 
     public boolean unlock(String s) {
-        return unlock(getBytes(s));
+        return unlock(getPasswordBytes(s));
     }
 
     public boolean verify(String s, byte abyte0[], byte abyte1[]) {
-        return verify(getBytes(s), abyte0, abyte1);
+        return verify(getKeyBytes(s), abyte0, abyte1);
     }
 
     public static final int KEY_NOT_FOUND = 7;

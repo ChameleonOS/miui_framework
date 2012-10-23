@@ -529,7 +529,8 @@ _L2:
             }
             catch(ClassCastException classcastexception) {
                 CatLog.d(this, "Fail to parse proactive command");
-                sendTerminalResponse(mCurrntCmd.mCmdDet, ResultCode.CMD_DATA_NOT_UNDERSTOOD, false, 0, null);
+                if(mCurrntCmd != null)
+                    sendTerminalResponse(mCurrntCmd.mCmdDet, ResultCode.CMD_DATA_NOT_UNDERSTOOD, false, 0, null);
                 continue; /* Loop/switch isn't completed */
             }
             if(commandparams1 != null)

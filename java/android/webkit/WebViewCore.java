@@ -587,7 +587,7 @@ _L76:
                         flag3 = true;
                     else
                         flag3 = false;
-                    as1 = webviewcore3.nativeSwitchReadMode(i3, flag3, mReadModeTemplate);
+                    as1 = webviewcore3.nativeSwitchReadMode(i3, flag3, mReadModeTemplateVector);
                     if(as1 != null) {
                         mReadModeString[0] = as1[0];
                         mReadModeString[1] = as1[1];
@@ -1283,11 +1283,7 @@ _L10:
 
     public WebViewCore(Context context, WebViewClassic webviewclassic, CallbackProxy callbackproxy, Map map) {
         mReadModeString = new String[3];
-        long al[] = new long[3];
-        al[0] = 0L;
-        al[1] = 0L;
-        al[2] = 0L;
-        mReadModeTemplate = al;
+        mReadModeTemplateVector = new Vector();
         mViewportWidth = -1;
         mViewportHeight = -1;
         mViewportInitialScale = 0;
@@ -1317,7 +1313,7 @@ _L10:
         android/webkit/WebViewCore;
         JVM INSTR monitorenter ;
         if(sWebCoreHandler != null)
-            break MISSING_BLOCK_LABEL_241;
+            break MISSING_BLOCK_LABEL_226;
         Thread thread = new Thread(new WebCoreThread());
         thread.setName("WebViewCoreThread");
         thread.start();
@@ -1766,7 +1762,7 @@ _L8:
     private native void nativeSetSize(int i, int j, int k, int l, float f, int i1, int j1, 
             int k1, int l1, boolean flag);
 
-    private native String[] nativeSwitchReadMode(int i, boolean flag, long al[]);
+    private native String[] nativeSwitchReadMode(int i, boolean flag, Vector vector);
 
     private void needTouchEvents(boolean flag) {
         if(mWebViewClassic != null) {
@@ -2490,8 +2486,8 @@ _L1:
         return mWebViewClassic;
     }
 
-    public long[] getmReadModeTemplate() {
-        return mReadModeTemplate;
+    public Vector getmReadModeTemplate() {
+        return mReadModeTemplateVector;
     }
 
     void initializeSubwindow() {
@@ -2644,8 +2640,8 @@ _L1:
         mDeviceMotionAndOrientationManager.setMockOrientation(flag, d, flag1, d1, flag2, d2);
     }
 
-    public void setmReadModeTemplate(long al[]) {
-        mReadModeTemplate = al;
+    public void setmReadModeTemplate(Vector vector) {
+        mReadModeTemplateVector = vector;
     }
 
     void signalRepaintDone() {
@@ -2690,7 +2686,7 @@ _L1:
     private int mLowMemoryUsageThresholdMb;
     private int mNativeClass;
     private String mReadModeString[];
-    private long mReadModeTemplate[];
+    private Vector mReadModeTemplateVector;
     private float mRestoredScale;
     private float mRestoredTextWrapScale;
     private int mRestoredX;

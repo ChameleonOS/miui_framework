@@ -177,8 +177,8 @@ _L2:
 _L3:
         android.graphics.BitmapFactory.Options options = null;
         android.graphics.BitmapFactory.Options options1;
-        if(themefileinfo.mDensity <= 0)
-            break MISSING_BLOCK_LABEL_84;
+        if(themefileinfo.mDensity <= 0 || typedvalue.density == 65535)
+            break MISSING_BLOCK_LABEL_93;
         options1 = new android.graphics.BitmapFactory.Options();
         options1.inDensity = themefileinfo.mDensity;
         options = options1;

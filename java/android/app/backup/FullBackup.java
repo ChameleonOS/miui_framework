@@ -27,6 +27,7 @@ _L1:
             file.mkdirs();
 _L3:
         if(l1 >= 0L && file != null) {
+            long l4 = l1 & 448L;
             FileOutputStream fileoutputstream;
             byte abyte0[];
             long l3;
@@ -38,7 +39,7 @@ _L3:
             File file1;
             FileOutputStream fileoutputstream1;
             try {
-                Libcore.os.chmod(file.getPath(), (int)l1);
+                Libcore.os.chmod(file.getPath(), (int)l4);
             }
             catch(ErrnoException errnoexception) {
                 errnoexception.rethrowAsIOException();
@@ -49,7 +50,7 @@ _L3:
 _L2:
         fileoutputstream = null;
         if(file == null)
-            break MISSING_BLOCK_LABEL_97;
+            break MISSING_BLOCK_LABEL_105;
         file1 = file.getParentFile();
         if(!file1.exists())
             file1.mkdirs();
@@ -67,7 +68,7 @@ _L5:
                 j = (int)l;
             k = fileinputstream.read(abyte0, 0, j);
             if(k > 0)
-                break MISSING_BLOCK_LABEL_249;
+                break MISSING_BLOCK_LABEL_257;
             Log.w("FullBackup", (new StringBuilder()).append("Incomplete read: expected ").append(l).append(" but got ").append(l3 - l).toString());
         }
         if(fileoutputstream != null)

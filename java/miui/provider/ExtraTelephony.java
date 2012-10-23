@@ -44,6 +44,7 @@ public final class ExtraTelephony {
         public static final int REASON_BL_MUTEMMS = 5;
         public static final int REASON_BL_MUTESMS = 3;
         public static final int REASON_FILTER_SMS = 0x10000;
+        public static final int REASON_IMPORT_CALLLOG = 0x40000;
         public static final int REASON_IMPORT_SMS = 0x20000;
         public static final int REASON_NONE = 0;
         public static final int REASON_PRIVATE_CALL_HANGUP = 7;

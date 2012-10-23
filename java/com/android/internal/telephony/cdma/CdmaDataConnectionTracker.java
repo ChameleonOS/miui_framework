@@ -176,17 +176,19 @@ _L5:
 
     private void notifyFirewallDataSetupComplete() {
         DataConnectionAc dataconnectionac = null;
+        ApnSetting apnsetting = super.mActiveApn;
         Iterator iterator = super.mDataConnectionAsyncChannels.values().iterator();
         do {
             if(!iterator.hasNext())
                 break;
             DataConnectionAc dataconnectionac1 = (DataConnectionAc)iterator.next();
-            if(!dataconnectionac1.getApnSettingSync().equals(super.mActiveApn))
+            if(!dataconnectionac1.getApnSettingSync().equals(apnsetting))
                 continue;
             dataconnectionac = dataconnectionac1;
             break;
         } while(true);
-        FirewallManager.getInstance().onDataConnected(0, FirewallManager.encodeApnSetting(super.mActiveApn), dataconnectionac.getLinkPropertiesSync().getInterfaceName());
+        if(dataconnectionac != null && apnsetting != null)
+            FirewallManager.getInstance().onDataConnected(0, FirewallManager.encodeApnSetting(apnsetting), dataconnectionac.getLinkPropertiesSync().getInterfaceName());
     }
 
     private void notifyNoData(com.android.internal.telephony.DataConnection.FailCause failcause) {

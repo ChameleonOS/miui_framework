@@ -159,7 +159,7 @@
 
 .field public static final ENABLE_SCREEN_ON_PROXIMITY_SENSOR:Ljava/lang/String; = "enable_screen_on_proximity_sensor"
 
-.field public static final ENABLE_SCREEN_ON_PROXIMITY_SENSOR_DEFAULT:Z = true
+.field public static final ENABLE_SCREEN_ON_PROXIMITY_SENSOR_DEFAULT:Z = false
 
 .field public static final ENABLE_SNAPSHOT_SCREENLOCK:Ljava/lang/String; = "enable_snapshot_screenlock"
 

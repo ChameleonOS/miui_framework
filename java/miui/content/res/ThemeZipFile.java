@@ -83,7 +83,8 @@ _L2:
                 aobj[2] = s1;
                 themefileinfo = getZipInputStream(String.format("%s%s%s", aobj));
                 if(themefileinfo != null) {
-                    themefileinfo.mDensity = sDensities[j];
+                    if(sDensities[j] > 1)
+                        themefileinfo.mDensity = sDensities[j];
                     themefileinfo1 = themefileinfo;
                     continue; /* Loop/switch isn't completed */
                 }

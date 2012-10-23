@@ -1432,10 +1432,10 @@ _L3:
             }
 
         });
-        registerService("location", new StaticServiceFetcher() {
+        registerService("location", new ServiceFetcher() {
 
-            public Object createStaticService() {
-                return new LocationManager(android.location.ILocationManager.Stub.asInterface(ServiceManager.getService("location")));
+            public Object createService(ContextImpl contextimpl) {
+                return new LocationManager(contextimpl, android.location.ILocationManager.Stub.asInterface(ServiceManager.getService("location")));
             }
 
         });

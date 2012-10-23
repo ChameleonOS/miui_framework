@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 228
+    .line 226
     iput-object p1, p0, Landroid/accounts/AccountManagerService$1;->this$0:Landroid/accounts/AccountManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 231
+    .line 229
     iget-object v0, p0, Landroid/accounts/AccountManagerService$1;->this$0:Landroid/accounts/AccountManagerService;
 
     #calls: Landroid/accounts/AccountManagerService;->purgeOldGrantsAll()V
     invoke-static {v0}, Landroid/accounts/AccountManagerService;->access$000(Landroid/accounts/AccountManagerService;)V
 
-    .line 232
+    .line 230
     return-void
 .end method

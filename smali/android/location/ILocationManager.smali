@@ -23,7 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract addProximityAlert(DDFJLandroid/app/PendingIntent;)V
+.method public abstract addProximityAlert(DDFJLandroid/app/PendingIntent;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -139,7 +139,7 @@
     .end annotation
 .end method
 
-.method public abstract getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
+.method public abstract getLastKnownLocation(Ljava/lang/String;Ljava/lang/String;)Landroid/location/Location;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -223,7 +223,7 @@
     .end annotation
 .end method
 
-.method public abstract removeUpdates(Landroid/location/ILocationListener;)V
+.method public abstract removeUpdates(Landroid/location/ILocationListener;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -231,7 +231,7 @@
     .end annotation
 .end method
 
-.method public abstract removeUpdatesPI(Landroid/app/PendingIntent;)V
+.method public abstract removeUpdatesPI(Landroid/app/PendingIntent;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -247,7 +247,7 @@
     .end annotation
 .end method
 
-.method public abstract requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/ILocationListener;)V
+.method public abstract requestLocationUpdates(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/location/ILocationListener;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -255,7 +255,7 @@
     .end annotation
 .end method
 
-.method public abstract requestLocationUpdatesPI(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;)V
+.method public abstract requestLocationUpdatesPI(Ljava/lang/String;Landroid/location/Criteria;JFZLandroid/app/PendingIntent;Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

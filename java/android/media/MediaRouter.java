@@ -793,9 +793,11 @@ _L1:
         }
 
         void updateRoutes(AudioRoutesInfo audioroutesinfo) {
+            boolean flag;
             if(audioroutesinfo.mMainType != mCurRoutesInfo.mMainType) {
                 mCurRoutesInfo.mMainType = audioroutesinfo.mMainType;
                 RouteInfo routeinfo;
+                boolean flag1;
                 int i;
                 if((2 & audioroutesinfo.mMainType) != 0 || (1 & audioroutesinfo.mMainType) != 0)
                     i = 0x10404fe;
@@ -810,35 +812,40 @@ _L1:
                 MediaRouter.sStatic.mDefaultAudio.mNameResId = i;
                 MediaRouter.dispatchRouteChanged(MediaRouter.sStatic.mDefaultAudio);
             }
-            if(TextUtils.equals(audioroutesinfo.mBluetoothName, mCurRoutesInfo.mBluetoothName)) goto _L2; else goto _L1
+            flag1 = mAudioService.isBluetoothA2dpOn();
+            flag = flag1;
 _L1:
-            mCurRoutesInfo.mBluetoothName = audioroutesinfo.mBluetoothName;
-            if(mCurRoutesInfo.mBluetoothName == null)
-                break MISSING_BLOCK_LABEL_262;
-            if(MediaRouter.sStatic.mBluetoothA2dpRoute != null) goto _L4; else goto _L3
-_L3:
-            routeinfo = new RouteInfo(MediaRouter.sStatic.mSystemCategory);
-            routeinfo.mName = mCurRoutesInfo.mBluetoothName;
-            routeinfo.mSupportedTypes = 1;
-            MediaRouter.sStatic.mBluetoothA2dpRoute = routeinfo;
-            MediaRouter.addRoute(MediaRouter.sStatic.mBluetoothA2dpRoute);
-            if(mAudioService.isBluetoothA2dpOn())
-                MediaRouter.selectRouteStatic(1, mBluetoothA2dpRoute);
-_L2:
-            return;
-            RemoteException remoteexception;
-            remoteexception;
-            Log.e("MediaRouter", "Error selecting Bluetooth A2DP route", remoteexception);
-              goto _L2
-_L4:
-            MediaRouter.sStatic.mBluetoothA2dpRoute.mName = mCurRoutesInfo.mBluetoothName;
-            MediaRouter.dispatchRouteChanged(MediaRouter.sStatic.mBluetoothA2dpRoute);
-              goto _L2
-            if(MediaRouter.sStatic.mBluetoothA2dpRoute != null) {
-                MediaRouter.removeRoute(MediaRouter.sStatic.mBluetoothA2dpRoute);
-                MediaRouter.sStatic.mBluetoothA2dpRoute = null;
+            if(!TextUtils.equals(audioroutesinfo.mBluetoothName, mCurRoutesInfo.mBluetoothName)) {
+                mCurRoutesInfo.mBluetoothName = audioroutesinfo.mBluetoothName;
+                RemoteException remoteexception;
+                if(mCurRoutesInfo.mBluetoothName != null) {
+                    if(MediaRouter.sStatic.mBluetoothA2dpRoute == null) {
+                        routeinfo = new RouteInfo(MediaRouter.sStatic.mSystemCategory);
+                        routeinfo.mName = mCurRoutesInfo.mBluetoothName;
+                        routeinfo.mSupportedTypes = 1;
+                        MediaRouter.sStatic.mBluetoothA2dpRoute = routeinfo;
+                        MediaRouter.addRoute(MediaRouter.sStatic.mBluetoothA2dpRoute);
+                    } else {
+                        MediaRouter.sStatic.mBluetoothA2dpRoute.mName = mCurRoutesInfo.mBluetoothName;
+                        MediaRouter.dispatchRouteChanged(MediaRouter.sStatic.mBluetoothA2dpRoute);
+                    }
+                } else
+                if(MediaRouter.sStatic.mBluetoothA2dpRoute != null) {
+                    MediaRouter.removeRoute(MediaRouter.sStatic.mBluetoothA2dpRoute);
+                    MediaRouter.sStatic.mBluetoothA2dpRoute = null;
+                }
             }
-              goto _L2
+            if(mBluetoothA2dpRoute != null)
+                if(mCurRoutesInfo.mMainType != 0 && mSelectedRoute == mBluetoothA2dpRoute)
+                    MediaRouter.selectRouteStatic(1, mDefaultAudio);
+                else
+                if(mCurRoutesInfo.mMainType == 0 && mSelectedRoute == mDefaultAudio && flag)
+                    MediaRouter.selectRouteStatic(1, mBluetoothA2dpRoute);
+            return;
+            remoteexception;
+            Log.e("MediaRouter", "Error querying Bluetooth A2DP state", remoteexception);
+            flag = false;
+              goto _L1
         }
 
         final IAudioService mAudioService = IAudioService.Stub.asInterface(ServiceManager.getService("audio"));

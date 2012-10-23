@@ -77,17 +77,15 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 5
+    .registers 4
     .parameter "context"
     .parameter "attrs"
 
     .prologue
     .line 63
-    const/4 v0, 0x0
+    const v0, 0x10103ad
 
-    const v1, 0x10103ad
-
-    invoke-direct {p0, p1, v0, v1}, Landroid/app/MediaRouteButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, v0}, Landroid/app/MediaRouteButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 64
     return-void
