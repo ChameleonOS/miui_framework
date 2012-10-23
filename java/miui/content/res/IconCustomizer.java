@@ -270,7 +270,7 @@ _L3:
         return scaleDrawable(composeShortcutIcon(drawableToBitmap(drawable)));
     }
 
-    private static Bitmap getCachedThemeIcon(String s) {
+    public static Bitmap getCachedThemeIcon(String s) {
         return getCachedThemeIcon(s, sCustomizedIconWidth, sCustomizedIconHeight);
     }
 

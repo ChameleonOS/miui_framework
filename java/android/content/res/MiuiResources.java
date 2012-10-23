@@ -5,6 +5,7 @@
 package android.content.res;
 
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.NinePatchDrawable;
 import android.text.TextUtils;
 import android.util.*;
 import java.io.InputStream;
@@ -182,8 +183,13 @@ _L3:
         options1 = new android.graphics.BitmapFactory.Options();
         options1.inDensity = themefileinfo.mDensity;
         options = options1;
-        Drawable drawable1 = Drawable.createFromResourceStream(this, typedvalue, themefileinfo.mInput, s, options);
-        drawable = drawable1;
+        boolean flag;
+        drawable = Drawable.createFromResourceStream(this, typedvalue, themefileinfo.mInput, s, options);
+        if(drawable == null || !s.endsWith(".9.png"))
+            break MISSING_BLOCK_LABEL_135;
+        flag = drawable instanceof NinePatchDrawable;
+        if(!flag)
+            drawable = null;
 _L6:
         try {
             themefileinfo.mInput.close();

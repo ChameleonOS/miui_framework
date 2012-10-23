@@ -202,16 +202,16 @@
 .end method
 
 .method public static final getLockWallpaperCache(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
-    .registers 9
+    .registers 12
     .parameter "context"
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
     .line 173
-    sget-object v4, Lmiui/content/res/ThemeResources;->sSystem:Lmiui/content/res/ThemeResourcesSystem;
+    sget-object v7, Lmiui/content/res/ThemeResources;->sSystem:Lmiui/content/res/ThemeResourcesSystem;
 
-    invoke-virtual {v4}, Lmiui/content/res/ThemeResourcesSystem;->getLockscreenWallpaper()Ljava/io/File;
+    invoke-virtual {v7}, Lmiui/content/res/ThemeResourcesSystem;->getLockscreenWallpaper()Ljava/io/File;
 
     move-result-object v2
 
@@ -221,29 +221,29 @@
 
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
-    move-result v4
+    move-result v7
 
-    if-nez v4, :cond_10
+    if-nez v7, :cond_10
 
-    .line 196
+    .line 204
     :cond_f
     :goto_f
-    return-object v3
+    return-object v6
 
     .line 180
     :cond_10
-    sget-wide v4, Lmiui/content/res/ThemeResources;->sLockWallpaperModifiedTime:J
+    sget-wide v7, Lmiui/content/res/ThemeResources;->sLockWallpaperModifiedTime:J
 
     invoke-virtual {v2}, Ljava/io/File;->lastModified()J
 
-    move-result-wide v6
+    move-result-wide v9
 
-    cmp-long v4, v4, v6
+    cmp-long v7, v7, v9
 
-    if-nez v4, :cond_1d
+    if-nez v7, :cond_1d
 
     .line 181
-    sget-object v3, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
+    sget-object v6, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
 
     goto :goto_f
 
@@ -251,75 +251,129 @@
     :cond_1d
     invoke-virtual {v2}, Ljava/io/File;->lastModified()J
 
-    move-result-wide v4
+    move-result-wide v7
 
-    sput-wide v4, Lmiui/content/res/ThemeResources;->sLockWallpaperModifiedTime:J
+    sput-wide v7, Lmiui/content/res/ThemeResources;->sLockWallpaperModifiedTime:J
 
     .line 186
-    sput-object v3, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
+    sput-object v6, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
 
     .line 188
     :try_start_25
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v6}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v1
 
     .line 189
     .local v1, display:Landroid/util/DisplayMetrics;
-    new-instance v3, Lmiui/util/InputStreamLoader;
+    iget v5, v1, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    .line 190
+    .local v5, width:I
+    iget v3, v1, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    .line 191
+    .local v3, height:I
+    if-le v5, v3, :cond_58
+
+    .line 192
+    const-string v6, "LockWallpaper"
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "Wrong display metrics for width = "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, " and height = "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 193
+    move v4, v5
+
+    .line 194
+    .local v4, tmp:I
+    move v5, v3
+
+    .line 195
+    move v3, v4
+
+    .line 198
+    .end local v4           #tmp:I
+    :cond_58
+    new-instance v6, Lmiui/util/InputStreamLoader;
 
     invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-direct {v3, v4}, Lmiui/util/InputStreamLoader;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v7}, Lmiui/util/InputStreamLoader;-><init>(Ljava/lang/String;)V
 
-    iget v4, v1, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iget v5, v1, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    invoke-static {v3, v4, v5}, Lmiui/util/ImageUtils;->getBitmap(Lmiui/util/InputStreamLoader;II)Landroid/graphics/Bitmap;
+    invoke-static {v6, v5, v3}, Lmiui/util/ImageUtils;->getBitmap(Lmiui/util/InputStreamLoader;II)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 191
+    .line 199
     .local v0, bitmap:Landroid/graphics/Bitmap;
-    new-instance v3, Landroid/graphics/drawable/BitmapDrawable;
+    new-instance v6, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-direct {v3, v4, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+    invoke-direct {v6, v7, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    sput-object v3, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
-    :try_end_49
-    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_49} :catch_4e
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_25 .. :try_end_49} :catch_4c
+    sput-object v6, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
+    :try_end_70
+    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_70} :catch_75
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_25 .. :try_end_70} :catch_73
 
-    .line 196
+    .line 204
     .end local v0           #bitmap:Landroid/graphics/Bitmap;
     .end local v1           #display:Landroid/util/DisplayMetrics;
-    :goto_49
-    sget-object v3, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
+    .end local v3           #height:I
+    .end local v5           #width:I
+    :goto_70
+    sget-object v6, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
 
     goto :goto_f
 
-    .line 193
-    :catch_4c
-    move-exception v3
+    .line 201
+    :catch_73
+    move-exception v6
 
-    goto :goto_49
+    goto :goto_70
 
-    .line 192
-    :catch_4e
-    move-exception v3
+    .line 200
+    :catch_75
+    move-exception v6
 
-    goto :goto_49
+    goto :goto_70
 .end method
 
 .method public static getSystem(Landroid/content/res/Resources;)Lmiui/content/res/ThemeResources;

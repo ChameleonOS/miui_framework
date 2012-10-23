@@ -82,6 +82,7 @@ _L1:
         public static final String DEFAULT_INPUT_METHOD_CHOOSED = "default_input_method_choosed";
         public static final int DEFAULT_PERMANENTLY_LOCK_SIM_CHANGE = 0;
         public static int DEFAULT_SHOW_MAGNIFIER_WHEN_INPUT = 0;
+        public static final int DEFAULT_VPN_ENABLE_PASSWORD = 0;
         public static String FIND_DEVICE_PIN_LOCK = "find_device_pin_lock";
         public static String FORCE_CLOCE_DIALOG_ENABLED = "force_close_dialog_enabled";
         public static String MOBILE_DOWNLOAD_FILE_SIZE_PROMPT_POPUP_ENABLED = "mobile_download_file_size_prompt_popup_enabled";
@@ -94,11 +95,13 @@ _L1:
         public static final String SCREEN_BUTTONS_STATE = "screen_buttons_state";
         public static final String SCREEN_BUTTONS_TURN_ON = "screen_buttons_turn_on";
         public static String SHOW_MAGNIFIER_WHEN_INPUT = "show_magnifier_when_input";
+        public static final String STATUS_BAR_EXPANDED_NOTIFICATION_BLACK_LIST = "status_bar_expanded_notification_black_list";
         public static final String UPLOAD_LOG = "upload_log_pref";
         public static final String USB_MODE = "usb_mode";
         public static final int USB_MODE_ASK_USER = 0;
         public static final int USB_MODE_CHARGE_ONLY = 1;
         public static final int USB_MODE_MOUNT_STORAGE = 2;
+        public static final String VPN_ENABLE_PASSWORD = "vpn_password_enable";
         private static long sStorageThreshold = 0L;
 
         static  {

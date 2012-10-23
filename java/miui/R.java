@@ -1057,7 +1057,7 @@ public final class R {
         public static final int android_list_selector_pressed_holo_dark = 0x602014a;
         public static final int android_menu_hardkey_panel_holo_light = 0x6020170;
         public static final int android_menu_selector = 0x602013b;
-        public static final int android_notification_item_background_color = 0x60201c7;
+        public static final int android_notification_item_background_color = 0x60201c9;
         public static final int android_notification_item_background_color_pressed = 0x602014b;
         public static final int android_notification_template_icon_bg = 0x6020140;
         public static final int android_notify_panel_notification_icon_bg_tile = 0x602012e;
@@ -1455,6 +1455,7 @@ public final class R {
         public static final int textview_panel_bg = 0x602010f;
         public static final int textview_panel_button_bg_pressed = 0x6020110;
         public static final int textview_panel_separator = 0x6020111;
+        public static final int word_photo_bg = 0x60201c7;
 
         public drawable() {
         }
@@ -1546,6 +1547,7 @@ public final class R {
         public static final int secondary_text_holo_dark = 0x607000e;
         public static final int secondary_text_holo_light = 0x6070008;
         public static final int textview_floatpanel_button_text_color = 0x607000c;
+        public static final int word_photo_color = 0x6070023;
 
         public color() {
         }

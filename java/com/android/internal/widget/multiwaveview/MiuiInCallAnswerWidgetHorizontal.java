@@ -142,8 +142,16 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
         mHintAnimation.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
 
             public void onAnimationUpdate(ValueAnimator valueanimator) {
-                int i = (int)((100F * mHintAnimation.getAnimatedFraction()) / 14F);
-                showRightHintAnim(i);
+                if(getVisibility() != 0) {
+                    if(mHintAnimation != null) {
+                        ValueAnimator valueanimator1 = mHintAnimation;
+                        mHintAnimation = null;
+                        valueanimator1.end();
+                    }
+                } else {
+                    int i = (int)((100F * mHintAnimation.getAnimatedFraction()) / 14F);
+                    showRightHintAnim(i);
+                }
             }
 
             final MiuiInCallAnswerWidgetHorizontal this$0;
@@ -664,5 +672,14 @@ _L9:
 
 */
 
+
+
+/*
+    static ValueAnimator access$102(MiuiInCallAnswerWidgetHorizontal miuiincallanswerwidgethorizontal, ValueAnimator valueanimator) {
+        miuiincallanswerwidgethorizontal.mHintAnimation = valueanimator;
+        return valueanimator;
+    }
+
+*/
 
 }

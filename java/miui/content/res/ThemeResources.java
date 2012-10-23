@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import java.io.File;
 import miui.util.ImageUtils;
 import miui.util.InputStreamLoader;
@@ -62,7 +63,15 @@ public class ThemeResources {
                 sLockWallpaperCache = null;
                 try {
                     DisplayMetrics displaymetrics = Resources.getSystem().getDisplayMetrics();
-                    android.graphics.Bitmap bitmap = ImageUtils.getBitmap(new InputStreamLoader(file.getAbsolutePath()), displaymetrics.widthPixels, displaymetrics.heightPixels);
+                    int i = displaymetrics.widthPixels;
+                    int j = displaymetrics.heightPixels;
+                    if(i > j) {
+                        Log.e("LockWallpaper", (new StringBuilder()).append("Wrong display metrics for width = ").append(i).append(" and height = ").append(j).toString());
+                        int k = i;
+                        i = j;
+                        j = k;
+                    }
+                    android.graphics.Bitmap bitmap = ImageUtils.getBitmap(new InputStreamLoader(file.getAbsolutePath()), i, j);
                     sLockWallpaperCache = new BitmapDrawable(context.getResources(), bitmap);
                 }
                 catch(Exception exception) { }

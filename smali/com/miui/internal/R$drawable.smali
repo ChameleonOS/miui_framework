@@ -133,7 +133,7 @@
 
 .field public static final android_menu_selector:I = 0x602013b
 
-.field public static final android_notification_item_background_color:I = 0x60201c7
+.field public static final android_notification_item_background_color:I = 0x60201c9
 
 .field public static final android_notification_item_background_color_pressed:I = 0x602014b
 
@@ -929,13 +929,15 @@
 
 .field public static final textview_panel_separator:I = 0x6020111
 
+.field public static final word_photo_bg:I = 0x60201c7
+
 
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
     .prologue
-    .line 504
+    .line 507
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

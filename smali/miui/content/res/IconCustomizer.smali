@@ -1697,7 +1697,7 @@
     return-object v1
 .end method
 
-.method private static getCachedThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
+.method public static getCachedThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
     .registers 3
     .parameter "path"
 

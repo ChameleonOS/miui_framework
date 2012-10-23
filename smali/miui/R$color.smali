@@ -85,6 +85,8 @@
 
 .field public static final textview_floatpanel_button_text_color:I = 0x607000c
 
+.field public static final word_photo_color:I = 0x6070023
+
 
 # direct methods
 .method public constructor <init>()V

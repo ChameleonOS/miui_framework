@@ -33,6 +33,8 @@
 
 .field public static DEFAULT_SHOW_MAGNIFIER_WHEN_INPUT:I = 0x0
 
+.field public static final DEFAULT_VPN_ENABLE_PASSWORD:I = 0x0
+
 .field public static FIND_DEVICE_PIN_LOCK:Ljava/lang/String; = null
 
 .field public static FORCE_CLOCE_DIALOG_ENABLED:Ljava/lang/String; = null
@@ -57,6 +59,8 @@
 
 .field public static SHOW_MAGNIFIER_WHEN_INPUT:Ljava/lang/String; = null
 
+.field public static final STATUS_BAR_EXPANDED_NOTIFICATION_BLACK_LIST:Ljava/lang/String; = "status_bar_expanded_notification_black_list"
+
 .field public static final UPLOAD_LOG:Ljava/lang/String; = "upload_log_pref"
 
 .field public static final USB_MODE:Ljava/lang/String; = "usb_mode"
@@ -66,6 +70,8 @@
 .field public static final USB_MODE_CHARGE_ONLY:I = 0x1
 
 .field public static final USB_MODE_MOUNT_STORAGE:I = 0x2
+
+.field public static final VPN_ENABLE_PASSWORD:Ljava/lang/String; = "vpn_password_enable"
 
 .field private static sStorageThreshold:J
 
