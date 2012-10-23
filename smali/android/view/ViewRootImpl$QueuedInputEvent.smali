@@ -1,0 +1,51 @@
+.class final Landroid/view/ViewRootImpl$QueuedInputEvent;
+.super Ljava/lang/Object;
+.source "ViewRootImpl.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/view/ViewRootImpl;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1a
+    name = "QueuedInputEvent"
+.end annotation
+
+
+# static fields
+.field public static final FLAG_DELIVER_POST_IME:I = 0x1
+
+
+# instance fields
+.field public mEvent:Landroid/view/InputEvent;
+
+.field public mFlags:I
+
+.field public mNext:Landroid/view/ViewRootImpl$QueuedInputEvent;
+
+.field public mReceiver:Landroid/view/InputEventReceiver;
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 1
+
+    .prologue
+    .line 4098
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Landroid/view/ViewRootImpl$1;)V
+    .registers 2
+    .parameter "x0"
+
+    .prologue
+    .line 4098
+    invoke-direct {p0}, Landroid/view/ViewRootImpl$QueuedInputEvent;-><init>()V
+
+    return-void
+.end method

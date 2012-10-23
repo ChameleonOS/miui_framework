@@ -1,0 +1,124 @@
+.class Lmiui/widget/DigitalClock$TimeChangedReceiver;
+.super Landroid/content/BroadcastReceiver;
+.source "DigitalClock.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lmiui/widget/DigitalClock;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xa
+    name = "TimeChangedReceiver"
+.end annotation
+
+
+# instance fields
+.field private mClock:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Lmiui/widget/DigitalClock;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private mContext:Landroid/content/Context;
+
+
+# direct methods
+.method public constructor <init>(Lmiui/widget/DigitalClock;)V
+    .registers 3
+    .parameter "clock"
+
+    .prologue
+    .line 74
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+
+    .line 75
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lmiui/widget/DigitalClock$TimeChangedReceiver;->mClock:Ljava/lang/ref/WeakReference;
+
+    .line 76
+    invoke-virtual {p1}, Lmiui/widget/DigitalClock;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lmiui/widget/DigitalClock$TimeChangedReceiver;->mContext:Landroid/content/Context;
+
+    .line 77
+    return-void
+.end method
+
+
+# virtual methods
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .registers 7
+    .parameter "context"
+    .parameter "intent"
+
+    .prologue
+    .line 82
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "android.intent.action.TIMEZONE_CHANGED"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    .line 84
+    .local v1, timezoneChanged:Z
+    iget-object v2, p0, Lmiui/widget/DigitalClock$TimeChangedReceiver;->mClock:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lmiui/widget/DigitalClock;
+
+    .line 85
+    .local v0, clock:Lmiui/widget/DigitalClock;
+    if-eqz v0, :cond_21
+
+    .line 86
+    #getter for: Lmiui/widget/DigitalClock;->mHandler:Landroid/os/Handler;
+    invoke-static {v0}, Lmiui/widget/DigitalClock;->access$200(Lmiui/widget/DigitalClock;)Landroid/os/Handler;
+
+    move-result-object v2
+
+    new-instance v3, Lmiui/widget/DigitalClock$TimeChangedReceiver$1;
+
+    invoke-direct {v3, p0, v1, v0}, Lmiui/widget/DigitalClock$TimeChangedReceiver$1;-><init>(Lmiui/widget/DigitalClock$TimeChangedReceiver;ZLmiui/widget/DigitalClock;)V
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 101
+    :goto_20
+    return-void
+
+    .line 96
+    :cond_21
+    :try_start_21
+    iget-object v2, p0, Lmiui/widget/DigitalClock$TimeChangedReceiver;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    :try_end_26
+    .catch Ljava/lang/RuntimeException; {:try_start_21 .. :try_end_26} :catch_27
+
+    goto :goto_20
+
+    .line 97
+    :catch_27
+    move-exception v2
+
+    goto :goto_20
+.end method

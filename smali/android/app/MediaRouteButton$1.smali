@@ -1,0 +1,55 @@
+.class Landroid/app/MediaRouteButton$1;
+.super Ljava/lang/Object;
+.source "MediaRouteButton.java"
+
+# interfaces
+.implements Lcom/android/internal/app/MediaRouteChooserDialogFragment$LauncherListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/app/MediaRouteButton;->showDialog()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Landroid/app/MediaRouteButton;
+
+
+# direct methods
+.method constructor <init>(Landroid/app/MediaRouteButton;)V
+    .registers 2
+    .parameter
+
+    .prologue
+    .line 334
+    iput-object p1, p0, Landroid/app/MediaRouteButton$1;->this$0:Landroid/app/MediaRouteButton;
+
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onDetached(Lcom/android/internal/app/MediaRouteChooserDialogFragment;)V
+    .registers 4
+    .parameter "detachedFragment"
+
+    .prologue
+    .line 337
+    iget-object v0, p0, Landroid/app/MediaRouteButton$1;->this$0:Landroid/app/MediaRouteButton;
+
+    const/4 v1, 0x0
+
+    #setter for: Landroid/app/MediaRouteButton;->mDialogFragment:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
+    invoke-static {v0, v1}, Landroid/app/MediaRouteButton;->access$102(Landroid/app/MediaRouteButton;Lcom/android/internal/app/MediaRouteChooserDialogFragment;)Lcom/android/internal/app/MediaRouteChooserDialogFragment;
+
+    .line 338
+    return-void
+.end method
