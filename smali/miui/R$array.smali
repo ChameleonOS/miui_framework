@@ -27,6 +27,10 @@
 
 .field public static final android_config_virtualKeyVibePattern:I = 0x6060004
 
+.field public static final android_special_locale_codes:I = 0x606000c
+
+.field public static final android_special_locale_names:I = 0x606000d
+
 .field public static final config_virtualKeyUpPattern:I = 0x6060002
 
 .field public static final detailed_am_pm_names:I = 0x606000b

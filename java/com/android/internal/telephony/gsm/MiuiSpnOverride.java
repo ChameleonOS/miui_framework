@@ -32,6 +32,9 @@ public class MiuiSpnOverride {
     public static final String EQ_OPERATOR_CM = "46000";
     public static final String EQ_OPERATOR_CT = "46003";
     public static final String EQ_OPERATOR_CU = "46001";
+    public static final String MCC_CHINA = "460";
+    public static final String MCC_NONE = "000";
+    public static final String MCC_TAIWAN = "466";
     private static final MiuiSpnOverrideImpl sImpl = new MiuiSpnOverrideImpl();
     static final MiuiSpnOverride sInstance = new MiuiSpnOverride();
 

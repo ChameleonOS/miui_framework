@@ -140,8 +140,14 @@ _L1:
 
     public static final String EXTRA_ACCOUNT = "extra_account";
     public static final String EXTRA_BUNDLE = "extra_bundle";
+    public static final String EXTRA_CLEAR_WHEN_RESET = "extra_clear_when_reset";
+    public static final String EXTRA_DISABLE_BACK_KEY = "extra_disable_back_key";
+    public static final String EXTRA_SHOW_FIND_DEVICE = "extra_show_find_device";
+    public static final String EXTRA_SHOW_SKIP_LOGIN = "extra_show_skip_login";
+    public static final String EXTRA_SHOW_SYNC_SETTINGS = "show_detail";
     public static final String EXTRA_UPDATE_TYPE = "extra_update_type";
     public static final String EXTRA_WIPE_DATA = "extra_wipe_data";
+    public static final String KEY_SKIPPED = "key_skipped";
     public static final String LOGIN_ACCOUNTS_POST_CHANGED_ACTION = "android.accounts.LOGIN_ACCOUNTS_POST_CHANGED";
     public static final String LOGIN_ACCOUNTS_PRE_CHANGED_ACTION = "android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED";
     private static final String TAG = "ExtraAccountManager";

@@ -5,6 +5,7 @@
 package android.preference;
 
 import android.app.Dialog;
+import android.app.PreferenceDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.*;
@@ -81,18 +82,18 @@ public final class PreferenceScreen extends PreferenceGroup
         mListView = (ListView)view.findViewById(0x102000a);
         bind(mListView);
         CharSequence charsequence = getTitle();
-        Dialog dialog = new Dialog(context, context.getThemeResId());
-        mDialog = dialog;
+        PreferenceDialog preferencedialog = new PreferenceDialog(context, context.getThemeResId());
+        mDialog = preferencedialog;
         if(TextUtils.isEmpty(charsequence))
-            dialog.getWindow().requestFeature(1);
+            preferencedialog.getWindow().requestFeature(1);
         else
-            dialog.setTitle(charsequence);
-        dialog.setContentView(view);
-        dialog.setOnDismissListener(this);
+            preferencedialog.setTitle(charsequence);
+        preferencedialog.setContentView(view);
+        preferencedialog.setOnDismissListener(this);
         if(bundle != null)
-            dialog.onRestoreInstanceState(bundle);
-        getPreferenceManager().addPreferencesScreen(dialog);
-        dialog.show();
+            preferencedialog.onRestoreInstanceState(bundle);
+        getPreferenceManager().addPreferencesScreen(preferencedialog);
+        preferencedialog.show();
     }
 
     public void bind(ListView listview) {

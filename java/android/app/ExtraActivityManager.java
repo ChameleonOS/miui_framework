@@ -7,6 +7,10 @@ package android.app;
 import android.content.Context;
 import android.os.Build;
 import android.view.Display;
+import android.view.WindowManager;
+
+// Referenced classes of package android.app:
+//            ActivityManager
 
 public class ExtraActivityManager {
 
@@ -23,6 +27,6 @@ public class ExtraActivityManager {
     }
 
     public static boolean useHardwareAccelerationOnKeyguard(Context context) {
-        return false;
+        return ActivityManager.isHighEndGfx(((WindowManager)context.getSystemService("window")).getDefaultDisplay());
     }
 }

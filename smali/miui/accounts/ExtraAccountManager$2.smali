@@ -42,7 +42,7 @@
     .parameter
 
     .prologue
-    .line 146
+    .line 159
     iput-object p1, p0, Lmiui/accounts/ExtraAccountManager$2;->this$0:Lmiui/accounts/ExtraAccountManager;
 
     iput-boolean p2, p0, Lmiui/accounts/ExtraAccountManager$2;->val$preAdd:Z
@@ -66,13 +66,13 @@
     .registers 6
 
     .prologue
-    .line 149
+    .line 162
     :try_start_0
     iget-boolean v1, p0, Lmiui/accounts/ExtraAccountManager$2;->val$preAdd:Z
 
     if-eqz v1, :cond_10
 
-    .line 150
+    .line 163
     iget-object v1, p0, Lmiui/accounts/ExtraAccountManager$2;->val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
 
     iget-object v2, p0, Lmiui/accounts/ExtraAccountManager$2;->val$account:Landroid/accounts/Account;
@@ -83,11 +83,11 @@
 
     invoke-interface {v1, v2, v3, v4}, Landroid/accounts/MiuiOnAccountsUpdateListener;->onPreAccountUpdated(Landroid/accounts/Account;ILandroid/os/Bundle;)V
 
-    .line 159
+    .line 172
     :goto_f
     return-void
 
-    .line 152
+    .line 165
     :cond_10
     iget-object v1, p0, Lmiui/accounts/ExtraAccountManager$2;->val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
 
@@ -103,11 +103,11 @@
 
     goto :goto_f
 
-    .line 154
+    .line 167
     :catch_1c
     move-exception v0
 
-    .line 157
+    .line 170
     .local v0, e:Landroid/database/SQLException;
     const-string v1, "ExtraAccountManager"
 

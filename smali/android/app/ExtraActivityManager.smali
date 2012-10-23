@@ -48,8 +48,22 @@
     .parameter "context"
 
     .prologue
-    .line 24
-    const/4 v0, 0x0
+    .line 23
+    const-string/jumbo v0, "window"
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/WindowManager;
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/app/ActivityManager;->isHighEndGfx(Landroid/view/Display;)Z
+
+    move-result v0
 
     return v0
 .end method

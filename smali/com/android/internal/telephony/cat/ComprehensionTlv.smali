@@ -84,7 +84,7 @@
     :try_start_8
     aget-byte v4, p0, v5
     :try_end_a
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_8 .. :try_end_a} :catch_cc
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_8 .. :try_end_a} :catch_cd
 
     and-int/lit16 v9, v4, 0xff
 
@@ -133,7 +133,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/cat/ComprehensionTlv;-><init>(IZI[BI)V
     :try_end_25
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_18 .. :try_end_25} :catch_153
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_18 .. :try_end_25} :catch_154
 
     .end local v1           #tag:I
     .end local v2           #cr:Z
@@ -276,7 +276,7 @@
     :cond_83
     const/16 v0, 0x81
 
-    if-ne v9, v0, :cond_fd
+    if-ne v9, v0, :cond_fe
 
     .line 156
     add-int/lit8 v6, v5, 0x1
@@ -289,7 +289,7 @@
 
     .line 157
     .restart local v3       #length:I
-    if-ge v3, v11, :cond_1ee
+    if-ge v3, v11, :cond_1ef
 
     .line 158
     new-instance v0, Lcom/android/internal/telephony/cat/ResultException;
@@ -300,7 +300,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "length < 0x80 length="
+    const-string/jumbo v11, "length < 0x80 length="
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -351,15 +351,15 @@
     invoke-direct {v0, v4, v10}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;Ljava/lang/String;)V
 
     throw v0
-    :try_end_cc
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_26 .. :try_end_cc} :catch_cc
+    :try_end_cd
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_26 .. :try_end_cd} :catch_cd
 
     .line 197
     .end local v1           #tag:I
     .end local v2           #cr:Z
     .end local v3           #length:I
     .end local v9           #temp:I
-    :catch_cc
+    :catch_cd
     move-exception v7
 
     move v5, v6
@@ -368,7 +368,7 @@
     .end local v6           #curIndex:I
     .restart local v5       #curIndex:I
     .local v7, e:Ljava/lang/IndexOutOfBoundsException;
-    :goto_ce
+    :goto_cf
     new-instance v0, Lcom/android/internal/telephony/cat/ResultException;
 
     sget-object v4, Lcom/android/internal/telephony/cat/ResultCode;->CMD_DATA_NOT_UNDERSTOOD:Lcom/android/internal/telephony/cat/ResultCode;
@@ -420,13 +420,13 @@
     .restart local v1       #tag:I
     .restart local v2       #cr:Z
     .restart local v9       #temp:I
-    :cond_fd
+    :cond_fe
     const/16 v0, 0x82
 
-    if-ne v9, v0, :cond_156
+    if-ne v9, v0, :cond_157
 
     .line 165
-    :try_start_101
+    :try_start_102
     aget-byte v0, p0, v5
 
     and-int/lit16 v0, v0, 0xff
@@ -513,16 +513,16 @@
 
     .line 197
     .end local v3           #length:I
-    :catch_153
+    :catch_154
     move-exception v7
 
-    goto/16 :goto_ce
+    goto/16 :goto_cf
 
     .line 175
-    :cond_156
+    :cond_157
     const/16 v0, 0x83
 
-    if-ne v9, v0, :cond_1b5
+    if-ne v9, v0, :cond_1b6
 
     .line 176
     aget-byte v0, p0, v5
@@ -621,7 +621,7 @@
 
     .line 188
     .end local v3           #length:I
-    :cond_1b5
+    :cond_1b6
     new-instance v0, Lcom/android/internal/telephony/cat/ResultException;
 
     sget-object v4, Lcom/android/internal/telephony/cat/ResultCode;->CMD_DATA_NOT_UNDERSTOOD:Lcom/android/internal/telephony/cat/ResultCode;
@@ -677,13 +677,13 @@
     invoke-direct {v0, v4, v10}, Lcom/android/internal/telephony/cat/ResultException;-><init>(Lcom/android/internal/telephony/cat/ResultCode;Ljava/lang/String;)V
 
     throw v0
-    :try_end_1ee
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_101 .. :try_end_1ee} :catch_153
+    :try_end_1ef
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_102 .. :try_end_1ef} :catch_154
 
     .end local v5           #curIndex:I
     .restart local v3       #length:I
     .restart local v6       #curIndex:I
-    :cond_1ee
+    :cond_1ef
     move v5, v6
 
     .end local v6           #curIndex:I
@@ -691,8 +691,6 @@
     goto/16 :goto_1f
 
     .line 124
-    nop
-
     :sswitch_data_1f2
     .sparse-switch
         0x0 -> :sswitch_26

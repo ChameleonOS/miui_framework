@@ -38,7 +38,7 @@
     .registers 1
 
     .prologue
-    .line 266
+    .line 270
     new-instance v0, Landroid/preference/PreferenceScreen$SavedState$1;
 
     invoke-direct {v0}, Landroid/preference/PreferenceScreen$SavedState$1;-><init>()V
@@ -55,10 +55,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 250
+    .line 254
     invoke-direct {p0, p1}, Landroid/preference/Preference$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 251
+    .line 255
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -68,17 +68,17 @@
     :goto_a
     iput-boolean v0, p0, Landroid/preference/PreferenceScreen$SavedState;->isDialogShowing:Z
 
-    .line 252
+    .line 256
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/preference/PreferenceScreen$SavedState;->dialogBundle:Landroid/os/Bundle;
 
-    .line 253
+    .line 257
     return-void
 
-    .line 251
+    .line 255
     :cond_13
     const/4 v0, 0x0
 
@@ -90,10 +90,10 @@
     .parameter "superState"
 
     .prologue
-    .line 263
+    .line 267
     invoke-direct {p0, p1}, Landroid/preference/Preference$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 264
+    .line 268
     return-void
 .end method
 
@@ -105,10 +105,10 @@
     .parameter "flags"
 
     .prologue
-    .line 257
+    .line 261
     invoke-super {p0, p1, p2}, Landroid/preference/Preference$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 258
+    .line 262
     iget-boolean v0, p0, Landroid/preference/PreferenceScreen$SavedState;->isDialogShowing:Z
 
     if-eqz v0, :cond_11
@@ -118,15 +118,15 @@
     :goto_8
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 259
+    .line 263
     iget-object v0, p0, Landroid/preference/PreferenceScreen$SavedState;->dialogBundle:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 260
+    .line 264
     return-void
 
-    .line 258
+    .line 262
     :cond_11
     const/4 v0, 0x0
 

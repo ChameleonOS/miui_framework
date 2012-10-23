@@ -515,11 +515,12 @@ public final class R {
         public static final int description_author = 0x60c000e;
         public static final int description_designer = 0x60c000d;
         public static final int description_download = 0x60c0011;
+        public static final int description_downloadtime = 0x60c01fb;
         public static final int description_file = 0x60c0013;
         public static final int description_missed = 0x60c000c;
-        public static final int description_modifiedtime = 0x60c0010;
         public static final int description_size = 0x60c000f;
         public static final int description_unknown = 0x60c000b;
+        public static final int description_uploadtime = 0x60c0010;
         public static final int description_version = 0x60c0012;
         public static final int double_seventh_day = 0x60c005b;
         public static final int download_failed = 0x60c0023;
@@ -831,6 +832,7 @@ public final class R {
         public static final int android_preference_fragment_scrollbarStyle = 0x6080009;
         public static final int button_text_shadow_dy = 0x6080000;
         public static final int config_defaultNotificationLedFreq = 0x608000a;
+        public static final int config_screen_on_proximity_sensor_first_change_delay = 0x608000c;
         public static final int config_show_rounded_corners_default = 0x608000b;
 
         public integer() {
@@ -1704,6 +1706,8 @@ public final class R {
         public static final int android_config_longPressVibePattern = 0x6060008;
         public static final int android_config_mobile_hotspot_provision_app = 0x6060005;
         public static final int android_config_virtualKeyVibePattern = 0x6060004;
+        public static final int android_special_locale_codes = 0x606000c;
+        public static final int android_special_locale_names = 0x606000d;
         public static final int config_virtualKeyUpPattern = 0x6060002;
         public static final int detailed_am_pm_names = 0x606000b;
         public static final int detailed_am_pm_segments = 0x606000a;

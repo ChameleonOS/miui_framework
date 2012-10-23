@@ -18,10 +18,10 @@
     .registers 3
 
     .prologue
-    .line 51
+    .line 60
     invoke-direct {p0}, Lcom/android/internal/telephony/gsm/SpnOverride;-><init>()V
 
-    .line 52
+    .line 61
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -34,7 +34,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->mNumericValues:[Ljava/lang/String;
 
-    .line 54
+    .line 63
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -47,7 +47,7 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->mNumericEquivalencies:[Ljava/lang/String;
 
-    .line 56
+    .line 65
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .parameter "carrier"
 
     .prologue
-    .line 96
+    .line 105
     invoke-static {}, Landroid/app/ActivityThread;->currentApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -95,7 +95,7 @@
     .parameter "carrier"
 
     .prologue
-    .line 102
+    .line 111
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -106,7 +106,7 @@
 
     if-ge v0, v1, :cond_14
 
-    .line 103
+    .line 112
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->mNumericValues:[Ljava/lang/String;
 
     aget-object v1, v1, v0
@@ -117,19 +117,19 @@
 
     if-eqz v1, :cond_11
 
-    .line 108
+    .line 117
     .end local v0           #i:I
     :goto_10
     return v0
 
-    .line 102
+    .line 111
     .restart local v0       #i:I
     :cond_11
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 108
+    .line 117
     :cond_14
     const/4 v0, -0x1
 
@@ -143,7 +143,7 @@
     .parameter "carrier"
 
     .prologue
-    .line 67
+    .line 76
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->getIndex(Ljava/lang/String;)I
 
     move-result v0
@@ -183,12 +183,12 @@
     .parameter "carrier"
 
     .prologue
-    .line 59
+    .line 68
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->getIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 60
+    .line 69
     .local v0, index:I
     if-ltz v0, :cond_a
 
@@ -206,12 +206,12 @@
     .parameter "carrier"
 
     .prologue
-    .line 74
+    .line 83
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->getFromSettings(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 76
+    .line 85
     .local v2, result:Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -219,23 +219,23 @@
 
     if-nez v3, :cond_b
 
-    .line 92
+    .line 101
     .end local v2           #result:Ljava/lang/String;
     :goto_a
     return-object v2
 
-    .line 81
+    .line 90
     .restart local v2       #result:Ljava/lang/String;
     :cond_b
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->getIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 83
+    .line 92
     .local v0, index:I
     if-ltz v0, :cond_1f
 
-    .line 85
+    .line 94
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -246,13 +246,13 @@
 
     move-result-object v1
 
-    .line 88
+    .line 97
     .local v1, operatorNames:[Ljava/lang/String;
     aget-object v2, v1, v0
 
     goto :goto_a
 
-    .line 92
+    .line 101
     .end local v1           #operatorNames:[Ljava/lang/String;
     :cond_1f
     invoke-super {p0, p1}, Lcom/android/internal/telephony/gsm/SpnOverride;->getSpn(Ljava/lang/String;)Ljava/lang/String;

@@ -78,14 +78,24 @@
 
     move-result-object v0
 
-    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+    if-eqz v0, :cond_14
 
     .line 41
+    iget-object v0, p0, Landroid/widget/MagnifierController;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 43
+    :cond_14
     iget-object v0, p0, Landroid/widget/MagnifierController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0}, Landroid/widget/Editor;->makeBlink()V
 
-    .line 42
+    .line 44
     return-void
 .end method
 
@@ -104,12 +114,12 @@
     .registers 4
 
     .prologue
-    .line 90
+    .line 94
     iget-object v0, p0, Landroid/widget/MagnifierController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v0}, Landroid/widget/Editor;->stopBlink()V
 
-    .line 91
+    .line 95
     iget-object v0, p0, Landroid/widget/MagnifierController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
@@ -124,7 +134,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 92
+    .line 96
     return-void
 .end method
 
@@ -133,7 +143,7 @@
     .parameter "isFirst"
 
     .prologue
-    .line 81
+    .line 85
     iget-object v1, p0, Landroid/widget/MagnifierController;->mTextView:Landroid/widget/TextView;
 
     iget v2, p0, Landroid/widget/MagnifierController;->mLongClickX:I
@@ -148,24 +158,24 @@
 
     move-result v0
 
-    .line 82
+    .line 86
     .local v0, offset:I
     iget v1, p0, Landroid/widget/MagnifierController;->mOffset:I
 
     if-eq v0, v1, :cond_1a
 
-    .line 83
+    .line 87
     iget-object v1, p0, Landroid/widget/MagnifierController;->mEditor:Landroid/widget/Editor;
 
     invoke-virtual {v1, v0}, Landroid/widget/Editor;->setTextSelection(I)V
 
-    .line 84
+    .line 88
     iput v0, p0, Landroid/widget/MagnifierController;->mOffset:I
 
-    .line 85
+    .line 89
     invoke-direct {p0}, Landroid/widget/MagnifierController;->showMagnifier()V
 
-    .line 87
+    .line 91
     :cond_1a
     return-void
 .end method
@@ -176,7 +186,7 @@
     .registers 2
 
     .prologue
-    .line 51
+    .line 55
     iget-boolean v0, p0, Landroid/widget/MagnifierController;->mShowing:Z
 
     return v0
@@ -186,15 +196,15 @@
     .registers 2
 
     .prologue
-    .line 97
+    .line 101
     iget-boolean v0, p0, Landroid/widget/MagnifierController;->mShowing:Z
 
     if-eqz v0, :cond_7
 
-    .line 98
+    .line 102
     invoke-direct {p0}, Landroid/widget/MagnifierController;->showMagnifier()V
 
-    .line 100
+    .line 104
     :cond_7
     return-void
 .end method
@@ -204,10 +214,10 @@
     .parameter "event"
 
     .prologue
-    .line 56
+    .line 60
     const/4 v0, 0x0
 
-    .line 58
+    .line 62
     .local v0, handled:Z
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -217,7 +227,7 @@
 
     iput v1, p0, Landroid/widget/MagnifierController;->mLongClickX:I
 
-    .line 59
+    .line 63
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v1
@@ -226,21 +236,21 @@
 
     iput v1, p0, Landroid/widget/MagnifierController;->mLongClickY:I
 
-    .line 61
+    .line 65
     invoke-virtual {p0}, Landroid/widget/MagnifierController;->isShowing()Z
 
     move-result v1
 
     if-eqz v1, :cond_26
 
-    .line 62
+    .line 66
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v1
 
     packed-switch v1, :pswitch_data_32
 
-    .line 73
+    .line 77
     :goto_1c
     iget-object v1, p0, Landroid/widget/MagnifierController;->mEditor:Landroid/widget/Editor;
 
@@ -252,32 +262,32 @@
 
     invoke-virtual {v1, v2, p1}, Landroid/widget/MiuiCursorController;->onHandleTouchEvent(Landroid/widget/MiuiCursorController$MiuiHandleView;Landroid/view/MotionEvent;)Z
 
-    .line 76
+    .line 80
     :cond_26
     return v0
 
-    .line 64
+    .line 68
     :pswitch_27
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Landroid/widget/MagnifierController;->updatePosition(Z)V
 
-    .line 65
+    .line 69
     const/4 v0, 0x1
 
-    .line 66
+    .line 70
     goto :goto_1c
 
-    .line 70
+    .line 74
     :pswitch_2d
     invoke-direct {p0}, Landroid/widget/MagnifierController;->hide()V
 
-    .line 71
+    .line 75
     const/4 v0, 0x0
 
     goto :goto_1c
 
-    .line 62
+    .line 66
     :pswitch_data_32
     .packed-switch 0x1
         :pswitch_2d
@@ -292,10 +302,19 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 45
+    .line 47
     iput-boolean v1, p0, Landroid/widget/MagnifierController;->mShowing:Z
 
-    .line 46
+    .line 48
+    iget-object v0, p0, Landroid/widget/MagnifierController;->mTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_14
+
+    .line 49
     iget-object v0, p0, Landroid/widget/MagnifierController;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
@@ -304,9 +323,10 @@
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 47
+    .line 51
+    :cond_14
     invoke-direct {p0}, Landroid/widget/MagnifierController;->showMagnifier()V
 
-    .line 48
+    .line 52
     return-void
 .end method

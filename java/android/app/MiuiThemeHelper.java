@@ -14,6 +14,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.util.Log;
+import java.io.File;
 import miui.content.res.*;
 
 // Referenced classes of package android.app:
@@ -119,6 +120,10 @@ _L2:
           goto _L3
         flag = false;
           goto _L4
+    }
+
+    public static boolean isScreenshotMode() {
+        return (new File("/data/system/themeScreenshotMode")).exists();
     }
 
     public static boolean needRestartActivity(String s, int i, Configuration configuration) {
@@ -235,5 +240,6 @@ _L4:
     }
 
     public static final String MIUI_RES_PATH = "/system/framework/framework-miui-res.apk";
+    private static final String MIUI_SCREENSHOT_MODE_RES_PATH = "/data/system/themeScreenshotMode";
     private static final String TAG = "IconHelper";
 }

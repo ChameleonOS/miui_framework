@@ -37,6 +37,8 @@
 
 .field public static final config_defaultNotificationLedFreq:I = 0x608000a
 
+.field public static final config_screen_on_proximity_sensor_first_change_delay:I = 0x608000c
+
 .field public static final config_show_rounded_corners_default:I = 0x608000b
 
 
@@ -45,7 +47,7 @@
     .registers 1
 
     .prologue
-    .line 1425
+    .line 1427
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

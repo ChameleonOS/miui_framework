@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final FEATURE_WIFI_DISPLAY:Ljava/lang/String; = "android.hardware.wifi.display"
+
 .field static final GOOGLE_SIGNATURES:[Landroid/content/pm/Signature; = null
 
 .field static final MITALK_NAME:Ljava/lang/String; = "com.xiaomi.channel"
@@ -48,7 +50,7 @@
 
     sput-object v0, Lmiui/content/pm/ExtraPackageManager;->MITALK_SIGNATURES:[Landroid/content/pm/Signature;
 
-    .line 78
+    .line 85
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/String;
@@ -106,40 +108,40 @@
     .parameter "s2"
 
     .prologue
-    .line 55
+    .line 62
     if-nez p0, :cond_8
 
-    .line 56
+    .line 63
     if-nez p1, :cond_6
 
     const/4 v6, 0x1
 
-    .line 75
+    .line 82
     :goto_5
     return v6
 
-    .line 56
+    .line 63
     :cond_6
     const/4 v6, -0x1
 
     goto :goto_5
 
-    .line 60
+    .line 67
     :cond_8
     if-nez p1, :cond_c
 
-    .line 61
+    .line 68
     const/4 v6, -0x2
 
     goto :goto_5
 
-    .line 63
+    .line 70
     :cond_c
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 64
+    .line 71
     .local v3, set1:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/content/pm/Signature;>;"
     move-object v0, p0
 
@@ -155,23 +157,23 @@
 
     aget-object v5, v0, v1
 
-    .line 65
+    .line 72
     .local v5, sig:Landroid/content/pm/Signature;
     invoke-virtual {v3, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 64
+    .line 71
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_14
 
-    .line 67
+    .line 74
     .end local v5           #sig:Landroid/content/pm/Signature;
     :cond_1e
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
-    .line 68
+    .line 75
     .local v4, set2:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/content/pm/Signature;>;"
     move-object v0, p1
 
@@ -184,16 +186,16 @@
 
     aget-object v5, v0, v1
 
-    .line 69
+    .line 76
     .restart local v5       #sig:Landroid/content/pm/Signature;
     invoke-virtual {v4, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 68
+    .line 75
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_26
 
-    .line 72
+    .line 79
     .end local v5           #sig:Landroid/content/pm/Signature;
     :cond_30
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->equals(Ljava/lang/Object;)Z
@@ -202,12 +204,12 @@
 
     if-eqz v6, :cond_38
 
-    .line 73
+    .line 80
     const/4 v6, 0x0
 
     goto :goto_5
 
-    .line 75
+    .line 82
     :cond_38
     const/4 v6, -0x3
 
@@ -226,17 +228,17 @@
 
     const/4 v1, 0x1
 
-    .line 37
+    .line 44
     const/16 v3, 0x3e9
 
     if-ne p3, v3, :cond_7
 
-    .line 51
+    .line 58
     :cond_6
     :goto_6
     return v1
 
-    .line 42
+    .line 49
     :cond_7
     const-string v3, "com.xiaomi"
 
@@ -258,7 +260,7 @@
 
     if-eqz v3, :cond_30
 
-    .line 45
+    .line 52
     :try_start_1b
     const-string v3, "com.xiaomi.channel"
 
@@ -268,7 +270,7 @@
 
     move-result-object v0
 
-    .line 46
+    .line 53
     .local v0, info:Landroid/content/pm/PackageInfo;
     sget-object v3, Lmiui/content/pm/ExtraPackageManager;->MITALK_SIGNATURES:[Landroid/content/pm/Signature;
 
@@ -286,12 +288,12 @@
 
     goto :goto_6
 
-    .line 47
+    .line 54
     .end local v0           #info:Landroid/content/pm/PackageInfo;
     :catch_2f
     move-exception v3
 
-    .line 51
+    .line 58
     :cond_30
     invoke-virtual {p0, p2, p3}, Landroid/content/pm/PackageManager;->checkSignatures(II)I
 
@@ -310,7 +312,7 @@
     .parameter "pkgName"
 
     .prologue
-    .line 88
+    .line 95
     const-string v0, "classes.dex"
 
     invoke-virtual {p0}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
@@ -347,7 +349,7 @@
     .parameter "signature"
 
     .prologue
-    .line 30
+    .line 37
     sget-object v0, Lmiui/content/pm/ExtraPackageManager;->GOOGLE_SIGNATURES:[Landroid/content/pm/Signature;
 
     invoke-static {v0, p0}, Lmiui/content/pm/ExtraPackageManager;->compareSignatures([Landroid/content/pm/Signature;[Landroid/content/pm/Signature;)I

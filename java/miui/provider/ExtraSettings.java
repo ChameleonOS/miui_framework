@@ -223,7 +223,7 @@ _L2:
         public static final String CALL_LOG_LIMIT_NUMBER = "call_log_limit_number";
         public static final int CALL_LOG_NUMBER_HAS_LIMIT = 1;
         public static final String CALL_LOG_NUMBER_LIMIT = "call_log_number_limit";
-        public static final int CALL_LOG_NUMBER_LIMIT_OPTION_DEFAULT = 1;
+        public static final int CALL_LOG_NUMBER_LIMIT_OPTION_DEFAULT = 0;
         public static final int CALL_LOG_NUMBER_NO_LIMIT = 0;
         public static final String CAMERA_KEY_PREFERRED_ACTION_APP_COMPONENT = "camera_key_preferred_action_app_component";
         public static final String CAMERA_KEY_PREFERRED_ACTION_SHORTCUT_ID = "camera_key_preferred_action_shortcut_id";

@@ -127,7 +127,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_25
 
     .line 139
     const/4 v0, 0x1
@@ -135,12 +135,12 @@
     .line 145
     .local v0, mimeType:I
     :goto_1a
-    if-gtz p2, :cond_37
+    if-gtz p2, :cond_38
 
     .line 146
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "len must be > 0"
+    const-string/jumbo v2, "len must be > 0"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -148,14 +148,14 @@
 
     .line 140
     .end local v0           #mimeType:I
-    :cond_24
+    :cond_25
     const-string v1, "application/vnd.oma.drm.content"
 
     invoke-virtual {v1, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2f
 
     .line 141
     const/4 v0, 0x2
@@ -165,7 +165,7 @@
 
     .line 143
     .end local v0           #mimeType:I
-    :cond_2e
+    :cond_2f
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "mimeType must be DRM_MIMETYPE_MESSAGE or DRM_MIMETYPE_CONTENT"
@@ -176,7 +176,7 @@
 
     .line 149
     .restart local v0       #mimeType:I
-    :cond_37
+    :cond_38
     iget-object v1, p0, Landroid/drm/mobile1/DrmRawContent;->inData:Ljava/io/BufferedInputStream;
 
     iget v2, p0, Landroid/drm/mobile1/DrmRawContent;->inDataLen:I
@@ -190,7 +190,7 @@
     .line 151
     iget v1, p0, Landroid/drm/mobile1/DrmRawContent;->id:I
 
-    if-ne v3, v1, :cond_4e
+    if-ne v3, v1, :cond_4f
 
     .line 152
     new-instance v1, Landroid/drm/mobile1/DrmException;
@@ -202,7 +202,7 @@
     throw v1
 
     .line 155
-    :cond_4e
+    :cond_4f
     invoke-direct {p0}, Landroid/drm/mobile1/DrmRawContent;->nativeGetRightsAddress()Ljava/lang/String;
 
     move-result-object v1
@@ -219,7 +219,7 @@
     .line 159
     iget v1, p0, Landroid/drm/mobile1/DrmRawContent;->rawType:I
 
-    if-ne v3, v1, :cond_67
+    if-ne v3, v1, :cond_68
 
     .line 160
     new-instance v1, Landroid/drm/mobile1/DrmException;
@@ -231,7 +231,7 @@
     throw v1
 
     .line 163
-    :cond_67
+    :cond_68
     invoke-direct {p0}, Landroid/drm/mobile1/DrmRawContent;->nativeGetContentType()Ljava/lang/String;
 
     move-result-object v1
@@ -241,7 +241,7 @@
     .line 164
     iget-object v1, p0, Landroid/drm/mobile1/DrmRawContent;->mediaType:Ljava/lang/String;
 
-    if-nez v1, :cond_7a
+    if-nez v1, :cond_7b
 
     .line 165
     new-instance v1, Landroid/drm/mobile1/DrmException;
@@ -253,7 +253,7 @@
     throw v1
 
     .line 166
-    :cond_7a
+    :cond_7b
     return-void
 .end method
 

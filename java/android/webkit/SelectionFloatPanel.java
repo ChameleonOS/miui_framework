@@ -58,7 +58,7 @@ public class SelectionFloatPanel extends FrameLayout {
     public void showAt(int i, int j) {
         setVisibility(0);
         setX(i);
-        setY(j);
+        setY(j - getHeight());
         requestLayout();
     }
 }

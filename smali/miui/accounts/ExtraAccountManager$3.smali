@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 164
+    .line 177
     iput-object p1, p0, Lmiui/accounts/ExtraAccountManager$3;->this$0:Lmiui/accounts/ExtraAccountManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 166
+    .line 179
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 167
+    .line 180
     .local v8, action:Ljava/lang/String;
     const-string v0, "android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED"
 
@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_75
 
-    .line 169
+    .line 182
     :cond_14
     const-string v0, "extra_account"
 
@@ -73,7 +73,7 @@
 
     check-cast v3, Landroid/accounts/Account;
 
-    .line 170
+    .line 183
     .local v3, account:Landroid/accounts/Account;
     const-string v0, "extra_bundle"
 
@@ -83,7 +83,7 @@
 
     check-cast v5, Landroid/os/Bundle;
 
-    .line 171
+    .line 184
     .local v5, extra:Landroid/os/Bundle;
     const-string v0, "extra_update_type"
 
@@ -93,13 +93,13 @@
 
     move-result v4
 
-    .line 172
+    .line 185
     .local v4, type:I
     if-eqz v3, :cond_6d
 
     if-lez v4, :cond_6d
 
-    .line 173
+    .line 186
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager$3;->this$0:Lmiui/accounts/ExtraAccountManager;
 
     #getter for: Lmiui/accounts/ExtraAccountManager;->mMiuiAccountsUpdatedListeners:Ljava/util/HashMap;
@@ -109,7 +109,7 @@
 
     monitor-enter v11
 
-    .line 175
+    .line 188
     :try_start_36
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager$3;->this$0:Lmiui/accounts/ExtraAccountManager;
 
@@ -140,7 +140,7 @@
 
     check-cast v9, Ljava/util/Map$Entry;
 
-    .line 176
+    .line 189
     .local v9, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/os/Handler;>;"
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager$3;->this$0:Lmiui/accounts/ExtraAccountManager;
 
@@ -167,7 +167,7 @@
 
     goto :goto_44
 
-    .line 181
+    .line 194
     .end local v9           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/os/Handler;>;"
     .end local v10           #i$:Ljava/util/Iterator;
     :catchall_68
@@ -186,7 +186,7 @@
     :try_end_6c
     .catchall {:try_start_6b .. :try_end_6c} :catchall_68
 
-    .line 196
+    .line 209
     .end local v3           #account:Landroid/accounts/Account;
     .end local v4           #type:I
     .end local v5           #extra:Landroid/os/Bundle;
@@ -194,7 +194,7 @@
     :goto_6c
     return-void
 
-    .line 183
+    .line 196
     .restart local v3       #account:Landroid/accounts/Account;
     .restart local v4       #type:I
     .restart local v5       #extra:Landroid/os/Bundle;
@@ -207,7 +207,7 @@
 
     goto :goto_6c
 
-    .line 186
+    .line 199
     .end local v3           #account:Landroid/accounts/Account;
     .end local v4           #type:I
     .end local v5           #extra:Landroid/os/Bundle;
@@ -223,7 +223,7 @@
 
     move-result-object v7
 
-    .line 188
+    .line 201
     .local v7, accounts:[Landroid/accounts/Account;
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager$3;->this$0:Lmiui/accounts/ExtraAccountManager;
 
@@ -234,7 +234,7 @@
 
     monitor-enter v2
 
-    .line 190
+    .line 203
     :try_start_86
     iget-object v0, p0, Lmiui/accounts/ExtraAccountManager$3;->this$0:Lmiui/accounts/ExtraAccountManager;
 
@@ -265,7 +265,7 @@
 
     check-cast v9, Ljava/util/Map$Entry;
 
-    .line 191
+    .line 204
     .restart local v9       #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/os/Handler;>;"
     iget-object v6, p0, Lmiui/accounts/ExtraAccountManager$3;->this$0:Lmiui/accounts/ExtraAccountManager;
 
@@ -286,7 +286,7 @@
 
     goto :goto_94
 
-    .line 194
+    .line 207
     .end local v9           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Landroid/accounts/MiuiOnAccountsUpdateListener;Landroid/os/Handler;>;"
     .end local v10           #i$:Ljava/util/Iterator;
     :catchall_b2

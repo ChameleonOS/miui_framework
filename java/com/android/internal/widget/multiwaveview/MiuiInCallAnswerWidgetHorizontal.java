@@ -234,6 +234,7 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
             animationbundle.add(Tweener.to(targetdrawable, 300L, aobj));
         }
         mHandleAnimation.start();
+        super.mDragging = false;
         setGrabbedState(0);
     }
 
@@ -446,12 +447,21 @@ _L3:
     }
 
     public boolean onTouchEvent(MotionEvent motionevent) {
-        boolean flag;
-        if(mShowingOuterRing)
-            flag = true;
-        else
-            flag = super.onTouchEvent(motionevent);
+        boolean flag = true;
+        if(!mShowingOuterRing) goto _L2; else goto _L1
+_L1:
         return flag;
+_L2:
+        if(motionevent.getPointerCount() > flag) {
+            if(super.mDragging) {
+                super.mActiveTarget = -1;
+                switchToState(5, motionevent.getX(), motionevent.getY());
+            }
+        } else {
+            flag = super.onTouchEvent(motionevent);
+        }
+        if(true) goto _L1; else goto _L3
+_L3:
     }
 
     public void reset(boolean flag) {

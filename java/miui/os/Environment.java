@@ -151,6 +151,7 @@ _L5:
         INTERNAL_STORAGE_MIUI_DIRECTORY = new File(INTERNAL_STORAGE_DIRECTORY, "MIUI");
         sDevice2Memory = new HashMap();
         sDevice2Memory.put("hwu9200", Long.valueOf(0x100000L));
+        sDevice2Memory.put("hwu9500", Long.valueOf(0x100000L));
         sDevice2Memory.put("maguro", Long.valueOf(0x100000L));
         sDevice2Memory.put("ville", Long.valueOf(0x100000L));
         sDevice2Memory.put("LT26i", Long.valueOf(0x100000L));

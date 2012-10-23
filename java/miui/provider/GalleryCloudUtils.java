@@ -188,7 +188,7 @@ _L2:
         contentvalues.put("localFile", savetoclouddb.path);
         int i = exifinterface.getAttributeInt("ImageWidth", 0);
         int j = exifinterface.getAttributeInt("ImageLength", 0);
-        if(i == 0 || j == 0) {
+        if(i <= 0 || j <= 0) {
             android.graphics.BitmapFactory.Options options = ImageUtils.getBitmapSize(savetoclouddb.path);
             i = options.outWidth;
             j = options.outHeight;

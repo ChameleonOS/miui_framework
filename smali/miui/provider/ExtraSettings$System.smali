@@ -75,7 +75,7 @@
 
 .field public static final CALL_LOG_NUMBER_LIMIT:Ljava/lang/String; = "call_log_number_limit"
 
-.field public static final CALL_LOG_NUMBER_LIMIT_OPTION_DEFAULT:I = 0x1
+.field public static final CALL_LOG_NUMBER_LIMIT_OPTION_DEFAULT:I = 0x0
 
 .field public static final CALL_LOG_NUMBER_NO_LIMIT:I = 0x0
 

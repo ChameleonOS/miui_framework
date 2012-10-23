@@ -409,24 +409,24 @@
     .registers 3
 
     .prologue
-    .line 477
+    .line 487
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    .line 478
+    .line 488
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_f
 
-    .line 479
+    .line 489
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->end()V
 
-    .line 481
+    .line 491
     :cond_f
     return-void
 .end method
@@ -561,17 +561,17 @@
     .parameter "animate"
 
     .prologue
-    .line 509
+    .line 519
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setX(F)V
 
-    .line 510
+    .line 520
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     invoke-virtual {v0, p2}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setY(F)V
 
-    .line 511
+    .line 521
     return-void
 .end method
 
@@ -716,14 +716,14 @@
     .parameter "i"
 
     .prologue
-    .line 470
+    .line 480
     sget-object v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->STATE_HINT_ANIM:[[I
 
     array-length v0, v0
 
     if-ge p1, v0, :cond_11
 
-    .line 471
+    .line 481
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     sget-object v1, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->STATE_HINT_ANIM:[[I
@@ -732,10 +732,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    .line 472
+    .line 482
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->invalidate()V
 
-    .line 474
+    .line 484
     :cond_11
     return-void
 .end method
@@ -748,7 +748,7 @@
 
     const/4 v4, 0x2
 
-    .line 484
+    .line 494
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     const-string v2, "alpha"
@@ -761,24 +761,24 @@
 
     move-result-object v0
 
-    .line 485
+    .line 495
     .local v0, showHintAnimationAlpha:Landroid/animation/ObjectAnimator;
     const-wide/16 v1, 0x12c
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 486
+    .line 496
     const-wide/16 v1, 0x190
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 487
+    .line 497
     invoke-virtual {v0, v5}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 488
+    .line 498
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 490
+    .line 500
     new-array v1, v4, [F
 
     fill-array-data v1, :array_62
@@ -789,26 +789,26 @@
 
     iput-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
-    .line 491
+    .line 501
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x5dc
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 492
+    .line 502
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1, v5}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 493
+    .line 503
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0xc8
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 494
+    .line 504
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     new-instance v2, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;
@@ -817,29 +817,29 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 502
+    .line 512
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     const/4 v2, -0x1
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
 
-    .line 503
+    .line 513
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
 
-    .line 504
+    .line 514
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 505
+    .line 515
     return-void
 
-    .line 484
+    .line 494
     nop
 
     :array_5a
@@ -848,7 +848,7 @@
         0x0t 0x0t 0x80t 0x3ft
     .end array-data
 
-    .line 490
+    .line 500
     :array_62
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -1003,7 +1003,7 @@
     .local v0, activeTarget:I
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_9b
+    if-eq v0, v2, :cond_9d
 
     move v1, v3
 
@@ -1015,7 +1015,7 @@
     invoke-virtual {v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->cancel()V
 
     .line 428
-    if-eqz v1, :cond_9e
+    if-eqz v1, :cond_a0
 
     .line 429
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
@@ -1151,13 +1151,16 @@
     invoke-virtual {v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->start()V
 
     .line 457
-    invoke-virtual {p0, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setGrabbedState(I)V
+    iput-boolean v4, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mDragging:Z
 
     .line 458
+    invoke-virtual {p0, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setGrabbedState(I)V
+
+    .line 459
     return-void
 
     .end local v1           #targetHit:Z
-    :cond_9b
+    :cond_9d
     move v1, v4
 
     .line 425
@@ -1165,7 +1168,7 @@
 
     .line 446
     .restart local v1       #targetHit:Z
-    :cond_9e
+    :cond_a0
     iget-object v5, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
     iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
@@ -1258,11 +1261,11 @@
 
     iget-boolean v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mDragging:Z
 
-    if-eqz v2, :cond_108
+    if-eqz v2, :cond_10a
 
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mResetListenerWithPing:Landroid/animation/Animator$AnimatorListener;
 
-    :goto_fe
+    :goto_100
     aput-object v2, v9, v3
 
     invoke-static {v6, v7, v8, v9}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
@@ -1273,10 +1276,10 @@
 
     goto :goto_92
 
-    :cond_108
+    :cond_10a
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mResetListener:Landroid/animation/Animator$AnimatorListener;
 
-    goto :goto_fe
+    goto :goto_100
 .end method
 
 .method protected handleMove(Landroid/view/MotionEvent;)V
@@ -2514,23 +2517,57 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .registers 6
     .parameter "event"
 
     .prologue
-    .line 463
-    iget-boolean v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mShowingOuterRing:Z
-
-    if-eqz v0, :cond_6
-
-    .line 464
     const/4 v0, 0x1
 
-    .line 466
+    .line 464
+    iget-boolean v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mShowingOuterRing:Z
+
+    if-eqz v1, :cond_6
+
+    .line 476
+    :cond_5
     :goto_5
     return v0
 
+    .line 468
     :cond_6
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    move-result v1
+
+    if-le v1, v0, :cond_20
+
+    .line 469
+    iget-boolean v1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mDragging:Z
+
+    if-eqz v1, :cond_5
+
+    .line 470
+    const/4 v1, -0x1
+
+    iput v1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mActiveTarget:I
+
+    .line 471
+    const/4 v1, 0x5
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v3
+
+    invoke-virtual {p0, v1, v2, v3}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->switchToState(IFF)V
+
+    goto :goto_5
+
+    .line 476
+    :cond_20
     invoke-super {p0, p1}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0

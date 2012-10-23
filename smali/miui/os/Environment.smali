@@ -88,7 +88,7 @@
     .line 97
     sget-object v0, Lmiui/os/Environment;->sDevice2Memory:Ljava/util/HashMap;
 
-    const-string/jumbo v1, "maguro"
+    const-string v1, "hwu9500"
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -99,7 +99,7 @@
     .line 98
     sget-object v0, Lmiui/os/Environment;->sDevice2Memory:Ljava/util/HashMap;
 
-    const-string/jumbo v1, "ville"
+    const-string/jumbo v1, "maguro"
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -110,7 +110,7 @@
     .line 99
     sget-object v0, Lmiui/os/Environment;->sDevice2Memory:Ljava/util/HashMap;
 
-    const-string v1, "LT26i"
+    const-string/jumbo v1, "ville"
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -121,7 +121,7 @@
     .line 100
     sget-object v0, Lmiui/os/Environment;->sDevice2Memory:Ljava/util/HashMap;
 
-    const-string/jumbo v1, "ventana"
+    const-string v1, "LT26i"
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -130,6 +130,17 @@
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 101
+    sget-object v0, Lmiui/os/Environment;->sDevice2Memory:Ljava/util/HashMap;
+
+    const-string/jumbo v1, "ventana"
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 102
     return-void
 .end method
 
@@ -223,7 +234,7 @@
     .registers 6
 
     .prologue
-    .line 104
+    .line 105
     sget-wide v2, Lmiui/os/Environment;->sTotalMemory:J
 
     const-wide/16 v4, 0x0
@@ -232,7 +243,7 @@
 
     if-nez v2, :cond_1d
 
-    .line 107
+    .line 108
     const/4 v2, 0x1
 
     :try_start_9
@@ -244,19 +255,19 @@
 
     aput-object v3, v0, v2
 
-    .line 108
+    .line 109
     .local v0, memInfoFields:[Ljava/lang/String;
     array-length v2, v0
 
     new-array v1, v2, [J
 
-    .line 109
+    .line 110
     .local v1, memInfoSizes:[J
     const-string v2, "/proc/meminfo"
 
     invoke-static {v2, v0, v1}, Landroid/os/Process;->readProcLines(Ljava/lang/String;[Ljava/lang/String;[J)V
 
-    .line 110
+    .line 111
     const/4 v2, 0x0
 
     aget-wide v2, v1, v2
@@ -265,7 +276,7 @@
     :try_end_1d
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_1d} :catch_20
 
-    .line 114
+    .line 115
     .end local v1           #memInfoSizes:[J
     :cond_1d
     :goto_1d
@@ -273,7 +284,7 @@
 
     return-wide v2
 
-    .line 111
+    .line 112
     :catch_20
     move-exception v2
 
@@ -284,7 +295,7 @@
     .registers 4
 
     .prologue
-    .line 118
+    .line 119
     sget-wide v0, Lmiui/os/Environment;->sTotalPhysicalMemory:J
 
     const-wide/16 v2, 0x0
@@ -293,7 +304,7 @@
 
     if-nez v0, :cond_22
 
-    .line 119
+    .line 120
     sget-object v0, Lmiui/os/Environment;->sDevice2Memory:Ljava/util/HashMap;
 
     sget-object v1, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
@@ -304,7 +315,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 120
+    .line 121
     sget-object v0, Lmiui/os/Environment;->sDevice2Memory:Ljava/util/HashMap;
 
     sget-object v1, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
@@ -321,14 +332,14 @@
 
     sput-wide v0, Lmiui/os/Environment;->sTotalPhysicalMemory:J
 
-    .line 126
+    .line 127
     :cond_22
     :goto_22
     sget-wide v0, Lmiui/os/Environment;->sTotalPhysicalMemory:J
 
     return-wide v0
 
-    .line 123
+    .line 124
     :cond_25
     invoke-static {}, Lmiui/os/Environment;->getTotalMemory()J
 
@@ -363,7 +374,7 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 130
+    .line 131
     new-instance v0, Ljava/io/File;
 
     const-string v1, "customized_icons"
@@ -374,7 +385,7 @@
 
     invoke-static {v0, v1, v2, v2}, Lmiui/os/ExtraFileUtils;->mkdirs(Ljava/io/File;III)Z
 
-    .line 131
+    .line 132
     new-instance v0, Ljava/io/File;
 
     const-string/jumbo v1, "sdcard"
@@ -385,7 +396,7 @@
 
     invoke-static {v0, v1, v2, v2}, Lmiui/os/ExtraFileUtils;->mkdirs(Ljava/io/File;III)Z
 
-    .line 132
+    .line 133
     return-void
 .end method
 

@@ -661,15 +661,17 @@
 
 .field public static final description_download:I = 0x60c0011
 
+.field public static final description_downloadtime:I = 0x60c01fb
+
 .field public static final description_file:I = 0x60c0013
 
 .field public static final description_missed:I = 0x60c000c
 
-.field public static final description_modifiedtime:I = 0x60c0010
-
 .field public static final description_size:I = 0x60c000f
 
 .field public static final description_unknown:I = 0x60c000b
+
+.field public static final description_uploadtime:I = 0x60c0010
 
 .field public static final description_version:I = 0x60c0012
 
@@ -1035,7 +1037,7 @@
     .registers 1
 
     .prologue
-    .line 1540
+    .line 1546
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

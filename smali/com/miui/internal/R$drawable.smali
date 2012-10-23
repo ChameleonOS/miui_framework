@@ -1071,7 +1071,7 @@
     .registers 1
 
     .prologue
-    .line 504
+    .line 506
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

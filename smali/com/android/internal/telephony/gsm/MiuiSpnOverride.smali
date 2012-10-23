@@ -10,6 +10,12 @@
 
 .field public static final EQ_OPERATOR_CU:Ljava/lang/String; = "46001"
 
+.field public static final MCC_CHINA:Ljava/lang/String; = "460"
+
+.field public static final MCC_NONE:Ljava/lang/String; = "000"
+
+.field public static final MCC_TAIWAN:Ljava/lang/String; = "466"
+
 .field private static final sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
 .field static final sInstance:Lcom/android/internal/telephony/gsm/MiuiSpnOverride;
@@ -20,14 +26,14 @@
     .registers 1
 
     .prologue
-    .line 17
+    .line 26
     new-instance v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
-    .line 19
+    .line 28
     new-instance v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;-><init>()V
@@ -51,7 +57,7 @@
     .registers 1
 
     .prologue
-    .line 22
+    .line 31
     sget-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sInstance:Lcom/android/internal/telephony/gsm/MiuiSpnOverride;
 
     return-object v0
@@ -64,7 +70,7 @@
     .parameter "carrier"
 
     .prologue
-    .line 26
+    .line 35
     sget-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->containsCarrier(Ljava/lang/String;)Z
@@ -79,7 +85,7 @@
     .parameter "carrier"
 
     .prologue
-    .line 34
+    .line 43
     sget-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->getEquivalentOperatorNumeric(Ljava/lang/String;)Ljava/lang/String;
@@ -94,7 +100,7 @@
     .parameter "carrier"
 
     .prologue
-    .line 30
+    .line 39
     sget-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->getSpn(Ljava/lang/String;)Ljava/lang/String;

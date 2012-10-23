@@ -691,9 +691,9 @@
 
     .line 200
     .local v5, height:I
-    if-eqz v11, :cond_b2
+    if-lez v11, :cond_b2
 
-    if-nez v5, :cond_be
+    if-gtz v5, :cond_be
 
     .line 202
     :cond_b2

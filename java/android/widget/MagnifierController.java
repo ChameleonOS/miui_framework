@@ -25,7 +25,8 @@ public class MagnifierController {
 
     private void hide() {
         mShowing = false;
-        mTextView.getParent().requestDisallowInterceptTouchEvent(false);
+        if(mTextView.getParent() != null)
+            mTextView.getParent().requestDisallowInterceptTouchEvent(false);
         mEditor.makeBlink();
     }
 
@@ -86,7 +87,8 @@ _L6:
 
     public void show() {
         mShowing = true;
-        mTextView.getParent().requestDisallowInterceptTouchEvent(true);
+        if(mTextView.getParent() != null)
+            mTextView.getParent().requestDisallowInterceptTouchEvent(true);
         showMagnifier();
     }
 

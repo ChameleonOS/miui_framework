@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 128
+    .line 141
     iput-object p1, p0, Lmiui/accounts/ExtraAccountManager$1;->this$0:Lmiui/accounts/ExtraAccountManager;
 
     iput-object p2, p0, Lmiui/accounts/ExtraAccountManager$1;->val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
@@ -51,7 +51,7 @@
     .registers 4
 
     .prologue
-    .line 131
+    .line 144
     :try_start_0
     iget-object v1, p0, Lmiui/accounts/ExtraAccountManager$1;->val$listener:Landroid/accounts/MiuiOnAccountsUpdateListener;
 
@@ -61,15 +61,15 @@
     :try_end_7
     .catch Landroid/database/SQLException; {:try_start_0 .. :try_end_7} :catch_8
 
-    .line 137
+    .line 150
     :goto_7
     return-void
 
-    .line 132
+    .line 145
     :catch_8
     move-exception v0
 
-    .line 135
+    .line 148
     .local v0, e:Landroid/database/SQLException;
     const-string v1, "ExtraAccountManager"
 

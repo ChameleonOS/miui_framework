@@ -643,5 +643,6 @@ _L5:
         sIconMapping.put("com.sonyericsson.android.camera.png", "com.miui.camera.png");
         sIconMapping.put("com.sonyericsson.fmradio.png", "com.miui.fmradio.png");
         sIconMapping.put("com.motorola.Camera.Camera.png", "com.miui.camera.png");
+        sIconMapping.put("com.lge.camera.png", "com.miui.camera.png");
     }
 }

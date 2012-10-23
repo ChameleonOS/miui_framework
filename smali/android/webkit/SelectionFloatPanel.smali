@@ -122,7 +122,13 @@
     invoke-virtual {p0, v0}, Landroid/webkit/SelectionFloatPanel;->setX(F)V
 
     .line 50
-    int-to-float v0, p2
+    invoke-virtual {p0}, Landroid/webkit/SelectionFloatPanel;->getHeight()I
+
+    move-result v0
+
+    sub-int v0, p2, v0
+
+    int-to-float v0, v0
 
     invoke-virtual {p0, v0}, Landroid/webkit/SelectionFloatPanel;->setY(F)V
 

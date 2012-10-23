@@ -83,6 +83,7 @@ _L3:
         return flag;
     }
 
+    public static final String FEATURE_WIFI_DISPLAY = "android.hardware.wifi.display";
     static final Signature GOOGLE_SIGNATURES[];
     static final String MITALK_NAME = "com.xiaomi.channel";
     static final Signature MITALK_SIGNATURES[];

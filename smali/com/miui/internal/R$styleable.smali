@@ -129,7 +129,7 @@
 
     const/4 v1, 0x2
 
-    .line 2237
+    .line 2267
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -138,14 +138,14 @@
 
     sput-object v0, Lcom/miui/internal/R$styleable;->AlphabetFastIndexer:[I
 
-    .line 2397
+    .line 2427
     new-array v0, v1, [I
 
     fill-array-data v0, :array_52
 
     sput-object v0, Lcom/miui/internal/R$styleable;->GradientTextView:[I
 
-    .line 2464
+    .line 2494
     const/16 v0, 0xc
 
     new-array v0, v0, [I
@@ -154,14 +154,14 @@
 
     sput-object v0, Lcom/miui/internal/R$styleable;->LockPatternView:[I
 
-    .line 2623
+    .line 2653
     new-array v0, v1, [I
 
     fill-array-data v0, :array_76
 
     sput-object v0, Lcom/miui/internal/R$styleable;->MiuiInCallAnswerWidgetHorizontal:[I
 
-    .line 2670
+    .line 2700
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -170,14 +170,14 @@
 
     sput-object v0, Lcom/miui/internal/R$styleable;->PhotoFrameView:[I
 
-    .line 2781
+    .line 2811
     new-array v0, v2, [I
 
     fill-array-data v0, :array_8c
 
     sput-object v0, Lcom/miui/internal/R$styleable;->SlidingButton:[I
 
-    .line 2879
+    .line 2909
     new-array v0, v2, [I
 
     fill-array-data v0, :array_9e
@@ -186,7 +186,7 @@
 
     return-void
 
-    .line 2237
+    .line 2267
     nop
 
     :array_3a
@@ -203,14 +203,14 @@
         0x1bt 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2397
+    .line 2427
     :array_52
     .array-data 0x4
         0x10t 0x0t 0x1t 0x6t
         0x11t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2464
+    .line 2494
     :array_5a
     .array-data 0x4
         0x21t 0x0t 0x1t 0x6t
@@ -227,14 +227,14 @@
         0x2ct 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2623
+    .line 2653
     :array_76
     .array-data 0x4
         0x7t 0x0t 0x1t 0x6t
         0xft 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2670
+    .line 2700
     :array_7e
     .array-data 0x4
         0x1ct 0x0t 0x1t 0x6t
@@ -244,7 +244,7 @@
         0x20t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2781
+    .line 2811
     :array_8c
     .array-data 0x4
         0x8t 0x0t 0x1t 0x6t
@@ -256,7 +256,7 @@
         0xet 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2879
+    .line 2909
     :array_9e
     .array-data 0x4
         0x0t 0x0t 0x1t 0x6t
@@ -273,7 +273,7 @@
     .registers 1
 
     .prologue
-    .line 2206
+    .line 2236
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
