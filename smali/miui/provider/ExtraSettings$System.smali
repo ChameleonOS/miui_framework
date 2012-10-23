@@ -139,6 +139,14 @@
 
 .field public static final DIALER_SHOW_CALL_LOG_NUMBER:Ljava/lang/String; = "dialer_show_call_log_number"
 
+.field public static final DIAL_PAD_TOUCH_TONE:Ljava/lang/String; = "dial_pad_touch_tone"
+
+.field public static final DIAL_PAD_TOUCH_TONE_DEFAULT:I = -0x1
+
+.field public static final DIAL_PAD_TOUCH_TONE_HUMAN:I = 0x1
+
+.field public static final DIAL_PAD_TOUCH_TONE_PIANO:I = 0x0
+
 .field public static final DOWNLOAD_ONLY_ON_WIFI:Ljava/lang/String; = "download_only_on_wifi"
 
 .field public static final ELECTRON_BEAM_ANIMATION_OFF:Ljava/lang/String; = "electron_beam_animation_off"
@@ -258,6 +266,8 @@
 .field public static final MMS_UPLOAD_OLD_MSG_STATE_INIT:I = 0x0
 
 .field public static final MMS_UPLOAD_OLD_MSG_STATE_NEED_PROMPT:I = 0x1
+
+.field public static final MX_USED:Ljava/lang/String; = "mx_used"
 
 .field public static final RECENT_APPS_KEY_SHOW:Ljava/lang/String; = "recent_apps_key_show"
 
@@ -444,14 +454,14 @@
 
     sput-object v0, Lmiui/provider/ExtraSettings$System;->DEFAULT_SMS_DELIVERED_RINGTONE_URI:Landroid/net/Uri;
 
-    .line 635
+    .line 643
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
-    .line 636
+    .line 644
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -462,7 +472,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 637
+    .line 645
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     const/4 v1, 0x1
@@ -473,7 +483,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 638
+    .line 646
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     const/4 v1, 0x2
@@ -484,7 +494,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 639
+    .line 647
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     const/4 v1, 0x3
@@ -495,7 +505,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 640
+    .line 648
     return-void
 .end method
 
@@ -520,7 +530,7 @@
 
     const/4 v2, 0x0
 
-    .line 586
+    .line 594
     if-eqz p2, :cond_c
 
     move v0, v1
@@ -627,12 +637,12 @@
     .end annotation
 
     .prologue
-    .line 643
+    .line 651
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 644
+    .line 652
     .local v6, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -644,7 +654,7 @@
 
     move-result-object v4
 
-    .line 645
+    .line 653
     .local v4, keyList:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -652,14 +662,14 @@
 
     if-nez v7, :cond_44
 
-    .line 646
+    .line 654
     const-string v7, " "
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v5
 
-    .line 647
+    .line 655
     .local v5, keys:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -669,7 +679,7 @@
 
     if-ge v1, v7, :cond_44
 
-    .line 649
+    .line 657
     :try_start_20
     aget-object v7, v5, v1
 
@@ -681,7 +691,7 @@
 
     move-result v3
 
-    .line 650
+    .line 658
     .local v3, id:I
     sget-object v7, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
@@ -695,7 +705,7 @@
 
     if-eqz v7, :cond_3d
 
-    .line 651
+    .line 659
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -704,22 +714,22 @@
     :try_end_3d
     .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_3d} :catch_40
 
-    .line 647
+    .line 655
     :cond_3d
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1d
 
-    .line 653
+    .line 661
     .end local v3           #id:I
     :catch_40
     move-exception v0
 
-    .line 654
+    .line 662
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 660
+    .line 668
     .end local v0           #e:Ljava/lang/Exception;
     .end local v1           #i:I
     .end local v5           #keys:[Ljava/lang/String;
@@ -730,7 +740,7 @@
 
     if-nez v7, :cond_60
 
-    .line 661
+    .line 669
     sget-object v7, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -751,13 +761,13 @@
 
     check-cast v3, Ljava/lang/Integer;
 
-    .line 662
+    .line 670
     .local v3, id:Ljava/lang/Integer;
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_50
 
-    .line 665
+    .line 673
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #id:Ljava/lang/Integer;
     :cond_60
@@ -771,7 +781,7 @@
     .parameter "defValue"
 
     .prologue
-    .line 578
+    .line 586
     const-class v1, Lmiui/provider/ExtraSettings$System;
 
     monitor-enter v1
@@ -783,20 +793,20 @@
 
     move-result-object v0
 
-    .line 579
+    .line 587
     .local v0, result:Ljava/lang/String;
     if-nez v0, :cond_a
 
-    .line 580
+    .line 588
     move-object v0, p2
 
-    .line 582
+    .line 590
     :cond_a
     monitor-exit v1
 
     return-object v0
 
-    .line 578
+    .line 586
     .end local v0           #result:Ljava/lang/String;
     :catchall_c
     move-exception v2
@@ -845,7 +855,7 @@
     .parameter "value"
 
     .prologue
-    .line 590
+    .line 598
     if-eqz p2, :cond_7
 
     const/4 v0, 0x1
@@ -853,10 +863,10 @@
     :goto_3
     invoke-static {p0, p1, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 591
+    .line 599
     return-void
 
-    .line 590
+    .line 598
     :cond_7
     const/4 v0, 0x0
 

@@ -422,6 +422,7 @@ _L4:
     }
 
     public void acceptCall() throws CallStateException {
+        removeMessages(15);
         mCT.acceptCall();
     }
 

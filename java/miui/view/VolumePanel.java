@@ -78,10 +78,10 @@ public class VolumePanel extends Handler
             RingerStream = new StreamResources("RingerStream", 1, 2, 0x60c01a2, 0x602015b, 0x602015c, false);
             VoiceStream = new StreamResources("VoiceStream", 2, 0, 0x60c01a3, 0x602015a, 0x602015a, false);
             AlarmStream = new StreamResources("AlarmStream", 3, 4, 0x60c01a6, 0x6020154, 0x6020155, false);
-            MediaStream = new StreamResources("MediaStream", 4, 3, 0x60c01a4, 0x60201f9, 0x60201f9, true);
+            MediaStream = new StreamResources("MediaStream", 4, 3, 0x60c01a4, 0x6020020, 0x6020020, true);
             NotificationStream = new StreamResources("NotificationStream", 5, 5, 0x60c01a5, 0x6020158, 0x6020159, true);
-            MasterStream = new StreamResources("MasterStream", 6, -100, 0x60c01a4, 0x60201f9, 0x60201f9, false);
-            RemoteStream = new StreamResources("RemoteStream", 7, -200, 0x60c01a4, 0x60201f9, 0x60201f9, false);
+            MasterStream = new StreamResources("MasterStream", 6, -100, 0x60c01a4, 0x6020020, 0x6020020, false);
+            RemoteStream = new StreamResources("RemoteStream", 7, -200, 0x60c01a4, 0x6020020, 0x6020020, false);
             StreamResources astreamresources[] = new StreamResources[8];
             astreamresources[0] = BluetoothSCOStream;
             astreamresources[1] = RingerStream;
@@ -596,7 +596,7 @@ _L5:
         if((0x380 & mAudioManager.getDevicesForStream(3)) != 0)
             setMusicIcon(0x6020156, 0x6020157);
         else
-            setMusicIcon(0x60201f9, 0x60201f9);
+            setMusicIcon(0x6020020, 0x6020020);
           goto _L8
 _L3:
         k++;

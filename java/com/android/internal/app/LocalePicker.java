@@ -15,6 +15,7 @@ import android.widget.*;
 import java.text.Collator;
 import java.util.Arrays;
 import java.util.Locale;
+import miui.util.ExtraLocalePicker;
 
 public class LocalePicker extends ListFragment {
     public static class LocaleInfo
@@ -115,6 +116,7 @@ public class LocalePicker extends ListFragment {
             alocaleinfo1[j1] = alocaleinfo[j1];
 
         Arrays.sort(alocaleinfo1);
+        ExtraLocalePicker.adjustLocaleOrder(alocaleinfo1);
         arrayadapter = new ArrayAdapter(context, i, j, alocaleinfo1);
         return arrayadapter;
     }

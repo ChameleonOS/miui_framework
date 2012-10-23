@@ -75,8 +75,8 @@ public class MiuiMovieController extends FrameLayout
         loadingView.addView(progressbar, layoutparams);
         addView(loadingView, layoutparams);
         playPauseReplayView = new ImageView(context);
-        playPauseReplayView.setImageResource(0x60201d6);
-        playPauseReplayView.setBackgroundResource(0x60201d9);
+        playPauseReplayView.setImageResource(0x602004f);
+        playPauseReplayView.setBackgroundResource(0x6020052);
         playPauseReplayView.setScaleType(ImageView.ScaleType.CENTER);
         playPauseReplayView.setFocusable(true);
         playPauseReplayView.setClickable(true);
@@ -161,7 +161,7 @@ _L2:
         imageview = playPauseReplayView;
         if(state != State.PAUSED) goto _L4; else goto _L3
 _L3:
-        int i = 0x60201d6;
+        int i = 0x602004f;
 _L5:
         imageview.setImageResource(i);
         ImageView imageview1 = playPauseReplayView;
@@ -175,9 +175,9 @@ _L5:
         if(true) goto _L1; else goto _L4
 _L4:
         if(state == State.PLAYING)
-            i = 0x60201d7;
+            i = 0x6020050;
         else
-            i = 0x60201d8;
+            i = 0x6020051;
           goto _L5
     }
 

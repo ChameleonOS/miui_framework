@@ -4,57 +4,90 @@
 
 
 # static fields
-.field public static final IS_DEFY:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_DEFY:Z = false
 
-.field public static final IS_DESIRE:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_DESIRE:Z = false
 
-.field public static final IS_FAST_GPU_DEVICE:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_DEVELOPMENT_VERSION:Z = false
 
-.field public static final IS_FINAL_USER_BUILD:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_FAST_GPU_DEVICE:Z = false
 
-.field public static final IS_FULL_SOURCE_CODE_DEVICE:Z
+.field public static final IS_FINAL_USER_BUILD:Z = false
 
-.field public static final IS_GALAXYS2:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_FULL_SOURCE_CODE_DEVICE:Z = false
 
-.field public static final IS_GALAXYS_NEXUS:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_GALAXYS2:Z = false
 
-.field public static final IS_HTC_HD2:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_GALAXYS_NEXUS:Z = false
 
-.field public static final IS_I9000:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_HTC_HD2:Z = false
 
-.field public static final IS_LOW_MEMORY_DEVICE:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_I9000:Z = false
 
-.field public static final IS_MI1S:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_LOW_MEMORY_DEVICE:Z = false
 
-.field public static final IS_MILESTONE:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_MI1S:Z = false
 
-.field public static final IS_MIONE:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_MILESTONE:Z = false
 
-.field public static final IS_MIONE_CT_CUSTOMIZATION:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_MIONE:Z = false
 
-.field public static final IS_MIONE_PLUS_CDMA:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_MIONE_CT_CUSTOMIZATION:Z = false
 
-.field public static final IS_MITWO:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_MIONE_PLUS_CDMA:Z = false
 
-.field public static final IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_MITWO:Z = false
 
-.field public static final IS_NEXUS_7:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE:Z = false
 
-.field public static final IS_NEXUS_ONE:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_NEXUS_7:Z = false
 
-.field public static final IS_NEXUS_S:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_NEXUS_ONE:Z = false
 
-.field public static final IS_P990:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_NEXUS_S:Z = false
 
-.field public static final IS_RICH_MEMORY_DEVICE:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_P990:Z = false
 
-.field public static final IS_T959:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_RICH_MEMORY_DEVICE:Z = false
 
-.field public static final IS_U8860:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_STABLE_VERSION:Z = false
 
-.field public static final IS_U9200:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_T959:Z = false
 
-.field public static final IS_XIAOMI:Z
+#the value of this static final field might be set in the static constructor
+.field public static final IS_U8860:Z = false
+
+#the value of this static final field might be set in the static constructor
+.field public static final IS_U9200:Z = false
+
+#the value of this static final field might be set in the static constructor
+.field public static final IS_XIAOMI:Z = false
+
+.field private static final REGULAR_EXPRESSION_FOR_DEVELOPMENT:Ljava/lang/String; = "\\d+.\\d+.\\d+(.ALPHA)?"
 
 .field public static final SHOW_MAGNIFIER_WHEN_INPUT:Z
 
@@ -110,9 +143,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_34
 
-    const-string/jumbo v0, "leo"
+    const-string v0, "leo"
 
     sget-object v3, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
 
@@ -120,12 +153,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_166
+    if-eqz v0, :cond_18b
 
-    :cond_35
+    :cond_34
     move v0, v2
 
-    :goto_36
+    :goto_35
     sput-boolean v0, Lmiui/os/Build;->IS_HTC_HD2:Z
 
     .line 15
@@ -159,7 +192,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_63
+    if-nez v0, :cond_62
 
     const-string/jumbo v0, "mione_plus"
 
@@ -169,12 +202,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_169
+    if-eqz v0, :cond_18e
 
-    :cond_63
+    :cond_62
     move v0, v2
 
-    :goto_64
+    :goto_63
     sput-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
     .line 18
@@ -191,16 +224,16 @@
     .line 19
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_78
+    if-nez v0, :cond_77
 
     sget-boolean v0, Lmiui/os/Build;->IS_MITWO:Z
 
-    if-eqz v0, :cond_16c
+    if-eqz v0, :cond_191
 
-    :cond_78
+    :cond_77
     move v0, v2
 
-    :goto_79
+    :goto_78
     sput-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
     .line 20
@@ -300,7 +333,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e3
+    if-nez v0, :cond_e2
 
     const-string v0, "MI 1SC"
 
@@ -310,27 +343,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16f
+    if-eqz v0, :cond_194
 
-    :cond_e3
+    :cond_e2
     move v0, v2
 
-    :goto_e4
+    :goto_e3
     sput-boolean v0, Lmiui/os/Build;->IS_MI1S:Z
 
     .line 30
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_ee
+    if-nez v0, :cond_ed
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-eqz v0, :cond_172
+    if-eqz v0, :cond_197
 
-    :cond_ee
+    :cond_ed
     move v0, v2
 
-    :goto_ef
+    :goto_ee
     sput-boolean v0, Lmiui/os/Build;->IS_RICH_MEMORY_DEVICE:Z
 
     .line 31
@@ -341,75 +374,75 @@
     .line 33
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_109
+    if-nez v0, :cond_108
 
     sget-boolean v0, Lmiui/os/Build;->IS_I9000:Z
 
-    if-nez v0, :cond_109
+    if-nez v0, :cond_108
 
     sget-boolean v0, Lmiui/os/Build;->IS_P990:Z
 
-    if-nez v0, :cond_109
+    if-nez v0, :cond_108
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_109
+    if-nez v0, :cond_108
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-eqz v0, :cond_175
+    if-eqz v0, :cond_19a
 
-    :cond_109
+    :cond_108
     move v0, v2
 
-    :goto_10a
+    :goto_109
     sput-boolean v0, Lmiui/os/Build;->IS_FAST_GPU_DEVICE:Z
 
     .line 36
     sget-boolean v0, Lmiui/os/Build;->IS_MILESTONE:Z
 
-    if-nez v0, :cond_124
+    if-nez v0, :cond_123
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_124
+    if-nez v0, :cond_123
 
     sget-boolean v0, Lmiui/os/Build;->IS_I9000:Z
 
-    if-nez v0, :cond_124
+    if-nez v0, :cond_123
 
     sget-boolean v0, Lmiui/os/Build;->IS_DEFY:Z
 
-    if-nez v0, :cond_124
+    if-nez v0, :cond_123
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-nez v0, :cond_124
+    if-nez v0, :cond_123
 
     sget-boolean v0, Lmiui/os/Build;->IS_P990:Z
 
-    if-eqz v0, :cond_177
+    if-eqz v0, :cond_19d
 
-    :cond_124
+    :cond_123
     move v0, v2
 
-    :goto_125
+    :goto_124
     sput-boolean v0, Lmiui/os/Build;->IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE:Z
 
     .line 39
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-eqz v0, :cond_179
+    if-eqz v0, :cond_19f
 
     invoke-static {}, Lmiui/os/Build;->isMsm8660()Z
 
     move-result v0
 
-    if-eqz v0, :cond_179
+    if-eqz v0, :cond_19f
 
     move v0, v2
 
-    :goto_132
+    :goto_131
     sput-boolean v0, Lmiui/os/Build;->IS_MIONE_PLUS_CDMA:Z
 
     .line 43
@@ -430,100 +463,160 @@
     .line 46
     sget-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
-    if-nez v0, :cond_14f
+    if-nez v0, :cond_14e
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS_NEXUS:Z
 
-    if-nez v0, :cond_14f
+    if-nez v0, :cond_14e
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-eqz v0, :cond_17b
+    if-eqz v0, :cond_1a1
 
-    :cond_14f
+    :cond_14e
     move v0, v2
 
-    :goto_150
+    :goto_14f
     sput-boolean v0, Lmiui/os/Build;->SHOW_MAGNIFIER_WHEN_INPUT:Z
 
     .line 49
     sget-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
-    if-nez v0, :cond_162
+    if-nez v0, :cond_161
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS_NEXUS:Z
 
-    if-nez v0, :cond_162
+    if-nez v0, :cond_161
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_162
+    if-nez v0, :cond_161
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_7:Z
 
-    if-eqz v0, :cond_163
+    if-eqz v0, :cond_1a3
 
-    :cond_162
-    move v1, v2
+    :cond_161
+    move v0, v2
 
-    :cond_163
-    sput-boolean v1, Lmiui/os/Build;->IS_FULL_SOURCE_CODE_DEVICE:Z
+    :goto_162
+    sput-boolean v0, Lmiui/os/Build;->IS_FULL_SOURCE_CODE_DEVICE:Z
+
+    .line 54
+    sget-object v0, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1a5
+
+    sget-object v0, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
+
+    const-string v3, "\\d+.\\d+.\\d+(.ALPHA)?"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a5
+
+    move v0, v2
+
+    :goto_177
+    sput-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
+
+    .line 58
+    const-string/jumbo v0, "user"
+
+    sget-object v3, Lmiui/os/Build;->TYPE:Ljava/lang/String;
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a7
+
+    sget-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
+
+    if-nez v0, :cond_1a7
+
+    :goto_188
+    sput-boolean v2, Lmiui/os/Build;->IS_STABLE_VERSION:Z
 
     return-void
 
-    :cond_166
+    :cond_18b
     move v0, v1
 
     .line 14
-    goto/16 :goto_36
+    goto/16 :goto_35
 
-    :cond_169
+    :cond_18e
     move v0, v1
 
     .line 17
-    goto/16 :goto_64
+    goto/16 :goto_63
 
-    :cond_16c
+    :cond_191
     move v0, v1
 
     .line 19
-    goto/16 :goto_79
+    goto/16 :goto_78
 
-    :cond_16f
+    :cond_194
     move v0, v1
 
     .line 28
-    goto/16 :goto_e4
+    goto/16 :goto_e3
 
-    :cond_172
+    :cond_197
     move v0, v1
 
     .line 30
-    goto/16 :goto_ef
+    goto/16 :goto_ee
 
-    :cond_175
+    :cond_19a
     move v0, v1
 
     .line 33
-    goto :goto_10a
+    goto/16 :goto_109
 
-    :cond_177
+    :cond_19d
     move v0, v1
 
     .line 36
-    goto :goto_125
+    goto :goto_124
 
-    :cond_179
+    :cond_19f
     move v0, v1
 
     .line 39
-    goto :goto_132
+    goto :goto_131
 
-    :cond_17b
+    :cond_1a1
     move v0, v1
 
     .line 46
-    goto :goto_150
+    goto :goto_14f
+
+    :cond_1a3
+    move v0, v1
+
+    .line 49
+    goto :goto_162
+
+    :cond_1a5
+    move v0, v1
+
+    .line 54
+    goto :goto_177
+
+    :cond_1a7
+    move v2, v1
+
+    .line 58
+    goto :goto_188
 .end method
 
 .method public constructor <init>()V
@@ -541,7 +634,7 @@
     .parameter "property"
 
     .prologue
-    .line 85
+    .line 94
     const-string/jumbo v0, "unknown"
 
     invoke-static {p0, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -552,53 +645,27 @@
 .end method
 
 .method public static isDevelopmentVersion()Z
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 54
-    const-string v0, "\\d+.\\d+.\\d+(.ALPHA)?"
+    .line 65
+    sget-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
-    .line 55
-    .local v0, regularExpression:Ljava/lang/String;
-    sget-object v1, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_14
-
-    sget-object v1, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_14
-
-    const/4 v1, 0x1
-
-    :goto_13
-    return v1
-
-    :cond_14
-    const/4 v1, 0x0
-
-    goto :goto_13
+    return v0
 .end method
 
 .method public static isMsm8660()Z
     .registers 2
 
     .prologue
-    .line 71
+    .line 80
     const-string/jumbo v1, "ro.soc.name"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 72
+    .line 81
     .local v0, soc:Ljava/lang/String;
     const-string/jumbo v1, "msm8660"
 
@@ -632,63 +699,33 @@
     .registers 1
 
     .prologue
-    .line 67
-    invoke-static {}, Lmiui/os/Build;->isDevelopmentVersion()Z
+    .line 76
+    sget-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
-    move-result v0
+    if-nez v0, :cond_8
 
-    if-nez v0, :cond_c
+    sget-boolean v0, Lmiui/os/Build;->IS_STABLE_VERSION:Z
 
-    invoke-static {}, Lmiui/os/Build;->isStableVersion()Z
+    if-eqz v0, :cond_a
 
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    :cond_c
+    :cond_8
     const/4 v0, 0x1
 
-    :goto_d
+    :goto_9
     return v0
 
-    :cond_e
+    :cond_a
     const/4 v0, 0x0
 
-    goto :goto_d
+    goto :goto_9
 .end method
 
 .method public static isStableVersion()Z
-    .registers 2
+    .registers 1
 
     .prologue
-    .line 61
-    const-string v0, "ICS\\d+.\\d+"
+    .line 72
+    sget-boolean v0, Lmiui/os/Build;->IS_STABLE_VERSION:Z
 
-    .line 62
-    .local v0, regularExpression:Ljava/lang/String;
-    sget-object v1, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_14
-
-    sget-object v1, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_14
-
-    const/4 v1, 0x1
-
-    :goto_13
-    return v1
-
-    :cond_14
-    const/4 v1, 0x0
-
-    goto :goto_13
+    return v0
 .end method

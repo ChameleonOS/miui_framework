@@ -66,7 +66,7 @@
 
     const/4 v12, 0x1
 
-    const v11, 0x60201f9
+    const v11, 0x6020020
 
     const/4 v2, 0x0
 

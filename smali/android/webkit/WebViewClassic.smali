@@ -13160,7 +13160,7 @@
 
     move-result-object v29
 
-    const v30, 0x60201fb
+    const v30, 0x6020026
 
     invoke-virtual/range {v29 .. v30}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -13460,7 +13460,7 @@
 
     move-result-object v29
 
-    const v30, 0x60201fa
+    const v30, 0x6020025
 
     invoke-virtual/range {v29 .. v30}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

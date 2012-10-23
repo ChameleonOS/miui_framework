@@ -175,14 +175,14 @@
     .line 86
     iget-object v5, p0, Landroid/widget/MiuiMovieController;->playPauseReplayView:Landroid/widget/ImageView;
 
-    const v6, 0x60201d6
+    const v6, 0x602004f
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 87
     iget-object v5, p0, Landroid/widget/MiuiMovieController;->playPauseReplayView:Landroid/widget/ImageView;
 
-    const v6, 0x60201d9
+    const v6, 0x6020052
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
@@ -559,7 +559,7 @@
 
     if-ne v0, v3, :cond_3e
 
-    const v0, 0x60201d6
+    const v0, 0x602004f
 
     :goto_1b
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -608,12 +608,12 @@
 
     if-ne v0, v3, :cond_48
 
-    const v0, 0x60201d7
+    const v0, 0x6020050
 
     goto :goto_1b
 
     :cond_48
-    const v0, 0x60201d8
+    const v0, 0x6020051
 
     goto :goto_1b
 

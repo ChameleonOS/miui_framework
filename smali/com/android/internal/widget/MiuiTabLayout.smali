@@ -57,7 +57,7 @@
     .line 31
     iget v3, p0, Lcom/android/internal/widget/MiuiTabLayout;->mTabBackgroundId:I
 
-    const v4, 0x60201c0
+    const v4, 0x60201c5
 
     invoke-static {p1, v4}, Lmiui/util/ResourceMapper;->resolveReference(Landroid/content/Context;I)I
 
@@ -69,11 +69,11 @@
     iput-boolean v1, p0, Lcom/android/internal/widget/MiuiTabLayout;->mMIUITheme:Z
 
     .line 32
-    const v1, 0x60201c1
+    const v1, 0x60200f1
 
-    const v2, 0x60201c2
+    const v2, 0x60200f2
 
-    const v3, 0x60201c3
+    const v3, 0x60200f3
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/internal/widget/MiuiTabLayout;->changeBackgroundRes(III)Z
 

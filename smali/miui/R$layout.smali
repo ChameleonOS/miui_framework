@@ -39,8 +39,6 @@
 
 .field public static final boot_msg:I = 0x603002e
 
-.field public static final contact_header:I = 0x6030000
-
 .field public static final datetime_picker:I = 0x603001f
 
 .field public static final editor_custom_action_bar:I = 0x6030020
@@ -133,7 +131,7 @@
 
 .field public static final resource_operation_view:I = 0x603002a
 
-.field public static final screen_on_proximity_sensor_guide:I = 0x6030042
+.field public static final screen_on_proximity_sensor_guide:I = 0x6030000
 
 .field public static final text_copy_float_panel:I = 0x6030037
 
@@ -155,7 +153,7 @@
     .registers 1
 
     .prologue
-    .line 1448
+    .line 1377
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -45,17 +45,13 @@
 
 .field public static final lock_screen_controlview_fade_out:I = 0x6040004
 
-.field public static final magnifier_enter:I = 0x6040010
+.field public static final miui_phone_close_enter:I = 0x6040012
 
-.field public static final magnifier_exit:I = 0x6040011
+.field public static final miui_phone_close_exit:I = 0x6040013
 
-.field public static final miui_phone_close_enter:I = 0x6040014
+.field public static final miui_phone_open_enter:I = 0x6040010
 
-.field public static final miui_phone_close_exit:I = 0x6040015
-
-.field public static final miui_phone_open_enter:I = 0x6040012
-
-.field public static final miui_phone_open_exit:I = 0x6040013
+.field public static final miui_phone_open_exit:I = 0x6040011
 
 .field public static final miui_player_control_view_out:I = 0x604000f
 

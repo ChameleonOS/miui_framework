@@ -31,7 +31,7 @@
 
 .field public static final android_ab_bottom_solid_inverse_holo:I = 0x602012c
 
-.field public static final android_ab_bottom_solid_light_holo:I = 0x60201be
+.field public static final android_ab_bottom_solid_light_holo:I = 0x60201c3
 
 .field public static final android_ab_solid_light_holo:I = 0x6020169
 
@@ -45,7 +45,7 @@
 
 .field public static final android_btn_check_on_holo_light:I = 0x6020131
 
-.field public static final android_btn_close:I = 0x60201d3
+.field public static final android_btn_close:I = 0x602004c
 
 .field public static final android_btn_default_normal:I = 0x6020136
 
@@ -71,49 +71,49 @@
 
 .field public static final android_dialog_full_holo_light:I = 0x602016f
 
-.field public static final android_divider_horizontal_dark:I = 0x6020201
+.field public static final android_divider_horizontal_dark:I = 0x6020028
 
-.field public static final android_edit_text_holo_dark:I = 0x60201d4
+.field public static final android_edit_text_holo_dark:I = 0x602004d
 
 .field public static final android_expander_ic_maximized:I = 0x602015d
 
 .field public static final android_expander_ic_minimized:I = 0x6020130
 
-.field public static final android_ic_action_assist_generic:I = 0x60201fe
+.field public static final android_ic_action_assist_generic:I = 0x6020151
 
 .field public static final android_ic_aggregated:I = 0x6020043
 
 .field public static final android_ic_emergency:I = 0x6020127
 
-.field public static final android_ic_lock_idle_lock:I = 0x6020200
+.field public static final android_ic_lock_idle_lock:I = 0x6020027
 
 .field public static final android_ic_lockscreen_chevron_left:I = 0x602014f
 
 .field public static final android_ic_lockscreen_chevron_right:I = 0x602014e
 
-.field public static final android_ic_lockscreen_glowdot:I = 0x602020a
+.field public static final android_ic_lockscreen_glowdot:I = 0x60201c6
 
 .field public static final android_ic_lockscreen_handle_pressed:I = 0x6020150
 
 .field public static final android_ic_menu_archive:I = 0x602015e
 
-.field public static final android_ic_menu_forward:I = 0x60201d1
+.field public static final android_ic_menu_forward:I = 0x602005f
 
 .field public static final android_ic_menu_goto:I = 0x6020160
 
 .field public static final android_ic_menu_home:I = 0x6020139
 
-.field public static final android_ic_menu_moreoverflow_normal_holo_dark:I = 0x60201d0
+.field public static final android_ic_menu_moreoverflow_normal_holo_dark:I = 0x602005e
 
 .field public static final android_ic_menu_play_clip:I = 0x602013a
 
 .field public static final android_ic_menu_refresh:I = 0x6020138
 
-.field public static final android_ic_menu_stop:I = 0x60201d2
+.field public static final android_ic_menu_stop:I = 0x602004b
 
 .field public static final android_ic_sysbar_quicksettings:I = 0x602016e
 
-.field public static final android_item_background_holo_light:I = 0x6020202
+.field public static final android_item_background_holo_light:I = 0x6020029
 
 .field public static final android_list_divider_holo_light:I = 0x602012f
 
@@ -123,7 +123,7 @@
 
 .field public static final android_list_selector_background_focused:I = 0x6020167
 
-.field public static final android_list_selector_disabled_holo_dark:I = 0x60201ff
+.field public static final android_list_selector_disabled_holo_dark:I = 0x602014d
 
 .field public static final android_list_selector_pressed_holo_dark:I = 0x602014a
 
@@ -131,9 +131,9 @@
 
 .field public static final android_menu_selector:I = 0x602013b
 
-.field public static final android_notification_item_background_color:I = 0x60201fc
+.field public static final android_notification_item_background_color:I = 0x60201c7
 
-.field public static final android_notification_item_background_color_pressed:I = 0x60201fd
+.field public static final android_notification_item_background_color_pressed:I = 0x602014b
 
 .field public static final android_notification_template_icon_bg:I = 0x6020140
 
@@ -143,7 +143,7 @@
 
 .field public static final android_overscroll_glow:I = 0x602013d
 
-.field public static final android_quickcontact_badge_overlay_dark:I = 0x602020b
+.field public static final android_quickcontact_badge_overlay_dark:I = 0x602014c
 
 .field public static final android_scrubber_control_disabled_holo:I = 0x6020143
 
@@ -165,7 +165,7 @@
 
 .field public static final android_sym_app_on_sd_unavailable_icon:I = 0x602015f
 
-.field public static final android_tab_indicator_ab_holo:I = 0x60201c0
+.field public static final android_tab_indicator_ab_holo:I = 0x60201c5
 
 .field public static final android_tab_selected_holo:I = 0x602012a
 
@@ -183,7 +183,7 @@
 
 .field public static final arrow_up:I = 0x6020007
 
-.field public static final bg_vidcontrol:I = 0x60201d9
+.field public static final bg_vidcontrol:I = 0x6020052
 
 .field public static final boot_msg_animation:I = 0x602019d
 
@@ -199,7 +199,7 @@
 
 .field public static final boot_msg_animation_5:I = 0x60201a3
 
-.field public static final boot_msg_bg:I = 0x60201e4
+.field public static final boot_msg_bg:I = 0x6020034
 
 .field public static final boot_msg_icon:I = 0x60201a4
 
@@ -209,89 +209,23 @@
 
 .field public static final bottom_button_bar_pressed:I = 0x602000a
 
-.field public static final bottom_button_left:I = 0x602000b
+.field public static final btn_bar:I = 0x60201c0
 
-.field public static final bottom_button_left_normal:I = 0x602000c
+.field public static final btn_bar_normal:I = 0x60201c1
 
-.field public static final bottom_button_left_pressed:I = 0x602000d
+.field public static final btn_bar_pressed:I = 0x60201c2
 
-.field public static final bottom_button_middle:I = 0x602000e
+.field public static final btn_code_lock_background:I = 0x6020033
 
-.field public static final bottom_button_middle_normal:I = 0x602000f
+.field public static final btn_code_lock_default_holo:I = 0x6020055
 
-.field public static final bottom_button_middle_pressed:I = 0x6020010
+.field public static final btn_code_lock_touched_holo:I = 0x6020056
 
-.field public static final bottom_button_right:I = 0x6020011
+.field public static final btn_title:I = 0x60201bd
 
-.field public static final bottom_button_right_normal:I = 0x6020012
+.field public static final btn_title_normal:I = 0x60201be
 
-.field public static final bottom_button_right_pressed:I = 0x6020013
-
-.field public static final btn_bar:I = 0x6020014
-
-.field public static final btn_bar_delete:I = 0x6020015
-
-.field public static final btn_bar_delete_disable:I = 0x6020016
-
-.field public static final btn_bar_delete_normal:I = 0x6020017
-
-.field public static final btn_bar_delete_pressed:I = 0x6020018
-
-.field public static final btn_bar_normal:I = 0x6020019
-
-.field public static final btn_bar_pressed:I = 0x602001a
-
-.field public static final btn_bar_secondary:I = 0x602001b
-
-.field public static final btn_bar_secondary_normal:I = 0x602001c
-
-.field public static final btn_bottom:I = 0x602001d
-
-.field public static final btn_bottom_last:I = 0x602001e
-
-.field public static final btn_bottom_last_normal:I = 0x602001f
-
-.field public static final btn_bottom_last_pressed:I = 0x6020020
-
-.field public static final btn_bottom_normal:I = 0x6020021
-
-.field public static final btn_bottom_pressed:I = 0x6020022
-
-.field public static final btn_bottom_secondary:I = 0x6020023
-
-.field public static final btn_code_lock_background:I = 0x60201e3
-
-.field public static final btn_code_lock_default_holo:I = 0x60201dc
-
-.field public static final btn_code_lock_touched_holo:I = 0x60201dd
-
-.field public static final btn_delete:I = 0x6020024
-
-.field public static final btn_delete_normal:I = 0x6020025
-
-.field public static final btn_delete_pressed:I = 0x6020026
-
-.field public static final btn_edit_contact:I = 0x6020027
-
-.field public static final btn_edit_contact_normal:I = 0x6020028
-
-.field public static final btn_edit_contact_pressed:I = 0x6020029
-
-.field public static final btn_secondary:I = 0x602002a
-
-.field public static final btn_secondary_normal:I = 0x602002b
-
-.field public static final btn_secondary_pressed:I = 0x602002c
-
-.field public static final btn_title:I = 0x602002d
-
-.field public static final btn_title_normal:I = 0x602002e
-
-.field public static final btn_title_pressed:I = 0x602002f
-
-.field public static final contact_header_star:I = 0x6020030
-
-.field public static final contact_photo:I = 0x6020031
+.field public static final btn_title_pressed:I = 0x60201bf
 
 .field public static final custom_action_bar_bg:I = 0x6020126
 
@@ -309,45 +243,39 @@
 
 .field public static final emergency_btn_bg:I = 0x6020035
 
-.field public static final expander_close_holo_light:I = 0x60201bd
+.field public static final expander_close_holo_light:I = 0x6020018
 
-.field public static final expander_group_header_bg:I = 0x60201bf
+.field public static final expander_group_header_bg:I = 0x60201c4
 
 .field public static final expander_group_holo_light:I = 0x60201bb
 
 .field public static final expander_open_holo_light:I = 0x60201bc
 
-.field public static final expandlistview_header_background:I = 0x6020037
+.field public static final file_icon_default:I = 0x6020017
 
-.field public static final expandlistview_header_background_normal:I = 0x6020038
+.field public static final file_icon_mid:I = 0x602000e
 
-.field public static final expandlistview_header_background_pressed:I = 0x6020039
+.field public static final file_icon_mp3:I = 0x602000b
 
-.field public static final file_icon_default:I = 0x60201f1
+.field public static final file_icon_office:I = 0x6020012
 
-.field public static final file_icon_mid:I = 0x60201e8
+.field public static final file_icon_pdf:I = 0x6020013
 
-.field public static final file_icon_mp3:I = 0x60201e5
+.field public static final file_icon_picture:I = 0x6020010
 
-.field public static final file_icon_office:I = 0x60201ec
+.field public static final file_icon_rar:I = 0x6020016
 
-.field public static final file_icon_pdf:I = 0x60201ed
+.field public static final file_icon_theme:I = 0x6020015
 
-.field public static final file_icon_picture:I = 0x60201ea
+.field public static final file_icon_txt:I = 0x6020011
 
-.field public static final file_icon_rar:I = 0x60201f0
+.field public static final file_icon_video:I = 0x602000f
 
-.field public static final file_icon_theme:I = 0x60201ef
+.field public static final file_icon_wav:I = 0x602000d
 
-.field public static final file_icon_txt:I = 0x60201eb
+.field public static final file_icon_wma:I = 0x602000c
 
-.field public static final file_icon_video:I = 0x60201e9
-
-.field public static final file_icon_wav:I = 0x60201e7
-
-.field public static final file_icon_wma:I = 0x60201e6
-
-.field public static final file_icon_zip:I = 0x60201ee
+.field public static final file_icon_zip:I = 0x6020014
 
 .field public static final flag_downloaded:I = 0x602003a
 
@@ -381,7 +309,7 @@
 
 .field public static final ic_audio_bt_mute:I = 0x6020157
 
-.field public static final ic_audio_media:I = 0x60201f9
+.field public static final ic_audio_media:I = 0x6020020
 
 .field public static final ic_audio_notification:I = 0x6020158
 
@@ -395,9 +323,9 @@
 
 .field public static final ic_audio_ring_notif_vibrate:I = 0x6020117
 
-.field public static final ic_audio_system:I = 0x602014d
+.field public static final ic_audio_system:I = 0x6020021
 
-.field public static final ic_audio_system_mute:I = 0x6020151
+.field public static final ic_audio_system_mute:I = 0x6020022
 
 .field public static final ic_audio_vol:I = 0x6020118
 
@@ -413,23 +341,17 @@
 
 .field public static final ic_contact_unknown_picture:I = 0x602004a
 
-.field public static final ic_expanded_preference_first_normal:I = 0x602004b
-
-.field public static final ic_expanded_preference_last_normal:I = 0x602004c
-
-.field public static final ic_expanded_preference_middle_normal:I = 0x602004d
-
 .field public static final ic_key_home:I = 0x6020120
 
-.field public static final ic_list_sync_anim:I = 0x6020203
+.field public static final ic_list_sync_anim:I = 0x602002a
 
 .field public static final ic_lock_airplane_mode:I = 0x602011a
 
 .field public static final ic_lock_airplane_mode_off:I = 0x602011b
 
-.field public static final ic_lock_audio_vol:I = 0x602014c
+.field public static final ic_lock_audio_vol:I = 0x6020023
 
-.field public static final ic_lock_audio_vol_mute:I = 0x602014b
+.field public static final ic_lock_audio_vol_mute:I = 0x6020024
 
 .field public static final ic_lock_power_off:I = 0x602011c
 
@@ -438,42 +360,6 @@
 .field public static final ic_lock_privacy_mode_off:I = 0x602011f
 
 .field public static final ic_lock_reboot:I = 0x602011d
-
-.field public static final ic_media_ff_disabled:I = 0x602004e
-
-.field public static final ic_media_ff_pressed:I = 0x602004f
-
-.field public static final ic_media_ff_selector:I = 0x6020050
-
-.field public static final ic_media_next_disabled:I = 0x6020051
-
-.field public static final ic_media_next_pressed:I = 0x6020052
-
-.field public static final ic_media_next_selector:I = 0x6020053
-
-.field public static final ic_media_pause_disabled:I = 0x6020054
-
-.field public static final ic_media_pause_pressed:I = 0x6020055
-
-.field public static final ic_media_pause_selector:I = 0x6020056
-
-.field public static final ic_media_play_disabled:I = 0x6020057
-
-.field public static final ic_media_play_pressed:I = 0x6020058
-
-.field public static final ic_media_play_selector:I = 0x6020059
-
-.field public static final ic_media_previous_disabled:I = 0x602005a
-
-.field public static final ic_media_previous_pressed:I = 0x602005b
-
-.field public static final ic_media_previous_selector:I = 0x602005c
-
-.field public static final ic_media_rew_disabled:I = 0x602005d
-
-.field public static final ic_media_rew_pressed:I = 0x602005e
-
-.field public static final ic_media_rew_selector:I = 0x602005f
 
 .field public static final ic_menu_cancel:I = 0x6020121
 
@@ -491,37 +377,31 @@
 
 .field public static final ic_menu_trash_holo_light:I = 0x6020116
 
-.field public static final ic_sync_anim_holo:I = 0x6020204
+.field public static final ic_sync_anim_holo:I = 0x602002b
 
-.field public static final ic_sync_error_holo:I = 0x6020205
+.field public static final ic_sync_error_holo:I = 0x602002c
 
-.field public static final ic_vidcontrol_pause:I = 0x60201d7
+.field public static final ic_vidcontrol_pause:I = 0x6020050
 
-.field public static final ic_vidcontrol_play:I = 0x60201d6
+.field public static final ic_vidcontrol_play:I = 0x602004f
 
-.field public static final ic_vidcontrol_reload:I = 0x60201d8
+.field public static final ic_vidcontrol_reload:I = 0x6020051
 
-.field public static final indicator_code_lock_drag_direction_green_up:I = 0x60201e1
+.field public static final indicator_code_lock_drag_direction_green_up:I = 0x6020039
 
-.field public static final indicator_code_lock_drag_direction_red_up:I = 0x60201e2
+.field public static final indicator_code_lock_drag_direction_red_up:I = 0x6020032
 
-.field public static final indicator_code_lock_point_area_default_holo:I = 0x60201de
+.field public static final indicator_code_lock_point_area_default_holo:I = 0x6020057
 
-.field public static final indicator_code_lock_point_area_green_holo:I = 0x60201df
+.field public static final indicator_code_lock_point_area_green_holo:I = 0x6020058
 
-.field public static final indicator_code_lock_point_area_red_holo:I = 0x60201e0
+.field public static final indicator_code_lock_point_area_red_holo:I = 0x6020038
 
 .field public static final list_fold_background:I = 0x602019c
 
 .field public static final list_fold_background_normal:I = 0x602019a
 
 .field public static final list_fold_background_pressed:I = 0x602019b
-
-.field public static final list_header_add:I = 0x6020061
-
-.field public static final list_header_add_normal:I = 0x6020062
-
-.field public static final list_header_add_pressed:I = 0x6020063
 
 .field public static final list_item_background:I = 0x6020064
 
@@ -785,9 +665,9 @@
 
 .field public static final lock_screen_torch_cover:I = 0x60200be
 
-.field public static final magnifier:I = 0x60201da
+.field public static final magnifier:I = 0x6020053
 
-.field public static final magnifier_mask:I = 0x60201db
+.field public static final magnifier_mask:I = 0x6020054
 
 .field public static final menu_divider_vertical:I = 0x60200bf
 
@@ -797,7 +677,7 @@
 
 .field public static final popup_common:I = 0x60200c2
 
-.field public static final preview_next:I = 0x60200c4
+.field public static final preview_next:I = 0x60200cc
 
 .field public static final preview_next_d:I = 0x60200c5
 
@@ -813,21 +693,11 @@
 
 .field public static final preview_previous_p:I = 0x60200cb
 
-.field public static final progress_background:I = 0x60200cc
-
 .field public static final progress_popup_white:I = 0x60200cd
 
-.field public static final progress_primary_seek:I = 0x60200ce
+.field public static final resource_circle_progressbar_determinate:I = 0x602001e
 
-.field public static final progress_secondary:I = 0x60200cf
-
-.field public static final progress_seekbar:I = 0x60200d0
-
-.field public static final quickcontact_badge_big:I = 0x60200d1
-
-.field public static final resource_circle_progressbar_determinate:I = 0x60201f7
-
-.field public static final resource_circle_progressbar_indeterminate:I = 0x60201f8
+.field public static final resource_circle_progressbar_indeterminate:I = 0x602001f
 
 .field public static final resource_component:I = 0x60201af
 
@@ -847,9 +717,7 @@
 
 .field public static final resource_detail_p:I = 0x60201ab
 
-.field public static final resource_detail_title_bg:I = 0x6020032
-
-.field public static final resource_download_n:I = 0x60201f2
+.field public static final resource_download_n:I = 0x6020019
 
 .field public static final resource_info_bg:I = 0x60201b0
 
@@ -865,7 +733,7 @@
 
 .field public static final resource_info_rating_star_on:I = 0x60201b3
 
-.field public static final resource_info_title:I = 0x6020033
+.field public static final resource_info_title:I = 0x60200c4
 
 .field public static final resource_operation_view_bg:I = 0x60201b7
 
@@ -873,21 +741,21 @@
 
 .field public static final resource_preview_empty:I = 0x60201ba
 
-.field public static final resource_preview_font_bg:I = 0x6020206
+.field public static final resource_preview_font_bg:I = 0x602002d
 
-.field public static final resource_ringtone_play_bg:I = 0x60201f3
+.field public static final resource_ringtone_play_bg:I = 0x602001a
 
-.field public static final resource_ringtone_play_fg:I = 0x60201f4
+.field public static final resource_ringtone_play_fg:I = 0x602001b
 
-.field public static final resource_spinner_inner:I = 0x60201f5
+.field public static final resource_spinner_inner:I = 0x602001c
 
-.field public static final resource_spinner_outer:I = 0x60201f6
+.field public static final resource_spinner_outer:I = 0x602001d
 
 .field public static final resource_thumbnail_bg:I = 0x6020112
 
 .field public static final resource_thumbnail_empty:I = 0x6020036
 
-.field public static final resource_thumbnail_mask:I = 0x6020034
+.field public static final resource_thumbnail_mask:I = 0x6020037
 
 .field public static final ringtone_pause:I = 0x60200d2
 
@@ -923,7 +791,7 @@
 
 .field public static final rounded_corner_top_right:I = 0x60200e2
 
-.field public static final screen_on_proximity_sensor_hint:I = 0x602020c
+.field public static final screen_on_proximity_sensor_hint:I = 0x6020031
 
 .field public static final screen_view_arrow_left:I = 0x60200e3
 
@@ -943,7 +811,7 @@
 
 .field public static final screen_view_slide_bar_bg:I = 0x60200eb
 
-.field public static final scrubber_knob:I = 0x60201d5
+.field public static final scrubber_knob:I = 0x602004e
 
 .field public static final sd_not_available:I = 0x60200ec
 
@@ -954,12 +822,6 @@
 .field public static final search_normal:I = 0x60200ef
 
 .field public static final search_pressed:I = 0x60200f0
-
-.field public static final secondary_button:I = 0x60200f1
-
-.field public static final secondary_button_normal:I = 0x60200f2
-
-.field public static final secondary_button_pressed:I = 0x60200f3
 
 .field public static final secondary_tab_left:I = 0x60200f4
 
@@ -981,9 +843,9 @@
 
 .field public static final secondary_title_background:I = 0x60200fd
 
-.field public static final select_text_highlight:I = 0x60201fa
+.field public static final select_text_highlight:I = 0x6020025
 
-.field public static final select_text_magnifier:I = 0x60201fb
+.field public static final select_text_magnifier:I = 0x6020026
 
 .field public static final sliding_btn_bar:I = 0x60200fe
 
@@ -1007,11 +869,11 @@
 
 .field public static final sortable_list_dragging_item_shadow:I = 0x6020108
 
-.field public static final spinner_bg:I = 0x6020207
+.field public static final spinner_bg:I = 0x602002e
 
-.field public static final spinner_bg_n:I = 0x6020208
+.field public static final spinner_bg_n:I = 0x602002f
 
-.field public static final spinner_bg_p:I = 0x6020209
+.field public static final spinner_bg_p:I = 0x6020030
 
 .field public static final stat_sys_call_record:I = 0x6020109
 
@@ -1019,35 +881,35 @@
 
 .field public static final tab_divider:I = 0x60201b9
 
-.field public static final tab_indicator_ab_holo:I = 0x60201c1
+.field public static final tab_indicator_ab_holo:I = 0x60200f1
 
-.field public static final tab_indicator_ab_holo_left:I = 0x60201c2
+.field public static final tab_indicator_ab_holo_left:I = 0x60200f2
 
-.field public static final tab_indicator_ab_holo_right:I = 0x60201c3
+.field public static final tab_indicator_ab_holo_right:I = 0x60200f3
 
-.field public static final tab_selected_holo:I = 0x60201c4
+.field public static final tab_selected_holo:I = 0x60200d1
 
-.field public static final tab_selected_holo_left:I = 0x60201c8
+.field public static final tab_selected_holo_left:I = 0x6020061
 
-.field public static final tab_selected_holo_right:I = 0x60201cc
+.field public static final tab_selected_holo_right:I = 0x602005a
 
-.field public static final tab_selected_pressed_holo:I = 0x60201c5
+.field public static final tab_selected_pressed_holo:I = 0x60200d0
 
-.field public static final tab_selected_pressed_holo_left:I = 0x60201c9
+.field public static final tab_selected_pressed_holo_left:I = 0x6020062
 
-.field public static final tab_selected_pressed_holo_right:I = 0x60201cd
+.field public static final tab_selected_pressed_holo_right:I = 0x602005b
 
-.field public static final tab_unselected_holo:I = 0x60201c6
+.field public static final tab_unselected_holo:I = 0x60200ce
 
-.field public static final tab_unselected_holo_left:I = 0x60201ca
+.field public static final tab_unselected_holo_left:I = 0x6020063
 
-.field public static final tab_unselected_holo_right:I = 0x60201ce
+.field public static final tab_unselected_holo_right:I = 0x602005c
 
-.field public static final tab_unselected_pressed_holo:I = 0x60201c7
+.field public static final tab_unselected_pressed_holo:I = 0x60200cf
 
-.field public static final tab_unselected_pressed_holo_left:I = 0x60201cb
+.field public static final tab_unselected_pressed_holo_left:I = 0x6020059
 
-.field public static final tab_unselected_pressed_holo_right:I = 0x60201cf
+.field public static final tab_unselected_pressed_holo_right:I = 0x602005d
 
 .field public static final textview_floatpanel_button_bg:I = 0x602010a
 
@@ -1071,7 +933,7 @@
     .registers 1
 
     .prologue
-    .line 506
+    .line 504
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

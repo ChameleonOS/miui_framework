@@ -2108,7 +2108,7 @@
     .parameter "flags"
 
     .prologue
-    const v11, 0x60201f9
+    const v11, 0x6020020
 
     const/4 v5, 0x0
 

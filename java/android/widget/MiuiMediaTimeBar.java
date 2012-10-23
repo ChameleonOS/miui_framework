@@ -44,7 +44,7 @@ public class MiuiMediaTimeBar extends View {
             timeTextPaint.setTextAlign(android.graphics.Paint.Align.CENTER);
             timeBounds = new Rect();
             timeTextPaint.getTextBounds("0:00:00", 0, 7, timeBounds);
-            scrubber = BitmapFactory.decodeResource(getResources(), 0x60201d5);
+            scrubber = BitmapFactory.decodeResource(getResources(), 0x602004e);
             scrubberPadding = (int)(10F * displaymetrics.density);
             vPaddingInPx = (int)(30F * displaymetrics.density);
             return;

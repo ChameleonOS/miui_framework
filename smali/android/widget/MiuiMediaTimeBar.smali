@@ -200,7 +200,7 @@
 
     move-result-object v2
 
-    const v3, 0x60201d5
+    const v3, 0x602004e
 
     invoke-static {v2, v3}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

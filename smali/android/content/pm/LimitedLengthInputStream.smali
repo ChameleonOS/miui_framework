@@ -58,26 +58,26 @@
     :cond_1c
     cmp-long v0, p4, v1
 
-    if-gez v0, :cond_29
+    if-gez v0, :cond_28
 
     .line 44
     new-instance v0, Ljava/io/IOException;
 
-    const-string/jumbo v1, "length < 0"
+    const-string v1, "length < 0"
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 47
-    :cond_29
+    :cond_28
     const-wide v0, 0x7fffffffffffffffL
 
     sub-long/2addr v0, p2
 
     cmp-long v0, p4, v0
 
-    if-lez v0, :cond_3c
+    if-lez v0, :cond_3b
 
     .line 48
     new-instance v0, Ljava/io/IOException;
@@ -89,7 +89,7 @@
     throw v0
 
     .line 51
-    :cond_3c
+    :cond_3b
     add-long v0, p2, p4
 
     iput-wide v0, p0, Landroid/content/pm/LimitedLengthInputStream;->mEnd:J

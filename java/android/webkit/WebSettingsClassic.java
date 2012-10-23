@@ -2015,7 +2015,7 @@ _L1:
 
     public void setProperty(String s, String s1) {
         if(mWebView.nativeSetProperty(s, s1))
-            mWebView.invalidate();
+            mWebView.contentInvalidateAll();
     }
 
     /**

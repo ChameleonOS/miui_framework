@@ -6,6 +6,7 @@ package miui.os;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Process;
 import android.os.StatFs;
 import android.os.storage.StorageManager;
@@ -90,6 +91,16 @@ public class Environment extends android.os.Environment {
 
     public static boolean isExternalStorageMounted() {
         return "mounted".equals(getExternalStorageState());
+    }
+
+    public static boolean isExternalStorageStateChanged(Intent intent) {
+        StorageVolume storagevolume = (StorageVolume)intent.getParcelableExtra("storage_volume");
+        boolean flag;
+        if(storagevolume != null)
+            flag = isExternalPath(storagevolume.getPath());
+        else
+            flag = false;
+        return flag;
     }
 
     public static boolean isInternalStorageLow(ContentResolver contentresolver) {

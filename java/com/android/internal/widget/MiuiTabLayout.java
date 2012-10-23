@@ -21,10 +21,10 @@ public class MiuiTabLayout extends LinearLayout {
         TypedArray typedarray = context.obtainStyledAttributes(null, ai, 0x10102f3, 0);
         mTabBackgroundId = typedarray.getResourceId(0, 0);
         typedarray.recycle();
-        if(mTabBackgroundId != ResourceMapper.resolveReference(context, 0x60201c0))
+        if(mTabBackgroundId != ResourceMapper.resolveReference(context, 0x60201c5))
             flag = false;
         mMIUITheme = flag;
-        changeBackgroundRes(0x60201c1, 0x60201c2, 0x60201c3);
+        changeBackgroundRes(0x60200f1, 0x60200f2, 0x60200f3);
     }
 
     public void addView(View view, int i, android.view.ViewGroup.LayoutParams layoutparams) {

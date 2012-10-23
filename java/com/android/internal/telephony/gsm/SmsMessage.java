@@ -488,26 +488,28 @@ label0:
         super.mPdu = abyte0;
         pduparser = new PduParser(abyte0);
         super.scAddress = pduparser.getSCAddress();
-        if(super.scAddress == null);
         i = pduparser.getByte();
         mti = i & 3;
         mti;
-        JVM INSTR tableswitch 0 3: default 76
-    //                   0 87
-    //                   1 76
-    //                   2 94
-    //                   3 87;
-           goto _L1 _L2 _L1 _L3 _L2
+        JVM INSTR tableswitch 0 3: default 68
+    //                   0 79
+    //                   1 86
+    //                   2 95
+    //                   3 79;
+           goto _L1 _L2 _L3 _L4 _L2
 _L1:
         throw new RuntimeException("Unsupported message type");
 _L2:
         parseSmsDeliver(pduparser, i);
-_L5:
+_L6:
         return;
 _L3:
-        parseSmsStatusReport(pduparser, i);
-        if(true) goto _L5; else goto _L4
+        parseSmsSubmit(pduparser, i);
+        continue; /* Loop/switch isn't completed */
 _L4:
+        parseSmsStatusReport(pduparser, i);
+        if(true) goto _L6; else goto _L5
+_L5:
     }
 
     private void parseSmsDeliver(PduParser pduparser, int i) {
@@ -559,6 +561,27 @@ _L4:
                 parseUserData(pduparser, flag1);
             }
         }
+    }
+
+    private void parseSmsSubmit(PduParser pduparser, int i) {
+        boolean flag;
+        boolean flag1;
+        if((i & 0x80) == 128)
+            flag = true;
+        else
+            flag = false;
+        replyPathPresent = flag;
+        super.messageRef = pduparser.getByte();
+        recipientAddress = pduparser.getAddress();
+        if(recipientAddress != null)
+            Log.v("GSM", (new StringBuilder()).append("SMS recipient address: ").append(((SmsAddress) (recipientAddress)).address).toString());
+        protocolIdentifier = pduparser.getByte();
+        dataCodingScheme = pduparser.getByte();
+        if((i & 0x40) == 64)
+            flag1 = true;
+        else
+            flag1 = false;
+        parseUserData(pduparser, flag1);
     }
 
     private void parseUserData(PduParser pduparser, boolean flag) {
@@ -725,6 +748,17 @@ _L14:
 
     public int getProtocolIdentifier() {
         return protocolIdentifier;
+    }
+
+    public String getRecipientAddress() {
+        String s;
+        if(recipientAddress != null) {
+            s = recipientAddress.getAddressString();
+        } else {
+            Log.v("GSM", "SMS recipient address is null");
+            s = null;
+        }
+        return s;
     }
 
     public int getStatus() {

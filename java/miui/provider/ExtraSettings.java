@@ -255,6 +255,10 @@ _L2:
         public static final int DIALER_CLICK_DIAL = 0;
         public static final int DIALER_CLICK_VIEW_CONTACT = 1;
         public static final String DIALER_SHOW_CALL_LOG_NUMBER = "dialer_show_call_log_number";
+        public static final String DIAL_PAD_TOUCH_TONE = "dial_pad_touch_tone";
+        public static final int DIAL_PAD_TOUCH_TONE_DEFAULT = -1;
+        public static final int DIAL_PAD_TOUCH_TONE_HUMAN = 1;
+        public static final int DIAL_PAD_TOUCH_TONE_PIANO = 0;
         public static final String DOWNLOAD_ONLY_ON_WIFI = "download_only_on_wifi";
         public static final String ELECTRON_BEAM_ANIMATION_OFF = "electron_beam_animation_off";
         public static final String ELECTRON_BEAM_ANIMATION_ON = "electron_beam_animation_on";
@@ -315,6 +319,7 @@ _L2:
         public static final String MMS_UPLOAD_OLD_MSG_STATE = "mms_upload_old_msg_state";
         public static final int MMS_UPLOAD_OLD_MSG_STATE_INIT = 0;
         public static final int MMS_UPLOAD_OLD_MSG_STATE_NEED_PROMPT = 1;
+        public static final String MX_USED = "mx_used";
         public static final String RECENT_APPS_KEY_SHOW = "recent_apps_key_show";
         public static final String SCREENSHOT_NOTIFICATION_ENABLED = "screenshot_notification_enabled";
         public static final String SCREEN_BUTTONS_TIMEOUT = "screen_buttons_timeout";

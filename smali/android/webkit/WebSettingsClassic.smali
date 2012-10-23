@@ -1131,25 +1131,25 @@
 
     const/4 v0, 0x1
 
-    .line 1739
+    .line 1744
     if-ge p1, v0, :cond_7
 
     move p1, v0
 
-    .line 1744
+    .line 1749
     .end local p1
     :cond_6
     :goto_6
     return p1
 
-    .line 1741
+    .line 1746
     .restart local p1
     :cond_7
     if-le p1, v1, :cond_6
 
     move p1, v1
 
-    .line 1742
+    .line 1747
     goto :goto_6
 .end method
 
@@ -1157,7 +1157,7 @@
     .registers 4
 
     .prologue
-    .line 1750
+    .line 1755
     monitor-enter p0
 
     :try_start_1
@@ -1165,7 +1165,7 @@
 
     if-nez v0, :cond_13
 
-    .line 1751
+    .line 1756
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mEventHandler:Landroid/webkit/WebSettingsClassic$EventHandler;
 
     const/4 v1, 0x0
@@ -1185,13 +1185,13 @@
     :try_end_13
     .catchall {:try_start_1 .. :try_end_13} :catchall_15
 
-    .line 1754
+    .line 1759
     :cond_13
     monitor-exit p0
 
     return-void
 
-    .line 1750
+    .line 1755
     :catchall_15
     move-exception v0
 
@@ -2114,7 +2114,7 @@
     .parameter "key"
 
     .prologue
-    .line 1705
+    .line 1710
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebViewClassic;->nativeGetProperty(Ljava/lang/String;)Ljava/lang/String;
@@ -2707,7 +2707,7 @@
     .registers 1
 
     .prologue
-    .line 1735
+    .line 1740
     monitor-enter p0
 
     monitor-exit p0
@@ -4312,9 +4312,12 @@
     .registers 4
     .parameter "key"
     .parameter "value"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
 
     .prologue
-    .line 1699
+    .line 1700
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0, p1, p2}, Landroid/webkit/WebViewClassic;->nativeSetProperty(Ljava/lang/String;Ljava/lang/String;)Z
@@ -4323,12 +4326,12 @@
 
     if-eqz v0, :cond_d
 
-    .line 1700
+    .line 1705
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic;->mWebView:Landroid/webkit/WebViewClassic;
 
-    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->invalidate()V
+    invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->contentInvalidateAll()V
 
-    .line 1702
+    .line 1707
     :cond_d
     return-void
 .end method
@@ -5172,13 +5175,13 @@
     .parameter "frame"
 
     .prologue
-    .line 1714
+    .line 1719
     monitor-enter p0
 
     :try_start_1
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic;->mBrowserFrame:Landroid/webkit/BrowserFrame;
 
-    .line 1719
+    .line 1724
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mContext:Landroid/content/Context;
 
     const-string v2, "WebViewSettings"
@@ -5189,13 +5192,13 @@
 
     move-result-object v0
 
-    .line 1721
+    .line 1726
     .local v0, sp:Landroid/content/SharedPreferences;
     sget v1, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
 
     if-lez v1, :cond_1a
 
-    .line 1722
+    .line 1727
     const-string v1, "double_tap_toast_count"
 
     sget v2, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
@@ -5206,18 +5209,18 @@
 
     sput v1, Landroid/webkit/WebSettingsClassic;->mDoubleTapToastCount:I
 
-    .line 1725
+    .line 1730
     :cond_1a
     iget v1, p1, Landroid/webkit/BrowserFrame;->mNativeFrame:I
 
     invoke-direct {p0, v1}, Landroid/webkit/WebSettingsClassic;->nativeSync(I)V
 
-    .line 1726
+    .line 1731
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/webkit/WebSettingsClassic;->mSyncPending:Z
 
-    .line 1727
+    .line 1732
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic;->mEventHandler:Landroid/webkit/WebSettingsClassic$EventHandler;
 
     #calls: Landroid/webkit/WebSettingsClassic$EventHandler;->createHandler()V
@@ -5225,12 +5228,12 @@
     :try_end_27
     .catchall {:try_start_1 .. :try_end_27} :catchall_29
 
-    .line 1728
+    .line 1733
     monitor-exit p0
 
     return-void
 
-    .line 1714
+    .line 1719
     .end local v0           #sp:Landroid/content/SharedPreferences;
     :catchall_29
     move-exception v1

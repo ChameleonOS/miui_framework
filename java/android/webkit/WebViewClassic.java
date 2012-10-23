@@ -3768,7 +3768,7 @@ _L3:
 _L1:
         Rect rect2 = new Rect();
         if(mSelectMagnifier == null)
-            mSelectMagnifier = mContext.getResources().getDrawable(0x60201fb);
+            mSelectMagnifier = mContext.getResources().getDrawable(0x6020026);
         rect3 = new Rect();
         mSelectMagnifier.getPadding(rect3);
         f = mContext.getResources().getDisplayMetrics().density / 1.5F;
@@ -3795,7 +3795,7 @@ _L1:
         mSelectMagnifier.setBounds(rect2.left, rect2.top, rect2.left + j * 2, i + rect2.top);
         mSelectMagnifier.draw(canvas);
         if(mSelectHighlight == null)
-            mSelectHighlight = mContext.getResources().getDrawable(0x60201fa);
+            mSelectHighlight = mContext.getResources().getDrawable(0x6020025);
         l = (int)(f * (float)rect3.left);
         i1 = (int)(f * (float)rect3.top);
         j1 = (int)(f * (float)rect3.right);
