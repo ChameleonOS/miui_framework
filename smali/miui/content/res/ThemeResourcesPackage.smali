@@ -236,22 +236,20 @@
     return-object v0
 .end method
 
-.method public getThemeFileStream(ILjava/lang/String;)Ljava/io/InputStream;
-    .registers 7
+.method public getThemeFileStream(ILjava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .registers 6
     .parameter "cookieType"
     .parameter "fileName"
 
     .prologue
-    const/4 v3, 0x0
-
     .line 77
     const/4 v0, 0x0
 
     .line 78
-    .local v0, ret:Ljava/io/InputStream;
+    .local v0, info:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     const/4 v1, 0x1
 
-    if-ne v1, p1, :cond_27
+    if-ne v1, p1, :cond_26
 
     .line 79
     new-instance v1, Ljava/lang/StringBuilder;
@@ -272,32 +270,32 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1, v3}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {p0, v1}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
     .line 80
-    if-nez v0, :cond_26
+    if-nez v0, :cond_25
 
     .line 81
     invoke-static {}, Lmiui/content/res/ThemeResourcesPackage;->getSystem()Lmiui/content/res/ThemeResourcesSystem;
 
     move-result-object v1
 
-    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStream(ILjava/lang/String;)Ljava/io/InputStream;
+    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStream(ILjava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
     .line 93
-    :cond_26
-    :goto_26
+    :cond_25
+    :goto_25
     return-object v0
 
     .line 84
-    :cond_27
+    :cond_26
     const/4 v1, 0x2
 
-    if-ne v1, p1, :cond_4c
+    if-ne v1, p1, :cond_4b
 
     .line 85
     new-instance v1, Ljava/lang/StringBuilder;
@@ -318,31 +316,31 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1, v3}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {p0, v1}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
     .line 86
-    if-nez v0, :cond_26
+    if-nez v0, :cond_25
 
     .line 87
     invoke-static {}, Lmiui/content/res/ThemeResourcesPackage;->getSystem()Lmiui/content/res/ThemeResourcesSystem;
 
     move-result-object v1
 
-    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStream(ILjava/lang/String;)Ljava/io/InputStream;
+    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResourcesSystem;->getThemeFileStream(ILjava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
-    goto :goto_26
+    goto :goto_25
 
     .line 91
-    :cond_4c
-    invoke-virtual {p0, p2, v3}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    :cond_4b
+    invoke-virtual {p0, p2}, Lmiui/content/res/ThemeResourcesPackage;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
-    goto :goto_26
+    goto :goto_25
 .end method
 
 .method public getThemeInt(I)Ljava/lang/Integer;

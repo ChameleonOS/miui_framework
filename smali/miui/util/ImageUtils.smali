@@ -84,28 +84,30 @@
     .prologue
     const/high16 v12, 0x4000
 
-    const/high16 v11, 0x3f80
+    const/high16 v10, 0x3f80
 
-    const/4 v8, 0x1
+    const/4 v11, 0x0
+
+    const/4 v7, 0x1
 
     .line 162
-    if-eqz p0, :cond_56
+    if-eqz p0, :cond_52
 
-    if-eqz p1, :cond_56
+    if-eqz p1, :cond_52
 
     .line 163
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v7
-
-    .line 164
-    .local v7, srcWidth:I
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
     move-result v6
 
+    .line 164
+    .local v6, srcWidth:I
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v5
+
     .line 165
-    .local v6, srcHeight:I
+    .local v5, srcHeight:I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -118,106 +120,99 @@
 
     .line 168
     .local v1, destHeight:I
-    new-instance v3, Landroid/graphics/Matrix;
+    int-to-float v8, v2
 
-    invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
+    mul-float/2addr v8, v10
 
-    .line 169
-    .local v3, matrix:Landroid/graphics/Matrix;
-    int-to-float v9, v2
+    int-to-float v9, v6
 
-    mul-float/2addr v9, v11
+    div-float/2addr v8, v9
 
-    int-to-float v10, v7
+    int-to-float v9, v1
+
+    mul-float/2addr v9, v10
+
+    int-to-float v10, v5
 
     div-float/2addr v9, v10
 
-    int-to-float v10, v1
+    invoke-static {v8, v9}, Ljava/lang/Math;->max(FF)F
 
-    mul-float/2addr v10, v11
-
-    int-to-float v11, v6
-
-    div-float/2addr v10, v11
-
-    invoke-static {v9, v10}, Ljava/lang/Math;->max(FF)F
-
-    move-result v5
+    move-result v4
 
     .line 170
-    .local v5, ratio:F
-    invoke-virtual {v3, v5, v5}, Landroid/graphics/Matrix;->setScale(FF)V
+    .local v4, ratio:F
+    new-instance v3, Landroid/graphics/Paint;
+
+    invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
     .line 171
-    int-to-float v9, v2
+    .local v3, paint:Landroid/graphics/Paint;
+    invoke-virtual {v3, v7}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    int-to-float v10, v7
+    .line 172
+    invoke-virtual {v3, v7}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    mul-float/2addr v10, v5
+    .line 173
+    invoke-virtual {v3, v7}, Landroid/graphics/Paint;->setDither(Z)V
+
+    .line 175
+    new-instance v0, Landroid/graphics/Canvas;
+
+    invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 176
+    .local v0, canvas:Landroid/graphics/Canvas;
+    int-to-float v8, v2
+
+    int-to-float v9, v6
+
+    mul-float/2addr v9, v4
+
+    sub-float/2addr v8, v9
+
+    div-float/2addr v8, v12
+
+    int-to-float v9, v1
+
+    int-to-float v10, v5
+
+    mul-float/2addr v10, v4
 
     sub-float/2addr v9, v10
 
     div-float/2addr v9, v12
 
-    int-to-float v10, v1
+    invoke-virtual {v0, v8, v9}, Landroid/graphics/Canvas;->translate(FF)V
 
-    int-to-float v11, v6
-
-    mul-float/2addr v11, v5
-
-    sub-float/2addr v10, v11
-
-    div-float/2addr v10, v12
-
-    invoke-virtual {v3, v9, v10}, Landroid/graphics/Matrix;->postTranslate(FF)Z
-
-    .line 173
-    new-instance v4, Landroid/graphics/Paint;
-
-    invoke-direct {v4}, Landroid/graphics/Paint;-><init>()V
-
-    .line 174
-    .local v4, paint:Landroid/graphics/Paint;
-    invoke-virtual {v4, v8}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
-
-    .line 175
-    invoke-virtual {v4, v8}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    .line 176
-    invoke-virtual {v4, v8}, Landroid/graphics/Paint;->setDither(Z)V
+    .line 177
+    invoke-virtual {v0, v4, v4}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 178
-    new-instance v0, Landroid/graphics/Canvas;
+    invoke-virtual {v0, p0, v11, v11, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 179
-    .local v0, canvas:Landroid/graphics/Canvas;
-    invoke-virtual {v0, p0, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
+    .line 180
+    if-eqz p2, :cond_51
 
     .line 181
-    if-eqz p2, :cond_55
-
-    .line 182
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 186
+    .line 185
     .end local v0           #canvas:Landroid/graphics/Canvas;
     .end local v1           #destHeight:I
     .end local v2           #destWidth:I
-    .end local v3           #matrix:Landroid/graphics/Matrix;
-    .end local v4           #paint:Landroid/graphics/Paint;
-    .end local v5           #ratio:F
-    .end local v6           #srcHeight:I
-    .end local v7           #srcWidth:I
-    :cond_55
-    :goto_55
-    return v8
+    .end local v3           #paint:Landroid/graphics/Paint;
+    .end local v4           #ratio:F
+    .end local v5           #srcHeight:I
+    .end local v6           #srcWidth:I
+    :cond_51
+    :goto_51
+    return v7
 
-    :cond_56
-    const/4 v8, 0x0
+    :cond_52
+    const/4 v7, 0x0
 
-    goto :goto_55
+    goto :goto_51
 .end method
 
 .method public static final getBitmap(Lmiui/util/InputStreamLoader;I)Landroid/graphics/Bitmap;
@@ -628,7 +623,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 190
+    .line 189
     if-eqz p0, :cond_9
 
     if-eqz p1, :cond_9
@@ -637,26 +632,26 @@
 
     if-ge p3, v3, :cond_b
 
-    .line 191
+    .line 190
     :cond_9
     const/4 v2, 0x0
 
-    .line 209
+    .line 208
     :cond_a
     :goto_a
     return v2
 
-    .line 194
+    .line 193
     :cond_b
     const/4 v2, 0x0
 
-    .line 195
+    .line 194
     .local v2, result:Z
     invoke-static {p0}, Lmiui/util/ImageUtils;->getBitmapSize(Lmiui/util/InputStreamLoader;)Landroid/graphics/BitmapFactory$Options;
 
     move-result-object v1
 
-    .line 196
+    .line 195
     .local v1, options:Landroid/graphics/BitmapFactory$Options;
     iget v3, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
@@ -666,7 +661,7 @@
 
     if-lez v3, :cond_a
 
-    .line 200
+    .line 199
     iget v3, v1, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     if-ne v3, p2, :cond_25
@@ -675,29 +670,29 @@
 
     if-ne v3, p3, :cond_25
 
-    .line 201
+    .line 200
     invoke-static {p0, p1}, Lmiui/util/ImageUtils;->saveToFile(Lmiui/util/InputStreamLoader;Ljava/lang/String;)Z
 
     move-result v2
 
     goto :goto_a
 
-    .line 203
+    .line 202
     :cond_25
     invoke-static {p0, p2, p3}, Lmiui/util/ImageUtils;->getBitmap(Lmiui/util/InputStreamLoader;II)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 204
+    .line 203
     .local v0, destBmp:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_a
 
-    .line 205
+    .line 204
     invoke-static {v0, p1}, Lmiui/util/ImageUtils;->saveToFile(Landroid/graphics/Bitmap;Ljava/lang/String;)Z
 
     move-result v2
 
-    .line 206
+    .line 205
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_a
@@ -709,16 +704,16 @@
     .parameter "path"
 
     .prologue
-    .line 214
+    .line 213
     if-eqz p0, :cond_14
 
-    .line 215
+    .line 214
     :try_start_2
     new-instance v0, Ljava/io/FileOutputStream;
 
     invoke-direct {v0, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
-    .line 216
+    .line 215
     .local v0, outputStream:Ljava/io/FileOutputStream;
     sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -726,24 +721,24 @@
 
     invoke-virtual {p0, v1, v2, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 217
+    .line 216
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_11
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_11} :catch_13
 
-    .line 218
+    .line 217
     const/4 v1, 0x1
 
-    .line 222
+    .line 221
     .end local v0           #outputStream:Ljava/io/FileOutputStream;
     :goto_12
     return v1
 
-    .line 220
+    .line 219
     :catch_13
     move-exception v1
 
-    .line 222
+    .line 221
     :cond_14
     const/4 v1, 0x0
 
@@ -756,44 +751,44 @@
     .parameter "path"
 
     .prologue
-    .line 226
+    .line 225
     const/4 v2, 0x0
 
-    .line 228
+    .line 227
     .local v2, result:Z
     :try_start_1
     new-instance v1, Ljava/io/FileOutputStream;
 
     invoke-direct {v1, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
 
-    .line 229
+    .line 228
     .local v1, outputStream:Ljava/io/FileOutputStream;
     invoke-virtual {p0}, Lmiui/util/InputStreamLoader;->get()Ljava/io/InputStream;
 
     move-result-object v0
 
-    .line 230
+    .line 229
     .local v0, inputStream:Ljava/io/InputStream;
     invoke-static {v0, v1}, Llibcore/io/Streams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
 
-    .line 231
+    .line 230
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
 
-    .line 232
+    .line 231
     invoke-virtual {p0}, Lmiui/util/InputStreamLoader;->close()V
     :try_end_13
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_13} :catch_15
 
-    .line 233
+    .line 232
     const/4 v2, 0x1
 
-    .line 236
+    .line 235
     .end local v0           #inputStream:Ljava/io/InputStream;
     .end local v1           #outputStream:Ljava/io/FileOutputStream;
     :goto_14
     return v2
 
-    .line 234
+    .line 233
     :catch_15
     move-exception v3
 

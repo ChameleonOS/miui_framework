@@ -25,8 +25,8 @@ public class ZoomControls extends LinearLayout {
         super(context, attributeset);
         setFocusable(false);
         ((LayoutInflater)context.getSystemService("layout_inflater")).inflate(0x10900cd, this, true);
-        mZoomIn = (ZoomButton)findViewById(0x102036a);
-        mZoomOut = (ZoomButton)findViewById(0x1020369);
+        mZoomIn = (ZoomButton)findViewById(0x102036f);
+        mZoomOut = (ZoomButton)findViewById(0x102036e);
     }
 
     private void fade(int i, float f, float f1) {

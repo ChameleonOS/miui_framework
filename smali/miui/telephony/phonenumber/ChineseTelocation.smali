@@ -82,7 +82,7 @@
 
     add-int/lit8 v4, v4, 0x4
 
-    const-string v5, "5d7ebb69313ba6cd22601ea82f734d69fdd22063"
+    const-string v5, "2344453f7a6ff34e610abad9ee41a48ddbf6430d"
 
     invoke-virtual {v5}, Ljava/lang/String;->getBytes()[B
 
@@ -334,7 +334,7 @@
     invoke-virtual {v8, v0}, Ljava/io/RandomAccessFile;->read([B)I
 
     .line 82
-    const-string v8, "5d7ebb69313ba6cd22601ea82f734d69fdd22063"
+    const-string v8, "2344453f7a6ff34e610abad9ee41a48ddbf6430d"
 
     new-instance v9, Ljava/lang/String;
 

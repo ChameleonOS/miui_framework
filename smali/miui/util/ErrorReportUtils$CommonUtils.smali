@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 165
+    .line 166
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     .parameter "s"
 
     .prologue
-    .line 169
+    .line 170
     :try_start_0
     const-string v1, "UTF-8"
 
@@ -40,15 +40,15 @@
 
     move-result-object v1
 
-    .line 171
+    .line 172
     :goto_6
     return-object v1
 
-    .line 170
+    .line 171
     :catch_7
     move-exception v0
 
-    .line 171
+    .line 172
     .local v0, e:Ljava/io/UnsupportedEncodingException;
     invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B
 
@@ -62,7 +62,7 @@
     .parameter "pInput"
 
     .prologue
-    .line 177
+    .line 178
     :try_start_0
     const-string v3, "MD5"
 
@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    .line 178
+    .line 179
     .local v0, lDigest:Ljava/security/MessageDigest;
     invoke-static {p0}, Lmiui/util/ErrorReportUtils$CommonUtils;->getBytes(Ljava/lang/String;)[B
 
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, v3}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 179
+    .line 180
     new-instance v2, Ljava/math/BigInteger;
 
     const/4 v3, 0x1
@@ -89,7 +89,7 @@
 
     invoke-direct {v2, v3, v4}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 180
+    .line 181
     .local v2, lHashInt:Ljava/math/BigInteger;
     const-string v3, "%1$032X"
 
@@ -109,13 +109,13 @@
 
     return-object v3
 
-    .line 181
+    .line 182
     .end local v0           #lDigest:Ljava/security/MessageDigest;
     .end local v2           #lHashInt:Ljava/math/BigInteger;
     :catch_24
     move-exception v1
 
-    .line 182
+    .line 183
     .local v1, lException:Ljava/security/NoSuchAlgorithmException;
     new-instance v3, Ljava/lang/RuntimeException;
 

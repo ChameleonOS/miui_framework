@@ -128,10 +128,10 @@ public class VolumePanel extends Handler
                 super();
             }
         });
-        mPanel = (ViewGroup)mView.findViewById(0x102035c);
-        mSliderGroup = (ViewGroup)mView.findViewById(0x102035d);
+        mPanel = (ViewGroup)mView.findViewById(0x1020361);
+        mSliderGroup = (ViewGroup)mView.findViewById(0x1020362);
         mMoreButton = (ImageView)mView.findViewById(0x10202de);
-        mDivider = (ImageView)mView.findViewById(0x102035e);
+        mDivider = (ImageView)mView.findViewById(0x1020363);
         mDialog = new Dialog(context, 0x10302f5) {
 
             public boolean onTouchEvent(MotionEvent motionevent) {
@@ -234,13 +234,13 @@ public class VolumePanel extends Handler
             streamcontrol.streamType = j;
             streamcontrol.group = (ViewGroup)layoutinflater.inflate(0x10900c4, null);
             streamcontrol.group.setTag(streamcontrol);
-            streamcontrol.icon = (ImageView)streamcontrol.group.findViewById(0x102035f);
+            streamcontrol.icon = (ImageView)streamcontrol.group.findViewById(0x1020364);
             streamcontrol.icon.setTag(streamcontrol);
             streamcontrol.icon.setContentDescription(resources.getString(streamresources.descRes));
             streamcontrol.iconRes = streamresources.iconRes;
             streamcontrol.iconMuteRes = streamresources.iconMuteRes;
             streamcontrol.icon.setImageResource(streamcontrol.iconRes);
-            streamcontrol.seekbarView = (SeekBar)streamcontrol.group.findViewById(0x1020307);
+            streamcontrol.seekbarView = (SeekBar)streamcontrol.group.findViewById(0x102030c);
             int k;
             if(j == 6 || j == 0)
                 k = 1;

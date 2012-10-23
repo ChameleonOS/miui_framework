@@ -29,7 +29,7 @@ public class ActionBarContainer extends FrameLayout {
         TypedArray typedarray = context.obtainStyledAttributes(attributeset, com.android.internal.R.styleable.ActionBar);
         mBackground = typedarray.getDrawable(2);
         mStackedBackground = typedarray.getDrawable(17);
-        if(getId() == 0x102031c) {
+        if(getId() == 0x1020321) {
             mIsSplit = flag;
             mSplitBackground = typedarray.getDrawable(18);
         }
@@ -72,7 +72,7 @@ _L3:
 
     public void onFinishInflate() {
         super.onFinishInflate();
-        mActionBarView = (ActionBarView)findViewById(0x102031a);
+        mActionBarView = (ActionBarView)findViewById(0x102031f);
     }
 
     public boolean onHoverEvent(MotionEvent motionevent) {

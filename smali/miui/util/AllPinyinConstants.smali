@@ -25,7 +25,7 @@
     .line 8
     new-array v0, v3, [B
 
-    fill-array-data v0, :array_2192
+    fill-array-data v0, :array_21a6
 
     sput-object v0, Lmiui/util/AllPinyinConstants;->FILE_TAG:[B
 
@@ -1090,37 +1090,37 @@
 
     const/16 v1, 0xb0
 
-    const-string v2, "li"
+    const-string/jumbo v2, "li"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb1
 
-    const-string v2, "lia"
+    const-string/jumbo v2, "lia"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb2
 
-    const-string v2, "lian"
+    const-string/jumbo v2, "lian"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb3
 
-    const-string v2, "liang"
+    const-string/jumbo v2, "liang"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb4
 
-    const-string v2, "liao"
+    const-string/jumbo v2, "liao"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb5
 
-    const-string v2, "lie"
+    const-string/jumbo v2, "lie"
 
     aput-object v2, v0, v1
 
@@ -2854,7 +2854,7 @@
 
     const/16 v1, 0x1d6
 
-    const-string v2, "liang,lia"
+    const-string/jumbo v2, "liang,lia"
 
     aput-object v2, v0, v1
 
@@ -2878,7 +2878,7 @@
 
     const/16 v1, 0x1da
 
-    const-string v2, "lia,liang"
+    const-string/jumbo v2, "lia,liang"
 
     aput-object v2, v0, v1
 
@@ -3850,7 +3850,7 @@
 
     const/16 v1, 0x27c
 
-    const-string v2, "lie,le"
+    const-string/jumbo v2, "lie,le"
 
     aput-object v2, v0, v1
 
@@ -4414,7 +4414,7 @@
 
     const/16 v1, 0x2da
 
-    const-string v2, "lian,ling"
+    const-string/jumbo v2, "lian,ling"
 
     aput-object v2, v0, v1
 
@@ -5020,7 +5020,7 @@
 
     const/16 v1, 0x33f
 
-    const-string v2, "li,yue"
+    const-string/jumbo v2, "li,yue"
 
     aput-object v2, v0, v1
 
@@ -5254,7 +5254,7 @@
 
     const/16 v1, 0x366
 
-    const-string v2, "li,ji"
+    const-string/jumbo v2, "li,ji"
 
     aput-object v2, v0, v1
 
@@ -5548,7 +5548,7 @@
 
     const/16 v1, 0x397
 
-    const-string v2, "liao,lao"
+    const-string/jumbo v2, "liao,lao"
 
     aput-object v2, v0, v1
 
@@ -6682,7 +6682,7 @@
 
     const/16 v1, 0x454
 
-    const-string v2, "liao,lu"
+    const-string/jumbo v2, "liao,lu"
 
     aput-object v2, v0, v1
 
@@ -6742,7 +6742,7 @@
 
     const/16 v1, 0x45e
 
-    const-string v2, "lian,xian"
+    const-string/jumbo v2, "lian,xian"
 
     aput-object v2, v0, v1
 
@@ -6868,7 +6868,7 @@
 
     const/16 v1, 0x473
 
-    const-string v2, "li,xi"
+    const-string/jumbo v2, "li,xi"
 
     aput-object v2, v0, v1
 
@@ -7180,7 +7180,7 @@
 
     const/16 v1, 0x4a7
 
-    const-string v2, "li,luo"
+    const-string/jumbo v2, "li,luo"
 
     aput-object v2, v0, v1
 
@@ -7750,7 +7750,7 @@
 
     const/16 v1, 0x506
 
-    const-string v2, "li,ge"
+    const-string/jumbo v2, "li,ge"
 
     aput-object v2, v0, v1
 
@@ -7828,13 +7828,13 @@
 
     const/16 v1, 0x513
 
-    const-string v2, "li,piao"
+    const-string/jumbo v2, "li,piao"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x514
 
-    const-string v2, "liao,liu"
+    const-string/jumbo v2, "liao,liu"
 
     aput-object v2, v0, v1
 
@@ -7905,7 +7905,7 @@
     .line 8
     nop
 
-    :array_2192
+    :array_21a6
     .array-data 0x1
         0x50t
         0x55t

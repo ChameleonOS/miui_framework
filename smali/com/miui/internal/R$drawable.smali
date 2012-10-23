@@ -923,6 +923,8 @@
 
 .field public static final rounded_corner_top_right:I = 0x60200e2
 
+.field public static final screen_on_proximity_sensor_hint:I = 0x602020c
+
 .field public static final screen_view_arrow_left:I = 0x60200e3
 
 .field public static final screen_view_arrow_left_gray:I = 0x60200e4

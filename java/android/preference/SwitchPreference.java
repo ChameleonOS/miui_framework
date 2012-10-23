@@ -70,7 +70,7 @@ public class SwitchPreference extends TwoStatePreference {
 
     protected void onBindView(View view) {
         super.onBindView(view);
-        View view1 = view.findViewById(0x1020308);
+        View view1 = view.findViewById(0x102030d);
         if(view1 != null && (view1 instanceof Checkable)) {
             ((Checkable)view1).setChecked(super.mChecked);
             sendAccessibilityEvent(view1);

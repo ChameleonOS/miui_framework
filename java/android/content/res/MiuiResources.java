@@ -162,22 +162,43 @@ public final class MiuiResources extends Resources {
     }
 
     Drawable loadOverlayDrawable(TypedValue typedvalue, int i) {
+        if(mSkipFiles.get(i) == null) goto _L2; else goto _L1
+_L1:
         Drawable drawable = null;
-        if(mSkipFiles.get(i) == null) {
-            drawable = null;
-            String s = typedvalue.string.toString();
-            InputStream inputstream = mThemeResources.getThemeFileStream(getCookieType(typedvalue.assetCookie), s);
-            if(inputstream != null)
-                try {
-                    drawable = Drawable.createFromResourceStream(this, typedvalue, inputstream, s, null);
-                    inputstream.close();
-                }
-                catch(Exception exception) { }
-                catch(OutOfMemoryError outofmemoryerror) { }
-            else
-                mSkipFiles.put(i, Boolean.valueOf(true));
-        }
+_L5:
         return drawable;
+_L2:
+        String s;
+        miui.content.res.ThemeZipFile.ThemeFileInfo themefileinfo;
+        drawable = null;
+        s = typedvalue.string.toString();
+        themefileinfo = mThemeResources.getThemeFileStream(getCookieType(typedvalue.assetCookie), s);
+        if(themefileinfo == null) goto _L4; else goto _L3
+_L3:
+        android.graphics.BitmapFactory.Options options = null;
+        android.graphics.BitmapFactory.Options options1;
+        if(themefileinfo.mDensity <= 0)
+            break MISSING_BLOCK_LABEL_84;
+        options1 = new android.graphics.BitmapFactory.Options();
+        options1.inDensity = themefileinfo.mDensity;
+        options = options1;
+        Drawable drawable1 = Drawable.createFromResourceStream(this, typedvalue, themefileinfo.mInput, s, options);
+        drawable = drawable1;
+_L6:
+        try {
+            themefileinfo.mInput.close();
+        }
+        catch(Exception exception) { }
+          goto _L5
+_L4:
+        mSkipFiles.put(i, Boolean.valueOf(true));
+          goto _L5
+        OutOfMemoryError outofmemoryerror;
+        outofmemoryerror;
+          goto _L6
+        OutOfMemoryError outofmemoryerror1;
+        outofmemoryerror1;
+          goto _L6
     }
 
     public final Resources.Theme newTheme() {
@@ -195,18 +216,20 @@ public final class MiuiResources extends Resources {
     public InputStream openRawResource(int i, TypedValue typedvalue) throws Resources.NotFoundException {
         if(mSkipFiles.get(i) != null) goto _L2; else goto _L1
 _L1:
-        InputStream inputstream;
+        miui.content.res.ThemeZipFile.ThemeFileInfo themefileinfo;
         getValue(i, typedvalue, true);
         String s = typedvalue.string.toString();
-        inputstream = mThemeResources.getThemeFileStream(getCookieType(typedvalue.assetCookie), s);
-        if(inputstream == null) goto _L4; else goto _L3
+        themefileinfo = mThemeResources.getThemeFileStream(getCookieType(typedvalue.assetCookie), s);
+        if(themefileinfo == null) goto _L4; else goto _L3
 _L3:
+        InputStream inputstream = themefileinfo.mInput;
+_L6:
         return inputstream;
 _L4:
         mSkipFiles.put(i, Boolean.valueOf(true));
 _L2:
         inputstream = super.openRawResource(i, typedvalue);
-        if(true) goto _L3; else goto _L5
+        if(true) goto _L6; else goto _L5
 _L5:
     }
 

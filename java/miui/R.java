@@ -195,14 +195,15 @@ public final class R {
         public static final int activate = 0x60c01ea;
         public static final int activate_fail_notification_title = 0x60c01ec;
         public static final int activating = 0x60c01dd;
+        public static final int alarm_message_12_hour_formate = 0x60c01f6;
         public static final int all_resources = 0x60c0027;
         public static final int android_byteShort = 0x60c01de;
         public static final int android_common_last_name_prefixes = 0x60c019e;
         public static final int android_common_name_conjunctions = 0x60c019f;
         public static final int android_common_name_prefixes = 0x60c019c;
         public static final int android_common_name_suffixes = 0x60c019d;
-        public static final int android_config_defaultDreamComponent = 0x60c01ee;
-        public static final int android_date_time_set = 0x60c01ef;
+        public static final int android_config_defaultDreamComponent = 0x60c01f9;
+        public static final int android_date_time_set = 0x60c01fa;
         public static final int android_dial_number_using = 0x60c01a0;
         public static final int android_ellipsis = 0x60c0190;
         public static final int android_factorytest_reboot = 0x60c018c;
@@ -252,6 +253,7 @@ public final class R {
         public static final int android_silent_mode_vibrate = 0x60c018e;
         public static final int android_ssl_certificate = 0x60c0199;
         public static final int android_ssl_certificate_is_valid = 0x60c01ad;
+        public static final int android_storage_usb = 0x60c01f8;
         public static final int android_terabyteShort = 0x60c01df;
         public static final int android_today = 0x60c01d1;
         public static final int android_tomorrow = 0x60c01a9;
@@ -522,6 +524,10 @@ public final class R {
         public static final int double_seventh_day = 0x60c005b;
         public static final int download_failed = 0x60c0023;
         public static final int download_preview_failed = 0x60c0024;
+        public static final int error_forbidden = 0x60c01f0;
+        public static final int error_not_acceptable = 0x60c01f1;
+        public static final int error_title = 0x60c01ee;
+        public static final int error_unauthorized = 0x60c01ef;
         public static final int every_day = 0x60c01af;
         public static final int find_device_sim_change_instructions = 0x60c01e5;
         public static final int firewall_setting = 0x60c016a;
@@ -529,6 +535,7 @@ public final class R {
         public static final int first_back_long_press_title = 0x60c016e;
         public static final int fools_day = 0x60c0063;
         public static final int force_exit_message = 0x60c0170;
+        public static final int format_time_in_12_hours = 0x60c01f7;
         public static final int global_action_privacy_mode_dialog_message = 0x60c0174;
         public static final int global_action_privacy_mode_off_status = 0x60c0175;
         public static final int global_action_privacy_mode_on_status = 0x60c0172;
@@ -647,6 +654,9 @@ public final class R {
         public static final int resourcebrowser_lable = 0x60c0002;
         public static final int reverse_all = 0x60c0178;
         public static final int safetylegal_activity_unreachable = 0x60c002f;
+        public static final int screen_on_proximity_sensor_hint = 0x60c01f2;
+        public static final int screen_on_proximity_sensor_summary = 0x60c01f3;
+        public static final int screen_on_proximity_sensor_title = 0x60c01f4;
         public static final int sd_not_available = 0x60c0038;
         public static final int sd_not_available_low_internal_storage = 0x60c003a;
         public static final int sd_not_available_saved_to_internal_storage = 0x60c003b;
@@ -684,6 +694,7 @@ public final class R {
         public static final int user_agreement5 = 0x60c0037;
         public static final int valentines_day = 0x60c0060;
         public static final int vernal_equinox = 0x60c0071;
+        public static final int wake_alarm_message = 0x60c01f5;
         public static final int white_dews = 0x60c007c;
         public static final int winter_begins = 0x60c0080;
         public static final int winter_solstice = 0x60c0083;
@@ -738,6 +749,10 @@ public final class R {
         public static final int android_always_use_checkbox = 0x6030024;
         public static final int android_list_menu_item_layout = 0x603002b;
         public static final int android_notification_template_base = 0x603001d;
+        public static final int android_notification_template_big_base = 0x603003e;
+        public static final int android_notification_template_big_picture = 0x603003f;
+        public static final int android_notification_template_big_text = 0x6030040;
+        public static final int android_notification_template_inbox = 0x6030041;
         public static final int android_preference_header_item = 0x6030027;
         public static final int android_preference_list_fragment = 0x6030026;
         public static final int android_transient_notification = 0x6030023;
@@ -790,6 +805,7 @@ public final class R {
         public static final int resource_local_list = 0x603000d;
         public static final int resource_online_list = 0x6030018;
         public static final int resource_operation_view = 0x603002a;
+        public static final int screen_on_proximity_sensor_guide = 0x6030042;
         public static final int text_copy_float_panel = 0x6030037;
         public static final int text_insertion_float_panel = 0x6030033;
         public static final int text_list_float_panel = 0x6030030;
@@ -832,8 +848,15 @@ public final class R {
         public static final int android_alertTitle = 0x60b0003;
         public static final int android_alwaysUse = 0x60b0006;
         public static final int android_banner = 0x60b0008;
+        public static final int android_big_base_content = 0x60b0086;
+        public static final int android_big_picture = 0x60b0084;
+        public static final int android_big_picture_content = 0x60b0083;
+        public static final int android_big_picture_shadow = 0x60b0085;
+        public static final int android_big_text_content = 0x60b0087;
         public static final int android_body = 0x60b000c;
         public static final int android_clearDefaultHint = 0x60b0007;
+        public static final int android_inbox = 0x60b0088;
+        public static final int android_inbox_more = 0x60b0089;
         public static final int android_mount_button = 0x60b0009;
         public static final int android_placeholder = 0x60b0023;
         public static final int android_split_action_bar = 0x60b0005;
@@ -1427,6 +1450,7 @@ public final class R {
         public static final int rounded_corner_bottom_right = 0x60200e0;
         public static final int rounded_corner_top_left = 0x60200e1;
         public static final int rounded_corner_top_right = 0x60200e2;
+        public static final int screen_on_proximity_sensor_hint = 0x602020c;
         public static final int screen_view_arrow_left = 0x60200e3;
         public static final int screen_view_arrow_left_gray = 0x60200e4;
         public static final int screen_view_arrow_right = 0x60200e5;

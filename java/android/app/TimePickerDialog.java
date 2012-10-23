@@ -34,7 +34,7 @@ public class TimePickerDialog extends AlertDialog
         setButton(-1, context1.getText(0x1040423), this);
         View view = ((LayoutInflater)context1.getSystemService("layout_inflater")).inflate(0x10900bd, null);
         setView(view);
-        mTimePicker = (TimePicker)view.findViewById(0x102034c);
+        mTimePicker = (TimePicker)view.findViewById(0x1020351);
         mTimePicker.setIs24HourView(Boolean.valueOf(mIs24HourView));
         mTimePicker.setCurrentHour(Integer.valueOf(mInitialHourOfDay));
         mTimePicker.setCurrentMinute(Integer.valueOf(mInitialMinute));

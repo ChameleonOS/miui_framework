@@ -1113,7 +1113,7 @@ _L23:
         private void addRowToDialog(ViewGroup viewgroup, int i, String s) {
             Resources resources = Resources.getSystem();
             View view = LayoutInflater.from(mContext).inflate(0x10900ca, viewgroup, false);
-            ((TextView)view.findViewById(0x1020365)).setText(resources.getString(i));
+            ((TextView)view.findViewById(0x102036a)).setText(resources.getString(i));
             ((TextView)view.findViewById(0x1020292)).setText(s);
             viewgroup.addView(view);
         }
@@ -1290,7 +1290,7 @@ _L3:
             view = LayoutInflater.from(mContext).inflate(0x10900c9, null);
             viewgroup = (ViewGroup)view.findViewById(0x10202e9);
             addRowToDialog(viewgroup, 0x1040411, getDeviceName(mSavedPeerConfig.deviceAddress));
-            final EditText pin = (EditText)view.findViewById(0x1020364);
+            final EditText pin = (EditText)view.findViewById(0x1020369);
             alertdialog = (new android.app.AlertDialog.Builder(mContext)).setTitle(resources.getString(0x1040410)).setView(view).setPositiveButton(resources.getString(0x104040d), new android.content.DialogInterface.OnClickListener() {
 
                 public void onClick(DialogInterface dialoginterface, int i) {
@@ -1344,7 +1344,7 @@ _L1:
             alertdialog.show();
             return;
 _L3:
-            view.findViewById(0x1020363).setVisibility(0);
+            view.findViewById(0x1020368).setVisibility(0);
             continue; /* Loop/switch isn't completed */
 _L2:
             addRowToDialog(viewgroup, 0x1040414, wps.pin);

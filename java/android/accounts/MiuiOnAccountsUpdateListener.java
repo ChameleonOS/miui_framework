@@ -12,5 +12,7 @@ import android.os.Bundle;
 public interface MiuiOnAccountsUpdateListener
     extends OnAccountsUpdateListener {
 
+    public abstract void onPostAccountUpdated(Account account, int i, Bundle bundle);
+
     public abstract void onPreAccountUpdated(Account account, int i, Bundle bundle);
 }

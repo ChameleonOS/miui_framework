@@ -258,7 +258,7 @@ public class VolumePreference extends SeekBarDialogPreference
         if(mSeekBarVolumizer != null) {
             Dialog dialog = getDialog();
             if(dialog != null && dialog.isShowing()) {
-                View view = dialog.getWindow().getDecorView().findViewById(0x1020307);
+                View view = dialog.getWindow().getDecorView().findViewById(0x102030c);
                 if(view != null)
                     view.setOnKeyListener(null);
                 mSeekBarVolumizer.revertVolume();
@@ -275,7 +275,7 @@ public class VolumePreference extends SeekBarDialogPreference
 
     protected void onBindDialogView(View view) {
         super.onBindDialogView(view);
-        SeekBar seekbar = (SeekBar)view.findViewById(0x1020307);
+        SeekBar seekbar = (SeekBar)view.findViewById(0x102030c);
         mSeekBarVolumizer = new SeekBarVolumizer(getContext(), seekbar, mStreamType);
         getPreferenceManager().registerOnActivityStopListener(this);
         view.setOnKeyListener(this);

@@ -147,6 +147,7 @@ public final class ExtraTelephony {
         public static final int PREVIEW_THREAD_ID_COLUMN_INDEX = 6;
         public static final int PREVIEW_TYPE_COLUMN_INDEX = 3;
         public static final int SYNC_STATE_DIRTY = 0;
+        public static final int SYNC_STATE_ERROR = 3;
         public static final int SYNC_STATE_SYNCED = 2;
         public static final int SYNC_STATE_SYNCING = 1;
 

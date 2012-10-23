@@ -303,6 +303,7 @@ _L1:
     public static final String JSON_ERROR_TYPE = "error_type";
     public static final String JSON_EXCEPTION_CLASS = "exception_class";
     public static final String JSON_EXCEPTION_SOURCE_METHOD = "exception_source_method";
+    public static final String JSON_IMEI = "imei";
     public static final String JSON_NETWORK = "network";
     public static final String JSON_PACKAGE_NAME = "package_name";
     public static final String JSON_PLATFORM = "platform";

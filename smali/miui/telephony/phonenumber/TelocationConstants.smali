@@ -662,7 +662,7 @@
 
 .field public static final AREA_LOCATIONS:[Ljava/lang/String; = null
 
-.field public static final DIGEST:Ljava/lang/String; = "5d7ebb69313ba6cd22601ea82f734d69fdd22063"
+.field public static final DIGEST:Ljava/lang/String; = "2344453f7a6ff34e610abad9ee41a48ddbf6430d"
 
 .field private static final EMPTY:Ljava/lang/String; = ""
 
@@ -687,12 +687,12 @@
     .line 8
     new-array v0, v3, [B
 
-    fill-array-data v0, :array_14c4
+    fill-array-data v0, :array_14b6
 
     sput-object v0, Lmiui/telephony/phonenumber/TelocationConstants;->FILE_TAG:[B
 
     .line 341
-    const/16 v0, 0x199
+    const/16 v0, 0x198
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -3118,23 +3118,17 @@
 
     const/16 v1, 0x195
 
-    const-string v2, "722"
+    const-string v2, "377"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x196
 
-    const-string v2, "791"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x197
-
     const-string v2, "755"
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0x198
+    const/16 v1, 0x197
 
     const-string v2, "743"
 
@@ -3143,7 +3137,7 @@
     sput-object v0, Lmiui/telephony/phonenumber/TelocationConstants;->AREA_CODES:[Ljava/lang/String;
 
     .line 378
-    const/16 v0, 0x199
+    const/16 v0, 0x198
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -5569,23 +5563,17 @@
 
     const/16 v1, 0x195
 
-    const-string/jumbo v2, "\u6cb3\u5317\u968f\u5dde"
+    const-string/jumbo v2, "\u6cb3\u5357\u90a3\u6837"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x196
 
-    const-string/jumbo v2, "\u4e2d\u56fd\u8054\u901a"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x197
-
     const-string/jumbo v2, "\u5e7f\u5dde\u6df1\u5733"
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0x198
+    const/16 v1, 0x197
 
     const-string/jumbo v2, "\u6e56\u5357\u81ea\u6cbb\u5dde"
 
@@ -5596,9 +5584,7 @@
     return-void
 
     .line 8
-    nop
-
-    :array_14c4
+    :array_14b6
     .array-data 0x1
         0x54t
         0x44t

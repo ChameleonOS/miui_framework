@@ -44,7 +44,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter
             mText2 = (TextView)view.findViewById(0x1020015);
             mIcon1 = (ImageView)view.findViewById(0x1020007);
             mIcon2 = (ImageView)view.findViewById(0x1020008);
-            mIconRefine = (ImageView)view.findViewById(0x1020322);
+            mIconRefine = (ImageView)view.findViewById(0x1020327);
         }
     }
 

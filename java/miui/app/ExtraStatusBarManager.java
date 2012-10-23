@@ -110,5 +110,6 @@ public class ExtraStatusBarManager {
     public static final int DISABLE_BACKGROUND = 0x40000000;
     public static final int DISABLE_FOR_KEYGUARD = 0x80000000;
     public static final int DISABLE_FULLSCREEN = 0x20000000;
+    public static final int DISABLE_SIMPLE_STATUS_BAR = 0x10000000;
     public static final String EXTRA_TOGGLE_ID = "com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID";
 }

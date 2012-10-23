@@ -591,14 +591,14 @@ _L6:
 
     public void initIndeterminateProgress() {
         mIndeterminateProgressView = new ProgressBar(super.mContext, null, 0, mIndeterminateProgressStyle);
-        mIndeterminateProgressView.setId(0x1020317);
+        mIndeterminateProgressView.setId(0x102031c);
         mIndeterminateProgressView.setVisibility(8);
         addView(mIndeterminateProgressView);
     }
 
     public void initProgress() {
         mProgressView = new ProgressBar(super.mContext, null, 0, mProgressStyle);
-        mProgressView.setId(0x1020318);
+        mProgressView.setId(0x102031d);
         mProgressView.setMax(10000);
         mProgressView.setVisibility(8);
         addView(mProgressView);

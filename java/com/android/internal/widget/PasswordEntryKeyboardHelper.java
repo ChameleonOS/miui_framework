@@ -37,9 +37,9 @@ public class PasswordEntryKeyboardHelper
 
     private void createKeyboards() {
         mNumericKeyboard = new PasswordEntryKeyboard(mContext, 0x10f0004);
-        mQwertyKeyboard = new PasswordEntryKeyboard(mContext, 0x10f0006, 0x102036c);
+        mQwertyKeyboard = new PasswordEntryKeyboard(mContext, 0x10f0006, 0x1020371);
         mQwertyKeyboard.enableShiftLock();
-        mQwertyKeyboardShifted = new PasswordEntryKeyboard(mContext, 0x10f0007, 0x102036c);
+        mQwertyKeyboardShifted = new PasswordEntryKeyboard(mContext, 0x10f0007, 0x1020371);
         mQwertyKeyboardShifted.enableShiftLock();
         mQwertyKeyboardShifted.setShifted(true);
         mSymbolsKeyboard = new PasswordEntryKeyboard(mContext, 0x10f0008);
@@ -51,9 +51,9 @@ public class PasswordEntryKeyboardHelper
 
     private void createKeyboardsWithSpecificSize(int i, int j) {
         mNumericKeyboard = new PasswordEntryKeyboard(mContext, 0x10f0004, i, j);
-        mQwertyKeyboard = new PasswordEntryKeyboard(mContext, 0x10f0006, 0x102036c, i, j);
+        mQwertyKeyboard = new PasswordEntryKeyboard(mContext, 0x10f0006, 0x1020371, i, j);
         mQwertyKeyboard.enableShiftLock();
-        mQwertyKeyboardShifted = new PasswordEntryKeyboard(mContext, 0x10f0007, 0x102036c, i, j);
+        mQwertyKeyboardShifted = new PasswordEntryKeyboard(mContext, 0x10f0007, 0x1020371, i, j);
         mQwertyKeyboardShifted.enableShiftLock();
         mQwertyKeyboardShifted.setShifted(true);
         mSymbolsKeyboard = new PasswordEntryKeyboard(mContext, 0x10f0008, i, j);

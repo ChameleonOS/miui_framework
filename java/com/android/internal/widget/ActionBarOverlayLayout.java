@@ -123,10 +123,10 @@ public class ActionBarOverlayLayout extends FrameLayout {
     void pullChildren() {
         if(mContent == null) {
             mContent = findViewById(0x1020002);
-            mActionBarTop = findViewById(0x102031e);
-            mContainerView = (ActionBarContainer)findViewById(0x1020319);
-            mActionView = (ActionBarView)findViewById(0x102031a);
-            mActionBarBottom = findViewById(0x102031c);
+            mActionBarTop = findViewById(0x1020323);
+            mContainerView = (ActionBarContainer)findViewById(0x102031e);
+            mActionView = (ActionBarView)findViewById(0x102031f);
+            mActionBarBottom = findViewById(0x1020321);
         }
     }
 

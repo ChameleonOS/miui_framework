@@ -156,7 +156,7 @@
 
     const/4 v4, 0x0
 
-    const-string v5, "limit-password"
+    const-string/jumbo v5, "limit-password"
 
     const v6, 0x1040294
 
@@ -272,14 +272,14 @@
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_c6
+    :goto_c7
     sget-object v2, Landroid/app/admin/DeviceAdminInfo;->sPoliciesDisplayOrder:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_ed
+    if-ge v0, v2, :cond_ee
 
     .line 190
     sget-object v2, Landroid/app/admin/DeviceAdminInfo;->sPoliciesDisplayOrder:Ljava/util/ArrayList;
@@ -314,11 +314,11 @@
     .line 189
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_c6
+    goto :goto_c7
 
     .line 444
     .end local v1           #pi:Landroid/app/admin/DeviceAdminInfo$PolicyInfo;
-    :cond_ed
+    :cond_ee
     new-instance v2, Landroid/app/admin/DeviceAdminInfo$1;
 
     invoke-direct {v2}, Landroid/app/admin/DeviceAdminInfo$1;-><init>()V

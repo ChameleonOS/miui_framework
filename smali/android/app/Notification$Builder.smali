@@ -557,7 +557,7 @@
     invoke-virtual {v1, v3, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 1478
-    const v3, 0x10202ed
+    const v3, 0x10202f1
 
     if-eqz v10, :cond_1e6
 
@@ -812,7 +812,7 @@
     invoke-virtual {v1, v6, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 1489
-    const v4, 0x10202eb
+    const v4, 0x10202ec
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 

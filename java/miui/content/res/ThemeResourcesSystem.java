@@ -19,34 +19,34 @@ public final class ThemeResourcesSystem extends ThemeResources {
         mThemePath = metadata.themePath;
     }
 
-    private InputStream getThemeFileStreamMIUI(String s, String s1, int ai[]) {
-        InputStream inputstream = null;
+    private ThemeZipFile.ThemeFileInfo getThemeFileStreamMIUI(String s, String s1) {
+        ThemeZipFile.ThemeFileInfo themefileinfo = null;
         if(s1.startsWith("lock_screen_")) {
-            inputstream = sLockscreen.getThemeFileStream(s, null);
-            if(inputstream == null)
-                inputstream = sLockscreen.getThemeFileStream(s1, null);
+            themefileinfo = sLockscreen.getThemeFileStream(s);
+            if(themefileinfo == null)
+                themefileinfo = sLockscreen.getThemeFileStream(s1);
         }
-        if(inputstream == null)
-            inputstream = sMiui.getThemeFileStream(s, null);
-        return inputstream;
+        if(themefileinfo == null)
+            themefileinfo = sMiui.getThemeFileStream(s);
+        return themefileinfo;
     }
 
-    private InputStream getThemeFileStreamSystem(String s, String s1, int ai[]) {
-        InputStream inputstream = null;
+    private ThemeZipFile.ThemeFileInfo getThemeFileStreamSystem(String s, String s1) {
+        ThemeZipFile.ThemeFileInfo themefileinfo = null;
         if(!s1.equals("sym_def_app_icon.png")) goto _L2; else goto _L1
 _L1:
-        inputstream = sIcons.getThemeFileStream(s1, ai);
+        themefileinfo = sIcons.getThemeFileStream(s1);
 _L6:
-        InputStream inputstream1;
-        if(inputstream == null)
-            inputstream = getThemeFileStreamInner(s, ai);
-        inputstream1 = inputstream;
+        ThemeZipFile.ThemeFileInfo themefileinfo1;
+        if(themefileinfo == null)
+            themefileinfo = getThemeFileStreamInner(s);
+        themefileinfo1 = themefileinfo;
 _L4:
-        return inputstream1;
+        return themefileinfo1;
 _L2:
         if(!s1.equals("default_wallpaper.jpg"))
             continue; /* Loop/switch isn't completed */
-        inputstream1 = null;
+        themefileinfo1 = null;
         if(true) goto _L4; else goto _L3
 _L3:
         if(true) goto _L6; else goto _L5
@@ -78,27 +78,58 @@ _L5:
         return sLockscreen.containsEntry((new StringBuilder()).append("advance/").append(s).toString());
     }
 
-    public InputStream getAwesomeLockscreenFileStream(String s, int ai[]) {
-        return sLockscreen.getThemeFileStream((new StringBuilder()).append("advance/").append(s).toString(), ai);
+    public ThemeZipFile.ThemeFileInfo getAwesomeLockscreenFileStream(String s) {
+        return sLockscreen.getThemeFileStream((new StringBuilder()).append("advance/").append(s).toString());
     }
 
     public Bitmap getIcon(Resources resources, String s) {
-        InputStream inputstream = getIconStream(s, null);
-        Bitmap bitmap = BitmapFactory.decodeStream(inputstream);
-        if(inputstream != null)
-            try {
-                inputstream.close();
-            }
-            catch(IOException ioexception) { }
+        Bitmap bitmap;
+        ThemeZipFile.ThemeFileInfo themefileinfo;
+        android.graphics.BitmapFactory.Options options;
+        bitmap = null;
+        themefileinfo = getIconStream(s);
+        if(themefileinfo == null)
+            break MISSING_BLOCK_LABEL_72;
+        options = null;
+        android.graphics.BitmapFactory.Options options1;
+        if(themefileinfo.mDensity <= 0)
+            break MISSING_BLOCK_LABEL_48;
+        options1 = new android.graphics.BitmapFactory.Options();
+        options1.inDensity = themefileinfo.mDensity;
+        options = options1;
+        Bitmap bitmap1 = BitmapFactory.decodeStream(themefileinfo.mInput, null, options);
+        Exception exception;
+        bitmap = bitmap1;
+        OutOfMemoryError outofmemoryerror;
+        try {
+            themefileinfo.mInput.close();
+        }
+        catch(IOException ioexception) { }
         return bitmap;
+        exception;
+_L1:
+        try {
+            themefileinfo.mInput.close();
+        }
+        catch(IOException ioexception1) { }
+        throw exception;
+        outofmemoryerror;
+_L2:
+        themefileinfo.mInput.close();
+        break MISSING_BLOCK_LABEL_72;
+        exception;
+          goto _L1
+        OutOfMemoryError outofmemoryerror1;
+        outofmemoryerror1;
+          goto _L2
     }
 
-    public InputStream getIconStream(String s, int ai[]) {
-        return sIcons.getThemeFileStream(s, ai);
+    public ThemeZipFile.ThemeFileInfo getIconStream(String s) {
+        return sIcons.getThemeFileStream(s);
     }
 
-    public InputStream getLockscreenStream(String s, int ai[]) {
-        return sLockscreen.getThemeFileStream(s, ai);
+    public ThemeZipFile.ThemeFileInfo getLockscreenStream(String s) {
+        return sLockscreen.getThemeFileStream(s);
     }
 
     public File getLockscreenWallpaper() {
@@ -117,14 +148,14 @@ _L5:
         return charsequence;
     }
 
-    public InputStream getThemeFileStream(int i, String s) {
+    public ThemeZipFile.ThemeFileInfo getThemeFileStream(int i, String s) {
         String s1 = s.substring(1 + s.lastIndexOf('/'));
-        InputStream inputstream;
+        ThemeZipFile.ThemeFileInfo themefileinfo;
         if(2 == i)
-            inputstream = getThemeFileStreamMIUI(s, s1, null);
+            themefileinfo = getThemeFileStreamMIUI(s, s1);
         else
-            inputstream = getThemeFileStreamSystem(s, s1, null);
-        return inputstream;
+            themefileinfo = getThemeFileStreamSystem(s, s1);
+        return themefileinfo;
     }
 
     public Integer getThemeInt(int i) {

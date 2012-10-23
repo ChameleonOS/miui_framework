@@ -10,7 +10,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import java.io.File;
-import java.io.InputStream;
 import miui.util.ImageUtils;
 import miui.util.InputStreamLoader;
 
@@ -129,19 +128,19 @@ public class ThemeResources {
         return charsequence;
     }
 
-    public InputStream getThemeFileStream(int i, String s) {
-        return getThemeFileStream(s, ((int []) (null)));
+    public ThemeZipFile.ThemeFileInfo getThemeFileStream(int i, String s) {
+        return getThemeFileStream(s);
     }
 
-    public InputStream getThemeFileStream(String s, int ai[]) {
-        return getThemeFileStreamInner(s, ai);
+    public ThemeZipFile.ThemeFileInfo getThemeFileStream(String s) {
+        return getThemeFileStreamInner(s);
     }
 
-    protected InputStream getThemeFileStreamInner(String s, int ai[]) {
-        InputStream inputstream = mPackageZipFile.getInputStream(s, ai);
-        if(inputstream == null && mHasWrapped)
-            inputstream = mWrapped.getThemeFileStreamInner(s, ai);
-        return inputstream;
+    protected ThemeZipFile.ThemeFileInfo getThemeFileStreamInner(String s) {
+        ThemeZipFile.ThemeFileInfo themefileinfo = mPackageZipFile.getInputStream(s);
+        if(themefileinfo == null && mHasWrapped)
+            themefileinfo = mWrapped.getThemeFileStreamInner(s);
+        return themefileinfo;
     }
 
     public Integer getThemeInt(int i) {

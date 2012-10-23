@@ -21,6 +21,14 @@
 
 .field public static final android_notification_template_base:I = 0x603001d
 
+.field public static final android_notification_template_big_base:I = 0x603003e
+
+.field public static final android_notification_template_big_picture:I = 0x603003f
+
+.field public static final android_notification_template_big_text:I = 0x6030040
+
+.field public static final android_notification_template_inbox:I = 0x6030041
+
 .field public static final android_preference_header_item:I = 0x6030027
 
 .field public static final android_preference_list_fragment:I = 0x6030026
@@ -125,6 +133,8 @@
 
 .field public static final resource_operation_view:I = 0x603002a
 
+.field public static final screen_on_proximity_sensor_guide:I = 0x6030042
+
 .field public static final text_copy_float_panel:I = 0x6030037
 
 .field public static final text_insertion_float_panel:I = 0x6030033
@@ -145,7 +155,7 @@
     .registers 1
 
     .prologue
-    .line 1435
+    .line 1443
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

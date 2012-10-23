@@ -100,7 +100,7 @@ public class TimePicker extends FrameLayout {
         int j = typedarray.getResourceId(0, 0x10900bc);
         typedarray.recycle();
         ((LayoutInflater)context.getSystemService("layout_inflater")).inflate(j, this, true);
-        mHourSpinner = (NumberPicker)findViewById(0x1020349);
+        mHourSpinner = (NumberPicker)findViewById(0x102034e);
         mHourSpinner.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
 
             public void onValueChange(NumberPicker numberpicker, int k, int l) {
@@ -125,12 +125,12 @@ public class TimePicker extends FrameLayout {
                 super();
             }
         });
-        mHourSpinnerInput = (EditText)mHourSpinner.findViewById(0x10202f7);
+        mHourSpinnerInput = (EditText)mHourSpinner.findViewById(0x10202fc);
         mHourSpinnerInput.setImeOptions(5);
-        mDivider = (TextView)findViewById(0x102034d);
+        mDivider = (TextView)findViewById(0x1020352);
         if(mDivider != null)
             mDivider.setText(0x10400bc);
-        mMinuteSpinner = (NumberPicker)findViewById(0x102034a);
+        mMinuteSpinner = (NumberPicker)findViewById(0x102034f);
         mMinuteSpinner.setMinValue(0);
         mMinuteSpinner.setMaxValue(59);
         mMinuteSpinner.setOnLongPressUpdateInterval(100L);
@@ -149,10 +149,10 @@ public class TimePicker extends FrameLayout {
                 super();
             }
         });
-        mMinuteSpinnerInput = (EditText)mMinuteSpinner.findViewById(0x10202f7);
+        mMinuteSpinnerInput = (EditText)mMinuteSpinner.findViewById(0x10202fc);
         mMinuteSpinnerInput.setImeOptions(5);
         mAmPmStrings = (new DateFormatSymbols()).getAmPmStrings();
-        View view = findViewById(0x102034b);
+        View view = findViewById(0x1020350);
         if(view instanceof Button) {
             mAmPmSpinner = null;
             mAmPmSpinnerInput = null;
@@ -208,7 +208,7 @@ public class TimePicker extends FrameLayout {
                 super();
             }
             });
-            mAmPmSpinnerInput = (EditText)mAmPmSpinner.findViewById(0x10202f7);
+            mAmPmSpinnerInput = (EditText)mAmPmSpinner.findViewById(0x10202fc);
             mAmPmSpinnerInput.setImeOptions(6);
         }
         updateHourControl();
@@ -224,13 +224,13 @@ public class TimePicker extends FrameLayout {
     }
 
     private void setContentDescriptions() {
-        trySetContentDescription(mMinuteSpinner, 0x10202f6, 0x10404ad);
-        trySetContentDescription(mMinuteSpinner, 0x10202f8, 0x10404ae);
-        trySetContentDescription(mHourSpinner, 0x10202f6, 0x10404af);
-        trySetContentDescription(mHourSpinner, 0x10202f8, 0x10404b0);
+        trySetContentDescription(mMinuteSpinner, 0x10202fb, 0x10404ad);
+        trySetContentDescription(mMinuteSpinner, 0x10202fd, 0x10404ae);
+        trySetContentDescription(mHourSpinner, 0x10202fb, 0x10404af);
+        trySetContentDescription(mHourSpinner, 0x10202fd, 0x10404b0);
         if(mAmPmSpinner != null) {
-            trySetContentDescription(mAmPmSpinner, 0x10202f6, 0x10404b1);
-            trySetContentDescription(mAmPmSpinner, 0x10202f8, 0x10404b2);
+            trySetContentDescription(mAmPmSpinner, 0x10202fb, 0x10404b1);
+            trySetContentDescription(mAmPmSpinner, 0x10202fd, 0x10404b2);
         }
     }
 

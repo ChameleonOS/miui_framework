@@ -27,13 +27,13 @@ public class Notification
             RemoteViews remoteviews = getStandardView(0x1090075);
             remoteviews.setViewVisibility(0x1020015, 8);
             int ai[] = new int[7];
-            ai[0] = 0x10202ee;
-            ai[1] = 0x10202ef;
-            ai[2] = 0x10202f0;
-            ai[3] = 0x10202f1;
-            ai[4] = 0x10202f2;
-            ai[5] = 0x10202f3;
-            ai[6] = 0x10202f4;
+            ai[0] = 0x10202f3;
+            ai[1] = 0x10202f4;
+            ai[2] = 0x10202f5;
+            ai[3] = 0x10202f6;
+            ai[4] = 0x10202f7;
+            ai[5] = 0x10202f8;
+            ai[6] = 0x10202f9;
             int i = ai.length;
             for(int j = 0; j < i; j++)
                 remoteviews.setViewVisibility(ai[j], 8);
@@ -47,9 +47,9 @@ public class Notification
             }
 
             if(mTexts.size() > ai.length)
-                remoteviews.setViewVisibility(0x10202f5, 0);
+                remoteviews.setViewVisibility(0x10202fa, 0);
             else
-                remoteviews.setViewVisibility(0x10202f5, 8);
+                remoteviews.setViewVisibility(0x10202fa, 8);
             return remoteviews;
         }
 
@@ -100,8 +100,8 @@ public class Notification
             remoteviews = getStandardView(0x1090074);
             if(flag)
                 remoteviews.setViewPadding(0x10202e6, 0, 0, 0, 0);
-            remoteviews.setTextViewText(0x10202ea, mBigText);
-            remoteviews.setViewVisibility(0x10202ea, 0);
+            remoteviews.setTextViewText(0x10202eb, mBigText);
+            remoteviews.setViewVisibility(0x10202eb, 0);
             remoteviews.setViewVisibility(0x1020015, 8);
             return remoteviews;
         }
@@ -142,7 +142,7 @@ public class Notification
 
         private RemoteViews makeBigContentView() {
             RemoteViews remoteviews = getStandardView(0x1090073);
-            remoteviews.setImageViewBitmap(0x10202ec, mPicture);
+            remoteviews.setImageViewBitmap(0x10202ed, mPicture);
             return remoteviews;
         }
 
@@ -217,10 +217,10 @@ public class Notification
                 charsequence = mBuilder.mSubText;
             if(charsequence != null) {
                 remoteviews.setTextViewText(0x1020046, charsequence);
-                remoteviews.setViewVisibility(0x10202ed, 0);
+                remoteviews.setViewVisibility(0x10202f1, 0);
                 remoteviews.setViewVisibility(0x10202e8, 0);
             } else {
-                remoteviews.setViewVisibility(0x10202ed, 8);
+                remoteviews.setViewVisibility(0x10202f1, 8);
                 remoteviews.setViewVisibility(0x10202e8, 8);
             }
             return remoteviews;
@@ -341,7 +341,7 @@ public class Notification
                 l = 0;
             else
                 l = 8;
-            remoteviews.setViewVisibility(0x10202ed, l);
+            remoteviews.setViewVisibility(0x10202f1, l);
             return remoteviews;
         }
 
@@ -350,7 +350,7 @@ public class Notification
             int j = mActions.size();
             if(j > 0) {
                 remoteviews.setViewVisibility(0x10202e2, 0);
-                remoteviews.setViewVisibility(0x10202eb, 0);
+                remoteviews.setViewVisibility(0x10202ec, 0);
                 if(j > 3)
                     j = 3;
                 remoteviews.removeAllViews(0x10202e2);

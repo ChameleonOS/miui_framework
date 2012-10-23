@@ -295,7 +295,7 @@
     .line 235
     iget-object v7, p0, Landroid/view/VolumePanel;->mView:Landroid/view/View;
 
-    const v8, 0x102035c
+    const v8, 0x1020361
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -308,7 +308,7 @@
     .line 236
     iget-object v7, p0, Landroid/view/VolumePanel;->mView:Landroid/view/View;
 
-    const v8, 0x102035d
+    const v8, 0x1020362
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -334,7 +334,7 @@
     .line 238
     iget-object v7, p0, Landroid/view/VolumePanel;->mView:Landroid/view/View;
 
-    const v8, 0x102035e
+    const v8, 0x1020363
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -812,7 +812,7 @@
     .line 359
     iget-object v7, v4, Landroid/view/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
-    const v8, 0x102035f
+    const v8, 0x1020364
 
     invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -858,7 +858,7 @@
     .line 365
     iget-object v7, v4, Landroid/view/VolumePanel$StreamControl;->group:Landroid/view/ViewGroup;
 
-    const v8, 0x1020307
+    const v8, 0x102030c
 
     invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

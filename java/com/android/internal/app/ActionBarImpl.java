@@ -412,16 +412,16 @@ _L5:
     private void init(View view) {
         boolean flag = false;
         mContext = view.getContext();
-        mOverlayLayout = (ActionBarOverlayLayout)view.findViewById(0x102031d);
+        mOverlayLayout = (ActionBarOverlayLayout)view.findViewById(0x1020322);
         if(mOverlayLayout != null)
             mOverlayLayout.setActionBar(this);
-        mActionView = (ActionBarView)view.findViewById(0x102031a);
-        mContextView = (ActionBarContextView)view.findViewById(0x102031b);
-        mContainerView = (ActionBarContainer)view.findViewById(0x1020319);
-        mTopVisibilityView = (ViewGroup)view.findViewById(0x102031e);
+        mActionView = (ActionBarView)view.findViewById(0x102031f);
+        mContextView = (ActionBarContextView)view.findViewById(0x1020320);
+        mContainerView = (ActionBarContainer)view.findViewById(0x102031e);
+        mTopVisibilityView = (ViewGroup)view.findViewById(0x1020323);
         if(mTopVisibilityView == null)
             mTopVisibilityView = mContainerView;
-        mSplitView = (ActionBarContainer)view.findViewById(0x102031c);
+        mSplitView = (ActionBarContainer)view.findViewById(0x1020321);
         if(mActionView == null || mContextView == null || mContainerView == null)
             throw new IllegalStateException((new StringBuilder()).append(getClass().getSimpleName()).append(" can only be used ").append("with a compatible window decor layout").toString());
         mActionView.setContextView(mContextView);

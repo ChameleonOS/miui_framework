@@ -27,29 +27,33 @@ public class ExtraAccountManager {
         return mInstance;
     }
 
-    private void postToHandler(Handler handler, final MiuiOnAccountsUpdateListener listener, final Account account, final int type, final Bundle extra) {
+    private void postToHandler(Handler handler, final MiuiOnAccountsUpdateListener listener, final Account account, final int type, final Bundle extra, final boolean preAdd) {
         if(handler == null)
             handler = mMainHandler;
         handler.post(new Runnable() {
 
             public void run() {
-                listener.onPreAccountUpdated(account, type, extra);
-_L1:
-                return;
-                SQLException sqlexception;
-                sqlexception;
-                Log.e("ExtraAccountManager", "Can't update accounts", sqlexception);
-                  goto _L1
+                try {
+                    if(preAdd)
+                        listener.onPreAccountUpdated(account, type, extra);
+                    else
+                        listener.onPostAccountUpdated(account, type, extra);
+                }
+                catch(SQLException sqlexception) {
+                    Log.e("ExtraAccountManager", "Can't update accounts", sqlexception);
+                }
             }
 
             final ExtraAccountManager this$0;
             final Account val$account;
             final Bundle val$extra;
             final MiuiOnAccountsUpdateListener val$listener;
+            final boolean val$preAdd;
             final int val$type;
 
              {
                 this$0 = ExtraAccountManager.this;
+                preAdd = flag;
                 listener = miuionaccountsupdatelistener;
                 account = account1;
                 type = i;
@@ -107,6 +111,7 @@ _L1:
             IntentFilter intentfilter = new IntentFilter();
             intentfilter.addAction("android.accounts.LOGIN_ACCOUNTS_CHANGED");
             intentfilter.addAction("android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED");
+            intentfilter.addAction("android.accounts.LOGIN_ACCOUNTS_POST_CHANGED");
             intentfilter.addAction("android.intent.action.DEVICE_STORAGE_OK");
             mContext.registerReceiver(mAccountsChangedBroadcastReceiver, intentfilter);
         }
@@ -137,6 +142,7 @@ _L1:
     public static final String EXTRA_BUNDLE = "extra_bundle";
     public static final String EXTRA_UPDATE_TYPE = "extra_update_type";
     public static final String EXTRA_WIPE_DATA = "extra_wipe_data";
+    public static final String LOGIN_ACCOUNTS_POST_CHANGED_ACTION = "android.accounts.LOGIN_ACCOUNTS_POST_CHANGED";
     public static final String LOGIN_ACCOUNTS_PRE_CHANGED_ACTION = "android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED";
     private static final String TAG = "ExtraAccountManager";
     public static final int TYPE_ADD = 2;
@@ -146,7 +152,8 @@ _L1:
     private final BroadcastReceiver mAccountsChangedBroadcastReceiver = new BroadcastReceiver() {
 
         public void onReceive(Context context1, Intent intent) {
-            if(!"android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED".equals(intent.getAction())) goto _L2; else goto _L1
+            String s = intent.getAction();
+            if(!"android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED".equals(s) && !"android.accounts.LOGIN_ACCOUNTS_POST_CHANGED".equals(s)) goto _L2; else goto _L1
 _L1:
             Account account;
             Bundle bundle;
@@ -156,18 +163,18 @@ _L1:
             i = intent.getIntExtra("extra_update_type", -1);
             if(account == null || i <= 0) goto _L4; else goto _L3
 _L3:
-            HashMap hashmap1 = mMiuiAccountsUpdatedListeners;
-            hashmap1;
+            HashMap hashmap = mMiuiAccountsUpdatedListeners;
+            hashmap;
             JVM INSTR monitorenter ;
-            java.util.Map.Entry entry1;
-            for(Iterator iterator1 = mMiuiAccountsUpdatedListeners.entrySet().iterator(); iterator1.hasNext(); postToHandler((Handler)entry1.getValue(), (MiuiOnAccountsUpdateListener)entry1.getKey(), account, i, bundle))
-                entry1 = (java.util.Map.Entry)iterator1.next();
+            java.util.Map.Entry entry;
+            for(Iterator iterator = mMiuiAccountsUpdatedListeners.entrySet().iterator(); iterator.hasNext(); postToHandler((Handler)entry.getValue(), (MiuiOnAccountsUpdateListener)entry.getKey(), account, i, bundle, "android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED".equals(s)))
+                entry = (java.util.Map.Entry)iterator.next();
 
-            break MISSING_BLOCK_LABEL_149;
-            Exception exception1;
-            exception1;
-            throw exception1;
-            hashmap1;
+            break MISSING_BLOCK_LABEL_166;
+            Exception exception;
+            exception;
+            throw exception;
+            hashmap;
             JVM INSTR monitorexit ;
 _L5:
             return;
@@ -176,18 +183,18 @@ _L4:
               goto _L5
 _L2:
             Account aaccount[] = mAccountManager.getAccounts();
-            HashMap hashmap = mMiuiAccountsUpdatedListeners;
-            hashmap;
+            HashMap hashmap1 = mMiuiAccountsUpdatedListeners;
+            hashmap1;
             JVM INSTR monitorenter ;
-            java.util.Map.Entry entry;
-            for(Iterator iterator = mMiuiAccountsUpdatedListeners.entrySet().iterator(); iterator.hasNext(); postToHandler((Handler)entry.getValue(), (MiuiOnAccountsUpdateListener)entry.getKey(), aaccount))
-                entry = (java.util.Map.Entry)iterator.next();
+            java.util.Map.Entry entry1;
+            for(Iterator iterator1 = mMiuiAccountsUpdatedListeners.entrySet().iterator(); iterator1.hasNext(); postToHandler((Handler)entry1.getValue(), (MiuiOnAccountsUpdateListener)entry1.getKey(), aaccount))
+                entry1 = (java.util.Map.Entry)iterator1.next();
 
-            break MISSING_BLOCK_LABEL_265;
-            Exception exception;
-            exception;
-            throw exception;
-            hashmap;
+            break MISSING_BLOCK_LABEL_284;
+            Exception exception1;
+            exception1;
+            throw exception1;
+            hashmap1;
             JVM INSTR monitorexit ;
               goto _L5
         }

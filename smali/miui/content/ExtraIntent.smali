@@ -20,6 +20,8 @@
 
 .field public static final ACTION_ASSIST:Ljava/lang/String; = "android.intent.action.ASSIST"
 
+.field public static final ACTION_BIND_WIDGET_COMPLETED:Ljava/lang/String; = "miui.intent.action.BIND_WIDGET_COMPLETED"
+
 .field public static final ACTION_BLUETOOTH_HANDSFREE_BATTERY_CHANGED:Ljava/lang/String; = "android.intent.action.BLUETOOTH_HANDSFREE_BATTERY_CHANGED"
 
 .field public static final ACTION_CAPTURE_SCREENSHOT:Ljava/lang/String; = "android.intent.action.CAPTURE_SCREENSHOT"
@@ -42,6 +44,8 @@
 
 .field public static final ACTION_FIREWALL_UPDATED:Ljava/lang/String; = "android.intent.action.FIREWALL_UPDATED"
 
+.field public static final ACTION_INSTALL_WIDGET:Ljava/lang/String; = "com.miui.home.launcher.action.INSTALL_WIDGET"
+
 .field public static final ACTION_KEYCODE_POWER_UP:Ljava/lang/String; = "android.intent.action.KEYCODE_POWER_UP"
 
 .field public static final ACTION_LOCK_DEVICE:Ljava/lang/String; = "miui.intent.action.LOCK_DEVICE"
@@ -55,8 +59,6 @@
 .field public static final ACTION_NOISE:Ljava/lang/String; = "miui.intent.action.NOISE"
 
 .field public static final ACTION_PRIVACY_MODE_CHANGED:Ljava/lang/String; = "android.intent.action.PRIVACY_MODE_CHANGED"
-
-.field public static final ACTION_RELEASE_PROXIMITY_SENSOR:Ljava/lang/String; = "miui.intent.action.RELEASE_PROXIMITY_SENSOR"
 
 .field public static final ACTION_REQUEST_LOCATION:Ljava/lang/String; = "miui.intent.action.REQUEST_LOCATION"
 
@@ -98,6 +100,8 @@
 
 .field public static final EXTRA_BIND_TYPE:Ljava/lang/String; = "extra_bind_type"
 
+.field public static final EXTRA_BIND_WIDGET_RESULT:Ljava/lang/String; = "miui.intent.extra.bind_widget_result"
+
 .field public static final EXTRA_BLUETOOTH_HANDSFREE_BATTERY_LEVEL:Ljava/lang/String; = "android.intent.extra.bluetooth_handsfree_battery_level"
 
 .field public static final EXTRA_CAPTURE_SCREENSHOT_DELAY:Ljava/lang/String; = "capture_delay"
@@ -119,8 +123,6 @@
 .field public static final EXTRA_DEVICE_TIME:Ljava/lang/String; = "android.intent.extra.device_time"
 
 .field public static final EXTRA_DEVICE_TOKEN:Ljava/lang/String; = "android.intent.extra.device_token"
-
-.field public static final EXTRA_DISABLE_PROXIMITY_SENSOR:Ljava/lang/String; = "miui.intent.extra.DISABLE_PROXIMITY_SENSOR"
 
 .field public static final EXTRA_FIND_DEVICE_ENABLED:Ljava/lang/String; = "find_device_enabled"
 
@@ -144,11 +146,15 @@
 
 .field public static final EXTRA_PICK_MULTIPLE_CONTACTS_MODE:Ljava/lang/String; = "android.intent.extra.pick_multiple_contacts_mode"
 
+.field public static final EXTRA_PROVIDER_COMPONENT_NAME:Ljava/lang/String; = "miui.intent.extra.provider_component_name"
+
 .field public static final EXTRA_PWD:Ljava/lang/String; = "extra_pwd"
 
 .field public static final EXTRA_REG_TYPE_EMAIL:Ljava/lang/String; = "reg_type_email"
 
 .field public static final EXTRA_REG_TYPE_SMS:Ljava/lang/String; = "reg_type_sms"
+
+.field public static final EXTRA_RESULT_RECEIVER_COMPONENT_NAME:Ljava/lang/String; = "miui.intent.extra.result_receiver_component_name"
 
 .field public static final EXTRA_SHOW_BLUETOOTH_HANDSFREE_BATTERY:Ljava/lang/String; = "android.intent.extra.show_bluetooth_handsfree_battery"
 

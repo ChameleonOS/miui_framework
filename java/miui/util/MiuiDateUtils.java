@@ -62,12 +62,16 @@ public class MiuiDateUtils {
                 charbuffer.append(DateUtils.formatDateRange(context, l, l, i ^ 1));
                 charbuffer.append(" ");
             }
-            charbuffer.append(getDetailedAmPm(time.hour));
-            charbuffer.append(" ");
+            String s = getDetailedAmPm(time.hour);
             if(time.hour > 12)
                 time.hour = -12 + time.hour;
             long l1 = time.toMillis(true);
-            charbuffer.append(DateUtils.formatDateRange(context, l1, l1, 129));
+            String s1 = DateUtils.formatDateRange(context, l1, l1, 129);
+            Resources resources = Resources.getSystem();
+            Object aobj[] = new Object[2];
+            aobj[0] = s1;
+            aobj[1] = s;
+            charbuffer.append(resources.getString(0x60c01f7, aobj));
         } else {
             charbuffer.append(DateUtils.formatDateRange(context, l, l, i));
         }

@@ -33,9 +33,23 @@
 
 .field public static final android_banner:I = 0x60b0008
 
+.field public static final android_big_base_content:I = 0x60b0086
+
+.field public static final android_big_picture:I = 0x60b0084
+
+.field public static final android_big_picture_content:I = 0x60b0083
+
+.field public static final android_big_picture_shadow:I = 0x60b0085
+
+.field public static final android_big_text_content:I = 0x60b0087
+
 .field public static final android_body:I = 0x60b000c
 
 .field public static final android_clearDefaultHint:I = 0x60b0007
+
+.field public static final android_inbox:I = 0x60b0088
+
+.field public static final android_inbox_more:I = 0x60b0089
 
 .field public static final android_mount_button:I = 0x60b0009
 
@@ -283,7 +297,7 @@
     .registers 1
 
     .prologue
-    .line 1046
+    .line 1047
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

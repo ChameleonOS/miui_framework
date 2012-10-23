@@ -37,10 +37,10 @@ class SelectActionModeCallback
     //                   16908320: 78
     //                   16908321: 94
     //                   16908322: 109
-    //                   16909165: 151
-    //                   16909166: 123
-    //                   16909167: 161
-    //                   16909168: 188;
+    //                   16909170: 151
+    //                   16909171: 123
+    //                   16909172: 161
+    //                   16909173: 188;
            goto _L1 _L2 _L3 _L4 _L5 _L6 _L7 _L8
 _L8:
         break MISSING_BLOCK_LABEL_188;
@@ -108,11 +108,11 @@ _L7:
             flag = true;
         flag5 = mIsTextSelected;
         flag6 = mIsTextSelected;
-        setMenuVisibility(menu, flag4, 0x102036f);
+        setMenuVisibility(menu, flag4, 0x1020374);
         setMenuVisibility(menu, flag3, 0x1020022);
         setMenuVisibility(menu, flag, 0x1020020);
         setMenuVisibility(menu, flag5, 0x1020021);
-        setMenuVisibility(menu, flag6, 0x1020370);
+        setMenuVisibility(menu, flag6, 0x1020375);
         mActionMode = actionmode;
         return true;
     }

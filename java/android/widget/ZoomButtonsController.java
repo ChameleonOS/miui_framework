@@ -68,7 +68,7 @@ public class ZoomButtonsController
         container.setLayoutParams(layoutparams);
         container.setMeasureAllChildren(true);
         ((LayoutInflater)mContext.getSystemService("layout_inflater")).inflate(0x10900cc, container);
-        mControls = (ZoomControls)container.findViewById(0x1020368);
+        mControls = (ZoomControls)container.findViewById(0x102036d);
         mControls.setOnZoomInClickListener(new android.view.View.OnClickListener() {
 
             public void onClick(View view) {

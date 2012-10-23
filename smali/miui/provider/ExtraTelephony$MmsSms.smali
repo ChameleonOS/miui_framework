@@ -47,6 +47,8 @@
 
 .field public static final SYNC_STATE_DIRTY:I = 0x0
 
+.field public static final SYNC_STATE_ERROR:I = 0x3
+
 .field public static final SYNC_STATE_SYNCED:I = 0x2
 
 .field public static final SYNC_STATE_SYNCING:I = 0x1

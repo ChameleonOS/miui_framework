@@ -57,8 +57,8 @@ class ZoomControlExternal
         public ExtendedZoomControls(Context context) {
             super(context, null);
             ((LayoutInflater)context.getSystemService("layout_inflater")).inflate(0x10900ce, this, true);
-            mPlusMinusZoomControls = (ZoomControls)findViewById(0x1020368);
-            findViewById(0x102036b).setVisibility(8);
+            mPlusMinusZoomControls = (ZoomControls)findViewById(0x102036d);
+            findViewById(0x1020370).setVisibility(8);
         }
     }
 

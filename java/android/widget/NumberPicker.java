@@ -271,7 +271,7 @@ _L3:
             public void onClick(View view) {
                 hideSoftInput();
                 mInputText.clearFocus();
-                if(view.getId() == 0x10202f6)
+                if(view.getId() == 0x10202fb)
                     changeValueByOne(true);
                 else
                     changeValueByOne(false);
@@ -289,7 +289,7 @@ _L3:
             public boolean onLongClick(View view) {
                 hideSoftInput();
                 mInputText.clearFocus();
-                if(view.getId() == 0x10202f6)
+                if(view.getId() == 0x10202fb)
                     postChangeCurrentByOneFromLongPress(true, 0L);
                 else
                     postChangeCurrentByOneFromLongPress(false, 0L);
@@ -304,20 +304,20 @@ _L3:
             }
         };
         if(!mHasSelectorWheel) {
-            mIncrementButton = (ImageButton)findViewById(0x10202f6);
+            mIncrementButton = (ImageButton)findViewById(0x10202fb);
             mIncrementButton.setOnClickListener(onclicklistener);
             mIncrementButton.setOnLongClickListener(onlongclicklistener);
         } else {
             mIncrementButton = null;
         }
         if(!mHasSelectorWheel) {
-            mDecrementButton = (ImageButton)findViewById(0x10202f8);
+            mDecrementButton = (ImageButton)findViewById(0x10202fd);
             mDecrementButton.setOnClickListener(onclicklistener);
             mDecrementButton.setOnLongClickListener(onlongclicklistener);
         } else {
             mDecrementButton = null;
         }
-        mInputText = (EditText)findViewById(0x10202f7);
+        mInputText = (EditText)findViewById(0x10202fc);
         mInputText.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener() {
 
             public void onFocusChange(View view, boolean flag3) {

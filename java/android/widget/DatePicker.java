@@ -163,18 +163,18 @@ public class DatePicker extends FrameLayout {
         mDaySpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
         mDaySpinner.setOnLongPressUpdateInterval(100L);
         mDaySpinner.setOnValueChangedListener(onvaluechangelistener);
-        mDaySpinnerInput = (EditText)mDaySpinner.findViewById(0x10202f7);
+        mDaySpinnerInput = (EditText)mDaySpinner.findViewById(0x10202fc);
         mMonthSpinner = (NumberPicker)findViewById(0x102026f);
         mMonthSpinner.setMinValue(0);
         mMonthSpinner.setMaxValue(-1 + mNumberOfMonths);
         mMonthSpinner.setDisplayedValues(mShortMonths);
         mMonthSpinner.setOnLongPressUpdateInterval(200L);
         mMonthSpinner.setOnValueChangedListener(onvaluechangelistener);
-        mMonthSpinnerInput = (EditText)mMonthSpinner.findViewById(0x10202f7);
+        mMonthSpinnerInput = (EditText)mMonthSpinner.findViewById(0x10202fc);
         mYearSpinner = (NumberPicker)findViewById(0x1020271);
         mYearSpinner.setOnLongPressUpdateInterval(100L);
         mYearSpinner.setOnValueChangedListener(onvaluechangelistener);
-        mYearSpinnerInput = (EditText)mYearSpinner.findViewById(0x10202f7);
+        mYearSpinnerInput = (EditText)mYearSpinner.findViewById(0x10202fc);
         if(!flag && !flag1) {
             setSpinnersShown(true);
         } else {
@@ -282,12 +282,12 @@ _L1:
     }
 
     private void setContentDescriptions() {
-        trySetContentDescription(mDaySpinner, 0x10202f6, 0x10404b5);
-        trySetContentDescription(mDaySpinner, 0x10202f8, 0x10404b6);
-        trySetContentDescription(mMonthSpinner, 0x10202f6, 0x10404b3);
-        trySetContentDescription(mMonthSpinner, 0x10202f8, 0x10404b4);
-        trySetContentDescription(mYearSpinner, 0x10202f6, 0x10404b7);
-        trySetContentDescription(mYearSpinner, 0x10202f8, 0x10404b8);
+        trySetContentDescription(mDaySpinner, 0x10202fb, 0x10404b5);
+        trySetContentDescription(mDaySpinner, 0x10202fd, 0x10404b6);
+        trySetContentDescription(mMonthSpinner, 0x10202fb, 0x10404b3);
+        trySetContentDescription(mMonthSpinner, 0x10202fd, 0x10404b4);
+        trySetContentDescription(mYearSpinner, 0x10202fb, 0x10404b7);
+        trySetContentDescription(mYearSpinner, 0x10202fd, 0x10404b8);
     }
 
     private void setCurrentLocale(Locale locale) {
@@ -327,7 +327,7 @@ _L3:
             byte0 = 5;
         else
             byte0 = 6;
-        ((TextView)numberpicker.findViewById(0x10202f7)).setImeOptions(byte0);
+        ((TextView)numberpicker.findViewById(0x10202fc)).setImeOptions(byte0);
     }
 
     private void trySetContentDescription(View view, int i, int j) {

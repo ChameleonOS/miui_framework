@@ -574,51 +574,47 @@
     return-object v0
 .end method
 
-.method public getThemeFileStream(ILjava/lang/String;)Ljava/io/InputStream;
+.method public getThemeFileStream(ILjava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     .registers 4
     .parameter "cookieType"
     .parameter "fileName"
 
     .prologue
     .line 161
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p2, v0}, Lmiui/content/res/ThemeResources;->getThemeFileStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {p0, p2}, Lmiui/content/res/ThemeResources;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getThemeFileStream(Ljava/lang/String;[I)Ljava/io/InputStream;
-    .registers 4
+.method public getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .registers 3
     .parameter "relativeFilePath"
-    .parameter "size"
 
     .prologue
     .line 157
-    invoke-virtual {p0, p1, p2}, Lmiui/content/res/ThemeResources;->getThemeFileStreamInner(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {p0, p1}, Lmiui/content/res/ThemeResources;->getThemeFileStreamInner(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected getThemeFileStreamInner(Ljava/lang/String;[I)Ljava/io/InputStream;
-    .registers 5
+.method protected getThemeFileStreamInner(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
+    .registers 4
     .parameter "relativeFilePath"
-    .parameter "size"
 
     .prologue
     .line 149
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mPackageZipFile:Lmiui/content/res/ThemeZipFile;
 
-    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeZipFile;->getInputStream(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {v1, p1}, Lmiui/content/res/ThemeZipFile;->getInputStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
     .line 150
-    .local v0, ret:Ljava/io/InputStream;
+    .local v0, ret:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     if-nez v0, :cond_12
 
     iget-boolean v1, p0, Lmiui/content/res/ThemeResources;->mHasWrapped:Z
@@ -628,7 +624,7 @@
     .line 151
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mWrapped:Lmiui/content/res/ThemeResources;
 
-    invoke-virtual {v1, p1, p2}, Lmiui/content/res/ThemeResources;->getThemeFileStreamInner(Ljava/lang/String;[I)Ljava/io/InputStream;
+    invoke-virtual {v1, p1}, Lmiui/content/res/ThemeResources;->getThemeFileStreamInner(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 

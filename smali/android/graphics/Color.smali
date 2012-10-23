@@ -95,7 +95,7 @@
     .line 376
     sget-object v0, Landroid/graphics/Color;->sColorNameMap:Ljava/util/HashMap;
 
-    const-string v1, "lightgray"
+    const-string/jumbo v1, "lightgray"
 
     const v2, -0x333334
 

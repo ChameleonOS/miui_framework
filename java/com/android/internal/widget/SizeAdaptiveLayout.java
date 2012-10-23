@@ -144,7 +144,7 @@ public class SizeAdaptiveLayout extends ViewGroup {
         if(drawable instanceof ColorDrawable)
             mModestyPanel.setBackgroundDrawable(drawable);
         else
-            mModestyPanel.setBackgroundColor(0xff000000);
+            mModestyPanel.setBackgroundColor(0);
         layoutparams = new LayoutParams(-1, -1);
         mModestyPanel.setLayoutParams(layoutparams);
         addView(mModestyPanel);

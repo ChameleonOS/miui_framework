@@ -293,23 +293,23 @@ _L3:
         View view = LayoutInflater.from(context).inflate(0x10900ac, null);
         DName dname = getIssuedTo();
         if(dname != null) {
-            ((TextView)view.findViewById(0x1020332)).setText(dname.getCName());
-            ((TextView)view.findViewById(0x1020334)).setText(dname.getOName());
-            ((TextView)view.findViewById(0x1020336)).setText(dname.getUName());
+            ((TextView)view.findViewById(0x1020337)).setText(dname.getCName());
+            ((TextView)view.findViewById(0x1020339)).setText(dname.getOName());
+            ((TextView)view.findViewById(0x102033b)).setText(dname.getUName());
         }
-        ((TextView)view.findViewById(0x1020338)).setText(getSerialNumber(mX509Certificate));
+        ((TextView)view.findViewById(0x102033d)).setText(getSerialNumber(mX509Certificate));
         DName dname1 = getIssuedBy();
         if(dname1 != null) {
-            ((TextView)view.findViewById(0x102033a)).setText(dname1.getCName());
-            ((TextView)view.findViewById(0x102033c)).setText(dname1.getOName());
-            ((TextView)view.findViewById(0x102033e)).setText(dname1.getUName());
+            ((TextView)view.findViewById(0x102033f)).setText(dname1.getCName());
+            ((TextView)view.findViewById(0x1020341)).setText(dname1.getOName());
+            ((TextView)view.findViewById(0x1020343)).setText(dname1.getUName());
         }
         String s = formatCertificateDate(context, getValidNotBeforeDate());
-        ((TextView)view.findViewById(0x1020341)).setText(s);
+        ((TextView)view.findViewById(0x1020346)).setText(s);
         String s1 = formatCertificateDate(context, getValidNotAfterDate());
-        ((TextView)view.findViewById(0x1020343)).setText(s1);
-        ((TextView)view.findViewById(0x1020346)).setText(getDigest(mX509Certificate, "SHA256"));
-        ((TextView)view.findViewById(0x1020348)).setText(getDigest(mX509Certificate, "SHA1"));
+        ((TextView)view.findViewById(0x1020348)).setText(s1);
+        ((TextView)view.findViewById(0x102034b)).setText(getDigest(mX509Certificate, "SHA256"));
+        ((TextView)view.findViewById(0x102034d)).setText(getDigest(mX509Certificate, "SHA1"));
         return view;
     }
 

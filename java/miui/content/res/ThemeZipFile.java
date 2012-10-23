@@ -19,6 +19,21 @@ import org.xmlpull.v1.*;
 //            ThemeResources
 
 public final class ThemeZipFile {
+    public class ThemeFileInfo {
+
+        public int mDensity;
+        public InputStream mInput;
+        public long mSize;
+        final ThemeZipFile this$0;
+
+        ThemeFileInfo(InputStream inputstream, long l) {
+            this$0 = ThemeZipFile.this;
+            super();
+            mInput = inputstream;
+            mSize = l;
+        }
+    }
+
 
     public ThemeZipFile(String s, ThemeResources.MetaData metadata, String s1) {
         mLastModifyTime = -1L;
@@ -45,32 +60,47 @@ public final class ThemeZipFile {
         mCharSequences.clear();
     }
 
-    private InputStream getInputStreamInner(String s, int ai[]) {
-        InputStream inputstream = getZipInputStream(s, ai);
-        if(inputstream != null) goto _L2; else goto _L1
+    private ThemeFileInfo getInputStreamInner(String s) {
+        ThemeFileInfo themefileinfo = getZipInputStream(s);
+        if(themefileinfo == null) goto _L2; else goto _L1
 _L1:
-        int i = s.indexOf("dpi/");
-        if(i >= 0) goto _L4; else goto _L3
-_L3:
-        InputStream inputstream1 = inputstream;
-_L6:
-        return inputstream1;
+        ThemeFileInfo themefileinfo1 = themefileinfo;
 _L4:
-        String s1 = s.substring(i + 3);
-        for(; s.charAt(i) != '-'; i--);
-        String s2 = s.substring(0, i);
-        for(int j = -1 + sDensities.length; inputstream == null && j >= 0; j--) {
-            Object aobj[] = new Object[3];
-            aobj[0] = s2;
-            aobj[1] = DisplayUtils.getDensitySuffix(sDensities[j]);
-            aobj[2] = s1;
-            inputstream = getZipInputStream(String.format("%s%s%s", aobj), ai);
-        }
-
+        return themefileinfo1;
 _L2:
-        inputstream1 = inputstream;
-        if(true) goto _L6; else goto _L5
+        String s1;
+        String s2;
+        int j;
+        int i = s.indexOf("dpi/");
+        if(i < 0) {
+            themefileinfo1 = themefileinfo;
+            continue; /* Loop/switch isn't completed */
+        }
+        s1 = s.substring(i + 3);
+        for(; s.charAt(i) != '-'; i--);
+        s2 = s.substring(0, i);
+        j = -1 + sDensities.length;
 _L5:
+label0:
+        {
+            if(j >= 0) {
+                Object aobj[] = new Object[3];
+                aobj[0] = s2;
+                aobj[1] = DisplayUtils.getDensitySuffix(sDensities[j]);
+                aobj[2] = s1;
+                themefileinfo = getZipInputStream(String.format("%s%s%s", aobj));
+                if(themefileinfo == null)
+                    break label0;
+                themefileinfo.mDensity = sDensities[j];
+            }
+            themefileinfo1 = themefileinfo;
+        }
+        if(true) goto _L4; else goto _L3
+_L3:
+        j--;
+          goto _L5
+        if(true) goto _L4; else goto _L6
+_L6:
     }
 
     private static final String getPackageName(String s) {
@@ -100,11 +130,11 @@ _L3:
         throw exception;
     }
 
-    private InputStream getZipInputStream(String s, int ai[]) {
-        InputStream inputstream = null;
+    private ThemeFileInfo getZipInputStream(String s) {
+        ThemeFileInfo themefileinfo = null;
         if(isValid()) goto _L2; else goto _L1
 _L1:
-        return inputstream;
+        return themefileinfo;
 _L2:
         ZipEntry zipentry = null;
         if(!s.endsWith("#*.png")) goto _L4; else goto _L3
@@ -114,15 +144,15 @@ _L3:
         ZipEntry zipentry2;
         do {
             if(!enumeration.hasMoreElements())
-                break MISSING_BLOCK_LABEL_96;
+                break MISSING_BLOCK_LABEL_94;
             zipentry2 = (ZipEntry)enumeration.nextElement();
         } while(zipentry2.isDirectory() || !zipentry2.getName().startsWith(s1));
         zipentry = zipentry2;
 _L5:
         if(zipentry != null) {
-            if(ai != null && ai.length > 0)
-                ai[0] = (int)zipentry.getSize();
-            inputstream = mZipFile.getInputStream(zipentry);
+            InputStream inputstream = mZipFile.getInputStream(zipentry);
+            if(inputstream != null)
+                themefileinfo = new ThemeFileInfo(inputstream, zipentry.getSize());
         }
         continue; /* Loop/switch isn't completed */
 _L4:
@@ -155,28 +185,25 @@ _L2:
             break; /* Loop/switch isn't completed */
         Object aobj[] = new Object[1];
         aobj[0] = DisplayUtils.getDensitySuffix(sDensities[i]);
-        obj = getZipInputStream(String.format("theme_values%s.xml", aobj), null);
-        if(obj == null)
-            break MISSING_BLOCK_LABEL_124;
+        ThemeFileInfo themefileinfo = getZipInputStream(String.format("theme_values%s.xml", aobj));
+        if(themefileinfo == null)
+            break MISSING_BLOCK_LABEL_130;
+        obj = themefileinfo.mInput;
         XmlPullParser xmlpullparser;
         BufferedInputStream bufferedinputstream;
         xmlpullparser = XmlPullParserFactory.newInstance().newPullParser();
         bufferedinputstream = new BufferedInputStream(((InputStream) (obj)), 8192);
         xmlpullparser.setInput(bufferedinputstream, null);
         mergeThemeValues(resources, xmlpullparser);
-        Exception exception;
-        try {
-            bufferedinputstream.close();
-        }
-        catch(IOException ioexception2) {
-            ioexception2.printStackTrace();
-        }
+        bufferedinputstream.close();
+_L3:
         i++;
         if(true) goto _L2; else goto _L1
+        Exception exception;
         exception;
-_L3:
-        XmlPullParserException xmlpullparserexception;
+_L5:
         IOException ioexception;
+        XmlPullParserException xmlpullparserexception;
         try {
             ((InputStream) (obj)).close();
         }
@@ -187,22 +214,22 @@ _L3:
 _L1:
         return;
         xmlpullparserexception;
+_L6:
+        ((InputStream) (obj)).close();
+          goto _L3
+        ioexception;
 _L4:
-        try {
-            ((InputStream) (obj)).close();
-        }
-        // Misplaced declaration of an exception variable
-        catch(IOException ioexception) {
-            ioexception.printStackTrace();
-        }
-        break MISSING_BLOCK_LABEL_124;
+        ioexception.printStackTrace();
+          goto _L3
+        ioexception;
+          goto _L4
         exception;
         obj = bufferedinputstream;
-          goto _L3
+          goto _L5
         XmlPullParserException xmlpullparserexception1;
         xmlpullparserexception1;
         obj = bufferedinputstream;
-          goto _L4
+          goto _L6
     }
 
     private void mergeThemeValues(Resources resources, XmlPullParser xmlpullparser) {
@@ -339,13 +366,13 @@ _L4:
         return (new File(mPath)).exists();
     }
 
-    public InputStream getInputStream(String s, int ai[]) {
-        InputStream inputstream;
+    public ThemeFileInfo getInputStream(String s) {
+        ThemeFileInfo themefileinfo;
         if(mMetaData.supportFile)
-            inputstream = getInputStreamInner(s, ai);
+            themefileinfo = getInputStreamInner(s);
         else
-            inputstream = null;
-        return inputstream;
+            themefileinfo = null;
+        return themefileinfo;
     }
 
     public CharSequence getThemeCharSequence(int i) {
@@ -376,7 +403,6 @@ _L4:
     private static final String TAG_DIMEN = "dimen";
     private static final String TAG_DRAWABLE = "drawable";
     private static final String TAG_INTEGER = "integer";
-    private static final String TAG_ROOT = "MIUI_Theme_Values";
     private static final String TAG_STRING = "string";
     public static final String THEME_VALUE_FILE = "theme_values.xml";
     private static final String TRUE = "true";

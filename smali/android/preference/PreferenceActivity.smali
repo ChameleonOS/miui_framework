@@ -314,7 +314,7 @@
     invoke-virtual {v1, v2}, Landroid/app/FragmentTransaction;->setTransition(I)Landroid/app/FragmentTransaction;
 
     .line 1128
-    const v2, 0x1020303
+    const v2, 0x1020308
 
     invoke-virtual {v1, v2, v0}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -1623,7 +1623,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setContentView(I)V
 
     .line 505
-    const v17, 0x1020301
+    const v17, 0x1020306
 
     move-object/from16 v0, p0
 
@@ -1642,7 +1642,7 @@
     iput-object v0, v1, Landroid/preference/PreferenceActivity;->mListFooter:Landroid/widget/FrameLayout;
 
     .line 506
-    const v17, 0x1020302
+    const v17, 0x1020307
 
     move-object/from16 v0, p0
 
@@ -1836,7 +1836,7 @@
     if-eqz v17, :cond_22e
 
     .line 564
-    const v17, 0x1020300
+    const v17, 0x1020305
 
     move-object/from16 v0, p0
 
@@ -1929,7 +1929,7 @@
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->setVisibility(I)V
 
     .line 598
-    const v17, 0x1020304
+    const v17, 0x1020309
 
     move-object/from16 v0, p0
 
@@ -1956,7 +1956,7 @@
     invoke-virtual {v3, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 605
-    const v17, 0x1020305
+    const v17, 0x102030a
 
     move-object/from16 v0, p0
 
@@ -1981,7 +1981,7 @@
     invoke-virtual/range {v16 .. v17}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 612
-    const v17, 0x1020306
+    const v17, 0x102030b
 
     move-object/from16 v0, p0
 
@@ -2362,7 +2362,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setContentView(I)V
 
     .line 586
-    const v17, 0x1020301
+    const v17, 0x1020306
 
     move-object/from16 v0, p0
 
@@ -2381,7 +2381,7 @@
     iput-object v0, v1, Landroid/preference/PreferenceActivity;->mListFooter:Landroid/widget/FrameLayout;
 
     .line 587
-    const v17, 0x1020303
+    const v17, 0x1020308
 
     move-object/from16 v0, p0
 
@@ -3194,7 +3194,7 @@
 
     .line 1217
     .local v0, transaction:Landroid/app/FragmentTransaction;
-    const v1, 0x1020303
+    const v1, 0x1020308
 
     invoke-virtual {v0, v1, p1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -3288,7 +3288,7 @@
 
     .line 1256
     .local v8, transaction:Landroid/app/FragmentTransaction;
-    const v0, 0x1020303
+    const v0, 0x1020308
 
     invoke-virtual {v8, v0, v7}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 

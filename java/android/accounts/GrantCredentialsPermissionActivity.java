@@ -62,7 +62,7 @@ _L2:
 
     private View newPackageView(String s) {
         View view = mInflater.inflate(0x109007b, null);
-        ((TextView)view.findViewById(0x10202fa)).setText(s);
+        ((TextView)view.findViewById(0x10202ff)).setText(s);
         return view;
     }
 

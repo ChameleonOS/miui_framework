@@ -21,6 +21,8 @@
 
 .field public static final activating:I = 0x60c01dd
 
+.field public static final alarm_message_12_hour_formate:I = 0x60c01f6
+
 .field public static final all_resources:I = 0x60c0027
 
 .field public static final android_byteShort:I = 0x60c01de
@@ -33,9 +35,9 @@
 
 .field public static final android_common_name_suffixes:I = 0x60c019d
 
-.field public static final android_config_defaultDreamComponent:I = 0x60c01ee
+.field public static final android_config_defaultDreamComponent:I = 0x60c01f9
 
-.field public static final android_date_time_set:I = 0x60c01ef
+.field public static final android_date_time_set:I = 0x60c01fa
 
 .field public static final android_dial_number_using:I = 0x60c01a0
 
@@ -134,6 +136,8 @@
 .field public static final android_ssl_certificate:I = 0x60c0199
 
 .field public static final android_ssl_certificate_is_valid:I = 0x60c01ad
+
+.field public static final android_storage_usb:I = 0x60c01f8
 
 .field public static final android_terabyteShort:I = 0x60c01df
 
@@ -675,6 +679,14 @@
 
 .field public static final download_preview_failed:I = 0x60c0024
 
+.field public static final error_forbidden:I = 0x60c01f0
+
+.field public static final error_not_acceptable:I = 0x60c01f1
+
+.field public static final error_title:I = 0x60c01ee
+
+.field public static final error_unauthorized:I = 0x60c01ef
+
 .field public static final every_day:I = 0x60c01af
 
 .field public static final find_device_sim_change_instructions:I = 0x60c01e5
@@ -688,6 +700,8 @@
 .field public static final fools_day:I = 0x60c0063
 
 .field public static final force_exit_message:I = 0x60c0170
+
+.field public static final format_time_in_12_hours:I = 0x60c01f7
 
 .field public static final global_action_privacy_mode_dialog_message:I = 0x60c0174
 
@@ -925,6 +939,12 @@
 
 .field public static final safetylegal_activity_unreachable:I = 0x60c002f
 
+.field public static final screen_on_proximity_sensor_hint:I = 0x60c01f2
+
+.field public static final screen_on_proximity_sensor_summary:I = 0x60c01f3
+
+.field public static final screen_on_proximity_sensor_title:I = 0x60c01f4
+
 .field public static final sd_not_available:I = 0x60c0038
 
 .field public static final sd_not_available_low_internal_storage:I = 0x60c003a
@@ -999,6 +1019,8 @@
 
 .field public static final vernal_equinox:I = 0x60c0071
 
+.field public static final wake_alarm_message:I = 0x60c01f5
+
 .field public static final white_dews:I = 0x60c007c
 
 .field public static final winter_begins:I = 0x60c0080
@@ -1013,7 +1035,7 @@
     .registers 1
 
     .prologue
-    .line 1527
+    .line 1540
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

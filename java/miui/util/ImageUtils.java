@@ -32,15 +32,15 @@ public class ImageUtils {
             int j = bitmap.getHeight();
             int k = bitmap1.getWidth();
             int l = bitmap1.getHeight();
-            Matrix matrix = new Matrix();
             float f = Math.max((1.0F * (float)k) / (float)i, (1.0F * (float)l) / (float)j);
-            matrix.setScale(f, f);
-            matrix.postTranslate(((float)k - f * (float)i) / 2.0F, ((float)l - f * (float)j) / 2.0F);
             Paint paint = new Paint();
             paint.setFilterBitmap(flag1);
             paint.setAntiAlias(flag1);
             paint.setDither(flag1);
-            (new Canvas(bitmap1)).drawBitmap(bitmap, matrix, paint);
+            Canvas canvas = new Canvas(bitmap1);
+            canvas.translate(((float)k - f * (float)i) / 2.0F, ((float)l - f * (float)j) / 2.0F);
+            canvas.scale(f, f);
+            canvas.drawBitmap(bitmap, 0.0F, 0.0F, paint);
             if(flag)
                 bitmap.recycle();
         } else {

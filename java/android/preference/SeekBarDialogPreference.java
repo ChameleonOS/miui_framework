@@ -25,7 +25,7 @@ public class SeekBarDialogPreference extends DialogPreference {
     }
 
     protected static SeekBar getSeekBar(View view) {
-        return (SeekBar)view.findViewById(0x1020307);
+        return (SeekBar)view.findViewById(0x102030c);
     }
 
     public void createActionButtons() {

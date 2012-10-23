@@ -149,6 +149,10 @@
 
 .field public static final ENABLE_ASSIST_MENU_LONG_PRESS_DEFAULT:I = 0x1
 
+.field public static final ENABLE_SCREEN_ON_PROXIMITY_SENSOR:Ljava/lang/String; = "enable_screen_on_proximity_sensor"
+
+.field public static final ENABLE_SCREEN_ON_PROXIMITY_SENSOR_DEFAULT:Z = true
+
 .field public static final ENABLE_SNAPSHOT_SCREENLOCK:Ljava/lang/String; = "enable_snapshot_screenlock"
 
 .field public static final ENABLE_SNAPSHOT_SCREENLOCK_DEFAULT:I = 0x0
@@ -396,7 +400,7 @@
     .registers 2
 
     .prologue
-    .line 200
+    .line 207
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -409,7 +413,7 @@
 
     sput v0, Lmiui/provider/ExtraSettings$System;->CALL_BREATHING_LIGHT_COLOR_DEFAULT:I
 
-    .line 207
+    .line 214
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -422,7 +426,7 @@
 
     sput v0, Lmiui/provider/ExtraSettings$System;->CALL_BREATHING_LIGHT_FREQ_DEFAULT:I
 
-    .line 326
+    .line 333
     const-string/jumbo v0, "sms_received_sound"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -431,7 +435,7 @@
 
     sput-object v0, Lmiui/provider/ExtraSettings$System;->DEFAULT_SMS_RECEIVED_RINGTONE_URI:Landroid/net/Uri;
 
-    .line 344
+    .line 351
     const-string/jumbo v0, "sms_delivered_sound"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -440,14 +444,14 @@
 
     sput-object v0, Lmiui/provider/ExtraSettings$System;->DEFAULT_SMS_DELIVERED_RINGTONE_URI:Landroid/net/Uri;
 
-    .line 628
+    .line 635
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
-    .line 629
+    .line 636
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -458,7 +462,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 630
+    .line 637
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     const/4 v1, 0x1
@@ -469,7 +473,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 631
+    .line 638
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     const/4 v1, 0x2
@@ -480,7 +484,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 632
+    .line 639
     sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     const/4 v1, 0x3
@@ -491,7 +495,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 633
+    .line 640
     return-void
 .end method
 
@@ -516,7 +520,7 @@
 
     const/4 v2, 0x0
 
-    .line 579
+    .line 586
     if-eqz p2, :cond_c
 
     move v0, v1
@@ -549,7 +553,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 525
+    .line 532
     const-string/jumbo v0, "vibrate_mms"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -558,11 +562,11 @@
 
     if-eqz v0, :cond_b
 
-    .line 530
+    .line 537
     :cond_a
     return v1
 
-    .line 527
+    .line 534
     :cond_b
     const-string/jumbo v0, "vibrate_ringer"
 
@@ -572,7 +576,7 @@
 
     if-nez v0, :cond_a
 
-    .line 529
+    .line 536
     const-string/jumbo v0, "vibrate_notification"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -581,7 +585,7 @@
 
     if-nez v0, :cond_a
 
-    .line 533
+    .line 540
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -623,12 +627,12 @@
     .end annotation
 
     .prologue
-    .line 636
+    .line 643
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 637
+    .line 644
     .local v6, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -640,7 +644,7 @@
 
     move-result-object v4
 
-    .line 638
+    .line 645
     .local v4, keyList:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -648,14 +652,14 @@
 
     if-nez v7, :cond_44
 
-    .line 639
+    .line 646
     const-string v7, " "
 
     invoke-virtual {v4, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v5
 
-    .line 640
+    .line 647
     .local v5, keys:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -665,7 +669,7 @@
 
     if-ge v1, v7, :cond_44
 
-    .line 642
+    .line 649
     :try_start_20
     aget-object v7, v5, v1
 
@@ -677,7 +681,7 @@
 
     move-result v3
 
-    .line 643
+    .line 650
     .local v3, id:I
     sget-object v7, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
@@ -691,7 +695,7 @@
 
     if-eqz v7, :cond_3d
 
-    .line 644
+    .line 651
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
@@ -700,22 +704,22 @@
     :try_end_3d
     .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_3d} :catch_40
 
-    .line 640
+    .line 647
     :cond_3d
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1d
 
-    .line 646
+    .line 653
     .end local v3           #id:I
     :catch_40
     move-exception v0
 
-    .line 647
+    .line 654
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 653
+    .line 660
     .end local v0           #e:Ljava/lang/Exception;
     .end local v1           #i:I
     .end local v5           #keys:[Ljava/lang/String;
@@ -726,7 +730,7 @@
 
     if-nez v7, :cond_60
 
-    .line 654
+    .line 661
     sget-object v7, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -747,13 +751,13 @@
 
     check-cast v3, Ljava/lang/Integer;
 
-    .line 655
+    .line 662
     .local v3, id:Ljava/lang/Integer;
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_50
 
-    .line 658
+    .line 665
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #id:Ljava/lang/Integer;
     :cond_60
@@ -767,7 +771,7 @@
     .parameter "defValue"
 
     .prologue
-    .line 571
+    .line 578
     const-class v1, Lmiui/provider/ExtraSettings$System;
 
     monitor-enter v1
@@ -779,20 +783,20 @@
 
     move-result-object v0
 
-    .line 572
+    .line 579
     .local v0, result:Ljava/lang/String;
     if-nez v0, :cond_a
 
-    .line 573
+    .line 580
     move-object v0, p2
 
-    .line 575
+    .line 582
     :cond_a
     monitor-exit v1
 
     return-object v0
 
-    .line 571
+    .line 578
     .end local v0           #result:Ljava/lang/String;
     :catchall_c
     move-exception v2
@@ -810,7 +814,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 521
+    .line 528
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -841,7 +845,7 @@
     .parameter "value"
 
     .prologue
-    .line 583
+    .line 590
     if-eqz p2, :cond_7
 
     const/4 v0, 0x1
@@ -849,10 +853,10 @@
     :goto_3
     invoke-static {p0, p1, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 584
+    .line 591
     return-void
 
-    .line 583
+    .line 590
     :cond_7
     const/4 v0, 0x0
 

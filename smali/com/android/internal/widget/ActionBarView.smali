@@ -1529,7 +1529,7 @@
     .line 326
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mIndeterminateProgressView:Landroid/widget/ProgressBar;
 
-    const v1, 0x1020317
+    const v1, 0x102031c
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setId(I)V
 
@@ -1571,7 +1571,7 @@
     .line 317
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mProgressView:Landroid/widget/ProgressBar;
 
-    const v1, 0x1020318
+    const v1, 0x102031d
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setId(I)V
 

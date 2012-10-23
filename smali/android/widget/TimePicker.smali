@@ -110,7 +110,7 @@
 
     const/4 v10, 0x0
 
-    const v9, 0x10202f7
+    const v9, 0x10202fc
 
     const/4 v8, 0x1
 
@@ -162,7 +162,7 @@
     invoke-virtual {v2, v3, p0, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 150
-    const v4, 0x1020349
+    const v4, 0x102034e
 
     invoke-virtual {p0, v4}, Landroid/widget/TimePicker;->findViewById(I)Landroid/view/View;
 
@@ -198,7 +198,7 @@
     invoke-virtual {v4, v11}, Landroid/widget/EditText;->setImeOptions(I)V
 
     .line 168
-    const v4, 0x102034d
+    const v4, 0x1020352
 
     invoke-virtual {p0, v4}, Landroid/widget/TimePicker;->findViewById(I)Landroid/view/View;
 
@@ -222,7 +222,7 @@
 
     .line 174
     :cond_69
-    const v4, 0x102034a
+    const v4, 0x102034f
 
     invoke-virtual {p0, v4}, Landroid/widget/TimePicker;->findViewById(I)Landroid/view/View;
 
@@ -295,7 +295,7 @@
     iput-object v4, p0, Landroid/widget/TimePicker;->mAmPmStrings:[Ljava/lang/String;
 
     .line 192
-    const v4, 0x102034b
+    const v4, 0x1020350
 
     invoke-virtual {p0, v4}, Landroid/widget/TimePicker;->findViewById(I)Landroid/view/View;
 
@@ -505,9 +505,9 @@
     .registers 5
 
     .prologue
-    const v3, 0x10202f8
+    const v3, 0x10202fd
 
-    const v2, 0x10202f6
+    const v2, 0x10202fb
 
     .line 527
     iget-object v0, p0, Landroid/widget/TimePicker;->mMinuteSpinner:Landroid/widget/NumberPicker;

@@ -228,16 +228,16 @@ _L3:
             }
         };
         ((LayoutInflater)context.getSystemService("layout_inflater")).inflate(0x10900a2, this, true);
-        mSearchButton = findViewById(0x1020324);
-        mQueryTextView = (SearchAutoComplete)findViewById(0x1020328);
+        mSearchButton = findViewById(0x1020329);
+        mQueryTextView = (SearchAutoComplete)findViewById(0x102032d);
         mQueryTextView.setSearchView(this);
-        mSearchEditFrame = findViewById(0x1020325);
-        mSearchPlate = findViewById(0x1020327);
-        mSubmitArea = findViewById(0x102032a);
-        mSubmitButton = findViewById(0x102032b);
-        mCloseButton = (ImageView)findViewById(0x1020329);
-        mVoiceButton = findViewById(0x102032c);
-        mSearchHintIcon = (ImageView)findViewById(0x1020326);
+        mSearchEditFrame = findViewById(0x102032a);
+        mSearchPlate = findViewById(0x102032c);
+        mSubmitArea = findViewById(0x102032f);
+        mSubmitButton = findViewById(0x1020330);
+        mCloseButton = (ImageView)findViewById(0x102032e);
+        mVoiceButton = findViewById(0x1020331);
+        mSearchHintIcon = (ImageView)findViewById(0x102032b);
         mSearchButton.setOnClickListener(mOnClickListener);
         mCloseButton.setOnClickListener(mOnClickListener);
         mSubmitButton.setOnClickListener(mOnClickListener);

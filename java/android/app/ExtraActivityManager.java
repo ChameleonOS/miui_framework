@@ -4,6 +4,7 @@
 
 package android.app;
 
+import android.content.Context;
 import android.os.Build;
 import android.view.Display;
 
@@ -19,5 +20,9 @@ public class ExtraActivityManager {
         else
             flag = false;
         return flag;
+    }
+
+    public static boolean useHardwareAccelerationOnKeyguard(Context context) {
+        return false;
     }
 }

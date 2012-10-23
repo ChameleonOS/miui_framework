@@ -186,7 +186,7 @@
 
     .prologue
     .line 84
-    const-string v0, "limit"
+    const-string/jumbo v0, "limit"
 
     const/4 v1, -0x1
 
@@ -280,7 +280,7 @@
 
     move-result-object v0
 
-    const-string v1, "limit"
+    const-string/jumbo v1, "limit"
 
     invoke-static {p3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -309,13 +309,13 @@
 
     .line 68
     .local v7, c:Landroid/database/Cursor;
-    if-eqz v7, :cond_53
+    if-eqz v7, :cond_54
 
     .line 70
-    :try_start_4c
+    :try_start_4d
     invoke-interface {v7}, Landroid/database/Cursor;->getExtras()Landroid/os/Bundle;
-    :try_end_4f
-    .catchall {:try_start_4c .. :try_end_4f} :catchall_5f
+    :try_end_50
+    .catchall {:try_start_4d .. :try_end_50} :catchall_60
 
     move-result-object v8
 
@@ -323,8 +323,8 @@
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     .line 76
-    :cond_53
-    if-eqz v8, :cond_64
+    :cond_54
+    if-eqz v8, :cond_65
 
     const-string/jumbo v0, "result_key"
 
@@ -334,20 +334,20 @@
 
     check-cast v0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;
 
-    :goto_5e
+    :goto_5f
     return-object v0
 
     .line 72
-    :catchall_5f
+    :catchall_60
     move-exception v0
 
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     throw v0
 
-    :cond_64
+    :cond_65
     move-object v0, v2
 
     .line 76
-    goto :goto_5e
+    goto :goto_5f
 .end method

@@ -5,8 +5,12 @@
 package miui.os;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.os.Process;
 import android.os.StatFs;
+import android.os.storage.StorageManager;
+import android.os.storage.StorageVolume;
+import android.text.TextUtils;
 import java.io.File;
 import java.util.HashMap;
 
@@ -103,6 +107,36 @@ _L2:
         exception;
         if(true) goto _L2; else goto _L1
 _L1:
+    }
+
+    public static boolean isStorageUsb(Context context, String s) {
+        boolean flag = false;
+        if(!TextUtils.isEmpty(s)) goto _L2; else goto _L1
+_L1:
+        return flag;
+_L2:
+        StorageVolume astoragevolume[];
+        int i;
+        astoragevolume = ((StorageManager)context.getSystemService("storage")).getVolumeList();
+        if(astoragevolume == null)
+            continue; /* Loop/switch isn't completed */
+        i = 0;
+_L4:
+        if(i < astoragevolume.length) {
+label0:
+            {
+                if(!astoragevolume[i].getPath().equals(s))
+                    break label0;
+                if(context.getString(0x60c01f8).equals(astoragevolume[i].getDescription(context)))
+                    flag = true;
+            }
+        }
+        if(true) goto _L1; else goto _L3
+_L3:
+        i++;
+          goto _L4
+        if(true) goto _L1; else goto _L5
+_L5:
     }
 
     private static final File EXTERNAL_STORAGE_MIUI_DIRECTORY = new File(getExternalStorageDirectory(), "MIUI");

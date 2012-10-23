@@ -67,8 +67,8 @@ public class SearchDialog extends Dialog {
 
     private void createContentView() {
         setContentView(0x109009f);
-        ((SearchBar)findViewById(0x102031f)).setSearchDialog(this);
-        mSearchView = (SearchView)findViewById(0x1020321);
+        ((SearchBar)findViewById(0x1020324)).setSearchDialog(this);
+        mSearchView = (SearchView)findViewById(0x1020326);
         mSearchView.setIconified(false);
         mSearchView.setOnCloseListener(mOnCloseListener);
         mSearchView.setOnQueryTextListener(mOnQueryChangeListener);
@@ -88,10 +88,10 @@ public class SearchDialog extends Dialog {
                 super();
             }
         });
-        mBadgeLabel = (TextView)mSearchView.findViewById(0x1020323);
-        mSearchAutoComplete = (AutoCompleteTextView)mSearchView.findViewById(0x1020328);
-        mAppIcon = (ImageView)findViewById(0x1020320);
-        mSearchPlate = mSearchView.findViewById(0x1020327);
+        mBadgeLabel = (TextView)mSearchView.findViewById(0x1020328);
+        mSearchAutoComplete = (AutoCompleteTextView)mSearchView.findViewById(0x102032d);
+        mAppIcon = (ImageView)findViewById(0x1020325);
+        mSearchPlate = mSearchView.findViewById(0x102032c);
         mWorkingSpinner = getContext().getResources().getDrawable(0x10804dd);
         setWorking(false);
         mBadgeLabel.setVisibility(8);

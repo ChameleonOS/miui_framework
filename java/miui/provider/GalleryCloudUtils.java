@@ -120,6 +120,17 @@ _L2:
 _L3:
     }
 
+    private static void putExifIntToContentValues(ExifInterface exifinterface, String s, ContentValues contentvalues, String s1) {
+        String s2 = exifinterface.getAttribute(s);
+        if(s2 != null)
+            try {
+                contentvalues.put(s1, Integer.valueOf(s2));
+            }
+            catch(NumberFormatException numberformatexception) {
+                numberformatexception.printStackTrace();
+            }
+    }
+
     public static void requestSync(Context context) {
         requestSync(context, isGalleryCloudSyncable(context));
     }
@@ -208,17 +219,17 @@ _L8:
         contentvalues.put("exifGPSLongitude", s1);
         contentvalues.put("exifMake", exifinterface.getAttribute("Make"));
         contentvalues.put("exifModel", exifinterface.getAttribute("Model"));
-        contentvalues.put("exifFlash", Integer.valueOf(exifinterface.getAttributeInt("Flash", 0)));
+        putExifIntToContentValues(exifinterface, "Flash", contentvalues, "exifFlash");
         contentvalues.put("exifGPSLatitudeRef", exifinterface.getAttribute("GPSLatitudeRef"));
         contentvalues.put("exifGPSLongitudeRef", exifinterface.getAttribute("GPSLongitudeRef"));
         contentvalues.put("exifExposureTime", exifinterface.getAttribute("ExposureTime"));
         contentvalues.put("exifFNumber", exifinterface.getAttribute("FNumber"));
         contentvalues.put("exifISOSpeedRatings", exifinterface.getAttribute("ISOSpeedRatings"));
         contentvalues.put("exifGPSAltitude", exifinterface.getAttribute("GPSAltitude"));
-        contentvalues.put("exifGPSAltitudeRef", Integer.valueOf(exifinterface.getAttributeInt("GPSAltitudeRef", 0)));
+        putExifIntToContentValues(exifinterface, "GPSAltitudeRef", contentvalues, "exifGPSAltitudeRef");
         contentvalues.put("exifGPSTimeStamp", exifinterface.getAttribute("GPSTimeStamp"));
         contentvalues.put("exifGPSDateStamp", exifinterface.getAttribute("GPSDateStamp"));
-        contentvalues.put("exifWhiteBalance", Integer.valueOf(exifinterface.getAttributeInt("WhiteBalance", 0)));
+        putExifIntToContentValues(exifinterface, "WhiteBalance", contentvalues, "exifWhiteBalance");
         contentvalues.put("exifFocalLength", exifinterface.getAttribute("FocalLength"));
         contentvalues.put("exifGPSProcessingMethod", exifinterface.getAttribute("GPSProcessingMethod"));
         contentvalues.put("exifDateTime", exifinterface.getAttribute("DateTime"));

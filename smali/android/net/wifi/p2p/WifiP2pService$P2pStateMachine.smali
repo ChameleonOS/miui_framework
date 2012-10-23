@@ -1396,7 +1396,7 @@
 
     .line 1441
     .local v1, row:Landroid/view/View;
-    const v2, 0x1020365
+    const v2, 0x102036a
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2387,7 +2387,7 @@
     invoke-direct {p0, v1, v6, v7}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->addRowToDialog(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
     .line 1475
-    const v6, 0x1020364
+    const v6, 0x1020369
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2486,7 +2486,7 @@
 
     .line 1509
     :pswitch_93
-    const v6, 0x1020363
+    const v6, 0x1020368
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

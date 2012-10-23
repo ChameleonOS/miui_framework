@@ -110,9 +110,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_35
 
-    const-string v0, "leo"
+    const-string/jumbo v0, "leo"
 
     sget-object v3, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
 
@@ -120,12 +120,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_165
+    if-eqz v0, :cond_166
 
-    :cond_34
+    :cond_35
     move v0, v2
 
-    :goto_35
+    :goto_36
     sput-boolean v0, Lmiui/os/Build;->IS_HTC_HD2:Z
 
     .line 15
@@ -159,7 +159,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_63
 
     const-string/jumbo v0, "mione_plus"
 
@@ -169,12 +169,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_168
+    if-eqz v0, :cond_169
 
-    :cond_62
+    :cond_63
     move v0, v2
 
-    :goto_63
+    :goto_64
     sput-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
     .line 18
@@ -191,16 +191,16 @@
     .line 19
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_77
+    if-nez v0, :cond_78
 
     sget-boolean v0, Lmiui/os/Build;->IS_MITWO:Z
 
-    if-eqz v0, :cond_16b
+    if-eqz v0, :cond_16c
 
-    :cond_77
+    :cond_78
     move v0, v2
 
-    :goto_78
+    :goto_79
     sput-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
     .line 20
@@ -300,7 +300,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e2
+    if-nez v0, :cond_e3
 
     const-string v0, "MI 1SC"
 
@@ -310,27 +310,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16e
+    if-eqz v0, :cond_16f
 
-    :cond_e2
+    :cond_e3
     move v0, v2
 
-    :goto_e3
+    :goto_e4
     sput-boolean v0, Lmiui/os/Build;->IS_MI1S:Z
 
     .line 30
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_ed
+    if-nez v0, :cond_ee
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-eqz v0, :cond_171
+    if-eqz v0, :cond_172
 
-    :cond_ed
+    :cond_ee
     move v0, v2
 
-    :goto_ee
+    :goto_ef
     sput-boolean v0, Lmiui/os/Build;->IS_RICH_MEMORY_DEVICE:Z
 
     .line 31
@@ -341,75 +341,75 @@
     .line 33
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_108
+    if-nez v0, :cond_109
 
     sget-boolean v0, Lmiui/os/Build;->IS_I9000:Z
 
-    if-nez v0, :cond_108
+    if-nez v0, :cond_109
 
     sget-boolean v0, Lmiui/os/Build;->IS_P990:Z
 
-    if-nez v0, :cond_108
+    if-nez v0, :cond_109
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_108
+    if-nez v0, :cond_109
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-eqz v0, :cond_174
+    if-eqz v0, :cond_175
 
-    :cond_108
+    :cond_109
     move v0, v2
 
-    :goto_109
+    :goto_10a
     sput-boolean v0, Lmiui/os/Build;->IS_FAST_GPU_DEVICE:Z
 
     .line 36
     sget-boolean v0, Lmiui/os/Build;->IS_MILESTONE:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_I9000:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_DEFY:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_P990:Z
 
-    if-eqz v0, :cond_176
+    if-eqz v0, :cond_177
 
-    :cond_123
+    :cond_124
     move v0, v2
 
-    :goto_124
+    :goto_125
     sput-boolean v0, Lmiui/os/Build;->IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE:Z
 
     .line 39
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-eqz v0, :cond_178
+    if-eqz v0, :cond_179
 
     invoke-static {}, Lmiui/os/Build;->isMsm8660()Z
 
     move-result v0
 
-    if-eqz v0, :cond_178
+    if-eqz v0, :cond_179
 
     move v0, v2
 
-    :goto_131
+    :goto_132
     sput-boolean v0, Lmiui/os/Build;->IS_MIONE_PLUS_CDMA:Z
 
     .line 43
@@ -430,100 +430,100 @@
     .line 46
     sget-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
-    if-nez v0, :cond_14e
+    if-nez v0, :cond_14f
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS_NEXUS:Z
 
-    if-nez v0, :cond_14e
+    if-nez v0, :cond_14f
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-eqz v0, :cond_17a
+    if-eqz v0, :cond_17b
 
-    :cond_14e
+    :cond_14f
     move v0, v2
 
-    :goto_14f
+    :goto_150
     sput-boolean v0, Lmiui/os/Build;->SHOW_MAGNIFIER_WHEN_INPUT:Z
 
     .line 49
     sget-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
-    if-nez v0, :cond_161
+    if-nez v0, :cond_162
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS_NEXUS:Z
 
-    if-nez v0, :cond_161
+    if-nez v0, :cond_162
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_161
+    if-nez v0, :cond_162
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_7:Z
 
-    if-eqz v0, :cond_162
-
-    :cond_161
-    move v1, v2
+    if-eqz v0, :cond_163
 
     :cond_162
+    move v1, v2
+
+    :cond_163
     sput-boolean v1, Lmiui/os/Build;->IS_FULL_SOURCE_CODE_DEVICE:Z
 
     return-void
 
-    :cond_165
+    :cond_166
     move v0, v1
 
     .line 14
-    goto/16 :goto_35
+    goto/16 :goto_36
 
-    :cond_168
+    :cond_169
     move v0, v1
 
     .line 17
-    goto/16 :goto_63
+    goto/16 :goto_64
 
-    :cond_16b
+    :cond_16c
     move v0, v1
 
     .line 19
-    goto/16 :goto_78
+    goto/16 :goto_79
 
-    :cond_16e
+    :cond_16f
     move v0, v1
 
     .line 28
-    goto/16 :goto_e3
+    goto/16 :goto_e4
 
-    :cond_171
+    :cond_172
     move v0, v1
 
     .line 30
-    goto/16 :goto_ee
+    goto/16 :goto_ef
 
-    :cond_174
+    :cond_175
     move v0, v1
 
     .line 33
-    goto :goto_109
+    goto :goto_10a
 
-    :cond_176
+    :cond_177
     move v0, v1
 
     .line 36
-    goto :goto_124
+    goto :goto_125
 
-    :cond_178
+    :cond_179
     move v0, v1
 
     .line 39
-    goto :goto_131
+    goto :goto_132
 
-    :cond_17a
+    :cond_17b
     move v0, v1
 
     .line 46
-    goto :goto_14f
+    goto :goto_150
 .end method
 
 .method public constructor <init>()V

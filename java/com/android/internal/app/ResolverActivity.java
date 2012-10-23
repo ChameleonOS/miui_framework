@@ -357,7 +357,7 @@ _L3:
         int i = view.getId();
         int j = mGrid.getCheckedItemPosition();
         boolean flag;
-        if(i == 0x1020312)
+        if(i == 0x1020317)
             flag = true;
         else
             flag = false;
@@ -403,7 +403,7 @@ _L2:
         if(i <= 1) goto _L4; else goto _L3
 _L3:
         alertparams.mView = getLayoutInflater().inflate(0x1090094, null);
-        mGrid = (GridView)alertparams.mView.findViewById(0x1020311);
+        mGrid = (GridView)alertparams.mView.findViewById(0x1020316);
         mGrid.setAdapter(mAdapter);
         mGrid.setOnItemClickListener(this);
         mGrid.setOnItemLongClickListener(new ItemLongClickListener());
@@ -416,8 +416,8 @@ _L6:
             ViewGroup viewgroup = (ViewGroup)findViewById(0x102026d);
             if(viewgroup != null) {
                 viewgroup.setVisibility(0);
-                mAlwaysButton = (Button)viewgroup.findViewById(0x1020312);
-                mOnceButton = (Button)viewgroup.findViewById(0x1020313);
+                mAlwaysButton = (Button)viewgroup.findViewById(0x1020317);
+                mOnceButton = (Button)viewgroup.findViewById(0x1020318);
             } else {
                 mAlwaysUseOption = false;
             }

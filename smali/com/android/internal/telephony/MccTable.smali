@@ -736,7 +736,7 @@
 
     const/16 v2, 0x127
 
-    const-string v3, "li"
+    const-string/jumbo v3, "li"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 

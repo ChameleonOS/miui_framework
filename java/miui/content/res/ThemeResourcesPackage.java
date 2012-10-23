@@ -5,7 +5,6 @@
 package miui.content.res;
 
 import android.content.res.Resources;
-import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
@@ -56,22 +55,22 @@ public final class ThemeResourcesPackage extends ThemeResources {
         return charsequence;
     }
 
-    public InputStream getThemeFileStream(int i, String s) {
+    public ThemeZipFile.ThemeFileInfo getThemeFileStream(int i, String s) {
         if(1 != i) goto _L2; else goto _L1
 _L1:
-        InputStream inputstream;
-        inputstream = getThemeFileStream((new StringBuilder()).append("framework-res/").append(s).toString(), null);
-        if(inputstream == null)
-            inputstream = getSystem().getThemeFileStream(i, s);
+        ThemeZipFile.ThemeFileInfo themefileinfo;
+        themefileinfo = getThemeFileStream((new StringBuilder()).append("framework-res/").append(s).toString());
+        if(themefileinfo == null)
+            themefileinfo = getSystem().getThemeFileStream(i, s);
 _L4:
-        return inputstream;
+        return themefileinfo;
 _L2:
         if(2 == i) {
-            inputstream = getThemeFileStream((new StringBuilder()).append("framework-miui-res/").append(s).toString(), null);
-            if(inputstream == null)
-                inputstream = getSystem().getThemeFileStream(i, s);
+            themefileinfo = getThemeFileStream((new StringBuilder()).append("framework-miui-res/").append(s).toString());
+            if(themefileinfo == null)
+                themefileinfo = getSystem().getThemeFileStream(i, s);
         } else {
-            inputstream = getThemeFileStream(s, null);
+            themefileinfo = getThemeFileStream(s);
         }
         if(true) goto _L4; else goto _L3
 _L3:

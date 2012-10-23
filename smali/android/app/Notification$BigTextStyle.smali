@@ -49,7 +49,7 @@
     .registers 9
 
     .prologue
-    const v7, 0x10202ea
+    const v7, 0x10202eb
 
     const/4 v2, 0x0
 

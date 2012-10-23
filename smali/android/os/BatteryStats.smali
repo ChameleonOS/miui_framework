@@ -210,7 +210,7 @@
 
     aput-object v1, v0, v10
 
-    const-string v1, "light"
+    const-string/jumbo v1, "light"
 
     aput-object v1, v0, v11
 

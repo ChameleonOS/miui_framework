@@ -50,7 +50,7 @@ class FindActionModeCallback
         mEditText.setCustomSelectionActionModeCallback(new NoAction());
         mEditText.setOnClickListener(this);
         setText("");
-        mMatches = (TextView)mCustomView.findViewById(0x1020362);
+        mMatches = (TextView)mCustomView.findViewById(0x1020367);
         mInput = (InputMethodManager)context.getSystemService("input_method");
         mResources = context.getResources();
     }
@@ -135,9 +135,9 @@ _L3:
             throw new AssertionError("No WebView for FindActionModeCallback::onActionItemClicked");
         mInput.hideSoftInputFromWindow(mWebView.getWebView().getWindowToken(), 0);
         menuitem.getItemId();
-        JVM INSTR tableswitch 16909169 16909170: default 68
-    //                   16909169 70
-    //                   16909170 80;
+        JVM INSTR tableswitch 16909174 16909175: default 68
+    //                   16909174 70
+    //                   16909175 80;
            goto _L1 _L2 _L3
 _L1:
         return flag;

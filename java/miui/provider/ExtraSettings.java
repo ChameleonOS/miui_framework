@@ -78,9 +78,11 @@ _L1:
         public static final String DATA_USAGE_ADJUSTING_TIME = "data_usage_adjusting_time";
         public static final String DATA_USAGE_ADJUSTMENT = "data_usage_adjustment";
         public static final String DATA_USAGE_LIMIT_BYTES = "data_usage_limit_bytes";
+        public static final int DEFAULT_FIND_DEVICE_PIN_LOCK = 0;
         public static final String DEFAULT_INPUT_METHOD_CHOOSED = "default_input_method_choosed";
         public static final int DEFAULT_PERMANENTLY_LOCK_SIM_CHANGE = 0;
         public static int DEFAULT_SHOW_MAGNIFIER_WHEN_INPUT = 0;
+        public static String FIND_DEVICE_PIN_LOCK = "find_device_pin_lock";
         public static String FORCE_CLOCE_DIALOG_ENABLED = "force_close_dialog_enabled";
         public static String MOBILE_DOWNLOAD_FILE_SIZE_PROMPT_POPUP_ENABLED = "mobile_download_file_size_prompt_popup_enabled";
         public static final String MOBILE_POLICY = "mobile_policy";
@@ -258,6 +260,8 @@ _L2:
         public static final String ELECTRON_BEAM_ANIMATION_ON = "electron_beam_animation_on";
         public static final String ENABLE_ASSIST_MENU_LONG_PRESS = "enable_assist_menu_key_long_press";
         public static final int ENABLE_ASSIST_MENU_LONG_PRESS_DEFAULT = 1;
+        public static final String ENABLE_SCREEN_ON_PROXIMITY_SENSOR = "enable_screen_on_proximity_sensor";
+        public static final boolean ENABLE_SCREEN_ON_PROXIMITY_SENSOR_DEFAULT = true;
         public static final String ENABLE_SNAPSHOT_SCREENLOCK = "enable_snapshot_screenlock";
         public static final int ENABLE_SNAPSHOT_SCREENLOCK_DEFAULT = 0;
         public static final String ENABLE_TELOCATION = "enable_telocation";

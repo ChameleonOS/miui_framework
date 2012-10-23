@@ -86,7 +86,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     protected void onAddEditTextToDialogView(View view, EditText edittext) {
-        ViewGroup viewgroup = (ViewGroup)view.findViewById(0x10202ff);
+        ViewGroup viewgroup = (ViewGroup)view.findViewById(0x1020304);
         if(viewgroup != null)
             viewgroup.addView(edittext, -1, -2);
     }

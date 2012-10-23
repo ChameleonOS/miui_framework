@@ -36,6 +36,8 @@
 
 .field public static final JSON_EXCEPTION_SOURCE_METHOD:Ljava/lang/String; = "exception_source_method"
 
+.field public static final JSON_IMEI:Ljava/lang/String; = "imei"
+
 .field public static final JSON_NETWORK:Ljava/lang/String; = "network"
 
 .field public static final JSON_PACKAGE_NAME:Ljava/lang/String; = "package_name"
@@ -59,7 +61,7 @@
     .line 38
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 187
+    .line 188
     return-void
 .end method
 
@@ -91,7 +93,7 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 138
     .local p0, nameValuePairs:Ljava/util/List;,"Ljava/util/List<Lorg/apache/http/NameValuePair;>;"
     new-instance v6, Lmiui/util/ErrorReportUtils$1;
 
@@ -99,16 +101,16 @@
 
     invoke-static {p0, v6}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 144
+    .line 145
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 145
+    .line 146
     .local v3, keyBuilder:Ljava/lang/StringBuilder;
     const/4 v1, 0x1
 
-    .line 146
+    .line 147
     .local v1, isFirst:Z
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -128,16 +130,16 @@
 
     check-cast v5, Lorg/apache/http/NameValuePair;
 
-    .line 148
+    .line 149
     .local v5, nvp:Lorg/apache/http/NameValuePair;
     if-nez v1, :cond_25
 
-    .line 149
+    .line 150
     const-string v6, "&"
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 152
+    .line 153
     :cond_25
     invoke-interface {v5}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
 
@@ -159,12 +161,12 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 153
+    .line 154
     const/4 v1, 0x0
 
     goto :goto_12
 
-    .line 156
+    .line 157
     .end local v5           #nvp:Lorg/apache/http/NameValuePair;
     :cond_3c
     const-string v6, "&"
@@ -177,28 +179,28 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 157
+    .line 158
     const-string v6, "a2d6-4847-ac83-"
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 158
+    .line 159
     const-string v6, "c49395ad6d65"
 
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 160
+    .line 161
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 161
+    .line 162
     .local v2, key:Ljava/lang/String;
     invoke-static {v2}, Lmiui/util/ErrorReportUtils$CommonUtils;->getBytes(Ljava/lang/String;)[B
 
     move-result-object v4
 
-    .line 162
+    .line 163
     .local v4, keyBytes:[B
     new-instance v6, Ljava/lang/String;
 
@@ -220,7 +222,7 @@
     .parameter "context"
 
     .prologue
-    .line 77
+    .line 78
     const-string v2, "connectivity"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -229,13 +231,13 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 79
+    .line 80
     .local v0, cm:Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v1
 
-    .line 80
+    .line 81
     .local v1, info:Landroid/net/NetworkInfo;
     if-eqz v1, :cond_16
 
@@ -265,7 +267,7 @@
 
     const/4 v3, 0x0
 
-    .line 70
+    .line 71
     invoke-static {}, Lmiui/os/Build;->isDevelopmentVersion()Z
 
     move-result v4
@@ -274,7 +276,7 @@
 
     move v1, v2
 
-    .line 71
+    .line 72
     .local v1, default_value:I
     :goto_9
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -287,7 +289,7 @@
 
     move-result v0
 
-    .line 73
+    .line 74
     .local v0, allow:I
     if-eqz v0, :cond_19
 
@@ -299,7 +301,7 @@
     :cond_17
     move v1, v3
 
-    .line 70
+    .line 71
     goto :goto_9
 
     .restart local v0       #allow:I
@@ -307,7 +309,7 @@
     :cond_19
     move v2, v3
 
-    .line 73
+    .line 74
     goto :goto_16
 .end method
 
@@ -318,7 +320,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 84
+    .line 85
     const-string v3, "connectivity"
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -327,13 +329,13 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 86
+    .line 87
     .local v0, cm:Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v1
 
-    .line 87
+    .line 88
     .local v1, info:Landroid/net/NetworkInfo;
     if-eqz v1, :cond_16
 
@@ -358,14 +360,14 @@
     .parameter "report"
 
     .prologue
-    .line 62
+    .line 63
     invoke-static {p0}, Lmiui/util/ErrorReportUtils;->isNetworkAvailable(Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_13
 
-    .line 63
+    .line 64
     new-instance v1, Lmiui/util/ErrorReportUtils$ReportErrorTask;
 
     invoke-direct {v1, p1}, Lmiui/util/ErrorReportUtils$ReportErrorTask;-><init>(Lorg/json/JSONObject;)V
@@ -376,10 +378,10 @@
 
     invoke-virtual {v1, v0}, Lmiui/util/ErrorReportUtils$ReportErrorTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 64
+    .line 65
     const/4 v0, 0x1
 
-    .line 66
+    .line 67
     :goto_12
     return v0
 

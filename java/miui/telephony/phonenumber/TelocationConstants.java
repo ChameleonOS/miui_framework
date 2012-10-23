@@ -339,7 +339,7 @@ public class TelocationConstants {
     public static final String AREA_CODES[];
     public static final int AREA_CODE_COUNT = 326;
     public static final String AREA_LOCATIONS[];
-    public static final String DIGEST = "5d7ebb69313ba6cd22601ea82f734d69fdd22063";
+    public static final String DIGEST = "2344453f7a6ff34e610abad9ee41a48ddbf6430d";
     private static final String EMPTY = "";
     public static final byte FILE_TAG[];
 
@@ -350,7 +350,7 @@ public class TelocationConstants {
         abyte0[2] = 32;
         abyte0[3] = 32;
         FILE_TAG = abyte0;
-        String as[] = new String[409];
+        String as[] = new String[408];
         as[0] = "";
         as[1] = "10";
         as[2] = "20";
@@ -756,12 +756,11 @@ public class TelocationConstants {
         as[402] = "908";
         as[403] = "10";
         as[404] = "394";
-        as[405] = "722";
-        as[406] = "791";
-        as[407] = "755";
-        as[408] = "743";
+        as[405] = "377";
+        as[406] = "755";
+        as[407] = "743";
         AREA_CODES = as;
-        String as1[] = new String[409];
+        String as1[] = new String[408];
         as1[0] = "";
         as1[1] = "\u5317\u4EAC";
         as1[2] = "\u5E7F\u4E1C\u5E7F\u5DDE";
@@ -1167,10 +1166,9 @@ public class TelocationConstants {
         as1[402] = "\u65B0\u7586\u514B\u5B5C\u52D2\u82CF";
         as1[403] = "\u5317\u4EAC\u5E02";
         as1[404] = "\u5C71\u897F\u5851\u5DDE";
-        as1[405] = "\u6CB3\u5317\u968F\u5DDE";
-        as1[406] = "\u4E2D\u56FD\u8054\u901A";
-        as1[407] = "\u5E7F\u5DDE\u6DF1\u5733";
-        as1[408] = "\u6E56\u5357\u81EA\u6CBB\u5DDE";
+        as1[405] = "\u6CB3\u5357\u90A3\u6837";
+        as1[406] = "\u5E7F\u5DDE\u6DF1\u5733";
+        as1[407] = "\u6E56\u5357\u81EA\u6CBB\u5DDE";
         AREA_LOCATIONS = as1;
     }
 }

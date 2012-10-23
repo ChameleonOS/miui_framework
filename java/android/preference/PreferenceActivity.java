@@ -240,7 +240,7 @@ public abstract class PreferenceActivity extends ListActivity
         Fragment fragment = Fragment.instantiate(this, s, bundle);
         FragmentTransaction fragmenttransaction = getFragmentManager().beginTransaction();
         fragmenttransaction.setTransition(4099);
-        fragmenttransaction.replace(0x1020303, fragment);
+        fragmenttransaction.replace(0x1020308, fragment);
         fragmenttransaction.commitAllowingStateLoss();
     }
 
@@ -530,8 +530,8 @@ _L18:
     protected void onCreate(Bundle bundle) {
         onCreate(bundle);
         setContentView(0x1090087);
-        mListFooter = (FrameLayout)findViewById(0x1020301);
-        mPrefsContainer = (ViewGroup)findViewById(0x1020302);
+        mListFooter = (FrameLayout)findViewById(0x1020306);
+        mPrefsContainer = (ViewGroup)findViewById(0x1020307);
         boolean flag;
         String s;
         Bundle bundle1;
@@ -575,7 +575,7 @@ _L18:
                     switchToHeader(s, bundle1);
         }
         if(s != null && mSinglePane) {
-            findViewById(0x1020300).setVisibility(8);
+            findViewById(0x1020305).setVisibility(8);
             mPrefsContainer.setVisibility(0);
             if(i != 0) {
                 CharSequence charsequence = getText(i);
@@ -604,8 +604,8 @@ _L18:
             }
         } else {
             setContentView(0x1090088);
-            mListFooter = (FrameLayout)findViewById(0x1020301);
-            mPrefsContainer = (ViewGroup)findViewById(0x1020303);
+            mListFooter = (FrameLayout)findViewById(0x1020306);
+            mPrefsContainer = (ViewGroup)findViewById(0x1020308);
             PreferenceManager preferencemanager = new PreferenceManager(this, 100);
             mPreferenceManager = preferencemanager;
             mPreferenceManager.setOnPreferenceTreeClickListener(this);
@@ -613,7 +613,7 @@ _L18:
         intent = getIntent();
         if(intent.getBooleanExtra("extra_prefs_show_button_bar", false)) {
             findViewById(0x102026d).setVisibility(0);
-            Button button = (Button)findViewById(0x1020304);
+            Button button = (Button)findViewById(0x1020309);
             onclicklistener = new android.view.View.OnClickListener() {
 
                 public void onClick(View view) {
@@ -629,7 +629,7 @@ _L18:
             }
             };
             button.setOnClickListener(onclicklistener);
-            button1 = (Button)findViewById(0x1020305);
+            button1 = (Button)findViewById(0x102030a);
             onclicklistener1 = new android.view.View.OnClickListener() {
 
                 public void onClick(View view) {
@@ -645,7 +645,7 @@ _L18:
             }
             };
             button1.setOnClickListener(onclicklistener1);
-            mNextButton = (Button)findViewById(0x1020306);
+            mNextButton = (Button)findViewById(0x102030b);
             button2 = mNextButton;
             onclicklistener2 = new android.view.View.OnClickListener() {
 
@@ -865,7 +865,7 @@ _L5:
 
     public void startPreferenceFragment(Fragment fragment, boolean flag) {
         FragmentTransaction fragmenttransaction = getFragmentManager().beginTransaction();
-        fragmenttransaction.replace(0x1020303, fragment);
+        fragmenttransaction.replace(0x1020308, fragment);
         if(flag) {
             fragmenttransaction.setTransition(4097);
             fragmenttransaction.addToBackStack(":android:prefs");
@@ -887,7 +887,7 @@ _L2:
         if(fragment != null)
             fragment1.setTargetFragment(fragment, j);
         fragmenttransaction = getFragmentManager().beginTransaction();
-        fragmenttransaction.replace(0x1020303, fragment1);
+        fragmenttransaction.replace(0x1020308, fragment1);
         if(i == 0)
             break; /* Loop/switch isn't completed */
         fragmenttransaction.setBreadCrumbTitle(i);
