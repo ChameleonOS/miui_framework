@@ -31,7 +31,7 @@ public class MagnifierController {
     }
 
     public static boolean isMagnifierEnabled(Context context) {
-        return true;
+        return miui.provider.ExtraSettings.Secure.showMagnifierWhenInput(context);
     }
 
     private void showMagnifier() {
@@ -44,7 +44,8 @@ public class MagnifierController {
         if(i != mOffset) {
             mEditor.setTextSelection(i);
             mOffset = i;
-            showMagnifier();
+            if(!flag)
+                showMagnifier();
         }
     }
 
@@ -89,6 +90,7 @@ _L6:
         mShowing = true;
         if(mTextView.getParent() != null)
             mTextView.getParent().requestDisallowInterceptTouchEvent(true);
+        updatePosition(true);
         showMagnifier();
     }
 

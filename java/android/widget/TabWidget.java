@@ -76,18 +76,18 @@ public class TabWidget extends LinearLayout
         if(context.getApplicationInfo().targetSdkVersion > 4) goto _L2; else goto _L1
 _L1:
         if(mLeftStrip == null)
-            mLeftStrip = resources.getDrawable(0x1080598);
+            mLeftStrip = resources.getDrawable(0x1080599);
         if(mRightStrip == null)
-            mRightStrip = resources.getDrawable(0x108059a);
+            mRightStrip = resources.getDrawable(0x108059b);
 _L4:
         setFocusable(true);
         setOnFocusChangeListener(this);
         return;
 _L2:
         if(mLeftStrip == null)
-            mLeftStrip = resources.getDrawable(0x1080597);
+            mLeftStrip = resources.getDrawable(0x1080598);
         if(mRightStrip == null)
-            mRightStrip = resources.getDrawable(0x1080599);
+            mRightStrip = resources.getDrawable(0x108059a);
         if(true) goto _L4; else goto _L3
 _L3:
     }

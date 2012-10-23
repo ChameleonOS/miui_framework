@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.text.format.Time;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import miui.os.Build;
 
 public class LunarDate {
 
@@ -226,26 +227,36 @@ _L11:
 _L12:
     }
 
-    public static String getHoliday(Resources resources, long al[], Calendar calendar) {
-        String s = null;
-        int i;
-        int j;
-        int k;
+    public static String getHoliday(Resources resources, long al[], Calendar calendar, String s) {
         int l;
-        i = 1 + calendar.get(2);
-        j = calendar.get(5);
-        k = solarHolidaysTable.length;
+        String s1;
+        int i = 1 + calendar.get(2);
+        int j = calendar.get(5);
+        int ai[];
+        int ai1[];
+        int k;
+        if(Build.IS_TW_BUILD) {
+            ai = solarHolidaysTable_TW;
+            ai1 = solarHolidays_TW;
+        } else {
+            ai = solarHolidaysTable;
+            ai1 = solarHolidays;
+        }
+        k = ai.length;
         l = 0;
-_L9:
+_L11:
         if(l >= k) goto _L2; else goto _L1
 _L1:
-        if(solarHolidaysTable[l] / 100 != i || solarHolidaysTable[l] % 100 != j)
-            break MISSING_BLOCK_LABEL_172;
-        s = resources.getString(solarHolidays[l]);
+        if(ai[l] / 100 != i || ai[l] % 100 != j)
+            break MISSING_BLOCK_LABEL_207;
+        s1 = resources.getString(ai1[l]);
           goto _L3
 _L2:
-        if(al[6] == 1L) goto _L3; else goto _L4
+        if(al[6] != 1L) goto _L5; else goto _L4
 _L4:
+        s1 = null;
+          goto _L3
+_L5:
         int i1;
         int j1;
         int k1;
@@ -254,24 +265,26 @@ _L4:
         j1 = (int)al[2];
         k1 = lunarHolidaysTable.length;
         l1 = 0;
-_L8:
-        if(l1 >= k1) goto _L3; else goto _L5
-_L5:
-        if(lunarHolidaysTable[l1] / 100 != i1 || lunarHolidaysTable[l1] % 100 != j1) goto _L7; else goto _L6
+_L10:
+        if(l1 >= k1) goto _L7; else goto _L6
 _L6:
-        String s1 = resources.getString(lunarHolidays[l1]);
-        s = s1;
+        if(lunarHolidaysTable[l1] / 100 != i1 || lunarHolidaysTable[l1] % 100 != j1) goto _L9; else goto _L8
+_L8:
+        String s2 = resources.getString(lunarHolidays[l1]);
+        s1 = s2;
           goto _L3
-_L7:
+_L9:
         l1++;
-          goto _L8
+          goto _L10
         Exception exception;
         exception;
         throw exception;
+_L7:
+        s1 = null;
 _L3:
-        return s;
+        return s1;
         l++;
-          goto _L9
+          goto _L11
     }
 
     public static int[][] getLunarBirthdays(int i, int j, int k) {
@@ -623,6 +636,8 @@ _L3:
     private static int lunarHolidaysTable[];
     private static int solarHolidays[];
     private static int solarHolidaysTable[];
+    private static int solarHolidaysTable_TW[];
+    private static int solarHolidays_TW[];
     private static int solarTerms[];
     private static char solarTermsTable[];
 
@@ -955,56 +970,80 @@ _L3:
         ai1[11] = 1001;
         ai1[12] = 1225;
         solarHolidaysTable = ai1;
-        int ai2[] = new int[7];
-        ai2[0] = 0x60c0058;
-        ai2[1] = 0x60c0059;
-        ai2[2] = 0x60c005a;
-        ai2[3] = 0x60c005b;
-        ai2[4] = 0x60c005c;
-        ai2[5] = 0x60c005d;
-        ai2[6] = 0x60c005e;
-        lunarHolidays = ai2;
-        int ai3[] = new int[13];
-        ai3[0] = 0x60c005f;
-        ai3[1] = 0x60c0060;
-        ai3[2] = 0x60c0061;
-        ai3[3] = 0x60c0062;
-        ai3[4] = 0x60c0063;
-        ai3[5] = 0x60c0064;
-        ai3[6] = 0x60c0065;
-        ai3[7] = 0x60c0066;
-        ai3[8] = 0x60c0067;
-        ai3[9] = 0x60c0068;
-        ai3[10] = 0x60c0069;
-        ai3[11] = 0x60c006a;
-        ai3[12] = 0x60c006b;
-        solarHolidays = ai3;
-        int ai4[] = new int[24];
-        ai4[0] = 0x60c006c;
-        ai4[1] = 0x60c006d;
-        ai4[2] = 0x60c006e;
-        ai4[3] = 0x60c006f;
-        ai4[4] = 0x60c0070;
-        ai4[5] = 0x60c0071;
-        ai4[6] = 0x60c0072;
-        ai4[7] = 0x60c0073;
-        ai4[8] = 0x60c0074;
-        ai4[9] = 0x60c0075;
-        ai4[10] = 0x60c0076;
-        ai4[11] = 0x60c0077;
-        ai4[12] = 0x60c0078;
-        ai4[13] = 0x60c0079;
-        ai4[14] = 0x60c007a;
-        ai4[15] = 0x60c007b;
-        ai4[16] = 0x60c007c;
-        ai4[17] = 0x60c007d;
-        ai4[18] = 0x60c007e;
-        ai4[19] = 0x60c007f;
-        ai4[20] = 0x60c0080;
-        ai4[21] = 0x60c0081;
-        ai4[22] = 0x60c0082;
-        ai4[23] = 0x60c0083;
-        solarTerms = ai4;
+        int ai2[] = new int[10];
+        ai2[0] = 101;
+        ai2[1] = 214;
+        ai2[2] = 228;
+        ai2[3] = 308;
+        ai2[4] = 312;
+        ai2[5] = 501;
+        ai2[6] = 928;
+        ai2[7] = 1010;
+        ai2[8] = 1112;
+        ai2[9] = 1225;
+        solarHolidaysTable_TW = ai2;
+        int ai3[] = new int[7];
+        ai3[0] = 0x60c0058;
+        ai3[1] = 0x60c0059;
+        ai3[2] = 0x60c005a;
+        ai3[3] = 0x60c005b;
+        ai3[4] = 0x60c005c;
+        ai3[5] = 0x60c005d;
+        ai3[6] = 0x60c005e;
+        lunarHolidays = ai3;
+        int ai4[] = new int[13];
+        ai4[0] = 0x60c005f;
+        ai4[1] = 0x60c0060;
+        ai4[2] = 0x60c0061;
+        ai4[3] = 0x60c0062;
+        ai4[4] = 0x60c0063;
+        ai4[5] = 0x60c0064;
+        ai4[6] = 0x60c0065;
+        ai4[7] = 0x60c0066;
+        ai4[8] = 0x60c0067;
+        ai4[9] = 0x60c0068;
+        ai4[10] = 0x60c0069;
+        ai4[11] = 0x60c006a;
+        ai4[12] = 0x60c006b;
+        solarHolidays = ai4;
+        int ai5[] = new int[10];
+        ai5[0] = 0x60c005f;
+        ai5[1] = 0x60c0060;
+        ai5[2] = 0x60c01fc;
+        ai5[3] = 0x60c0061;
+        ai5[4] = 0x60c0062;
+        ai5[5] = 0x60c0064;
+        ai5[6] = 0x60c0069;
+        ai5[7] = 0x60c006a;
+        ai5[8] = 0x60c01fd;
+        ai5[9] = 0x60c006b;
+        solarHolidays_TW = ai5;
+        int ai6[] = new int[24];
+        ai6[0] = 0x60c006c;
+        ai6[1] = 0x60c006d;
+        ai6[2] = 0x60c006e;
+        ai6[3] = 0x60c006f;
+        ai6[4] = 0x60c0070;
+        ai6[5] = 0x60c0071;
+        ai6[6] = 0x60c0072;
+        ai6[7] = 0x60c0073;
+        ai6[8] = 0x60c0074;
+        ai6[9] = 0x60c0075;
+        ai6[10] = 0x60c0076;
+        ai6[11] = 0x60c0077;
+        ai6[12] = 0x60c0078;
+        ai6[13] = 0x60c0079;
+        ai6[14] = 0x60c007a;
+        ai6[15] = 0x60c007b;
+        ai6[16] = 0x60c007c;
+        ai6[17] = 0x60c007d;
+        ai6[18] = 0x60c007e;
+        ai6[19] = 0x60c007f;
+        ai6[20] = 0x60c0080;
+        ai6[21] = 0x60c0081;
+        ai6[22] = 0x60c0082;
+        ai6[23] = 0x60c0083;
+        solarTerms = ai6;
         char ac1[] = new char[1800];
         ac1[0] = '\226';
         ac1[1] = '\264';

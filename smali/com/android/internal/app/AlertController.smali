@@ -532,7 +532,7 @@
     .line 592
     const/16 v19, 0x0
 
-    const v20, 0x1080462
+    const v20, 0x1080463
 
     move-object/from16 v0, p5
 
@@ -548,7 +548,7 @@
     .local v9, fullDark:I
     const/16 v19, 0x1
 
-    const v20, 0x108046a
+    const v20, 0x108046b
 
     move-object/from16 v0, p5
 
@@ -564,7 +564,7 @@
     .local v16, topDark:I
     const/16 v19, 0x2
 
-    const v20, 0x108045f
+    const v20, 0x1080460
 
     move-object/from16 v0, p5
 
@@ -580,7 +580,7 @@
     .local v7, centerDark:I
     const/16 v19, 0x3
 
-    const v20, 0x108045c
+    const v20, 0x108045d
 
     move-object/from16 v0, p5
 
@@ -596,7 +596,7 @@
     .local v4, bottomDark:I
     const/16 v19, 0x4
 
-    const v20, 0x1080461
+    const v20, 0x1080462
 
     move-object/from16 v0, p5
 
@@ -612,7 +612,7 @@
     .local v8, fullBright:I
     const/16 v19, 0x5
 
-    const v20, 0x1080469
+    const v20, 0x108046a
 
     move-object/from16 v0, p5
 
@@ -628,7 +628,7 @@
     .local v15, topBright:I
     const/16 v19, 0x6
 
-    const v20, 0x108045e
+    const v20, 0x108045f
 
     move-object/from16 v0, p5
 
@@ -644,7 +644,7 @@
     .local v6, centerBright:I
     const/16 v19, 0x7
 
-    const v20, 0x108045b
+    const v20, 0x108045c
 
     move-object/from16 v0, p5
 
@@ -660,7 +660,7 @@
     .local v3, bottomBright:I
     const/16 v19, 0x8
 
-    const v20, 0x108045d
+    const v20, 0x108045e
 
     move-object/from16 v0, p5
 

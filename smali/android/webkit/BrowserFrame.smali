@@ -1023,7 +1023,7 @@
     .line 969
     .end local v2           #resid:I
     :pswitch_3e
-    const v2, 0x10800e2
+    const v2, 0x10800e3
 
     .line 970
     .restart local v2       #resid:I

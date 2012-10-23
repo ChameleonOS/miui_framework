@@ -66,7 +66,7 @@ public class NetInitiatedActivity extends AlertActivity
         Intent intent = getIntent();
         AlertController.AlertParams alertparams = super.mAlertParams;
         Context context = getApplicationContext();
-        alertparams.mIconId = 0x10802c9;
+        alertparams.mIconId = 0x10802ca;
         alertparams.mTitle = intent.getStringExtra("title");
         alertparams.mMessage = intent.getStringExtra("message");
         alertparams.mPositiveButtonText = String.format(context.getString(0x104049f), new Object[0]);

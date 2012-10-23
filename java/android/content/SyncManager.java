@@ -140,7 +140,7 @@ _L2:
                 } else {
                     PendingIntent pendingintent = PendingIntent.getActivity(mContext, 0, intent, 0x10000000);
                     CharSequence charsequence1 = mContext.getResources().getText(0x1040122);
-                    Notification notification = new Notification(0x1080515, mContext.getString(0x1040120), System.currentTimeMillis());
+                    Notification notification = new Notification(0x1080516, mContext.getString(0x1040120), System.currentTimeMillis());
                     Context context = mContext;
                     String s1 = mContext.getString(0x1040121);
                     String s2 = charsequence1.toString();

@@ -96,9 +96,55 @@ public abstract class MiuiCursorController
         }
     }
 
+    class MagnifierInsertionHandleView extends InsertionHandleView {
+
+        public void hide() {
+            if(canHide) {
+                super.mEditor.removePositionListenerSubscriber(this);
+            } else {
+                Log.i("MiuiHandleView", "To hide the MagnifierInsertionHandleView, just delay");
+                canHide = true;
+                dismiss();
+                hideAfterDelay(200);
+            }
+        }
+
+        protected boolean needShowHandle() {
+            return false;
+        }
+
+        public void show() {
+            super.show();
+            hideAfterDelay(3000);
+            updatePositionXY(getCurrentCursorOffset(), true);
+        }
+
+        boolean canHide;
+        final MiuiCursorController this$0;
+
+        public MagnifierInsertionHandleView(Editor editor, Drawable drawable) {
+            this$0 = MiuiCursorController.this;
+            super(editor, drawable);
+            canHide = false;
+        }
+    }
+
     class InsertionHandleView extends MiuiHandleView {
 
-        private void hideAfterDelay(int i) {
+        private void removeHiderCallback() {
+            if(mHider != null)
+                super.mTextView.removeCallbacks(mHider);
+        }
+
+        public int getCurrentCursorOffset() {
+            return super.mTextView.getSelectionStart();
+        }
+
+        protected int getHotspotX(Drawable drawable, boolean flag) {
+            return drawable.getIntrinsicWidth() / 2;
+        }
+
+        protected void hideAfterDelay(int i) {
             removeHiderCallback();
             if(mHider == null)
                 mHider = new Runnable() {
@@ -114,31 +160,7 @@ public abstract class MiuiCursorController
                     super();
                 }
                 };
-            mDelayed = true;
             super.mTextView.postDelayed(mHider, i);
-        }
-
-        private void removeHiderCallback() {
-            if(mHider != null)
-                super.mTextView.removeCallbacks(mHider);
-        }
-
-        public int getCurrentCursorOffset() {
-            return super.mTextView.getSelectionStart();
-        }
-
-        protected int getHotspotX(Drawable drawable, boolean flag) {
-            return drawable.getIntrinsicWidth() / 2;
-        }
-
-        public void hide() {
-            if(super.mVisible || mDelayed) {
-                Log.i("MiuiHandleView", (new StringBuilder()).append("Hide the HandleView and remove from PositionListener, mVisible=").append(super.mVisible).append(" mDelayed=").append(mDelayed).toString());
-                super.hide();
-            } else {
-                Log.i("MiuiHandleView", "To hide the HandleView when invisible, just delay");
-                hideAfterDelay(200);
-            }
         }
 
         public void onDetached() {
@@ -170,14 +192,7 @@ _L3:
 
         public void show() {
             super.show();
-            if(super.mVisible && super.mEditor.hasMagnifierController()) {
-                super.mVisible = false;
-                mDelayed = true;
-            } else {
-                mDelayed = false;
-            }
-            if(super.mVisible)
-                hideAfterDelay(3000);
+            hideAfterDelay(3000);
         }
 
         public void updatePosition(float f, float f1) {
@@ -188,9 +203,8 @@ _L3:
             super.mEditor.setTextSelectionWrap(i, i);
         }
 
-        private static final int DELAY_BEFORE_HANDLE_FADES_OUT = 3000;
-        private static final int DELAY_WHEN_HANDLE_INVISIBLE = 200;
-        boolean mDelayed;
+        protected static final int DELAY_BEFORE_HANDLE_FADES_OUT = 3000;
+        protected static final int DELAY_WHEN_HANDLE_INVISIBLE = 200;
         private Runnable mHider;
         final MiuiCursorController this$0;
 
@@ -222,18 +236,6 @@ _L3:
                 positionAtCursorOffset(mPreviousOffsets[j], false);
         }
 
-        private boolean isVisible() {
-            boolean flag;
-            if(mIsDragging)
-                flag = true;
-            else
-            if(mTextView.isInBatchEditMode())
-                flag = false;
-            else
-                flag = mEditor.isPositionVisibleWrap(mPositionX + mHotspotX, mPositionY);
-            return flag;
-        }
-
         private void startTouchUpFilter(int i) {
             mNumberPreviousOffsets = 0;
             addPositionToTouchUpFilter(i);
@@ -245,7 +247,11 @@ _L3:
             onDetached();
         }
 
-        public abstract int getCurrentCursorOffset();
+        public float distance(float f, float f1) {
+            return Math.abs(((float)(mContainerX + mHotspotX) - f) * ((float)mContainerY - f1));
+        }
+
+        protected abstract int getCurrentCursorOffset();
 
         public void getHotspotLocationOnScreen(int ai[]) {
             ai[0] = mContainerX + mHotspotX;
@@ -259,8 +265,20 @@ _L3:
             mEditor.removePositionListenerSubscriber(this);
         }
 
+        public boolean inRecRange(float f, float f1) {
+            int i = mDrawableRtl.getIntrinsicHeight();
+            int j = mContainerX + mHotspotX;
+            int k = mContainerY + i / 2;
+            Log.i("MiuiCursorController", (new StringBuilder()).append("HandleCenter at x= ").append(j).append(" y=").append(k).append("  and touch at x=").append(f).append(" y=").append(f1).toString());
+            boolean flag;
+            if(Math.abs((float)j - f) < (float)mHandleRange && Math.abs((float)k - f1) < (float)(i / 2))
+                flag = true;
+            else
+                flag = false;
+            return flag;
+        }
+
         public void invisible() {
-            mVisible = false;
             mContainer.dismiss();
         }
 
@@ -272,15 +290,20 @@ _L3:
             return mContainer.isShowing();
         }
 
-        protected boolean isVisibleWrap() {
-            return isVisible();
+        protected boolean isVisible() {
+            boolean flag;
+            if(mIsDragging)
+                flag = true;
+            else
+            if(mTextView.isInBatchEditMode())
+                flag = false;
+            else
+                flag = mEditor.isPositionVisibleWrap(mPositionX + mHotspotX, mPositionY);
+            return flag;
         }
 
-        public boolean offsetHasBeenChanged() {
-            boolean flag = true;
-            if(mNumberPreviousOffsets <= flag)
-                flag = false;
-            return flag;
+        protected boolean needShowHandle() {
+            return true;
         }
 
         public void onDetached() {
@@ -341,7 +364,7 @@ _L5:
 _L6:
         }
 
-        protected void positionAtCursorOffset(int i, boolean flag) {
+        public void positionAtCursorOffset(int i, boolean flag) {
             if(mTextView.getLayout() != null) goto _L2; else goto _L1
 _L1:
             mEditor.prepareCursorControllers();
@@ -351,11 +374,7 @@ _L2:
             if(i != mPreviousOffset || flag) {
                 updateSelection(i);
                 addPositionToTouchUpFilter(i);
-                int j = mTextView.getLayout().getLineForOffset(i);
-                mPositionX = (int)(mTextView.getLayout().getPrimaryHorizontal(i) - 0.5F - (float)mHotspotX);
-                mPositionY = mTextView.getLayout().getLineBottom(j);
-                mPositionX = mPositionX + mTextView.viewportToContentHorizontalOffset();
-                mPositionY = mPositionY + mTextView.viewportToContentVerticalOffset();
+                updatePositionXY(i, false);
                 mPreviousOffset = i;
                 mPositionHasChanged = true;
             }
@@ -369,10 +388,6 @@ _L3:
 
         public void setType(int i) {
             mType = i;
-        }
-
-        public void setVisible(boolean flag) {
-            mVisible = flag;
         }
 
         public void show() {
@@ -396,7 +411,7 @@ _L3:
             mHotspotX = getHotspotX(mDrawable, flag);
         }
 
-        public abstract void updatePosition(float f, float f1);
+        protected abstract void updatePosition(float f, float f1);
 
         public void updatePosition(int i, int j, boolean flag, boolean flag1) {
             Log.i("MiuiHandleView", (new StringBuilder()).append("HandleView [").append(mType).append("] handle updatePosition called from PositionListener:").append(i).append("x").append(j).toString());
@@ -414,27 +429,39 @@ _L1:
                 }
                 onHandleMoved();
             }
-            if(!isVisibleWrap()) goto _L4; else goto _L3
+            if(!isVisible()) goto _L4; else goto _L3
 _L3:
             mContainerX = i + mPositionX;
             mContainerY = j + mPositionY;
-            if(!isShowing()) goto _L6; else goto _L5
-_L5:
-            mContainer.update(mContainerX, mContainerY, -1, -1);
-_L8:
+            if(needShowHandle())
+                if(isShowing())
+                    mContainer.update(mContainerX, mContainerY, -1, -1);
+                else
+                    mContainer.showAtLocation(mTextView, 0, mContainerX, mContainerY);
+_L6:
             mPositionHasChanged = false;
 _L2:
             mCursorController.updatePosition();
             return;
-_L6:
-            if(mVisible)
-                mContainer.showAtLocation(mTextView, 0, mContainerX, mContainerY);
-            continue; /* Loop/switch isn't completed */
 _L4:
             if(isShowing())
                 dismiss();
-            if(true) goto _L8; else goto _L7
-_L7:
+            if(true) goto _L6; else goto _L5
+_L5:
+        }
+
+        protected void updatePositionXY(int i, boolean flag) {
+            int j = mTextView.getLayout().getLineForOffset(i);
+            mPositionX = (int)(mTextView.getLayout().getPrimaryHorizontal(i) - 0.5F - (float)mHotspotX);
+            mPositionY = mTextView.getLayout().getLineBottom(j);
+            mPositionX = mPositionX + mTextView.viewportToContentHorizontalOffset();
+            mPositionY = mPositionY + mTextView.viewportToContentVerticalOffset();
+            if(flag) {
+                int ai[] = new int[2];
+                mTextView.getLocationOnScreen(ai);
+                mContainerX = ai[0] + mPositionX;
+                mContainerY = ai[1] + mPositionY;
+            }
         }
 
         protected abstract void updateSelection(int i);
@@ -454,6 +481,7 @@ _L7:
         protected Drawable mDrawableLtr;
         protected Drawable mDrawableRtl;
         protected Editor mEditor;
+        private int mHandleRange;
         private int mHotspotX;
         private float mIdealVerticalOffset;
         private boolean mIsDragging;
@@ -472,7 +500,6 @@ _L7:
         private float mTouchToWindowOffsetX;
         private float mTouchToWindowOffsetY;
         private int mType;
-        protected boolean mVisible;
         final MiuiCursorController this$0;
 
         public MiuiHandleView(Editor editor, Drawable drawable, Drawable drawable1) {
@@ -480,11 +507,11 @@ _L7:
             super(editor.textview().getContext());
             mPreviousOffset = -1;
             mPositionHasChanged = true;
-            mVisible = true;
             mPreviousOffsetIndex = 0;
             mNumberPreviousOffsets = 0;
             mEditor = editor;
             mTextView = mEditor.textview();
+            mHandleRange = (int)mTextView.getContext().getResources().getDimension(0x60a0019) / 2;
             mContainer = new PopupWindow(mTextView.getContext(), null, mEditor.getSelectHandleWindowStyle());
             mContainer.setSplitTouchEnabled(true);
             mContainer.setClippingEnabled(false);
@@ -588,52 +615,102 @@ _L4:
         }
 
         public boolean onTouchEvent(MotionEvent motionevent) {
-            boolean flag = false;
-            motionevent.getActionMasked();
-            JVM INSTR tableswitch 0 6: default 48
-        //                       0 94
-        //                       1 257
-        //                       2 48
-        //                       3 48
-        //                       4 48
-        //                       5 169
-        //                       6 169;
-               goto _L1 _L2 _L3 _L1 _L1 _L1 _L4 _L4
+            boolean flag;
+            int i;
+            flag = false;
+            i = motionevent.getActionMasked();
+            if(mTouchOnHandle == null) goto _L2; else goto _L1
 _L1:
+            boolean flag1;
+            mTouchOnHandle.onTouchEvent(motionevent);
+            if(i == 1 || i == 3) {
+                mTouchOnHandle = null;
+                if(mTextView.getParent() != null)
+                    mTextView.getParent().requestDisallowInterceptTouchEvent(false);
+                Log.i("MiuiCursorController", "action UP or Cancel to stop moving event to HandleView");
+            }
+            flag1 = true;
+_L8:
+            return flag1;
+_L2:
+            if(isShowing() && i == 0) {
+                float f2 = motionevent.getRawX();
+                float f3 = motionevent.getRawY();
+                boolean flag2 = mStartHandle.inRecRange(f2, f3);
+                boolean flag3 = mEndHandle.inRecRange(f2, f3);
+                Log.i("MiuiCursorController", (new StringBuilder()).append("Touch in handleview: startHandleView=").append(flag2).append(" endHandleView=").append(flag3).toString());
+                if(flag2 && flag3) {
+                    MiuiHandleView miuihandleview;
+                    if(mStartHandle.distance(f2, f3) > mEndHandle.distance(f2, f3))
+                        miuihandleview = mEndHandle;
+                    else
+                        miuihandleview = mStartHandle;
+                    mTouchOnHandle = miuihandleview;
+                } else
+                if(flag2)
+                    mTouchOnHandle = mStartHandle;
+                else
+                if(flag3)
+                    mTouchOnHandle = mEndHandle;
+                if(mTouchOnHandle != null) {
+                    Log.i("MiuiCursorController", "Touch near handle and move event to HandleView");
+                    if(mTextView.getParent() != null)
+                        mTextView.getParent().requestDisallowInterceptTouchEvent(true);
+                    mTouchOnHandle.onTouchEvent(motionevent);
+                    flag1 = true;
+                    continue; /* Loop/switch isn't completed */
+                }
+            }
+            i;
+            JVM INSTR tableswitch 0 6: default 344
+        //                       0 394
+        //                       1 558
+        //                       2 344
+        //                       3 344
+        //                       4 344
+        //                       5 469
+        //                       6 469;
+               goto _L3 _L4 _L5 _L3 _L3 _L3 _L6 _L6
+_L5:
+            break MISSING_BLOCK_LABEL_558;
+_L3:
+            break; /* Loop/switch isn't completed */
+_L4:
+            break; /* Loop/switch isn't completed */
+_L9:
             if(mOwner.hasMagnifierController())
                 flag = mOwner.getMagnifierController().onTouchEvent(motionevent);
             if(mOwner.hasInsertionController())
                 mOwner.getInsertionController().onTouchEvent(motionevent);
-            return flag;
-_L2:
+            flag1 = flag;
+            if(true) goto _L8; else goto _L7
+_L7:
             float f = motionevent.getX();
             float f1 = motionevent.getY();
-            int l = mTextView.getOffsetForPosition(f, f1);
-            mMaxTouchOffset = l;
-            mMinTouchOffset = l;
+            int i1 = mTextView.getOffsetForPosition(f, f1);
+            mMaxTouchOffset = i1;
+            mMinTouchOffset = i1;
             mOwner.startTextSelectionModeIfDouleTap(mPreviousTapUpTime, f, f1, mPreviousTapPositionX, mPreviousTapPositionY);
             mPreviousTapPositionX = f;
             mPreviousTapPositionY = f1;
-            continue; /* Loop/switch isn't completed */
-_L4:
+              goto _L9
+_L6:
             if(mContext.getPackageManager().hasSystemFeature("android.hardware.touchscreen.multitouch.distinct")) {
-                int i = motionevent.getPointerCount();
-                int j = 0;
-                while(j < i)  {
-                    int k = mTextView.getOffsetForPosition(motionevent.getX(j), motionevent.getY(j));
-                    if(k < mMinTouchOffset)
-                        mMinTouchOffset = k;
-                    if(k > mMaxTouchOffset)
-                        mMaxTouchOffset = k;
-                    j++;
+                int j = motionevent.getPointerCount();
+                int k = 0;
+                while(k < j)  {
+                    int l = mTextView.getOffsetForPosition(motionevent.getX(k), motionevent.getY(k));
+                    if(l < mMinTouchOffset)
+                        mMinTouchOffset = l;
+                    if(l > mMaxTouchOffset)
+                        mMaxTouchOffset = l;
+                    k++;
                 }
             }
-            continue; /* Loop/switch isn't completed */
-_L3:
+              goto _L9
             mOwner.onTapUpEvent();
             mPreviousTapUpTime = SystemClock.uptimeMillis();
-            if(true) goto _L1; else goto _L5
-_L5:
+              goto _L9
         }
 
         public void resetTouchOffsets() {
@@ -648,6 +725,7 @@ _L5:
 
         public void show() {
             Log.i("MiuiCursorController", "SelectionModifierCursorController is shown");
+            mTouchOnHandle = null;
             if(!mTextView.isInBatchEditMode()) {
                 Log.i("MiuiCursorController", "SelectionModifierCursorController is shown and hide InsertionPointCursorController");
                 mIsShowing = true;
@@ -712,6 +790,7 @@ _L3:
         private float mPreviousTapPositionY;
         private long mPreviousTapUpTime;
         private MiuiHandleView mStartHandle;
+        private MiuiHandleView mTouchOnHandle;
 
 
         SelectionModifierCursorController(Editor editor, Context context) {
@@ -807,6 +886,7 @@ _L3:
 _L4:
             if(mPanel.isShowing())
                 mPanel.hide();
+            mHandle.onHandleMoved();
             if(true) goto _L1; else goto _L5
 _L5:
         }
@@ -866,8 +946,6 @@ _L3:
             int i = mTextView.getSelectionStart();
             boolean flag1;
             boolean flag2;
-            MiuiHandleView miuihandleview;
-            boolean flag3;
             if(i == mTextOffset || mTextView.length() <= 0)
                 flag1 = flag;
             else
@@ -877,12 +955,6 @@ _L3:
                 flag2 = flag;
             else
                 flag2 = false;
-            miuihandleview = mHandle;
-            if(!flag2 && !flag1)
-                flag3 = flag;
-            else
-                flag3 = false;
-            miuihandleview.setVisible(flag3);
             mHandle.show();
             if(flag1 && !flag2) {
                 Log.i("MiuiCursorController", "Show InsertionPointCursorController in one shot context");
@@ -1153,7 +1225,10 @@ _L3:
     MiuiHandleView initHandleView(Editor editor, int i, MiuiCursorController miuicursorcontroller) {
         Object obj = null;
         if(i == 0) {
-            obj = new InsertionHandleView(editor, mOwner.getSelectHandleCenterRes());
+            if(editor.hasMagnifierController())
+                obj = new MagnifierInsertionHandleView(editor, mOwner.getSelectHandleCenterRes());
+            else
+                obj = new InsertionHandleView(editor, mOwner.getSelectHandleCenterRes());
         } else {
             Drawable drawable = mOwner.getSelectHandleRightRes();
             Drawable drawable1 = mOwner.getSelectHandleLeftRes();

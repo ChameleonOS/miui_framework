@@ -531,7 +531,7 @@ _L1:
         s = SystemProperties.get("gsm.operator.numeric", "");
         s1 = super.ss.getOperatorNumeric();
         phone.setSystemProperty("gsm.operator.numeric", s1);
-        if(s1 != null) goto _L4; else goto _L3
+        if(!TextUtils.isEmpty(s1)) goto _L4; else goto _L3
 _L3:
         log("operatorNumeric is null");
         phone.setSystemProperty("gsm.operator.iso-country", "");

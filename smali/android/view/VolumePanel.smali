@@ -1573,7 +1573,7 @@
     .line 414
     iget-object v1, p1, Landroid/view/VolumePanel$StreamControl;->icon:Landroid/widget/ImageView;
 
-    const v2, 0x10802a4
+    const v2, 0x10802a5
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -2614,9 +2614,9 @@
     if-eqz v5, :cond_dd
 
     .line 600
-    const v5, 0x108029d
+    const v5, 0x108029e
 
-    const v6, 0x108029e
+    const v6, 0x108029f
 
     invoke-direct {p0, v5, v6}, Landroid/view/VolumePanel;->setMusicIcon(II)V
 
@@ -2624,9 +2624,9 @@
 
     .line 602
     :cond_dd
-    const v5, 0x10802a5
+    const v5, 0x10802a6
 
-    const v6, 0x10802a6
+    const v6, 0x10802a7
 
     invoke-direct {p0, v5, v6}, Landroid/view/VolumePanel;->setMusicIcon(II)V
 

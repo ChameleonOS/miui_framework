@@ -55,10 +55,28 @@ public class SelectionFloatPanel extends FrameLayout {
         return instance;
     }
 
+    protected void onMeasure(int i, int j) {
+        super.onMeasure(i, j);
+        sHeight = getMeasuredHeight();
+        sWidth = getMeasuredWidth();
+    }
+
     public void showAt(int i, int j) {
         setVisibility(0);
         setX(i);
-        setY(j - getHeight());
+        setY(j);
         requestLayout();
     }
+
+    public int viewHeight() {
+        return sHeight;
+    }
+
+    public int viewWidth() {
+        return sWidth;
+    }
+
+    private static int sHeight = 0;
+    private static int sWidth = 0;
+
 }

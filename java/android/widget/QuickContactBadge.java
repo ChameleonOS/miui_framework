@@ -197,7 +197,7 @@ _L3:
 
     public void setImageToDefault() {
         if(mDefaultAvatar == null)
-            mDefaultAvatar = getResources().getDrawable(0x10802c0);
+            mDefaultAvatar = getResources().getDrawable(0x10802c1);
         setImageDrawable(mDefaultAvatar);
     }
 

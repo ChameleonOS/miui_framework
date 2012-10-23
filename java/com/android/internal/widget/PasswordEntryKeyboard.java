@@ -123,8 +123,8 @@ _L4:
 
     private void init(Context context) {
         Resources resources = context.getResources();
-        mShiftIcon = resources.getDrawable(0x1080593);
-        mShiftLockIcon = resources.getDrawable(0x1080594);
+        mShiftIcon = resources.getDrawable(0x1080594);
+        mShiftLockIcon = resources.getDrawable(0x1080595);
         sSpacebarVerticalCorrection = resources.getDimensionPixelOffset(0x1050019);
     }
 

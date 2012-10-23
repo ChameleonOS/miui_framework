@@ -3779,7 +3779,7 @@
 
     .line 1088
     .restart local v2       #textId:I
-    const v0, 0x10802ca
+    const v0, 0x10802cb
 
     .line 1089
     .local v0, emergencyIcon:I

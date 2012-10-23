@@ -92,7 +92,7 @@ public class SearchDialog extends Dialog {
         mSearchAutoComplete = (AutoCompleteTextView)mSearchView.findViewById(0x102032d);
         mAppIcon = (ImageView)findViewById(0x1020325);
         mSearchPlate = mSearchView.findViewById(0x102032c);
-        mWorkingSpinner = getContext().getResources().getDrawable(0x10804dd);
+        mWorkingSpinner = getContext().getResources().getDrawable(0x10804de);
         setWorking(false);
         mBadgeLabel.setVisibility(8);
         mSearchAutoCompleteImeOptions = mSearchAutoComplete.getImeOptions();

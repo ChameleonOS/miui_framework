@@ -206,7 +206,7 @@ _L1:
     protected Drawable loadDefaultIcon(PackageManager packagemanager) {
         Drawable drawable;
         if((0x40000 & flags) != 0 && isPackageUnavailable(packagemanager))
-            drawable = Resources.getSystem().getDrawable(0x108057c);
+            drawable = Resources.getSystem().getDrawable(0x108057d);
         else
             drawable = packagemanager.getDefaultActivityIcon();
         return drawable;

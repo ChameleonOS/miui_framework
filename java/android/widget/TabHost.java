@@ -162,7 +162,7 @@ public class TabHost extends FrameLayout
                 imageview.setVisibility(0);
             }
             if(context.getApplicationInfo().targetSdkVersion <= 4) {
-                view.setBackgroundResource(0x10805a1);
+                view.setBackgroundResource(0x10805a2);
                 textview.setTextColor(context.getResources().getColorStateList(0x106007b));
             }
             return view;
@@ -190,7 +190,7 @@ public class TabHost extends FrameLayout
             TextView textview = (TextView)view.findViewById(0x1020016);
             textview.setText(mLabel);
             if(context.getApplicationInfo().targetSdkVersion <= 4) {
-                view.setBackgroundResource(0x10805a1);
+                view.setBackgroundResource(0x10805a2);
                 textview.setTextColor(context.getResources().getColorStateList(0x106007b));
             }
             return view;

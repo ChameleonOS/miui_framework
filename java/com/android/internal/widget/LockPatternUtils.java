@@ -839,7 +839,7 @@ _L1:
                 button.setCompoundDrawablesWithIntrinsicBounds(0x1080084, 0, 0, 0);
             } else {
                 j = 0x10402fb;
-                button.setCompoundDrawablesWithIntrinsicBounds(0x10802ca, 0, 0, 0);
+                button.setCompoundDrawablesWithIntrinsicBounds(0x10802cb, 0, 0, 0);
             }
             button.setText(j);
         } else {

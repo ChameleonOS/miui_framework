@@ -663,7 +663,7 @@ _L3:
                 String s1 = resources.getString(0x1040404, aobj1);
                 Notification notification = new Notification();
                 notification.when = 0L;
-                notification.icon = 0x1080516;
+                notification.icon = 0x1080517;
                 notification.flags = 16;
                 notification.contentIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
                 notification.tickerText = s;

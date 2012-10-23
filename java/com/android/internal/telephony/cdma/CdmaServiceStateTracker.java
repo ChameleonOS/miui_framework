@@ -23,6 +23,30 @@ import java.util.*;
 //            CdmaCall
 
 public class CdmaServiceStateTracker extends ServiceStateTracker {
+    private class LocaleChangedIntentReceiver extends BroadcastReceiver {
+
+        public void onReceive(Context context, Intent intent) {
+            if(((PhoneBase) (phone)).mIsTheCurrentActivePhone) goto _L2; else goto _L1
+_L1:
+            Log.e("CDMA", (new StringBuilder()).append("Received Intent ").append(intent).append(" while being destroyed. Ignoring.").toString());
+_L4:
+            return;
+_L2:
+            if(intent.getAction().equals("android.intent.action.LOCALE_CHANGED"))
+                updateSpnDisplay();
+            if(true) goto _L4; else goto _L3
+_L3:
+        }
+
+        final CdmaServiceStateTracker this$0;
+
+        private LocaleChangedIntentReceiver() {
+            this$0 = CdmaServiceStateTracker.this;
+            super();
+        }
+
+    }
+
 
     public CdmaServiceStateTracker(CDMAPhone cdmaphone) {
         boolean flag = false;
@@ -45,6 +69,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         isEriTextLoaded = false;
         isSubscriptionFromRuim = false;
         currentCarrier = null;
+        mIntentReceiver = new LocaleChangedIntentReceiver();
         mAutoTimeObserver = new ContentObserver(new Handler()) {
 
             public void onChange(boolean flag2) {
@@ -103,6 +128,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
         cr.registerContentObserver(android.provider.Settings.System.getUriFor("auto_time_zone"), true, mAutoTimeZoneObserver);
         setSignalStrengthDefaultValues();
         mNeedToRegForRuimLoaded = true;
+        monitorLocaleChange();
     }
 
     private TimeZone findTimeZone(int i, boolean flag, long l) {
@@ -263,6 +289,12 @@ _L6:
         return flag1;
     }
 
+    private void monitorLocaleChange() {
+        IntentFilter intentfilter = new IntentFilter();
+        intentfilter.addAction("android.intent.action.LOCALE_CHANGED");
+        phone.getContext().registerReceiver(mIntentReceiver, intentfilter);
+    }
+
     private void queueNextSignalStrengthPoll() {
         if(!super.dontPollSignalStrength) {
             Message message = obtainMessage();
@@ -350,13 +382,13 @@ _L3:
         if(s.indexOf('-') != -1) goto _L2; else goto _L1
 _L1:
         boolean flag = true;
-_L34:
+_L30:
         int i = Integer.parseInt(as[6]);
         if(as.length < 8) goto _L4; else goto _L3
 _L3:
         int j = Integer.parseInt(as[7]);
           goto _L5
-_L32:
+_L28:
         byte byte0;
         int k;
         TimeZone timezone;
@@ -373,7 +405,7 @@ _L8:
         if(j == 0) goto _L11; else goto _L10
 _L10:
         boolean flag5 = true;
-_L35:
+_L31:
         long l11 = calendar.getTimeInMillis();
         timezone = TimeUtils.getTimeZone(k, flag5, l11, s1);
 _L7:
@@ -385,49 +417,46 @@ _L14:
         boolean flag3 = true;
           goto _L16
 _L13:
+        boolean flag1;
         mNeedFixZone = true;
         mZoneOffset = k;
-        if(j == 0) goto _L18; else goto _L17
-_L17:
-        boolean flag1 = true;
-_L23:
+        if(j == 0)
+            break MISSING_BLOCK_LABEL_1317;
+        flag1 = true;
+_L33:
         mZoneDst = flag1;
         mZoneTime = calendar.getTimeInMillis();
-_L33:
+_L29:
+        boolean flag4;
+        StringBuilder stringbuilder = (new StringBuilder()).append("NITZ: tzOffset=").append(k).append(" dst=").append(j).append(" zone=");
         String s2;
-        log((new StringBuilder()).append("NITZ: tzOffset=").append(k).append(" dst=").append(j).append(" zone=").append(timezone.getID()).append(" iso=").append(s1).append(" mGotCountryCode=").append(mGotCountryCode).append(" mNeedFixZone=").append(mNeedFixZone).toString());
+        String s3;
+        long l10;
+        if(timezone != null)
+            s2 = timezone.getID();
+        else
+            s2 = "NULL";
+        log(stringbuilder.append(s2).append(" iso=").append(s1).append(" mGotCountryCode=").append(mGotCountryCode).append(" mNeedFixZone=").append(mNeedFixZone).toString());
         if(timezone != null) {
             if(getAutoTimeZone())
                 setAndBroadcastNetworkSetTimeZone(timezone.getID());
             saveNitzTimeZone(timezone.getID());
         }
-        s2 = SystemProperties.get("gsm.ignore-nitz");
-        if(s2 == null || !s2.equals("yes")) goto _L20; else goto _L19
-_L19:
+        s3 = SystemProperties.get("gsm.ignore-nitz");
+        if(s3 == null || !s3.equals("yes")) goto _L18; else goto _L17
+_L17:
         log("NITZ: Not setting clock because gsm.ignore-nitz is set");
-          goto _L21
-_L22:
-        boolean flag4;
-        TimeZone timezone1;
-        long l10 = calendar.getTimeInMillis();
-        timezone1 = getNitzTimeZone(k, flag4, l10);
-        timezone = timezone1;
+          goto _L19
+_L32:
+        l10 = calendar.getTimeInMillis();
+        timezone = getNitzTimeZone(k, flag4, l10);
           goto _L7
-_L37:
-        flag4 = false;
-          goto _L22
-_L15:
-        flag3 = false;
-        continue; /* Loop/switch isn't completed */
 _L18:
-        flag1 = false;
-          goto _L23
-_L20:
         long l3;
         mWakeLock.acquire();
         l3 = SystemClock.elapsedRealtime() - l;
-        if(l3 >= 0L) goto _L25; else goto _L24
-_L24:
+        if(l3 >= 0L) goto _L21; else goto _L20
+_L20:
         log((new StringBuilder()).append("NITZ: not setting time, clock has rolled backwards since NITZ time was received, ").append(s).toString());
         try {
             long l9 = SystemClock.elapsedRealtime();
@@ -437,20 +466,20 @@ _L24:
         catch(RuntimeException runtimeexception) {
             loge((new StringBuilder()).append("NITZ: Parsing NITZ time ").append(s).append(" ex=").append(runtimeexception).toString());
         }
-          goto _L21
-_L25:
-        if(l3 <= 0x7fffffffL) goto _L27; else goto _L26
-_L26:
+          goto _L19
+_L21:
+        if(l3 <= 0x7fffffffL) goto _L23; else goto _L22
+_L22:
         log((new StringBuilder()).append("NITZ: not setting time, processing has taken ").append(l3 / 0x5265c00L).append(" days").toString());
         long l8 = SystemClock.elapsedRealtime();
         log((new StringBuilder()).append("NITZ: end=").append(l8).append(" dur=").append(l8 - l1).toString());
         mWakeLock.release();
-          goto _L21
-_L27:
+          goto _L19
+_L23:
         int i1 = (int)l3;
         calendar.add(14, i1);
-        if(!getAutoTime()) goto _L29; else goto _L28
-_L28:
+        if(!getAutoTime()) goto _L25; else goto _L24
+_L24:
         long l5;
         long l6;
         int j1;
@@ -459,11 +488,11 @@ _L28:
         l6 = SystemClock.elapsedRealtime() - mSavedAtTime;
         j1 = android.provider.Settings.Secure.getInt(cr, "nitz_update_spacing", mNitzUpdateSpacing);
         k1 = android.provider.Settings.Secure.getInt(cr, "nitz_update_diff", mNitzUpdateDiff);
-        if(mSavedAtTime != 0L && l6 <= (long)j1 && Math.abs(l5) <= (long)k1) goto _L31; else goto _L30
-_L30:
+        if(mSavedAtTime != 0L && l6 <= (long)j1 && Math.abs(l5) <= (long)k1) goto _L27; else goto _L26
+_L26:
         log((new StringBuilder()).append("NITZ: Auto updating time of day to ").append(calendar.getTime()).append(" NITZ receive delay=").append(l3).append("ms gained=").append(l5).append("ms from ").append(s).toString());
         setAndBroadcastNetworkSetTime(calendar.getTimeInMillis());
-_L29:
+_L25:
         log("NITZ: update nitz time property");
         SystemProperties.set("gsm.nitz.time", String.valueOf(calendar.getTimeInMillis()));
         mSavedTime = calendar.getTimeInMillis();
@@ -471,13 +500,13 @@ _L29:
         long l4 = SystemClock.elapsedRealtime();
         log((new StringBuilder()).append("NITZ: end=").append(l4).append(" dur=").append(l4 - l1).toString());
         mWakeLock.release();
-          goto _L21
-_L31:
+          goto _L19
+_L27:
         log((new StringBuilder()).append("NITZ: ignore, a previous update was ").append(l6).append("ms ago and gained=").append(l5).append("ms").toString());
         long l7 = SystemClock.elapsedRealtime();
         log((new StringBuilder()).append("NITZ: end=").append(l7).append(" dur=").append(l7 - l1).toString());
         mWakeLock.release();
-          goto _L21
+          goto _L19
         Exception exception;
         exception;
         long l2 = SystemClock.elapsedRealtime();
@@ -489,25 +518,31 @@ _L5:
             byte0 = 1;
         else
             byte0 = -1;
-          goto _L32
+          goto _L28
 _L16:
-        if(flag2 == flag3) goto _L33; else goto _L13
-_L21:
+        if(flag2 == flag3) goto _L29; else goto _L13
+_L19:
         return;
 _L2:
         flag = false;
-          goto _L34
+          goto _L30
 _L4:
         j = 0;
           goto _L5
 _L11:
         flag5 = false;
-          goto _L35
+          goto _L31
 _L9:
-        if(j == 0) goto _L37; else goto _L36
-_L36:
-        flag4 = true;
-          goto _L22
+        if(j != 0)
+            flag4 = true;
+        else
+            flag4 = false;
+          goto _L32
+_L15:
+        flag3 = false;
+          goto _L16
+        flag1 = false;
+          goto _L33
     }
 
     public void dispose() {
@@ -1523,6 +1558,7 @@ _L3:
     protected boolean mGotCountryCode;
     protected int mHomeNetworkId[];
     protected int mHomeSystemId[];
+    private BroadcastReceiver mIntentReceiver;
     private boolean mIsInPrl;
     protected boolean mIsMinInfoReady;
     protected String mMdn;

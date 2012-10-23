@@ -126,28 +126,28 @@ public class WaveView extends View
     }
 
     private void initDrawables() {
-        mUnlockRing = new DrawableHolder(createDrawable(0x10805f7));
+        mUnlockRing = new DrawableHolder(createDrawable(0x10805f8));
         mUnlockRing.setX(mLockCenterX);
         mUnlockRing.setY(mLockCenterY);
         mUnlockRing.setScaleX(0.1F);
         mUnlockRing.setScaleY(0.1F);
         mUnlockRing.setAlpha(0.0F);
         mDrawables.add(mUnlockRing);
-        mUnlockDefault = new DrawableHolder(createDrawable(0x10805f5));
+        mUnlockDefault = new DrawableHolder(createDrawable(0x10805f6));
         mUnlockDefault.setX(mLockCenterX);
         mUnlockDefault.setY(mLockCenterY);
         mUnlockDefault.setScaleX(0.1F);
         mUnlockDefault.setScaleY(0.1F);
         mUnlockDefault.setAlpha(0.0F);
         mDrawables.add(mUnlockDefault);
-        mUnlockHalo = new DrawableHolder(createDrawable(0x10805f6));
+        mUnlockHalo = new DrawableHolder(createDrawable(0x10805f7));
         mUnlockHalo.setX(mLockCenterX);
         mUnlockHalo.setY(mLockCenterY);
         mUnlockHalo.setScaleX(0.1F);
         mUnlockHalo.setScaleY(0.1F);
         mUnlockHalo.setAlpha(0.0F);
         mDrawables.add(mUnlockHalo);
-        BitmapDrawable bitmapdrawable = createDrawable(0x10805f8);
+        BitmapDrawable bitmapdrawable = createDrawable(0x10805f9);
         for(int i = 0; i < mWaveCount; i++) {
             DrawableHolder drawableholder = new DrawableHolder(bitmapdrawable);
             mLightWaves.add(drawableholder);

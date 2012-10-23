@@ -68,39 +68,31 @@ _L1:
 _L4:
         return themefileinfo1;
 _L2:
-        String s1;
-        String s2;
-        int j;
         int i = s.indexOf("dpi/");
-        if(i < 0) {
-            themefileinfo1 = themefileinfo;
-            continue; /* Loop/switch isn't completed */
-        }
-        s1 = s.substring(i + 3);
-        for(; s.charAt(i) != '-'; i--);
-        s2 = s.substring(0, i);
-        j = -1 + sDensities.length;
-_L5:
-label0:
-        {
-            if(j >= 0) {
+        if(i > 0) {
+            String s1 = s.substring(i + 3);
+            for(; s.charAt(i) != '-'; i--);
+            String s2 = s.substring(0, i);
+            int j = 0;
+            do {
+                if(j >= sDensities.length)
+                    break;
                 Object aobj[] = new Object[3];
                 aobj[0] = s2;
                 aobj[1] = DisplayUtils.getDensitySuffix(sDensities[j]);
                 aobj[2] = s1;
                 themefileinfo = getZipInputStream(String.format("%s%s%s", aobj));
-                if(themefileinfo == null)
-                    break label0;
-                themefileinfo.mDensity = sDensities[j];
-            }
-            themefileinfo1 = themefileinfo;
+                if(themefileinfo != null) {
+                    themefileinfo.mDensity = sDensities[j];
+                    themefileinfo1 = themefileinfo;
+                    continue; /* Loop/switch isn't completed */
+                }
+                j++;
+            } while(true);
         }
+        themefileinfo1 = themefileinfo;
         if(true) goto _L4; else goto _L3
 _L3:
-        j--;
-          goto _L5
-        if(true) goto _L4; else goto _L6
-_L6:
     }
 
     private static final String getPackageName(String s) {
@@ -178,16 +170,16 @@ _L6:
         int i;
         if(DBG)
             Log.d(TAG, (new StringBuilder()).append("loadThemeValues for ").append(mPath).toString());
-        i = 0;
+        i = -1 + sDensities.length;
 _L2:
         Object obj;
-        if(i >= sDensities.length)
+        if(i < 0)
             break; /* Loop/switch isn't completed */
         Object aobj[] = new Object[1];
         aobj[0] = DisplayUtils.getDensitySuffix(sDensities[i]);
         ThemeFileInfo themefileinfo = getZipInputStream(String.format("theme_values%s.xml", aobj));
         if(themefileinfo == null)
-            break MISSING_BLOCK_LABEL_130;
+            break MISSING_BLOCK_LABEL_132;
         obj = themefileinfo.mInput;
         XmlPullParser xmlpullparser;
         BufferedInputStream bufferedinputstream;
@@ -197,7 +189,7 @@ _L2:
         mergeThemeValues(resources, xmlpullparser);
         bufferedinputstream.close();
 _L3:
-        i++;
+        i--;
         if(true) goto _L2; else goto _L1
         Exception exception;
         exception;

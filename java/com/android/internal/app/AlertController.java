@@ -373,15 +373,15 @@ _L3:
     }
 
     private void setBackground(LinearLayout linearlayout, LinearLayout linearlayout1, View view, boolean flag, TypedArray typedarray, boolean flag1, View view1) {
-        int i = typedarray.getResourceId(0, 0x1080462);
-        int j = typedarray.getResourceId(1, 0x108046a);
-        int k = typedarray.getResourceId(2, 0x108045f);
-        int l = typedarray.getResourceId(3, 0x108045c);
-        int i1 = typedarray.getResourceId(4, 0x1080461);
-        int j1 = typedarray.getResourceId(5, 0x1080469);
-        int k1 = typedarray.getResourceId(6, 0x108045e);
-        int l1 = typedarray.getResourceId(7, 0x108045b);
-        int i2 = typedarray.getResourceId(8, 0x108045d);
+        int i = typedarray.getResourceId(0, 0x1080463);
+        int j = typedarray.getResourceId(1, 0x108046b);
+        int k = typedarray.getResourceId(2, 0x1080460);
+        int l = typedarray.getResourceId(3, 0x108045d);
+        int i1 = typedarray.getResourceId(4, 0x1080462);
+        int j1 = typedarray.getResourceId(5, 0x108046a);
+        int k1 = typedarray.getResourceId(6, 0x108045f);
+        int l1 = typedarray.getResourceId(7, 0x108045c);
+        int i2 = typedarray.getResourceId(8, 0x108045e);
         View aview[] = new View[4];
         boolean aflag[] = new boolean[4];
         View view2 = null;

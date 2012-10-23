@@ -17,8 +17,8 @@ public class EdgeEffect {
     public EdgeEffect(Context context) {
         mState = 0;
         Resources resources = context.getResources();
-        mEdge = resources.getDrawable(0x1080429);
-        mGlow = resources.getDrawable(0x108042a);
+        mEdge = resources.getDrawable(0x108042a);
+        mGlow = resources.getDrawable(0x108042b);
         mEdgeHeight = mEdge.getIntrinsicHeight();
         mGlowHeight = mGlow.getIntrinsicHeight();
         mGlowWidth = mGlow.getIntrinsicWidth();

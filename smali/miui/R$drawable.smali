@@ -91,7 +91,7 @@
 
 .field public static final android_ic_lockscreen_chevron_right:I = 0x602014e
 
-.field public static final android_ic_lockscreen_glowdot:I = 0x60201c6
+.field public static final android_ic_lockscreen_glowdot:I = 0x60201c8
 
 .field public static final android_ic_lockscreen_handle_pressed:I = 0x6020150
 
@@ -116,6 +116,8 @@
 .field public static final android_item_background_holo_light:I = 0x6020029
 
 .field public static final android_list_divider_holo_light:I = 0x602012f
+
+.field public static final android_list_pressed_holo_light:I = 0x60201c6
 
 .field public static final android_list_section_divider_holo_light:I = 0x602012b
 

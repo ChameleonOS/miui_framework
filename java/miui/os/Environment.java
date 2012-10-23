@@ -93,11 +93,24 @@ public class Environment extends android.os.Environment {
         return "mounted".equals(getExternalStorageState());
     }
 
+    public static boolean isExternalStoragePath(String s) {
+        boolean flag = false;
+        if(s != null) goto _L2; else goto _L1
+_L1:
+        return flag;
+_L2:
+        String s1 = s.concat("/");
+        if(s1.startsWith("/sdcard/") || s1.startsWith(EXTERNAL_STORAGE_DIRECTORY_WITH_ENDING_SLASH))
+            flag = true;
+        if(true) goto _L1; else goto _L3
+_L3:
+    }
+
     public static boolean isExternalStorageStateChanged(Intent intent) {
         StorageVolume storagevolume = (StorageVolume)intent.getParcelableExtra("storage_volume");
         boolean flag;
         if(storagevolume != null)
-            flag = isExternalPath(storagevolume.getPath());
+            flag = isExternalStoragePath(storagevolume.getPath());
         else
             flag = false;
         return flag;
@@ -150,7 +163,9 @@ _L3:
 _L5:
     }
 
-    private static final File EXTERNAL_STORAGE_MIUI_DIRECTORY = new File(getExternalStorageDirectory(), "MIUI");
+    private static final String EXTERNAL_STORAGE_DIRECTORY = getExternalStorageDirectory().getPath();
+    private static final String EXTERNAL_STORAGE_DIRECTORY_WITH_ENDING_SLASH;
+    private static final File EXTERNAL_STORAGE_MIUI_DIRECTORY = new File(EXTERNAL_STORAGE_DIRECTORY, "MIUI");
     private static final File INTERNAL_STORAGE_DIRECTORY;
     private static final File INTERNAL_STORAGE_MIUI_DIRECTORY;
     private static HashMap sDevice2Memory;
@@ -159,6 +174,12 @@ _L5:
 
     static  {
         INTERNAL_STORAGE_DIRECTORY = new File("/data/sdcard");
+        String s;
+        if(EXTERNAL_STORAGE_DIRECTORY.endsWith("/"))
+            s = EXTERNAL_STORAGE_DIRECTORY;
+        else
+            s = EXTERNAL_STORAGE_DIRECTORY.concat("/");
+        EXTERNAL_STORAGE_DIRECTORY_WITH_ENDING_SLASH = s;
         INTERNAL_STORAGE_MIUI_DIRECTORY = new File(INTERNAL_STORAGE_DIRECTORY, "MIUI");
         sDevice2Memory = new HashMap();
         sDevice2Memory.put("hwu9200", Long.valueOf(0x100000L));

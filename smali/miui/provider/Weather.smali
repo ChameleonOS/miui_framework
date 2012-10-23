@@ -31,6 +31,8 @@
 
 .field public static final DUSTSTORM:I = 0x13
 
+.field public static final FLOATING_DUST:I = 0x17
+
 .field public static final FOG:I = 0x3
 
 .field public static final HAILSTONE:I = 0x16
@@ -76,6 +78,6 @@
     .line 8
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 154
+    .line 155
     return-void
 .end method

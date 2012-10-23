@@ -266,8 +266,8 @@ public class Notification
                 j = 0x1020234;
             }
             if(mPriority < -1) {
-                remoteviews.setInt(0x1020006, "setBackgroundResource", 0x108060a);
-                remoteviews.setInt(0x10202e5, "setBackgroundResource", 0x108040a);
+                remoteviews.setInt(0x1020006, "setBackgroundResource", 0x108060b);
+                remoteviews.setInt(0x10202e5, "setBackgroundResource", 0x108040b);
             }
             int k;
             int l;
@@ -907,8 +907,8 @@ public class Notification
         if(icon != 0)
             remoteviews.setImageViewResource(0x1020006, icon);
         if(priority < -1) {
-            remoteviews.setInt(0x1020006, "setBackgroundResource", 0x108060a);
-            remoteviews.setInt(0x10202e5, "setBackgroundResource", 0x108040a);
+            remoteviews.setInt(0x1020006, "setBackgroundResource", 0x108060b);
+            remoteviews.setInt(0x10202e5, "setBackgroundResource", 0x108040b);
         }
         if(charsequence != null)
             remoteviews.setTextViewText(0x1020016, charsequence);

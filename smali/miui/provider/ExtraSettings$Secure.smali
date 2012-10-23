@@ -75,47 +75,47 @@
     .registers 2
 
     .prologue
-    .line 777
+    .line 789
     const-string/jumbo v0, "mobile_download_file_size_prompt_popup_enabled"
 
     sput-object v0, Lmiui/provider/ExtraSettings$Secure;->MOBILE_DOWNLOAD_FILE_SIZE_PROMPT_POPUP_ENABLED:Ljava/lang/String;
 
-    .line 779
+    .line 791
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lmiui/provider/ExtraSettings$Secure;->sStorageThreshold:J
 
-    .line 797
+    .line 809
     const-string v0, "force_close_dialog_enabled"
 
     sput-object v0, Lmiui/provider/ExtraSettings$Secure;->FORCE_CLOCE_DIALOG_ENABLED:Ljava/lang/String;
 
-    .line 810
+    .line 822
     const-string/jumbo v0, "show_magnifier_when_input"
 
     sput-object v0, Lmiui/provider/ExtraSettings$Secure;->SHOW_MAGNIFIER_WHEN_INPUT:Ljava/lang/String;
 
-    .line 811
+    .line 823
     const/4 v0, 0x1
 
     sput v0, Lmiui/provider/ExtraSettings$Secure;->DEFAULT_SHOW_MAGNIFIER_WHEN_INPUT:I
 
-    .line 823
+    .line 835
     const-string v0, "app_encrypt_password"
 
     sput-object v0, Lmiui/provider/ExtraSettings$Secure;->APP_ENCRYPT_PASSWORD:Ljava/lang/String;
 
-    .line 829
+    .line 841
     const-string/jumbo v0, "resister_find_device_sim_number"
 
     sput-object v0, Lmiui/provider/ExtraSettings$Secure;->REGISTER_FIND_DEVICE_SIM_NUMBER:Ljava/lang/String;
 
-    .line 835
+    .line 847
     const-string/jumbo v0, "permanently_lock_sim_change"
 
     sput-object v0, Lmiui/provider/ExtraSettings$Secure;->PERMANENTLY_LOCK_SIM_CHANGE:Ljava/lang/String;
 
-    .line 842
+    .line 854
     const-string v0, "find_device_pin_lock"
 
     sput-object v0, Lmiui/provider/ExtraSettings$Secure;->FIND_DEVICE_PIN_LOCK:Ljava/lang/String;
@@ -127,7 +127,7 @@
     .registers 1
 
     .prologue
-    .line 694
+    .line 706
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -142,7 +142,7 @@
 
     const/4 v3, 0x0
 
-    .line 746
+    .line 758
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -157,12 +157,12 @@
 
     move v0, v2
 
-    .line 748
+    .line 760
     .local v0, enabled:Z
     :goto_10
     if-eqz v0, :cond_20
 
-    .line 749
+    .line 761
     new-instance v1, Landroid/database/MatrixCursor;
 
     new-array v2, v2, [Ljava/lang/String;
@@ -173,7 +173,7 @@
 
     invoke-direct {v1, v2}, Landroid/database/MatrixCursor;-><init>([Ljava/lang/String;)V
 
-    .line 753
+    .line 765
     :goto_1d
     return-object v1
 
@@ -181,10 +181,10 @@
     :cond_1e
     move v0, v3
 
-    .line 746
+    .line 758
     goto :goto_10
 
-    .line 753
+    .line 765
     .restart local v0       #enabled:Z
     :cond_20
     const/4 v1, 0x0
@@ -197,7 +197,7 @@
     .parameter "resolver"
 
     .prologue
-    .line 782
+    .line 794
     sget-wide v2, Lmiui/provider/ExtraSettings$Secure;->sStorageThreshold:J
 
     const-wide/16 v4, 0x0
@@ -206,7 +206,7 @@
 
     if-nez v2, :cond_30
 
-    .line 783
+    .line 795
     const-string/jumbo v2, "sys_storage_threshold_percentage"
 
     const/16 v3, 0xa
@@ -215,7 +215,7 @@
 
     move-result v1
 
-    .line 788
+    .line 800
     .local v1, value:I
     new-instance v0, Landroid/os/StatFs;
 
@@ -229,7 +229,7 @@
 
     invoke-direct {v0, v2}, Landroid/os/StatFs;-><init>(Ljava/lang/String;)V
 
-    .line 789
+    .line 801
     .local v0, stats:Landroid/os/StatFs;
     invoke-virtual {v0}, Landroid/os/StatFs;->getBlockCount()I
 
@@ -255,7 +255,7 @@
 
     sput-wide v2, Lmiui/provider/ExtraSettings$Secure;->sStorageThreshold:J
 
-    .line 791
+    .line 803
     .end local v0           #stats:Landroid/os/StatFs;
     .end local v1           #value:I
     :cond_30
@@ -273,7 +273,7 @@
 
     const/4 v0, 0x1
 
-    .line 800
+    .line 812
     :try_start_2
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -289,21 +289,21 @@
 
     if-ne v0, v2, :cond_f
 
-    .line 804
+    .line 816
     :goto_e
     return v0
 
     :cond_f
     move v0, v1
 
-    .line 800
+    .line 812
     goto :goto_e
 
-    .line 802
+    .line 814
     :catch_11
     move-exception v2
 
-    .line 804
+    .line 816
     const-string/jumbo v2, "user"
 
     sget-object v3, Lmiui/os/Build;->TYPE:Ljava/lang/String;
@@ -336,7 +336,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 813
+    .line 825
     sget-boolean v1, Lmiui/os/Build;->SHOW_MAGNIFIER_WHEN_INPUT:Z
 
     if-nez v1, :cond_12

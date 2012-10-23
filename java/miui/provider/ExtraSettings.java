@@ -358,6 +358,10 @@ _L2:
         public static final String STATUS_BAR_TOGGLE_PAGE = "status_bar_toggle_page";
         public static final String STATUS_BAR_UPDATE_NETWORK_SPEED_INTERVAL = "status_bar_network_speed_interval";
         public static final int STATUS_BAR_UPDATE_NETWORK_SPEED_INTERVAL_DEFAULT = 4000;
+        public static final String T9_INDEXING_KEY = "t9_indexing_key";
+        public static final int T9_INDEXING_KEY_DEFAULT = 0;
+        public static final int T9_INDEXING_KEY_PINYIN = 0;
+        public static final int T9_INDEXING_KEY_ZHUYIN = 1;
         public static final String TORCH_STATE = "torch_state";
         public static final String TRACKBALL_WAKE_SCREEN = "trackball_wake_screen";
         public static final String UI_MODE_SCALE = "ui_mode_scale";
@@ -385,13 +389,17 @@ _L2:
         public static ArrayList screenKeys;
 
         static  {
+            int i = 1;
             CALL_BREATHING_LIGHT_COLOR_DEFAULT = Resources.getSystem().getColor(0x6070009);
             CALL_BREATHING_LIGHT_FREQ_DEFAULT = Resources.getSystem().getInteger(0x608000a);
             screenKeys = new ArrayList();
             screenKeys.add(Integer.valueOf(0));
-            screenKeys.add(Integer.valueOf(1));
+            screenKeys.add(Integer.valueOf(i));
             screenKeys.add(Integer.valueOf(2));
             screenKeys.add(Integer.valueOf(3));
+            if(!Build.IS_TW_BUILD)
+                i = 0;
+            T9_INDEXING_KEY_DEFAULT = i;
         }
 
         public System() {

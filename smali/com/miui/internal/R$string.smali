@@ -183,7 +183,7 @@
 
 .field public static final chinese_youth_day:I = 0x60c0065
 
-.field public static final christmas_dad:I = 0x60c006b
+.field public static final christmas_day:I = 0x60c006b
 
 .field public static final clear_and_bright:I = 0x60c0072
 
@@ -843,6 +843,8 @@
 
 .field public static final national_day:I = 0x60c006a
 
+.field public static final national_father_day:I = 0x60c01fd
+
 .field public static final never:I = 0x60c01b0
 
 .field public static final new_years_day:I = 0x60c005f
@@ -864,6 +866,8 @@
 .field public static final partys_day:I = 0x60c0067
 
 .field public static final payphone:I = 0x60c003e
+
+.field public static final peace_day:I = 0x60c01fc
 
 .field public static final perm_activate_dspt:I = 0x60c01d0
 
@@ -1037,7 +1041,7 @@
     .registers 1
 
     .prologue
-    .line 1474
+    .line 1475
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

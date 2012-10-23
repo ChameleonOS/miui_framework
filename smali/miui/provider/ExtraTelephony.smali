@@ -939,6 +939,8 @@
     .prologue
     const/4 v4, 0x0
 
+    const/4 v2, 0x1
+
     const/4 v10, 0x0
 
     .line 745
@@ -946,17 +948,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     move v7, v10
 
     .line 766
-    :cond_9
-    :goto_9
+    :cond_a
+    :goto_a
     return v7
 
     .line 749
-    :cond_a
+    :cond_b
     invoke-static {p1}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->parse(Ljava/lang/CharSequence;)Lmiui/telephony/PhoneNumberUtils$PhoneNumber;
 
     move-result-object v8
@@ -967,13 +969,13 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v1, "number=\'"
+    const-string/jumbo v1, "normalized_number=\'"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v8, v10, v10}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getNormalizedNumber(ZZ)Ljava/lang/String;
+    invoke-virtual {v8, v10, v2}, Lmiui/telephony/PhoneNumberUtils$PhoneNumber;->getNormalizedNumber(ZZ)Ljava/lang/String;
 
     move-result-object v1
 
@@ -999,8 +1001,6 @@
 
     sget-object v1, Landroid/provider/CallLog$Calls;->CONTENT_URI:Landroid/net/Uri;
 
-    const/4 v2, 0x1
-
     new-array v2, v2, [Ljava/lang/String;
 
     const-string/jumbo v5, "type"
@@ -1019,7 +1019,7 @@
 
     .line 756
     .local v7, hasConnection:Z
-    if-eqz v6, :cond_9
+    if-eqz v6, :cond_a
 
     .line 757
     :cond_42
@@ -1048,7 +1048,7 @@
     :cond_50
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    goto :goto_9
+    goto :goto_a
 .end method
 
 .method public static isFilterSmsEnabled(Landroid/content/Context;)Z

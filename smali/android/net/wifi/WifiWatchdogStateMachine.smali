@@ -2279,7 +2279,7 @@
     iput-wide v6, v2, Landroid/app/Notification;->when:J
 
     .line 465
-    const v6, 0x1080516
+    const v6, 0x1080517
 
     iput v6, v2, Landroid/app/Notification;->icon:I
 

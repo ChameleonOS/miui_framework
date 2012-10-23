@@ -60,7 +60,7 @@ public class PlatLogoActivity extends Activity {
         DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         mContent = new ImageView(this);
-        mContent.setImageResource(0x1080452);
+        mContent.setImageResource(0x1080453);
         mContent.setScaleType(android.widget.ImageView.ScaleType.CENTER_INSIDE);
         int i = (int)(32F * displaymetrics.density);
         mContent.setPadding(i, i, i, i);
@@ -68,7 +68,7 @@ public class PlatLogoActivity extends Activity {
 
             public void onClick(View view) {
                 mToast.show();
-                mContent.setImageResource(0x1080451);
+                mContent.setImageResource(0x1080452);
             }
 
             final PlatLogoActivity this$0;

@@ -5866,7 +5866,7 @@ _L3:
         if(charsequence == null) {
             setError(null, null);
         } else {
-            Drawable drawable = getContext().getResources().getDrawable(0x1080373);
+            Drawable drawable = getContext().getResources().getDrawable(0x1080374);
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
             setError(charsequence, drawable);
         }

@@ -291,9 +291,9 @@ _L3:
         Resources resources = context.getResources();
         int i;
         if(flag)
-            i = 0x10802b2;
+            i = 0x10802b3;
         else
-            i = 0x108035b;
+            i = 0x108035c;
         return getPermissionItemView(context, layoutinflater, charsequence, charsequence1, flag, resources.getDrawable(i));
     }
 
@@ -481,10 +481,10 @@ _L6:
         mShowMore.setFocusable(true);
         mDefaultGrpLabel = mContext.getString(0x1040424);
         mPermFormat = mContext.getString(0x1040425);
-        mNormalIcon = mContext.getResources().getDrawable(0x108035b);
-        mDangerousIcon = mContext.getResources().getDrawable(0x10802b2);
-        mShowMaxIcon = mContext.getResources().getDrawable(0x108026e);
-        mShowMinIcon = mContext.getResources().getDrawable(0x1080275);
+        mNormalIcon = mContext.getResources().getDrawable(0x108035c);
+        mDangerousIcon = mContext.getResources().getDrawable(0x10802b3);
+        mShowMaxIcon = mContext.getResources().getDrawable(0x108026f);
+        mShowMinIcon = mContext.getResources().getDrawable(0x1080276);
         setPermissions(mPermsList);
         return mPermsView;
     }

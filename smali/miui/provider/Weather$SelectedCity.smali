@@ -36,7 +36,7 @@
     .registers 1
 
     .prologue
-    .line 142
+    .line 143
     const-string v0, "content://weather/selected_city"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -52,7 +52,7 @@
     .registers 1
 
     .prologue
-    .line 138
+    .line 139
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

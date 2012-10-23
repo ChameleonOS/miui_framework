@@ -51,13 +51,13 @@ public class AnalogClock extends View {
         TypedArray typedarray = context.obtainStyledAttributes(attributeset, com.android.internal.R.styleable.AnalogClock, i, 0);
         mDial = typedarray.getDrawable(0);
         if(mDial == null)
-            mDial = resources.getDrawable(0x1080211);
+            mDial = resources.getDrawable(0x1080212);
         mHourHand = typedarray.getDrawable(1);
         if(mHourHand == null)
-            mHourHand = resources.getDrawable(0x1080212);
+            mHourHand = resources.getDrawable(0x1080213);
         mMinuteHand = typedarray.getDrawable(2);
         if(mMinuteHand == null)
-            mMinuteHand = resources.getDrawable(0x1080213);
+            mMinuteHand = resources.getDrawable(0x1080214);
         mCalendar = new Time();
         mDialWidth = mDial.getIntrinsicWidth();
         mDialHeight = mDial.getIntrinsicHeight();

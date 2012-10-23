@@ -536,7 +536,7 @@ _L4:
         return flag;
 _L2:
         miui.telephony.PhoneNumberUtils.PhoneNumber phonenumber = miui.telephony.PhoneNumberUtils.PhoneNumber.parse(s);
-        String s1 = (new StringBuilder()).append("number='").append(phonenumber.getNormalizedNumber(false, false)).append("'").toString();
+        String s1 = (new StringBuilder()).append("normalized_number='").append(phonenumber.getNormalizedNumber(false, true)).append("'").toString();
         ContentResolver contentresolver = context.getContentResolver();
         Uri uri = android.provider.CallLog.Calls.CONTENT_URI;
         String as[] = new String[1];

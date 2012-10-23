@@ -345,6 +345,15 @@
 
 .field public static final STATUS_BAR_UPDATE_NETWORK_SPEED_INTERVAL_DEFAULT:I = 0xfa0
 
+.field public static final T9_INDEXING_KEY:Ljava/lang/String; = "t9_indexing_key"
+
+#the value of this static final field might be set in the static constructor
+.field public static final T9_INDEXING_KEY_DEFAULT:I = 0x0
+
+.field public static final T9_INDEXING_KEY_PINYIN:I = 0x0
+
+.field public static final T9_INDEXING_KEY_ZHUYIN:I = 0x1
+
 .field public static final TORCH_STATE:Ljava/lang/String; = "torch_state"
 
 .field public static final TRACKBALL_WAKE_SCREEN:Ljava/lang/String; = "trackball_wake_screen"
@@ -407,106 +416,120 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 4
 
     .prologue
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
     .line 207
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v2
 
-    const v1, 0x6070009
+    const v3, 0x6070009
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
-    move-result v0
+    move-result v2
 
-    sput v0, Lmiui/provider/ExtraSettings$System;->CALL_BREATHING_LIGHT_COLOR_DEFAULT:I
+    sput v2, Lmiui/provider/ExtraSettings$System;->CALL_BREATHING_LIGHT_COLOR_DEFAULT:I
 
     .line 214
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v2
 
-    const v1, 0x608000a
+    const v3, 0x608000a
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
-    move-result v0
+    move-result v2
 
-    sput v0, Lmiui/provider/ExtraSettings$System;->CALL_BREATHING_LIGHT_FREQ_DEFAULT:I
+    sput v2, Lmiui/provider/ExtraSettings$System;->CALL_BREATHING_LIGHT_FREQ_DEFAULT:I
 
     .line 333
-    const-string/jumbo v0, "sms_received_sound"
+    const-string/jumbo v2, "sms_received_sound"
 
-    invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v2}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v0
+    move-result-object v2
 
-    sput-object v0, Lmiui/provider/ExtraSettings$System;->DEFAULT_SMS_RECEIVED_RINGTONE_URI:Landroid/net/Uri;
+    sput-object v2, Lmiui/provider/ExtraSettings$System;->DEFAULT_SMS_RECEIVED_RINGTONE_URI:Landroid/net/Uri;
 
     .line 351
-    const-string/jumbo v0, "sms_delivered_sound"
+    const-string/jumbo v2, "sms_delivered_sound"
 
-    invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v2}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v0
+    move-result-object v2
 
-    sput-object v0, Lmiui/provider/ExtraSettings$System;->DEFAULT_SMS_DELIVERED_RINGTONE_URI:Landroid/net/Uri;
+    sput-object v2, Lmiui/provider/ExtraSettings$System;->DEFAULT_SMS_DELIVERED_RINGTONE_URI:Landroid/net/Uri;
 
     .line 643
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
+    sput-object v2, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     .line 644
-    sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
-
-    const/4 v1, 0x0
+    sget-object v2, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 645
-    sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
+    sget-object v2, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v3
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 646
-    sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
+    sget-object v2, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
-    const/4 v1, 0x2
+    const/4 v3, 0x2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 647
-    sget-object v0, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
+    sget-object v2, Lmiui/provider/ExtraSettings$System;->screenKeys:Ljava/util/ArrayList;
 
-    const/4 v1, 0x3
+    const/4 v3, 0x3
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 648
+    .line 701
+    sget-boolean v2, Lmiui/os/Build;->IS_TW_BUILD:Z
+
+    if-eqz v2, :cond_62
+
+    :goto_5f
+    sput v0, Lmiui/provider/ExtraSettings$System;->T9_INDEXING_KEY_DEFAULT:I
+
+    .line 703
     return-void
+
+    :cond_62
+    move v0, v1
+
+    .line 701
+    goto :goto_5f
 .end method
 
 .method public constructor <init>()V

@@ -345,8 +345,8 @@ public class SlidingTab extends ViewGroup {
         mOrientation = typedarray.getInt(0, 0);
         typedarray.recycle();
         mDensity = getResources().getDisplayMetrics().density;
-        mLeftSlider = new Slider(this, 0x108039c, 0x108038b, 0x10803aa);
-        mRightSlider = new Slider(this, 0x10803a5, 0x1080394, 0x10803aa);
+        mLeftSlider = new Slider(this, 0x108039d, 0x108038c, 0x10803ab);
+        mRightSlider = new Slider(this, 0x10803a6, 0x1080395, 0x10803ab);
     }
 
     private void cancelGrab() {

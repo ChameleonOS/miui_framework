@@ -75,7 +75,7 @@
     .line 609
     iget-object v3, p0, Landroid/webkit/WebViewClassic$PastePopupWindow;->mContentView:Landroid/view/ViewGroup;
 
-    const v4, 0x10805b6
+    const v4, 0x10805b7
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 

@@ -238,7 +238,7 @@ _L3:
 
     CallerInfo markAsEmergency(Context context) {
         phoneNumber = context.getString(0x10402f5);
-        photoResource = 0x1080450;
+        photoResource = 0x1080451;
         mIsEmergency = true;
         return this;
     }

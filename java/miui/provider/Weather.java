@@ -128,6 +128,7 @@ public class Weather {
     public static final int CLOUDY = 1;
     public static final int DUST = 20;
     public static final int DUSTSTORM = 19;
+    public static final int FLOATING_DUST = 23;
     public static final int FOG = 3;
     public static final int HAILSTONE = 22;
     public static final int HEAVY_RAIN = 9;

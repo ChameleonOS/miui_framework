@@ -28,6 +28,9 @@
 .field public static final IS_GALAXYS_NEXUS:Z = false
 
 #the value of this static final field might be set in the static constructor
+.field public static final IS_HK_BUILD:Z = false
+
+#the value of this static final field might be set in the static constructor
 .field public static final IS_HTC_HD2:Z = false
 
 #the value of this static final field might be set in the static constructor
@@ -55,6 +58,12 @@
 .field public static final IS_MITWO:Z = false
 
 #the value of this static final field might be set in the static constructor
+.field private static final IS_MITWO_HK_BUILD:Z = false
+
+#the value of this static final field might be set in the static constructor
+.field private static final IS_MITWO_TW_BUILD:Z = false
+
+#the value of this static final field might be set in the static constructor
 .field public static final IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE:Z = false
 
 #the value of this static final field might be set in the static constructor
@@ -77,6 +86,9 @@
 
 #the value of this static final field might be set in the static constructor
 .field public static final IS_T959:Z = false
+
+#the value of this static final field might be set in the static constructor
+.field public static final IS_TW_BUILD:Z = false
 
 #the value of this static final field might be set in the static constructor
 .field public static final IS_U8860:Z = false
@@ -143,9 +155,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_35
 
-    const-string v0, "leo"
+    const-string/jumbo v0, "leo"
 
     sget-object v3, Lmiui/os/Build;->DEVICE:Ljava/lang/String;
 
@@ -153,12 +165,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18b
+    if-eqz v0, :cond_1b6
 
-    :cond_34
+    :cond_35
     move v0, v2
 
-    :goto_35
+    :goto_36
     sput-boolean v0, Lmiui/os/Build;->IS_HTC_HD2:Z
 
     .line 15
@@ -192,7 +204,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_62
+    if-nez v0, :cond_63
 
     const-string/jumbo v0, "mione_plus"
 
@@ -202,12 +214,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18e
+    if-eqz v0, :cond_1b9
 
-    :cond_62
+    :cond_63
     move v0, v2
 
-    :goto_63
+    :goto_64
     sput-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
     .line 18
@@ -224,16 +236,16 @@
     .line 19
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_77
+    if-nez v0, :cond_78
 
     sget-boolean v0, Lmiui/os/Build;->IS_MITWO:Z
 
-    if-eqz v0, :cond_191
+    if-eqz v0, :cond_1bc
 
-    :cond_77
+    :cond_78
     move v0, v2
 
-    :goto_78
+    :goto_79
     sput-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
     .line 20
@@ -333,7 +345,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e2
+    if-nez v0, :cond_e3
 
     const-string v0, "MI 1SC"
 
@@ -343,27 +355,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_194
+    if-eqz v0, :cond_1bf
 
-    :cond_e2
+    :cond_e3
     move v0, v2
 
-    :goto_e3
+    :goto_e4
     sput-boolean v0, Lmiui/os/Build;->IS_MI1S:Z
 
     .line 30
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_ed
+    if-nez v0, :cond_ee
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-eqz v0, :cond_197
+    if-eqz v0, :cond_1c2
 
-    :cond_ed
+    :cond_ee
     move v0, v2
 
-    :goto_ee
+    :goto_ef
     sput-boolean v0, Lmiui/os/Build;->IS_RICH_MEMORY_DEVICE:Z
 
     .line 31
@@ -374,75 +386,75 @@
     .line 33
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-nez v0, :cond_108
+    if-nez v0, :cond_109
 
     sget-boolean v0, Lmiui/os/Build;->IS_I9000:Z
 
-    if-nez v0, :cond_108
+    if-nez v0, :cond_109
 
     sget-boolean v0, Lmiui/os/Build;->IS_P990:Z
 
-    if-nez v0, :cond_108
+    if-nez v0, :cond_109
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_108
+    if-nez v0, :cond_109
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-eqz v0, :cond_19a
+    if-eqz v0, :cond_1c5
 
-    :cond_108
+    :cond_109
     move v0, v2
 
-    :goto_109
+    :goto_10a
     sput-boolean v0, Lmiui/os/Build;->IS_FAST_GPU_DEVICE:Z
 
     .line 36
     sget-boolean v0, Lmiui/os/Build;->IS_MILESTONE:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_I9000:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_DEFY:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS2:Z
 
-    if-nez v0, :cond_123
+    if-nez v0, :cond_124
 
     sget-boolean v0, Lmiui/os/Build;->IS_P990:Z
 
-    if-eqz v0, :cond_19d
+    if-eqz v0, :cond_1c8
 
-    :cond_123
+    :cond_124
     move v0, v2
 
-    :goto_124
+    :goto_125
     sput-boolean v0, Lmiui/os/Build;->IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE:Z
 
     .line 39
     sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
 
-    if-eqz v0, :cond_19f
+    if-eqz v0, :cond_1cb
 
     invoke-static {}, Lmiui/os/Build;->isMsm8660()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19f
+    if-eqz v0, :cond_1cb
 
     move v0, v2
 
-    :goto_131
+    :goto_132
     sput-boolean v0, Lmiui/os/Build;->IS_MIONE_PLUS_CDMA:Z
 
     .line 43
@@ -463,43 +475,43 @@
     .line 46
     sget-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
-    if-nez v0, :cond_14e
+    if-nez v0, :cond_14f
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS_NEXUS:Z
 
-    if-nez v0, :cond_14e
+    if-nez v0, :cond_14f
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-eqz v0, :cond_1a1
+    if-eqz v0, :cond_1ce
 
-    :cond_14e
+    :cond_14f
     move v0, v2
 
-    :goto_14f
+    :goto_150
     sput-boolean v0, Lmiui/os/Build;->SHOW_MAGNIFIER_WHEN_INPUT:Z
 
     .line 49
     sget-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 
-    if-nez v0, :cond_161
+    if-nez v0, :cond_162
 
     sget-boolean v0, Lmiui/os/Build;->IS_GALAXYS_NEXUS:Z
 
-    if-nez v0, :cond_161
+    if-nez v0, :cond_162
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_S:Z
 
-    if-nez v0, :cond_161
+    if-nez v0, :cond_162
 
     sget-boolean v0, Lmiui/os/Build;->IS_NEXUS_7:Z
 
-    if-eqz v0, :cond_1a3
+    if-eqz v0, :cond_1d0
 
-    :cond_161
+    :cond_162
     move v0, v2
 
-    :goto_162
+    :goto_163
     sput-boolean v0, Lmiui/os/Build;->IS_FULL_SOURCE_CODE_DEVICE:Z
 
     .line 54
@@ -509,7 +521,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a5
+    if-nez v0, :cond_1d2
 
     sget-object v0, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
 
@@ -519,11 +531,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a5
+    if-eqz v0, :cond_1d2
 
     move v0, v2
 
-    :goto_177
+    :goto_178
     sput-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
     .line 58
@@ -535,88 +547,132 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a7
+    if-eqz v0, :cond_1d4
 
     sget-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
-    if-nez v0, :cond_1a7
+    if-nez v0, :cond_1d4
 
-    :goto_188
+    :goto_189
     sput-boolean v2, Lmiui/os/Build;->IS_STABLE_VERSION:Z
+
+    .line 62
+    const-string v0, "aries_tw"
+
+    const-string/jumbo v1, "ro.product.mod_device"
+
+    const-string v2, ""
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lmiui/os/Build;->IS_MITWO_TW_BUILD:Z
+
+    .line 64
+    const-string v0, "aries_hk"
+
+    const-string/jumbo v1, "ro.product.mod_device"
+
+    const-string v2, ""
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lmiui/os/Build;->IS_MITWO_HK_BUILD:Z
+
+    .line 67
+    sget-boolean v0, Lmiui/os/Build;->IS_MITWO_TW_BUILD:Z
+
+    sput-boolean v0, Lmiui/os/Build;->IS_TW_BUILD:Z
+
+    .line 68
+    sget-boolean v0, Lmiui/os/Build;->IS_MITWO_HK_BUILD:Z
+
+    sput-boolean v0, Lmiui/os/Build;->IS_HK_BUILD:Z
 
     return-void
 
-    :cond_18b
+    :cond_1b6
     move v0, v1
 
     .line 14
-    goto/16 :goto_35
+    goto/16 :goto_36
 
-    :cond_18e
+    :cond_1b9
     move v0, v1
 
     .line 17
-    goto/16 :goto_63
+    goto/16 :goto_64
 
-    :cond_191
+    :cond_1bc
     move v0, v1
 
     .line 19
-    goto/16 :goto_78
+    goto/16 :goto_79
 
-    :cond_194
+    :cond_1bf
     move v0, v1
 
     .line 28
-    goto/16 :goto_e3
+    goto/16 :goto_e4
 
-    :cond_197
+    :cond_1c2
     move v0, v1
 
     .line 30
-    goto/16 :goto_ee
+    goto/16 :goto_ef
 
-    :cond_19a
+    :cond_1c5
     move v0, v1
 
     .line 33
-    goto/16 :goto_109
+    goto/16 :goto_10a
 
-    :cond_19d
+    :cond_1c8
     move v0, v1
 
     .line 36
-    goto :goto_124
+    goto/16 :goto_125
 
-    :cond_19f
+    :cond_1cb
     move v0, v1
 
     .line 39
-    goto :goto_131
+    goto/16 :goto_132
 
-    :cond_1a1
+    :cond_1ce
     move v0, v1
 
     .line 46
-    goto :goto_14f
+    goto :goto_150
 
-    :cond_1a3
+    :cond_1d0
     move v0, v1
 
     .line 49
-    goto :goto_162
+    goto :goto_163
 
-    :cond_1a5
+    :cond_1d2
     move v0, v1
 
     .line 54
-    goto :goto_177
+    goto :goto_178
 
-    :cond_1a7
+    :cond_1d4
     move v2, v1
 
     .line 58
-    goto :goto_188
+    goto :goto_189
 .end method
 
 .method public constructor <init>()V
@@ -634,7 +690,7 @@
     .parameter "property"
 
     .prologue
-    .line 94
+    .line 103
     const-string/jumbo v0, "unknown"
 
     invoke-static {p0, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -648,7 +704,7 @@
     .registers 1
 
     .prologue
-    .line 65
+    .line 74
     sget-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
     return v0
@@ -658,14 +714,14 @@
     .registers 2
 
     .prologue
-    .line 80
+    .line 89
     const-string/jumbo v1, "ro.soc.name"
 
     invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 81
+    .line 90
     .local v0, soc:Ljava/lang/String;
     const-string/jumbo v1, "msm8660"
 
@@ -699,7 +755,7 @@
     .registers 1
 
     .prologue
-    .line 76
+    .line 85
     sget-boolean v0, Lmiui/os/Build;->IS_DEVELOPMENT_VERSION:Z
 
     if-nez v0, :cond_8
@@ -724,7 +780,7 @@
     .registers 1
 
     .prologue
-    .line 72
+    .line 81
     sget-boolean v0, Lmiui/os/Build;->IS_STABLE_VERSION:Z
 
     return v0

@@ -3,16 +3,37 @@
 .source "SelectionFloatPanel.java"
 
 
+# static fields
+.field private static sHeight:I
+
+.field private static sWidth:I
+
+
 # direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 15
+    sput v0, Landroid/webkit/SelectionFloatPanel;->sHeight:I
+
+    .line 16
+    sput v0, Landroid/webkit/SelectionFloatPanel;->sWidth:I
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
     .parameter "context"
 
     .prologue
-    .line 17
+    .line 19
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 18
+    .line 20
     return-void
 .end method
 
@@ -22,10 +43,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 21
+    .line 23
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 22
+    .line 24
     return-void
 .end method
 
@@ -37,7 +58,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 25
+    .line 27
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v4
@@ -50,13 +71,13 @@
 
     check-cast v0, Landroid/webkit/SelectionFloatPanel;
 
-    .line 26
+    .line 28
     .local v0, instance:Landroid/webkit/SelectionFloatPanel;
     new-instance v1, Landroid/webkit/SelectionFloatPanel$1;
 
     invoke-direct {v1, p1, v0}, Landroid/webkit/SelectionFloatPanel$1;-><init>(Landroid/webkit/WebViewClassic;Landroid/webkit/SelectionFloatPanel;)V
 
-    .line 35
+    .line 37
     .local v1, l:Landroid/view/View$OnClickListener;
     const v4, 0x60b0015
 
@@ -64,31 +85,31 @@
 
     move-result-object v2
 
-    .line 36
+    .line 38
     .local v2, v:Landroid/view/View;
     if-eqz v2, :cond_2b
 
-    .line 37
+    .line 39
     invoke-virtual {v2, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 42
+    .line 44
     invoke-virtual {p1}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v3
 
     invoke-virtual {v3, v0}, Landroid/webkit/WebView;->addView(Landroid/view/View;)V
 
-    .line 43
+    .line 45
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/webkit/SelectionFloatPanel;->setVisibility(I)V
 
-    .line 44
+    .line 46
     .end local v0           #instance:Landroid/webkit/SelectionFloatPanel;
     :goto_2a
     return-object v0
 
-    .line 39
+    .line 41
     .restart local v0       #instance:Landroid/webkit/SelectionFloatPanel;
     :cond_2b
     const-string/jumbo v4, "showFloat"
@@ -99,42 +120,83 @@
 
     move-object v0, v3
 
-    .line 40
+    .line 42
     goto :goto_2a
 .end method
 
 
 # virtual methods
+.method protected onMeasure(II)V
+    .registers 4
+    .parameter "widthMeasureSpec"
+    .parameter "heightMeasureSpec"
+
+    .prologue
+    .line 51
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+
+    .line 52
+    invoke-virtual {p0}, Landroid/webkit/SelectionFloatPanel;->getMeasuredHeight()I
+
+    move-result v0
+
+    sput v0, Landroid/webkit/SelectionFloatPanel;->sHeight:I
+
+    .line 53
+    invoke-virtual {p0}, Landroid/webkit/SelectionFloatPanel;->getMeasuredWidth()I
+
+    move-result v0
+
+    sput v0, Landroid/webkit/SelectionFloatPanel;->sWidth:I
+
+    .line 54
+    return-void
+.end method
+
 .method public showAt(II)V
     .registers 4
     .parameter "x"
     .parameter "y"
 
     .prologue
-    .line 48
+    .line 65
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/webkit/SelectionFloatPanel;->setVisibility(I)V
 
-    .line 49
+    .line 66
     int-to-float v0, p1
 
     invoke-virtual {p0, v0}, Landroid/webkit/SelectionFloatPanel;->setX(F)V
 
-    .line 50
-    invoke-virtual {p0}, Landroid/webkit/SelectionFloatPanel;->getHeight()I
-
-    move-result v0
-
-    sub-int v0, p2, v0
-
-    int-to-float v0, v0
+    .line 67
+    int-to-float v0, p2
 
     invoke-virtual {p0, v0}, Landroid/webkit/SelectionFloatPanel;->setY(F)V
 
-    .line 51
+    .line 68
     invoke-virtual {p0}, Landroid/webkit/SelectionFloatPanel;->requestLayout()V
 
-    .line 52
+    .line 69
     return-void
+.end method
+
+.method public viewHeight()I
+    .registers 2
+
+    .prologue
+    .line 57
+    sget v0, Landroid/webkit/SelectionFloatPanel;->sHeight:I
+
+    return v0
+.end method
+
+.method public viewWidth()I
+    .registers 2
+
+    .prologue
+    .line 61
+    sget v0, Landroid/webkit/SelectionFloatPanel;->sWidth:I
+
+    return v0
 .end method

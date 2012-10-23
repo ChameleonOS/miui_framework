@@ -1129,7 +1129,7 @@ _L3:
             LinearLayout linearlayout = new LinearLayout(mContext);
             linearlayout.setOrientation(0);
             mContentView = linearlayout;
-            mContentView.setBackgroundResource(0x10805b6);
+            mContentView.setBackgroundResource(0x10805b7);
             LayoutInflater layoutinflater = (LayoutInflater)mContext.getSystemService("layout_inflater");
             android.view.ViewGroup.LayoutParams layoutparams = new android.view.ViewGroup.LayoutParams(-2, -2);
             mPasteTextView = (TextView)layoutinflater.inflate(0x10900b4, null);
@@ -2229,7 +2229,7 @@ _L6:
     private void drawOverScrollBackground(Canvas canvas) {
         if(mOverScrollBackground == null) {
             mOverScrollBackground = new Paint();
-            Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), 0x1080560);
+            Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), 0x1080561);
             mOverScrollBackground.setShader(new BitmapShader(bitmap, android.graphics.Shader.TileMode.REPEAT, android.graphics.Shader.TileMode.REPEAT));
             mOverScrollBorder = new Paint();
             mOverScrollBorder.setStyle(android.graphics.Paint.Style.STROKE);
@@ -2322,9 +2322,9 @@ _L3:
 
     private void ensureSelectionHandles() {
         if(mSelectHandleCenter == null) {
-            mSelectHandleCenter = mContext.getResources().getDrawable(0x10805ba);
-            mSelectHandleLeft = mContext.getResources().getDrawable(0x10805b9);
-            mSelectHandleRight = mContext.getResources().getDrawable(0x10805bb);
+            mSelectHandleCenter = mContext.getResources().getDrawable(0x10805bb);
+            mSelectHandleLeft = mContext.getResources().getDrawable(0x10805ba);
+            mSelectHandleRight = mContext.getResources().getDrawable(0x10805bc);
             mHandleAlpha.setAlpha(mHandleAlpha.getAlpha());
             mSelectHandleCenterOffset = new Point(0, -mSelectHandleCenter.getIntrinsicHeight());
             mSelectHandleLeftOffset = new Point(0, -mSelectHandleLeft.getIntrinsicHeight());

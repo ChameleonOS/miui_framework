@@ -27,13 +27,13 @@
     .parameter "drawableRtl"
 
     .prologue
-    .line 1245
+    .line 1316
     iput-object p1, p0, Landroid/widget/MiuiCursorController$SelectionEndHandleView;->this$0:Landroid/widget/MiuiCursorController;
 
-    .line 1246
+    .line 1317
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/MiuiCursorController$MiuiHandleView;-><init>(Landroid/widget/MiuiCursorController;Landroid/widget/Editor;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1247
+    .line 1318
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 1260
+    .line 1331
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionEnd()I
@@ -59,10 +59,10 @@
     .parameter "isRtlRun"
 
     .prologue
-    .line 1251
+    .line 1322
     if-eqz p2, :cond_b
 
-    .line 1252
+    .line 1323
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -71,7 +71,7 @@
 
     div-int/lit8 v0, v0, 0x4
 
-    .line 1254
+    .line 1325
     :goto_a
     return v0
 
@@ -91,14 +91,14 @@
     .parameter "y"
 
     .prologue
-    .line 1271
+    .line 1342
     iget-object v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, p1, p2}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
 
     move-result v0
 
-    .line 1274
+    .line 1345
     .local v0, offset:I
     iget-object v2, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
 
@@ -106,7 +106,7 @@
 
     move-result v1
 
-    .line 1275
+    .line 1346
     .local v1, selectionStart:I
     if-gt v0, v1, :cond_1a
 
@@ -122,13 +122,13 @@
 
     move-result v0
 
-    .line 1277
+    .line 1348
     :cond_1a
     const/4 v2, 0x0
 
     invoke-virtual {p0, v0, v2}, Landroid/widget/MiuiCursorController$SelectionEndHandleView;->positionAtCursorOffset(IZ)V
 
-    .line 1278
+    .line 1349
     return-void
 .end method
 
@@ -137,7 +137,7 @@
     .parameter "offset"
 
     .prologue
-    .line 1265
+    .line 1336
     iget-object v0, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mEditor:Landroid/widget/Editor;
 
     iget-object v1, p0, Landroid/widget/MiuiCursorController$MiuiHandleView;->mTextView:Landroid/widget/TextView;
@@ -148,9 +148,9 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/widget/Editor;->setTextSelectionWrap(II)V
 
-    .line 1266
+    .line 1337
     invoke-virtual {p0}, Landroid/widget/MiuiCursorController$SelectionEndHandleView;->updateDrawable()V
 
-    .line 1267
+    .line 1338
     return-void
 .end method

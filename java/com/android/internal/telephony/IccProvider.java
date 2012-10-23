@@ -116,9 +116,15 @@ _L1:
     private String normalizeValue(String s) {
         int i = s.length();
         String s1 = s;
-        if(s.charAt(0) == '\'' && s.charAt(i - 1) == '\'')
-            s1 = s.substring(1, i - 1);
-        return s1;
+        String s2;
+        if(i <= 1) {
+            s2 = s1;
+        } else {
+            if(s.charAt(0) == '\'' && s.charAt(i - 1) == '\'')
+                s1 = s.substring(1, i - 1);
+            s2 = s1;
+        }
+        return s2;
     }
 
     private boolean updateIccRecordInEf(int i, String s, String s1, String s2, String s3, String s4) {

@@ -88,6 +88,7 @@ public class Notes {
 
     public static final String AUTHORITY = "notes";
     public static final Uri CONTENT_DATA_URI = Uri.parse("content://notes/data");
+    public static final Uri CONTENT_MEDIA_URI = Uri.parse("content://notes/data/media");
     public static final Uri CONTENT_NOTE_URI = Uri.parse("content://notes/note");
     public static final int ID_CALL_RECORD_FOLDER = -2;
     public static final int ID_ROOT_FOLDER = 0;

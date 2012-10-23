@@ -43,13 +43,14 @@ label1:
 
     public static String getDensityName(int i) {
         i;
-        JVM INSTR lookupswitch 5: default 52
-    //                   0: 122
-    //                   120: 99
-    //                   160: 104
-    //                   240: 110
-    //                   320: 116;
-           goto _L1 _L2 _L3 _L4 _L5 _L6
+        JVM INSTR lookupswitch 6: default 60
+    //                   -1: 136
+    //                   0: 130
+    //                   120: 107
+    //                   160: 112
+    //                   240: 118
+    //                   320: 124;
+           goto _L1 _L2 _L3 _L4 _L5 _L6 _L7
 _L1:
         int j = -1 + DENSITIES.length;
         String s;
@@ -58,26 +59,29 @@ _L1:
                 j = k;
 
         s = getDensityName(DENSITIES[j]);
-          goto _L7
-_L3:
-        s = "ldpi";
-_L9:
-        return s;
+          goto _L8
 _L4:
+        s = "ldpi";
+_L10:
+        return s;
+_L5:
         s = "mdpi";
         continue; /* Loop/switch isn't completed */
-_L5:
+_L6:
         s = "hdpi";
         continue; /* Loop/switch isn't completed */
-_L6:
+_L7:
         s = "xhdpi";
+        continue; /* Loop/switch isn't completed */
+_L3:
+        s = "nodpi";
         continue; /* Loop/switch isn't completed */
 _L2:
         s = "";
         continue; /* Loop/switch isn't completed */
-_L7:
-        if(true) goto _L9; else goto _L8
 _L8:
+        if(true) goto _L10; else goto _L9
+_L9:
     }
 
     public static String getDensitySuffix(int i) {
@@ -98,12 +102,13 @@ _L8:
     private static final int DENSITIES[];
 
     static  {
-        int ai[] = new int[5];
+        int ai[] = new int[6];
         ai[0] = 320;
         ai[1] = 240;
         ai[2] = 160;
         ai[3] = 120;
         ai[4] = 0;
+        ai[5] = -1;
         DENSITIES = ai;
     }
 }

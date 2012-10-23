@@ -487,7 +487,7 @@ _L2:
                     i = mBuffer.length();
                 else
                     i = mPostDialStringStart;
-                if(!TextUtils.isEmpty(getAreaCode())) {
+                if(!TextUtils.isEmpty(getAreaCode()) && !isServiceNumber()) {
                     String s1 = mBuffer.substring(mEffectiveNumberStart - getAreaCode().length(), i);
                     if(flag)
                         s = (new StringBuilder()).append("+86").append(s1).toString();

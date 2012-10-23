@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 26
+    .line 28
     iput-object p1, p0, Landroid/webkit/SelectionFloatPanel$1;->val$wvclassic:Landroid/webkit/WebViewClassic;
 
     iput-object p2, p0, Landroid/webkit/SelectionFloatPanel$1;->val$instance:Landroid/webkit/SelectionFloatPanel;
@@ -47,23 +47,23 @@
     .parameter "v"
 
     .prologue
-    .line 29
+    .line 31
     iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$1;->val$wvclassic:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->copySelection()Z
 
-    .line 30
+    .line 32
     iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$1;->val$wvclassic:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->selectionDone()V
 
-    .line 31
+    .line 33
     iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$1;->val$instance:Landroid/webkit/SelectionFloatPanel;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/webkit/SelectionFloatPanel;->setVisibility(I)V
 
-    .line 32
+    .line 34
     return-void
 .end method

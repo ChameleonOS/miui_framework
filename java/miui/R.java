@@ -275,7 +275,7 @@ public final class R {
         public static final int check_phone_io_error = 0x60c01e7;
         public static final int childrens_day = 0x60c0066;
         public static final int chinese_youth_day = 0x60c0065;
-        public static final int christmas_dad = 0x60c006b;
+        public static final int christmas_day = 0x60c006b;
         public static final int clear_and_bright = 0x60c0072;
         public static final int cold_dews = 0x60c007e;
         public static final int country_name_ac = 0x60c00bc;
@@ -605,6 +605,7 @@ public final class R {
         public static final int month_of_september = 0x60c01c6;
         public static final int multi_select_title = 0x60c0179;
         public static final int national_day = 0x60c006a;
+        public static final int national_father_day = 0x60c01fd;
         public static final int never = 0x60c01b0;
         public static final int new_years_day = 0x60c005f;
         public static final int no_sim = 0x60c01dc;
@@ -616,6 +617,7 @@ public final class R {
         public static final int online_search_hint = 0x60c0021;
         public static final int partys_day = 0x60c0067;
         public static final int payphone = 0x60c003e;
+        public static final int peace_day = 0x60c01fc;
         public static final int perm_activate_dspt = 0x60c01d0;
         public static final int perm_activate_lab = 0x60c01cf;
         public static final int perm_auto_backup = 0x60c01eb;
@@ -1034,7 +1036,7 @@ public final class R {
         public static final int android_ic_lock_idle_lock = 0x6020027;
         public static final int android_ic_lockscreen_chevron_left = 0x602014f;
         public static final int android_ic_lockscreen_chevron_right = 0x602014e;
-        public static final int android_ic_lockscreen_glowdot = 0x60201c6;
+        public static final int android_ic_lockscreen_glowdot = 0x60201c8;
         public static final int android_ic_lockscreen_handle_pressed = 0x6020150;
         public static final int android_ic_menu_archive = 0x602015e;
         public static final int android_ic_menu_forward = 0x602005f;
@@ -1047,6 +1049,7 @@ public final class R {
         public static final int android_ic_sysbar_quicksettings = 0x602016e;
         public static final int android_item_background_holo_light = 0x6020029;
         public static final int android_list_divider_holo_light = 0x602012f;
+        public static final int android_list_pressed_holo_light = 0x60201c6;
         public static final int android_list_section_divider_holo_light = 0x602012b;
         public static final int android_list_selector_background_disabled = 0x6020166;
         public static final int android_list_selector_background_focused = 0x6020167;

@@ -658,9 +658,9 @@ _L3:
             ImageView imageview = mVolumeIcon;
             int i;
             if(routeinfo.getPlaybackType() == 0)
-                i = 0x10802a5;
+                i = 0x10802a6;
             else
-                i = 0x1080314;
+                i = 0x1080315;
             imageview.setImageResource(i);
             mIgnoreSliderVolumeChanges = true;
             if(routeinfo.getVolumeHandling() == 0) {

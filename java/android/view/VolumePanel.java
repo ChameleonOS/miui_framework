@@ -63,14 +63,14 @@ public class VolumePanel extends Handler
         int streamType;
 
         static  {
-            BluetoothSCOStream = new StreamResources("BluetoothSCOStream", 0, 6, 0x10403f9, 0x108029d, 0x108029d, false);
-            RingerStream = new StreamResources("RingerStream", 1, 2, 0x10403fa, 0x10802a2, 0x10802a3, false);
-            VoiceStream = new StreamResources("VoiceStream", 2, 0, 0x10403fb, 0x10802a1, 0x10802a1, false);
-            AlarmStream = new StreamResources("AlarmStream", 3, 4, 0x10403f6, 0x108029b, 0x108029c, false);
-            MediaStream = new StreamResources("MediaStream", 4, 3, 0x10403fc, 0x10802a5, 0x10802a6, true);
-            NotificationStream = new StreamResources("NotificationStream", 5, 5, 0x10403fd, 0x108029f, 0x10802a0, true);
-            MasterStream = new StreamResources("MasterStream", 6, -100, 0x10403fc, 0x10802a5, 0x10802a6, false);
-            RemoteStream = new StreamResources("RemoteStream", 7, -200, 0x10403fc, 0x1080314, 0x108030e, false);
+            BluetoothSCOStream = new StreamResources("BluetoothSCOStream", 0, 6, 0x10403f9, 0x108029e, 0x108029e, false);
+            RingerStream = new StreamResources("RingerStream", 1, 2, 0x10403fa, 0x10802a3, 0x10802a4, false);
+            VoiceStream = new StreamResources("VoiceStream", 2, 0, 0x10403fb, 0x10802a2, 0x10802a2, false);
+            AlarmStream = new StreamResources("AlarmStream", 3, 4, 0x10403f6, 0x108029c, 0x108029d, false);
+            MediaStream = new StreamResources("MediaStream", 4, 3, 0x10403fc, 0x10802a6, 0x10802a7, true);
+            NotificationStream = new StreamResources("NotificationStream", 5, 5, 0x10403fd, 0x10802a0, 0x10802a1, true);
+            MasterStream = new StreamResources("MasterStream", 6, -100, 0x10403fc, 0x10802a6, 0x10802a7, false);
+            RemoteStream = new StreamResources("RemoteStream", 7, -200, 0x10403fc, 0x1080315, 0x108030f, false);
             StreamResources astreamresources[] = new StreamResources[8];
             astreamresources[0] = BluetoothSCOStream;
             astreamresources[1] = RingerStream;
@@ -423,7 +423,7 @@ _L4:
             i = streamcontrol.iconRes;
         imageview.setImageResource(i);
         if(streamcontrol.streamType == 2 && mAudioManager.getRingerMode() == 1)
-            streamcontrol.icon.setImageResource(0x10802a4);
+            streamcontrol.icon.setImageResource(0x10802a5);
         if(streamcontrol.streamType == -200)
             streamcontrol.seekbarView.setEnabled(true);
         else
@@ -655,9 +655,9 @@ _L4:
           goto _L8
 _L5:
         if((0x380 & mAudioManager.getDevicesForStream(3)) != 0)
-            setMusicIcon(0x108029d, 0x108029e);
+            setMusicIcon(0x108029e, 0x108029f);
         else
-            setMusicIcon(0x10802a5, 0x10802a6);
+            setMusicIcon(0x10802a6, 0x10802a7);
           goto _L8
 _L3:
         k++;

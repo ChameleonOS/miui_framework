@@ -65,7 +65,7 @@ _L3:
         }
 
         private Bitmap getDefaultWallpaperLocked(Context context) {
-            InputStream inputstream = context.getResources().openRawResource(0x108021f);
+            InputStream inputstream = context.getResources().openRawResource(0x1080220);
             if(inputstream == null) goto _L2; else goto _L1
 _L1:
             int i;
@@ -365,7 +365,7 @@ _L8:
     }
 
     public void clear() throws IOException {
-        setResource(0x108021f);
+        setResource(0x1080220);
     }
 
     public void clearWallpaperOffsets(IBinder ibinder) {

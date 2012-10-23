@@ -431,7 +431,7 @@ _L3:
         if(imagegetter != null)
             drawable = imagegetter.getDrawable(s);
         if(drawable == null) {
-            drawable = Resources.getSystem().getDrawable(0x10805f4);
+            drawable = Resources.getSystem().getDrawable(0x10805f5);
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         }
         int i = spannablestringbuilder.length();

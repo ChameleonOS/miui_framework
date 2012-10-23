@@ -960,7 +960,7 @@ _L5:
             LinearLayout linearlayout = new LinearLayout(mTextView.getContext());
             linearlayout.setOrientation(0);
             super.mContentView = linearlayout;
-            super.mContentView.setBackgroundResource(0x10805b6);
+            super.mContentView.setBackgroundResource(0x10805b7);
             LayoutInflater layoutinflater = (LayoutInflater)mTextView.getContext().getSystemService("layout_inflater");
             android.view.ViewGroup.LayoutParams layoutparams = new android.view.ViewGroup.LayoutParams(-2, -2);
             mPasteTextView = (TextView)layoutinflater.inflate(0x10900b4, null);
@@ -1187,10 +1187,10 @@ _L5:
                 SuggestionInfo suggestioninfo = mSuggestionInfos[i];
                 textview1.setText(suggestioninfo.text);
                 if(suggestioninfo.suggestionIndex == -1)
-                    textview1.setCompoundDrawablesWithIntrinsicBounds(0x1080358, 0, 0, 0);
+                    textview1.setCompoundDrawablesWithIntrinsicBounds(0x1080359, 0, 0, 0);
                 else
                 if(suggestioninfo.suggestionIndex == -2)
-                    textview1.setCompoundDrawablesWithIntrinsicBounds(0x1080359, 0, 0, 0);
+                    textview1.setCompoundDrawablesWithIntrinsicBounds(0x108035a, 0, 0, 0);
                 else
                     textview1.setCompoundDrawables(null, null, null, null);
                 return textview1;
@@ -1795,7 +1795,7 @@ label0:
             LinearLayout linearlayout = new LinearLayout(mTextView.getContext());
             linearlayout.setOrientation(0);
             super.mContentView = linearlayout;
-            super.mContentView.setBackgroundResource(0x10805b7);
+            super.mContentView.setBackgroundResource(0x10805b8);
             LayoutInflater layoutinflater = (LayoutInflater)mTextView.getContext().getSystemService("layout_inflater");
             android.view.ViewGroup.LayoutParams layoutparams = new android.view.ViewGroup.LayoutParams(-2, -2);
             mDeleteTextView = (TextView)layoutinflater.inflate(0x10900b4, null);

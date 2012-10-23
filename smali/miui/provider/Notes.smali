@@ -20,6 +20,8 @@
 
 .field public static final CONTENT_DATA_URI:Landroid/net/Uri; = null
 
+.field public static final CONTENT_MEDIA_URI:Landroid/net/Uri; = null
+
 .field public static final CONTENT_NOTE_URI:Landroid/net/Uri; = null
 
 .field public static final ID_CALL_RECORD_FOLDER:I = -0x2
@@ -80,6 +82,15 @@
 
     sput-object v0, Lmiui/provider/Notes;->CONTENT_DATA_URI:Landroid/net/Uri;
 
+    .line 55
+    const-string v0, "content://notes/data/media"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Lmiui/provider/Notes;->CONTENT_MEDIA_URI:Landroid/net/Uri;
+
     return-void
 .end method
 
@@ -90,6 +101,6 @@
     .line 8
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 260
+    .line 265
     return-void
 .end method

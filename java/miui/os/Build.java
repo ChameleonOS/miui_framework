@@ -51,6 +51,7 @@ public class Build extends android.os.Build {
     public static final boolean IS_FULL_SOURCE_CODE_DEVICE = false;
     public static final boolean IS_GALAXYS2 = false;
     public static final boolean IS_GALAXYS_NEXUS = false;
+    public static final boolean IS_HK_BUILD = false;
     public static final boolean IS_HTC_HD2 = false;
     public static final boolean IS_I9000 = false;
     public static final boolean IS_LOW_MEMORY_DEVICE = false;
@@ -60,6 +61,8 @@ public class Build extends android.os.Build {
     public static final boolean IS_MIONE_CT_CUSTOMIZATION = false;
     public static final boolean IS_MIONE_PLUS_CDMA = false;
     public static final boolean IS_MITWO = false;
+    private static final boolean IS_MITWO_HK_BUILD = false;
+    private static final boolean IS_MITWO_TW_BUILD = false;
     public static final boolean IS_NEED_UNCOMPRESSED_UCS2_SMS_DEVICE = false;
     public static final boolean IS_NEXUS_7 = false;
     public static final boolean IS_NEXUS_ONE = false;
@@ -68,6 +71,7 @@ public class Build extends android.os.Build {
     public static final boolean IS_RICH_MEMORY_DEVICE = false;
     public static final boolean IS_STABLE_VERSION = false;
     public static final boolean IS_T959 = false;
+    public static final boolean IS_TW_BUILD = false;
     public static final boolean IS_U8860 = false;
     public static final boolean IS_U9200 = false;
     public static final boolean IS_XIAOMI = false;
@@ -161,5 +165,9 @@ public class Build extends android.os.Build {
         if(!"user".equals(TYPE) || IS_DEVELOPMENT_VERSION)
             flag = false;
         IS_STABLE_VERSION = flag;
+        IS_MITWO_TW_BUILD = "aries_tw".equals(SystemProperties.get("ro.product.mod_device", ""));
+        IS_MITWO_HK_BUILD = "aries_hk".equals(SystemProperties.get("ro.product.mod_device", ""));
+        IS_TW_BUILD = IS_MITWO_TW_BUILD;
+        IS_HK_BUILD = IS_MITWO_HK_BUILD;
     }
 }

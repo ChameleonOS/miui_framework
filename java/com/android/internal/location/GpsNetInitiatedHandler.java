@@ -192,7 +192,7 @@ _L2:
         Log.d("GpsNetInitiatedHandler", (new StringBuilder()).append("setNiNotification, notifyId: ").append(gpsninotification.notificationId).append(", title: ").append(s).append(", message: ").append(s1).toString());
         if(mNiNotification == null) {
             mNiNotification = new Notification();
-            mNiNotification.icon = 0x108053f;
+            mNiNotification.icon = 0x1080540;
             mNiNotification.when = 0L;
         }
         if(!mPlaySounds) goto _L4; else goto _L3

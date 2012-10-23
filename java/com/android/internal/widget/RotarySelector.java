@@ -44,12 +44,12 @@ public class RotarySelector extends View {
         mOrientation = typedarray.getInt(0, 0);
         typedarray.recycle();
         mDensity = getResources().getDisplayMetrics().density;
-        mBackground = getBitmapFor(0x1080381);
-        mDimple = getBitmapFor(0x1080382);
-        mDimpleDim = getBitmapFor(0x1080383);
-        mArrowLongLeft = getBitmapFor(0x1080379);
-        mArrowLongRight = getBitmapFor(0x108037c);
-        mArrowShortLeftAndRight = getBitmapFor(0x108037f);
+        mBackground = getBitmapFor(0x1080382);
+        mDimple = getBitmapFor(0x1080383);
+        mDimpleDim = getBitmapFor(0x1080384);
+        mArrowLongLeft = getBitmapFor(0x108037a);
+        mArrowLongRight = getBitmapFor(0x108037d);
+        mArrowShortLeftAndRight = getBitmapFor(0x1080380);
         mInterpolator = new DecelerateInterpolator(1.0F);
         mEdgeTriggerThresh = (int)(100F * mDensity);
         mDimpleWidth = mDimple.getWidth();
