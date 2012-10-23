@@ -64,7 +64,7 @@ _L5:
         drawable1 = ((Drawable) (obj));
         if(true) goto _L4; else goto _L3
 _L3:
-        obj = IconCustomizer.getCustomizedIconDrawable(s2);
+        obj = IconCustomizer.getCustomizedIconDrawable(s, s1);
         if(obj == null) {
             obj = packagemanager.getDrawable(s, i, applicationinfo);
             if(obj != null) {

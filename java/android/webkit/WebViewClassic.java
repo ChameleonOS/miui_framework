@@ -31,9 +31,9 @@ import junit.framework.Assert;
 
 // Referenced classes of package android.webkit:
 //            WebViewProvider, QuadF, WebView, WebViewCore, 
-//            SelectActionModeCallback, FindActionModeCallback, ZoomManager, CallbackProxy, 
-//            JniUtil, PluginFullScreenHolder, OverScrollGlow, WebSettingsClassic, 
-//            AccessibilityInjector, PluginList, AutoCompletePopup, WebBackForwardList, 
+//            FindActionModeCallback, ZoomManager, CallbackProxy, JniUtil, 
+//            PluginFullScreenHolder, OverScrollGlow, WebSettingsClassic, AccessibilityInjector, 
+//            PluginList, SelectionFloatPanel, AutoCompletePopup, WebBackForwardList, 
 //            WebHistoryItem, WebViewDatabaseClassic, BrowserFrame, ViewManager, 
 //            L10nUtils, HTML5VideoViewProxy, WebCoreThreadWatchdog, WebViewInputDispatcher, 
 //            JWebCoreJavaBridge, URLUtil, ValueCallback, SearchBox, 
@@ -437,6 +437,11 @@ _L1:
                 super.handleMessage(message);
                 continue; /* Loop/switch isn't completed */
 
+            case 5001: 
+                String as1[] = mWebViewCore.getReadModeString();
+                getWebViewClient().onReadModeDataReady(as1[0], as1[1], as1[2], mWebView);
+                continue; /* Loop/switch isn't completed */
+
             case 1: // '\001'
                 mDatabase.setUsernamePassword(message.getData().getString("host"), message.getData().getString("username"), message.getData().getString("password"));
                 ((Message)message.obj).sendToTarget();
@@ -685,6 +690,13 @@ _L1:
 
             case 141: 
                 copyToClipboard((String)message.obj);
+                break;
+
+            case 5000: 
+                String as[] = (String[])(String[])message.obj;
+                mBeforeStart = as[0];
+                mAfterStart = as[1];
+                invalidate();
                 break;
 
             case 142: 
@@ -1568,6 +1580,8 @@ _L7:
         mGlobalVisibleOffset = new Point();
         mFindRequest = null;
         mOrientation = 0;
+        mMenuLeft = -1;
+        mMenuTop = -1;
         mDrawHistory = false;
         mHistoryPicture = null;
         mHistoryWidth = 0;
@@ -1763,8 +1777,6 @@ _L7:
     }
 
     private void clearActionModes() {
-        if(mSelectCallback != null)
-            mSelectCallback.finish();
         if(mFindCallback != null)
             mFindCallback.finish();
     }
@@ -2236,32 +2248,43 @@ _L6:
     }
 
     private void drawTextSelectionHandles(Canvas canvas) {
-        if(mHandleAlpha.getAlpha() != 0) {
-            ensureSelectionHandles();
-            if(mSelectingText) {
-                int ai[] = new int[4];
-                getSelectionHandles(ai);
-                int i = contentToViewDimension(ai[0]);
-                int j = contentToViewDimension(ai[1]);
-                int k = contentToViewDimension(ai[2]);
-                int l = contentToViewDimension(ai[3]);
-                if(mIsCaretSelection) {
-                    int k1 = i - mSelectHandleCenter.getIntrinsicWidth() / 2;
-                    mSelectHandleCenter.setBounds(k1, j, k1 + mSelectHandleCenter.getIntrinsicWidth(), j + mSelectHandleCenter.getIntrinsicHeight());
-                } else {
-                    int i1 = i - (3 * mSelectHandleLeft.getIntrinsicWidth()) / 4;
-                    mSelectHandleLeft.setBounds(i1, j, i1 + mSelectHandleLeft.getIntrinsicWidth(), j + mSelectHandleLeft.getIntrinsicHeight());
-                    int j1 = k - mSelectHandleRight.getIntrinsicWidth() / 4;
-                    mSelectHandleRight.setBounds(j1, l, j1 + mSelectHandleRight.getIntrinsicWidth(), l + mSelectHandleRight.getIntrinsicHeight());
-                }
-            }
+        if(mHandleAlpha.getAlpha() != 0) goto _L2; else goto _L1
+_L1:
+        return;
+_L2:
+        ensureSelectionHandles();
+        Rect rect = new Rect(-1, -1, -1, -1);
+        Rect rect1 = new Rect(-1, -1, -1, -1);
+        if(mSelectingText) {
+            int ai[] = new int[4];
+            getSelectionHandles(ai);
+            int i = contentToViewDimension(ai[0]);
+            int j = contentToViewDimension(ai[1]);
+            int k = contentToViewDimension(ai[2]);
+            int l = contentToViewDimension(ai[3]);
+            int i1;
             if(mIsCaretSelection) {
-                mSelectHandleCenter.draw(canvas);
+                i1 = i - mSelectHandleCenter.getIntrinsicWidth() / 2;
+                mSelectHandleCenter.setBounds(i1, j, i1 + mSelectHandleCenter.getIntrinsicWidth(), j + mSelectHandleCenter.getIntrinsicHeight());
             } else {
-                mSelectHandleLeft.draw(canvas);
-                mSelectHandleRight.draw(canvas);
+                i1 = i - (3 * mSelectHandleLeft.getIntrinsicWidth()) / 4;
+                mSelectHandleLeft.setBounds(i1, j, i1 + mSelectHandleLeft.getIntrinsicWidth(), j + mSelectHandleLeft.getIntrinsicHeight());
+                k -= mSelectHandleRight.getIntrinsicWidth() / 4;
+                mSelectHandleRight.setBounds(k, l, k + mSelectHandleRight.getIntrinsicWidth(), l + mSelectHandleRight.getIntrinsicHeight());
             }
+            rect = new Rect(i1, j, i1 + 60, j + 60);
+            rect1 = new Rect(k, l, k + 60, l + 60);
         }
+        if(mIsCaretSelection) {
+            mSelectHandleCenter.draw(canvas);
+        } else {
+            mSelectHandleLeft.draw(canvas);
+            mSelectHandleRight.draw(canvas);
+            if(mSelectingText)
+                showMagnifier(canvas, rect, rect1);
+        }
+        if(true) goto _L1; else goto _L3
+_L3:
     }
 
     public static void enablePlatformNotifications() {
@@ -2802,6 +2825,11 @@ _L5:
         cancelTouch();
         if(true) goto _L1; else goto _L21
 _L21:
+    }
+
+    private void hideFloatView() {
+        if(mCopyFloatPanel != null)
+            mCopyFloatPanel.setVisibility(4);
     }
 
     private void hidePasteButton() {
@@ -3691,6 +3719,151 @@ _L3:
         }
     }
 
+    private void showFloatView() {
+        if(mCopyFloatPanel == null)
+            mCopyFloatPanel = SelectionFloatPanel.getInstance(mContext, this);
+        if(mMenuLeft == -1) {
+            int ai[] = new int[4];
+            getSelectionHandles(ai);
+            int i = contentToViewDimension(ai[0]);
+            int j = contentToViewDimension(ai[1]);
+            int k = contentToViewDimension(ai[2]);
+            int l = contentToViewDimension(ai[3]);
+            mMenuLeft = (i + k) / 2;
+            if(j >= l)
+                j = l;
+            mMenuTop = j - 30;
+        }
+        mCopyFloatPanel.showAt(mMenuLeft, mMenuTop);
+    }
+
+    private void showMagnifier(Canvas canvas, Rect rect, Rect rect1) {
+        int k3;
+        int i4;
+        getSelectionHandles(new int[5]);
+        boolean flag;
+        Rect rect3;
+        float f;
+        int j1;
+        Paint paint;
+        Paint paint1;
+        int l2;
+        String s;
+        int i3;
+        int j3;
+        float f1;
+        float f2;
+        int l3;
+        float f3;
+        float f4;
+        int j4;
+        int k4;
+        int l4;
+        int i5;
+        if(mSelectDraggingCursor == mSelectCursorLeft)
+            flag = true;
+        else
+            flag = false;
+        if(mIsActionUp || !mSelectingText || mBeforeStart == null && mAfterStart == null) goto _L2; else goto _L1
+_L1:
+        Rect rect2 = new Rect();
+        if(mSelectMagnifier == null)
+            mSelectMagnifier = mContext.getResources().getDrawable(0x60201fb);
+        rect3 = new Rect();
+        mSelectMagnifier.getPadding(rect3);
+        f = mContext.getResources().getDisplayMetrics().density / 1.5F;
+        int i = (int)(f * (float)mSelectMagnifier.getIntrinsicHeight());
+        int j = (int)(f * (float)(mSelectMagnifier.getIntrinsicWidth() / 2));
+        int k = (int)(20F * f);
+        int l;
+        int i1;
+        int k1;
+        Rect rect4;
+        if(flag) {
+            rect2.left = rect.left - j;
+            rect2.top = rect.top - i - k;
+            rect2.right = j + rect.left;
+            rect2.bottom = rect.top - k;
+        } else {
+            rect2.left = rect1.right - j;
+            rect2.top = rect1.top - i - k;
+            rect2.right = j + rect1.right;
+            rect2.bottom = rect1.top - k;
+        }
+        mMenuLeft = (rect.left + rect1.left) / 2;
+        mMenuTop = rect.top;
+        mSelectMagnifier.setBounds(rect2.left, rect2.top, rect2.left + j * 2, i + rect2.top);
+        mSelectMagnifier.draw(canvas);
+        if(mSelectHighlight == null)
+            mSelectHighlight = mContext.getResources().getDrawable(0x60201fa);
+        l = (int)(f * (float)rect3.left);
+        i1 = (int)(f * (float)rect3.top);
+        j1 = (int)(f * (float)rect3.right);
+        k1 = (int)(f * (float)rect3.bottom);
+        mSelectHighlight.setBounds(l + rect2.left, i1 + rect2.top, (j + rect2.left) - j1, (i + rect2.top) - k1);
+        mSelectHighlight.draw(canvas);
+        paint = new Paint();
+        paint.setColor(0x6633b5e5);
+        if(flag) {
+            j4 = j + rect2.left;
+            k4 = i1 + rect2.top;
+            l4 = rect2.right - j1;
+            i5 = rect2.bottom - k1;
+            rect4 = new Rect(j4, k4, l4, i5);
+        } else {
+            int l1 = l + rect2.left;
+            int i2 = i1 + rect2.top;
+            int j2 = j + rect2.left;
+            int k2 = rect2.bottom - k1;
+            rect4 = new Rect(l1, i2, j2, k2);
+        }
+        canvas.drawRect(rect4, paint);
+        canvas.clipRect(l + rect2.left, i1 + rect2.top, rect2.right - j1, rect2.bottom - k1);
+        paint1 = new Paint();
+        paint1.setStyle(android.graphics.Paint.Style.STROKE);
+        paint1.setStrokeWidth(0.0F);
+        paint1.setColor(0xff000000);
+        paint1.setTextSize(f * (3F * paint.getTextSize()));
+        l2 = 0;
+        s = " ";
+        if(mBeforeStart == null) goto _L4; else goto _L3
+_L3:
+        l3 = mBeforeStart.length();
+        i4 = 0;
+_L9:
+        if(i4 >= l3) goto _L6; else goto _L5
+_L5:
+        s = mBeforeStart.substring(-1 + (l3 - i4));
+        l2 = (int)paint1.measureText(s);
+        if(l2 <= j * 2) goto _L7; else goto _L6
+_L6:
+        f3 = -2 + ((j + rect2.left) - l2);
+        f4 = (float)(rect2.bottom - k1 - k / 2) + paint1.descent() / 2.0F;
+        canvas.drawText(s, f3, f4, paint1);
+_L4:
+        if(mAfterStart == null) goto _L2; else goto _L8
+_L8:
+        i3 = mAfterStart.length();
+        j3 = j * 2;
+        k3 = 0;
+_L10:
+        if(k3 < i3) {
+            s = mAfterStart.substring(0, k3 + 1);
+            if((int)paint1.measureText(s) <= j3)
+                break MISSING_BLOCK_LABEL_935;
+        }
+        f1 = 2 + (j + rect2.left);
+        f2 = (float)(rect2.bottom - k1 - k / 2) + paint1.descent() / 2.0F;
+        canvas.drawText(s, f1, f2, paint1);
+_L2:
+        return;
+_L7:
+        i4++;
+          goto _L9
+        k3++;
+          goto _L10
+    }
+
     private void showPasteWindow() {
         if(((ClipboardManager)(ClipboardManager)mContext.getSystemService("clipboard")).hasPrimaryClip()) {
             Point point = new Point(contentToViewX(mSelectCursorLeft.x), contentToViewY(mSelectCursorLeft.y));
@@ -3748,23 +3921,8 @@ _L3:
     }
 
     private boolean startSelectActionMode() {
-        boolean flag = false;
-        mSelectCallback = new SelectActionModeCallback();
-        SelectActionModeCallback selectactionmodecallback = mSelectCallback;
-        boolean flag1;
-        if(!mIsCaretSelection)
-            flag1 = true;
-        else
-            flag1 = false;
-        selectactionmodecallback.setTextSelected(flag1);
-        mSelectCallback.setWebView(this);
-        if(mWebView.startActionMode(mSelectCallback) == null) {
-            selectionDone();
-        } else {
-            mWebView.performHapticFeedback(0);
-            flag = true;
-        }
-        return flag;
+        mWebView.performHapticFeedback(0);
+        return true;
     }
 
     private void startSelectingText() {
@@ -3865,12 +4023,16 @@ _L3:
     }
 
     private void updateWebkitSelection() {
+        int i = 0;
         int ai[] = null;
         if(mIsCaretSelection)
             mSelectCursorRight.set(mSelectCursorLeft.x, mSelectCursorLeft.y);
         if(mSelectingText) {
-            ai = new int[4];
+            ai = new int[5];
             getSelectionHandles(ai);
+            if(mSelectDraggingCursor == mSelectCursorLeft)
+                i = 1;
+            ai[4] = i;
         } else {
             nativeSetTextSelection(mNativeClass, 0);
         }
@@ -4039,6 +4201,20 @@ _L3:
 _L5:
         f13 = (float)l - (f12 - f10);
           goto _L6
+    }
+
+    public void checkIfReadModeAvailable() {
+        mWebViewCore.sendMessage(5010, 0);
+    }
+
+    public void checkIfReadModeAvailable(boolean flag) {
+        WebViewCore webviewcore = mWebViewCore;
+        int i;
+        if(flag)
+            i = 1;
+        else
+            i = 0;
+        webviewcore.sendMessage(5010, i);
     }
 
     public void clearCache(boolean flag) {
@@ -4335,6 +4511,10 @@ _L6:
     public void emulateShiftHeld() {
     }
 
+    public void enterReadMode() {
+        if(mWebViewCore.getReadModeString() == null);
+    }
+
     public void externalRepresentation(Message message) {
         mWebViewCore.sendMessage(160, message);
     }
@@ -4489,6 +4669,9 @@ _L2:
         int i;
         if(mNativeClass == 0)
             i = -1;
+        else
+        if(getSettings().getNightReadModeEnabled())
+            i = 0xff000000;
         else
             i = nativeGetBackgroundColor(mNativeClass);
         return i;
@@ -4885,6 +5068,10 @@ _L1:
 _L1:
         return;
 _L2:
+        if(getSettings() != null && getSettings().getNightReadModeEnabled()) {
+            mBackgroundColor = 0xff000000;
+            canvas.drawColor(0xff000000);
+        }
         if(mNativeClass == 0) {
             canvas.drawColor(mBackgroundColor);
             continue; /* Loop/switch isn't completed */
@@ -5446,17 +5633,34 @@ _L5:
         boolean flag;
         flag = false;
         break MISSING_BLOCK_LABEL_2;
-        if(mNativeClass != 0 && (mWebView.isClickable() || mWebView.isLongClickable()) && mInputDispatcher != null) {
-            if(mWebView.isFocusable() && mWebView.isFocusableInTouchMode() && !mWebView.isFocused())
-                mWebView.requestFocus();
-            if(mInputDispatcher.postPointerEvent(motionevent, getScrollX(), getScrollY() - getTitleHeight(), mZoomManager.getInvScale())) {
-                mInputDispatcher.dispatchUiEvents();
-                flag = true;
-            } else {
-                Log.w("webview", "mInputDispatcher rejected the event!");
-            }
+_L3:
+        do
+            return flag;
+        while(mNativeClass == 0 || !mWebView.isClickable() && !mWebView.isLongClickable() || mInputDispatcher == null);
+        if(mWebView.isFocusable() && mWebView.isFocusableInTouchMode() && !mWebView.isFocused())
+            mWebView.requestFocus();
+        if(motionevent.getAction() != 1) goto _L2; else goto _L1
+_L1:
+        mIsActionUp = true;
+        mAfterStart = null;
+        mBeforeStart = null;
+        invalidate();
+        if(mSelectingText)
+            showFloatView();
+_L4:
+        if(mInputDispatcher.postPointerEvent(motionevent, getScrollX(), getScrollY() - getTitleHeight(), mZoomManager.getInvScale())) {
+            mInputDispatcher.dispatchUiEvents();
+            flag = true;
+        } else {
+            Log.w("webview", "mInputDispatcher rejected the event!");
         }
-        return flag;
+        if(true) goto _L3; else goto _L2
+_L2:
+        if(mSelectingText) {
+            mIsActionUp = false;
+            hideFloatView();
+        }
+          goto _L4
     }
 
     public boolean onTrackballEvent(MotionEvent motionevent) {
@@ -5696,13 +5900,6 @@ _L2:
             flag = selectText();
             if(flag)
                 mWebView.performHapticFeedback(0);
-            else
-            if(focusCandidateIsEditableText()) {
-                mSelectCallback = new SelectActionModeCallback();
-                mSelectCallback.setWebView(this);
-                mSelectCallback.setTextSelected(false);
-                mWebView.startActionMode(mSelectCallback);
-            }
         }
         if(true) goto _L4; else goto _L3
 _L3:
@@ -6183,12 +6380,9 @@ _L3:
 
     void selectionDone() {
         if(mSelectingText) {
+            hideFloatView();
             hidePasteButton();
             endSelectingText();
-            if(mSelectCallback != null) {
-                mSelectCallback.finish();
-                mSelectCallback = null;
-            }
             invalidate();
             mAutoScrollX = 0;
             mAutoScrollY = 0;
@@ -6809,12 +7003,14 @@ _L7:
     static final int SET_SCROLLBAR_MODES = 129;
     static final int SHOW_CARET_HANDLE = 151;
     static final int SHOW_FULLSCREEN = 120;
+    static final int SHOW_MAGNIFIER = 5000;
     static final int SHOW_RECT_MSG_ID = 113;
     private static final int SNAP_LOCK = 1;
     private static final int SNAP_NONE = 0;
     private static final int SNAP_X = 2;
     private static final int SNAP_Y = 4;
     private static final int STD_SPEED = 480;
+    static final int SWITCH_READ_MODE = 5001;
     private static final int SWITCH_TO_LONGPRESS = 4;
     private static final int SWITCH_TO_SHORTPRESS = 3;
     static final int TAKE_FOCUS = 110;
@@ -6862,6 +7058,7 @@ _L7:
     private static TrustStorageListener sTrustStorageListener;
     private float DRAG_LAYER_INVERSE_DENSITY_SQUARED;
     private AccessibilityInjector mAccessibilityInjector;
+    private String mAfterStart;
     private AutoCompletePopup mAutoCompletePopup;
     private WebViewCore.AutoFillData mAutoFillData;
     private boolean mAutoRedraw;
@@ -6871,6 +7068,7 @@ _L7:
     double mAverageSwapFps;
     private int mBackgroundColor;
     ArrayList mBatchedTextChanges;
+    private String mBeforeStart;
     private boolean mBlockWebkitViewMessages;
     private int mCachedOverlappingActionModeHeight;
     private CallbackProxy mCallbackProxy;
@@ -6879,6 +7077,7 @@ _L7:
     private int mContentHeight;
     private int mContentWidth;
     private final Context mContext;
+    private SelectionFloatPanel mCopyFloatPanel;
     private int mCurrentScrollingLayerId;
     private int mCurrentTouchInterval;
     private WebViewDatabaseClassic mDatabase;
@@ -6917,6 +7116,7 @@ _L7:
     WebViewInputConnection mInputConnection;
     private WebViewInputDispatcher mInputDispatcher;
     private final Rect mInvScreenRect = new Rect();
+    private boolean mIsActionUp;
     boolean mIsBatchingTextChanges;
     private boolean mIsCaretSelection;
     boolean mIsEditingText;
@@ -6947,6 +7147,8 @@ _L7:
     private int mMaxAutoScrollX;
     private int mMaxAutoScrollY;
     private int mMaximumFling;
+    private int mMenuLeft;
+    private int mMenuTop;
     private int mMinAutoScrollX;
     private int mMinAutoScrollY;
     private int mNativeClass;
@@ -6968,7 +7170,6 @@ _L7:
     OverScroller mScroller;
     private Rect mScrollingLayerBounds;
     private Rect mScrollingLayerRect;
-    private SelectActionModeCallback mSelectCallback;
     private Point mSelectCursorLeft;
     private int mSelectCursorLeftLayerId;
     private QuadF mSelectCursorLeftTextQuad;
@@ -6984,6 +7185,8 @@ _L7:
     private Point mSelectHandleLeftOffset;
     private Drawable mSelectHandleRight;
     private Point mSelectHandleRightOffset;
+    private Drawable mSelectHighlight;
+    private Drawable mSelectMagnifier;
     private int mSelectX;
     private int mSelectY;
     private boolean mSelectingText;
@@ -7261,6 +7464,24 @@ _L7:
 
 
 
+/*
+    static String access$6102(WebViewClassic webviewclassic, String s) {
+        webviewclassic.mBeforeStart = s;
+        return s;
+    }
+
+*/
+
+
+/*
+    static String access$6202(WebViewClassic webviewclassic, String s) {
+        webviewclassic.mAfterStart = s;
+        return s;
+    }
+
+*/
+
+
 
 
 
@@ -7276,7 +7497,7 @@ _L7:
 
 
 /*
-    static boolean access$7302(WebViewClassic webviewclassic, boolean flag) {
+    static boolean access$7502(WebViewClassic webviewclassic, boolean flag) {
         webviewclassic.mShowTapHighlight = flag;
         return flag;
     }
@@ -7287,7 +7508,7 @@ _L7:
 
 
 /*
-    static FocusTransitionDrawable access$7502(WebViewClassic webviewclassic, FocusTransitionDrawable focustransitiondrawable) {
+    static FocusTransitionDrawable access$7702(WebViewClassic webviewclassic, FocusTransitionDrawable focustransitiondrawable) {
         webviewclassic.mFocusTransition = focustransitiondrawable;
         return focustransitiondrawable;
     }
@@ -7296,8 +7517,9 @@ _L7:
 
 
 
+
 /*
-    static AlertDialog access$7902(WebViewClassic webviewclassic, AlertDialog alertdialog) {
+    static AlertDialog access$8102(WebViewClassic webviewclassic, AlertDialog alertdialog) {
         webviewclassic.mListBoxDialog = alertdialog;
         return alertdialog;
     }
@@ -7305,9 +7527,8 @@ _L7:
 */
 
 
-
 /*
-    static Message access$8002(WebViewClassic webviewclassic, Message message) {
+    static Message access$8202(WebViewClassic webviewclassic, Message message) {
         webviewclassic.mListBoxMessage = message;
         return message;
     }

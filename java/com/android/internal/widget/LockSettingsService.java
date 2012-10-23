@@ -13,6 +13,8 @@ import android.os.*;
 import android.text.TextUtils;
 import android.util.Slog;
 import java.io.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 public class LockSettingsService extends ILockSettings.Stub {
@@ -116,6 +118,25 @@ public class LockSettingsService extends ILockSettings.Stub {
         Slog.e("LockSettingsService", "Unable to migrate old data");
     }
 
+    private byte[] passwordToHash(byte abyte0[], byte abyte1[]) {
+        if(abyte1 != null && abyte0.length != 72) goto _L2; else goto _L1
+_L1:
+        byte abyte2[] = abyte1;
+_L4:
+        return abyte2;
+_L2:
+        abyte2 = null;
+        byte abyte3[];
+        abyte2 = MessageDigest.getInstance("MD5").digest(abyte1);
+        abyte3 = toHex(abyte2).getBytes();
+        abyte2 = abyte3;
+        continue; /* Loop/switch isn't completed */
+        NoSuchAlgorithmException nosuchalgorithmexception;
+        nosuchalgorithmexception;
+        if(true) goto _L4; else goto _L3
+_L3:
+    }
+
     private String readFromDb(String s, String s1, int i) {
         String s2 = s1;
         SQLiteDatabase sqlitedatabase = mOpenHelper.getReadableDatabase();
@@ -130,6 +151,16 @@ public class LockSettingsService extends ILockSettings.Stub {
             cursor.close();
         }
         return s2;
+    }
+
+    private static String toHex(byte abyte0[]) {
+        String s = "";
+        for(int i = 0; i < abyte0.length; i++) {
+            String s1 = (new StringBuilder()).append(s).append("0123456789ABCDEF".charAt(0xf & abyte0[i] >> 4)).toString();
+            s = (new StringBuilder()).append(s1).append("0123456789ABCDEF".charAt(0xf & abyte0[i])).toString();
+        }
+
+        return s;
     }
 
     private void writeFile(String s, byte abyte0[]) {
@@ -179,14 +210,14 @@ public class LockSettingsService extends ILockSettings.Stub {
         int j = randomaccessfile.read(abyte1, 0, abyte1.length);
         randomaccessfile.close();
         if(j <= 0)
-            break MISSING_BLOCK_LABEL_134;
-        flag1 = Arrays.equals(abyte1, abyte0);
+            break MISSING_BLOCK_LABEL_140;
+        flag1 = Arrays.equals(abyte1, passwordToHash(abyte1, abyte0));
         flag = flag1;
-        break MISSING_BLOCK_LABEL_134;
+        break MISSING_BLOCK_LABEL_140;
         FileNotFoundException filenotfoundexception;
         filenotfoundexception;
         Slog.e("LockSettingsService", (new StringBuilder()).append("Cannot read file ").append(filenotfoundexception).toString());
-        break MISSING_BLOCK_LABEL_134;
+        break MISSING_BLOCK_LABEL_140;
         IOException ioexception;
         ioexception;
         Slog.e("LockSettingsService", (new StringBuilder()).append("Cannot read file ").append(ioexception).toString());

@@ -305,7 +305,7 @@ _L4:
 
     private void resetTimeout() {
         removeMessages(5);
-        sendMessageDelayed(obtainMessage(5), 3000L);
+        sendMessageDelayed(obtainMessage(5), 1000L);
     }
 
     private void setMusicIcon(int i, int j) {
@@ -962,7 +962,7 @@ _L3:
     private static final StreamResources STREAMS[];
     private static final int STREAM_MASTER = -100;
     private static final String TAG = "VolumePanel";
-    private static final int TIMEOUT_DELAY = 3000;
+    private static final int TIMEOUT_DELAY = 1000;
     public static final int VIBRATE_DELAY = 300;
     private static final int VIBRATE_DURATION = 300;
     private int mActiveStreamType;

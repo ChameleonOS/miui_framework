@@ -99,13 +99,16 @@ public class ExtraStatusBarManager {
     public static final String ACTION_EXIT_FULLSCREEN = "com.miui.app.ExtraStatusBarManager.EXIT_FULLSCREEN";
     public static final String ACTION_EXPAND_NOTIFICATIONS_TAB = "com.miui.app.ExtraStatusBarManager.EXPAND_NOTIFICATIONS_TAB";
     public static final String ACTION_EXPAND_TOGGLES_TAB = "com.miui.app.ExtraStatusBarManager.EXPAND_TOGGLE_TAB";
+    public static final String ACTION_PICK_TOGGLE_INTENT = "com.miui.app.ExtraStatusBarManager.action_PICK_TOGGLE_INTENT";
     public static final String ACTION_REQUEST_RESTART = "com.miui.app.ExtraStatusBarManager.REQUEST_RESTART";
     public static final String ACTION_STATUSBAR_LOADED = "com.miui.app.ExtraStatusBarManager.LOADED";
     public static final String ACTION_STATUSBAR_UNLOADED = "com.miui.app.ExtraStatusBarManager.UNLOADED";
     public static final String ACTION_TRIGGER_CAMERA_KEY = "com.miui.app.ExtraStatusBarManager.TRIGGER_CAMERA_KEY";
+    public static final String ACTION_TRIGGER_TOGGLE = "com.miui.app.ExtraStatusBarManager.action_TRIGGER_TOGGLE";
     public static final String ACTION_TRIGGER_TOGGLE_LOCK = "com.miui.app.ExtraStatusBarManager.TRIGGER_TOGGLE_LOCK";
     public static final String ACTION_TRIGGER_TOGGLE_SCREEN_BUTTONS = "com.miui.app.ExtraStatusBarManager.TRIGGER_TOGGLE_SCREEN_BUTTONS";
     public static final int DISABLE_BACKGROUND = 0x40000000;
     public static final int DISABLE_FOR_KEYGUARD = 0x80000000;
     public static final int DISABLE_FULLSCREEN = 0x20000000;
+    public static final String EXTRA_TOGGLE_ID = "com.miui.app.ExtraStatusBarManager.extra_TOGGLE_ID";
 }

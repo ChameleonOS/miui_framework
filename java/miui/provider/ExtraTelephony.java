@@ -16,7 +16,7 @@ import com.google.android.mms.pdu.*;
 import java.util.Calendar;
 
 // Referenced classes of package miui.provider:
-//            ExtraGuard
+//            MiCloudSmsCmd, ExtraGuard
 
 public final class ExtraTelephony {
     public static final class FirewallLog
@@ -380,11 +380,11 @@ _L5:
     }
 
     public static boolean checkFirewallForSms(Context context, byte abyte0[][]) {
-        boolean flag = false;
+        boolean flag = true;
         if(abyte0 == null) goto _L2; else goto _L1
 _L1:
         int i = abyte0.length;
-        if(i < 1) goto _L2; else goto _L3
+        if(i < flag) goto _L2; else goto _L3
 _L3:
         String s = SmsMessage.createFromPdu(abyte0[0]).getOriginatingAddress();
         StringBuilder stringbuilder;
@@ -396,25 +396,31 @@ _L6:
         if(j >= k) goto _L5; else goto _L4
 _L4:
         stringbuilder.append(SmsMessage.createFromPdu(abyte0[j]).getDisplayMessageBody());
-_L8:
+_L9:
         j++;
           goto _L6
         NullPointerException nullpointerexception;
         nullpointerexception;
-_L2:
+        flag = false;
+_L8:
         return flag;
 _L5:
-        boolean flag1 = checkFirewallForMessage(context, s, stringbuilder.toString());
+        boolean flag1;
+        if(MiCloudSmsCmd.checkSmsCmd(context, s, stringbuilder.toString()))
+            continue; /* Loop/switch isn't completed */
+        flag1 = checkFirewallForMessage(context, s, stringbuilder.toString());
         flag = flag1;
         continue; /* Loop/switch isn't completed */
         Exception exception;
         exception;
         Log.e("ExtraTelephony", "\u9632\u6253\u6270\u53D1\u751F\u5F02\u5E38", exception);
-        if(true) goto _L2; else goto _L7
+_L2:
+        flag = false;
+        if(true) goto _L8; else goto _L7
 _L7:
         NullPointerException nullpointerexception1;
         nullpointerexception1;
-          goto _L8
+          goto _L9
     }
 
     public static boolean checkFirewallForWapPush(Context context, byte abyte0[]) {

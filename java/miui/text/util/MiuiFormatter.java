@@ -27,7 +27,7 @@ _L2:
         int i;
         String s;
         f = l;
-        i = 0x60c01df;
+        i = 0x60c01de;
         if(f > 900F) {
             i = 0x60c017b;
             f /= 1000F;
@@ -41,11 +41,11 @@ _L2:
             f /= 1000F;
         }
         if(f > 900F) {
-            i = 0x60c01e0;
+            i = 0x60c01df;
             f /= 1000F;
         }
         if(f > 900F) {
-            i = 0x60c01e1;
+            i = 0x60c01e0;
             f /= 1000F;
         }
         if(f >= 1.0F)
@@ -58,7 +58,7 @@ _L5:
         Object aobj1[] = new Object[2];
         aobj1[0] = s;
         aobj1[1] = context.getString(i);
-        s1 = resources.getString(0x60c01e2, aobj1);
+        s1 = resources.getString(0x60c01e1, aobj1);
         if(true) goto _L4; else goto _L3
 _L3:
         if(f < 10F) {

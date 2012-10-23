@@ -192,19 +192,19 @@ public final class R {
 
     public static final class string {
 
-        public static final int activating = 0x60c01de;
+        public static final int activating = 0x60c01dd;
         public static final int all_resources = 0x60c0027;
-        public static final int android_byteShort = 0x60c01df;
+        public static final int android_byteShort = 0x60c01de;
         public static final int android_common_last_name_prefixes = 0x60c019e;
         public static final int android_common_name_conjunctions = 0x60c019f;
         public static final int android_common_name_prefixes = 0x60c019c;
         public static final int android_common_name_suffixes = 0x60c019d;
-        public static final int android_config_defaultDreamComponent = 0x60c01db;
+        public static final int android_config_defaultDreamComponent = 0x60c01e6;
         public static final int android_dial_number_using = 0x60c01a0;
         public static final int android_ellipsis = 0x60c0190;
         public static final int android_factorytest_reboot = 0x60c018c;
         public static final int android_fast_scroll_alphabet = 0x60c0196;
-        public static final int android_fileSizeSuffix = 0x60c01e2;
+        public static final int android_fileSizeSuffix = 0x60c01e1;
         public static final int android_find_on_page = 0x60c01ae;
         public static final int android_gigabyteShort = 0x60c019b;
         public static final int android_global_action_power_off = 0x60c018b;
@@ -235,7 +235,7 @@ public final class R {
         public static final int android_lockscreen_sim_puk_locked_instructions = 0x60c0185;
         public static final int android_lockscreen_sim_puk_locked_message = 0x60c0184;
         public static final int android_megabyteShort = 0x60c017c;
-        public static final int android_petabyteShort = 0x60c01e1;
+        public static final int android_petabyteShort = 0x60c01e0;
         public static final int android_phoneTypeMms = 0x60c016d;
         public static final int android_power_off = 0x60c0191;
         public static final int android_report = 0x60c019a;
@@ -249,7 +249,7 @@ public final class R {
         public static final int android_silent_mode_vibrate = 0x60c018e;
         public static final int android_ssl_certificate = 0x60c0199;
         public static final int android_ssl_certificate_is_valid = 0x60c01ad;
-        public static final int android_terabyteShort = 0x60c01e0;
+        public static final int android_terabyteShort = 0x60c01df;
         public static final int android_today = 0x60c01d1;
         public static final int android_tomorrow = 0x60c01a9;
         public static final int android_twelve_hour_time_format = 0x60c0193;
@@ -518,6 +518,7 @@ public final class R {
         public static final int download_failed = 0x60c0023;
         public static final int download_preview_failed = 0x60c0024;
         public static final int every_day = 0x60c01af;
+        public static final int find_device_sim_change_instructions = 0x60c01e5;
         public static final int firewall_setting = 0x60c016a;
         public static final int first_back_long_press_message = 0x60c016f;
         public static final int first_back_long_press_title = 0x60c016e;
@@ -594,7 +595,7 @@ public final class R {
         public static final int national_day = 0x60c006a;
         public static final int never = 0x60c01b0;
         public static final int new_years_day = 0x60c005f;
-        public static final int no_sim = 0x60c01dd;
+        public static final int no_sim = 0x60c01dc;
         public static final int online_hottest = 0x60c001c;
         public static final int online_hottest_short = 0x60c001e;
         public static final int online_latest = 0x60c001d;
@@ -607,6 +608,9 @@ public final class R {
         public static final int perm_activate_lab = 0x60c01cf;
         public static final int perm_get_user_info_dspt = 0x60c01d3;
         public static final int perm_get_user_info_lab = 0x60c01d2;
+        public static final int perm_tigger_toggle_dspt = 0x60c01e3;
+        public static final int perm_tigger_toggle_lab = 0x60c01e2;
+        public static final int perm_use_find_device = 0x60c01e4;
         public static final int private_num = 0x60c003d;
         public static final int processing = 0x60c01b8;
         public static final int reboot_confirm = 0x60c0000;
@@ -653,7 +657,7 @@ public final class R {
         public static final int stopping_the_heat = 0x60c007b;
         public static final int summer_begins = 0x60c0074;
         public static final int summer_solstice = 0x60c0077;
-        public static final int sync_one_time_sync = 0x60c01dc;
+        public static final int sync_one_time_sync = 0x60c01db;
         public static final int teachers_day = 0x60c0069;
         public static final int text_pastelist = 0x60c01ab;
         public static final int the_armys_day = 0x60c0068;

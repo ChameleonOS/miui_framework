@@ -41,6 +41,8 @@
 
 .field public static final SORT:Ljava/lang/String; = "sort"
 
+.field public static final SUBJECT:Ljava/lang/String; = "subject"
+
 .field public static final SYNC_ID:Ljava/lang/String; = "sync_id"
 
 .field public static final TYPE:Ljava/lang/String; = "type"

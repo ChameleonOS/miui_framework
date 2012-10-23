@@ -28,6 +28,8 @@
 
 .field static final TRANSACTION_getActivatedPhone:I = 0x1
 
+.field static final TRANSACTION_getFindDeviceToken:I = 0x5
+
 .field static final TRANSACTION_getSmsGateway:I = 0x3
 
 .field static final TRANSACTION_getSubSyncAutomatically:I = 0x2
@@ -124,9 +126,9 @@
     const/4 v3, 0x1
 
     .line 41
-    sparse-switch p1, :sswitch_data_78
+    sparse-switch p1, :sswitch_data_8e
 
-    .line 94
+    .line 103
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -275,13 +277,39 @@
 
     goto :goto_8
 
+    .line 95
+    .end local v0           #_arg0:Lmiui/net/ICloudManagerResponse;
+    :sswitch_78
+    const-string/jumbo v4, "miui.net.ICloudManagerService"
+
+    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 97
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lmiui/net/ICloudManagerResponse$Stub;->asInterface(Landroid/os/IBinder;)Lmiui/net/ICloudManagerResponse;
+
+    move-result-object v0
+
+    .line 98
+    .restart local v0       #_arg0:Lmiui/net/ICloudManagerResponse;
+    invoke-virtual {p0, v0}, Lmiui/net/ICloudManagerService$Stub;->getFindDeviceToken(Lmiui/net/ICloudManagerResponse;)V
+
+    .line 99
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto/16 :goto_8
+
     .line 41
-    :sswitch_data_78
+    :sswitch_data_8e
     .sparse-switch
         0x1 -> :sswitch_10
         0x2 -> :sswitch_25
         0x3 -> :sswitch_4e
         0x4 -> :sswitch_63
+        0x5 -> :sswitch_78
         0x5f4e5446 -> :sswitch_9
     .end sparse-switch
 .end method

@@ -33,21 +33,21 @@
     .parameter "settingType"
 
     .prologue
-    .line 185
+    .line 187
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 186
+    .line 188
     iput p1, p0, Landroid/media/ExtraRingtoneManager$RingtoneItem;->mRingtoneType:I
 
-    .line 187
+    .line 189
     iput-object p2, p0, Landroid/media/ExtraRingtoneManager$RingtoneItem;->mActualDefaultRingtoneUri:Landroid/net/Uri;
 
-    .line 188
+    .line 190
     iput-object p3, p0, Landroid/media/ExtraRingtoneManager$RingtoneItem;->mDefaultRingtoneUri:Landroid/net/Uri;
 
-    .line 189
+    .line 191
     iput-object p4, p0, Landroid/media/ExtraRingtoneManager$RingtoneItem;->mSettingType:Ljava/lang/String;
 
-    .line 190
+    .line 192
     return-void
 .end method

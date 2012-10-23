@@ -183,7 +183,7 @@
 
     sput-object v1, Lmiui/content/res/IconCustomizer;->sCache:Ljava/util/HashMap;
 
-    .line 232
+    .line 240
     const-string/jumbo v1, "sys.ui.app-icon-background"
 
     invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -199,14 +199,14 @@
 
     sput-object v0, Lmiui/content/res/IconCustomizer;->sExcludeAll:Ljava/lang/Boolean;
 
-    .line 234
+    .line 242
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
-    .line 237
+    .line 245
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.android.contacts.activities.TwelveKeyDialer.png"
@@ -215,7 +215,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 238
+    .line 246
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.miui.weather2.png"
@@ -224,7 +224,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 239
+    .line 247
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.miui.gallery.png"
@@ -233,7 +233,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 240
+    .line 248
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.android.gallery3d.png"
@@ -242,7 +242,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 241
+    .line 249
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.xiaomi.market.png"
@@ -251,7 +251,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 242
+    .line 250
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.wali.miui.networkassistant.png"
@@ -260,7 +260,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 245
+    .line 253
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.android.camera.CameraEntry.png"
@@ -269,7 +269,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 246
+    .line 254
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.htc.album.png"
@@ -278,7 +278,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 247
+    .line 255
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.htc.fm.activity.FMRadioMain.png"
@@ -287,7 +287,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 248
+    .line 256
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.htc.fm.FMRadio.png"
@@ -296,7 +296,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 251
+    .line 259
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.sec.android.app.camera.Camera.png"
@@ -305,7 +305,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 252
+    .line 260
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.sec.android.app.fm.png"
@@ -314,7 +314,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 255
+    .line 263
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.android.hwcamera.png"
@@ -323,7 +323,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 256
+    .line 264
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.huawei.android.FMRadio.png"
@@ -332,7 +332,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 259
+    .line 267
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.sonyericsson.android.camera.png"
@@ -341,7 +341,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 260
+    .line 268
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.sonyericsson.fmradio.png"
@@ -350,7 +350,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 263
+    .line 271
     sget-object v0, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
 
     const-string v1, "com.motorola.Camera.Camera.png"
@@ -359,10 +359,10 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 264
+    .line 272
     return-void
 
-    .line 232
+    .line 240
     :cond_106
     const/4 v0, 0x0
 
@@ -376,7 +376,7 @@
     .line 41
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 187
+    .line 195
     return-void
 .end method
 
@@ -385,7 +385,7 @@
     .parameter "RGB"
 
     .prologue
-    .line 592
+    .line 606
     const/4 v0, 0x0
 
     aget v0, p0, v0
@@ -413,31 +413,31 @@
     .registers 2
 
     .prologue
-    .line 143
+    .line 151
     sget-object v1, Lmiui/content/res/IconCustomizer;->sExcludeAll:Ljava/lang/Boolean;
 
     monitor-enter v1
 
-    .line 144
+    .line 152
     const/4 v0, 0x0
 
     :try_start_4
     sput-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
-    .line 145
+    .line 153
     monitor-exit v1
     :try_end_7
     .catchall {:try_start_4 .. :try_end_7} :catchall_d
 
-    .line 146
+    .line 154
     sget-object v0, Lmiui/content/res/IconCustomizer;->sCache:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 147
+    .line 155
     return-void
 
-    .line 145
+    .line 153
     :catchall_d
     move-exception v0
 
@@ -454,30 +454,30 @@
     .parameter "packageName"
 
     .prologue
-    .line 150
+    .line 158
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_14
 
-    .line 151
+    .line 159
     const-string v0, "/data/system/customized_icons/*"
 
     const-string/jumbo v1, "root"
 
     invoke-static {v0, v1}, Lmiui/util/CommandLineUtils;->rm(Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 152
+    .line 160
     sget-object v0, Lmiui/content/res/IconCustomizer;->sCache:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 156
+    .line 164
     :goto_13
     return-void
 
-    .line 154
+    .line 162
     :cond_14
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -515,7 +515,7 @@
     .parameter "color"
 
     .prologue
-    .line 586
+    .line 600
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -560,18 +560,18 @@
 
     const/4 v14, 0x0
 
-    .line 412
+    .line 426
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 413
+    .line 427
     .local v3, baseWidth:I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v7
 
-    .line 414
+    .line 428
     .local v7, baseHeight:I
     mul-int v4, v3, v7
 
@@ -586,16 +586,16 @@
 
     move v6, v3
 
-    .line 415
+    .line 429
     invoke-virtual/range {v0 .. v7}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    .line 416
+    .line 430
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 419
+    .line 433
     invoke-static {v3, v7, v1}, Lmiui/content/res/IconCustomizer;->cutEdge(II[I)V
 
-    .line 422
+    .line 436
     sget v4, Lmiui/content/res/IconCustomizer;->sCustomizedIconWidth:I
 
     sget v5, Lmiui/content/res/IconCustomizer;->sCustomizedIconHeight:I
@@ -606,13 +606,13 @@
 
     move-result-object v13
 
-    .line 423
+    .line 437
     .local v13, result:Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v13}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 426
+    .line 440
     .local v0, canvas:Landroid/graphics/Canvas;
     const-string v4, "icon_background.png"
 
@@ -620,14 +620,14 @@
 
     move-result-object v10
 
-    .line 427
+    .line 441
     .local v10, background:Landroid/graphics/Bitmap;
     if-eqz v10, :cond_36
 
-    .line 428
+    .line 442
     invoke-static {v0, v10, v3, v7, v1}, Lmiui/content/res/IconCustomizer;->drawBackground(Landroid/graphics/Canvas;Landroid/graphics/Bitmap;II[I)V
 
-    .line 432
+    .line 446
     :cond_36
     const-string v4, "icon_pattern.png"
 
@@ -635,14 +635,14 @@
 
     move-result-object v12
 
-    .line 433
+    .line 447
     .local v12, pattern:Landroid/graphics/Bitmap;
     if-eqz v12, :cond_41
 
-    .line 434
+    .line 448
     invoke-virtual {v0, v12, v14, v14, v9}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 438
+    .line 452
     :cond_41
     sget v4, Lmiui/content/res/IconCustomizer;->sCustomizedIconWidth:I
 
@@ -662,21 +662,21 @@
 
     invoke-virtual/range {v0 .. v9}, Landroid/graphics/Canvas;->drawBitmap([IIIIIIIZLandroid/graphics/Paint;)V
 
-    .line 442
+    .line 456
     const-string v2, "icon_border.png"
 
     invoke-static {v2}, Lmiui/content/res/IconCustomizer;->getCachedThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v11
 
-    .line 443
+    .line 457
     .local v11, foreground:Landroid/graphics/Bitmap;
     if-eqz v11, :cond_5b
 
-    .line 444
+    .line 458
     invoke-virtual {v0, v11, v14, v14, v9}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 447
+    .line 461
     :cond_5b
     return-object v13
 .end method
@@ -692,18 +692,18 @@
 
     const/4 v13, 0x0
 
-    .line 452
+    .line 466
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 453
+    .line 467
     .local v3, baseWidth:I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v7
 
-    .line 454
+    .line 468
     .local v7, baseHeight:I
     mul-int v4, v3, v7
 
@@ -718,16 +718,16 @@
 
     move v6, v3
 
-    .line 455
+    .line 469
     invoke-virtual/range {v0 .. v7}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    .line 456
+    .line 470
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 459
+    .line 473
     invoke-static {v3, v7, v1}, Lmiui/content/res/IconCustomizer;->cutEdge(II[I)V
 
-    .line 462
+    .line 476
     sget v4, Lmiui/content/res/IconCustomizer;->sCustomizedIconWidth:I
 
     sget v5, Lmiui/content/res/IconCustomizer;->sCustomizedIconHeight:I
@@ -738,13 +738,13 @@
 
     move-result-object v12
 
-    .line 463
+    .line 477
     .local v12, result:Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v12}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 466
+    .line 480
     .local v0, canvas:Landroid/graphics/Canvas;
     const-string v4, "icon_shortcut.png"
 
@@ -752,14 +752,14 @@
 
     move-result-object v10
 
-    .line 467
+    .line 481
     .local v10, background:Landroid/graphics/Bitmap;
     if-eqz v10, :cond_36
 
-    .line 468
+    .line 482
     invoke-virtual {v0, v10, v13, v13, v9}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 472
+    .line 486
     :cond_36
     sget v4, Lmiui/content/res/IconCustomizer;->sCustomizedIconWidth:I
 
@@ -779,21 +779,21 @@
 
     invoke-virtual/range {v0 .. v9}, Landroid/graphics/Canvas;->drawBitmap([IIIIIIIZLandroid/graphics/Paint;)V
 
-    .line 476
+    .line 490
     const-string v2, "icon_shortcut_arrow.png"
 
     invoke-static {v2}, Lmiui/content/res/IconCustomizer;->getCachedThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v11
 
-    .line 477
+    .line 491
     .local v11, foreground:Landroid/graphics/Bitmap;
     if-eqz v11, :cond_50
 
-    .line 478
+    .line 492
     invoke-virtual {v0, v11, v13, v13, v9}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 481
+    .line 495
     :cond_50
     return-object v12
 .end method
@@ -805,45 +805,45 @@
     .parameter "basePixels"
 
     .prologue
-    .line 486
+    .line 500
     const-string v2, "icon_mask.png"
 
     invoke-static {v2}, Lmiui/content/res/IconCustomizer;->getCachedThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 487
+    .line 501
     .local v0, alphaCutter:Landroid/graphics/Bitmap;
     if-nez v0, :cond_9
 
-    .line 505
+    .line 519
     :cond_8
     return-void
 
-    .line 490
+    .line 504
     :cond_9
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v9
 
-    .line 491
+    .line 505
     .local v9, alphaWidth:I
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v8
 
-    .line 492
+    .line 506
     .local v8, alphaHeight:I
     if-lt v9, p0, :cond_8
 
     if-lt v8, p1, :cond_8
 
-    .line 495
+    .line 509
     mul-int v2, v9, v8
 
     new-array v1, v2, [I
 
-    .line 496
+    .line 510
     .local v1, alphaPixels:[I
     const/4 v2, 0x0
 
@@ -863,7 +863,7 @@
 
     invoke-virtual/range {v0 .. v7}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    .line 501
+    .line 515
     mul-int v2, p0, p1
 
     add-int/lit8 v10, v2, -0x1
@@ -872,7 +872,7 @@
     :goto_2c
     if-ltz v10, :cond_8
 
-    .line 502
+    .line 516
     aget v2, p2, v10
 
     const v3, 0xffffff
@@ -897,7 +897,7 @@
 
     aput v2, p2, v10
 
-    .line 501
+    .line 515
     add-int/lit8 v10, v10, -0x1
 
     goto :goto_2c
@@ -912,10 +912,10 @@
     .parameter "basePixels"
 
     .prologue
-    .line 509
+    .line 523
     const/16 v17, 0x0
 
-    .line 510
+    .line 524
     .local v17, sum:I
     const/4 v1, 0x3
 
@@ -925,7 +925,7 @@
 
     fill-array-data v18, :array_136
 
-    .line 514
+    .line 528
     .local v18, sumRGB:[I
     mul-int v1, p2, p3
 
@@ -935,23 +935,23 @@
     :goto_e
     if-ltz v14, :cond_3d
 
-    .line 515
+    .line 529
     aget v1, p4, v14
 
     const v3, 0xffffff
 
     and-int v12, v1, v3
 
-    .line 517
+    .line 531
     .local v12, color:I
     if-lez v12, :cond_3a
 
-    .line 518
+    .line 532
     invoke-static {v12}, Lmiui/content/res/IconCustomizer;->colorToRGB(I)[I
 
     move-result-object v11
 
-    .line 519
+    .line 533
     .local v11, RGB:[I
     const/4 v1, 0x0
 
@@ -965,7 +965,7 @@
 
     aput v3, v18, v1
 
-    .line 520
+    .line 534
     const/4 v1, 0x1
 
     aget v3, v18, v1
@@ -978,7 +978,7 @@
 
     aput v3, v18, v1
 
-    .line 521
+    .line 535
     const/4 v1, 0x2
 
     aget v3, v18, v1
@@ -991,22 +991,22 @@
 
     aput v3, v18, v1
 
-    .line 522
+    .line 536
     add-int/lit8 v17, v17, 0x1
 
-    .line 514
+    .line 528
     .end local v11           #RGB:[I
     :cond_3a
     add-int/lit8 v14, v14, -0x1
 
     goto :goto_e
 
-    .line 525
+    .line 539
     .end local v12           #color:I
     :cond_3d
     if-lez v17, :cond_54
 
-    .line 526
+    .line 540
     const/4 v1, 0x0
 
     aget v3, v18, v1
@@ -1015,7 +1015,7 @@
 
     aput v3, v18, v1
 
-    .line 527
+    .line 541
     const/4 v1, 0x1
 
     aget v3, v18, v1
@@ -1024,7 +1024,7 @@
 
     aput v3, v18, v1
 
-    .line 528
+    .line 542
     const/4 v1, 0x2
 
     aget v3, v18, v1
@@ -1033,13 +1033,13 @@
 
     aput v3, v18, v1
 
-    .line 532
+    .line 546
     :cond_54
     invoke-static/range {v18 .. v18}, Lmiui/content/res/IconCustomizer;->RGBToColor([I)I
 
     move-result v12
 
-    .line 533
+    .line 547
     .restart local v12       #color:I
     invoke-static {v12}, Lmiui/content/res/IconCustomizer;->getSaturation(I)F
 
@@ -1053,33 +1053,33 @@
 
     if-gez v1, :cond_b7
 
-    .line 534
+    .line 548
     const/4 v12, 0x0
 
-    .line 566
+    .line 580
     :goto_67
     invoke-static {v12}, Lmiui/content/res/IconCustomizer;->colorToRGB(I)[I
 
     move-result-object v18
 
-    .line 568
+    .line 582
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
 
-    .line 569
+    .line 583
     .local v4, backgroundWidth:I
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v8
 
-    .line 570
+    .line 584
     .local v8, backgroundHeight:I
     mul-int v1, v4, v8
 
     new-array v2, v1, [I
 
-    .line 571
+    .line 585
     .local v2, backgroundPixels:[I
     const/4 v3, 0x0
 
@@ -1093,7 +1093,7 @@
 
     invoke-virtual/range {v1 .. v8}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
-    .line 572
+    .line 586
     mul-int v1, v4, v8
 
     add-int/lit8 v14, v1, -0x1
@@ -1101,10 +1101,10 @@
     :goto_84
     if-ltz v14, :cond_129
 
-    .line 573
+    .line 587
     aget v12, v2, v14
 
-    .line 575
+    .line 589
     const/high16 v1, -0x100
 
     and-int/2addr v1, v12
@@ -1161,12 +1161,12 @@
 
     aput v1, v2, v14
 
-    .line 572
+    .line 586
     add-int/lit8 v14, v14, -0x1
 
     goto :goto_84
 
-    .line 537
+    .line 551
     .end local v2           #backgroundPixels:[I
     .end local v4           #backgroundWidth:I
     .end local v8           #backgroundHeight:I
@@ -1197,11 +1197,11 @@
 
     aput-object v3, v16, v1
 
-    .line 544
+    .line 558
     .local v16, mappingSections:[[I
     const/16 v17, 0x0
 
-    .line 545
+    .line 559
     const/4 v14, 0x0
 
     :goto_d1
@@ -1211,7 +1211,7 @@
 
     if-ge v14, v1, :cond_e6
 
-    .line 546
+    .line 560
     aget-object v1, v16, v14
 
     const/4 v3, 0x1
@@ -1228,18 +1228,18 @@
 
     add-int v17, v17, v1
 
-    .line 545
+    .line 559
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_d1
 
-    .line 549
+    .line 563
     :cond_e6
     invoke-static {v12}, Lmiui/content/res/IconCustomizer;->getHue(I)F
 
     move-result v13
 
-    .line 550
+    .line 564
     .local v13, hue:F
     move/from16 v0, v17
 
@@ -1251,7 +1251,7 @@
 
     div-float v13, v1, v3
 
-    .line 551
+    .line 565
     const/4 v14, 0x0
 
     :goto_f3
@@ -1261,7 +1261,7 @@
 
     if-ge v14, v1, :cond_115
 
-    .line 552
+    .line 566
     aget-object v1, v16, v14
 
     const/4 v3, 0x1
@@ -1276,7 +1276,7 @@
 
     sub-int v15, v1, v3
 
-    .line 553
+    .line 567
     .local v15, length:I
     int-to-float v1, v15
 
@@ -1284,17 +1284,17 @@
 
     if-lez v1, :cond_10e
 
-    .line 554
+    .line 568
     int-to-float v1, v15
 
     sub-float/2addr v13, v1
 
-    .line 551
+    .line 565
     add-int/lit8 v14, v14, 0x1
 
     goto :goto_f3
 
-    .line 556
+    .line 570
     :cond_10e
     aget-object v1, v16, v14
 
@@ -1306,21 +1306,21 @@
 
     add-float/2addr v13, v1
 
-    .line 560
+    .line 574
     .end local v15           #length:I
     :cond_115
     invoke-static {v12, v13}, Lmiui/content/res/IconCustomizer;->setHue(IF)I
 
     move-result v12
 
-    .line 563
+    .line 577
     const v1, 0x3f19999a
 
     invoke-static {v12, v1}, Lmiui/content/res/IconCustomizer;->setValue(IF)I
 
     move-result v12
 
-    .line 564
+    .line 578
     const v1, 0x3ecccccd
 
     invoke-static {v12, v1}, Lmiui/content/res/IconCustomizer;->setSaturation(IF)I
@@ -1329,7 +1329,7 @@
 
     goto/16 :goto_67
 
-    .line 582
+    .line 596
     .end local v13           #hue:F
     .end local v16           #mappingSections:[[I
     .restart local v2       #backgroundPixels:[I
@@ -1352,10 +1352,10 @@
 
     invoke-virtual/range {v1 .. v10}, Landroid/graphics/Canvas;->drawBitmap([IIIIIIIZLandroid/graphics/Paint;)V
 
-    .line 583
+    .line 597
     return-void
 
-    .line 510
+    .line 524
     nop
 
     :array_136
@@ -1365,7 +1365,7 @@
         0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 537
+    .line 551
     :array_140
     .array-data 0x4
         0x64t 0x0t 0x0t 0x0t
@@ -1384,28 +1384,28 @@
     .parameter "icon"
 
     .prologue
-    .line 354
+    .line 368
     sget-object v16, Lmiui/content/res/IconCustomizer;->sCanvas:Landroid/graphics/Canvas;
 
     monitor-enter v16
 
-    .line 355
+    .line 369
     :try_start_3
     sget v12, Lmiui/content/res/IconCustomizer;->sIconWidth:I
 
-    .line 356
+    .line 370
     .local v12, targetWidth:I
     sget v11, Lmiui/content/res/IconCustomizer;->sIconHeight:I
 
-    .line 358
+    .line 372
     .local v11, targetHeight:I
     move v14, v12
 
-    .line 359
+    .line 373
     .local v14, width:I
     move v5, v11
 
-    .line 361
+    .line 375
     .local v5, height:I
     move-object/from16 v0, p0
 
@@ -1413,21 +1413,21 @@
 
     if-eqz v15, :cond_6c
 
-    .line 362
+    .line 376
     move-object/from16 v0, p0
 
     check-cast v0, Landroid/graphics/drawable/PaintDrawable;
 
     move-object v7, v0
 
-    .line 363
+    .line 377
     .local v7, painter:Landroid/graphics/drawable/PaintDrawable;
     invoke-virtual {v7, v12}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicWidth(I)V
 
-    .line 364
+    .line 378
     invoke-virtual {v7, v11}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicHeight(I)V
 
-    .line 373
+    .line 387
     .end local v7           #painter:Landroid/graphics/drawable/PaintDrawable;
     :cond_1a
     :goto_1a
@@ -1435,24 +1435,24 @@
 
     move-result v10
 
-    .line 374
+    .line 388
     .local v10, sourceWidth:I
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v9
 
-    .line 376
+    .line 390
     .local v9, sourceHeight:I
     if-lez v10, :cond_35
 
     if-lez v10, :cond_35
 
-    .line 378
+    .line 392
     if-lt v14, v10, :cond_2a
 
     if-ge v5, v9, :cond_94
 
-    .line 380
+    .line 394
     :cond_2a
     int-to-float v15, v10
 
@@ -1462,18 +1462,18 @@
 
     div-float v8, v15, v17
 
-    .line 381
+    .line 395
     .local v8, ratio:F
     if-le v10, v9, :cond_8e
 
-    .line 382
+    .line 396
     int-to-float v15, v14
 
     div-float/2addr v15, v8
 
     float-to-int v5, v15
 
-    .line 393
+    .line 407
     .end local v8           #ratio:F
     :cond_35
     :goto_35
@@ -1483,26 +1483,26 @@
 
     move-result-object v2
 
-    .line 395
+    .line 409
     .local v2, bitmap:Landroid/graphics/Bitmap;
     sget-object v4, Lmiui/content/res/IconCustomizer;->sCanvas:Landroid/graphics/Canvas;
 
-    .line 396
+    .line 410
     .local v4, canvas:Landroid/graphics/Canvas;
     invoke-virtual {v4, v2}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 398
+    .line 412
     sub-int v15, v12, v14
 
     div-int/lit8 v6, v15, 0x2
 
-    .line 399
+    .line 413
     .local v6, left:I
     sub-int v15, v11, v5
 
     div-int/lit8 v13, v15, 0x2
 
-    .line 401
+    .line 415
     .local v13, top:I
     sget-object v15, Lmiui/content/res/IconCustomizer;->sOldBounds:Landroid/graphics/Rect;
 
@@ -1514,7 +1514,7 @@
 
     invoke-virtual {v15, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 402
+    .line 416
     add-int v15, v6, v14
 
     add-int v17, v13, v5
@@ -1525,24 +1525,24 @@
 
     invoke-virtual {v0, v6, v13, v15, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 403
+    .line 417
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 404
+    .line 418
     sget-object v15, Lmiui/content/res/IconCustomizer;->sOldBounds:Landroid/graphics/Rect;
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v15}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 406
+    .line 420
     monitor-exit v16
 
     return-object v2
 
-    .line 365
+    .line 379
     .end local v2           #bitmap:Landroid/graphics/Bitmap;
     .end local v4           #canvas:Landroid/graphics/Canvas;
     .end local v6           #left:I
@@ -1556,20 +1556,20 @@
 
     if-eqz v15, :cond_1a
 
-    .line 367
+    .line 381
     move-object/from16 v0, p0
 
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
     move-object v3, v0
 
-    .line 368
+    .line 382
     .local v3, bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
     invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 369
+    .line 383
     .restart local v2       #bitmap:Landroid/graphics/Bitmap;
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getDensity()I
 
@@ -1577,7 +1577,7 @@
 
     if-nez v15, :cond_1a
 
-    .line 370
+    .line 384
     sget-object v15, Lmiui/content/res/IconCustomizer;->sSystemResource:Landroid/content/res/Resources;
 
     invoke-virtual {v15}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -1588,7 +1588,7 @@
 
     goto :goto_1a
 
-    .line 407
+    .line 421
     .end local v2           #bitmap:Landroid/graphics/Bitmap;
     .end local v3           #bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
     .end local v5           #height:I
@@ -1604,7 +1604,7 @@
 
     throw v15
 
-    .line 383
+    .line 397
     .restart local v5       #height:I
     .restart local v8       #ratio:F
     .restart local v9       #sourceHeight:I
@@ -1615,7 +1615,7 @@
     :cond_8e
     if-le v9, v10, :cond_35
 
-    .line 384
+    .line 398
     int-to-float v15, v5
 
     mul-float/2addr v15, v8
@@ -1624,17 +1624,17 @@
 
     goto :goto_35
 
-    .line 386
+    .line 400
     .end local v8           #ratio:F
     :cond_94
     if-ge v10, v14, :cond_35
 
     if-ge v9, v5, :cond_35
 
-    .line 388
+    .line 402
     move v14, v10
 
-    .line 389
+    .line 403
     move v5, v9
 
     goto :goto_35
@@ -1645,18 +1645,18 @@
     .parameter "base"
 
     .prologue
-    .line 342
+    .line 356
     invoke-static {p0}, Lmiui/content/res/IconCustomizer;->drawableToBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 343
+    .line 357
     .local v0, icon:Landroid/graphics/Bitmap;
     invoke-static {v0}, Lmiui/content/res/IconCustomizer;->composeIcon(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 344
+    .line 358
     invoke-static {v0}, Lmiui/content/res/IconCustomizer;->scaleDrawable(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/BitmapDrawable;
 
     move-result-object v1
@@ -1669,18 +1669,18 @@
     .parameter "base"
 
     .prologue
-    .line 348
+    .line 362
     invoke-static {p0}, Lmiui/content/res/IconCustomizer;->drawableToBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 349
+    .line 363
     .local v0, icon:Landroid/graphics/Bitmap;
     invoke-static {v0}, Lmiui/content/res/IconCustomizer;->composeShortcutIcon(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 350
+    .line 364
     invoke-static {v0}, Lmiui/content/res/IconCustomizer;->scaleDrawable(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/BitmapDrawable;
 
     move-result-object v1
@@ -1765,130 +1765,202 @@
     return-object v2
 .end method
 
-.method public static getCustomizedIconDrawable(Ljava/lang/String;)Landroid/graphics/drawable/BitmapDrawable;
-    .registers 7
-    .parameter "fileName"
-
-    .prologue
-    .line 316
-    invoke-static {p0}, Lmiui/content/res/IconCustomizer;->getThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 318
-    .local v0, icon:Landroid/graphics/Bitmap;
-    if-nez v0, :cond_14
-
-    .line 319
-    sget-object v4, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
-
-    invoke-interface {v4, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    .line 320
-    .local v2, mappingName:Ljava/lang/String;
-    if-eqz v2, :cond_14
-
-    .line 321
-    invoke-static {v2}, Lmiui/content/res/IconCustomizer;->getThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 325
-    .end local v2           #mappingName:Ljava/lang/String;
-    :cond_14
-    if-nez v0, :cond_3d
-
-    .line 326
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "/data/system/customized_icons/"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 327
-    .local v3, pathName:Ljava/lang/String;
-    new-instance v1, Ljava/io/File;
-
-    invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 328
-    .local v1, iconFile:Ljava/io/File;
-    invoke-virtual {v1}, Ljava/io/File;->exists()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3d
-
-    .line 329
-    invoke-static {v3}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 330
-    if-nez v0, :cond_3d
-
-    .line 333
-    invoke-virtual {v1}, Ljava/io/File;->delete()Z
-
-    .line 338
-    .end local v1           #iconFile:Ljava/io/File;
-    .end local v3           #pathName:Ljava/lang/String;
-    :cond_3d
-    invoke-static {v0}, Lmiui/content/res/IconCustomizer;->scaleDrawable(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/BitmapDrawable;
-
-    move-result-object v4
-
-    return-object v4
-.end method
-
-.method public static getFileName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
+.method public static getCustomizedIconDrawable(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/drawable/BitmapDrawable;
+    .registers 10
     .parameter "packageName"
     .parameter "className"
 
     .prologue
-    .line 139
-    const-string v0, "%s.png"
+    .line 324
+    invoke-static {p0, p1}, Lmiui/content/res/IconCustomizer;->getFileName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    .line 325
+    .local v0, fileName:Ljava/lang/String;
+    invoke-static {v0}, Lmiui/content/res/IconCustomizer;->getThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    .line 328
+    .local v1, icon:Landroid/graphics/Bitmap;
+    if-nez v1, :cond_22
+
+    if-eqz p1, :cond_22
+
+    invoke-virtual {p1, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_22
+
+    .line 329
+    const-string v5, "%s.png"
+
+    const/4 v6, 0x1
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    aput-object p1, v6, v7
+
+    invoke-static {v5, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lmiui/content/res/IconCustomizer;->getThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    .line 332
+    :cond_22
+    if-nez v1, :cond_32
+
+    .line 333
+    sget-object v5, Lmiui/content/res/IconCustomizer;->sIconMapping:Ljava/util/Map;
+
+    invoke-interface {v5, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    .line 334
+    .local v3, mappingName:Ljava/lang/String;
+    if-eqz v3, :cond_32
+
+    .line 335
+    invoke-static {v3}, Lmiui/content/res/IconCustomizer;->getThemeIcon(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    .line 339
+    .end local v3           #mappingName:Ljava/lang/String;
+    :cond_32
+    if-nez v1, :cond_5b
+
+    .line 340
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "/data/system/customized_icons/"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 341
+    .local v4, pathName:Ljava/lang/String;
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    .line 342
+    .local v2, iconFile:Ljava/io/File;
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5b
+
+    .line 343
+    invoke-static {v4}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    .line 344
+    if-nez v1, :cond_5b
+
+    .line 347
+    invoke-virtual {v2}, Ljava/io/File;->delete()Z
+
+    .line 352
+    .end local v2           #iconFile:Ljava/io/File;
+    .end local v4           #pathName:Ljava/lang/String;
+    :cond_5b
+    invoke-static {v1}, Lmiui/content/res/IconCustomizer;->scaleDrawable(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/BitmapDrawable;
+
+    move-result-object v5
+
+    return-object v5
+.end method
+
+.method public static getFileName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .registers 6
+    .parameter "packageName"
+    .parameter "className"
+
+    .prologue
+    const/4 v3, 0x1
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_f
+    .line 139
+    if-nez p1, :cond_f
 
-    .end local p1
-    :goto_8
+    .line 140
+    const-string v0, "%s.png"
+
+    new-array v1, v3, [Ljava/lang/Object;
+
+    aput-object p0, v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 147
+    :goto_e
+    return-object v0
+
+    .line 143
+    :cond_f
+    invoke-virtual {p1, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_20
+
+    .line 144
+    const-string v0, "%s.png"
+
+    new-array v1, v3, [Ljava/lang/Object;
+
     aput-object p1, v1, v2
 
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    goto :goto_e
 
-    .restart local p1
-    :cond_f
-    move-object p1, p0
+    .line 147
+    :cond_20
+    const-string v0, "%s@%s.png"
 
-    goto :goto_8
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    aput-object p1, v1, v2
+
+    aput-object p0, v1, v3
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_e
 .end method
 
 .method private static getHue(I)F
@@ -1904,12 +1976,12 @@
 
     const/4 v9, 0x2
 
-    .line 645
+    .line 659
     invoke-static {p0}, Lmiui/content/res/IconCustomizer;->colorToRGB(I)[I
 
     move-result-object v0
 
-    .line 647
+    .line 661
     .local v0, RGB:[I
     aget v6, v0, v11
 
@@ -1925,7 +1997,7 @@
 
     move-result v4
 
-    .line 648
+    .line 662
     .local v4, min:I
     aget v6, v0, v11
 
@@ -1941,26 +2013,26 @@
 
     move-result v3
 
-    .line 650
+    .line 664
     .local v3, max:I
     sub-int v5, v3, v4
 
-    .line 651
+    .line 665
     .local v5, range:I
     if-nez v5, :cond_2b
 
-    .line 652
+    .line 666
     const/4 v1, 0x0
 
-    .line 662
+    .line 676
     :goto_2a
     return v1
 
-    .line 654
+    .line 668
     :cond_2b
     const/4 v2, 0x0
 
-    .line 655
+    .line 669
     .local v2, index:I
     :goto_2c
     if-ge v2, v9, :cond_35
@@ -1969,12 +2041,12 @@
 
     if-eq v4, v6, :cond_35
 
-    .line 656
+    .line 670
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2c
 
-    .line 658
+    .line 672
     :cond_35
     add-int/lit8 v6, v2, 0x1
 
@@ -1984,7 +2056,7 @@
 
     int-to-float v1, v6
 
-    .line 659
+    .line 673
     .local v1, hue:F
     add-int/lit8 v6, v2, 0x2
 
@@ -2004,7 +2076,7 @@
 
     add-float/2addr v1, v6
 
-    .line 660
+    .line 674
     add-int/lit8 v6, v2, 0x1
 
     rem-int/lit8 v6, v6, 0x3
@@ -2023,7 +2095,7 @@
 
     add-float/2addr v1, v6
 
-    .line 662
+    .line 676
     goto :goto_2a
 .end method
 
@@ -2038,12 +2110,12 @@
 
     const/4 v6, 0x0
 
-    .line 618
+    .line 632
     invoke-static {p0}, Lmiui/content/res/IconCustomizer;->colorToRGB(I)[I
 
     move-result-object v0
 
-    .line 620
+    .line 634
     .local v0, RGB:[I
     aget v3, v0, v6
 
@@ -2059,7 +2131,7 @@
 
     move-result v2
 
-    .line 621
+    .line 635
     .local v2, min:I
     aget v3, v0, v6
 
@@ -2075,17 +2147,17 @@
 
     move-result v1
 
-    .line 622
+    .line 636
     .local v1, max:I
     if-eqz v1, :cond_27
 
     if-ne v1, v2, :cond_29
 
-    .line 623
+    .line 637
     :cond_27
     int-to-float v3, p0
 
-    .line 625
+    .line 639
     :goto_28
     return v3
 
@@ -2213,12 +2285,12 @@
     .parameter "color"
 
     .prologue
-    .line 596
+    .line 610
     invoke-static {p0}, Lmiui/content/res/IconCustomizer;->colorToRGB(I)[I
 
     move-result-object v0
 
-    .line 598
+    .line 612
     .local v0, RGB:[I
     const/4 v2, 0x0
 
@@ -2240,7 +2312,7 @@
 
     move-result v1
 
-    .line 599
+    .line 613
     .local v1, max:I
     const/high16 v2, 0x3f80
 
@@ -2260,25 +2332,25 @@
     .parameter "packageName"
 
     .prologue
-    .line 267
+    .line 275
     sget-object v1, Lmiui/content/res/IconCustomizer;->sExcludeAll:Ljava/lang/Boolean;
 
     monitor-enter v1
 
-    .line 268
+    .line 276
     :try_start_3
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     if-nez v0, :cond_11d
 
-    .line 269
+    .line 277
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
-    .line 270
+    .line 278
     invoke-static {}, Lmiui/content/res/ThemeResources;->getSystem()Lmiui/content/res/ThemeResourcesSystem;
 
     move-result-object v0
@@ -2291,266 +2363,266 @@
 
     if-eqz v0, :cond_11d
 
-    .line 271
+    .line 279
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.browser"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 272
+    .line 280
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.calendar"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 273
+    .line 281
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.camera"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 274
+    .line 282
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.contacts"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 275
+    .line 283
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.deskclock"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 276
+    .line 284
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.email"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 277
+    .line 285
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.fileexplorer"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 278
+    .line 286
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.gallery"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 279
+    .line 287
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.launcher"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 280
+    .line 288
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.mms"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 281
+    .line 289
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.monitor"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 282
+    .line 290
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.music"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 283
+    .line 291
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.phone"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 284
+    .line 292
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.providers.contacts"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 285
+    .line 293
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.providers.downloads.ui"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 286
+    .line 294
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.providers.telephony"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 287
+    .line 295
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.quicksearchbox"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 288
+    .line 296
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.settings"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 289
+    .line 297
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.soundrecorder"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 290
+    .line 298
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.spare_parts"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 291
+    .line 299
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.stk"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 292
+    .line 300
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.thememanager"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 293
+    .line 301
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.android.updater"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 294
+    .line 302
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.antispam"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 295
+    .line 303
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.backup"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 296
+    .line 304
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.bugreport"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 297
+    .line 305
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.camera"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 298
+    .line 306
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.cit"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 299
+    .line 307
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.compass"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 300
+    .line 308
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.fmradio"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 301
+    .line 309
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.lockv4"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 302
+    .line 310
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.notes"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 303
+    .line 311
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.player"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 304
+    .line 312
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.xiaomi.market"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 305
+    .line 313
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.uac"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 306
+    .line 314
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.userbook"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 307
+    .line 315
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludes:Ljava/util/Set;
 
     const-string v2, "com.miui.weather2"
 
     invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 311
+    .line 319
     :cond_11d
     sget-object v0, Lmiui/content/res/IconCustomizer;->sExcludeAll:Ljava/lang/Boolean;
 
@@ -2581,7 +2653,7 @@
 
     goto :goto_12e
 
-    .line 312
+    .line 320
     :catchall_132
     move-exception v0
 
@@ -2597,12 +2669,12 @@
     .parameter "context"
 
     .prologue
-    .line 159
+    .line 167
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lmiui/content/res/IconCustomizer;->prepareCustomizedIcons(Landroid/content/Context;Lmiui/content/res/IconCustomizer$CustomizedIconsListener;)V
 
-    .line 160
+    .line 168
     return-void
 .end method
 
@@ -2612,7 +2684,7 @@
     .parameter "l"
 
     .prologue
-    .line 163
+    .line 171
     new-instance v2, Landroid/content/Intent;
 
     const-string v7, "android.intent.action.MAIN"
@@ -2621,18 +2693,18 @@
 
     invoke-direct {v2, v7, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 164
+    .line 172
     .local v2, launcherIntent:Landroid/content/Intent;
     const-string v7, "android.intent.category.LAUNCHER"
 
     invoke-virtual {v2, v7}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 166
+    .line 174
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v4
 
-    .line 167
+    .line 175
     .local v4, pm:Landroid/content/pm/PackageManager;
     const/4 v7, 0x0
 
@@ -2640,22 +2712,22 @@
 
     move-result-object v3
 
-    .line 169
+    .line 177
     .local v3, list:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     if-eqz p1, :cond_1f
 
-    .line 170
+    .line 178
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v7
 
     invoke-interface {p1, v7}, Lmiui/content/res/IconCustomizer$CustomizedIconsListener;->beforePrepareIcon(I)V
 
-    .line 173
+    .line 181
     :cond_1f
     const/4 v5, 0x0
 
-    .line 174
+    .line 182
     .local v5, taskCnt:I
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2676,16 +2748,16 @@
 
     check-cast v1, Landroid/content/pm/ResolveInfo;
 
-    .line 175
+    .line 183
     .local v1, info:Landroid/content/pm/ResolveInfo;
     iget-object v7, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     invoke-virtual {v7, v4}, Landroid/content/pm/ActivityInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
-    .line 177
+    .line 185
     if-eqz p1, :cond_24
 
-    .line 178
+    .line 186
     add-int/lit8 v6, v5, 0x1
 
     .end local v5           #taskCnt:I
@@ -2698,15 +2770,15 @@
     .restart local v5       #taskCnt:I
     goto :goto_24
 
-    .line 182
+    .line 190
     .end local v1           #info:Landroid/content/pm/ResolveInfo;
     :cond_3e
     if-eqz p1, :cond_43
 
-    .line 183
+    .line 191
     invoke-interface {p1}, Lmiui/content/res/IconCustomizer$CustomizedIconsListener;->finishAllIcons()V
 
-    .line 185
+    .line 193
     :cond_43
     return-void
 .end method
@@ -2717,7 +2789,7 @@
     .parameter "icon"
 
     .prologue
-    .line 197
+    .line 205
     :try_start_0
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -2737,7 +2809,7 @@
 
     move-result-object v5
 
-    .line 198
+    .line 206
     .local v5, pathName:Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
@@ -2746,11 +2818,11 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_18} :catch_54
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_18} :catch_59
 
-    .line 199
+    .line 207
     .local v1, file:Ljava/io/File;
     const/4 v2, 0x0
 
-    .line 203
+    .line 211
     .local v2, outputStream:Ljava/io/FileOutputStream;
     :try_start_19
     new-instance v3, Ljava/io/FileOutputStream;
@@ -2760,7 +2832,7 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_19 .. :try_end_1e} :catch_5e
     .catch Ljava/io/IOException; {:try_start_19 .. :try_end_1e} :catch_59
 
-    .line 204
+    .line 212
     .end local v2           #outputStream:Ljava/io/FileOutputStream;
     .local v3, outputStream:Ljava/io/FileOutputStream;
     const/16 v6, 0x1b4
@@ -2777,23 +2849,23 @@
 
     move-object v2, v3
 
-    .line 212
+    .line 220
     .end local v3           #outputStream:Ljava/io/FileOutputStream;
     .restart local v2       #outputStream:Ljava/io/FileOutputStream;
     :goto_26
     if-nez v2, :cond_46
 
-    .line 213
+    .line 221
     :try_start_28
     invoke-virtual {v1}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     move-result-object v4
 
-    .line 214
+    .line 222
     .local v4, parent:Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->mkdirs()Z
 
-    .line 215
+    .line 223
     invoke-virtual {v4}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v6
@@ -2806,13 +2878,13 @@
 
     invoke-static {v6, v7, v8, v9}, Landroid/os/FileUtils;->setPermissions(Ljava/lang/String;III)I
 
-    .line 217
+    .line 225
     new-instance v2, Ljava/io/FileOutputStream;
 
     .end local v2           #outputStream:Ljava/io/FileOutputStream;
     invoke-direct {v2, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 218
+    .line 226
     .restart local v2       #outputStream:Ljava/io/FileOutputStream;
     const/16 v6, 0x1b4
 
@@ -2822,7 +2894,7 @@
 
     invoke-static {v5, v6, v7, v8}, Landroid/os/FileUtils;->setPermissions(Ljava/lang/String;III)I
 
-    .line 222
+    .line 230
     .end local v4           #parent:Ljava/io/File;
     :cond_46
     sget-object v6, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
@@ -2831,44 +2903,44 @@
 
     invoke-virtual {p1, v6, v7, v2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 223
+    .line 231
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->flush()V
 
-    .line 224
+    .line 232
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
     :try_end_53
     .catch Ljava/io/FileNotFoundException; {:try_start_28 .. :try_end_53} :catch_54
     .catch Ljava/io/IOException; {:try_start_28 .. :try_end_53} :catch_59
 
-    .line 230
+    .line 238
     .end local v1           #file:Ljava/io/File;
     .end local v2           #outputStream:Ljava/io/FileOutputStream;
     .end local v5           #pathName:Ljava/lang/String;
     :goto_53
     return-void
 
-    .line 225
+    .line 233
     :catch_54
     move-exception v0
 
-    .line 226
+    .line 234
     .local v0, e:Ljava/io/FileNotFoundException;
     invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
 
     goto :goto_53
 
-    .line 227
+    .line 235
     .end local v0           #e:Ljava/io/FileNotFoundException;
     :catch_59
     move-exception v0
 
-    .line 228
+    .line 236
     .local v0, e:Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_53
 
-    .line 205
+    .line 213
     .end local v0           #e:Ljava/io/IOException;
     .restart local v1       #file:Ljava/io/File;
     .restart local v2       #outputStream:Ljava/io/FileOutputStream;
@@ -3037,12 +3109,12 @@
 
     const/high16 v9, 0x4270
 
-    .line 666
+    .line 680
     invoke-static {p0}, Lmiui/content/res/IconCustomizer;->colorToRGB(I)[I
 
     move-result-object v0
 
-    .line 668
+    .line 682
     .local v0, RGB:[I
     aget v5, v0, v11
 
@@ -3060,7 +3132,7 @@
 
     move-result v3
 
-    .line 669
+    .line 683
     .local v3, min:I
     aget v5, v0, v11
 
@@ -3078,20 +3150,20 @@
 
     move-result v2
 
-    .line 671
+    .line 685
     .local v2, max:I
     sub-int v4, v2, v3
 
-    .line 672
+    .line 686
     .local v4, range:I
     if-nez v4, :cond_2e
 
-    .line 688
+    .line 702
     .end local p0
     :goto_2d
     return p0
 
-    .line 675
+    .line 689
     .restart local p0
     :cond_2e
     :goto_2e
@@ -3099,24 +3171,24 @@
 
     if-gez v5, :cond_34
 
-    .line 676
+    .line 690
     add-float/2addr p1, v8
 
     goto :goto_2e
 
-    .line 677
+    .line 691
     :cond_34
     :goto_34
     cmpl-float v5, p1, v8
 
     if-lez v5, :cond_3a
 
-    .line 678
+    .line 692
     sub-float/2addr p1, v8
 
     goto :goto_34
 
-    .line 680
+    .line 694
     :cond_3a
     const/high16 v5, 0x42f0
 
@@ -3130,7 +3202,7 @@
 
     double-to-int v1, v5
 
-    .line 681
+    .line 695
     .local v1, index:I
     mul-int/lit8 v5, v1, 0x78
 
@@ -3138,15 +3210,15 @@
 
     sub-float/2addr p1, v5
 
-    .line 682
+    .line 696
     add-int/lit8 v5, v1, 0x2
 
     rem-int/lit8 v1, v5, 0x3
 
-    .line 684
+    .line 698
     aput v3, v0, v1
 
-    .line 685
+    .line 699
     add-int/lit8 v5, v1, 0x2
 
     rem-int/lit8 v5, v5, 0x3
@@ -3169,7 +3241,7 @@
 
     aput v6, v0, v5
 
-    .line 686
+    .line 700
     add-int/lit8 v5, v1, 0x1
 
     rem-int/lit8 v5, v5, 0x3
@@ -3194,7 +3266,7 @@
 
     aput v6, v0, v5
 
-    .line 688
+    .line 702
     invoke-static {v0}, Lmiui/content/res/IconCustomizer;->RGBToColor([I)I
 
     move-result p0
@@ -3214,12 +3286,12 @@
 
     const/4 v7, 0x0
 
-    .line 629
+    .line 643
     invoke-static {p0}, Lmiui/content/res/IconCustomizer;->colorToRGB(I)[I
 
     move-result-object v0
 
-    .line 631
+    .line 645
     .local v0, RGB:[I
     aget v4, v0, v7
 
@@ -3235,7 +3307,7 @@
 
     move-result v3
 
-    .line 632
+    .line 646
     .local v3, min:I
     aget v4, v0, v7
 
@@ -3251,19 +3323,19 @@
 
     move-result v2
 
-    .line 633
+    .line 647
     .local v2, max:I
     if-eqz v2, :cond_27
 
     if-ne v2, v3, :cond_28
 
-    .line 641
+    .line 655
     .end local p0
     :cond_27
     :goto_27
     return p0
 
-    .line 636
+    .line 650
     .restart local p0
     :cond_28
     const/high16 v4, 0x3f80
@@ -3278,7 +3350,7 @@
 
     div-float v1, v4, v5
 
-    .line 637
+    .line 651
     .local v1, currentSaturation:F
     int-to-float v4, v2
 
@@ -3298,7 +3370,7 @@
 
     aput v4, v0, v7
 
-    .line 638
+    .line 652
     int-to-float v4, v2
 
     aget v5, v0, v8
@@ -3317,7 +3389,7 @@
 
     aput v4, v0, v8
 
-    .line 639
+    .line 653
     int-to-float v4, v2
 
     aget v5, v0, v9
@@ -3336,7 +3408,7 @@
 
     aput v4, v0, v9
 
-    .line 641
+    .line 655
     invoke-static {v0}, Lmiui/content/res/IconCustomizer;->RGBToColor([I)I
 
     move-result p0
@@ -3356,12 +3428,12 @@
 
     const/4 v6, 0x0
 
-    .line 603
+    .line 617
     invoke-static {p0}, Lmiui/content/res/IconCustomizer;->colorToRGB(I)[I
 
     move-result-object v0
 
-    .line 605
+    .line 619
     .local v0, RGB:[I
     aget v3, v0, v6
 
@@ -3377,16 +3449,16 @@
 
     move-result v2
 
-    .line 606
+    .line 620
     .local v2, max:I
     if-nez v2, :cond_18
 
-    .line 614
+    .line 628
     .end local p0
     :goto_17
     return p0
 
-    .line 609
+    .line 623
     .restart local p0
     :cond_18
     const/high16 v3, 0x3f80
@@ -3399,7 +3471,7 @@
 
     div-float v1, v3, v4
 
-    .line 610
+    .line 624
     .local v1, currentValue:F
     aget v3, v0, v6
 
@@ -3413,7 +3485,7 @@
 
     aput v3, v0, v6
 
-    .line 611
+    .line 625
     aget v3, v0, v7
 
     int-to-float v3, v3
@@ -3426,7 +3498,7 @@
 
     aput v3, v0, v7
 
-    .line 612
+    .line 626
     aget v3, v0, v8
 
     int-to-float v3, v3
@@ -3439,7 +3511,7 @@
 
     aput v3, v0, v8
 
-    .line 614
+    .line 628
     invoke-static {v0}, Lmiui/content/res/IconCustomizer;->RGBToColor([I)I
 
     move-result p0

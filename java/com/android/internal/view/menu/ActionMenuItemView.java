@@ -145,9 +145,13 @@ public class ActionMenuItemView extends TextView
         if(android.view.View.MeasureSpec.getMode(i) != 0) {
             int k = getMeasuredWidth();
             super.onMeasure(i, j);
-            int l = (getMeasuredWidth() - k) / 2;
-            super.setPadding(l + super.mPaddingLeft, super.mPaddingTop, l + super.mPaddingRight, super.mPaddingBottom);
-            super.onMeasure(i, j);
+            if(!hasText() && mIcon != null) {
+                super.setPadding((getMeasuredWidth() - mIcon.getIntrinsicWidth()) / 2, getPaddingTop(), getPaddingRight(), getPaddingBottom());
+            } else {
+                int l = (getMeasuredWidth() - k) / 2;
+                super.setPadding(l + super.mPaddingLeft, super.mPaddingTop, l + super.mPaddingRight, super.mPaddingBottom);
+                super.onMeasure(i, j);
+            }
         }
     }
 

@@ -56,7 +56,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "VolumePanel"
 
-.field private static final TIMEOUT_DELAY:I = 0xbb8
+.field private static final TIMEOUT_DELAY:I = 0x3e8
 
 .field public static final VIBRATE_DELAY:I = 0x12c
 
@@ -1117,7 +1117,7 @@
 
     move-result-object v0
 
-    const-wide/16 v1, 0xbb8
+    const-wide/16 v1, 0x3e8
 
     invoke-virtual {p0, v0, v1, v2}, Lmiui/view/VolumePanel;->sendMessageDelayed(Landroid/os/Message;J)Z
 

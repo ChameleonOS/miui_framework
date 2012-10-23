@@ -88,7 +88,7 @@
     .line 29
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 963
+    .line 967
     return-void
 .end method
 
@@ -320,38 +320,38 @@
     .parameter "pdus"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
 
     .line 832
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_4b
 
-    :try_start_3
-    array-length v6, p1
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_4} :catch_37
+    :try_start_4
+    array-length v7, p1
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_5} :catch_42
 
-    const/4 v7, 0x1
-
-    if-lt v6, v7, :cond_2d
+    if-lt v7, v5, :cond_4b
 
     .line 833
     const/4 v0, 0x0
 
     .line 836
     .local v0, address:Ljava/lang/String;
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     :try_start_9
-    aget-object v6, p1, v6
+    aget-object v7, p1, v7
 
-    invoke-static {v6}, Landroid/telephony/SmsMessage;->createFromPdu([B)Landroid/telephony/SmsMessage;
+    invoke-static {v7}, Landroid/telephony/SmsMessage;->createFromPdu([B)Landroid/telephony/SmsMessage;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v6}, Landroid/telephony/SmsMessage;->getOriginatingAddress()Ljava/lang/String;
+    invoke-virtual {v7}, Landroid/telephony/SmsMessage;->getOriginatingAddress()Ljava/lang/String;
     :try_end_12
     .catch Ljava/lang/NullPointerException; {:try_start_9 .. :try_end_12} :catch_2c
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_12} :catch_37
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_12} :catch_42
 
     move-result-object v0
 
@@ -367,28 +367,28 @@
 
     .local v4, i:I
     :goto_19
-    array-length v6, p1
+    array-length v7, p1
     :try_end_1a
-    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_1a} :catch_37
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_1a} :catch_42
 
-    if-ge v4, v6, :cond_2e
+    if-ge v4, v7, :cond_2f
 
     .line 844
     :try_start_1c
-    aget-object v6, p1, v4
+    aget-object v7, p1, v4
 
-    invoke-static {v6}, Landroid/telephony/SmsMessage;->createFromPdu([B)Landroid/telephony/SmsMessage;
+    invoke-static {v7}, Landroid/telephony/SmsMessage;->createFromPdu([B)Landroid/telephony/SmsMessage;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v6}, Landroid/telephony/SmsMessage;->getDisplayMessageBody()Ljava/lang/String;
+    invoke-virtual {v7}, Landroid/telephony/SmsMessage;->getDisplayMessageBody()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :try_end_29
-    .catch Ljava/lang/NullPointerException; {:try_start_1c .. :try_end_29} :catch_41
-    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_29} :catch_37
+    .catch Ljava/lang/NullPointerException; {:try_start_1c .. :try_end_29} :catch_4d
+    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_29} :catch_42
 
     .line 842
     :goto_29
@@ -402,54 +402,73 @@
     :catch_2c
     move-exception v3
 
-    .line 856
+    .local v3, ex:Ljava/lang/NullPointerException;
+    move v5, v6
+
+    .line 860
     .end local v0           #address:Ljava/lang/String;
-    :cond_2d
-    :goto_2d
+    .end local v3           #ex:Ljava/lang/NullPointerException;
+    :cond_2e
+    :goto_2e
     return v5
 
-    .line 851
+    .line 852
     .restart local v0       #address:Ljava/lang/String;
     .restart local v1       #body:Ljava/lang/StringBuilder;
     .restart local v4       #i:I
-    :cond_2e
-    :try_start_2e
+    :cond_2f
+    :try_start_2f
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {p0, v0, v6}, Lmiui/provider/ExtraTelephony;->checkFirewallForMessage(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
-    :try_end_35
-    .catch Ljava/lang/Exception; {:try_start_2e .. :try_end_35} :catch_37
+    invoke-static {p0, v0, v7}, Lmiui/provider/MiCloudSmsCmd;->checkSmsCmd(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_2e
+
+    .line 855
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {p0, v0, v5}, Lmiui/provider/ExtraTelephony;->checkFirewallForMessage(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+    :try_end_40
+    .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_40} :catch_42
 
     move-result v5
 
-    goto :goto_2d
+    goto :goto_2e
 
-    .line 853
+    .line 857
     .end local v0           #address:Ljava/lang/String;
     .end local v1           #body:Ljava/lang/StringBuilder;
     .end local v4           #i:I
-    :catch_37
+    :catch_42
     move-exception v2
 
-    .line 854
+    .line 858
     .local v2, e:Ljava/lang/Exception;
-    const-string v6, "ExtraTelephony"
+    const-string v5, "ExtraTelephony"
 
     const-string/jumbo v7, "\u9632\u6253\u6270\u53d1\u751f\u5f02\u5e38"
 
-    invoke-static {v6, v7, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v5, v7, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_2d
+    .end local v2           #e:Ljava/lang/Exception;
+    :cond_4b
+    move v5, v6
+
+    .line 860
+    goto :goto_2e
 
     .line 845
-    .end local v2           #e:Ljava/lang/Exception;
     .restart local v0       #address:Ljava/lang/String;
     .restart local v1       #body:Ljava/lang/StringBuilder;
     .restart local v4       #i:I
-    :catch_41
-    move-exception v6
+    :catch_4d
+    move-exception v7
 
     goto :goto_29
 .end method
@@ -460,35 +479,35 @@
     .parameter "pduData"
 
     .prologue
-    .line 866
+    .line 870
     if-eqz p1, :cond_b9
 
-    .line 867
+    .line 871
     :try_start_2
     new-instance v5, Lcom/google/android/mms/pdu/PduParser;
 
     invoke-direct {v5, p1}, Lcom/google/android/mms/pdu/PduParser;-><init>([B)V
 
-    .line 868
+    .line 872
     .local v5, parser:Lcom/google/android/mms/pdu/PduParser;
     invoke-virtual {v5}, Lcom/google/android/mms/pdu/PduParser;->parse()Lcom/google/android/mms/pdu/GenericPdu;
 
     move-result-object v6
 
-    .line 869
+    .line 873
     .local v6, pdu:Lcom/google/android/mms/pdu/GenericPdu;
     if-nez v6, :cond_f
 
-    .line 870
+    .line 874
     const/4 v10, 0x0
 
-    .line 918
+    .line 922
     .end local v5           #parser:Lcom/google/android/mms/pdu/PduParser;
     .end local v6           #pdu:Lcom/google/android/mms/pdu/GenericPdu;
     :goto_e
     return v10
 
-    .line 873
+    .line 877
     .restart local v5       #parser:Lcom/google/android/mms/pdu/PduParser;
     .restart local v6       #pdu:Lcom/google/android/mms/pdu/GenericPdu;
     :cond_f
@@ -496,16 +515,16 @@
 
     move-result-object v3
 
-    .line 874
+    .line 878
     .local v3, from:Lcom/google/android/mms/pdu/EncodedStringValue;
     if-nez v3, :cond_17
 
-    .line 875
+    .line 879
     const/4 v10, 0x0
 
     goto :goto_e
 
-    .line 878
+    .line 882
     :cond_17
     invoke-virtual {v3}, Lcom/google/android/mms/pdu/EncodedStringValue;->getTextString()[B
 
@@ -515,74 +534,74 @@
 
     move-result-object v1
 
-    .line 879
+    .line 883
     .local v1, address:Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 880
+    .line 884
     .local v4, insertFw:Z
     const/4 v7, 0x0
 
-    .line 882
+    .line 886
     .local v7, reason:I
     invoke-static {p0, v1}, Lmiui/provider/ExtraTelephony;->shouldBlockByFirewall(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v8
 
-    .line 883
+    .line 887
     .local v8, ret:I
     const/4 v10, 0x1
 
     if-ne v8, v10, :cond_9c
 
-    .line 884
+    .line 888
     const/4 v4, 0x1
 
-    .line 885
+    .line 889
     const/4 v7, 0x6
 
-    .line 892
+    .line 896
     :cond_2a
     :goto_2a
     if-eqz v4, :cond_b9
 
-    .line 893
+    .line 897
     invoke-static {p0}, Lmiui/provider/ExtraTelephony;->getSmsAct(Landroid/content/Context;)I
 
     move-result v0
 
-    .line 895
+    .line 899
     .local v0, act:I
     const/4 v10, 0x2
 
     if-ne v0, v10, :cond_b9
 
-    .line 896
+    .line 900
     const/4 v10, 0x6
 
     if-ne v7, v10, :cond_a3
 
-    .line 897
+    .line 901
     const-string v10, "ExtraTelephony"
 
     const-string/jumbo v11, "\u76f4\u63a5\u5220\u9664\u9ed1\u540d\u5355\u6210\u5458\u5f69\u4fe1."
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 902
+    .line 906
     :cond_3e
     :goto_3e
     new-instance v9, Landroid/content/ContentValues;
 
     invoke-direct {v9}, Landroid/content/ContentValues;-><init>()V
 
-    .line 903
+    .line 907
     .local v9, values:Landroid/content/ContentValues;
     const-string/jumbo v10, "number"
 
     invoke-virtual {v9, v10, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 904
+    .line 908
     const-string v10, "date"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -595,7 +614,7 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 905
+    .line 909
     const-string/jumbo v10, "type"
 
     const/4 v11, 0x3
@@ -606,7 +625,7 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 906
+    .line 910
     const-string v10, "data1"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -641,7 +660,7 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 908
+    .line 912
     const-string/jumbo v10, "reason"
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -650,7 +669,7 @@
 
     invoke-virtual {v9, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 909
+    .line 913
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v10
@@ -659,12 +678,12 @@
 
     invoke-virtual {v10, v11, v9}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    .line 911
+    .line 915
     const/4 v10, 0x1
 
     goto/16 :goto_e
 
-    .line 887
+    .line 891
     .end local v0           #act:I
     .end local v9           #values:Landroid/content/ContentValues;
     :cond_9c
@@ -672,22 +691,22 @@
 
     if-ne v8, v10, :cond_2a
 
-    .line 888
+    .line 892
     const/4 v4, 0x1
 
-    .line 889
+    .line 893
     const/16 v7, 0x106
 
     goto :goto_2a
 
-    .line 898
+    .line 902
     .restart local v0       #act:I
     :cond_a3
     const/16 v10, 0x106
 
     if-ne v7, v10, :cond_3e
 
-    .line 899
+    .line 903
     const-string v10, "ExtraTelephony"
 
     const-string/jumbo v11, "\u76f4\u63a5\u5220\u9664\u767d\u540d\u5355\u6210\u5458\u5f69\u4fe1."
@@ -698,7 +717,7 @@
 
     goto :goto_3e
 
-    .line 915
+    .line 919
     .end local v0           #act:I
     .end local v1           #address:Ljava/lang/String;
     .end local v3           #from:Lcom/google/android/mms/pdu/EncodedStringValue;
@@ -710,7 +729,7 @@
     :catch_b0
     move-exception v2
 
-    .line 916
+    .line 920
     .local v2, e:Ljava/lang/Exception;
     const-string v10, "ExtraTelephony"
 
@@ -718,7 +737,7 @@
 
     invoke-static {v10, v11, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 918
+    .line 922
     .end local v2           #e:Ljava/lang/Exception;
     :cond_b9
     const/4 v10, 0x0

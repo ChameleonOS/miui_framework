@@ -4,11 +4,15 @@
 
 
 # static fields
+.field public static final ALARM_BOOT_COMPLETED_FLAG:I = 0x1
+
 .field private static final DEBUG:Z = true
 
 .field private static final LOG_TAG:Ljava/lang/String; = "FirewallService"
 
 .field public static final SERVICE_NAME:Ljava/lang/String; = "miui.Firewall"
+
+.field public static final SIM_CARD_SYNC_COMPLETED_FLAG:I = 0x2
 
 .field private static sInstance:Lmiui/net/FirewallManager;
 
@@ -22,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 43
+    .line 53
     new-instance v0, Lmiui/net/FirewallManager;
 
     invoke-direct {v0}, Lmiui/net/FirewallManager;-><init>()V
@@ -36,13 +40,13 @@
     .registers 1
 
     .prologue
-    .line 48
+    .line 58
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 59
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 50
+    .line 60
     return-void
 .end method
 
@@ -57,15 +61,15 @@
     .parameter "id"
 
     .prologue
-    .line 254
+    .line 266
     if-eqz p0, :cond_3
 
-    .line 283
+    .line 295
     :cond_2
     :goto_2
     return-void
 
-    .line 256
+    .line 268
     :cond_3
     const/4 v2, 0x1
 
@@ -81,10 +85,10 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 261
+    .line 273
     const/4 v14, 0x0
 
-    .line 263
+    .line 275
     .local v14, info:Landroid/content/pm/ApplicationInfo;
     const/4 v2, 0x0
 
@@ -99,7 +103,7 @@
 
     move-result-object v14
 
-    .line 267
+    .line 279
     :goto_19
     if-eqz v14, :cond_2
 
@@ -113,7 +117,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 269
+    .line 281
     invoke-static {}, Lmiui/net/FirewallManager;->getInstance()Lmiui/net/FirewallManager;
 
     move-result-object v2
@@ -126,14 +130,14 @@
 
     if-nez v2, :cond_2
 
-    .line 271
+    .line 283
     new-instance v4, Landroid/content/Intent;
 
     const-string v2, "android.app.action.CONFIRM_ACCESS_CONTROL"
 
     invoke-direct {v4, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 272
+    .line 284
     .local v4, intent:Landroid/content/Intent;
     const-string v2, "android.intent.extra.shortcut.NAME"
 
@@ -141,7 +145,7 @@
 
     invoke-virtual {v4, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 275
+    .line 287
     :try_start_3e
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -175,18 +179,18 @@
 
     goto :goto_2
 
-    .line 279
+    .line 291
     :catch_57
     move-exception v2
 
     goto :goto_2
 
-    .line 264
+    .line 276
     .end local v4           #intent:Landroid/content/Intent;
     :catch_59
     move-exception v13
 
-    .line 265
+    .line 277
     .local v13, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v14, 0x0
 
@@ -198,21 +202,21 @@
     .parameter "data"
 
     .prologue
-    .line 234
+    .line 246
     invoke-static/range {p0 .. p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_8
 
-    .line 235
+    .line 247
     const/4 v1, 0x0
 
-    .line 249
+    .line 261
     :goto_7
     return-object v1
 
-    .line 238
+    .line 250
     :cond_8
     const-string v2, "\\s*,\\s*"
 
@@ -222,7 +226,7 @@
 
     move-result-object v19
 
-    .line 239
+    .line 251
     .local v19, a:[Ljava/lang/String;
     move-object/from16 v0, v19
 
@@ -232,12 +236,12 @@
 
     if-ge v2, v3, :cond_19
 
-    .line 240
+    .line 252
     const/4 v1, 0x0
 
     goto :goto_7
 
-    .line 243
+    .line 255
     :cond_19
     new-instance v1, Lcom/android/internal/telephony/ApnSetting;
 
@@ -333,7 +337,7 @@
 
     invoke-direct/range {v1 .. v18}, Lcom/android/internal/telephony/ApnSetting;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V
 
-    .line 249
+    .line 261
     .local v1, apn:Lcom/android/internal/telephony/ApnSetting;
     goto :goto_7
 .end method
@@ -345,13 +349,13 @@
     .prologue
     const/16 v3, 0x2c
 
-    .line 203
+    .line 215
     if-nez p0, :cond_6
 
-    .line 204
+    .line 216
     const/4 v0, 0x0
 
-    .line 207
+    .line 219
     :goto_5
     return-object v0
 
@@ -543,17 +547,17 @@
     .registers 3
 
     .prologue
-    .line 56
+    .line 66
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     if-nez v0, :cond_15
 
-    .line 57
+    .line 67
     const-class v1, Lmiui/net/FirewallManager;
 
     monitor-enter v1
 
-    .line 58
+    .line 68
     :try_start_7
     const-string/jumbo v0, "miui.Firewall"
 
@@ -567,14 +571,14 @@
 
     iput-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
-    .line 59
+    .line 69
     monitor-exit v1
 
-    .line 61
+    .line 71
     :cond_15
     return-void
 
-    .line 59
+    .line 69
     :catchall_16
     move-exception v0
 
@@ -589,7 +593,7 @@
     .registers 1
 
     .prologue
-    .line 69
+    .line 79
     sget-object v0, Lmiui/net/FirewallManager;->sInstance:Lmiui/net/FirewallManager;
 
     return-object v0
@@ -605,10 +609,10 @@
 
     const/4 v2, 0x0
 
-    .line 286
+    .line 298
     const/4 v1, 0x0
 
-    .line 288
+    .line 300
     .local v1, info:Landroid/content/pm/ApplicationInfo;
     :try_start_4
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -623,7 +627,7 @@
 
     move-result-object v1
 
-    .line 292
+    .line 304
     if-eqz v1, :cond_15
 
     iget v3, v1, Landroid/content/pm/ApplicationInfo;->flags:I
@@ -638,11 +642,11 @@
     :goto_15
     return v2
 
-    .line 289
+    .line 301
     :catch_16
     move-exception v0
 
-    .line 290
+    .line 302
     .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     goto :goto_15
 .end method
@@ -654,32 +658,67 @@
     .parameter "packageName"
 
     .prologue
-    .line 135
+    .line 145
     :try_start_0
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 136
+    .line 146
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     if-eqz v0, :cond_c
 
-    .line 137
+    .line 147
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     invoke-interface {v0, p1}, Lmiui/net/IFirewall;->addAccessControlPass(Ljava/lang/String;)V
     :try_end_c
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_c} :catch_d
 
-    .line 141
+    .line 151
     :cond_c
     :goto_c
     return-void
 
-    .line 139
+    .line 149
     :catch_d
     move-exception v0
 
     goto :goto_c
+.end method
+
+.method public addOneShotFlag(I)V
+    .registers 3
+    .parameter "flag"
+
+    .prologue
+    .line 158
+    :try_start_0
+    invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
+
+    .line 159
+    iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
+
+    if-eqz v0, :cond_e
+
+    if-lez p1, :cond_e
+
+    .line 160
+    iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
+
+    invoke-interface {v0, p1}, Lmiui/net/IFirewall;->addOneShotFlag(I)V
+    :try_end_e
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_e} :catch_f
+
+    .line 164
+    :cond_e
+    :goto_e
+    return-void
+
+    .line 162
+    :catch_f
+    move-exception v0
+
+    goto :goto_e
 .end method
 
 .method public checkAccessControlPass(Ljava/lang/String;)Z
@@ -687,20 +726,20 @@
     .parameter "packageName"
 
     .prologue
-    .line 184
+    .line 196
     const/4 v0, 0x0
 
-    .line 186
+    .line 198
     .local v0, retval:Z
     :try_start_1
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 187
+    .line 199
     iget-object v1, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     if-eqz v1, :cond_e
 
-    .line 188
+    .line 200
     iget-object v1, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     invoke-interface {v1, p1}, Lmiui/net/IFirewall;->checkAccessControlPass(Ljava/lang/String;)Z
@@ -709,53 +748,56 @@
 
     move-result v0
 
-    .line 192
+    .line 204
     :cond_e
     :goto_e
     return v0
 
-    .line 190
+    .line 202
     :catch_f
     move-exception v1
 
     goto :goto_e
 .end method
 
-.method public getAlarmBootCompleted()Z
-    .registers 2
+.method public getOneShotFlag(I)Z
+    .registers 3
+    .parameter "flag"
 
     .prologue
-    .line 159
+    .line 171
     :try_start_0
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 160
+    .line 172
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_11
 
-    .line 161
+    if-lez p1, :cond_11
+
+    .line 173
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
-    invoke-interface {v0}, Lmiui/net/IFirewall;->getAlarmBootCompleted()Z
-    :try_end_c
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_c} :catch_e
+    invoke-interface {v0, p1}, Lmiui/net/IFirewall;->getOneShotFlag(I)Z
+    :try_end_e
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_e} :catch_10
 
     move-result v0
 
-    .line 165
-    :goto_d
+    .line 177
+    :goto_f
     return v0
 
-    .line 163
-    :catch_e
+    .line 175
+    :catch_10
     move-exception v0
 
-    .line 165
-    :cond_f
+    .line 177
+    :cond_11
     const/4 v0, 0x0
 
-    goto :goto_d
+    goto :goto_f
 .end method
 
 .method public onDataConnected(ILjava/lang/String;Ljava/lang/String;)V
@@ -765,7 +807,7 @@
     .parameter "ifname"
 
     .prologue
-    .line 105
+    .line 115
     :try_start_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -773,27 +815,27 @@
 
     if-nez v0, :cond_12
 
-    .line 106
+    .line 116
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 107
+    .line 117
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     if-eqz v0, :cond_12
 
-    .line 108
+    .line 118
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     invoke-interface {v0, p1, p2, p3}, Lmiui/net/IFirewall;->onDataConnected(ILjava/lang/String;Ljava/lang/String;)V
     :try_end_12
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_12} :catch_13
 
-    .line 113
+    .line 123
     :cond_12
     :goto_12
     return-void
 
-    .line 111
+    .line 121
     :catch_13
     move-exception v0
 
@@ -806,7 +848,7 @@
     .parameter "key"
 
     .prologue
-    .line 120
+    .line 130
     :try_start_0
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -814,27 +856,27 @@
 
     if-nez v0, :cond_12
 
-    .line 121
+    .line 131
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 122
+    .line 132
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     if-eqz v0, :cond_12
 
-    .line 123
+    .line 133
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     invoke-interface {v0, p1, p2}, Lmiui/net/IFirewall;->onDataDisconnected(ILjava/lang/String;)V
     :try_end_12
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_12} :catch_13
 
-    .line 128
+    .line 138
     :cond_12
     :goto_12
     return-void
 
-    .line 126
+    .line 136
     :catch_13
     move-exception v0
 
@@ -848,28 +890,28 @@
     .parameter "networkType"
 
     .prologue
-    .line 78
+    .line 88
     :try_start_0
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 79
+    .line 89
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     if-eqz v0, :cond_c
 
-    .line 80
+    .line 90
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     invoke-interface {v0, p1, p2, p3}, Lmiui/net/IFirewall;->onStartUsingNetworkFeature(III)V
     :try_end_c
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_c} :catch_d
 
-    .line 84
+    .line 94
     :cond_c
     :goto_c
     return-void
 
-    .line 82
+    .line 92
     :catch_d
     move-exception v0
 
@@ -883,28 +925,28 @@
     .parameter "networkType"
 
     .prologue
-    .line 92
+    .line 102
     :try_start_0
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 93
+    .line 103
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     if-eqz v0, :cond_c
 
-    .line 94
+    .line 104
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     invoke-interface {v0, p1, p2, p3}, Lmiui/net/IFirewall;->onStopUsingNetworkFeature(III)V
     :try_end_c
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_c} :catch_d
 
-    .line 98
+    .line 108
     :cond_c
     :goto_c
     return-void
 
-    .line 96
+    .line 106
     :catch_d
     move-exception v0
 
@@ -916,56 +958,30 @@
     .parameter "packageName"
 
     .prologue
-    .line 172
+    .line 184
     :try_start_0
     invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
 
-    .line 173
+    .line 185
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     if-eqz v0, :cond_c
 
-    .line 174
+    .line 186
     iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
 
     invoke-interface {v0, p1}, Lmiui/net/IFirewall;->removeAccessControlPass(Ljava/lang/String;)V
     :try_end_c
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_c} :catch_d
 
-    .line 178
+    .line 190
     :cond_c
     :goto_c
     return-void
 
-    .line 176
+    .line 188
     :catch_d
     move-exception v0
 
     goto :goto_c
-.end method
-
-.method public setAlarmBootCompleted()V
-    .registers 2
-
-    .prologue
-    .line 148
-    :try_start_0
-    invoke-direct {p0}, Lmiui/net/FirewallManager;->ensureService()V
-
-    .line 149
-    iget-object v0, p0, Lmiui/net/FirewallManager;->mService:Lmiui/net/IFirewall;
-
-    invoke-interface {v0}, Lmiui/net/IFirewall;->setAlarmBootCompleted()V
-    :try_end_8
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_8} :catch_9
-
-    .line 152
-    :goto_8
-    return-void
-
-    .line 150
-    :catch_9
-    move-exception v0
-
-    goto :goto_8
 .end method

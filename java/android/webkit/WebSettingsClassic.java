@@ -218,6 +218,7 @@ _L6:
         mSyncPending = false;
         mLayoutAlgorithm = WebSettings.LayoutAlgorithm.NARROW_COLUMNS;
         mTextSize = 100;
+        mNightReadMode = false;
         mStandardFontFamily = "sans-serif";
         mFixedFontFamily = "monospace";
         mSansSerifFontFamily = "sans-serif";
@@ -907,6 +908,22 @@ _L3:
 
     boolean getNeedInitialFocus() {
         return mNeedInitialFocus;
+    }
+
+    /**
+     * @deprecated Method getNightReadModeEnabled is deprecated
+     */
+
+    public boolean getNightReadModeEnabled() {
+        this;
+        JVM INSTR monitorenter ;
+        boolean flag = mNightReadMode;
+        this;
+        JVM INSTR monitorexit ;
+        return flag;
+        Exception exception;
+        exception;
+        throw exception;
     }
 
     /**
@@ -1887,6 +1904,23 @@ _L1:
     }
 
     /**
+     * @deprecated Method setNightReadModeEnabled is deprecated
+     */
+
+    public void setNightReadModeEnabled(boolean flag) {
+        this;
+        JVM INSTR monitorenter ;
+        mNightReadMode = flag;
+        postSync();
+        this;
+        JVM INSTR monitorexit ;
+        return;
+        Exception exception;
+        exception;
+        throw exception;
+    }
+
+    /**
      * @deprecated Method setPageCacheCapacity is deprecated
      */
 
@@ -2427,6 +2461,7 @@ _L1:
     private int mMinimumLogicalFontSize;
     private boolean mNavDump;
     private boolean mNeedInitialFocus;
+    private boolean mNightReadMode;
     private int mOverrideCacheMode;
     private int mPageCacheCapacity;
     private boolean mPasswordEchoEnabled;

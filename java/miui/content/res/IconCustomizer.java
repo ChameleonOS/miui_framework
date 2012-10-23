@@ -286,18 +286,24 @@ _L3:
         return scaleBitmap(bitmap, i, j);
     }
 
-    public static BitmapDrawable getCustomizedIconDrawable(String s) {
-        Bitmap bitmap = getThemeIcon(s);
-        if(bitmap == null) {
-            String s2 = (String)sIconMapping.get(s);
-            if(s2 != null)
-                bitmap = getThemeIcon(s2);
+    public static BitmapDrawable getCustomizedIconDrawable(String s, String s1) {
+        String s2 = getFileName(s, s1);
+        Bitmap bitmap = getThemeIcon(s2);
+        if(bitmap == null && s1 != null && !s1.startsWith(s)) {
+            Object aobj[] = new Object[1];
+            aobj[0] = s1;
+            bitmap = getThemeIcon(String.format("%s.png", aobj));
         }
         if(bitmap == null) {
-            String s1 = (new StringBuilder()).append("/data/system/customized_icons/").append(s).toString();
-            File file = new File(s1);
+            String s4 = (String)sIconMapping.get(s2);
+            if(s4 != null)
+                bitmap = getThemeIcon(s4);
+        }
+        if(bitmap == null) {
+            String s3 = (new StringBuilder()).append("/data/system/customized_icons/").append(s2).toString();
+            File file = new File(s3);
             if(file.exists()) {
-                bitmap = BitmapFactory.decodeFile(s1);
+                bitmap = BitmapFactory.decodeFile(s3);
                 if(bitmap == null)
                     file.delete();
             }
@@ -306,11 +312,23 @@ _L3:
     }
 
     public static String getFileName(String s, String s1) {
-        Object aobj[] = new Object[1];
-        if(s1 == null)
-            s1 = s;
-        aobj[0] = s1;
-        return String.format("%s.png", aobj);
+        String s2;
+        if(s1 == null) {
+            Object aobj2[] = new Object[1];
+            aobj2[0] = s;
+            s2 = String.format("%s.png", aobj2);
+        } else
+        if(s1.startsWith(s)) {
+            Object aobj1[] = new Object[1];
+            aobj1[0] = s1;
+            s2 = String.format("%s.png", aobj1);
+        } else {
+            Object aobj[] = new Object[2];
+            aobj[0] = s1;
+            aobj[1] = s;
+            s2 = String.format("%s@%s.png", aobj);
+        }
+        return s2;
     }
 
     private static float getHue(int i) {

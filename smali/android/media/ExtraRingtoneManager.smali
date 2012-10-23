@@ -133,31 +133,31 @@
     .parameter "key"
 
     .prologue
-    .line 174
+    .line 176
     sget-object v2, Landroid/media/ExtraRingtoneManager;->ACTUAL_DEFAULT_RINGTONE_BASE_URI:Landroid/net/Uri;
 
     invoke-static {v2, p1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 175
+    .line 177
     .local v1, uri:Landroid/net/Uri;
     new-instance v0, Landroid/media/ExtraRingtoneManager$RingtoneItem;
 
     invoke-direct {v0, p0, v1, p2, p3}, Landroid/media/ExtraRingtoneManager$RingtoneItem;-><init>(ILandroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 176
+    .line 178
     .local v0, ringtoneItem:Landroid/media/ExtraRingtoneManager$RingtoneItem;
     sget-object v2, Landroid/media/ExtraRingtoneManager;->sRingtoneList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 177
+    .line 179
     return-void
 .end method
 
 .method public static copyRingtone(Ljava/lang/String;I)V
-    .registers 5
+    .registers 6
     .parameter "path"
     .parameter "type"
 
@@ -169,7 +169,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 132
+    .line 134
     :goto_6
     return-void
 
@@ -200,6 +200,13 @@
 
     .line 130
     :cond_1e
+    const-string v2, "755"
+
+    const-string/jumbo v3, "root"
+
+    invoke-static {v0, v2, v3}, Lmiui/util/CommandLineUtils;->chmod(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+
+    .line 131
     invoke-static {p1}, Landroid/media/ExtraRingtoneManager;->getDefaultRingtoneUri(I)Landroid/net/Uri;
 
     move-result-object v2
@@ -208,11 +215,18 @@
 
     move-result-object v1
 
-    .line 131
+    .line 132
     .local v1, ringtonePath:Ljava/lang/String;
     const-string/jumbo v2, "root"
 
     invoke-static {p0, v1, v2}, Lmiui/util/CommandLineUtils;->cp(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+
+    .line 133
+    const-string v2, "644"
+
+    const-string/jumbo v3, "root"
+
+    invoke-static {v1, v2, v3}, Lmiui/util/CommandLineUtils;->chmod(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
     goto :goto_6
 .end method
@@ -273,21 +287,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 167
+    .line 169
     invoke-static {p1}, Landroid/media/ExtraRingtoneManager;->getSettingForType(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 168
+    .line 170
     .local v0, setting:Ljava/lang/String;
     if-nez v0, :cond_8
 
-    .line 170
+    .line 172
     :cond_7
     :goto_7
     return-object v2
 
-    .line 169
+    .line 171
     :cond_8
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -297,7 +311,7 @@
 
     move-result-object v1
 
-    .line 170
+    .line 172
     .local v1, uriString:Ljava/lang/String;
     if-eqz v1, :cond_7
 
@@ -313,7 +327,7 @@
     .parameter "type"
 
     .prologue
-    .line 158
+    .line 160
     sget-object v2, Landroid/media/ExtraRingtoneManager;->sRingtoneList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -334,7 +348,7 @@
 
     check-cast v1, Landroid/media/ExtraRingtoneManager$RingtoneItem;
 
-    .line 159
+    .line 161
     .local v1, ringtoneItem:Landroid/media/ExtraRingtoneManager$RingtoneItem;
     iget v2, v1, Landroid/media/ExtraRingtoneManager$RingtoneItem;->mRingtoneType:I
 
@@ -342,10 +356,10 @@
 
     if-eqz v2, :cond_6
 
-    .line 160
+    .line 162
     iget-object v2, v1, Landroid/media/ExtraRingtoneManager$RingtoneItem;->mSettingType:Ljava/lang/String;
 
-    .line 163
+    .line 165
     .end local v1           #ringtoneItem:Landroid/media/ExtraRingtoneManager$RingtoneItem;
     :goto_19
     return-object v2
@@ -362,19 +376,19 @@
     .parameter "ringtoneType"
 
     .prologue
-    .line 139
+    .line 141
     invoke-static {p0}, Landroid/media/ExtraRingtoneManager;->isExtraCases(Landroid/net/Uri;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1a
 
-    .line 140
+    .line 142
     invoke-static {p1}, Landroid/media/ExtraRingtoneManager;->getDefaultRingtoneUri(I)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 141
+    .line 143
     .local v0, actualSoundUri:Landroid/net/Uri;
     new-instance v1, Ljava/io/File;
 
@@ -390,10 +404,10 @@
 
     if-eqz v1, :cond_1a
 
-    .line 142
+    .line 144
     move-object p0, v0
 
-    .line 145
+    .line 147
     .end local v0           #actualSoundUri:Landroid/net/Uri;
     :cond_1a
     return-object p0
@@ -404,7 +418,7 @@
     .parameter "soundUri"
 
     .prologue
-    .line 135
+    .line 137
     const-string v0, "file"
 
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -575,20 +589,20 @@
     .parameter "ringtoneUri"
 
     .prologue
-    .line 149
+    .line 151
     invoke-static {p1}, Landroid/media/ExtraRingtoneManager;->getSettingForType(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 150
+    .line 152
     .local v0, setting:Ljava/lang/String;
     if-nez v0, :cond_7
 
-    .line 155
+    .line 157
     :goto_6
     return-void
 
-    .line 153
+    .line 155
     :cond_7
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 

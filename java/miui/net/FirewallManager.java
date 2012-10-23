@@ -105,6 +105,18 @@ _L2:
 _L1:
     }
 
+    public void addOneShotFlag(int i) {
+        ensureService();
+        if(mService != null && i > 0)
+            mService.addOneShotFlag(i);
+_L2:
+        return;
+        RemoteException remoteexception;
+        remoteexception;
+        if(true) goto _L2; else goto _L1
+_L1:
+    }
+
     public boolean checkAccessControlPass(String s) {
         boolean flag = false;
         boolean flag1;
@@ -121,11 +133,11 @@ _L2:
 _L1:
     }
 
-    public boolean getAlarmBootCompleted() {
+    public boolean getOneShotFlag(int i) {
         ensureService();
-        if(mService == null) goto _L2; else goto _L1
+        if(mService == null || i <= 0) goto _L2; else goto _L1
 _L1:
-        boolean flag1 = mService.getAlarmBootCompleted();
+        boolean flag1 = mService.getOneShotFlag(i);
         boolean flag = flag1;
 _L4:
         return flag;
@@ -201,20 +213,11 @@ _L2:
 _L1:
     }
 
-    public void setAlarmBootCompleted() {
-        ensureService();
-        mService.setAlarmBootCompleted();
-_L2:
-        return;
-        RemoteException remoteexception;
-        remoteexception;
-        if(true) goto _L2; else goto _L1
-_L1:
-    }
-
+    public static final int ALARM_BOOT_COMPLETED_FLAG = 1;
     private static final boolean DEBUG = true;
     private static final String LOG_TAG = "FirewallService";
     public static final String SERVICE_NAME = "miui.Firewall";
+    public static final int SIM_CARD_SYNC_COMPLETED_FLAG = 2;
     private static FirewallManager sInstance = new FirewallManager();
     private IFirewall mService;
 

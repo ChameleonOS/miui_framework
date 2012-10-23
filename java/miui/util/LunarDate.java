@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.text.TextUtils;
 import android.text.format.Time;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class LunarDate {
 
@@ -84,17 +85,20 @@ public class LunarDate {
 
     private static final int getDayOffset(int i, int j, int k) {
         int l = 0;
-        Calendar calendar = Calendar.getInstance();
-        calendar.clear();
-        for(int i1 = 1900; i1 < i; i1++) {
-            calendar.set(i1, 11, 31);
-            l += calendar.get(6);
+        GregorianCalendar gregoriancalendar = (GregorianCalendar)Calendar.getInstance();
+        gregoriancalendar.clear();
+        int i1 = 1900;
+        while(i1 < i)  {
+            if(gregoriancalendar.isLeapYear(i1))
+                l += 366;
+            else
+                l += 365;
+            i1++;
         }
-
-        calendar.set(i, j, k);
-        int j1 = l + calendar.get(6);
-        calendar.set(1900, 0, 31);
-        return j1 - calendar.get(6);
+        gregoriancalendar.set(i, j, k);
+        int j1 = l + gregoriancalendar.get(6);
+        gregoriancalendar.set(1900, 0, 31);
+        return j1 - gregoriancalendar.get(6);
     }
 
     public static final String getDayString(Resources resources, int i) {

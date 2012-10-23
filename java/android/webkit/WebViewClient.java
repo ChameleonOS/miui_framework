@@ -38,6 +38,9 @@ public class WebViewClient {
     public void onProceededAfterSslError(WebView webview, SslError sslerror) {
     }
 
+    public void onReadModeDataReady(String s, String s1, String s2, WebView webview) {
+    }
+
     public void onReceivedClientCertRequest(WebView webview, ClientCertRequestHandler clientcertrequesthandler, String s) {
         clientcertrequesthandler.cancel();
     }

@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final activating:I = 0x60c01de
+.field public static final activating:I = 0x60c01dd
 
 .field public static final all_resources:I = 0x60c0027
 
-.field public static final android_byteShort:I = 0x60c01df
+.field public static final android_byteShort:I = 0x60c01de
 
 .field public static final android_common_last_name_prefixes:I = 0x60c019e
 
@@ -29,7 +29,7 @@
 
 .field public static final android_common_name_suffixes:I = 0x60c019d
 
-.field public static final android_config_defaultDreamComponent:I = 0x60c01db
+.field public static final android_config_defaultDreamComponent:I = 0x60c01e6
 
 .field public static final android_dial_number_using:I = 0x60c01a0
 
@@ -39,7 +39,7 @@
 
 .field public static final android_fast_scroll_alphabet:I = 0x60c0196
 
-.field public static final android_fileSizeSuffix:I = 0x60c01e2
+.field public static final android_fileSizeSuffix:I = 0x60c01e1
 
 .field public static final android_find_on_page:I = 0x60c01ae
 
@@ -101,7 +101,7 @@
 
 .field public static final android_megabyteShort:I = 0x60c017c
 
-.field public static final android_petabyteShort:I = 0x60c01e1
+.field public static final android_petabyteShort:I = 0x60c01e0
 
 .field public static final android_phoneTypeMms:I = 0x60c016d
 
@@ -129,7 +129,7 @@
 
 .field public static final android_ssl_certificate_is_valid:I = 0x60c01ad
 
-.field public static final android_terabyteShort:I = 0x60c01e0
+.field public static final android_terabyteShort:I = 0x60c01df
 
 .field public static final android_today:I = 0x60c01d1
 
@@ -667,6 +667,8 @@
 
 .field public static final every_day:I = 0x60c01af
 
+.field public static final find_device_sim_change_instructions:I = 0x60c01e5
+
 .field public static final firewall_setting:I = 0x60c016a
 
 .field public static final first_back_long_press_message:I = 0x60c016f
@@ -819,7 +821,7 @@
 
 .field public static final new_years_day:I = 0x60c005f
 
-.field public static final no_sim:I = 0x60c01dd
+.field public static final no_sim:I = 0x60c01dc
 
 .field public static final online_hottest:I = 0x60c001c
 
@@ -844,6 +846,12 @@
 .field public static final perm_get_user_info_dspt:I = 0x60c01d3
 
 .field public static final perm_get_user_info_lab:I = 0x60c01d2
+
+.field public static final perm_tigger_toggle_dspt:I = 0x60c01e3
+
+.field public static final perm_tigger_toggle_lab:I = 0x60c01e2
+
+.field public static final perm_use_find_device:I = 0x60c01e4
 
 .field public static final private_num:I = 0x60c003d
 
@@ -937,7 +945,7 @@
 
 .field public static final summer_solstice:I = 0x60c0077
 
-.field public static final sync_one_time_sync:I = 0x60c01dc
+.field public static final sync_one_time_sync:I = 0x60c01db
 
 .field public static final teachers_day:I = 0x60c0069
 

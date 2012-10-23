@@ -34,7 +34,7 @@
     .registers 1
 
     .prologue
-    .line 271
+    .line 277
     const-string v0, "content://notes/call_note"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -50,7 +50,7 @@
     .registers 1
 
     .prologue
-    .line 254
+    .line 260
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

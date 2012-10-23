@@ -23,6 +23,14 @@
     .end annotation
 .end method
 
+.method public abstract addOneShotFlag(I)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract checkAccessControlPass(Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -31,7 +39,7 @@
     .end annotation
 .end method
 
-.method public abstract getAlarmBootCompleted()Z
+.method public abstract getOneShotFlag(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -72,14 +80,6 @@
 .end method
 
 .method public abstract removeAccessControlPass(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setAlarmBootCompleted()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

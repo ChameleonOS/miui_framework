@@ -255,138 +255,78 @@ _L1:
                     if(mWebViewClassic == null || mNativeClass == 0 || mDestroying && message.what != 200) goto _L5; else goto _L4
 _L4:
                     message.what;
-                    JVM INSTR tableswitch 96 225: default 708
-                //                               96 711
-                //                               97 708
-                //                               98 708
-                //                               99 887
-                //                               100 988
-                //                               101 1238
-                //                               102 1296
-                //                               103 1313
-                //                               104 1338
-                //                               105 1380
-                //                               106 1521
-                //                               107 1400
-                //                               108 1599
-                //                               109 708
-                //                               110 708
-                //                               111 1816
-                //                               112 1852
-                //                               113 2458
-                //                               114 1884
-                //                               115 1944
-                //                               116 1469
-                //                               117 708
-                //                               118 708
-                //                               119 1706
-                //                               120 2363
-                //                               121 708
-                //                               122 2412
-                //                               123 2570
-                //                               124 2646
-                //                               125 2974
-                //                               126 2673
-                //                               127 708
-                //                               128 2034
-                //                               129 708
-                //                               130 734
-                //                               131 708
-                //                               132 1026
-                //                               133 708
-                //                               134 2961
-                //                               135 2247
-                //                               136 708
-                //                               137 2278
-                //                               138 2136
-                //                               139 1067
-                //                               140 708
-                //                               141 708
-                //                               142 2086
-                //                               143 1626
-                //                               144 1649
-                //                               145 1672
-                //                               146 708
-                //                               147 2853
-                //                               148 708
-                //                               149 2171
-                //                               150 2057
-                //                               151 708
-                //                               152 708
-                //                               153 708
-                //                               154 708
-                //                               155 708
-                //                               156 708
-                //                               157 708
-                //                               158 708
-                //                               159 708
-                //                               160 2201
-                //                               161 2224
-                //                               162 708
-                //                               163 708
-                //                               164 708
-                //                               165 708
-                //                               166 708
-                //                               167 708
-                //                               168 708
-                //                               169 708
-                //                               170 2700
-                //                               171 2750
-                //                               172 708
-                //                               173 708
-                //                               174 2800
-                //                               175 2830
-                //                               176 708
-                //                               177 708
-                //                               178 708
-                //                               179 708
-                //                               180 2914
-                //                               181 2987
-                //                               182 3020
-                //                               183 1755
-                //                               184 3093
-                //                               185 708
-                //                               186 708
-                //                               187 708
-                //                               188 708
-                //                               189 708
-                //                               190 2489
-                //                               191 3126
-                //                               192 3139
-                //                               193 708
-                //                               194 3189
-                //                               195 3047
-                //                               196 3070
-                //                               197 708
-                //                               198 3223
-                //                               199 708
-                //                               200 747
-                //                               201 708
-                //                               202 708
-                //                               203 708
-                //                               204 708
-                //                               205 708
-                //                               206 708
-                //                               207 708
-                //                               208 708
-                //                               209 708
-                //                               210 3316
-                //                               211 3265
-                //                               212 3398
-                //                               213 3428
-                //                               214 3507
-                //                               215 3595
-                //                               216 708
-                //                               217 708
-                //                               218 708
-                //                               219 708
-                //                               220 708
-                //                               221 3618
-                //                               222 3766
-                //                               223 1363
-                //                               224 3870
-                //                               225 3897;
-                       goto _L6 _L7 _L6 _L6 _L8 _L9 _L10 _L11 _L12 _L13 _L14 _L15 _L16 _L17 _L6 _L6 _L18 _L19 _L20 _L21 _L22 _L23 _L6 _L6 _L24 _L25 _L6 _L26 _L27 _L28 _L29 _L30 _L6 _L31 _L6 _L32 _L6 _L33 _L6 _L34 _L35 _L6 _L36 _L37 _L38 _L6 _L6 _L39 _L40 _L41 _L42 _L6 _L43 _L6 _L44 _L45 _L6 _L6 _L6 _L6 _L6 _L6 _L6 _L6 _L6 _L46 _L47 _L6 _L6 _L6 _L6 _L6 _L6 _L6 _L6 _L48 _L49 _L6 _L6 _L50 _L51 _L6 _L6 _L6 _L6 _L52 _L53 _L54 _L55 _L56 _L6 _L6 _L6 _L6 _L6 _L57 _L58 _L59 _L6 _L60 _L61 _L62 _L6 _L63 _L6 _L64 _L6 _L6 _L6 _L6 _L6 _L6 _L6 _L6 _L6 _L65 _L66 _L67 _L68 _L69 _L70 _L6 _L6 _L6 _L6 _L6 _L71 _L72 _L73 _L74 _L75
+                    JVM INSTR lookupswitch 70: default 744
+                //                               96: 747
+                //                               99: 923
+                //                               100: 1024
+                //                               101: 1274
+                //                               102: 1332
+                //                               103: 1349
+                //                               104: 1374
+                //                               105: 1416
+                //                               106: 1557
+                //                               107: 1436
+                //                               108: 1635
+                //                               111: 1852
+                //                               112: 1888
+                //                               113: 2494
+                //                               114: 1920
+                //                               115: 1980
+                //                               116: 1505
+                //                               119: 1742
+                //                               120: 2399
+                //                               122: 2448
+                //                               123: 2606
+                //                               124: 2682
+                //                               125: 3189
+                //                               126: 2709
+                //                               128: 2070
+                //                               130: 770
+                //                               132: 1062
+                //                               134: 3176
+                //                               135: 2283
+                //                               137: 2314
+                //                               138: 2172
+                //                               139: 1103
+                //                               142: 2122
+                //                               143: 1662
+                //                               144: 1685
+                //                               145: 1708
+                //                               147: 3068
+                //                               149: 2207
+                //                               150: 2093
+                //                               160: 2237
+                //                               161: 2260
+                //                               170: 2915
+                //                               171: 2965
+                //                               174: 3015
+                //                               175: 3045
+                //                               180: 3129
+                //                               181: 3202
+                //                               182: 3235
+                //                               183: 1791
+                //                               184: 3308
+                //                               190: 2525
+                //                               191: 3341
+                //                               192: 3354
+                //                               194: 3404
+                //                               195: 3262
+                //                               196: 3285
+                //                               198: 3438
+                //                               200: 783
+                //                               210: 3531
+                //                               211: 3480
+                //                               212: 3613
+                //                               213: 3643
+                //                               214: 3752
+                //                               215: 3840
+                //                               221: 3863
+                //                               222: 4011
+                //                               223: 1399
+                //                               224: 4115
+                //                               225: 4142
+                //                               5010: 2736;
+                       goto _L6 _L7 _L8 _L9 _L10 _L11 _L12 _L13 _L14 _L15 _L16 _L17 _L18 _L19 _L20 _L21 _L22 _L23 _L24 _L25 _L26 _L27 _L28 _L29 _L30 _L31 _L32 _L33 _L34 _L35 _L36 _L37 _L38 _L39 _L40 _L41 _L42 _L43 _L44 _L45 _L46 _L47 _L48 _L49 _L50 _L51 _L52 _L53 _L54 _L55 _L56 _L57 _L58 _L59 _L60 _L61 _L62 _L63 _L64 _L65 _L66 _L67 _L68 _L69 _L70 _L71 _L72 _L73 _L74 _L75 _L76
 _L6:
                     break; /* Loop/switch isn't completed */
 _L7:
@@ -396,8 +336,8 @@ _L32:
                     webkitDraw();
                     break; /* Loop/switch isn't completed */
 _L64:
-                    WebViewCore webviewcore7 = _fld0;
-                    webviewcore7;
+                    WebViewCore webviewcore8 = _fld0;
+                    webviewcore8;
                     JVM INSTR monitorenter ;
                     mCallbackProxy.shutdown();
                     synchronized(mCallbackProxy) {
@@ -408,7 +348,7 @@ _L64:
                     mSettings.onDestroyed();
                     mNativeClass = 0;
                     mWebViewClassic = null;
-                    webviewcore7;
+                    webviewcore8;
                     JVM INSTR monitorexit ;
                     break; /* Loop/switch isn't completed */
                     Exception exception2;
@@ -421,18 +361,18 @@ _L64:
 _L8:
                     float f;
                     Rect rect2;
-                    WebViewCore webviewcore6;
-                    int i5;
-                    int j5;
+                    WebViewCore webviewcore7;
+                    int l5;
+                    int i6;
                     if(message.obj == null)
                         f = 0.0F;
                     else
                         f = ((Float)message.obj).floatValue();
                     rect2 = new Rect();
-                    webviewcore6 = _fld0;
-                    i5 = mNativeClass;
-                    j5 = message.arg2;
-                    webviewcore6.nativeScrollFocusedTextInput(i5, f, j5, rect2);
+                    webviewcore7 = _fld0;
+                    l5 = mNativeClass;
+                    i6 = message.arg2;
+                    webviewcore7.nativeScrollFocusedTextInput(l5, f, i6, rect2);
                     Message.obtain(mWebViewClassic.mPrivateHandler, 152, rect2).sendToTarget();
                     break; /* Loop/switch isn't completed */
 _L9:
@@ -450,9 +390,9 @@ _L38:
                     BaseUrlData baseurldata = (BaseUrlData)message.obj;
                     String s2 = baseurldata.mBaseUrl;
                     if(s2 != null) {
-                        int l4 = s2.indexOf(':');
-                        if(l4 > 0) {
-                            String s3 = s2.substring(0, l4);
+                        int k5 = s2.indexOf(':');
+                        if(k5 > 0) {
+                            String s3 = s2.substring(0, k5);
                             if(!s3.startsWith("http") && !s3.startsWith("ftp") && !s3.startsWith("about") && !s3.startsWith("javascript"))
                                 nativeRegisterURLSchemeAsLocal(mNativeClass, s3);
                         }
@@ -482,14 +422,14 @@ _L14:
                     break; /* Loop/switch isn't completed */
 _L16:
                     Point point = (Point)message.obj;
-                    WebViewCore webviewcore5 = _fld0;
-                    int k4 = mNativeClass;
-                    boolean flag6;
+                    WebViewCore webviewcore6 = _fld0;
+                    int j5 = mNativeClass;
+                    boolean flag7;
                     if(message.arg1 == 1)
-                        flag6 = true;
+                        flag7 = true;
                     else
-                        flag6 = false;
-                    webviewcore5.nativeSetScrollOffset(k4, flag6, point.x, point.y);
+                        flag7 = false;
+                    webviewcore6.nativeSetScrollOffset(j5, flag7, point.x, point.y);
                     break; /* Loop/switch isn't completed */
 _L23:
                     Rect rect1 = (Rect)message.obj;
@@ -519,12 +459,12 @@ _L24:
                     if(BrowserFrame.sJavaBridge == null)
                         throw new IllegalStateException("No WebView has been created in this process!");
                     JWebCoreJavaBridge jwebcorejavabridge = BrowserFrame.sJavaBridge;
-                    boolean flag5;
+                    boolean flag6;
                     if(message.arg1 == 1)
-                        flag5 = true;
+                        flag6 = true;
                     else
-                        flag5 = false;
-                    jwebcorejavabridge.setNetworkOnLine(flag5);
+                        flag6 = false;
+                    jwebcorejavabridge.setNetworkOnLine(flag6);
                     break; /* Loop/switch isn't completed */
 _L55:
                     if(BrowserFrame.sJavaBridge == null)
@@ -533,13 +473,13 @@ _L55:
                     BrowserFrame.sJavaBridge.setNetworkType((String)map.get("type"), (String)map.get("subtype"));
                     break; /* Loop/switch isn't completed */
 _L18:
-                    WebViewCore webviewcore4 = _fld0;
-                    boolean flag4;
+                    WebViewCore webviewcore5 = _fld0;
+                    boolean flag5;
                     if(message.arg1 == 1)
-                        flag4 = true;
+                        flag5 = true;
                     else
-                        flag4 = false;
-                    webviewcore4.clearCache(flag4);
+                        flag5 = false;
+                    webviewcore5.clearCache(flag5);
                     break; /* Loop/switch isn't completed */
 _L19:
                     mCallbackProxy.getBackForwardList().close(mBrowserFrame.mNativeFrame);
@@ -551,10 +491,10 @@ _L21:
 _L22:
                     JSKeyData jskeydata = (JSKeyData)message.obj;
                     KeyEvent keyevent = jskeydata.mEvent;
-                    int l3 = keyevent.getKeyCode();
-                    int i4 = keyevent.getUnicodeChar();
-                    int j4 = message.arg1;
-                    passToJs(mNativeClass, j4, jskeydata.mCurrentText, l3, i4, keyevent.isDown(), keyevent.isShiftPressed(), keyevent.isAltPressed(), keyevent.isSymPressed());
+                    int k4 = keyevent.getKeyCode();
+                    int l4 = keyevent.getUnicodeChar();
+                    int i5 = message.arg1;
+                    passToJs(mNativeClass, i5, jskeydata.mCurrentText, k4, l4, keyevent.isDown(), keyevent.isShiftPressed(), keyevent.isAltPressed(), keyevent.isSymPressed());
                     break; /* Loop/switch isn't completed */
 _L31:
                     nativeSaveDocumentState(mNativeClass);
@@ -564,14 +504,14 @@ _L45:
                     nativeCloseIdleConnections(mNativeClass);
                     break; /* Loop/switch isn't completed */
 _L39:
-                    WebViewCore webviewcore3 = _fld0;
-                    int k3 = mNativeClass;
-                    boolean flag3;
+                    WebViewCore webviewcore4 = _fld0;
+                    int j4 = mNativeClass;
+                    boolean flag4;
                     if(message.arg1 == 1)
-                        flag3 = true;
+                        flag4 = true;
                     else
-                        flag3 = false;
-                    webviewcore3.nativeSetFocusControllerActive(k3, flag3);
+                        flag4 = false;
+                    webviewcore4.nativeSetFocusControllerActive(j4, flag4);
                     break; /* Loop/switch isn't completed */
 _L37:
                     JSInterfaceData jsinterfacedata1 = (JSInterfaceData)message.obj;
@@ -601,12 +541,12 @@ _L36:
                     break; /* Loop/switch isn't completed */
 _L25:
                     Message message1 = (Message)message.obj;
-                    int j3;
+                    int i4;
                     if(mBrowserFrame.documentHasImages())
-                        j3 = 1;
+                        i4 = 1;
                     else
-                        j3 = 0;
-                    message1.arg1 = j3;
+                        i4 = 0;
+                    message1.arg1 = i4;
                     message1.sendToTarget();
                     break; /* Loop/switch isn't completed */
 _L26:
@@ -624,18 +564,38 @@ _L57:
                     break; /* Loop/switch isn't completed */
 _L27:
                     SparseBooleanArray sparsebooleanarray = (SparseBooleanArray)message.obj;
-                    int l2 = message.arg1;
-                    boolean aflag[] = new boolean[l2];
-                    for(int i3 = 0; i3 < l2; i3++)
-                        aflag[i3] = sparsebooleanarray.get(i3);
+                    int j3 = message.arg1;
+                    boolean aflag[] = new boolean[j3];
+                    for(int k3 = 0; k3 < j3; k3++)
+                        aflag[k3] = sparsebooleanarray.get(k3);
 
-                    nativeSendListBoxChoices(mNativeClass, aflag, l2);
+                    nativeSendListBoxChoices(mNativeClass, aflag, j3);
                     break; /* Loop/switch isn't completed */
 _L28:
                     nativeSendListBoxChoice(mNativeClass, message.arg1);
                     break; /* Loop/switch isn't completed */
 _L30:
                     nativeSetBackgroundColor(mNativeClass, message.arg1);
+                    break; /* Loop/switch isn't completed */
+_L76:
+                    long l2 = System.currentTimeMillis();
+                    WebViewCore webviewcore3 = _fld0;
+                    int i3 = mNativeClass;
+                    boolean flag3;
+                    String as1[];
+                    if(message.arg1 == 1)
+                        flag3 = true;
+                    else
+                        flag3 = false;
+                    as1 = webviewcore3.nativeSwitchReadMode(i3, flag3, mReadModeTemplate);
+                    if(as1 != null) {
+                        mReadModeString[0] = as1[0];
+                        mReadModeString[1] = as1[1];
+                        mReadModeString[2] = as1[2];
+                        long l3 = System.currentTimeMillis() - l2;
+                        Log.d("time-cost", (new StringBuilder()).append("get read mode string cost time(ms): ").append(l3).toString());
+                        mWebViewClassic.mPrivateHandler.obtainMessage(5001, null).sendToTarget();
+                    }
                     break; /* Loop/switch isn't completed */
 _L48:
                     WebViewCore webviewcore2 = _fld0;
@@ -726,10 +686,12 @@ _L67:
                     break; /* Loop/switch isn't completed */
 _L68:
                     int ai[] = (int[])(int[])message.obj;
-                    if(ai == null)
+                    if(ai == null) {
                         nativeClearTextSelection(mNativeClass);
-                    else
-                        nativeSelectText(mNativeClass, ai[0], ai[1], ai[2], ai[3]);
+                    } else {
+                        String as[] = nativeSelectText(mNativeClass, ai[0], ai[1], ai[2], ai[3], ai[4]);
+                        mWebViewClassic.mPrivateHandler.obtainMessage(5000, as).sendToTarget();
+                    }
                     break; /* Loop/switch isn't completed */
 _L69:
                     mTextSelectionChangeReason = 2;
@@ -744,8 +706,8 @@ _L70:
                     break; /* Loop/switch isn't completed */
 _L71:
                     FindAllRequest findallrequest1 = (FindAllRequest)message.obj;
-                    if(findallrequest1 == null) goto _L77; else goto _L76
-_L76:
+                    if(findallrequest1 == null) goto _L78; else goto _L77
+_L77:
                     int i1 = nativeFindAll(mNativeClass, findallrequest1.mSearchText);
                     int j1 = nativeFindNext(mNativeClass, true);
                     findallrequest1;
@@ -755,7 +717,7 @@ _L76:
                     findallrequest1.notify();
                     findallrequest1;
                     JVM INSTR monitorexit ;
-_L79:
+_L80:
                     Message.obtain(mWebViewClassic.mPrivateHandler, 126, findallrequest1).sendToTarget();
                     break; /* Loop/switch isn't completed */
                     Exception exception1;
@@ -763,10 +725,10 @@ _L79:
                     findallrequest1;
                     JVM INSTR monitorexit ;
                     throw exception1;
-_L77:
-                    nativeFindAll(mNativeClass, null);
-                    if(true) goto _L79; else goto _L78
 _L78:
+                    nativeFindAll(mNativeClass, null);
+                    if(true) goto _L80; else goto _L79
+_L79:
                     break; /* Loop/switch isn't completed */
 _L72:
                     FindAllRequest findallrequest;
@@ -798,8 +760,8 @@ _L74:
 _L75:
                     SaveViewStateRequest saveviewstaterequest = (SaveViewStateRequest)message.obj;
                     saveViewState(saveviewstaterequest.mStream, saveviewstaterequest.mCallback);
-                    if(true) goto _L5; else goto _L80
-_L80:
+                    if(true) goto _L5; else goto _L81
+_L81:
                 }
 
                 final EventHub this$1;
@@ -875,6 +837,7 @@ _L3:
         static final int ADD_PACKAGE_NAME = 185;
         static final int ADD_PACKAGE_NAMES = 184;
         static final int AUTOFILL_FORM = 192;
+        static final int CHECK_READ_MODE = 5010;
         static final int CLEAR_CACHE = 111;
         static final int CLEAR_CONTENT = 134;
         static final int CLEAR_HISTORY = 112;
@@ -1319,6 +1282,12 @@ _L10:
 
 
     public WebViewCore(Context context, WebViewClassic webviewclassic, CallbackProxy callbackproxy, Map map) {
+        mReadModeString = new String[3];
+        long al[] = new long[3];
+        al[0] = 0L;
+        al[1] = 0L;
+        al[2] = 0L;
+        mReadModeTemplate = al;
         mViewportWidth = -1;
         mViewportHeight = -1;
         mViewportInitialScale = 0;
@@ -1348,7 +1317,7 @@ _L10:
         android/webkit/WebViewCore;
         JVM INSTR monitorenter ;
         if(sWebCoreHandler != null)
-            break MISSING_BLOCK_LABEL_207;
+            break MISSING_BLOCK_LABEL_241;
         Thread thread = new Thread(new WebCoreThread());
         thread.setName("WebViewCoreThread");
         thread.start();
@@ -1768,7 +1737,7 @@ _L8:
 
     private native void nativeSelectAll(int i);
 
-    private native void nativeSelectText(int i, int j, int k, int l, int i1);
+    private native String[] nativeSelectText(int i, int j, int k, int l, int i1, int j1);
 
     private native boolean nativeSelectWordAt(int i, int j, int k);
 
@@ -1796,6 +1765,8 @@ _L8:
 
     private native void nativeSetSize(int i, int j, int k, int l, float f, int i1, int j1, 
             int k1, int l1, boolean flag);
+
+    private native String[] nativeSwitchReadMode(int i, boolean flag, long al[]);
 
     private void needTouchEvents(boolean flag) {
         if(mWebViewClassic != null) {
@@ -2507,12 +2478,20 @@ _L1:
         return mEventHub;
     }
 
+    String[] getReadModeString() {
+        return mReadModeString;
+    }
+
     public WebSettingsClassic getSettings() {
         return mSettings;
     }
 
     WebViewClassic getWebViewClassic() {
         return mWebViewClassic;
+    }
+
+    public long[] getmReadModeTemplate() {
+        return mReadModeTemplate;
     }
 
     void initializeSubwindow() {
@@ -2665,6 +2644,10 @@ _L1:
         mDeviceMotionAndOrientationManager.setMockOrientation(flag, d, flag1, d1, flag2, d2);
     }
 
+    public void setmReadModeTemplate(long al[]) {
+        mReadModeTemplate = al;
+    }
+
     void signalRepaintDone() {
         mRepaintScheduled = false;
     }
@@ -2706,6 +2689,8 @@ _L1:
     DrawData mLastDrawData;
     private int mLowMemoryUsageThresholdMb;
     private int mNativeClass;
+    private String mReadModeString[];
+    private long mReadModeTemplate[];
     private float mRestoredScale;
     private float mRestoredTextWrapScale;
     private int mRestoredX;
@@ -2900,8 +2885,11 @@ _L1:
 
 
 
+
+
+
 /*
-    static boolean access$7002(WebViewCore webviewcore, boolean flag) {
+    static boolean access$7302(WebViewCore webviewcore, boolean flag) {
         webviewcore.mDrawIsScheduled = flag;
         return flag;
     }

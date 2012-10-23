@@ -65,6 +65,7 @@ public class Notes {
         public static final String PARENT_ID = "parent_id";
         public static final String SNIPPET = "snippet";
         public static final String SORT = "sort";
+        public static final String SUBJECT = "subject";
         public static final String SYNC_ID = "sync_id";
         public static final String TYPE = "type";
         public static final String VERSION = "version";

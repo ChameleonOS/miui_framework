@@ -32,6 +32,25 @@ public interface IFirewall
                 throw exception;
             }
 
+            public void addOneShotFlag(int i) throws RemoteException {
+                Parcel parcel;
+                Parcel parcel1;
+                parcel = Parcel.obtain();
+                parcel1 = Parcel.obtain();
+                parcel.writeInterfaceToken("miui.net.IFirewall");
+                parcel.writeInt(i);
+                mRemote.transact(8, parcel, parcel1, 0);
+                parcel1.readException();
+                parcel1.recycle();
+                parcel.recycle();
+                return;
+                Exception exception;
+                exception;
+                parcel1.recycle();
+                parcel.recycle();
+                throw exception;
+            }
+
             public IBinder asBinder() {
                 return mRemote;
             }
@@ -61,19 +80,24 @@ public interface IFirewall
                 throw exception;
             }
 
-            public boolean getAlarmBootCompleted() throws RemoteException {
+            public String getInterfaceDescriptor() {
+                return "miui.net.IFirewall";
+            }
+
+            public boolean getOneShotFlag(int i) throws RemoteException {
                 boolean flag;
                 Parcel parcel;
                 Parcel parcel1;
                 flag = false;
                 parcel = Parcel.obtain();
                 parcel1 = Parcel.obtain();
-                int i;
+                int j;
                 parcel.writeInterfaceToken("miui.net.IFirewall");
+                parcel.writeInt(i);
                 mRemote.transact(9, parcel, parcel1, 0);
                 parcel1.readException();
-                i = parcel1.readInt();
-                if(i != 0)
+                j = parcel1.readInt();
+                if(j != 0)
                     flag = true;
                 parcel1.recycle();
                 parcel.recycle();
@@ -83,10 +107,6 @@ public interface IFirewall
                 parcel1.recycle();
                 parcel.recycle();
                 throw exception;
-            }
-
-            public String getInterfaceDescriptor() {
-                return "miui.net.IFirewall";
             }
 
             public void onDataConnected(int i, String s, String s1) throws RemoteException {
@@ -191,24 +211,6 @@ public interface IFirewall
                 throw exception;
             }
 
-            public void setAlarmBootCompleted() throws RemoteException {
-                Parcel parcel;
-                Parcel parcel1;
-                parcel = Parcel.obtain();
-                parcel1 = Parcel.obtain();
-                parcel.writeInterfaceToken("miui.net.IFirewall");
-                mRemote.transact(8, parcel, parcel1, 0);
-                parcel1.readException();
-                parcel1.recycle();
-                parcel.recycle();
-                return;
-                Exception exception;
-                exception;
-                parcel1.recycle();
-                parcel.recycle();
-                throw exception;
-            }
-
             private IBinder mRemote;
 
             Proxy(IBinder ibinder) {
@@ -250,7 +252,7 @@ public interface IFirewall
         //                       6: 252
         //                       7: 273
         //                       8: 311
-        //                       9: 328
+        //                       9: 332
         //                       1598968902: 110;
                goto _L1 _L2 _L3 _L4 _L5 _L6 _L7 _L8 _L9 _L10 _L11
 _L1:
@@ -300,12 +302,12 @@ _L8:
             continue; /* Loop/switch isn't completed */
 _L9:
             parcel.enforceInterface("miui.net.IFirewall");
-            setAlarmBootCompleted();
+            addOneShotFlag(parcel.readInt());
             parcel1.writeNoException();
             continue; /* Loop/switch isn't completed */
 _L10:
             parcel.enforceInterface("miui.net.IFirewall");
-            boolean flag1 = getAlarmBootCompleted();
+            boolean flag1 = getOneShotFlag(parcel.readInt());
             parcel1.writeNoException();
             if(flag1)
                 k = ((flag) ? 1 : 0);
@@ -316,14 +318,14 @@ _L12:
 
         private static final String DESCRIPTOR = "miui.net.IFirewall";
         static final int TRANSACTION_addAccessControlPass = 5;
+        static final int TRANSACTION_addOneShotFlag = 8;
         static final int TRANSACTION_checkAccessControlPass = 7;
-        static final int TRANSACTION_getAlarmBootCompleted = 9;
+        static final int TRANSACTION_getOneShotFlag = 9;
         static final int TRANSACTION_onDataConnected = 3;
         static final int TRANSACTION_onDataDisconnected = 4;
         static final int TRANSACTION_onStartUsingNetworkFeature = 1;
         static final int TRANSACTION_onStopUsingNetworkFeature = 2;
         static final int TRANSACTION_removeAccessControlPass = 6;
-        static final int TRANSACTION_setAlarmBootCompleted = 8;
 
         public Stub() {
             attachInterface(this, "miui.net.IFirewall");
@@ -333,9 +335,11 @@ _L12:
 
     public abstract void addAccessControlPass(String s) throws RemoteException;
 
+    public abstract void addOneShotFlag(int i) throws RemoteException;
+
     public abstract boolean checkAccessControlPass(String s) throws RemoteException;
 
-    public abstract boolean getAlarmBootCompleted() throws RemoteException;
+    public abstract boolean getOneShotFlag(int i) throws RemoteException;
 
     public abstract void onDataConnected(int i, String s, String s1) throws RemoteException;
 
@@ -346,6 +350,4 @@ _L12:
     public abstract void onStopUsingNetworkFeature(int i, int j, int k) throws RemoteException;
 
     public abstract void removeAccessControlPass(String s) throws RemoteException;
-
-    public abstract void setAlarmBootCompleted() throws RemoteException;
 }

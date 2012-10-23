@@ -174,7 +174,7 @@
     .end local v1           #dr:Landroid/graphics/drawable/Drawable;
     .restart local v0       #dr:Landroid/graphics/drawable/Drawable;
     :cond_2e
-    invoke-static {v2}, Lmiui/content/res/IconCustomizer;->getCustomizedIconDrawable(Ljava/lang/String;)Landroid/graphics/drawable/BitmapDrawable;
+    invoke-static {p1, p4}, Lmiui/content/res/IconCustomizer;->getCustomizedIconDrawable(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/drawable/BitmapDrawable;
 
     move-result-object v0
 

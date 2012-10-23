@@ -79,12 +79,15 @@ _L1:
         public static final String DATA_USAGE_ADJUSTMENT = "data_usage_adjustment";
         public static final String DATA_USAGE_LIMIT_BYTES = "data_usage_limit_bytes";
         public static final String DEFAULT_INPUT_METHOD_CHOOSED = "default_input_method_choosed";
+        public static final int DEFAULT_PERMANENTLY_LOCK_SIM_CHANGE = 0;
         public static int DEFAULT_SHOW_MAGNIFIER_WHEN_INPUT = 0;
         public static String FORCE_CLOCE_DIALOG_ENABLED = "force_close_dialog_enabled";
         public static String MOBILE_DOWNLOAD_FILE_SIZE_PROMPT_POPUP_ENABLED = "mobile_download_file_size_prompt_popup_enabled";
         public static final String MOBILE_POLICY = "mobile_policy";
         public static final String PASSWORD_FOR_PRIVACYMODE = "password_for_privacymode";
+        public static String PERMANENTLY_LOCK_SIM_CHANGE = "permanently_lock_sim_change";
         public static final String PRIVACY_MODE_ENABLED = "privacy_mode_enabled";
+        public static String REGISTER_FIND_DEVICE_SIM_NUMBER = "resister_find_device_sim_number";
         public static final String SCREEN_BUTTONS_HAS_BEEN_DISABLED = "screen_buttons_has_been_disabled";
         public static final String SCREEN_BUTTONS_STATE = "screen_buttons_state";
         public static final String SCREEN_BUTTONS_TURN_ON = "screen_buttons_turn_on";

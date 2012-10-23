@@ -595,6 +595,10 @@ public class WifiConfiguration
     public EnterpriseField private_key;
     public ProxySettings proxySettings;
     public int status;
+    public String wapiASCert;
+    public String wapiPsk;
+    public int wapiPskType;
+    public String wapiUserCert;
     public String wepKeys[];
     public int wepTxKeyIndex;
 

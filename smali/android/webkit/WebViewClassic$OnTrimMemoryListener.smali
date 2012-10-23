@@ -26,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 710
+    .line 713
     const/4 v0, 0x0
 
     sput-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
@@ -39,13 +39,13 @@
     .parameter "c"
 
     .prologue
-    .line 718
+    .line 721
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 719
+    .line 722
     invoke-virtual {p1, p0}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
-    .line 720
+    .line 723
     return-void
 .end method
 
@@ -54,12 +54,12 @@
     .parameter "c"
 
     .prologue
-    .line 713
+    .line 716
     sget-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
     if-nez v0, :cond_f
 
-    .line 714
+    .line 717
     new-instance v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -70,7 +70,7 @@
 
     sput-object v0, Landroid/webkit/WebViewClassic$OnTrimMemoryListener;->sInstance:Landroid/webkit/WebViewClassic$OnTrimMemoryListener;
 
-    .line 716
+    .line 719
     :cond_f
     return-void
 .end method
@@ -82,7 +82,7 @@
     .parameter "newConfig"
 
     .prologue
-    .line 725
+    .line 728
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .registers 1
 
     .prologue
-    .line 730
+    .line 733
     return-void
 .end method
 
@@ -99,19 +99,19 @@
     .parameter "level"
 
     .prologue
-    .line 741
+    .line 744
     const/16 v0, 0x14
 
     if-lt p1, v0, :cond_7
 
-    .line 742
+    .line 745
     invoke-static {}, Landroid/webkit/HTML5VideoInline;->cleanupSurfaceTexture()V
 
-    .line 744
+    .line 747
     :cond_7
     #calls: Landroid/webkit/WebViewClassic;->nativeOnTrimMemory(I)V
     invoke-static {p1}, Landroid/webkit/WebViewClassic;->access$900(I)V
 
-    .line 745
+    .line 748
     return-void
 .end method

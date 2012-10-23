@@ -27,6 +27,8 @@
 
 .field public static final DEFAULT_INPUT_METHOD_CHOOSED:Ljava/lang/String; = "default_input_method_choosed"
 
+.field public static final DEFAULT_PERMANENTLY_LOCK_SIM_CHANGE:I = 0x0
+
 .field public static DEFAULT_SHOW_MAGNIFIER_WHEN_INPUT:I = 0x0
 
 .field public static FORCE_CLOCE_DIALOG_ENABLED:Ljava/lang/String; = null
@@ -37,7 +39,11 @@
 
 .field public static final PASSWORD_FOR_PRIVACYMODE:Ljava/lang/String; = "password_for_privacymode"
 
+.field public static PERMANENTLY_LOCK_SIM_CHANGE:Ljava/lang/String; = null
+
 .field public static final PRIVACY_MODE_ENABLED:Ljava/lang/String; = "privacy_mode_enabled"
+
+.field public static REGISTER_FIND_DEVICE_SIM_NUMBER:Ljava/lang/String; = null
 
 .field public static final SCREEN_BUTTONS_HAS_BEEN_DISABLED:Ljava/lang/String; = "screen_buttons_has_been_disabled"
 
@@ -94,6 +100,16 @@
     const-string v0, "app_encrypt_password"
 
     sput-object v0, Lmiui/provider/ExtraSettings$Secure;->APP_ENCRYPT_PASSWORD:Ljava/lang/String;
+
+    .line 798
+    const-string/jumbo v0, "resister_find_device_sim_number"
+
+    sput-object v0, Lmiui/provider/ExtraSettings$Secure;->REGISTER_FIND_DEVICE_SIM_NUMBER:Ljava/lang/String;
+
+    .line 804
+    const-string/jumbo v0, "permanently_lock_sim_change"
+
+    sput-object v0, Lmiui/provider/ExtraSettings$Secure;->PERMANENTLY_LOCK_SIM_CHANGE:Ljava/lang/String;
 
     return-void
 .end method

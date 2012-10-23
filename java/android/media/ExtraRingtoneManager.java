@@ -44,7 +44,10 @@ public class ExtraRingtoneManager {
             String s1 = ACTUAL_DEFAULT_RINGTONE_BASE_URI.getPath();
             if(!(new File(s1)).exists())
                 CommandLineUtils.mkdir(s1, "root");
-            CommandLineUtils.cp(s, getDefaultRingtoneUri(i).getPath(), "root");
+            CommandLineUtils.chmod(s1, "755", "root");
+            String s2 = getDefaultRingtoneUri(i).getPath();
+            CommandLineUtils.cp(s, s2, "root");
+            CommandLineUtils.chmod(s2, "644", "root");
         }
     }
 

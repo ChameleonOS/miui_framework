@@ -28,9 +28,17 @@
 
 .field public static final ACTION_CROP_SET_WALLPAPER:Ljava/lang/String; = "android.intent.action.CROP_SET_WALLPAPER"
 
+.field public static final ACTION_DISABLE_FIND_DEVICE:Ljava/lang/String; = "com.xiaomi.action.DISABLE_FIND_DEVICE"
+
+.field public static final ACTION_ENABLE_FIND_DEVICE:Ljava/lang/String; = "com.xiaomi.action.ENABLE_FIND_DEVICE"
+
+.field public static final ACTION_FIND_DEVICE_STATUS_CHANGED:Ljava/lang/String; = "com.xiaomi.action.FIND_DEVICE_STATUS_CHANGED"
+
 .field public static final ACTION_FIREWALL_UPDATED:Ljava/lang/String; = "android.intent.action.FIREWALL_UPDATED"
 
 .field public static final ACTION_KEYCODE_POWER_UP:Ljava/lang/String; = "android.intent.action.KEYCODE_POWER_UP"
+
+.field public static final ACTION_LOCK_DEVICE:Ljava/lang/String; = "miui.intent.action.LOCK_DEVICE"
 
 .field public static final ACTION_MANAGE_ACCOUNT:Ljava/lang/String; = "android.intent.action.MANAGE_XIAOMI_ACCOUNT"
 
@@ -38,7 +46,13 @@
 
 .field public static final ACTION_MIUI_LICENSE:Ljava/lang/String; = "android.intent.action.MIUI_LICENSE"
 
+.field public static final ACTION_NOISE:Ljava/lang/String; = "miui.intent.action.NOISE"
+
 .field public static final ACTION_PRIVACY_MODE_CHANGED:Ljava/lang/String; = "android.intent.action.PRIVACY_MODE_CHANGED"
+
+.field public static final ACTION_RELEASE_PROXIMITY_SENSOR:Ljava/lang/String; = "miui.intent.action.RELEASE_PROXIMITY_SENSOR"
+
+.field public static final ACTION_REQUEST_LOCATION:Ljava/lang/String; = "miui.intent.action.REQUEST_LOCATION"
 
 .field public static final ACTION_RESTORE_FINISH:Ljava/lang/String; = "android.intent.action.RESTORE_FINISH"
 
@@ -53,6 +67,8 @@
 .field public static final ACTION_VIEW_CONTACT_SHORTCUT:Ljava/lang/String; = "android.intent.action.VIEW_CONTACT_SHORTCUT"
 
 .field public static final ACTION_VIEW_DATA_USAGE_SUMMARY:Ljava/lang/String; = "android.intent.action.VIEW_DATA_USAGE_SUMMARY"
+
+.field public static final ACTION_WIPE_DATA:Ljava/lang/String; = "miui.intent.action.WIPE_DATA"
 
 .field public static final ACTION_XIAOMI_ACCOUNT_BIND_NICKNAME:Ljava/lang/String; = "android.settings.XIAOMI_ACCOUNT_BIND_NICKNAME"
 
@@ -78,9 +94,25 @@
 
 .field public static final EXTRA_CUSTOMIZED_ICON_SHORTCUT:Ljava/lang/String; = "android.intent.extra.CUSTOMIZED_ICON_SHORTCUT"
 
+.field public static final EXTRA_DEVICE_CMD:Ljava/lang/String; = "android.intent.extra.device_cmd"
+
+.field public static final EXTRA_DEVICE_DIGEST:Ljava/lang/String; = "android.intent.extra.device_digest"
+
+.field public static final EXTRA_DEVICE_MSGID:Ljava/lang/String; = "android.intent.extra.device_msgId"
+
+.field public static final EXTRA_DEVICE_TIME:Ljava/lang/String; = "android.intent.extra.device_time"
+
+.field public static final EXTRA_DEVICE_TOKEN:Ljava/lang/String; = "android.intent.extra.device_token"
+
+.field public static final EXTRA_DISABLE_PROXIMITY_SENSOR:Ljava/lang/String; = "miui.intent.extra.DISABLE_PROXIMITY_SENSOR"
+
+.field public static final EXTRA_FIND_DEVICE_ENABLED:Ljava/lang/String; = "find_device_enabled"
+
 .field public static final EXTRA_IS_ENABLE:Ljava/lang/String; = "miui.intent.extra.IS_ENABLE"
 
 .field public static final EXTRA_IS_TOGGLE:Ljava/lang/String; = "miui.intent.extra.IS_TOGGLE"
+
+.field public static final EXTRA_LOCK_DEVICE_PASSWORD:Ljava/lang/String; = "android.intent.extra.lock_password"
 
 .field public static final EXTRA_PICKED_MULTIPLE_CONTACTS:Ljava/lang/String; = "android.intent.extra.picked_multiple_contacts"
 

@@ -27,13 +27,13 @@
     .parameter "remote"
 
     .prologue
-    .line 100
+    .line 109
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
+    .line 110
     iput-object p1, p0, Lmiui/net/ICloudManagerService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 102
+    .line 111
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 105
+    .line 114
     iget-object v0, p0, Lmiui/net/ICloudManagerService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -59,25 +59,25 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 122
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 114
+    .line 123
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 116
+    .line 125
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_8
     const-string/jumbo v2, "miui.net.ICloudManagerService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 117
+    .line 126
     if-eqz p1, :cond_28
 
     invoke-interface {p1}, Lmiui/net/ICloudManagerResponse;->asBinder()Landroid/os/IBinder;
@@ -87,7 +87,7 @@
     :goto_14
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 118
+    .line 127
     iget-object v2, p0, Lmiui/net/ICloudManagerService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x1
@@ -96,36 +96,116 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 119
+    .line 128
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_21
     .catchall {:try_start_8 .. :try_end_21} :catchall_2a
 
-    .line 122
+    .line 131
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 123
+    .line 132
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 125
+    .line 134
     return-void
 
-    .line 117
+    .line 126
     :cond_28
     const/4 v2, 0x0
 
     goto :goto_14
 
-    .line 122
+    .line 131
     :catchall_2a
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 123
+    .line 132
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 122
+    .line 131
+    throw v2
+.end method
+
+.method public getFindDeviceToken(Lmiui/net/ICloudManagerResponse;)V
+    .registers 7
+    .parameter "response"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 190
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 191
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 193
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_8
+    const-string/jumbo v2, "miui.net.ICloudManagerService"
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 194
+    if-eqz p1, :cond_28
+
+    invoke-interface {p1}, Lmiui/net/ICloudManagerResponse;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v2
+
+    :goto_14
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    .line 195
+    iget-object v2, p0, Lmiui/net/ICloudManagerService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/4 v3, 0x5
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 196
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+    :try_end_21
+    .catchall {:try_start_8 .. :try_end_21} :catchall_2a
+
+    .line 199
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 200
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 202
+    return-void
+
+    .line 194
+    :cond_28
+    const/4 v2, 0x0
+
+    goto :goto_14
+
+    .line 199
+    :catchall_2a
+    move-exception v2
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 200
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 199
     throw v2
 .end method
 
@@ -133,7 +213,7 @@
     .registers 2
 
     .prologue
-    .line 109
+    .line 118
     const-string/jumbo v0, "miui.net.ICloudManagerService"
 
     return-object v0
@@ -149,25 +229,25 @@
     .end annotation
 
     .prologue
-    .line 151
+    .line 160
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 152
+    .line 161
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 154
+    .line 163
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_8
     const-string/jumbo v2, "miui.net.ICloudManagerService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 155
+    .line 164
     if-eqz p1, :cond_28
 
     invoke-interface {p1}, Lmiui/net/ICloudManagerResponse;->asBinder()Landroid/os/IBinder;
@@ -177,7 +257,7 @@
     :goto_14
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 156
+    .line 165
     iget-object v2, p0, Lmiui/net/ICloudManagerService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x3
@@ -186,36 +266,36 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 157
+    .line 166
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_21
     .catchall {:try_start_8 .. :try_end_21} :catchall_2a
 
-    .line 160
+    .line 169
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 161
+    .line 170
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 163
+    .line 172
     return-void
 
-    .line 155
+    .line 164
     :cond_28
     const/4 v2, 0x0
 
     goto :goto_14
 
-    .line 160
+    .line 169
     :catchall_2a
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 161
+    .line 170
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 160
+    .line 169
     throw v2
 .end method
 
@@ -231,42 +311,42 @@
     .end annotation
 
     .prologue
-    .line 128
+    .line 137
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 129
+    .line 138
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 131
+    .line 140
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_8
     const-string/jumbo v2, "miui.net.ICloudManagerService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 132
+    .line 141
     if-eqz p1, :cond_35
 
-    .line 133
+    .line 142
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 134
+    .line 143
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/accounts/Account;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 139
+    .line 148
     :goto_18
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 140
+    .line 149
     if-eqz p3, :cond_42
 
     invoke-interface {p3}, Lmiui/net/ICloudManagerResponse;->asBinder()Landroid/os/IBinder;
@@ -276,7 +356,7 @@
     :goto_21
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 141
+    .line 150
     iget-object v2, p0, Lmiui/net/ICloudManagerService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x2
@@ -285,21 +365,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 142
+    .line 151
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_2e
     .catchall {:try_start_8 .. :try_end_2e} :catchall_3a
 
-    .line 145
+    .line 154
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 146
+    .line 155
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 148
+    .line 157
     return-void
 
-    .line 137
+    .line 146
     :cond_35
     const/4 v2, 0x0
 
@@ -310,19 +390,19 @@
 
     goto :goto_18
 
-    .line 145
+    .line 154
     :catchall_3a
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 146
+    .line 155
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 145
+    .line 154
     throw v2
 
-    .line 140
+    .line 149
     :cond_42
     const/4 v2, 0x0
 
@@ -339,25 +419,25 @@
     .end annotation
 
     .prologue
-    .line 166
+    .line 175
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 167
+    .line 176
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 169
+    .line 178
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_8
     const-string/jumbo v2, "miui.net.ICloudManagerService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 170
+    .line 179
     if-eqz p1, :cond_28
 
     invoke-interface {p1}, Lmiui/net/ICloudManagerResponse;->asBinder()Landroid/os/IBinder;
@@ -367,7 +447,7 @@
     :goto_14
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 171
+    .line 180
     iget-object v2, p0, Lmiui/net/ICloudManagerService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x4
@@ -376,35 +456,35 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 172
+    .line 181
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_21
     .catchall {:try_start_8 .. :try_end_21} :catchall_2a
 
-    .line 175
+    .line 184
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 176
+    .line 185
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 178
+    .line 187
     return-void
 
-    .line 170
+    .line 179
     :cond_28
     const/4 v2, 0x0
 
     goto :goto_14
 
-    .line 175
+    .line 184
     :catchall_2a
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 176
+    .line 185
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 175
+    .line 184
     throw v2
 .end method

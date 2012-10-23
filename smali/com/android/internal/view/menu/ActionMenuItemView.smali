@@ -528,7 +528,7 @@
 .end method
 
 .method protected onMeasure(II)V
-    .registers 10
+    .registers 11
     .parameter "widthMeasureSpec"
     .parameter "heightMeasureSpec"
     .annotation build Landroid/annotation/MiuiHook;
@@ -537,37 +537,37 @@
 
     .prologue
     .line 263
-    iget v3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingLeft:I
+    iget v4, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingLeft:I
 
-    if-ltz v3, :cond_13
+    if-ltz v4, :cond_13
 
     .line 264
-    iget v3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingLeft:I
+    iget v4, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingLeft:I
 
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingTop()I
 
-    move-result v4
+    move-result v5
 
-    iget v5, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingRight:I
+    iget v6, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mSavedPaddingRight:I
 
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingBottom()I
 
-    move-result v6
+    move-result v7
 
-    invoke-super {p0, v3, v4, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-super {p0, v4, v5, v6, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 268
     :cond_13
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-super {p0, v3, p2}, Landroid/widget/TextView;->onMeasure(II)V
+    invoke-super {p0, v4, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
     .line 270
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_3c
+    if-eqz v4, :cond_4b
 
     .line 271
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getMeasuredWidth()I
@@ -578,42 +578,91 @@
     .local v0, contentWidth:I
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
-    .line 274
+    .line 275
+    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->hasText()Z
+
+    move-result v4
+
+    if-nez v4, :cond_4c
+
+    iget-object v4, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIcon:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v4, :cond_4c
+
+    .line 278
     invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getMeasuredWidth()I
 
-    move-result v2
-
-    .line 275
-    .local v2, w:I
-    sub-int v3, v2, v0
-
-    div-int/lit8 v1, v3, 0x2
-
-    .line 276
-    .local v1, extraWidth:I
-    iget v3, p0, Landroid/view/View;->mPaddingLeft:I
-
-    add-int/2addr v3, v1
-
-    iget v4, p0, Landroid/view/View;->mPaddingTop:I
-
-    iget v5, p0, Landroid/view/View;->mPaddingRight:I
-
-    add-int/2addr v5, v1
-
-    iget v6, p0, Landroid/view/View;->mPaddingBottom:I
-
-    invoke-super {p0, v3, v4, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
+    move-result v3
 
     .line 279
+    .local v3, w:I
+    iget-object v4, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIcon:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v1
+
+    .line 280
+    .local v1, dw:I
+    sub-int v4, v3, v1
+
+    div-int/lit8 v4, v4, 0x2
+
+    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingTop()I
+
+    move-result v5
+
+    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingRight()I
+
+    move-result v6
+
+    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getPaddingBottom()I
+
+    move-result v7
+
+    invoke-super {p0, v4, v5, v6, v7}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 290
+    .end local v0           #contentWidth:I
+    .end local v1           #dw:I
+    .end local v3           #w:I
+    :cond_4b
+    :goto_4b
+    return-void
+
+    .line 282
+    .restart local v0       #contentWidth:I
+    :cond_4c
+    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->getMeasuredWidth()I
+
+    move-result v3
+
+    .line 283
+    .restart local v3       #w:I
+    sub-int v4, v3, v0
+
+    div-int/lit8 v2, v4, 0x2
+
+    .line 284
+    .local v2, extraWidth:I
+    iget v4, p0, Landroid/view/View;->mPaddingLeft:I
+
+    add-int/2addr v4, v2
+
+    iget v5, p0, Landroid/view/View;->mPaddingTop:I
+
+    iget v6, p0, Landroid/view/View;->mPaddingRight:I
+
+    add-int/2addr v6, v2
+
+    iget v7, p0, Landroid/view/View;->mPaddingBottom:I
+
+    invoke-super {p0, v4, v5, v6, v7}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    .line 287
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
-    .line 281
-    .end local v0           #contentWidth:I
-    .end local v1           #extraWidth:I
-    .end local v2           #w:I
-    :cond_3c
-    return-void
+    goto :goto_4b
 .end method
 
 .method public onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V

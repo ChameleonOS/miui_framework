@@ -9,7 +9,9 @@ public final class Manifest {
     public static final class permission {
 
         public static final String ACTIVATE_PHONE = "com.xiaomi.xmsf.permission.ACTIVATE_PHONE";
+        public static final String FIND_DEVICE = "com.miui.cloudservice.permission.FIND_DEVICE";
         public static final String GET_USER_INFO = "com.xiaomi.xmsf.permission.GET_USER_INFO";
+        public static final String TIGGER_TOGGLE = "com.android.SystemUI.permission.TIGGER_TOGGLE";
 
         public permission() {
         }
