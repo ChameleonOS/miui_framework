@@ -834,7 +834,7 @@
 
     move-result v2
 
-    packed-switch v2, :pswitch_data_6e
+    packed-switch v2, :pswitch_data_6c
 
     .line 360
     new-instance v2, Ljava/lang/StringBuilder;
@@ -969,22 +969,20 @@
 
     .line 354
     :pswitch_66
-    const-string/jumbo v0, "lte"
+    const-string v0, "lte"
 
     .line 355
     goto :goto_2c
 
     .line 357
-    :pswitch_6a
+    :pswitch_69
     const-string v0, "ehrpd"
 
     .line 358
     goto :goto_2c
 
     .line 316
-    nop
-
-    :pswitch_data_6e
+    :pswitch_data_6c
     .packed-switch 0x1
         :pswitch_41
         :pswitch_44
@@ -999,7 +997,7 @@
         :pswitch_63
         :pswitch_60
         :pswitch_66
-        :pswitch_6a
+        :pswitch_69
     .end packed-switch
 .end method
 

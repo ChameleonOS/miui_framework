@@ -38,7 +38,7 @@
     iput-wide p2, p0, Landroid/webkit/GeolocationService;->mNativeObject:J
 
     .line 54
-    const-string/jumbo v0, "location"
+    const-string v0, "location"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -51,7 +51,7 @@
     .line 55
     iget-object v0, p0, Landroid/webkit/GeolocationService;->mLocationManager:Landroid/location/LocationManager;
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1a
 
     .line 56
     const-string v0, "geolocationService"
@@ -61,7 +61,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 58
-    :cond_1b
+    :cond_1a
     return-void
 .end method
 

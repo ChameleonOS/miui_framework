@@ -33,7 +33,7 @@
 
     .prologue
     .line 371
-    const-string/jumbo v1, "location"
+    const-string v1, "location"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 

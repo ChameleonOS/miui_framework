@@ -266,16 +266,16 @@ _L3:
         ai[0] = 1;
         ai[1] = 2;
         String as3[] = (String[])concatArrays(as2, getWhereArgsForStatuses(ai), java/lang/String);
-        mResolver.update(super.mBaseUri, contentvalues, s, as3);
+        mResolver.update(mBaseUri, contentvalues, s, as3);
     }
 
     public Cursor query(DownloadManager.Query query1) {
-        Cursor cursor = query1.runQuery(mResolver, MIUI_UNDERLYING_COLUMNS, super.mBaseUri);
+        Cursor cursor = query1.runQuery(mResolver, MIUI_UNDERLYING_COLUMNS, mBaseUri);
         Object obj;
         if(cursor == null)
             obj = null;
         else
-            obj = new CursorTranslator(cursor, super.mBaseUri);
+            obj = new CursorTranslator(cursor, mBaseUri);
         return ((Cursor) (obj));
     }
 
@@ -283,7 +283,7 @@ _L3:
         if(al == null || al.length == 0)
             throw new IllegalArgumentException("input param 'ids' can't be null");
         else
-            return mResolver.delete(super.mBaseUri, getWhereClauseForIds(al), getWhereArgsForIds(al));
+            return mResolver.delete(mBaseUri, getWhereClauseForIds(al), getWhereArgsForIds(al));
     }
 
     public transient void resumeDownload(long al[]) {
@@ -297,7 +297,7 @@ _L3:
         int ai[] = new int[1];
         ai[0] = 4;
         String as2[] = (String[])concatArrays(as1, getWhereArgsForStatuses(ai), java/lang/String);
-        mResolver.update(super.mBaseUri, contentvalues, s, as2);
+        mResolver.update(mBaseUri, contentvalues, s, as2);
     }
 
     public static final String ACTION_DOWNLOAD_DELETED = "android.intent.action.DOWNLOAD_DELETED";

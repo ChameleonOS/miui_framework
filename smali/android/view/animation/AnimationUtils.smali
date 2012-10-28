@@ -286,12 +286,12 @@
 
     move-result v5
 
-    if-le v5, v1, :cond_bf
+    if-le v5, v1, :cond_be
 
     :cond_12
     const/4 v5, 0x1
 
-    if-eq v4, v5, :cond_bf
+    if-eq v4, v5, :cond_be
 
     .line 300
     const/4 v5, 0x2
@@ -311,13 +311,13 @@
 
     .line 309
     .local v3, name:Ljava/lang/String;
-    const-string/jumbo v5, "linearInterpolator"
+    const-string v5, "linearInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_2f
+    if-eqz v5, :cond_2e
 
     .line 310
     new-instance v2, Landroid/view/animation/LinearInterpolator;
@@ -329,14 +329,14 @@
     goto :goto_5
 
     .line 311
-    :cond_2f
+    :cond_2e
     const-string v5, "accelerateInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_3d
+    if-eqz v5, :cond_3c
 
     .line 312
     new-instance v2, Landroid/view/animation/AccelerateInterpolator;
@@ -348,14 +348,14 @@
     goto :goto_5
 
     .line 313
-    :cond_3d
+    :cond_3c
     const-string v5, "decelerateInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_4b
+    if-eqz v5, :cond_4a
 
     .line 314
     new-instance v2, Landroid/view/animation/DecelerateInterpolator;
@@ -367,14 +367,14 @@
     goto :goto_5
 
     .line 315
-    :cond_4b
+    :cond_4a
     const-string v5, "accelerateDecelerateInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_59
+    if-eqz v5, :cond_58
 
     .line 316
     new-instance v2, Landroid/view/animation/AccelerateDecelerateInterpolator;
@@ -386,14 +386,14 @@
     goto :goto_5
 
     .line 317
-    :cond_59
+    :cond_58
     const-string v5, "cycleInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_67
+    if-eqz v5, :cond_66
 
     .line 318
     new-instance v2, Landroid/view/animation/CycleInterpolator;
@@ -405,14 +405,14 @@
     goto :goto_5
 
     .line 319
-    :cond_67
+    :cond_66
     const-string v5, "anticipateInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_75
+    if-eqz v5, :cond_74
 
     .line 320
     new-instance v2, Landroid/view/animation/AnticipateInterpolator;
@@ -424,14 +424,14 @@
     goto :goto_5
 
     .line 321
-    :cond_75
+    :cond_74
     const-string/jumbo v5, "overshootInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_84
+    if-eqz v5, :cond_83
 
     .line 322
     new-instance v2, Landroid/view/animation/OvershootInterpolator;
@@ -443,14 +443,14 @@
     goto :goto_5
 
     .line 323
-    :cond_84
+    :cond_83
     const-string v5, "anticipateOvershootInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_93
+    if-eqz v5, :cond_92
 
     .line 324
     new-instance v2, Landroid/view/animation/AnticipateOvershootInterpolator;
@@ -462,14 +462,14 @@
     goto/16 :goto_5
 
     .line 325
-    :cond_93
+    :cond_92
     const-string v5, "bounceInterpolator"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_a2
+    if-eqz v5, :cond_a1
 
     .line 326
     new-instance v2, Landroid/view/animation/BounceInterpolator;
@@ -481,7 +481,7 @@
     goto/16 :goto_5
 
     .line 328
-    :cond_a2
+    :cond_a1
     new-instance v5, Ljava/lang/RuntimeException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -513,7 +513,7 @@
     .line 333
     .end local v0           #attrs:Landroid/util/AttributeSet;
     .end local v3           #name:Ljava/lang/String;
-    :cond_bf
+    :cond_be
     return-object v2
 .end method
 

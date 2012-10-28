@@ -219,7 +219,7 @@
 
     const/16 v1, 0xa
 
-    const-string/jumbo v2, "lr"
+    const-string v2, "lr"
 
     aput-object v2, v0, v1
 

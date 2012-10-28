@@ -4239,25 +4239,25 @@
 
     .prologue
     .line 1744
-    if-nez p1, :cond_b
+    if-nez p1, :cond_a
 
     .line 1745
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "locale must not be null."
+    const-string v3, "locale must not be null."
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
     .line 1748
-    :cond_b
+    :cond_a
     iget-object v3, p0, Landroid/database/sqlite/SQLiteDatabase;->mLock:Ljava/lang/Object;
 
     monitor-enter v3
 
     .line 1749
-    :try_start_e
+    :try_start_d
     invoke-direct {p0}, Landroid/database/sqlite/SQLiteDatabase;->throwIfNotOpenLocked()V
 
     .line 1751
@@ -4270,29 +4270,29 @@
     iget-object v2, p0, Landroid/database/sqlite/SQLiteDatabase;->mConfigurationLocked:Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 
     iput-object p1, v2, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->locale:Ljava/util/Locale;
-    :try_end_19
-    .catchall {:try_start_e .. :try_end_19} :catchall_28
+    :try_end_18
+    .catchall {:try_start_d .. :try_end_18} :catchall_27
 
     .line 1754
-    :try_start_19
+    :try_start_18
     iget-object v2, p0, Landroid/database/sqlite/SQLiteDatabase;->mConnectionPoolLocked:Landroid/database/sqlite/SQLiteConnectionPool;
 
     iget-object v4, p0, Landroid/database/sqlite/SQLiteDatabase;->mConfigurationLocked:Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 
     invoke-virtual {v2, v4}, Landroid/database/sqlite/SQLiteConnectionPool;->reconfigure(Landroid/database/sqlite/SQLiteDatabaseConfiguration;)V
-    :try_end_20
-    .catchall {:try_start_19 .. :try_end_20} :catchall_28
-    .catch Ljava/lang/RuntimeException; {:try_start_19 .. :try_end_20} :catch_22
+    :try_end_1f
+    .catchall {:try_start_18 .. :try_end_1f} :catchall_27
+    .catch Ljava/lang/RuntimeException; {:try_start_18 .. :try_end_1f} :catch_21
 
     .line 1759
-    :try_start_20
+    :try_start_1f
     monitor-exit v3
 
     .line 1760
     return-void
 
     .line 1755
-    :catch_22
+    :catch_21
     move-exception v0
 
     .line 1756
@@ -4307,12 +4307,12 @@
     .line 1759
     .end local v0           #ex:Ljava/lang/RuntimeException;
     .end local v1           #oldLocale:Ljava/util/Locale;
-    :catchall_28
+    :catchall_27
     move-exception v2
 
     monitor-exit v3
-    :try_end_2a
-    .catchall {:try_start_20 .. :try_end_2a} :catchall_28
+    :try_end_29
+    .catchall {:try_start_1f .. :try_end_29} :catchall_27
 
     throw v2
 .end method

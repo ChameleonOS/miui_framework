@@ -69,6 +69,16 @@
 
 .field public static final LockPatternView_pathStrokeAlpha:I = 0xb
 
+.field public static final MicloudPush:[I = null
+
+.field public static final MicloudPush_capability:I = 0x3
+
+.field public static final MicloudPush_contentAuthority:I = 0x0
+
+.field public static final MicloudPush_pushName:I = 0x2
+
+.field public static final MicloudPush_pushType:I = 0x1
+
 .field public static final MiuiInCallAnswerWidgetHorizontal:[I = null
 
 .field public static final MiuiInCallAnswerWidgetHorizontal_rightHintAnimationDrawable:I = 0x1
@@ -79,13 +89,13 @@
 
 .field public static final PhotoFrameView_boundType:I = 0x0
 
-.field public static final PhotoFrameView_insideBottom:I = 0x4
+.field public static final PhotoFrameView_insideHeight:I = 0x4
 
 .field public static final PhotoFrameView_insideLeft:I = 0x1
 
-.field public static final PhotoFrameView_insideRight:I = 0x3
-
 .field public static final PhotoFrameView_insideTop:I = 0x2
+
+.field public static final PhotoFrameView_insideWidth:I = 0x3
 
 .field public static final SlidingButton:[I = null
 
@@ -129,67 +139,76 @@
 
     const/4 v1, 0x2
 
-    .line 2206
+    .line 2255
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_3a
+    fill-array-data v0, :array_42
 
     sput-object v0, Lmiui/R$styleable;->AlphabetFastIndexer:[I
 
-    .line 2366
+    .line 2415
     new-array v0, v1, [I
 
-    fill-array-data v0, :array_52
+    fill-array-data v0, :array_5a
 
     sput-object v0, Lmiui/R$styleable;->GradientTextView:[I
 
-    .line 2433
+    .line 2482
     const/16 v0, 0xc
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_5a
+    fill-array-data v0, :array_62
 
     sput-object v0, Lmiui/R$styleable;->LockPatternView:[I
 
-    .line 2592
-    new-array v0, v1, [I
-
-    fill-array-data v0, :array_76
-
-    sput-object v0, Lmiui/R$styleable;->MiuiInCallAnswerWidgetHorizontal:[I
-
-    .line 2639
-    const/4 v0, 0x5
+    .line 2645
+    const/4 v0, 0x4
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_7e
 
+    sput-object v0, Lmiui/R$styleable;->MicloudPush:[I
+
+    .line 2720
+    new-array v0, v1, [I
+
+    fill-array-data v0, :array_8a
+
+    sput-object v0, Lmiui/R$styleable;->MiuiInCallAnswerWidgetHorizontal:[I
+
+    .line 2767
+    const/4 v0, 0x5
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_92
+
     sput-object v0, Lmiui/R$styleable;->PhotoFrameView:[I
 
-    .line 2750
+    .line 2878
     new-array v0, v2, [I
 
-    fill-array-data v0, :array_8c
+    fill-array-data v0, :array_a0
 
     sput-object v0, Lmiui/R$styleable;->SlidingButton:[I
 
-    .line 2848
+    .line 2976
     new-array v0, v2, [I
 
-    fill-array-data v0, :array_9e
+    fill-array-data v0, :array_b2
 
     sput-object v0, Lmiui/R$styleable;->SpectrumVisualizer:[I
 
     return-void
 
-    .line 2206
+    .line 2255
     nop
 
-    :array_3a
+    :array_42
     .array-data 0x4
         0x12t 0x0t 0x1t 0x6t
         0x13t 0x0t 0x1t 0x6t
@@ -203,15 +222,15 @@
         0x1bt 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2366
-    :array_52
+    .line 2415
+    :array_5a
     .array-data 0x4
         0x10t 0x0t 0x1t 0x6t
         0x11t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2433
-    :array_5a
+    .line 2482
+    :array_62
     .array-data 0x4
         0x21t 0x0t 0x1t 0x6t
         0x22t 0x0t 0x1t 0x6t
@@ -227,15 +246,24 @@
         0x2ct 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2592
-    :array_76
+    .line 2645
+    :array_7e
+    .array-data 0x4
+        0x2dt 0x0t 0x1t 0x6t
+        0x2et 0x0t 0x1t 0x6t
+        0x2ft 0x0t 0x1t 0x6t
+        0x30t 0x0t 0x1t 0x6t
+    .end array-data
+
+    .line 2720
+    :array_8a
     .array-data 0x4
         0x7t 0x0t 0x1t 0x6t
         0xft 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2639
-    :array_7e
+    .line 2767
+    :array_92
     .array-data 0x4
         0x1ct 0x0t 0x1t 0x6t
         0x1dt 0x0t 0x1t 0x6t
@@ -244,8 +272,8 @@
         0x20t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2750
-    :array_8c
+    .line 2878
+    :array_a0
     .array-data 0x4
         0x8t 0x0t 0x1t 0x6t
         0x9t 0x0t 0x1t 0x6t
@@ -256,8 +284,8 @@
         0xet 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2848
-    :array_9e
+    .line 2976
+    :array_b2
     .array-data 0x4
         0x0t 0x0t 0x1t 0x6t
         0x1t 0x0t 0x1t 0x6t
@@ -273,7 +301,7 @@
     .registers 1
 
     .prologue
-    .line 2175
+    .line 2224
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -1824,7 +1824,7 @@
 
     move-result v9
 
-    if-lez v9, :cond_158
+    if-lez v9, :cond_157
 
     .line 486
     iget-object v9, p0, Landroid/widget/AppSecurityPermissions;->mNormalMap:Ljava/util/Map;
@@ -1833,7 +1833,7 @@
 
     move-result v9
 
-    if-lez v9, :cond_155
+    if-lez v9, :cond_154
 
     sget-object v9, Landroid/widget/AppSecurityPermissions$State;->BOTH:Landroid/widget/AppSecurityPermissions$State;
 
@@ -1845,7 +1845,7 @@
     :goto_132
     iget-boolean v9, p0, Landroid/widget/AppSecurityPermissions;->localLOGV:Z
 
-    if-eqz v9, :cond_151
+    if-eqz v9, :cond_150
 
     const-string v9, "AppSecurityPermissions"
 
@@ -1853,7 +1853,7 @@
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v11, "mCurrentState="
+    const-string v11, "mCurrentState="
 
     invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1872,20 +1872,20 @@
     invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 491
-    :cond_151
+    :cond_150
     invoke-direct {p0}, Landroid/widget/AppSecurityPermissions;->showPermissions()V
 
     .line 492
     return-void
 
     .line 486
-    :cond_155
+    :cond_154
     sget-object v9, Landroid/widget/AppSecurityPermissions$State;->DANGEROUS_ONLY:Landroid/widget/AppSecurityPermissions$State;
 
     goto :goto_130
 
     .line 487
-    :cond_158
+    :cond_157
     iget-object v9, p0, Landroid/widget/AppSecurityPermissions;->mNormalMap:Ljava/util/Map;
 
     invoke-interface {v9}, Ljava/util/Map;->size()I
@@ -2260,7 +2260,7 @@
     .line 495
     iget-boolean v0, p0, Landroid/widget/AppSecurityPermissions;->localLOGV:Z
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1e
 
     const-string v0, "AppSecurityPermissions"
 
@@ -2268,7 +2268,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "mExpanded="
+    const-string v2, "mExpanded="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2287,14 +2287,14 @@
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 496
-    :cond_1f
+    :cond_1e
     iget-boolean v0, p0, Landroid/widget/AppSecurityPermissions;->mExpanded:Z
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_29
 
     const/4 v0, 0x1
 
-    :goto_24
+    :goto_23
     iput-boolean v0, p0, Landroid/widget/AppSecurityPermissions;->mExpanded:Z
 
     .line 497
@@ -2304,8 +2304,8 @@
     return-void
 
     .line 496
-    :cond_2a
+    :cond_29
     const/4 v0, 0x0
 
-    goto :goto_24
+    goto :goto_23
 .end method

@@ -73,7 +73,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "local."
+    const-string v2, "local."
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

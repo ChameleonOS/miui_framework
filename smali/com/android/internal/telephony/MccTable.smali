@@ -381,7 +381,7 @@
 
     const/16 v2, 0xf6
 
-    const-string/jumbo v3, "lt"
+    const-string v3, "lt"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -394,7 +394,7 @@
 
     const/16 v2, 0xf7
 
-    const-string/jumbo v3, "lv"
+    const-string v3, "lv"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -526,7 +526,7 @@
 
     const/16 v2, 0x10e
 
-    const-string/jumbo v3, "lu"
+    const-string v3, "lu"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -736,7 +736,7 @@
 
     const/16 v2, 0x127
 
-    const-string/jumbo v3, "li"
+    const-string v3, "li"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -1311,7 +1311,7 @@
 
     const/16 v2, 0x19d
 
-    const-string/jumbo v3, "lk"
+    const-string v3, "lk"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -2224,7 +2224,7 @@
 
     const/16 v2, 0x25e
 
-    const-string/jumbo v3, "ly"
+    const-string v3, "ly"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -2380,7 +2380,7 @@
 
     const/16 v2, 0x26a
 
-    const-string/jumbo v3, "lr"
+    const-string v3, "lr"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -2796,7 +2796,7 @@
 
     const/16 v2, 0x28b
 
-    const-string/jumbo v3, "ls"
+    const-string v3, "ls"
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/internal/telephony/MccTable$MccEntry;-><init>(ILjava/lang/String;I)V
 
@@ -3371,7 +3371,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "locale set to "
+    const-string v4, "locale set to "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

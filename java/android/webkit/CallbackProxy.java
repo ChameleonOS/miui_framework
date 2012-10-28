@@ -327,109 +327,119 @@ _L1:
         return;
 _L2:
         message.what;
-        JVM INSTR tableswitch 100 200: default 432
-    //                   100 435
-    //                   101 533
-    //                   102 626
-    //                   103 783
-    //                   104 836
-    //                   105 899
-    //                   106 1040
-    //                   107 1084
-    //                   108 1145
-    //                   109 1271
-    //                   110 1397
-    //                   111 1424
-    //                   112 1807
-    //                   113 1963
-    //                   114 2135
-    //                   115 2375
-    //                   116 1501
-    //                   117 432
-    //                   118 1176
-    //                   119 657
-    //                   120 717
-    //                   121 489
-    //                   122 1373
-    //                   123 2644
-    //                   124 2609
-    //                   125 2688
-    //                   126 1532
-    //                   127 1657
-    //                   128 2555
-    //                   129 2698
-    //                   130 1734
-    //                   131 1790
-    //                   132 564
-    //                   133 2951
-    //                   134 2975
-    //                   135 3016
-    //                   136 3040
-    //                   137 3068
-    //                   138 3134
-    //                   139 3151
-    //                   140 3192
-    //                   141 985
-    //                   142 3258
-    //                   143 3284
-    //                   144 954
-    //                   145 432
-    //                   146 432
-    //                   147 432
-    //                   148 432
-    //                   149 432
-    //                   150 432
-    //                   151 432
-    //                   152 432
-    //                   153 432
-    //                   154 432
-    //                   155 432
-    //                   156 432
-    //                   157 432
-    //                   158 432
-    //                   159 432
-    //                   160 432
-    //                   161 432
-    //                   162 432
-    //                   163 432
-    //                   164 432
-    //                   165 432
-    //                   166 432
-    //                   167 432
-    //                   168 432
-    //                   169 432
-    //                   170 432
-    //                   171 432
-    //                   172 432
-    //                   173 432
-    //                   174 432
-    //                   175 432
-    //                   176 432
-    //                   177 432
-    //                   178 432
-    //                   179 432
-    //                   180 432
-    //                   181 432
-    //                   182 432
-    //                   183 432
-    //                   184 432
-    //                   185 432
-    //                   186 432
-    //                   187 432
-    //                   188 432
-    //                   189 432
-    //                   190 432
-    //                   191 432
-    //                   192 432
-    //                   193 432
-    //                   194 432
-    //                   195 432
-    //                   196 432
-    //                   197 432
-    //                   198 432
-    //                   199 432
-    //                   200 2626;
-           goto _L3 _L4 _L5 _L6 _L7 _L8 _L9 _L10 _L11 _L12 _L13 _L14 _L15 _L16 _L17 _L18 _L19 _L20 _L3 _L21 _L22 _L23 _L24 _L25 _L26 _L27 _L28 _L29 _L30 _L31 _L32 _L33 _L34 _L35 _L36 _L37 _L38 _L39 _L40 _L41 _L42 _L43 _L44 _L45 _L46 _L47 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L48
+        JVM INSTR tableswitch 100 210: default 472
+    //                   100 475
+    //                   101 597
+    //                   102 690
+    //                   103 847
+    //                   104 900
+    //                   105 963
+    //                   106 1104
+    //                   107 1148
+    //                   108 1209
+    //                   109 1335
+    //                   110 1461
+    //                   111 1488
+    //                   112 1871
+    //                   113 2027
+    //                   114 2199
+    //                   115 2439
+    //                   116 1565
+    //                   117 472
+    //                   118 1240
+    //                   119 721
+    //                   120 781
+    //                   121 529
+    //                   122 1437
+    //                   123 2708
+    //                   124 2673
+    //                   125 2752
+    //                   126 1596
+    //                   127 1721
+    //                   128 2619
+    //                   129 2762
+    //                   130 1798
+    //                   131 1854
+    //                   132 628
+    //                   133 3015
+    //                   134 3039
+    //                   135 3080
+    //                   136 3104
+    //                   137 3132
+    //                   138 3198
+    //                   139 3215
+    //                   140 3256
+    //                   141 1049
+    //                   142 3322
+    //                   143 3348
+    //                   144 1018
+    //                   145 472
+    //                   146 472
+    //                   147 472
+    //                   148 472
+    //                   149 472
+    //                   150 472
+    //                   151 472
+    //                   152 472
+    //                   153 472
+    //                   154 472
+    //                   155 472
+    //                   156 472
+    //                   157 472
+    //                   158 472
+    //                   159 472
+    //                   160 472
+    //                   161 472
+    //                   162 472
+    //                   163 472
+    //                   164 472
+    //                   165 472
+    //                   166 472
+    //                   167 472
+    //                   168 472
+    //                   169 472
+    //                   170 472
+    //                   171 472
+    //                   172 472
+    //                   173 472
+    //                   174 472
+    //                   175 472
+    //                   176 472
+    //                   177 472
+    //                   178 472
+    //                   179 472
+    //                   180 472
+    //                   181 472
+    //                   182 472
+    //                   183 472
+    //                   184 472
+    //                   185 472
+    //                   186 472
+    //                   187 472
+    //                   188 472
+    //                   189 472
+    //                   190 472
+    //                   191 472
+    //                   192 472
+    //                   193 472
+    //                   194 472
+    //                   195 472
+    //                   196 472
+    //                   197 472
+    //                   198 472
+    //                   199 472
+    //                   200 2690
+    //                   201 472
+    //                   202 472
+    //                   203 472
+    //                   204 472
+    //                   205 472
+    //                   206 472
+    //                   207 472
+    //                   208 472
+    //                   209 472
+    //                   210 573;
+           goto _L3 _L4 _L5 _L6 _L7 _L8 _L9 _L10 _L11 _L12 _L13 _L14 _L15 _L16 _L17 _L18 _L19 _L20 _L3 _L21 _L22 _L23 _L24 _L25 _L26 _L27 _L28 _L29 _L30 _L31 _L32 _L33 _L34 _L35 _L36 _L37 _L38 _L39 _L40 _L41 _L42 _L43 _L44 _L45 _L46 _L47 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L48 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L3 _L49
 _L3:
         continue; /* Loop/switch isn't completed */
 _L4:
@@ -443,6 +453,10 @@ _L24:
         mWebView.onPageFinished(s36);
         if(mWebViewClient != null)
             mWebViewClient.onPageFinished(mWebView.getWebView(), s36);
+        continue; /* Loop/switch isn't completed */
+_L49:
+        if(mWebViewClient != null)
+            mWebViewClient.onMainFrameFinishParsing(mWebView.getWebView());
         continue; /* Loop/switch isn't completed */
 _L5:
         if(mWebChromeClient != null)
@@ -562,14 +576,14 @@ _L13:
             flag1 = true;
         else
             flag1 = false;
-        if(webchromeclient.onCreateWindow(webview, flag, flag1, (Message)message.obj)) goto _L50; else goto _L49
-_L49:
+        if(webchromeclient.onCreateWindow(webview, flag, flag1, (Message)message.obj)) goto _L51; else goto _L50
+_L50:
         this;
         JVM INSTR monitorenter ;
         notify();
         this;
         JVM INSTR monitorexit ;
-_L50:
+_L51:
         mWebView.dismissZoomControl();
         continue; /* Loop/switch isn't completed */
         Exception exception;
@@ -995,8 +1009,8 @@ _L46:
         SearchBoxImpl searchboximpl = (SearchBoxImpl)mWebView.getSearchBox();
         Boolean boolean1 = (Boolean)message.obj;
         searchboximpl.handleDispatchCompleteCallback(message.getData().getString("function"), message.getData().getInt("id"), boolean1.booleanValue());
-        if(true) goto _L1; else goto _L51
-_L51:
+        if(true) goto _L1; else goto _L52
+_L52:
     }
 
     /**
@@ -1157,6 +1171,10 @@ _L51:
             flag = jsresultreceiver.mJsResult.getResult();
         }
         return flag;
+    }
+
+    public void onMainFrameFinishParsing() {
+        sendMessage(obtainMessage(210));
     }
 
     void onNewHistoryItem(WebHistoryItem webhistoryitem) {
@@ -1485,6 +1503,7 @@ _L3:
     private static final int JS_UNLOAD = 115;
     private static final int LOAD_RESOURCE = 108;
     private static final String LOGTAG = "CallbackProxy";
+    private static final int MAIN_FRAME_FINISH_PARSING = 210;
     private static final int NOTIFY = 200;
     private static final int NOTIFY_SEARCHBOX_LISTENERS = 139;
     private static final int OPEN_FILE_CHOOSER = 134;

@@ -693,7 +693,7 @@
     .local v1, whereArgs:[Ljava/lang/String;
     iget-object v3, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
-    iget-object v4, p0, Landroid/app/DownloadManager;->mBaseUri:Landroid/net/Uri;
+    iget-object v4, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
 
     invoke-virtual {v3, v4, v0, v2, v1}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
@@ -720,7 +720,7 @@
 
     sget-object v2, Landroid/app/MiuiDownloadManager;->MIUI_UNDERLYING_COLUMNS:[Ljava/lang/String;
 
-    iget-object v3, p0, Landroid/app/DownloadManager;->mBaseUri:Landroid/net/Uri;
+    iget-object v3, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
 
     invoke-virtual {p1, v1, v2, v3}, Landroid/app/DownloadManager$Query;->runQuery(Landroid/content/ContentResolver;[Ljava/lang/String;Landroid/net/Uri;)Landroid/database/Cursor;
 
@@ -740,7 +740,7 @@
     :cond_e
     new-instance v1, Landroid/app/MiuiDownloadManager$CursorTranslator;
 
-    iget-object v2, p0, Landroid/app/DownloadManager;->mBaseUri:Landroid/net/Uri;
+    iget-object v2, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
 
     invoke-direct {v1, v0, v2}, Landroid/app/MiuiDownloadManager$CursorTranslator;-><init>(Landroid/database/Cursor;Landroid/net/Uri;)V
 
@@ -773,7 +773,7 @@
     :cond_d
     iget-object v0, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Landroid/app/DownloadManager;->mBaseUri:Landroid/net/Uri;
+    iget-object v1, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
 
     invoke-static {p1}, Landroid/app/MiuiDownloadManager;->getWhereClauseForIds([J)Ljava/lang/String;
 
@@ -887,7 +887,7 @@
     .local v1, whereArgs:[Ljava/lang/String;
     iget-object v3, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
-    iget-object v4, p0, Landroid/app/DownloadManager;->mBaseUri:Landroid/net/Uri;
+    iget-object v4, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
 
     invoke-virtual {v3, v4, v0, v2, v1}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 

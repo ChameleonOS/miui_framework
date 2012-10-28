@@ -5864,7 +5864,7 @@ public final class R {
         public static final int secondary_text_light = 0x1060007;
         public static final int secondary_text_light_nodisable = 0x1060008;
         public static final int tab_indicator_text = 0x1060009;
-        public static final int tab_indicator_text_v4 = 0x106007b;
+        public static final int tab_indicator_text_v4 = 0x106007c;
         public static final int tertiary_text_dark = 0x1060010;
         public static final int tertiary_text_light = 0x1060011;
         public static final int transparent = 0x106000d;

@@ -1318,32 +1318,32 @@
 
     .prologue
     .line 284
-    if-nez p1, :cond_b
+    if-nez p1, :cond_a
 
     .line 285
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "listener must not be null"
+    const-string v2, "listener must not be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
     .line 288
-    :cond_b
+    :cond_a
     iget-object v2, p0, Landroid/hardware/input/InputManager;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v2
 
     .line 289
-    :try_start_e
+    :try_start_d
     invoke-direct {p0, p1}, Landroid/hardware/input/InputManager;->findInputDeviceListenerLocked(Landroid/hardware/input/InputManager$InputDeviceListener;)I
 
     move-result v0
 
     .line 290
     .local v0, index:I
-    if-gez v0, :cond_1e
+    if-gez v0, :cond_1d
 
     .line 291
     iget-object v1, p0, Landroid/hardware/input/InputManager;->mInputDeviceListeners:Ljava/util/ArrayList;
@@ -1355,7 +1355,7 @@
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 293
-    :cond_1e
+    :cond_1d
     monitor-exit v2
 
     .line 294
@@ -1363,12 +1363,12 @@
 
     .line 293
     .end local v0           #index:I
-    :catchall_20
+    :catchall_1f
     move-exception v1
 
     monitor-exit v2
-    :try_end_22
-    .catchall {:try_start_e .. :try_end_22} :catchall_20
+    :try_end_21
+    .catchall {:try_start_d .. :try_end_21} :catchall_1f
 
     throw v1
 .end method
@@ -1588,32 +1588,32 @@
 
     .prologue
     .line 304
-    if-nez p1, :cond_b
+    if-nez p1, :cond_a
 
     .line 305
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "listener must not be null"
+    const-string v3, "listener must not be null"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
     .line 308
-    :cond_b
+    :cond_a
     iget-object v3, p0, Landroid/hardware/input/InputManager;->mInputDevicesLock:Ljava/lang/Object;
 
     monitor-enter v3
 
     .line 309
-    :try_start_e
+    :try_start_d
     invoke-direct {p0, p1}, Landroid/hardware/input/InputManager;->findInputDeviceListenerLocked(Landroid/hardware/input/InputManager$InputDeviceListener;)I
 
     move-result v1
 
     .line 310
     .local v1, index:I
-    if-ltz v1, :cond_25
+    if-ltz v1, :cond_24
 
     .line 311
     iget-object v2, p0, Landroid/hardware/input/InputManager;->mInputDeviceListeners:Ljava/util/ArrayList;
@@ -1637,7 +1637,7 @@
 
     .line 315
     .end local v0           #d:Landroid/hardware/input/InputManager$InputDeviceListenerDelegate;
-    :cond_25
+    :cond_24
     monitor-exit v3
 
     .line 316
@@ -1645,12 +1645,12 @@
 
     .line 315
     .end local v1           #index:I
-    :catchall_27
+    :catchall_26
     move-exception v2
 
     monitor-exit v3
-    :try_end_29
-    .catchall {:try_start_e .. :try_end_29} :catchall_27
+    :try_end_28
+    .catchall {:try_start_d .. :try_end_28} :catchall_26
 
     throw v2
 .end method

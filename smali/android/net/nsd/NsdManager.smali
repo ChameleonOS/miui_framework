@@ -591,24 +591,24 @@
 
     .prologue
     .line 519
-    if-nez p3, :cond_b
+    if-nez p3, :cond_a
 
     .line 520
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "listener cannot be null"
+    const-string v2, "listener cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
     .line 522
-    :cond_b
+    :cond_a
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_18
 
     .line 523
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -620,10 +620,10 @@
     throw v1
 
     .line 526
-    :cond_19
+    :cond_18
     const/4 v1, 0x1
 
-    if-eq p2, v1, :cond_24
+    if-eq p2, v1, :cond_23
 
     .line 527
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -635,7 +635,7 @@
     throw v1
 
     .line 530
-    :cond_24
+    :cond_23
     new-instance v0, Landroid/net/nsd/NsdServiceInfo;
 
     invoke-direct {v0}, Landroid/net/nsd/NsdServiceInfo;-><init>()V
@@ -718,22 +718,22 @@
 
     .line 464
     :cond_2a
-    if-nez p3, :cond_35
+    if-nez p3, :cond_34
 
     .line 465
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "listener cannot be null"
+    const-string v1, "listener cannot be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 467
-    :cond_35
+    :cond_34
     const/4 v0, 0x1
 
-    if-eq p2, v0, :cond_40
+    if-eq p2, v0, :cond_3f
 
     .line 468
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -745,7 +745,7 @@
     throw v0
 
     .line 470
-    :cond_40
+    :cond_3f
     iget-object v0, p0, Landroid/net/nsd/NsdManager;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
 
     const v1, 0x60009
@@ -801,19 +801,19 @@
 
     .line 571
     :cond_1c
-    if-nez p2, :cond_27
+    if-nez p2, :cond_26
 
     .line 572
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "listener cannot be null"
+    const-string v1, "listener cannot be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 574
-    :cond_27
+    :cond_26
     iget-object v0, p0, Landroid/net/nsd/NsdManager;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
 
     const v1, 0x60012
@@ -879,19 +879,19 @@
 
     .line 552
     :cond_f
-    if-nez p1, :cond_1a
+    if-nez p1, :cond_19
 
     .line 553
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "listener cannot be null"
+    const-string v2, "listener cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
     .line 555
-    :cond_1a
+    :cond_19
     iget-object v1, p0, Landroid/net/nsd/NsdManager;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
 
     const v2, 0x60006
@@ -916,32 +916,32 @@
 
     .line 485
     .local v0, id:I
-    if-nez v0, :cond_f
+    if-nez v0, :cond_e
 
     .line 486
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "listener not registered"
+    const-string v2, "listener not registered"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
     .line 488
-    :cond_f
-    if-nez p1, :cond_1a
+    :cond_e
+    if-nez p1, :cond_18
 
     .line 489
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "listener cannot be null"
+    const-string v2, "listener cannot be null"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
     .line 491
-    :cond_1a
+    :cond_18
     iget-object v1, p0, Landroid/net/nsd/NsdManager;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
 
     const v2, 0x6000c

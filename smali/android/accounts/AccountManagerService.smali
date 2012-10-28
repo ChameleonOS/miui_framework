@@ -5717,7 +5717,7 @@
     .restart local v20       #cursor:Landroid/database/Cursor;
     :cond_d0
     :try_start_d0
-    invoke-virtual/range {v16 .. v17}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual/range {v16 .. v17}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v15
 
@@ -5739,7 +5739,7 @@
 
     move-object/from16 v1, v17
 
-    invoke-virtual {v0, v1, v15}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v15}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 323
     :cond_e4
@@ -5753,7 +5753,7 @@
     .end local v15           #accountNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v17           #accountType:Ljava/lang/String;
     :cond_e9
-    invoke-virtual/range {v16 .. v16}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual/range {v16 .. v16}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v3
 
@@ -6739,7 +6739,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v3, v0}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
+    invoke-virtual {v3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     move-object v0, v3
 
@@ -6778,7 +6778,7 @@
     if-ge v6, v0, :cond_a3
 
     .line 2035
-    invoke-virtual {v3}, Lcom/android/internal/util/IndentingPrintWriter;->println()V
+    invoke-virtual {v3}, Ljava/io/PrintWriter;->println()V
 
     .line 2029
     :cond_a3

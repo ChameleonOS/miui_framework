@@ -891,13 +891,13 @@
 
     iget v4, p0, Landroid/app/BackStackRecord;->mExitAnim:I
 
-    if-eqz v4, :cond_6e
+    if-eqz v4, :cond_6d
 
     .line 227
     :cond_4e
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string/jumbo v4, "mEnterAnim=#"
+    const-string v4, "mEnterAnim=#"
 
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -925,17 +925,17 @@
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 232
-    :cond_6e
+    :cond_6d
     iget v4, p0, Landroid/app/BackStackRecord;->mPopEnterAnim:I
 
-    if-nez v4, :cond_76
+    if-nez v4, :cond_75
 
     iget v4, p0, Landroid/app/BackStackRecord;->mPopExitAnim:I
 
-    if-eqz v4, :cond_96
+    if-eqz v4, :cond_95
 
     .line 233
-    :cond_76
+    :cond_75
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v4, "mPopEnterAnim=#"
@@ -966,20 +966,20 @@
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 238
-    :cond_96
+    :cond_95
     iget v4, p0, Landroid/app/BackStackRecord;->mBreadCrumbTitleRes:I
 
-    if-nez v4, :cond_9e
+    if-nez v4, :cond_9d
 
     iget-object v4, p0, Landroid/app/BackStackRecord;->mBreadCrumbTitleText:Ljava/lang/CharSequence;
 
-    if-eqz v4, :cond_ba
+    if-eqz v4, :cond_b8
 
     .line 239
-    :cond_9e
+    :cond_9d
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string/jumbo v4, "mBreadCrumbTitleRes=#"
+    const-string v4, "mBreadCrumbTitleRes=#"
 
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1003,20 +1003,20 @@
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     .line 244
-    :cond_ba
+    :cond_b8
     iget v4, p0, Landroid/app/BackStackRecord;->mBreadCrumbShortTitleRes:I
 
-    if-nez v4, :cond_c2
+    if-nez v4, :cond_c0
 
     iget-object v4, p0, Landroid/app/BackStackRecord;->mBreadCrumbShortTitleText:Ljava/lang/CharSequence;
 
-    if-eqz v4, :cond_de
+    if-eqz v4, :cond_db
 
     .line 245
-    :cond_c2
+    :cond_c0
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string/jumbo v4, "mBreadCrumbShortTitleRes=#"
+    const-string v4, "mBreadCrumbShortTitleRes=#"
 
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -1040,10 +1040,10 @@
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     .line 251
-    :cond_de
+    :cond_db
     iget-object v4, p0, Landroid/app/BackStackRecord;->mHead:Landroid/app/BackStackRecord$Op;
 
-    if-eqz v4, :cond_1c4
+    if-eqz v4, :cond_1c1
 
     .line 252
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1081,8 +1081,8 @@
 
     .line 256
     .local v2, num:I
-    :goto_100
-    if-eqz v3, :cond_1c4
+    :goto_fd
+    if-eqz v3, :cond_1c1
 
     .line 257
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1121,14 +1121,14 @@
     .line 261
     iget v4, v3, Landroid/app/BackStackRecord$Op;->enterAnim:I
 
-    if-nez v4, :cond_131
+    if-nez v4, :cond_12e
 
     iget v4, v3, Landroid/app/BackStackRecord$Op;->exitAnim:I
 
-    if-eqz v4, :cond_150
+    if-eqz v4, :cond_14d
 
     .line 262
-    :cond_131
+    :cond_12e
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v4, "enterAnim=#"
@@ -1159,17 +1159,17 @@
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 267
-    :cond_150
+    :cond_14d
     iget v4, v3, Landroid/app/BackStackRecord$Op;->popEnterAnim:I
 
-    if-nez v4, :cond_158
+    if-nez v4, :cond_155
 
     iget v4, v3, Landroid/app/BackStackRecord$Op;->popExitAnim:I
 
-    if-eqz v4, :cond_178
+    if-eqz v4, :cond_175
 
     .line 268
-    :cond_158
+    :cond_155
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v4, "popEnterAnim=#"
@@ -1200,10 +1200,10 @@
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     .line 273
-    :cond_178
+    :cond_175
     iget-object v4, v3, Landroid/app/BackStackRecord$Op;->removed:Ljava/util/ArrayList;
 
-    if-eqz v4, :cond_1c0
+    if-eqz v4, :cond_1bd
 
     iget-object v4, v3, Landroid/app/BackStackRecord$Op;->removed:Ljava/util/ArrayList;
 
@@ -1211,20 +1211,20 @@
 
     move-result v4
 
-    if-lez v4, :cond_1c0
+    if-lez v4, :cond_1bd
 
     .line 274
     const/4 v0, 0x0
 
     .local v0, i:I
-    :goto_185
+    :goto_182
     iget-object v4, v3, Landroid/app/BackStackRecord$Op;->removed:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-ge v0, v4, :cond_1c0
+    if-ge v0, v4, :cond_1bd
 
     .line 275
     invoke-virtual {p3, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1238,7 +1238,7 @@
 
     const/4 v5, 0x1
 
-    if-ne v4, v5, :cond_1aa
+    if-ne v4, v5, :cond_1a7
 
     .line 277
     const-string v4, "Removed: "
@@ -1246,7 +1246,7 @@
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     .line 283
-    :goto_19e
+    :goto_19b
     iget-object v4, v3, Landroid/app/BackStackRecord$Op;->removed:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1258,10 +1258,10 @@
     .line 274
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_185
+    goto :goto_182
 
     .line 279
-    :cond_1aa
+    :cond_1a7
     const-string v4, "Removed:"
 
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
@@ -1280,20 +1280,20 @@
 
     invoke-virtual {p3, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    goto :goto_19e
+    goto :goto_19b
 
     .line 286
     .end local v0           #i:I
-    :cond_1c0
+    :cond_1bd
     iget-object v3, v3, Landroid/app/BackStackRecord$Op;->next:Landroid/app/BackStackRecord$Op;
 
-    goto/16 :goto_100
+    goto/16 :goto_fd
 
     .line 289
     .end local v1           #innerPrefix:Ljava/lang/String;
     .end local v2           #num:I
     .end local v3           #op:Landroid/app/BackStackRecord$Op;
-    :cond_1c4
+    :cond_1c1
     return-void
 .end method
 

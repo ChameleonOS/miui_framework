@@ -35,9 +35,9 @@
 
 .field public static final android_common_name_suffixes:I = 0x60c019d
 
-.field public static final android_config_defaultDreamComponent:I = 0x60c01f9
+.field public static final android_config_defaultDreamComponent:I = 0x60c0201
 
-.field public static final android_date_time_set:I = 0x60c01fa
+.field public static final android_date_time_set:I = 0x60c0202
 
 .field public static final android_dial_number_using:I = 0x60c01a0
 
@@ -148,6 +148,12 @@
 .field public static final android_twelve_hour_time_format:I = 0x60c0193
 
 .field public static final android_twenty_four_hour_time_format:I = 0x60c0194
+
+.field public static final android_usb_cd_installer_notification_title:I = 0x60c0207
+
+.field public static final android_usb_mtp_notification_title:I = 0x60c0205
+
+.field public static final android_usb_ptp_notification_title:I = 0x60c0206
 
 .field public static final android_volume_alarm:I = 0x60c01a6
 
@@ -661,7 +667,7 @@
 
 .field public static final description_download:I = 0x60c0011
 
-.field public static final description_downloadtime:I = 0x60c01fb
+.field public static final description_downloadtime:I = 0x60c01f9
 
 .field public static final description_file:I = 0x60c0013
 
@@ -809,11 +815,17 @@
 
 .field public static final lunar_zheng:I = 0x60c0042
 
+.field public static final memory_clear_nothing_result:I = 0x60c01fd
+
+.field public static final memory_clear_result:I = 0x60c01fc
+
 .field public static final miui_copyright_title:I = 0x60c0030
 
 .field public static final miui_privacy_policy_title:I = 0x60c0032
 
 .field public static final miui_user_agreement_title:I = 0x60c0031
+
+.field public static final miui_user_manual_title:I = 0x60c0200
 
 .field public static final month_of_april:I = 0x60c01c1
 
@@ -843,7 +855,7 @@
 
 .field public static final national_day:I = 0x60c006a
 
-.field public static final national_father_day:I = 0x60c01fd
+.field public static final national_father_day:I = 0x60c0204
 
 .field public static final never:I = 0x60c01b0
 
@@ -867,7 +879,7 @@
 
 .field public static final payphone:I = 0x60c003e
 
-.field public static final peace_day:I = 0x60c01fc
+.field public static final peace_day:I = 0x60c0203
 
 .field public static final perm_activate_dspt:I = 0x60c01d0
 
@@ -879,11 +891,19 @@
 
 .field public static final perm_get_user_info_lab:I = 0x60c01d2
 
+.field public static final perm_send_push_dspt:I = 0x60c01ff
+
+.field public static final perm_send_push_lab:I = 0x60c01fe
+
 .field public static final perm_tigger_toggle_dspt:I = 0x60c01e3
 
 .field public static final perm_tigger_toggle_lab:I = 0x60c01e2
 
 .field public static final perm_use_find_device:I = 0x60c01e4
+
+.field public static final permdesc_accessNote:I = 0x60c01fb
+
+.field public static final permlab_accessNote:I = 0x60c01fa
 
 .field public static final private_num:I = 0x60c003d
 
@@ -1041,7 +1061,7 @@
     .registers 1
 
     .prologue
-    .line 1479
+    .line 1512
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

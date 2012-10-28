@@ -306,7 +306,7 @@
     .line 571
     iget-object v0, p0, Landroid/os/Handler;->mLooper:Landroid/os/Looper;
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_3d
 
     .line 572
     new-instance v0, Ljava/lang/StringBuilder;
@@ -317,7 +317,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "looper uninitialized"
+    const-string v1, "looper uninitialized"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -330,11 +330,11 @@
     invoke-interface {p1, v0}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
     .line 576
-    :goto_3d
+    :goto_3c
     return-void
 
     .line 574
-    :cond_3e
+    :cond_3d
     iget-object v0, p0, Landroid/os/Handler;->mLooper:Landroid/os/Looper;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -357,7 +357,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/os/Looper;->dump(Landroid/util/Printer;Ljava/lang/String;)V
 
-    goto :goto_3d
+    goto :goto_3c
 .end method
 
 .method final getIMessenger()Landroid/os/IMessenger;

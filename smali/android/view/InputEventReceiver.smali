@@ -65,19 +65,19 @@
 
     .line 62
     :cond_1a
-    if-nez p2, :cond_25
+    if-nez p2, :cond_24
 
     .line 63
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "looper must not be null"
+    const-string v1, "looper must not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 66
-    :cond_25
+    :cond_24
     iput-object p1, p0, Landroid/view/InputEventReceiver;->mInputChannel:Landroid/view/InputChannel;
 
     .line 67

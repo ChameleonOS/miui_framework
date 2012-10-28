@@ -1972,7 +1972,7 @@
     const/4 v2, 0x0
 
     .line 343
-    if-eqz p1, :cond_43
+    if-eqz p1, :cond_42
 
     const-string v3, "SC"
 
@@ -1980,7 +1980,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_42
 
     .line 344
     if-eqz p5, :cond_3c
@@ -2048,14 +2048,14 @@
 
     .line 347
     :cond_3f
-    const-string/jumbo v1, "locked"
+    const-string v1, "locked"
 
     goto :goto_2b
 
     .line 353
     .end local v0           #r:[I
-    :cond_43
-    if-eqz p1, :cond_81
+    :cond_42
+    if-eqz p1, :cond_80
 
     const-string v3, "FD"
 
@@ -2063,7 +2063,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_81
+    if-eqz v3, :cond_80
 
     .line 354
     if-eqz p5, :cond_3c
@@ -2075,9 +2075,9 @@
     .restart local v0       #r:[I
     iget-boolean v3, p0, Lcom/android/internal/telephony/test/SimulatedCommands;->mSimFdnEnabled:Z
 
-    if-eqz v3, :cond_7c
+    if-eqz v3, :cond_7b
 
-    :goto_55
+    :goto_54
     aput v1, v0, v2
 
     .line 357
@@ -2095,11 +2095,11 @@
 
     aget v1, v0, v2
 
-    if-nez v1, :cond_7e
+    if-nez v1, :cond_7d
 
     const-string v1, "disabled"
 
-    :goto_6a
+    :goto_69
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -2118,21 +2118,21 @@
 
     goto :goto_3c
 
-    :cond_7c
+    :cond_7b
     move v1, v2
 
     .line 356
-    goto :goto_55
+    goto :goto_54
 
     .line 357
-    :cond_7e
+    :cond_7d
     const-string v1, "enabled"
 
-    goto :goto_6a
+    goto :goto_69
 
     .line 365
     .end local v0           #r:[I
-    :cond_81
+    :cond_80
     invoke-direct {p0, p5}, Lcom/android/internal/telephony/test/SimulatedCommands;->unimplemented(Landroid/os/Message;)V
 
     goto :goto_3c

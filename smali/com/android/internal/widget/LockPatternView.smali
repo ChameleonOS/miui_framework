@@ -452,7 +452,7 @@
 
     .local v5, i$:I
     :goto_116
-    if-ge v5, v6, :cond_156
+    if-ge v5, v6, :cond_154
 
     aget-object v3, v1, v5
 
@@ -495,13 +495,13 @@
     .end local v5           #i$:I
     .end local v6           #len$:I
     :cond_135
-    const-string/jumbo v7, "lock_width"
+    const-string v7, "lock_width"
 
     invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_143
+    if-eqz v7, :cond_142
 
     .line 253
     const/4 v7, 0x1
@@ -511,14 +511,14 @@
     goto/16 :goto_86
 
     .line 254
-    :cond_143
-    const-string/jumbo v7, "lock_height"
+    :cond_142
+    const-string v7, "lock_height"
 
     invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_151
+    if-eqz v7, :cond_14f
 
     .line 255
     const/4 v7, 0x2
@@ -528,7 +528,7 @@
     goto/16 :goto_86
 
     .line 257
-    :cond_151
+    :cond_14f
     const/4 v7, 0x0
 
     iput v7, p0, Lcom/android/internal/widget/LockPatternView;->mAspect:I
@@ -540,7 +540,7 @@
     .restart local v4       #bitmaps:[Landroid/graphics/Bitmap;
     .restart local v5       #i$:I
     .restart local v6       #len$:I
-    :cond_156
+    :cond_154
     return-void
 .end method
 

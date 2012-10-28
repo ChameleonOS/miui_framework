@@ -3175,31 +3175,31 @@
     invoke-virtual {v1, p2, p3}, Ljava/util/GregorianCalendar;->setTimeInMillis(J)V
 
     .line 808
-    invoke-virtual {v2, v5}, Ljava/util/GregorianCalendar;->get(I)I
+    invoke-virtual {v2, v5}, Ljava/util/Calendar;->get(I)I
 
     move-result v4
 
-    invoke-virtual {v1, v5}, Ljava/util/GregorianCalendar;->get(I)I
+    invoke-virtual {v1, v5}, Ljava/util/Calendar;->get(I)I
 
     move-result v5
 
     if-ne v4, v5, :cond_3e
 
-    invoke-virtual {v2, v6}, Ljava/util/GregorianCalendar;->get(I)I
+    invoke-virtual {v2, v6}, Ljava/util/Calendar;->get(I)I
 
     move-result v4
 
-    invoke-virtual {v1, v6}, Ljava/util/GregorianCalendar;->get(I)I
+    invoke-virtual {v1, v6}, Ljava/util/Calendar;->get(I)I
 
     move-result v5
 
     if-ne v4, v5, :cond_3e
 
-    invoke-virtual {v2, v7}, Ljava/util/GregorianCalendar;->get(I)I
+    invoke-virtual {v2, v7}, Ljava/util/Calendar;->get(I)I
 
     move-result v4
 
-    invoke-virtual {v1, v7}, Ljava/util/GregorianCalendar;->get(I)I
+    invoke-virtual {v1, v7}, Ljava/util/Calendar;->get(I)I
 
     move-result v5
 

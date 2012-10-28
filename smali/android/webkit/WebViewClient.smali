@@ -55,7 +55,7 @@
     .parameter "isReload"
 
     .prologue
-    .line 190
+    .line 197
     return-void
 .end method
 
@@ -66,10 +66,10 @@
     .parameter "resend"
 
     .prologue
-    .line 178
+    .line 185
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 179
+    .line 186
     return-void
 .end method
 
@@ -80,6 +80,18 @@
 
     .prologue
     .line 82
+    return-void
+.end method
+
+.method public onMainFrameFinishParsing(Landroid/webkit/WebView;)V
+    .registers 2
+    .parameter "view"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    .line 172
     return-void
 .end method
 
@@ -110,7 +122,7 @@
     .parameter "error"
 
     .prologue
-    .line 216
+    .line 223
     return-void
 .end method
 
@@ -125,7 +137,7 @@
     .end annotation
 
     .prologue
-    .line 274
+    .line 281
     return-void
 .end method
 
@@ -136,10 +148,10 @@
     .parameter "host_and_port"
 
     .prologue
-    .line 235
+    .line 242
     invoke-virtual {p2}, Landroid/webkit/ClientCertRequestHandler;->cancel()V
 
-    .line 236
+    .line 243
     return-void
 .end method
 
@@ -163,10 +175,10 @@
     .parameter "realm"
 
     .prologue
-    .line 250
+    .line 257
     invoke-virtual {p2}, Landroid/webkit/HttpAuthHandler;->cancel()V
 
-    .line 251
+    .line 258
     return-void
 .end method
 
@@ -178,7 +190,7 @@
     .parameter "args"
 
     .prologue
-    .line 316
+    .line 323
     return-void
 .end method
 
@@ -189,10 +201,10 @@
     .parameter "error"
 
     .prologue
-    .line 206
+    .line 213
     invoke-virtual {p2}, Landroid/webkit/SslErrorHandler;->cancel()V
 
-    .line 207
+    .line 214
     return-void
 .end method
 
@@ -203,7 +215,7 @@
     .parameter "newScale"
 
     .prologue
-    .line 302
+    .line 309
     return-void
 .end method
 
@@ -229,19 +241,19 @@
     .parameter "event"
 
     .prologue
-    .line 287
+    .line 294
     invoke-virtual {p1}, Landroid/webkit/WebView;->getViewRootImpl()Landroid/view/ViewRootImpl;
 
     move-result-object v0
 
-    .line 288
+    .line 295
     .local v0, root:Landroid/view/ViewRootImpl;
     if-eqz v0, :cond_9
 
-    .line 289
+    .line 296
     invoke-virtual {v0, p2}, Landroid/view/ViewRootImpl;->dispatchUnhandledKey(Landroid/view/KeyEvent;)V
 
-    .line 291
+    .line 298
     :cond_9
     return-void
 .end method
@@ -264,7 +276,7 @@
     .parameter "event"
 
     .prologue
-    .line 266
+    .line 273
     const/4 v0, 0x0
 
     return v0

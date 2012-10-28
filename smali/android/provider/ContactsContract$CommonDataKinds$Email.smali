@@ -61,7 +61,7 @@
     .line 5616
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
-    const-string/jumbo v1, "lookup"
+    const-string v1, "lookup"
 
     invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 

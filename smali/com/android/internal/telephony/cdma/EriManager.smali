@@ -763,7 +763,7 @@
     :try_start_a
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: check for alternate file"
+    const-string v18, "loadEriFileFromXml: check for alternate file"
 
     move-object/from16 v0, v18
 
@@ -781,14 +781,14 @@
     move-object/from16 v0, v16
 
     invoke-direct {v0, v2}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
-    :try_end_22
-    .catch Ljava/io/FileNotFoundException; {:try_start_a .. :try_end_22} :catch_100
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_a .. :try_end_22} :catch_10e
+    :try_end_21
+    .catch Ljava/io/FileNotFoundException; {:try_start_a .. :try_end_21} :catch_fc
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_a .. :try_end_21} :catch_109
 
     .line 165
     .end local v15           #stream:Ljava/io/FileInputStream;
     .local v16, stream:Ljava/io/FileInputStream;
-    :try_start_22
+    :try_start_21
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v13
@@ -803,27 +803,27 @@
     .line 167
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: opened alternate file"
+    const-string v18, "loadEriFileFromXml: opened alternate file"
 
     move-object/from16 v0, v18
 
     invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_36
-    .catch Ljava/io/FileNotFoundException; {:try_start_22 .. :try_end_36} :catch_20f
-    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_22 .. :try_end_36} :catch_20a
+    :try_end_34
+    .catch Ljava/io/FileNotFoundException; {:try_start_21 .. :try_end_34} :catch_209
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_21 .. :try_end_34} :catch_204
 
     move-object/from16 v15, v16
 
     .line 176
     .end local v16           #stream:Ljava/io/FileInputStream;
     .restart local v15       #stream:Ljava/io/FileInputStream;
-    :goto_38
-    if-nez v13, :cond_4b
+    :goto_36
+    if-nez v13, :cond_48
 
     .line 177
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: open normal file"
+    const-string v18, "loadEriFileFromXml: open normal file"
 
     move-object/from16 v0, v18
 
@@ -837,8 +837,8 @@
     move-result-object v13
 
     .line 182
-    :cond_4b
-    :try_start_4b
+    :cond_48
+    :try_start_48
     const-string v2, "EriFile"
 
     invoke-static {v13, v2}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
@@ -923,8 +923,8 @@
 
     .line 192
     .local v12, parsedEriEntries:I
-    :cond_99
-    :goto_99
+    :cond_96
+    :goto_96
     invoke-static {v13}, Lcom/android/internal/util/XmlUtils;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
     .line 193
@@ -934,7 +934,7 @@
 
     .line 194
     .local v11, name:Ljava/lang/String;
-    if-nez v11, :cond_11c
+    if-nez v11, :cond_116
 
     .line 195
     move-object/from16 v0, p0
@@ -943,7 +943,7 @@
 
     iget v2, v2, Lcom/android/internal/telephony/cdma/EriManager$EriFile;->mNumberOfEriEntries:I
 
-    if-eq v12, v2, :cond_e2
+    if-eq v12, v2, :cond_df
 
     .line 196
     const-string v2, "CDMA"
@@ -1001,10 +1001,10 @@
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 223
-    :cond_e2
+    :cond_df
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: eri parsing successful, file loaded"
+    const-string v18, "loadEriFileFromXml: eri parsing successful, file loaded"
 
     move-object/from16 v0, v18
 
@@ -1016,14 +1016,14 @@
     move-object/from16 v0, p0
 
     iput-boolean v2, v0, Lcom/android/internal/telephony/cdma/EriManager;->isEriFileLoaded:Z
-    :try_end_f1
-    .catchall {:try_start_4b .. :try_end_f1} :catchall_188
-    .catch Ljava/lang/Exception; {:try_start_4b .. :try_end_f1} :catch_149
+    :try_end_ed
+    .catchall {:try_start_48 .. :try_end_ed} :catchall_182
+    .catch Ljava/lang/Exception; {:try_start_48 .. :try_end_ed} :catch_143
 
     .line 229
     instance-of v2, v13, Landroid/content/res/XmlResourceParser;
 
-    if-eqz v2, :cond_fa
+    if-eqz v2, :cond_f6
 
     .line 230
     check-cast v13, Landroid/content/res/XmlResourceParser;
@@ -1032,33 +1032,33 @@
     invoke-interface {v13}, Landroid/content/res/XmlResourceParser;->close()V
 
     .line 233
-    :cond_fa
-    if-eqz v15, :cond_ff
+    :cond_f6
+    if-eqz v15, :cond_fb
 
     .line 234
-    :try_start_fc
+    :try_start_f8
     invoke-virtual {v15}, Ljava/io/FileInputStream;->close()V
-    :try_end_ff
-    .catch Ljava/io/IOException; {:try_start_fc .. :try_end_ff} :catch_162
+    :try_end_fb
+    .catch Ljava/io/IOException; {:try_start_f8 .. :try_end_fb} :catch_15c
 
     .line 240
     .end local v11           #name:Ljava/lang/String;
     .end local v12           #parsedEriEntries:I
-    :cond_ff
-    :goto_ff
+    :cond_fb
+    :goto_fb
     return-void
 
     .line 168
     .restart local v13       #parser:Lorg/xmlpull/v1/XmlPullParser;
-    :catch_100
+    :catch_fc
     move-exception v9
 
     .line 169
     .local v9, e:Ljava/io/FileNotFoundException;
-    :goto_101
+    :goto_fd
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: no alternate file"
+    const-string v18, "loadEriFileFromXml: no alternate file"
 
     move-object/from16 v0, v18
 
@@ -1068,19 +1068,19 @@
     const/4 v13, 0x0
 
     .line 174
-    goto/16 :goto_38
+    goto/16 :goto_36
 
     .line 171
     .end local v9           #e:Ljava/io/FileNotFoundException;
-    :catch_10e
+    :catch_109
     move-exception v9
 
     .line 172
     .local v9, e:Lorg/xmlpull/v1/XmlPullParserException;
-    :goto_10f
+    :goto_10a
     const-string v2, "CDMA"
 
-    const-string/jumbo v18, "loadEriFileFromXml: no parser for alternate file"
+    const-string v18, "loadEriFileFromXml: no parser for alternate file"
 
     move-object/from16 v0, v18
 
@@ -1089,21 +1089,21 @@
     .line 173
     const/4 v13, 0x0
 
-    goto/16 :goto_38
+    goto/16 :goto_36
 
     .line 199
     .end local v9           #e:Lorg/xmlpull/v1/XmlPullParserException;
     .restart local v11       #name:Ljava/lang/String;
     .restart local v12       #parsedEriEntries:I
-    :cond_11c
-    :try_start_11c
+    :cond_116
+    :try_start_116
     const-string v2, "CallPromptId"
 
     invoke-virtual {v11, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_19a
+    if-eqz v2, :cond_194
 
     .line 200
     const/4 v2, 0x0
@@ -1134,11 +1134,11 @@
 
     .line 202
     .local v17, text:Ljava/lang/String;
-    if-ltz v10, :cond_164
+    if-ltz v10, :cond_15e
 
     const/4 v2, 0x2
 
-    if-gt v10, v2, :cond_164
+    if-gt v10, v2, :cond_15e
 
     .line 203
     move-object/from16 v0, p0
@@ -1148,23 +1148,23 @@
     iget-object v2, v2, Lcom/android/internal/telephony/cdma/EriManager$EriFile;->mCallPromptId:[Ljava/lang/String;
 
     aput-object v17, v2, v10
-    :try_end_147
-    .catchall {:try_start_11c .. :try_end_147} :catchall_188
-    .catch Ljava/lang/Exception; {:try_start_11c .. :try_end_147} :catch_149
+    :try_end_141
+    .catchall {:try_start_116 .. :try_end_141} :catchall_182
+    .catch Ljava/lang/Exception; {:try_start_116 .. :try_end_141} :catch_143
 
-    goto/16 :goto_99
+    goto/16 :goto_96
 
     .line 226
     .end local v10           #id:I
     .end local v11           #name:Ljava/lang/String;
     .end local v12           #parsedEriEntries:I
     .end local v17           #text:Ljava/lang/String;
-    :catch_149
+    :catch_143
     move-exception v9
 
     .line 227
     .local v9, e:Ljava/lang/Exception;
-    :try_start_14a
+    :try_start_144
     const-string v2, "CDMA"
 
     const-string v18, "Got exception while loading ERI file."
@@ -1172,13 +1172,13 @@
     move-object/from16 v0, v18
 
     invoke-static {v2, v0, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_153
-    .catchall {:try_start_14a .. :try_end_153} :catchall_188
+    :try_end_14d
+    .catchall {:try_start_144 .. :try_end_14d} :catchall_182
 
     .line 229
     instance-of v2, v13, Landroid/content/res/XmlResourceParser;
 
-    if-eqz v2, :cond_15c
+    if-eqz v2, :cond_156
 
     .line 230
     check-cast v13, Landroid/content/res/XmlResourceParser;
@@ -1187,23 +1187,23 @@
     invoke-interface {v13}, Landroid/content/res/XmlResourceParser;->close()V
 
     .line 233
-    :cond_15c
-    if-eqz v15, :cond_ff
+    :cond_156
+    if-eqz v15, :cond_fb
 
     .line 234
-    :try_start_15e
+    :try_start_158
     invoke-virtual {v15}, Ljava/io/FileInputStream;->close()V
-    :try_end_161
-    .catch Ljava/io/IOException; {:try_start_15e .. :try_end_161} :catch_162
+    :try_end_15b
+    .catch Ljava/io/IOException; {:try_start_158 .. :try_end_15b} :catch_15c
 
-    goto :goto_ff
+    goto :goto_fb
 
     .line 236
     .end local v9           #e:Ljava/lang/Exception;
-    :catch_162
+    :catch_15c
     move-exception v2
 
-    goto :goto_ff
+    goto :goto_fb
 
     .line 205
     .restart local v10       #id:I
@@ -1211,8 +1211,8 @@
     .restart local v12       #parsedEriEntries:I
     .restart local v13       #parser:Lorg/xmlpull/v1/XmlPullParser;
     .restart local v17       #text:Ljava/lang/String;
-    :cond_164
-    :try_start_164
+    :cond_15e
+    :try_start_15e
     const-string v2, "CDMA"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -1244,25 +1244,25 @@
     move-object/from16 v0, v18
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_186
-    .catchall {:try_start_164 .. :try_end_186} :catchall_188
-    .catch Ljava/lang/Exception; {:try_start_164 .. :try_end_186} :catch_149
+    :try_end_180
+    .catchall {:try_start_15e .. :try_end_180} :catchall_182
+    .catch Ljava/lang/Exception; {:try_start_15e .. :try_end_180} :catch_143
 
-    goto/16 :goto_99
+    goto/16 :goto_96
 
     .line 229
     .end local v10           #id:I
     .end local v11           #name:Ljava/lang/String;
     .end local v12           #parsedEriEntries:I
     .end local v17           #text:Ljava/lang/String;
-    :catchall_188
+    :catchall_182
     move-exception v2
 
     instance-of v0, v13, Landroid/content/res/XmlResourceParser;
 
     move/from16 v18, v0
 
-    if-eqz v18, :cond_194
+    if-eqz v18, :cond_18e
 
     .line 230
     check-cast v13, Landroid/content/res/XmlResourceParser;
@@ -1271,33 +1271,33 @@
     invoke-interface {v13}, Landroid/content/res/XmlResourceParser;->close()V
 
     .line 233
-    :cond_194
-    if-eqz v15, :cond_199
+    :cond_18e
+    if-eqz v15, :cond_193
 
     .line 234
-    :try_start_196
+    :try_start_190
     invoke-virtual {v15}, Ljava/io/FileInputStream;->close()V
-    :try_end_199
-    .catch Ljava/io/IOException; {:try_start_196 .. :try_end_199} :catch_208
+    :try_end_193
+    .catch Ljava/io/IOException; {:try_start_190 .. :try_end_193} :catch_202
 
     .line 229
-    :cond_199
-    :goto_199
+    :cond_193
+    :goto_193
     throw v2
 
     .line 208
     .restart local v11       #name:Ljava/lang/String;
     .restart local v12       #parsedEriEntries:I
     .restart local v13       #parser:Lorg/xmlpull/v1/XmlPullParser;
-    :cond_19a
-    :try_start_19a
+    :cond_194
+    :try_start_194
     const-string v2, "EriInfo"
 
     invoke-virtual {v11, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_99
+    if-eqz v2, :cond_96
 
     .line 209
     const/4 v2, 0x0
@@ -1416,11 +1416,11 @@
     move-object/from16 v1, v19
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_206
-    .catchall {:try_start_19a .. :try_end_206} :catchall_188
-    .catch Ljava/lang/Exception; {:try_start_19a .. :try_end_206} :catch_149
+    :try_end_200
+    .catchall {:try_start_194 .. :try_end_200} :catchall_182
+    .catch Ljava/lang/Exception; {:try_start_194 .. :try_end_200} :catch_143
 
-    goto/16 :goto_99
+    goto/16 :goto_96
 
     .line 236
     .end local v3           #roamingIndicator:I
@@ -1432,35 +1432,35 @@
     .end local v11           #name:Ljava/lang/String;
     .end local v12           #parsedEriEntries:I
     .end local v13           #parser:Lorg/xmlpull/v1/XmlPullParser;
-    :catch_208
+    :catch_202
     move-exception v18
 
-    goto :goto_199
+    goto :goto_193
 
     .line 171
     .end local v15           #stream:Ljava/io/FileInputStream;
     .restart local v13       #parser:Lorg/xmlpull/v1/XmlPullParser;
     .restart local v16       #stream:Ljava/io/FileInputStream;
-    :catch_20a
+    :catch_204
     move-exception v9
 
     move-object/from16 v15, v16
 
     .end local v16           #stream:Ljava/io/FileInputStream;
     .restart local v15       #stream:Ljava/io/FileInputStream;
-    goto/16 :goto_10f
+    goto/16 :goto_10a
 
     .line 168
     .end local v15           #stream:Ljava/io/FileInputStream;
     .restart local v16       #stream:Ljava/io/FileInputStream;
-    :catch_20f
+    :catch_209
     move-exception v9
 
     move-object/from16 v15, v16
 
     .end local v16           #stream:Ljava/io/FileInputStream;
     .restart local v15       #stream:Ljava/io/FileInputStream;
-    goto/16 :goto_101
+    goto/16 :goto_fd
 .end method
 
 

@@ -68,7 +68,7 @@ public final class MiuiResources extends Resources {
     private int getCookieType(int i) {
         int j = mCookieType.get(i);
         if(j == 0) {
-            String s = super.mAssets.getCookieName(i);
+            String s = mAssets.getCookieName(i);
             if("/system/framework/framework-res.apk".equals(s))
                 j = 1;
             else
@@ -247,7 +247,7 @@ _L5:
         else
             i = 0;
         super.updateConfiguration(configuration, displaymetrics, compatibilityinfo);
-        if(mThemeResources != null && ExtraConfiguration.needNewResources(i)) {
+        if(mThemeResources != null && ((i & 0x200) != 0 || ExtraConfiguration.needNewResources(i))) {
             if(ThemeResources.getSystem().checkUpdate())
                 Resources.clearPreloadedCache();
             mIntegers.clear();

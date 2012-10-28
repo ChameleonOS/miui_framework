@@ -17490,23 +17490,23 @@
 
     const/4 v5, 0x2
 
-    if-ge v4, v5, :cond_13
+    if-ge v4, v5, :cond_12
 
     .line 14678
     :cond_a
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "location must be an array of two integers"
+    const-string v5, "location must be an array of two integers"
 
     invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v4
 
     .line 14681
-    :cond_13
+    :cond_12
     iget-object v4, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
-    if-nez v4, :cond_1c
+    if-nez v4, :cond_1b
 
     .line 14683
     aput v6, p1, v7
@@ -17514,11 +17514,11 @@
     aput v6, p1, v6
 
     .line 14722
-    :goto_1b
+    :goto_1a
     return-void
 
     .line 14687
-    :cond_1c
+    :cond_1b
     iget-object v4, p0, Landroid/view/View;->mAttachInfo:Landroid/view/View$AttachInfo;
 
     iget-object v0, v4, Landroid/view/View$AttachInfo;->mTmpTransformLocation:[F
@@ -17536,7 +17536,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_32
+    if-nez v4, :cond_31
 
     .line 14691
     invoke-virtual {p0}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
@@ -17546,7 +17546,7 @@
     invoke-virtual {v4, v0}, Landroid/graphics/Matrix;->mapPoints([F)V
 
     .line 14694
-    :cond_32
+    :cond_31
     aget v4, v0, v6
 
     iget v5, p0, Landroid/view/View;->mLeft:I
@@ -17573,10 +17573,10 @@
 
     .line 14698
     .local v2, viewParent:Landroid/view/ViewParent;
-    :goto_44
+    :goto_43
     instance-of v4, v2, Landroid/view/View;
 
-    if-eqz v4, :cond_7b
+    if-eqz v4, :cond_7a
 
     move-object v1, v2
 
@@ -17611,7 +17611,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_68
+    if-nez v4, :cond_67
 
     .line 14705
     invoke-virtual {v1}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
@@ -17621,7 +17621,7 @@
     invoke-virtual {v4, v0}, Landroid/graphics/Matrix;->mapPoints([F)V
 
     .line 14708
-    :cond_68
+    :cond_67
     aget v4, v0, v6
 
     iget v5, v1, Landroid/view/View;->mLeft:I
@@ -17647,14 +17647,14 @@
     iget-object v2, v1, Landroid/view/View;->mParent:Landroid/view/ViewParent;
 
     .line 14712
-    goto :goto_44
+    goto :goto_43
 
     .line 14714
     .end local v1           #view:Landroid/view/View;
-    :cond_7b
+    :cond_7a
     instance-of v4, v2, Landroid/view/ViewRootImpl;
 
-    if-eqz v4, :cond_8a
+    if-eqz v4, :cond_89
 
     move-object v3, v2
 
@@ -17675,7 +17675,7 @@
 
     .line 14720
     .end local v3           #vr:Landroid/view/ViewRootImpl;
-    :cond_8a
+    :cond_89
     aget v4, v0, v6
 
     add-float/2addr v4, v8
@@ -17693,7 +17693,7 @@
 
     aput v4, p1, v7
 
-    goto :goto_1b
+    goto :goto_1a
 .end method
 
 .method public getLocationOnScreen([I)V

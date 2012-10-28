@@ -1116,19 +1116,19 @@
 
     iget v7, p0, Landroid/widget/LinearLayout;->mBaselineAlignedChildIndex:I
 
-    if-gt v6, v7, :cond_1b
+    if-gt v6, v7, :cond_1a
 
     .line 447
     new-instance v5, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v6, "mBaselineAlignedChildIndex of LinearLayout set to an index that is out of bounds."
+    const-string v6, "mBaselineAlignedChildIndex of LinearLayout set to an index that is out of bounds."
 
     invoke-direct {v5, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v5
 
     .line 451
-    :cond_1b
+    :cond_1a
     iget v6, p0, Landroid/widget/LinearLayout;->mBaselineAlignedChildIndex:I
 
     invoke-virtual {p0, v6}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
@@ -1143,7 +1143,7 @@
 
     .line 454
     .local v1, childBaseline:I
-    if-ne v1, v5, :cond_34
+    if-ne v1, v5, :cond_32
 
     .line 455
     iget v6, p0, Landroid/widget/LinearLayout;->mBaselineAlignedChildIndex:I
@@ -1153,14 +1153,14 @@
     .line 461
     new-instance v5, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v6, "mBaselineAlignedChildIndex of LinearLayout points to a View that doesn\'t know how to get its baseline."
+    const-string v6, "mBaselineAlignedChildIndex of LinearLayout points to a View that doesn\'t know how to get its baseline."
 
     invoke-direct {v5, v6}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v5
 
     .line 471
-    :cond_34
+    :cond_32
     iget v2, p0, Landroid/widget/LinearLayout;->mBaselineChildTop:I
 
     .line 473
@@ -1169,7 +1169,7 @@
 
     const/4 v6, 0x1
 
-    if-ne v5, v6, :cond_46
+    if-ne v5, v6, :cond_44
 
     .line 474
     iget v5, p0, Landroid/widget/LinearLayout;->mGravity:I
@@ -1180,15 +1180,15 @@
     .local v4, majorGravity:I
     const/16 v5, 0x30
 
-    if-eq v4, v5, :cond_46
+    if-eq v4, v5, :cond_44
 
     .line 476
-    sparse-switch v4, :sswitch_data_70
+    sparse-switch v4, :sswitch_data_6e
 
     .line 489
     .end local v4           #majorGravity:I
-    :cond_46
-    :goto_46
+    :cond_44
+    :goto_44
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
@@ -1208,7 +1208,7 @@
     .line 478
     .end local v3           #lp:Landroid/widget/LinearLayout$LayoutParams;
     .restart local v4       #majorGravity:I
-    :sswitch_51
+    :sswitch_4f
     iget v5, p0, Landroid/view/View;->mBottom:I
 
     iget v6, p0, Landroid/view/View;->mTop:I
@@ -1224,10 +1224,10 @@
     sub-int v2, v5, v6
 
     .line 479
-    goto :goto_46
+    goto :goto_44
 
     .line 482
-    :sswitch_5e
+    :sswitch_5c
     iget v5, p0, Landroid/view/View;->mBottom:I
 
     iget v6, p0, Landroid/view/View;->mTop:I
@@ -1250,13 +1250,13 @@
 
     add-int/2addr v2, v5
 
-    goto :goto_46
+    goto :goto_44
 
     .line 476
-    :sswitch_data_70
+    :sswitch_data_6e
     .sparse-switch
-        0x10 -> :sswitch_5e
-        0x50 -> :sswitch_51
+        0x10 -> :sswitch_5c
+        0x50 -> :sswitch_4f
     .end sparse-switch
 .end method
 

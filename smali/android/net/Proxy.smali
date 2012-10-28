@@ -447,13 +447,13 @@
 
     .line 236
     :try_start_7
-    const-string/jumbo v2, "localhost"
+    const-string v2, "localhost"
 
     invoke-virtual {p0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_11
 
     move v0, v1
 
@@ -461,14 +461,14 @@
     goto :goto_4
 
     .line 239
-    :cond_12
+    :cond_11
     invoke-static {p0}, Landroid/net/NetworkUtils;->numericToInetAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
     move-result-object v2
 
     invoke-virtual {v2}, Ljava/net/InetAddress;->isLoopbackAddress()Z
-    :try_end_19
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_7 .. :try_end_19} :catch_1e
+    :try_end_18
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_7 .. :try_end_18} :catch_1d
 
     move-result v2
 
@@ -480,7 +480,7 @@
     goto :goto_4
 
     .line 243
-    :catch_1e
+    :catch_1d
     move-exception v1
 
     goto :goto_4

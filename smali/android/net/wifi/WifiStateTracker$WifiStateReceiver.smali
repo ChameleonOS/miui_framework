@@ -63,7 +63,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5b
+    if-eqz v2, :cond_59
 
     .line 212
     iget-object v3, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
@@ -82,7 +82,7 @@
     .line 214
     iget-object v3, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
 
-    const-string/jumbo v2, "linkProperties"
+    const-string v2, "linkProperties"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -101,7 +101,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_3a
+    if-nez v2, :cond_39
 
     .line 217
     iget-object v2, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
@@ -114,10 +114,10 @@
     invoke-static {v2, v3}, Landroid/net/wifi/WifiStateTracker;->access$202(Landroid/net/wifi/WifiStateTracker;Landroid/net/LinkProperties;)Landroid/net/LinkProperties;
 
     .line 219
-    :cond_3a
+    :cond_39
     iget-object v3, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
 
-    const-string/jumbo v2, "linkCapabilities"
+    const-string v2, "linkCapabilities"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -136,7 +136,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_5a
+    if-nez v2, :cond_58
 
     .line 222
     iget-object v2, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
@@ -149,12 +149,12 @@
     invoke-static {v2, v3}, Landroid/net/wifi/WifiStateTracker;->access$302(Landroid/net/wifi/WifiStateTracker;Landroid/net/LinkCapabilities;)Landroid/net/LinkCapabilities;
 
     .line 254
-    :cond_5a
-    :goto_5a
+    :cond_58
+    :goto_58
     return-void
 
     .line 224
-    :cond_5b
+    :cond_59
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -165,7 +165,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e7
+    if-eqz v2, :cond_e3
 
     .line 225
     iget-object v3, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
@@ -184,7 +184,7 @@
     .line 227
     iget-object v3, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
 
-    const-string/jumbo v2, "linkProperties"
+    const-string v2, "linkProperties"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -203,7 +203,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_95
+    if-nez v2, :cond_92
 
     .line 230
     iget-object v2, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
@@ -216,10 +216,10 @@
     invoke-static {v2, v3}, Landroid/net/wifi/WifiStateTracker;->access$202(Landroid/net/wifi/WifiStateTracker;Landroid/net/LinkProperties;)Landroid/net/LinkProperties;
 
     .line 232
-    :cond_95
+    :cond_92
     iget-object v3, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
 
-    const-string/jumbo v2, "linkCapabilities"
+    const-string v2, "linkCapabilities"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -238,7 +238,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_b5
+    if-nez v2, :cond_b1
 
     .line 235
     iget-object v2, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
@@ -251,7 +251,7 @@
     invoke-static {v2, v3}, Landroid/net/wifi/WifiStateTracker;->access$302(Landroid/net/wifi/WifiStateTracker;Landroid/net/LinkCapabilities;)Landroid/net/LinkCapabilities;
 
     .line 239
-    :cond_b5
+    :cond_b1
     iget-object v2, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
 
     #getter for: Landroid/net/wifi/WifiStateTracker;->mNetworkInfo:Landroid/net/NetworkInfo;
@@ -272,7 +272,7 @@
 
     move-result-object v2
 
-    if-eq v2, v1, :cond_5a
+    if-eq v2, v1, :cond_58
 
     .line 243
     iget-object v2, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
@@ -309,12 +309,12 @@
     .local v0, msg:Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    goto/16 :goto_5a
+    goto/16 :goto_58
 
     .line 248
     .end local v0           #msg:Landroid/os/Message;
     .end local v1           #state:Landroid/net/NetworkInfo$State;
-    :cond_e7
+    :cond_e3
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -325,12 +325,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5a
+    if-eqz v2, :cond_58
 
     .line 249
     iget-object v3, p0, Landroid/net/wifi/WifiStateTracker$WifiStateReceiver;->this$0:Landroid/net/wifi/WifiStateTracker;
 
-    const-string/jumbo v2, "linkProperties"
+    const-string v2, "linkProperties"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -366,5 +366,5 @@
     .restart local v0       #msg:Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    goto/16 :goto_5a
+    goto/16 :goto_58
 .end method

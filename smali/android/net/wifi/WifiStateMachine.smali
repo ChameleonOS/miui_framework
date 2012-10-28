@@ -5199,7 +5199,7 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 1580
-    const-string/jumbo v1, "linkProperties"
+    const-string v1, "linkProperties"
 
     new-instance v2, Landroid/net/LinkProperties;
 
@@ -5248,7 +5248,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 1567
-    const-string/jumbo v1, "linkProperties"
+    const-string v1, "linkProperties"
 
     new-instance v2, Landroid/net/LinkProperties;
 
@@ -5259,7 +5259,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 1568
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_2c
 
     .line 1569
     const-string v1, "bssid"
@@ -5267,7 +5267,7 @@
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 1570
-    :cond_2d
+    :cond_2c
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
@@ -5276,7 +5276,7 @@
 
     sget-object v2, Landroid/net/NetworkInfo$DetailedState;->VERIFYING_POOR_LINK:Landroid/net/NetworkInfo$DetailedState;
 
-    if-eq v1, v2, :cond_41
+    if-eq v1, v2, :cond_40
 
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mNetworkInfo:Landroid/net/NetworkInfo;
 
@@ -5286,10 +5286,10 @@
 
     sget-object v2, Landroid/net/NetworkInfo$DetailedState;->CONNECTED:Landroid/net/NetworkInfo$DetailedState;
 
-    if-ne v1, v2, :cond_4e
+    if-ne v1, v2, :cond_4d
 
     .line 1572
-    :cond_41
+    :cond_40
     const-string/jumbo v1, "wifiInfo"
 
     new-instance v2, Landroid/net/wifi/WifiInfo;
@@ -5301,7 +5301,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
     .line 1574
-    :cond_4e
+    :cond_4d
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
@@ -7492,7 +7492,7 @@
 
     .line 1135
     .local v1, sb:Ljava/lang/StringBuffer;
-    const-string/jumbo v2, "line.separator"
+    const-string v2, "line.separator"
 
     invoke-static {v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
@@ -7551,7 +7551,7 @@
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 1139
-    const-string/jumbo v2, "mDhcpInfoInternal "
+    const-string v2, "mDhcpInfoInternal "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -7596,7 +7596,7 @@
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 1142
-    const-string/jumbo v2, "mLastBssid "
+    const-string v2, "mLastBssid "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -7641,7 +7641,7 @@
     invoke-virtual {v2, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     .line 1145
-    const-string/jumbo v2, "mIsScanMode "
+    const-string v2, "mIsScanMode "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 

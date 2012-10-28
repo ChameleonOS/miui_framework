@@ -192,13 +192,13 @@
     invoke-virtual {v3, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 174
-    const-string/jumbo v5, "locale"
+    const-string v5, "locale"
 
-    if-nez p4, :cond_4a
+    if-nez p4, :cond_49
 
     const/4 v4, 0x0
 
-    :goto_30
+    :goto_2f
     invoke-virtual {v3, v5, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 175
@@ -230,10 +230,10 @@
 
     .line 174
     .end local v2           #result:Landroid/net/Uri;
-    :cond_4a
+    :cond_49
     invoke-virtual {p4}, Ljava/util/Locale;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    goto :goto_30
+    goto :goto_2f
 .end method

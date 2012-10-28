@@ -457,6 +457,10 @@ _L5:
         }
     }
 
+    private void mainFrameFinishParsing() {
+        mCallbackProxy.onMainFrameFinishParsing();
+    }
+
     private void maybeSavePassword(byte abyte0[], String s, String s1) {
 _L2:
         return;

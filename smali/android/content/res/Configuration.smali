@@ -242,7 +242,7 @@
 
     .prologue
     .line 446
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 447
     new-instance v0, Lmiui/content/res/ExtraConfiguration;
@@ -267,7 +267,7 @@
 
     .prologue
     .line 455
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 456
     new-instance v0, Lmiui/content/res/ExtraConfiguration;
@@ -292,7 +292,7 @@
 
     .prologue
     .line 991
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 992
     new-instance v0, Lmiui/content/res/ExtraConfiguration;

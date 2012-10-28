@@ -1429,20 +1429,20 @@
 
     .prologue
     .line 1005
-    if-nez p1, :cond_b
+    if-nez p1, :cond_a
 
     .line 1006
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "listener==null"
+    const-string v3, "listener==null"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
     .line 1012
-    :cond_b
-    :try_start_b
+    :cond_a
+    :try_start_a
     iget-object v2, p0, Landroid/location/LocationManager;->mListeners:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1453,7 +1453,7 @@
 
     .line 1013
     .local v1, transport:Landroid/location/LocationManager$ListenerTransport;
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_1f
 
     .line 1014
     iget-object v2, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
@@ -1465,17 +1465,17 @@
     move-result-object v3
 
     invoke-interface {v2, v1, v3}, Landroid/location/ILocationManager;->removeUpdates(Landroid/location/ILocationListener;Ljava/lang/String;)V
-    :try_end_20
-    .catch Landroid/os/RemoteException; {:try_start_b .. :try_end_20} :catch_21
+    :try_end_1f
+    .catch Landroid/os/RemoteException; {:try_start_a .. :try_end_1f} :catch_20
 
     .line 1019
     .end local v1           #transport:Landroid/location/LocationManager$ListenerTransport;
-    :cond_20
-    :goto_20
+    :cond_1f
+    :goto_1f
     return-void
 
     .line 1016
-    :catch_21
+    :catch_20
     move-exception v0
 
     .line 1017
@@ -1486,7 +1486,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_20
+    goto :goto_1f
 .end method
 
 .method public requestLocationUpdates(JFLandroid/location/Criteria;Landroid/app/PendingIntent;)V
@@ -1567,19 +1567,19 @@
 
     .line 642
     :cond_a
-    if-nez p5, :cond_15
+    if-nez p5, :cond_14
 
     .line 643
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "listener==null"
+    const-string v1, "listener==null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 645
-    :cond_15
+    :cond_14
     const/4 v1, 0x0
 
     const/4 v6, 0x0
@@ -1681,19 +1681,19 @@
 
     .line 483
     :cond_c
-    if-nez p5, :cond_17
+    if-nez p5, :cond_16
 
     .line 484
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "listener==null"
+    const-string v1, "listener==null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 486
-    :cond_17
+    :cond_16
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -1737,19 +1737,19 @@
 
     .line 568
     :cond_b
-    if-nez p5, :cond_16
+    if-nez p5, :cond_15
 
     .line 569
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "listener==null"
+    const-string v1, "listener==null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 571
-    :cond_16
+    :cond_15
     const/4 v2, 0x0
 
     const/4 v6, 0x0
@@ -1846,19 +1846,19 @@
 
     .line 922
     :cond_a
-    if-nez p2, :cond_15
+    if-nez p2, :cond_14
 
     .line 923
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "listener==null"
+    const-string v1, "listener==null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 925
-    :cond_15
+    :cond_14
     const/4 v1, 0x0
 
     const-wide/16 v3, 0x0
@@ -1955,19 +1955,19 @@
 
     .line 883
     :cond_b
-    if-nez p2, :cond_16
+    if-nez p2, :cond_15
 
     .line 884
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "listener==null"
+    const-string v1, "listener==null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 886
-    :cond_16
+    :cond_15
     const/4 v2, 0x0
 
     const-wide/16 v3, 0x0

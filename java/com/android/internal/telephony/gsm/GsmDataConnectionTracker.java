@@ -75,9 +75,9 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
         phonebase.getServiceStateTracker().registerForPsRestrictedDisabled(this, 0x42017, null);
         IntentFilter intentfilter = new IntentFilter();
         intentfilter.addAction("com.android.internal.telephony.gprs-data-stall");
-        phonebase.getContext().registerReceiver(super.mIntentReceiver, intentfilter, null, phonebase);
-        super.mDataConnectionTracker = this;
-        mResolver = super.mPhone.getContext().getContentResolver();
+        phonebase.getContext().registerReceiver(mIntentReceiver, intentfilter, null, phonebase);
+        mDataConnectionTracker = this;
+        mResolver = mPhone.getContext().getContentResolver();
         mApnObserver = new ApnChangeObserver();
         phonebase.getContext().getContentResolver().registerContentObserver(android.provider.Telephony.Carriers.CONTENT_URI, true, mApnObserver);
         initApnContextsAndDataConnection();
@@ -87,7 +87,7 @@ public final class GsmDataConnectionTracker extends DataConnectionTracker {
     private ApnContext addApnContext(String s) {
         ApnContext apncontext = new ApnContext(s, "GSM");
         apncontext.setDependencyMet(false);
-        super.mApnContexts.put(s, apncontext);
+        mApnContexts.put(s, apncontext);
         return apncontext;
     }
 
@@ -150,29 +150,29 @@ _L3:
 _L5:
         return arraylist;
 _L2:
-        String s1 = super.mPhone.mIccRecords.getOperatorNumeric();
-        int i = super.mPhone.getServiceState().getRilRadioTechnology();
-        if(canSetPreferApn && super.mPreferredApn != null && super.mPreferredApn.canHandleType(s)) {
-            log((new StringBuilder()).append("buildWaitingApns: Preferred APN:").append(s1).append(":").append(super.mPreferredApn.numeric).append(":").append(super.mPreferredApn).toString());
+        String s1 = mPhone.mIccRecords.getOperatorNumeric();
+        int i = mPhone.getServiceState().getRilRadioTechnology();
+        if(canSetPreferApn && mPreferredApn != null && mPreferredApn.canHandleType(s)) {
+            log((new StringBuilder()).append("buildWaitingApns: Preferred APN:").append(s1).append(":").append(mPreferredApn.numeric).append(":").append(mPreferredApn).toString());
             Iterator iterator;
             ApnSetting apnsetting;
-            if(super.mPreferredApn.numeric.equals(s1)) {
-                if(super.mPreferredApn.bearer == 0 || super.mPreferredApn.bearer == i) {
-                    arraylist.add(super.mPreferredApn);
+            if(mPreferredApn.numeric.equals(s1)) {
+                if(mPreferredApn.bearer == 0 || mPreferredApn.bearer == i) {
+                    arraylist.add(mPreferredApn);
                     log((new StringBuilder()).append("buildWaitingApns: X added preferred apnList=").append(arraylist).toString());
                     continue; /* Loop/switch isn't completed */
                 }
                 log("buildWaitingApns: no preferred APN");
                 setPreferredApn(-1);
-                super.mPreferredApn = null;
+                mPreferredApn = null;
             } else {
                 log("buildWaitingApns: no preferred APN");
                 setPreferredApn(-1);
-                super.mPreferredApn = null;
+                mPreferredApn = null;
             }
         }
-        if(super.mAllApns != null) {
-            iterator = super.mAllApns.iterator();
+        if(mAllApns != null) {
+            iterator = mAllApns.iterator();
             do {
                 if(!iterator.hasNext())
                     break;
@@ -197,7 +197,7 @@ _L1:
 _L2:
         PendingIntent pendingintent = dataconnectionac.getReconnectIntentSync();
         if(pendingintent != null) {
-            ((AlarmManager)super.mPhone.getContext().getSystemService("alarm")).cancel(pendingintent);
+            ((AlarmManager)mPhone.getContext().getSystemService("alarm")).cancel(pendingintent);
             dataconnectionac.setReconnectIntentSync(null);
         }
         if(true) goto _L1; else goto _L3
@@ -214,7 +214,7 @@ _L3:
         if("dun".equals(s))
             apnsetting = fetchDunApn();
         dataconnection = null;
-        iterator = super.mApnContexts.values().iterator();
+        iterator = mApnContexts.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
@@ -345,13 +345,13 @@ _L2:
                     }
                 } else {
                     apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.IDLE);
-                    super.mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
+                    mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
                 }
             } else {
                 if(dataconnectionac != null)
                     dataconnectionac.resetSync();
                 apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.IDLE);
-                super.mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
+                mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
                 apncontext.setDataConnection(null);
                 apncontext.setDataConnectionAc(null);
             }
@@ -387,31 +387,31 @@ _L4:
     }
 
     private void createAllApnList() {
-        super.mAllApns = new ArrayList();
-        String s = super.mPhone.mIccRecords.getOperatorNumeric();
+        mAllApns = new ArrayList();
+        String s = mPhone.mIccRecords.getOperatorNumeric();
         if(s != null) {
             String s1 = (new StringBuilder()).append("numeric = '").append(s).append("'").toString();
             String s2 = (new StringBuilder()).append(s1).append(" and carrier_enabled = 1").toString();
             log((new StringBuilder()).append("createAllApnList: selection=").append(s2).toString());
-            Cursor cursor = super.mPhone.getContext().getContentResolver().query(android.provider.Telephony.Carriers.CONTENT_URI, null, s2, null, null);
+            Cursor cursor = mPhone.getContext().getContentResolver().query(android.provider.Telephony.Carriers.CONTENT_URI, null, s2, null, null);
             if(cursor != null) {
                 if(cursor.getCount() > 0)
-                    super.mAllApns = createApnList(cursor);
+                    mAllApns = createApnList(cursor);
                 cursor.close();
             }
         }
-        if(super.mAllApns.isEmpty()) {
+        if(mAllApns.isEmpty()) {
             log((new StringBuilder()).append("createAllApnList: No APN found for carrier: ").append(s).toString());
-            super.mPreferredApn = null;
+            mPreferredApn = null;
         } else {
-            super.mPreferredApn = getPreferredApn();
-            if(super.mPreferredApn != null && !super.mPreferredApn.numeric.equals(s)) {
-                super.mPreferredApn = null;
+            mPreferredApn = getPreferredApn();
+            if(mPreferredApn != null && !mPreferredApn.numeric.equals(s)) {
+                mPreferredApn = null;
                 setPreferredApn(-1);
             }
-            log((new StringBuilder()).append("createAllApnList: mPreferredApn=").append(super.mPreferredApn).toString());
+            log((new StringBuilder()).append("createAllApnList: mPreferredApn=").append(mPreferredApn).toString());
         }
-        log((new StringBuilder()).append("createAllApnList: X mAllApns=").append(super.mAllApns).toString());
+        log((new StringBuilder()).append("createAllApnList: X mAllApns=").append(mAllApns).toString());
     }
 
     private ArrayList createApnList(Cursor cursor) {
@@ -447,19 +447,19 @@ _L4:
     private GsmDataConnection createDataConnection() {
         log("createDataConnection E");
         RetryManager retrymanager = new RetryManager();
-        int i = super.mUniqueIdGenerator.getAndIncrement();
-        GsmDataConnection gsmdataconnection = GsmDataConnection.makeDataConnection(super.mPhone, i, retrymanager, this);
-        super.mDataConnections.put(Integer.valueOf(i), gsmdataconnection);
+        int i = mUniqueIdGenerator.getAndIncrement();
+        GsmDataConnection gsmdataconnection = GsmDataConnection.makeDataConnection(mPhone, i, retrymanager, this);
+        mDataConnections.put(Integer.valueOf(i), gsmdataconnection);
         DataConnectionAc dataconnectionac = new DataConnectionAc(gsmdataconnection, "GSM");
-        int j = dataconnectionac.fullyConnectSync(super.mPhone.getContext(), this, gsmdataconnection.getHandler());
+        int j = dataconnectionac.fullyConnectSync(mPhone.getContext(), this, gsmdataconnection.getHandler());
         IntentFilter intentfilter;
         if(j == 0)
-            super.mDataConnectionAsyncChannels.put(Integer.valueOf(dataconnectionac.dataConnection.getDataConnectionId()), dataconnectionac);
+            mDataConnectionAsyncChannels.put(Integer.valueOf(dataconnectionac.dataConnection.getDataConnectionId()), dataconnectionac);
         else
             loge((new StringBuilder()).append("createDataConnection: Could not connect to dcac.mDc=").append(dataconnectionac.dataConnection).append(" status=").append(j).toString());
         intentfilter = new IntentFilter();
         intentfilter.addAction((new StringBuilder()).append("com.android.internal.telephony.gprs-reconnect.").append(i).toString());
-        super.mPhone.getContext().registerReceiver(super.mIntentReceiver, intentfilter, null, super.mPhone);
+        mPhone.getContext().registerReceiver(mIntentReceiver, intentfilter, null, mPhone);
         log((new StringBuilder()).append("createDataConnection() X id=").append(i).append(" dc=").append(gsmdataconnection).toString());
         return gsmdataconnection;
     }
@@ -467,7 +467,7 @@ _L4:
     private boolean dataConnectionNotInUse(DataConnectionAc dataconnectionac) {
         Iterator iterator;
         log((new StringBuilder()).append("dataConnectionNotInUse: check if dcac is inuse dc=").append(dataconnectionac.dataConnection).toString());
-        iterator = super.mApnContexts.values().iterator();
+        iterator = mApnContexts.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
@@ -493,9 +493,9 @@ _L5:
     }
 
     private void destroyDataConnections() {
-        if(super.mDataConnections != null) {
+        if(mDataConnections != null) {
             log("destroyDataConnections: clear mDataConnectionList");
-            super.mDataConnections.clear();
+            mDataConnections.clear();
         } else {
             log("destroyDataConnections: mDataConnecitonList is empty, ignore");
         }
@@ -516,26 +516,26 @@ _L1:
 _L3:
         throw new RuntimeException((new StringBuilder()).append("doRecovery: Invalid recoveryAction=").append(i).toString());
 _L4:
-        EventLog.writeEvent(50118, super.mSentSinceLastRecv);
+        EventLog.writeEvent(50118, mSentSinceLastRecv);
         log("doRecovery() get data call list");
-        super.mPhone.mCM.getDataCallList(obtainMessage(0x42004));
+        mPhone.mCM.getDataCallList(obtainMessage(0x42004));
         putRecoveryAction(1);
 _L2:
         return;
 _L5:
-        EventLog.writeEvent(50119, super.mSentSinceLastRecv);
+        EventLog.writeEvent(50119, mSentSinceLastRecv);
         log("doRecovery() cleanup all connections");
         cleanUpAllConnections(true, "pdpReset");
         putRecoveryAction(2);
         continue; /* Loop/switch isn't completed */
 _L6:
-        EventLog.writeEvent(50120, super.mSentSinceLastRecv);
+        EventLog.writeEvent(50120, mSentSinceLastRecv);
         log("doRecovery() re-register");
-        super.mPhone.getServiceStateTracker().reRegisterNetwork(null);
+        mPhone.getServiceStateTracker().reRegisterNetwork(null);
         putRecoveryAction(3);
         continue; /* Loop/switch isn't completed */
 _L7:
-        EventLog.writeEvent(50121, super.mSentSinceLastRecv);
+        EventLog.writeEvent(50121, mSentSinceLastRecv);
         log("restarting radio");
         putRecoveryAction(4);
         restartRadio();
@@ -563,7 +563,7 @@ _L4:
 _L2:
         log((new StringBuilder()).append("findApnContextToClean(ar): E dcacs=").append(collection).toString());
         obj = new ArrayList();
-        Iterator iterator = super.mApnContexts.values().iterator();
+        Iterator iterator = mApnContexts.values().iterator();
         do {
             if(!iterator.hasNext())
                 break;
@@ -594,7 +594,7 @@ _L3:
     }
 
     private DataConnectionAc findDataConnectionAcByCid(int i) {
-        Iterator iterator = super.mDataConnectionAsyncChannels.values().iterator();
+        Iterator iterator = mDataConnectionAsyncChannels.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
@@ -609,7 +609,7 @@ _L5:
     }
 
     private GsmDataConnection findFreeDataConnection() {
-        Iterator iterator = super.mDataConnectionAsyncChannels.values().iterator();
+        Iterator iterator = mDataConnectionAsyncChannels.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
@@ -642,7 +642,7 @@ _L5:
         int i;
         android.telephony.CellLocation celllocation;
         i = -1;
-        celllocation = super.mPhone.getCellLocation();
+        celllocation = mPhone.getCellLocation();
         if(celllocation == null) goto _L2; else goto _L1
 _L1:
         if(!(celllocation instanceof GsmCellLocation)) goto _L4; else goto _L3
@@ -659,7 +659,7 @@ _L5:
 
     private ApnSetting getPreferredApn() {
         ApnSetting apnsetting = null;
-        if(!super.mAllApns.isEmpty()) goto _L2; else goto _L1
+        if(!mAllApns.isEmpty()) goto _L2; else goto _L1
 _L1:
         log("getPreferredApn: X not found mAllApns.isEmpty");
 _L4:
@@ -668,7 +668,7 @@ _L2:
         Cursor cursor;
 label0:
         {
-            ContentResolver contentresolver = super.mPhone.getContext().getContentResolver();
+            ContentResolver contentresolver = mPhone.getContext().getContentResolver();
             Uri uri = PREFERAPN_NO_UPDATE_URI;
             String as[] = new String[3];
             as[0] = "_id";
@@ -686,12 +686,12 @@ label0:
                 break label0;
             cursor.moveToFirst();
             i = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
-            iterator = super.mAllApns.iterator();
+            iterator = mAllApns.iterator();
             do {
                 if(!iterator.hasNext())
                     break label0;
                 apnsetting1 = (ApnSetting)iterator.next();
-            } while(apnsetting1.id != i || !apnsetting1.canHandleType(super.mRequestedApnType));
+            } while(apnsetting1.id != i || !apnsetting1.canHandleType(mRequestedApnType));
             log((new StringBuilder()).append("getPreferredApn: X found apnSetting").append(apnsetting1).toString());
             cursor.close();
             apnsetting = apnsetting1;
@@ -708,7 +708,7 @@ _L3:
         boolean flag;
         flag = false;
         break MISSING_BLOCK_LABEL_2;
-        if((super.mInternalDataEnabled && super.mUserDataEnabled && sPolicyDataEnabled || "mms".equals(apncontext.getApnType()) && isMmsDataEnabled()) && apncontext.isReady() && isDataAllowed())
+        if((mInternalDataEnabled && mUserDataEnabled && sPolicyDataEnabled || "mms".equals(apncontext.getApnType()) && isMmsDataEnabled()) && apncontext.isReady() && isDataAllowed())
             flag = true;
         return flag;
     }
@@ -726,11 +726,11 @@ _L3:
 _L1:
         return;
 _L3:
-        super.mPhone.notifyDataConnection(s, s1, com.android.internal.telephony.Phone.DataState.CONNECTING);
+        mPhone.notifyDataConnection(s, s1, com.android.internal.telephony.Phone.DataState.CONNECTING);
         continue; /* Loop/switch isn't completed */
 _L2:
-        super.mPhone.notifyDataConnection(s, s1, com.android.internal.telephony.Phone.DataState.CONNECTING);
-        super.mPhone.notifyDataConnection(s, s1, com.android.internal.telephony.Phone.DataState.CONNECTED);
+        mPhone.notifyDataConnection(s, s1, com.android.internal.telephony.Phone.DataState.CONNECTING);
+        mPhone.notifyDataConnection(s, s1, com.android.internal.telephony.Phone.DataState.CONNECTED);
         if(true) goto _L1; else goto _L4
 _L4:
     }
@@ -738,7 +738,7 @@ _L4:
     private void notifyDefaultData(ApnContext apncontext) {
         log((new StringBuilder()).append("notifyDefaultData: type=").append(apncontext.getApnType()).append(", reason:").append(apncontext.getReason()).toString());
         apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.CONNECTED);
-        super.mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
+        mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
         startNetStatPoll();
         startDataStallAlarm(false);
         apncontext.setRetryCount(0);
@@ -748,7 +748,7 @@ _L4:
         log((new StringBuilder()).append("notifyNoData: type=").append(apncontext.getApnType()).toString());
         apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.FAILED);
         if(failcause.isPermanentFail() && !apncontext.getApnType().equals("default"))
-            super.mPhone.notifyDataConnectionFailed(apncontext.getReason(), apncontext.getApnType());
+            mPhone.notifyDataConnectionFailed(apncontext.getReason(), apncontext.getApnType());
     }
 
     private void onApnChanged() {
@@ -759,8 +759,8 @@ _L4:
             flag1 = flag;
         else
             flag1 = false;
-        if(super.mPhone instanceof GSMPhone)
-            ((GSMPhone)super.mPhone).updateCurrentCarrierInProvider();
+        if(mPhone instanceof GSMPhone)
+            ((GSMPhone)mPhone).updateCurrentCarrierInProvider();
         log("onApnChanged: createAllApnList and cleanUpAllConnections");
         createAllApnList();
         if(flag1)
@@ -855,7 +855,7 @@ label0:
                                         Iterator iterator5 = arraylist1.iterator();
                                         while(iterator5.hasNext())  {
                                             ApnContext apncontext = (ApnContext)iterator5.next();
-                                            super.mPhone.notifyDataConnection("linkPropertiesChanged", apncontext.getApnType());
+                                            mPhone.notifyDataConnection("linkPropertiesChanged", apncontext.getApnType());
                                         }
                                     }
                                 } else {
@@ -886,7 +886,7 @@ label0:
     private void onRecordsLoaded() {
         log("onRecordsLoaded: createAllApnList");
         createAllApnList();
-        if(super.mPhone.mCM.getRadioState().isOn()) {
+        if(mPhone.mCM.getRadioState().isOn()) {
             log("onRecordsLoaded: notifying data availability");
             notifyOffApnsOfAvailability("simLoaded");
         }
@@ -918,7 +918,7 @@ label0:
                 continue; /* Loop/switch isn't completed */
             if(!apncontext.getDataConnection().isRetryNeeded()) {
                 if(!apncontext.getApnType().equals("default")) {
-                    super.mPhone.notifyDataConnection("apnFailed", apncontext.getApnType());
+                    mPhone.notifyDataConnection("apnFailed", apncontext.getApnType());
                     continue; /* Loop/switch isn't completed */
                 }
                 if(!mReregisterOnReconnectFailure)
@@ -940,16 +940,16 @@ label0:
         }
         log("reconnectAfterFail: activate failed, Reregistering to network");
         mReregisterOnReconnectFailure = true;
-        super.mPhone.getServiceStateTracker().reRegisterNetwork(null);
+        mPhone.getServiceStateTracker().reRegisterNetwork(null);
         apncontext.setRetryCount(0);
         if(true) goto _L4; else goto _L3
 _L3:
     }
 
     private void resetPollStats() {
-        super.mTxPkts = -1L;
-        super.mRxPkts = -1L;
-        super.mNetStatPollPeriod = 1000;
+        mTxPkts = -1L;
+        mRxPkts = -1L;
+        mNetStatPollPeriod = 1000;
     }
 
     private boolean retryAfterDisconnected(String s) {
@@ -967,7 +967,7 @@ _L4:
         return;
 _L2:
         log("setPreferredApn: delete");
-        ContentResolver contentresolver = super.mPhone.getContext().getContentResolver();
+        ContentResolver contentresolver = mPhone.getContext().getContentResolver();
         contentresolver.delete(PREFERAPN_NO_UPDATE_URI, null, null);
         if(i >= 0) {
             log("setPreferredApn: insert");
@@ -1007,9 +1007,9 @@ _L2:
                 continue; /* Loop/switch isn't completed */
             }
         } else {
-            apnsetting = ((DataConnectionAc)super.mDataConnectionAsyncChannels.get(Integer.valueOf(gsmdataconnection.getDataConnectionId()))).getApnSettingSync();
+            apnsetting = ((DataConnectionAc)mDataConnectionAsyncChannels.get(Integer.valueOf(gsmdataconnection.getDataConnectionId()))).getApnSettingSync();
         }
-        DataConnectionAc dataconnectionac = (DataConnectionAc)super.mDataConnectionAsyncChannels.get(Integer.valueOf(gsmdataconnection.getDataConnectionId()));
+        DataConnectionAc dataconnectionac = (DataConnectionAc)mDataConnectionAsyncChannels.get(Integer.valueOf(gsmdataconnection.getDataConnectionId()));
         gsmdataconnection.setProfileId(i);
         int j = dataconnectionac.getRefCountSync();
         log((new StringBuilder()).append("setupData: init dc and apnContext refCount=").append(j).toString());
@@ -1019,11 +1019,11 @@ _L2:
         apncontext.setDataConnection(gsmdataconnection);
         apncontext.setApnSetting(apnsetting);
         apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.INITING);
-        super.mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
+        mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
         if(apncontext.getDataConnectionAc().getReconnectIntentSync() != null) {
             log("setupData: data reconnection pending");
             apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.FAILED);
-            super.mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
+            mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
             flag = true;
         } else {
             Message message = obtainMessage();
@@ -1038,7 +1038,7 @@ _L3:
     }
 
     private void setupDataOnReadyApns(String s) {
-        Iterator iterator = super.mDataConnectionAsyncChannels.values().iterator();
+        Iterator iterator = mDataConnectionAsyncChannels.values().iterator();
         do {
             if(!iterator.hasNext())
                 break;
@@ -1061,7 +1061,7 @@ _L3:
             configureRetry(dataconnectionac.dataConnection, flag, 0);
         } while(true);
         resetAllRetryCounts();
-        Iterator iterator1 = super.mApnContexts.values().iterator();
+        Iterator iterator1 = mApnContexts.values().iterator();
         do {
             if(!iterator1.hasNext())
                 break;
@@ -1089,7 +1089,7 @@ _L3:
         if(dataconnectionac == null || dataconnectionac.dataConnection == null) {
             loge("startAlarmForReconnect: null dcac or dc.");
         } else {
-            AlarmManager alarmmanager = (AlarmManager)super.mPhone.getContext().getSystemService("alarm");
+            AlarmManager alarmmanager = (AlarmManager)mPhone.getContext().getSystemService("alarm");
             Intent intent = new Intent((new StringBuilder()).append("com.android.internal.telephony.gprs-reconnect.").append(dataconnectionac.dataConnection.getDataConnectionId()).toString());
             String s = apncontext.getReason();
             intent.putExtra("reconnect_alarm_extra_reason", s);
@@ -1098,7 +1098,7 @@ _L3:
             int k = dataconnectionac.dataConnection.getRetryCount();
             intent.putExtra("reconnect_alaram_extra_retry_count", k);
             log((new StringBuilder()).append("startAlarmForReconnect: next attempt in ").append(i / 1000).append("s").append(" reason='").append(s).append("' connectionId=").append(j).append(" retryCount=").append(k).toString());
-            PendingIntent pendingintent = PendingIntent.getBroadcast(super.mPhone.getContext(), 0, intent, 0x8000000);
+            PendingIntent pendingintent = PendingIntent.getBroadcast(mPhone.getContext(), 0, intent, 0x8000000);
             dataconnectionac.setReconnectIntentSync(pendingintent);
             alarmmanager.set(2, SystemClock.elapsedRealtime() + (long)i, pendingintent);
         }
@@ -1109,16 +1109,16 @@ _L3:
         int j;
         AlarmManager alarmmanager;
         Intent intent;
-        if(super.mIsScreenOn || flag || RecoveryAction.isAggressiveRecovery(i))
+        if(mIsScreenOn || flag || RecoveryAction.isAggressiveRecovery(i))
             j = android.provider.Settings.Secure.getInt(mResolver, "data_stall_alarm_aggressive_delay_in_ms", 60000);
         else
             j = android.provider.Settings.Secure.getInt(mResolver, "data_stall_alarm_non_aggressive_delay_in_ms", 0x57e40);
-        super.mDataStallAlarmTag = 1 + super.mDataStallAlarmTag;
-        alarmmanager = (AlarmManager)super.mPhone.getContext().getSystemService("alarm");
+        mDataStallAlarmTag = 1 + mDataStallAlarmTag;
+        alarmmanager = (AlarmManager)mPhone.getContext().getSystemService("alarm");
         intent = new Intent("com.android.internal.telephony.gprs-data-stall");
-        intent.putExtra("data.stall.alram.tag", super.mDataStallAlarmTag);
-        super.mDataStallAlarmIntent = PendingIntent.getBroadcast(super.mPhone.getContext(), 0, intent, 0x8000000);
-        alarmmanager.set(2, SystemClock.elapsedRealtime() + (long)j, super.mDataStallAlarmIntent);
+        intent.putExtra("data.stall.alram.tag", mDataStallAlarmTag);
+        mDataStallAlarmIntent = PendingIntent.getBroadcast(mPhone.getContext(), 0, intent, 0x8000000);
+        alarmmanager.set(2, SystemClock.elapsedRealtime() + (long)j, mDataStallAlarmIntent);
     }
 
     private void startDelayedRetry(com.android.internal.telephony.DataConnection.FailCause failcause, ApnContext apncontext, int i) {
@@ -1127,11 +1127,11 @@ _L3:
     }
 
     private void stopDataStallAlarm() {
-        AlarmManager alarmmanager = (AlarmManager)super.mPhone.getContext().getSystemService("alarm");
-        super.mDataStallAlarmTag = 1 + super.mDataStallAlarmTag;
-        if(super.mDataStallAlarmIntent != null) {
-            alarmmanager.cancel(super.mDataStallAlarmIntent);
-            super.mDataStallAlarmIntent = null;
+        AlarmManager alarmmanager = (AlarmManager)mPhone.getContext().getSystemService("alarm");
+        mDataStallAlarmTag = 1 + mDataStallAlarmTag;
+        if(mDataStallAlarmIntent != null) {
+            alarmmanager.cancel(mDataStallAlarmIntent);
+            mDataStallAlarmIntent = null;
         }
     }
 
@@ -1139,17 +1139,17 @@ _L3:
         boolean flag;
         flag = false;
         log((new StringBuilder()).append("trySetupData for type:").append(apncontext.getApnType()).append(" due to ").append(apncontext.getReason()).toString());
-        log((new StringBuilder()).append("trySetupData with mIsPsRestricted=").append(super.mIsPsRestricted).toString());
-        if(super.mPhone.getSimulatedRadioControl() == null) goto _L2; else goto _L1
+        log((new StringBuilder()).append("trySetupData with mIsPsRestricted=").append(mIsPsRestricted).toString());
+        if(mPhone.getSimulatedRadioControl() == null) goto _L2; else goto _L1
 _L1:
         apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.CONNECTED);
-        super.mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
+        mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
         log("trySetupData: (fix?) We're on the simulator; assuming data is connected");
         flag = true;
 _L4:
         return flag;
 _L2:
-        super.mPhone.getServiceStateTracker().getDesiredPowerState();
+        mPhone.getServiceStateTracker().getDesiredPowerState();
         if((apncontext.getState() == com.android.internal.telephony.DataConnectionTracker.State.IDLE || apncontext.getState() == com.android.internal.telephony.DataConnectionTracker.State.SCANNING) && isDataAllowed(apncontext) && getAnyDataEnabled() && !isEmergency()) {
             if(apncontext.getState() == com.android.internal.telephony.DataConnectionTracker.State.IDLE) {
                 ArrayList arraylist = buildWaitingApns(apncontext.getApnType());
@@ -1160,14 +1160,14 @@ _L2:
                     continue; /* Loop/switch isn't completed */
                 }
                 apncontext.setWaitingApns(arraylist);
-                log((new StringBuilder()).append("trySetupData: Create from mAllApns : ").append(apnListToString(super.mAllApns)).toString());
+                log((new StringBuilder()).append("trySetupData: Create from mAllApns : ").append(apnListToString(mAllApns)).toString());
             }
             log((new StringBuilder()).append("Setup watingApns : ").append(apnListToString(apncontext.getWaitingApns())).toString());
             flag = setupData(apncontext);
             notifyOffApnsOfAvailability(apncontext.getReason());
         } else {
             if(!apncontext.getApnType().equals("default") && (apncontext.getState() == com.android.internal.telephony.DataConnectionTracker.State.IDLE || apncontext.getState() == com.android.internal.telephony.DataConnectionTracker.State.SCANNING))
-                super.mPhone.notifyDataConnectionFailed(apncontext.getReason(), apncontext.getApnType());
+                mPhone.notifyDataConnectionFailed(apncontext.getReason(), apncontext.getApnType());
             notifyOffApnsOfAvailability(apncontext.getReason());
         }
         if(true) goto _L4; else goto _L3
@@ -1182,28 +1182,28 @@ _L3:
             s2 = "(unspecified)";
         else
             s2 = s;
-        log(stringbuilder.append(s2).append(" isPsRestricted=").append(super.mIsPsRestricted).toString());
+        log(stringbuilder.append(s2).append(" isPsRestricted=").append(mIsPsRestricted).toString());
         if(s1 == null)
             s1 = "default";
-        apncontext = (ApnContext)super.mApnContexts.get(s1);
+        apncontext = (ApnContext)mApnContexts.get(s1);
         if(apncontext == null) {
             log((new StringBuilder()).append("trySetupData new apn context for type:").append(s1).toString());
             apncontext = new ApnContext(s1, "GSM");
-            super.mApnContexts.put(s1, apncontext);
+            mApnContexts.put(s1, apncontext);
         }
         apncontext.setReason(s);
         return trySetupData(apncontext);
     }
 
     private void updateDataActivity() {
-        com.android.internal.telephony.DataConnectionTracker.TxRxSum txrxsum = new com.android.internal.telephony.DataConnectionTracker.TxRxSum(this, super.mTxPkts, super.mRxPkts);
+        com.android.internal.telephony.DataConnectionTracker.TxRxSum txrxsum = new com.android.internal.telephony.DataConnectionTracker.TxRxSum(this, mTxPkts, mRxPkts);
         com.android.internal.telephony.DataConnectionTracker.TxRxSum txrxsum1 = new com.android.internal.telephony.DataConnectionTracker.TxRxSum(this);
         txrxsum1.updateTxRxSum();
-        super.mTxPkts = txrxsum1.txPkts;
-        super.mRxPkts = txrxsum1.rxPkts;
-        if(super.mNetStatPollEnabled && (txrxsum.txPkts > 0L || txrxsum.rxPkts > 0L)) {
-            long l = super.mTxPkts - txrxsum.txPkts;
-            long l1 = super.mRxPkts - txrxsum.rxPkts;
+        mTxPkts = txrxsum1.txPkts;
+        mRxPkts = txrxsum1.rxPkts;
+        if(mNetStatPollEnabled && (txrxsum.txPkts > 0L || txrxsum.rxPkts > 0L)) {
+            long l = mTxPkts - txrxsum.txPkts;
+            long l1 = mRxPkts - txrxsum.rxPkts;
             com.android.internal.telephony.DataConnectionTracker.Activity activity;
             if(l > 0L && l1 > 0L)
                 activity = com.android.internal.telephony.DataConnectionTracker.Activity.DATAINANDOUT;
@@ -1215,9 +1215,9 @@ _L3:
                 activity = com.android.internal.telephony.DataConnectionTracker.Activity.DATAIN;
             else
                 activity = com.android.internal.telephony.DataConnectionTracker.Activity.NONE;
-            if(super.mActivity != activity && super.mIsScreenOn) {
-                super.mActivity = activity;
-                super.mPhone.notifyDataActivity();
+            if(mActivity != activity && mIsScreenOn) {
+                mActivity = activity;
+                mPhone.notifyDataActivity();
             }
         }
     }
@@ -1225,26 +1225,26 @@ _L3:
     private void updateDataStallInfo() {
         long l;
         long l1;
-        com.android.internal.telephony.DataConnectionTracker.TxRxSum txrxsum = new com.android.internal.telephony.DataConnectionTracker.TxRxSum(this, super.mDataStallTxRxSum);
-        super.mDataStallTxRxSum.updateTxRxSum();
-        l = super.mDataStallTxRxSum.txPkts - txrxsum.txPkts;
-        l1 = super.mDataStallTxRxSum.rxPkts - txrxsum.rxPkts;
+        com.android.internal.telephony.DataConnectionTracker.TxRxSum txrxsum = new com.android.internal.telephony.DataConnectionTracker.TxRxSum(this, mDataStallTxRxSum);
+        mDataStallTxRxSum.updateTxRxSum();
+        l = mDataStallTxRxSum.txPkts - txrxsum.txPkts;
+        l1 = mDataStallTxRxSum.rxPkts - txrxsum.rxPkts;
         if(l <= 0L || l1 <= 0L) goto _L2; else goto _L1
 _L1:
-        super.mSentSinceLastRecv = 0L;
+        mSentSinceLastRecv = 0L;
         putRecoveryAction(0);
 _L4:
         return;
 _L2:
         if(l > 0L && l1 == 0L) {
-            if(super.mPhone.getState() == com.android.internal.telephony.Phone.State.IDLE)
-                super.mSentSinceLastRecv = l + super.mSentSinceLastRecv;
+            if(mPhone.getState() == com.android.internal.telephony.Phone.State.IDLE)
+                mSentSinceLastRecv = l + mSentSinceLastRecv;
             else
-                super.mSentSinceLastRecv = 0L;
-            log((new StringBuilder()).append("updateDataStallInfo: OUT sent=").append(l).append(" mSentSinceLastRecv=").append(super.mSentSinceLastRecv).toString());
+                mSentSinceLastRecv = 0L;
+            log((new StringBuilder()).append("updateDataStallInfo: OUT sent=").append(l).append(" mSentSinceLastRecv=").append(mSentSinceLastRecv).toString());
         } else
         if(l == 0L && l1 > 0L) {
-            super.mSentSinceLastRecv = 0L;
+            mSentSinceLastRecv = 0L;
             putRecoveryAction(0);
         }
         if(true) goto _L4; else goto _L3
@@ -1254,14 +1254,14 @@ _L3:
     protected void cleanUpAllConnections(boolean flag, String s) {
         log((new StringBuilder()).append("cleanUpAllConnections: tearDown=").append(flag).append(" reason=").append(s).toString());
         ApnContext apncontext;
-        for(Iterator iterator = super.mApnContexts.values().iterator(); iterator.hasNext(); cleanUpConnection(flag, apncontext)) {
+        for(Iterator iterator = mApnContexts.values().iterator(); iterator.hasNext(); cleanUpConnection(flag, apncontext)) {
             apncontext = (ApnContext)iterator.next();
             apncontext.setReason(s);
         }
 
         stopNetStatPoll();
         stopDataStallAlarm();
-        super.mRequestedApnType = "default";
+        mRequestedApnType = "default";
     }
 
     /**
@@ -1273,7 +1273,7 @@ _L3:
         JVM INSTR monitorenter ;
         ApnContext apncontext;
         log((new StringBuilder()).append("disableApnType:").append(s).toString());
-        apncontext = (ApnContext)super.mApnContexts.get(s);
+        apncontext = (ApnContext)mApnContexts.get(s);
         if(apncontext == null) goto _L2; else goto _L1
 _L1:
         setEnabled(apnTypeToId(s), false);
@@ -1303,20 +1303,20 @@ _L5:
         log("GsmDCT.dispose");
         cleanUpAllConnections(false, null);
         super.dispose();
-        super.mPhone.mCM.unregisterForAvailable(this);
-        super.mPhone.mCM.unregisterForOffOrNotAvailable(this);
-        super.mPhone.mIccRecords.unregisterForRecordsLoaded(this);
-        super.mPhone.mCM.unregisterForDataNetworkStateChanged(this);
-        super.mPhone.getCallTracker().unregisterForVoiceCallEnded(this);
-        super.mPhone.getCallTracker().unregisterForVoiceCallStarted(this);
-        super.mPhone.getServiceStateTracker().unregisterForDataConnectionAttached(this);
-        super.mPhone.getServiceStateTracker().unregisterForDataConnectionDetached(this);
-        super.mPhone.getServiceStateTracker().unregisterForRoamingOn(this);
-        super.mPhone.getServiceStateTracker().unregisterForRoamingOff(this);
-        super.mPhone.getServiceStateTracker().unregisterForPsRestrictedEnabled(this);
-        super.mPhone.getServiceStateTracker().unregisterForPsRestrictedDisabled(this);
-        super.mPhone.getContext().getContentResolver().unregisterContentObserver(mApnObserver);
-        super.mApnContexts.clear();
+        mPhone.mCM.unregisterForAvailable(this);
+        mPhone.mCM.unregisterForOffOrNotAvailable(this);
+        mPhone.mIccRecords.unregisterForRecordsLoaded(this);
+        mPhone.mCM.unregisterForDataNetworkStateChanged(this);
+        mPhone.getCallTracker().unregisterForVoiceCallEnded(this);
+        mPhone.getCallTracker().unregisterForVoiceCallStarted(this);
+        mPhone.getServiceStateTracker().unregisterForDataConnectionAttached(this);
+        mPhone.getServiceStateTracker().unregisterForDataConnectionDetached(this);
+        mPhone.getServiceStateTracker().unregisterForRoamingOn(this);
+        mPhone.getServiceStateTracker().unregisterForRoamingOff(this);
+        mPhone.getServiceStateTracker().unregisterForPsRestrictedEnabled(this);
+        mPhone.getServiceStateTracker().unregisterForPsRestrictedDisabled(this);
+        mPhone.getContext().getContentResolver().unregisterContentObserver(mApnObserver);
+        mApnContexts.clear();
         destroyDataConnections();
     }
 
@@ -1339,7 +1339,7 @@ _L5:
         byte byte0 = 1;
         this;
         JVM INSTR monitorenter ;
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(s);
+        ApnContext apncontext = (ApnContext)mApnContexts.get(s);
         if(apncontext != null && isApnTypeAvailable(s)) goto _L2; else goto _L1
 _L1:
         log((new StringBuilder()).append("enableApnType: ").append(s).append(" is type not available").toString());
@@ -1374,8 +1374,8 @@ _L3:
 _L1:
         return gsmdataconnection;
 _L2:
-        log((new StringBuilder()).append("findReadyDataConnection: apn string <").append(apnsetting).append(">").append(" dcacs.size=").append(super.mDataConnectionAsyncChannels.size()).toString());
-        Iterator iterator = super.mDataConnectionAsyncChannels.values().iterator();
+        log((new StringBuilder()).append("findReadyDataConnection: apn string <").append(apnsetting).append(">").append(" dcacs.size=").append(mDataConnectionAsyncChannels.size()).toString());
+        Iterator iterator = mDataConnectionAsyncChannels.values().iterator();
         do {
             if(!iterator.hasNext())
                 continue; /* Loop/switch isn't completed */
@@ -1408,7 +1408,7 @@ _L3:
     public String getActiveApnString(String s) {
         ApnContext apncontext;
         log((new StringBuilder()).append("get active apn string for type:").append(s).toString());
-        apncontext = (ApnContext)super.mApnContexts.get(s);
+        apncontext = (ApnContext)mApnContexts.get(s);
         if(apncontext == null) goto _L2; else goto _L1
 _L1:
         ApnSetting apnsetting = apncontext.getApnSetting();
@@ -1426,7 +1426,7 @@ _L4:
     public String[] getActiveApnTypes() {
         log("get all active apn types");
         ArrayList arraylist = new ArrayList();
-        Iterator iterator = super.mApnContexts.values().iterator();
+        Iterator iterator = mApnContexts.values().iterator();
         do {
             if(!iterator.hasNext())
                 break;
@@ -1439,12 +1439,12 @@ _L4:
 
     public boolean getAnyDataEnabled() {
         boolean flag = false;
-        Object obj = super.mDataEnabledLock;
+        Object obj = mDataEnabledLock;
         obj;
         JVM INSTR monitorenter ;
-        if(isMmsDataEnabled() || super.mInternalDataEnabled && super.mUserDataEnabled && sPolicyDataEnabled) goto _L2; else goto _L1
+        if(isMmsDataEnabled() || mInternalDataEnabled && mUserDataEnabled && sPolicyDataEnabled) goto _L2; else goto _L1
 _L2:
-        Iterator iterator = super.mApnContexts.values().iterator();
+        Iterator iterator = mApnContexts.values().iterator();
 _L6:
         if(!iterator.hasNext()) goto _L4; else goto _L3
 _L3:
@@ -1478,7 +1478,7 @@ _L1:
     }
 
     protected LinkCapabilities getLinkCapabilities(String s) {
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(s);
+        ApnContext apncontext = (ApnContext)mApnContexts.get(s);
         if(apncontext == null) goto _L2; else goto _L1
 _L1:
         DataConnectionAc dataconnectionac = apncontext.getDataConnectionAc();
@@ -1497,7 +1497,7 @@ _L4:
     }
 
     protected LinkProperties getLinkProperties(String s) {
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(s);
+        ApnContext apncontext = (ApnContext)mApnContexts.get(s);
         if(apncontext == null) goto _L2; else goto _L1
 _L1:
         DataConnectionAc dataconnectionac = apncontext.getDataConnectionAc();
@@ -1523,7 +1523,7 @@ _L4:
         flag = false;
         flag1 = true;
         flag2 = false;
-        iterator = super.mApnContexts.values().iterator();
+        iterator = mApnContexts.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
@@ -1573,11 +1573,11 @@ _L2:
     }
 
     public int getRecoveryAction() {
-        return android.provider.Settings.System.getInt(super.mPhone.getContext().getContentResolver(), "radio.data.stall.recovery.action", 0);
+        return android.provider.Settings.System.getInt(mPhone.getContext().getContentResolver(), "radio.data.stall.recovery.action", 0);
     }
 
     public com.android.internal.telephony.DataConnectionTracker.State getState(String s) {
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(s);
+        ApnContext apncontext = (ApnContext)mApnContexts.get(s);
         com.android.internal.telephony.DataConnectionTracker.State state;
         if(apncontext != null)
             state = apncontext.getState();
@@ -1589,14 +1589,14 @@ _L2:
     protected void gotoIdleAndNotifyDataConnection(String s) {
         log((new StringBuilder()).append("gotoIdleAndNotifyDataConnection: reason=").append(s).toString());
         notifyDataConnection(s);
-        super.mActiveApn = null;
+        mActiveApn = null;
     }
 
     public void handleMessage(Message message) {
         boolean flag;
         flag = false;
         log((new StringBuilder()).append("handleMessage msg=").append(message).toString());
-        if(super.mPhone.mIsTheCurrentActivePhone && !super.mIsDisposed) goto _L2; else goto _L1
+        if(mPhone.mIsTheCurrentActivePhone && !mIsDisposed) goto _L2; else goto _L1
 _L1:
         loge("handleMessage: Ignore GSM msgs since GSM phone is inactive");
 _L4:
@@ -1648,20 +1648,20 @@ _L2:
             break;
 
         case 270358: 
-            log((new StringBuilder()).append("EVENT_PS_RESTRICT_ENABLED ").append(super.mIsPsRestricted).toString());
+            log((new StringBuilder()).append("EVENT_PS_RESTRICT_ENABLED ").append(mIsPsRestricted).toString());
             stopNetStatPoll();
             stopDataStallAlarm();
-            super.mIsPsRestricted = true;
+            mIsPsRestricted = true;
             break;
 
         case 270359: 
-            log((new StringBuilder()).append("EVENT_PS_RESTRICT_DISABLED ").append(super.mIsPsRestricted).toString());
-            super.mIsPsRestricted = false;
+            log((new StringBuilder()).append("EVENT_PS_RESTRICT_DISABLED ").append(mIsPsRestricted).toString());
+            mIsPsRestricted = false;
             if(isConnected()) {
                 startNetStatPoll();
                 startDataStallAlarm(false);
             } else {
-                if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED) {
+                if(mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED) {
                     cleanUpAllConnections(false, "psRestrictEnabled");
                     resetAllRetryCounts();
                     mReregisterOnReconnectFailure = false;
@@ -1700,7 +1700,7 @@ _L3:
         int i;
         int j;
         flag = SystemProperties.getBoolean("net.def_data_on_boot", true);
-        as = super.mPhone.getContext().getResources().getStringArray(0x1070013);
+        as = mPhone.getContext().getResources().getStringArray(0x1070013);
         i = as.length;
         j = 0;
 _L12:
@@ -1745,7 +1745,7 @@ _L7:
           goto _L13
 _L8:
         ApnContext apncontext1 = addApnContext("hipri");
-        ApnContext apncontext2 = (ApnContext)super.mApnContexts.get("default");
+        ApnContext apncontext2 = (ApnContext)mApnContexts.get("default");
         if(apncontext2 != null)
             applyNewState(apncontext1, apncontext1.isEnabled(), apncontext2.getDependencyMet());
           goto _L3
@@ -1766,7 +1766,7 @@ _L2:
         boolean flag;
         ApnContext apncontext;
         flag = false;
-        apncontext = (ApnContext)super.mApnContexts.get(s);
+        apncontext = (ApnContext)mApnContexts.get(s);
         break MISSING_BLOCK_LABEL_14;
         if(apncontext != null && apncontext.getDataConnection() != null)
             flag = true;
@@ -1781,9 +1781,9 @@ _L1:
 _L2:
 label0:
         {
-            if(super.mAllApns == null)
+            if(mAllApns == null)
                 break label0;
-            Iterator iterator = super.mAllApns.iterator();
+            Iterator iterator = mAllApns.iterator();
             do
                 if(!iterator.hasNext())
                     break label0;
@@ -1796,7 +1796,7 @@ _L3:
     }
 
     public boolean isApnTypeEnabled(String s) {
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(s);
+        ApnContext apncontext = (ApnContext)mApnContexts.get(s);
         boolean flag;
         if(apncontext == null)
             flag = false;
@@ -1806,7 +1806,7 @@ _L3:
     }
 
     protected boolean isConnected() {
-        Iterator iterator = super.mApnContexts.values().iterator();
+        Iterator iterator = mApnContexts.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
@@ -1823,31 +1823,31 @@ _L5:
 
     protected boolean isDataAllowed() {
         boolean flag;
-        synchronized(super.mDataEnabledLock) {
-            flag = super.mInternalDataEnabled;
+        synchronized(mDataEnabledLock) {
+            flag = mInternalDataEnabled;
         }
-        int i = super.mPhone.getServiceStateTracker().getCurrentDataConnectionState();
-        boolean flag1 = super.mPhone.getServiceStateTracker().getDesiredPowerState();
+        int i = mPhone.getServiceStateTracker().getCurrentDataConnectionState();
+        boolean flag1 = mPhone.getServiceStateTracker().getDesiredPowerState();
         boolean flag2;
-        if((i == 0 || super.mAutoAttachOnCreation) && super.mPhone.mIccRecords.getRecordsLoaded() && (super.mPhone.getState() == com.android.internal.telephony.Phone.State.IDLE || super.mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) && flag && (!super.mPhone.getServiceState().getRoaming() || getDataOnRoamingEnabled()) && !super.mIsPsRestricted && flag1)
+        if((i == 0 || mAutoAttachOnCreation) && mPhone.mIccRecords.getRecordsLoaded() && (mPhone.getState() == com.android.internal.telephony.Phone.State.IDLE || mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) && flag && (!mPhone.getServiceState().getRoaming() || getDataOnRoamingEnabled()) && !mIsPsRestricted && flag1)
             flag2 = true;
         else
             flag2 = false;
         if(!flag2) {
             String s = "";
-            if(i != 0 && !super.mAutoAttachOnCreation)
+            if(i != 0 && !mAutoAttachOnCreation)
                 s = (new StringBuilder()).append(s).append(" - gprs= ").append(i).toString();
-            if(!super.mPhone.mIccRecords.getRecordsLoaded())
+            if(!mPhone.mIccRecords.getRecordsLoaded())
                 s = (new StringBuilder()).append(s).append(" - SIM not loaded").toString();
-            if(super.mPhone.getState() != com.android.internal.telephony.Phone.State.IDLE && !super.mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) {
-                String s1 = (new StringBuilder()).append(s).append(" - PhoneState= ").append(super.mPhone.getState()).toString();
+            if(mPhone.getState() != com.android.internal.telephony.Phone.State.IDLE && !mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) {
+                String s1 = (new StringBuilder()).append(s).append(" - PhoneState= ").append(mPhone.getState()).toString();
                 s = (new StringBuilder()).append(s1).append(" - Concurrent voice and data not allowed").toString();
             }
             if(!flag)
                 s = (new StringBuilder()).append(s).append(" - mInternalDataEnabled= false").toString();
-            if(super.mPhone.getServiceState().getRoaming() && !getDataOnRoamingEnabled())
+            if(mPhone.getServiceState().getRoaming() && !getDataOnRoamingEnabled())
                 s = (new StringBuilder()).append(s).append(" - Roaming and data roaming not enabled").toString();
-            if(super.mIsPsRestricted)
+            if(mIsPsRestricted)
                 s = (new StringBuilder()).append(s).append(" - mIsPsRestricted= true").toString();
             if(!flag1)
                 s = (new StringBuilder()).append(s).append(" - desiredPowerState= false").toString();
@@ -1862,7 +1862,7 @@ _L5:
 
     protected boolean isDataPossible(String s) {
         boolean flag = false;
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(s);
+        ApnContext apncontext = (ApnContext)mApnContexts.get(s);
         if(apncontext != null) {
             boolean flag1 = apncontext.isEnabled();
             com.android.internal.telephony.DataConnectionTracker.State state = apncontext.getState();
@@ -1893,7 +1893,7 @@ _L5:
     }
 
     public boolean isDisconnected() {
-        Iterator iterator = super.mApnContexts.values().iterator();
+        Iterator iterator = mApnContexts.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
@@ -1918,14 +1918,14 @@ _L5:
 
     protected void notifyDataConnection(String s) {
         log((new StringBuilder()).append("notifyDataConnection: reason=").append(s).toString());
-        Iterator iterator = super.mApnContexts.values().iterator();
+        Iterator iterator = mApnContexts.values().iterator();
         do {
             if(!iterator.hasNext())
                 break;
             ApnContext apncontext = (ApnContext)iterator.next();
             if(apncontext.isReady()) {
                 log((new StringBuilder()).append("notifyDataConnection: type:").append(apncontext.getApnType()).toString());
-                PhoneBase phonebase = super.mPhone;
+                PhoneBase phonebase = mPhone;
                 String s1;
                 if(s != null)
                     s1 = s;
@@ -1938,11 +1938,11 @@ _L5:
     }
 
     protected void notifyOffApnsOfAvailability(String s) {
-        for(Iterator iterator = super.mApnContexts.values().iterator(); iterator.hasNext();) {
+        for(Iterator iterator = mApnContexts.values().iterator(); iterator.hasNext();) {
             ApnContext apncontext = (ApnContext)iterator.next();
             if(!apncontext.isReady()) {
                 log((new StringBuilder()).append("notifyOffApnOfAvailability type:").append(apncontext.getApnType()).toString());
-                PhoneBase phonebase = super.mPhone;
+                PhoneBase phonebase = mPhone;
                 String s1;
                 if(s != null)
                     s1 = s;
@@ -1960,8 +1960,8 @@ _L5:
         String s = intent.getStringExtra("reconnect_alarm_extra_reason");
         int i = intent.getIntExtra("reconnect_alarm_extra_type", -1);
         int j = intent.getIntExtra("reconnect_alaram_extra_retry_count", 0);
-        DataConnectionAc dataconnectionac = (DataConnectionAc)super.mDataConnectionAsyncChannels.get(Integer.valueOf(i));
-        log((new StringBuilder()).append("onActionIntentReconnectAlarm: mState=").append(super.mState).append(" reason=").append(s).append(" connectionId=").append(i).append(" retryCount=").append(j).toString());
+        DataConnectionAc dataconnectionac = (DataConnectionAc)mDataConnectionAsyncChannels.get(Integer.valueOf(i));
+        log((new StringBuilder()).append("onActionIntentReconnectAlarm: mState=").append(mState).append(" reason=").append(s).append(" connectionId=").append(i).append(" retryCount=").append(j).toString());
         if(dataconnectionac != null) {
             ApnContext apncontext;
             for(Iterator iterator = dataconnectionac.getApnListSync().iterator(); iterator.hasNext(); sendMessage(obtainMessage(0x42003, apncontext))) {
@@ -1984,7 +1984,7 @@ _L5:
 
     protected void onCleanUpConnection(boolean flag, int i, String s) {
         log("onCleanUpConnection");
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(apnIdToType(i));
+        ApnContext apncontext = (ApnContext)mApnContexts.get(apnIdToType(i));
         if(apncontext != null) {
             apncontext.setReason(s);
             cleanUpConnection(flag, apncontext);
@@ -2032,11 +2032,11 @@ _L5:
                     FirewallManager.getInstance().onDataConnected(0, FirewallManager.encodeApnSetting(apnsetting1), dataconnectionac.getLinkPropertiesSync().getInterfaceName());
                     if(TextUtils.equals(apncontext.getApnType(), "default")) {
                         SystemProperties.set("gsm.defaultpdpcontext.active", "true");
-                        if(canSetPreferApn && super.mPreferredApn == null) {
+                        if(canSetPreferApn && mPreferredApn == null) {
                             log("onDataSetupComplete: PREFERED APN is null");
-                            super.mPreferredApn = apnsetting1;
-                            if(super.mPreferredApn != null)
-                                setPreferredApn(super.mPreferredApn.id);
+                            mPreferredApn = apnsetting1;
+                            if(mPreferredApn != null)
+                                setPreferredApn(mPreferredApn.id);
                         }
                     } else {
                         SystemProperties.set("gsm.defaultpdpcontext.active", "false");
@@ -2078,7 +2078,7 @@ _L5:
                     if(apncontext.getWaitingApnsPermFailCount() == 0) {
                         log("onDataSetupComplete: All APN's had permanent failures, stop retrying");
                         apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.FAILED);
-                        super.mPhone.notifyDataConnection("apnFailed", apncontext.getApnType());
+                        mPhone.notifyDataConnection("apnFailed", apncontext.getApnType());
                         apncontext.setDataConnection(null);
                         apncontext.setDataConnectionAc(null);
                     } else {
@@ -2103,13 +2103,13 @@ _L5:
     }
 
     protected void onDataStallAlarm(int i) {
-        if(super.mDataStallAlarmTag != i) {
-            log((new StringBuilder()).append("onDataStallAlarm: ignore, tag=").append(i).append(" expecting ").append(super.mDataStallAlarmTag).toString());
+        if(mDataStallAlarmTag != i) {
+            log((new StringBuilder()).append("onDataStallAlarm: ignore, tag=").append(i).append(" expecting ").append(mDataStallAlarmTag).toString());
         } else {
             updateDataStallInfo();
             int j = android.provider.Settings.Secure.getInt(mResolver, "pdp_watchdog_trigger_packet_count", 10);
             boolean flag = false;
-            if(super.mSentSinceLastRecv >= (long)j) {
+            if(mSentSinceLastRecv >= (long)j) {
                 log((new StringBuilder()).append("onDataStallAlarm: tag=").append(i).append(" do recovery action=").append(getRecoveryAction()).toString());
                 flag = true;
                 sendMessage(obtainMessage(0x42012));
@@ -2125,8 +2125,8 @@ _L5:
             apncontext.setState(com.android.internal.telephony.DataConnectionTracker.State.IDLE);
             if(apncontext.getApnSetting() != null)
                 FirewallManager.getInstance().onDataDisconnected(0, FirewallManager.encodeApnSetting(apncontext.getApnSetting()));
-            super.mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
-            if(isDisconnected() && super.mPhone.getServiceStateTracker().processPendingRadioPowerOffAfterDataOff()) {
+            mPhone.notifyDataConnection(apncontext.getReason(), apncontext.getApnType());
+            if(isDisconnected() && mPhone.getServiceStateTracker().processPendingRadioPowerOffAfterDataOff()) {
                 apncontext.setApnSetting(null);
                 apncontext.setDataConnection(null);
                 apncontext.setDataConnectionAc(null);
@@ -2146,8 +2146,8 @@ _L5:
 
     protected void onEnableApn(int i, int j) {
         boolean flag = true;
-        super.mRequestedApnType = getApnType(j, i);
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(apnIdToType(i));
+        mRequestedApnType = getApnType(j, i);
+        ApnContext apncontext = (ApnContext)mApnContexts.get(apnIdToType(i));
         if(apncontext == null) {
             loge((new StringBuilder()).append("onEnableApn(").append(i).append(", ").append(j).append("): NO ApnContext").toString());
         } else {
@@ -2160,18 +2160,18 @@ _L5:
 
     protected void onPollPdp() {
         if(getOverallState() == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED) {
-            super.mPhone.mCM.getDataCallList(obtainMessage(0x42004));
+            mPhone.mCM.getDataCallList(obtainMessage(0x42004));
             sendMessageDelayed(obtainMessage(0x42005), 5000L);
         }
     }
 
     protected void onRadioAvailable() {
         log("onRadioAvailable");
-        if(super.mPhone.getSimulatedRadioControl() != null) {
+        if(mPhone.getSimulatedRadioControl() != null) {
             notifyDataConnection(null);
             log("onRadioAvailable: We're on the simulator; assuming data is connected");
         }
-        if(super.mPhone.mIccRecords.getRecordsLoaded())
+        if(mPhone.mIccRecords.getRecordsLoaded())
             notifyOffApnsOfAvailability(null);
         if(getOverallState() != com.android.internal.telephony.DataConnectionTracker.State.IDLE)
             cleanUpConnection(true, null);
@@ -2180,7 +2180,7 @@ _L5:
     protected void onRadioOffOrNotAvailable() {
         resetAllRetryCounts();
         mReregisterOnReconnectFailure = false;
-        if(super.mPhone.getSimulatedRadioControl() != null) {
+        if(mPhone.getSimulatedRadioControl() != null) {
             log("We're on the simulator; assuming radio off is meaningless");
         } else {
             log("onRadioOffOrNotAvailable: is off and clean up all connections");
@@ -2191,7 +2191,7 @@ _L5:
 
     protected void onRoamingOff() {
         log("onRoamingOff");
-        if(super.mUserDataEnabled)
+        if(mUserDataEnabled)
             if(!getDataOnRoamingEnabled()) {
                 notifyOffApnsOfAvailability("roamingOff");
                 setupDataOnReadyApns("roamingOff");
@@ -2201,7 +2201,7 @@ _L5:
     }
 
     protected void onRoamingOn() {
-        if(super.mUserDataEnabled)
+        if(mUserDataEnabled)
             if(getDataOnRoamingEnabled()) {
                 log("onRoamingOn: setup data on roaming");
                 setupDataOnReadyApns("roamingOn");
@@ -2218,13 +2218,13 @@ _L5:
 _L1:
         return;
 _L2:
-        ApnContext apncontext = (ApnContext)super.mApnContexts.get(s);
+        ApnContext apncontext = (ApnContext)mApnContexts.get(s);
         if(apncontext == null) {
             loge((new StringBuilder()).append("onSetDependencyMet: ApnContext not found in onSetDependencyMet(").append(s).append(", ").append(flag).append(")").toString());
         } else {
             applyNewState(apncontext, apncontext.isEnabled(), flag);
             if("default".equals(s)) {
-                ApnContext apncontext1 = (ApnContext)super.mApnContexts.get("hipri");
+                ApnContext apncontext1 = (ApnContext)mApnContexts.get("hipri");
                 if(apncontext1 != null)
                     applyNewState(apncontext1, apncontext1.isEnabled(), flag);
             }
@@ -2247,7 +2247,7 @@ _L3:
     protected void onVoiceCallEnded() {
         log("onVoiceCallEnded");
         if(isConnected())
-            if(!super.mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) {
+            if(!mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) {
                 startNetStatPoll();
                 startDataStallAlarm(false);
                 notifyDataConnection("2GVoiceCallEnded");
@@ -2259,7 +2259,7 @@ _L3:
 
     protected void onVoiceCallStarted() {
         log("onVoiceCallStarted");
-        if(isConnected() && !super.mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) {
+        if(isConnected() && !mPhone.getServiceStateTracker().isConcurrentVoiceAndDataAllowed()) {
             log("onVoiceCallStarted stop polling");
             stopNetStatPoll();
             stopDataStallAlarm();
@@ -2268,7 +2268,7 @@ _L3:
     }
 
     public void putRecoveryAction(int i) {
-        android.provider.Settings.System.putInt(super.mPhone.getContext().getContentResolver(), "radio.data.stall.recovery.action", i);
+        android.provider.Settings.System.putInt(mPhone.getContext().getContentResolver(), "radio.data.stall.recovery.action", i);
     }
 
     protected void restartDataStallAlarm() {
@@ -2284,7 +2284,7 @@ _L3:
     protected void restartRadio() {
         log("restartRadio: ************TURN OFF RADIO**************");
         cleanUpAllConnections(true, "radioTurnedOff");
-        super.mPhone.getServiceStateTracker().powerOffRadioSafely(this);
+        mPhone.getServiceStateTracker().powerOffRadioSafely(this);
         SystemProperties.set("net.ppp.reset-by-timeout", String.valueOf(1 + Integer.parseInt(SystemProperties.get("net.ppp.reset-by-timeout", "0"))));
     }
 
@@ -2293,16 +2293,16 @@ _L3:
     }
 
     protected void startNetStatPoll() {
-        if(getOverallState() == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED && !super.mNetStatPollEnabled) {
+        if(getOverallState() == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED && !mNetStatPollEnabled) {
             log("startNetStatPoll");
             resetPollStats();
-            super.mNetStatPollEnabled = true;
+            mNetStatPollEnabled = true;
             mPollNetStat.run();
         }
     }
 
     protected void stopNetStatPoll() {
-        super.mNetStatPollEnabled = false;
+        mNetStatPollEnabled = false;
         removeCallbacks(mPollNetStat);
         log("stopNetStatPoll");
     }

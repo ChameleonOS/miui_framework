@@ -277,13 +277,13 @@
 
     .line 121
     :cond_39
-    const-string/jumbo v0, "long"
+    const-string v0, "long"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_44
 
     .line 122
     const/16 v0, 0x849
@@ -291,14 +291,14 @@
     goto :goto_b
 
     .line 123
-    :cond_45
+    :cond_44
     const-string v0, "float"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_4f
 
     .line 124
     const/16 v0, 0x446
@@ -306,14 +306,14 @@
     goto :goto_b
 
     .line 125
-    :cond_50
+    :cond_4f
     const-string v0, "double"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_5a
 
     .line 126
     const/16 v0, 0x846
@@ -321,14 +321,14 @@
     goto :goto_b
 
     .line 127
-    :cond_5b
+    :cond_5a
     const-string v0, "String"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_66
+    if-eqz v0, :cond_65
 
     .line 128
     const/16 v0, 0x734c
@@ -336,7 +336,7 @@
     goto :goto_b
 
     .line 130
-    :cond_66
+    :cond_65
     const/4 v0, -0x1
 
     goto :goto_b
@@ -1563,7 +1563,7 @@
     :cond_12
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
 
-    const-string/jumbo v2, "long"
+    const-string v2, "long"
 
     invoke-direct {v1, p1, v0, v2}, Lcom/android/internal/util/TypedProperties$TypeException;-><init>(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;)V
 

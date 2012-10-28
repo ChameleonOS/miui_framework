@@ -32,19 +32,19 @@
     iput-object v0, p0, Landroid/view/DisplayEventReceiver;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     .line 56
-    if-nez p1, :cond_14
+    if-nez p1, :cond_13
 
     .line 57
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "looper must not be null"
+    const-string v1, "looper must not be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 60
-    :cond_14
+    :cond_13
     invoke-virtual {p1}, Landroid/os/Looper;->getQueue()Landroid/os/MessageQueue;
 
     move-result-object v0

@@ -69,7 +69,7 @@ public class CheckBoxPreference extends TwoStatePreference {
         super.onBindView(view);
         View view1 = view.findViewById(0x1020001);
         if(view1 != null && (view1 instanceof Checkable)) {
-            ((Checkable)view1).setChecked(super.mChecked);
+            ((Checkable)view1).setChecked(mChecked);
             sendAccessibilityEvent(view1);
         }
         setSlidingButtonListener(view1);

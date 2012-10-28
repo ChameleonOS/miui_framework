@@ -1381,7 +1381,7 @@
 
     .line 86
     .local v3, style:[I
-    if-eqz v3, :cond_167
+    if-eqz v3, :cond_166
 
     .line 87
     iget-object v7, p0, Landroid/content/res/StringBlock;->mStyleIDs:Landroid/content/res/StringBlock$StyleIDs;
@@ -1403,7 +1403,7 @@
     :goto_50
     array-length v7, v3
 
-    if-ge v5, v7, :cond_161
+    if-ge v5, v7, :cond_160
 
     .line 94
     aget v4, v3, v5
@@ -1708,13 +1708,13 @@
 
     .line 126
     :cond_141
-    const-string/jumbo v7, "li"
+    const-string v7, "li"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_151
+    if-eqz v7, :cond_150
 
     .line 127
     iget-object v7, p0, Landroid/content/res/StringBlock;->mStyleIDs:Landroid/content/res/StringBlock$StyleIDs;
@@ -1725,7 +1725,7 @@
     goto/16 :goto_ad
 
     .line 128
-    :cond_151
+    :cond_150
     const-string/jumbo v7, "marquee"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1745,7 +1745,7 @@
     .line 133
     .end local v4           #styleId:I
     .end local v6           #styleTag:Ljava/lang/String;
-    :cond_161
+    :cond_160
     iget-object v7, p0, Landroid/content/res/StringBlock;->mStyleIDs:Landroid/content/res/StringBlock$StyleIDs;
 
     invoke-direct {p0, v2, v3, v7}, Landroid/content/res/StringBlock;->applyStyles(Ljava/lang/String;[ILandroid/content/res/StringBlock$StyleIDs;)Ljava/lang/CharSequence;
@@ -1754,28 +1754,28 @@
 
     .line 135
     .end local v5           #styleIndex:I
-    :cond_167
+    :cond_166
     iget-object v7, p0, Landroid/content/res/StringBlock;->mStrings:[Ljava/lang/CharSequence;
 
-    if-eqz v7, :cond_172
+    if-eqz v7, :cond_171
 
     iget-object v7, p0, Landroid/content/res/StringBlock;->mStrings:[Ljava/lang/CharSequence;
 
     aput-object v1, v7, p1
 
     .line 137
-    :goto_16f
+    :goto_16e
     monitor-exit p0
 
     goto/16 :goto_c
 
     .line 136
-    :cond_172
+    :cond_171
     iget-object v7, p0, Landroid/content/res/StringBlock;->mSparseStrings:Landroid/util/SparseArray;
 
     invoke-virtual {v7, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-    :try_end_177
-    .catchall {:try_start_20 .. :try_end_177} :catchall_1d
+    :try_end_176
+    .catchall {:try_start_20 .. :try_end_176} :catchall_1d
 
-    goto :goto_16f
+    goto :goto_16e
 .end method

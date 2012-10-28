@@ -225,11 +225,11 @@
 
     cmp-long v5, v0, v5
 
-    if-nez v5, :cond_44
+    if-nez v5, :cond_43
 
     .line 1290
     :cond_27
-    const-string/jumbo v5, "local_filename"
+    const-string v5, "local_filename"
 
     invoke-virtual {p0, v5}, Landroid/app/DownloadManager$CursorTranslator;->getColumnIndex(Ljava/lang/String;)I
 
@@ -241,7 +241,7 @@
 
     .line 1291
     .local v4, localPath:Ljava/lang/String;
-    if-nez v4, :cond_36
+    if-nez v4, :cond_35
 
     .line 1292
     const/4 v5, 0x0
@@ -249,7 +249,7 @@
     goto :goto_1a
 
     .line 1294
-    :cond_36
+    :cond_35
     new-instance v5, Ljava/io/File;
 
     invoke-direct {v5, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -266,7 +266,7 @@
 
     .line 1298
     .end local v4           #localPath:Ljava/lang/String;
-    :cond_44
+    :cond_43
     const-string v5, "_id"
 
     invoke-virtual {p0, v5}, Landroid/app/DownloadManager$CursorTranslator;->getColumnIndex(Ljava/lang/String;)I
@@ -566,25 +566,25 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "local_uri"
+    const-string v1, "local_uri"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_11
 
     invoke-direct {p0}, Landroid/app/DownloadManager$CursorTranslator;->getLocalUri()Ljava/lang/String;
 
     move-result-object v0
 
-    :goto_11
+    :goto_10
     return-object v0
 
-    :cond_12
+    :cond_11
     invoke-super {p0, p1}, Landroid/database/CursorWrapper;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_11
+    goto :goto_10
 .end method

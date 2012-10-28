@@ -156,7 +156,7 @@
 
     .line 143
     .local v9, map:Ljava/util/HashMap;
-    const-string/jumbo v1, "listener"
+    const-string v1, "listener"
 
     invoke-virtual {v9, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -190,7 +190,7 @@
 
     .line 149
     .local v6, c:Landroid/database/Cursor;
-    :try_start_1f
+    :try_start_1e
     sget-object v1, Landroid/provider/Browser;->BOOKMARKS_URI:Landroid/net/Uri;
 
     const/4 v2, 0x1
@@ -216,10 +216,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_43
 
     .line 155
-    :cond_36
+    :cond_35
     const/4 v1, 0x0
 
     invoke-interface {v6, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -232,55 +232,55 @@
 
     .line 157
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
-    :try_end_41
-    .catchall {:try_start_1f .. :try_end_41} :catchall_55
-    .catch Ljava/lang/IllegalStateException; {:try_start_1f .. :try_end_41} :catch_4a
+    :try_end_40
+    .catchall {:try_start_1e .. :try_end_40} :catchall_54
+    .catch Ljava/lang/IllegalStateException; {:try_start_1e .. :try_end_40} :catch_49
 
     move-result v1
 
-    if-nez v1, :cond_36
+    if-nez v1, :cond_35
 
     .line 162
     .end local v10           #url:Ljava/lang/String;
-    :cond_44
-    if-eqz v6, :cond_49
+    :cond_43
+    if-eqz v6, :cond_48
 
-    :goto_46
+    :goto_45
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     .line 164
-    :cond_49
+    :cond_48
     return-void
 
     .line 159
-    :catch_4a
+    :catch_49
     move-exception v7
 
     .line 160
     .local v7, e:Ljava/lang/IllegalStateException;
-    :try_start_4b
+    :try_start_4a
     const-string v1, "WebIconDatabase"
 
     const-string v2, "BulkRequestIcons"
 
     invoke-static {v1, v2, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_52
-    .catchall {:try_start_4b .. :try_end_52} :catchall_55
+    :try_end_51
+    .catchall {:try_start_4a .. :try_end_51} :catchall_54
 
     .line 162
-    if-eqz v6, :cond_49
+    if-eqz v6, :cond_48
 
-    goto :goto_46
+    goto :goto_45
 
     .end local v7           #e:Ljava/lang/IllegalStateException;
-    :catchall_55
+    :catchall_54
     move-exception v1
 
-    if-eqz v6, :cond_5b
+    if-eqz v6, :cond_5a
 
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    :cond_5b
+    :cond_5a
     throw v1
 .end method
 

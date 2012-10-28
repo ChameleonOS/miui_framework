@@ -1868,7 +1868,7 @@
 
     move/from16 v1, v26
 
-    if-ne v0, v1, :cond_12c
+    if-ne v0, v1, :cond_12b
 
     .line 2562
     new-instance v5, Landroid/content/Intent;
@@ -1888,7 +1888,7 @@
     invoke-virtual {v5, v0, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 2564
-    const-string/jumbo v25, "locale"
+    const-string v25, "locale"
 
     move-object/from16 v0, p0
 
@@ -1980,13 +1980,13 @@
 
     .line 2633
     .end local v5           #intent:Landroid/content/Intent;
-    :goto_127
+    :goto_126
     invoke-virtual/range {p0 .. p0}, Landroid/widget/Editor$SuggestionsPopupWindow;->hide()V
 
     goto/16 :goto_84
 
     .line 2574
-    :cond_12c
+    :cond_12b
     const-class v25, Landroid/text/style/SuggestionSpan;
 
     move-object/from16 v0, v25
@@ -2026,8 +2026,8 @@
     const/4 v3, 0x0
 
     .local v3, i:I
-    :goto_146
-    if-ge v3, v6, :cond_174
+    :goto_145
+    if-ge v3, v6, :cond_173
 
     .line 2581
     aget-object v17, v19, v3
@@ -2069,7 +2069,7 @@
     .local v18, suggestionSpanFlags:I
     and-int/lit8 v25, v18, 0x2
 
-    if-lez v25, :cond_171
+    if-lez v25, :cond_170
 
     .line 2589
     and-int/lit8 v18, v18, -0x3
@@ -2081,15 +2081,15 @@
     invoke-virtual/range {v17 .. v18}, Landroid/text/style/SuggestionSpan;->setFlags(I)V
 
     .line 2580
-    :cond_171
+    :cond_170
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_146
+    goto :goto_145
 
     .line 2595
     .end local v17           #suggestionSpan:Landroid/text/style/SuggestionSpan;
     .end local v18           #suggestionSpanFlags:I
-    :cond_174
+    :cond_173
     move-object/from16 v0, v16
 
     iget v0, v0, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionInfo;->suggestionStart:I
@@ -2154,7 +2154,7 @@
 
     move-result v25
 
-    if-nez v25, :cond_1c8
+    if-nez v25, :cond_1c7
 
     .line 2604
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
@@ -2163,7 +2163,7 @@
 
     .line 2605
     .local v4, imm:Landroid/view/inputmethod/InputMethodManager;
-    if-eqz v4, :cond_1c8
+    if-eqz v4, :cond_1c7
 
     .line 2606
     move-object/from16 v0, v16
@@ -2186,7 +2186,7 @@
 
     .line 2612
     .end local v4           #imm:Landroid/view/inputmethod/InputMethodManager;
-    :cond_1c8
+    :cond_1c7
     move-object/from16 v0, v16
 
     iget-object v0, v0, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionInfo;->suggestionSpan:Landroid/text/style/SuggestionSpan;
@@ -2220,21 +2220,21 @@
     .local v7, lengthDifference:I
     const/4 v3, 0x0
 
-    :goto_1e3
-    if-ge v3, v6, :cond_20b
+    :goto_1e2
+    if-ge v3, v6, :cond_20a
 
     .line 2621
     aget v25, v22, v3
 
     move/from16 v0, v25
 
-    if-gt v0, v11, :cond_208
+    if-gt v0, v11, :cond_207
 
     aget v25, v20, v3
 
     move/from16 v0, v25
 
-    if-lt v0, v10, :cond_208
+    if-lt v0, v10, :cond_207
 
     .line 2623
     move-object/from16 v0, p0
@@ -2261,13 +2261,13 @@
     invoke-virtual/range {v25 .. v29}, Landroid/widget/TextView;->setSpan_internal(Ljava/lang/Object;III)V
 
     .line 2617
-    :cond_208
+    :cond_207
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1e3
+    goto :goto_1e2
 
     .line 2629
-    :cond_20b
+    :cond_20a
     add-int v8, v10, v7
 
     .line 2630
@@ -2287,7 +2287,7 @@
 
     invoke-virtual {v0, v8, v8}, Landroid/widget/TextView;->setCursorPosition_internal(II)V
 
-    goto/16 :goto_127
+    goto/16 :goto_126
 .end method
 
 .method public onParentLostFocus()V

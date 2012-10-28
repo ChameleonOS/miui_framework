@@ -35,7 +35,7 @@
 
     iput-object p2, p0, Landroid/preference/CheckBoxPreference$1;->val$slidingButton:Lmiui/widget/SlidingButton;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -219,7 +219,7 @@
     .local p0, this:Landroid/content/Loader;,"Landroid/content/Loader<TD;>;"
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    const-string/jumbo v0, "mId="
+    const-string v0, "mId="
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 

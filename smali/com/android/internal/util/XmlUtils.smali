@@ -1533,10 +1533,10 @@
     move-result v0
 
     .local v0, eventType:I
-    if-eq v0, v8, :cond_20d
+    if-eq v0, v8, :cond_20a
 
     .line 845
-    if-ne v0, v10, :cond_1ba
+    if-ne v0, v10, :cond_1b7
 
     .line 846
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -1547,7 +1547,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_193
+    if-eqz v5, :cond_190
 
     .line 847
     aput-object v4, p1, v7
@@ -1740,13 +1740,13 @@
     .line 805
     .end local v1           #res:Ljava/lang/Integer;
     :cond_c9
-    const-string/jumbo v5, "long"
+    const-string v5, "long"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_df
+    if-eqz v5, :cond_de
 
     .line 806
     const-string/jumbo v5, "value"
@@ -1764,14 +1764,14 @@
 
     .line 807
     .end local v1           #res:Ljava/lang/Long;
-    :cond_df
+    :cond_de
     const-string v5, "float"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_f5
+    if-eqz v5, :cond_f4
 
     .line 808
     new-instance v1, Ljava/lang/Float;
@@ -1789,14 +1789,14 @@
 
     .line 809
     .end local v1           #res:Ljava/lang/Float;
-    :cond_f5
+    :cond_f4
     const-string v5, "double"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_10b
+    if-eqz v5, :cond_10a
 
     .line 810
     new-instance v1, Ljava/lang/Double;
@@ -1814,14 +1814,14 @@
 
     .line 811
     .end local v1           #res:Ljava/lang/Double;
-    :cond_10b
+    :cond_10a
     const-string v5, "boolean"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_120
+    if-eqz v5, :cond_11f
 
     .line 812
     const-string/jumbo v5, "value"
@@ -1839,14 +1839,14 @@
 
     .line 813
     .end local v1           #res:Ljava/lang/Boolean;
-    :cond_120
+    :cond_11f
     const-string v5, "int-array"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_135
+    if-eqz v5, :cond_134
 
     .line 814
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -1866,14 +1866,14 @@
 
     .line 819
     .end local v1           #res:[I
-    :cond_135
+    :cond_134
     const-string/jumbo v5, "map"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_14c
+    if-eqz v5, :cond_14b
 
     .line 820
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -1893,20 +1893,20 @@
 
     .line 825
     .end local v1           #res:Ljava/util/HashMap;
-    :cond_14c
-    const-string/jumbo v5, "list"
+    :cond_14b
+    const-string v5, "list"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_163
+    if-eqz v5, :cond_160
 
     .line 826
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     .line 827
-    const-string/jumbo v5, "list"
+    const-string v5, "list"
 
     invoke-static {p0, v5, p1}, Lcom/android/internal/util/XmlUtils;->readThisListXml(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/ArrayList;
 
@@ -1920,14 +1920,14 @@
 
     .line 831
     .end local v1           #res:Ljava/util/ArrayList;
-    :cond_163
+    :cond_160
     const-string/jumbo v5, "set"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_17a
+    if-eqz v5, :cond_177
 
     .line 832
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -1947,7 +1947,7 @@
 
     .line 838
     .end local v1           #res:Ljava/util/HashSet;
-    :cond_17a
+    :cond_177
     new-instance v5, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1974,7 +1974,7 @@
 
     .line 851
     .restart local v0       #eventType:I
-    :cond_193
+    :cond_190
     new-instance v5, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2014,10 +2014,10 @@
     throw v5
 
     .line 853
-    :cond_1ba
+    :cond_1b7
     const/4 v5, 0x4
 
-    if-ne v0, v5, :cond_1e4
+    if-ne v0, v5, :cond_1e1
 
     .line 854
     new-instance v5, Lorg/xmlpull/v1/XmlPullParserException;
@@ -2059,7 +2059,7 @@
     throw v5
 
     .line 856
-    :cond_1e4
+    :cond_1e1
     if-ne v0, v9, :cond_1a
 
     .line 857
@@ -2102,7 +2102,7 @@
     throw v5
 
     .line 861
-    :cond_20d
+    :cond_20a
     new-instance v5, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2629,12 +2629,12 @@
 
     .line 274
     :cond_10
-    const-string/jumbo v2, "list"
+    const-string v2, "list"
 
     invoke-interface {p2, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 275
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1d
 
     .line 276
     const-string/jumbo v2, "name"
@@ -2642,7 +2642,7 @@
     invoke-interface {p2, v3, v2, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 279
-    :cond_1e
+    :cond_1d
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -2653,8 +2653,8 @@
 
     .line 281
     .local v1, i:I
-    :goto_23
-    if-ge v1, v0, :cond_2f
+    :goto_22
+    if-ge v1, v0, :cond_2e
 
     .line 282
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2666,11 +2666,11 @@
     .line 283
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_23
+    goto :goto_22
 
     .line 286
-    :cond_2f
-    const-string/jumbo v2, "list"
+    :cond_2e
+    const-string v2, "list"
 
     invoke-interface {p2, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -3025,20 +3025,20 @@
     :cond_57
     instance-of v1, p0, Ljava/lang/Long;
 
-    if-eqz v1, :cond_5f
+    if-eqz v1, :cond_5e
 
     .line 431
-    const-string/jumbo v0, "long"
+    const-string v0, "long"
 
     .restart local v0       #typeStr:Ljava/lang/String;
     goto :goto_3e
 
     .line 432
     .end local v0           #typeStr:Ljava/lang/String;
-    :cond_5f
+    :cond_5e
     instance-of v1, p0, Ljava/lang/Float;
 
-    if-eqz v1, :cond_66
+    if-eqz v1, :cond_65
 
     .line 433
     const-string v0, "float"
@@ -3048,10 +3048,10 @@
 
     .line 434
     .end local v0           #typeStr:Ljava/lang/String;
-    :cond_66
+    :cond_65
     instance-of v1, p0, Ljava/lang/Double;
 
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_6c
 
     .line 435
     const-string v0, "double"
@@ -3061,10 +3061,10 @@
 
     .line 436
     .end local v0           #typeStr:Ljava/lang/String;
-    :cond_6d
+    :cond_6c
     instance-of v1, p0, Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_74
+    if-eqz v1, :cond_73
 
     .line 437
     const-string v0, "boolean"
@@ -3074,10 +3074,10 @@
 
     .line 438
     .end local v0           #typeStr:Ljava/lang/String;
-    :cond_74
+    :cond_73
     instance-of v1, p0, [B
 
-    if-eqz v1, :cond_80
+    if-eqz v1, :cond_7f
 
     .line 439
     check-cast p0, [B
@@ -3091,10 +3091,10 @@
 
     .line 441
     .restart local p0
-    :cond_80
+    :cond_7f
     instance-of v1, p0, [I
 
-    if-eqz v1, :cond_8c
+    if-eqz v1, :cond_8b
 
     .line 442
     check-cast p0, [I
@@ -3108,10 +3108,10 @@
 
     .line 444
     .restart local p0
-    :cond_8c
+    :cond_8b
     instance-of v1, p0, Ljava/util/Map;
 
-    if-eqz v1, :cond_96
+    if-eqz v1, :cond_95
 
     .line 445
     check-cast p0, Ljava/util/Map;
@@ -3123,10 +3123,10 @@
 
     .line 447
     .restart local p0
-    :cond_96
+    :cond_95
     instance-of v1, p0, Ljava/util/List;
 
-    if-eqz v1, :cond_a1
+    if-eqz v1, :cond_a0
 
     .line 448
     check-cast p0, Ljava/util/List;
@@ -3138,10 +3138,10 @@
 
     .line 450
     .restart local p0
-    :cond_a1
+    :cond_a0
     instance-of v1, p0, Ljava/util/Set;
 
-    if-eqz v1, :cond_ac
+    if-eqz v1, :cond_ab
 
     .line 451
     check-cast p0, Ljava/util/Set;
@@ -3153,10 +3153,10 @@
 
     .line 453
     .restart local p0
-    :cond_ac
+    :cond_ab
     instance-of v1, p0, Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_cd
+    if-eqz v1, :cond_cc
 
     .line 457
     const-string/jumbo v1, "string"
@@ -3164,7 +3164,7 @@
     invoke-interface {p2, v3, v1}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 458
-    if-eqz p1, :cond_be
+    if-eqz p1, :cond_bd
 
     .line 459
     const-string/jumbo v1, "name"
@@ -3172,7 +3172,7 @@
     invoke-interface {p2, v3, v1, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 461
-    :cond_be
+    :cond_bd
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -3187,7 +3187,7 @@
     goto/16 :goto_17
 
     .line 465
-    :cond_cd
+    :cond_cc
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;

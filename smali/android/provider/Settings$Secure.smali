@@ -599,21 +599,21 @@
     .line 2312
     sget-object v0, Landroid/provider/Settings$Secure;->MOVED_TO_LOCK_SETTINGS:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "lock_pattern_autolock"
+    const-string v1, "lock_pattern_autolock"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 2313
     sget-object v0, Landroid/provider/Settings$Secure;->MOVED_TO_LOCK_SETTINGS:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "lock_pattern_visible_pattern"
+    const-string v1, "lock_pattern_visible_pattern"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 2314
     sget-object v0, Landroid/provider/Settings$Secure;->MOVED_TO_LOCK_SETTINGS:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "lock_pattern_tactile_feedback_enabled"
+    const-string v1, "lock_pattern_tactile_feedback_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -799,13 +799,13 @@
 
     const/16 v1, 0x1c
 
-    const-string/jumbo v2, "lock_screen_owner_info"
+    const-string v2, "lock_screen_owner_info"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1d
 
-    const-string/jumbo v2, "lock_screen_owner_info_enabled"
+    const-string v2, "lock_screen_owner_info_enabled"
 
     aput-object v2, v0, v1
 
@@ -1206,10 +1206,10 @@
     :cond_15
     sget-object v0, Landroid/provider/Settings$Secure;->sLockSettings:Lcom/android/internal/widget/ILockSettings;
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_30
 
     .line 2330
-    const-string/jumbo v0, "lock_settings"
+    const-string v0, "lock_settings"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -1228,35 +1228,35 @@
 
     const/16 v2, 0x3e8
 
-    if-ne v0, v2, :cond_4f
+    if-ne v0, v2, :cond_4e
 
     const/4 v0, 0x1
 
-    :goto_2f
+    :goto_2e
     sput-boolean v0, Landroid/provider/Settings$Secure;->sIsSystemProcess:Z
 
     .line 2334
-    :cond_31
+    :cond_30
     sget-object v0, Landroid/provider/Settings$Secure;->sLockSettings:Lcom/android/internal/widget/ILockSettings;
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_51
 
     sget-boolean v0, Landroid/provider/Settings$Secure;->sIsSystemProcess:Z
 
-    if-nez v0, :cond_52
+    if-nez v0, :cond_51
 
     sget-object v0, Landroid/provider/Settings$Secure;->MOVED_TO_LOCK_SETTINGS:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-    :try_end_3e
-    .catchall {:try_start_3 .. :try_end_3e} :catchall_59
+    :try_end_3d
+    .catchall {:try_start_3 .. :try_end_3d} :catchall_58
 
     move-result v0
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_51
 
     .line 2337
-    :try_start_41
+    :try_start_40
     sget-object v0, Landroid/provider/Settings$Secure;->sLockSettings:Lcom/android/internal/widget/ILockSettings;
 
     const-string v2, "0"
@@ -1266,43 +1266,43 @@
     move-result v3
 
     invoke-interface {v0, p1, v2, v3}, Lcom/android/internal/widget/ILockSettings;->getString(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-    :try_end_4c
-    .catchall {:try_start_41 .. :try_end_4c} :catchall_59
-    .catch Landroid/os/RemoteException; {:try_start_41 .. :try_end_4c} :catch_51
+    :try_end_4b
+    .catchall {:try_start_40 .. :try_end_4b} :catchall_58
+    .catch Landroid/os/RemoteException; {:try_start_40 .. :try_end_4b} :catch_50
 
     move-result-object v0
 
     .line 2343
-    :goto_4d
+    :goto_4c
     monitor-exit v1
 
     return-object v0
 
     .line 2332
-    :cond_4f
+    :cond_4e
     const/4 v0, 0x0
 
-    goto :goto_2f
+    goto :goto_2e
 
     .line 2338
-    :catch_51
+    :catch_50
     move-exception v0
 
     .line 2343
-    :cond_52
-    :try_start_52
+    :cond_51
+    :try_start_51
     sget-object v0, Landroid/provider/Settings$Secure;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
     invoke-virtual {v0, p0, p1}, Landroid/provider/Settings$NameValueCache;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_57
-    .catchall {:try_start_52 .. :try_end_57} :catchall_59
+    :try_end_56
+    .catchall {:try_start_51 .. :try_end_56} :catchall_58
 
     move-result-object v0
 
-    goto :goto_4d
+    goto :goto_4c
 
     .line 2324
-    :catchall_59
+    :catchall_58
     move-exception v0
 
     monitor-exit v1
@@ -1332,7 +1332,7 @@
 
     .prologue
     .line 4347
-    const-string/jumbo v1, "location_providers_allowed"
+    const-string v1, "location_providers_allowed"
 
     invoke-static {p0, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1431,7 +1431,7 @@
 
     .prologue
     .line 4362
-    if-eqz p2, :cond_1c
+    if-eqz p2, :cond_1b
 
     .line 4363
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1454,7 +1454,7 @@
 
     .line 4367
     :goto_15
-    const-string/jumbo v0, "location_providers_allowed"
+    const-string v0, "location_providers_allowed"
 
     invoke-static {p0, v0, p1}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
@@ -1462,7 +1462,7 @@
     return-void
 
     .line 4365
-    :cond_1c
+    :cond_1b
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

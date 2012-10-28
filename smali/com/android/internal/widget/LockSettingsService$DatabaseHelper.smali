@@ -39,7 +39,7 @@
     iput-object p1, p0, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->this$0:Lcom/android/internal/widget/LockSettingsService;
 
     .line 383
-    const-string/jumbo v0, "locksettings.db"
+    const-string v0, "locksettings.db"
 
     const/4 v1, 0x0
 

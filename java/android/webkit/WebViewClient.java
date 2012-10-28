@@ -29,6 +29,9 @@ public class WebViewClient {
     public void onLoadResource(WebView webview, String s) {
     }
 
+    public void onMainFrameFinishParsing(WebView webview) {
+    }
+
     public void onPageFinished(WebView webview, String s) {
     }
 

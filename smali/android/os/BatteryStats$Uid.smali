@@ -60,7 +60,7 @@
 
     const/4 v1, 0x3
 
-    const-string/jumbo v2, "long_touch"
+    const-string v2, "long_touch"
 
     aput-object v2, v0, v1
 

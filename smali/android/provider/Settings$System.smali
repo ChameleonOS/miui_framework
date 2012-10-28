@@ -532,42 +532,42 @@
     .line 801
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "location_providers_allowed"
+    const-string v1, "location_providers_allowed"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 802
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "lock_biometric_weak_flags"
+    const-string v1, "lock_biometric_weak_flags"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 803
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "lock_pattern_autolock"
+    const-string v1, "lock_pattern_autolock"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 804
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "lock_pattern_visible_pattern"
+    const-string v1, "lock_pattern_visible_pattern"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 805
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "lock_pattern_tactile_feedback_enabled"
+    const-string v1, "lock_pattern_tactile_feedback_enabled"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 806
     sget-object v0, Landroid/provider/Settings$System;->MOVED_TO_SECURE:Ljava/util/HashSet;
 
-    const-string/jumbo v1, "logging_id"
+    const-string v1, "logging_id"
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
@@ -1090,7 +1090,7 @@
 
     const/16 v1, 0x32
 
-    const-string/jumbo v2, "lockscreen_sounds_enabled"
+    const-string v2, "lockscreen_sounds_enabled"
 
     aput-object v2, v0, v1
 

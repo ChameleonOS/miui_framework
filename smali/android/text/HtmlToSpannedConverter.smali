@@ -212,7 +212,7 @@
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 856
-    const-string/jumbo v1, "lime"
+    const-string v1, "lime"
 
     const v2, 0xff00
 

@@ -357,14 +357,14 @@
 
     .line 51
     .local v0, drawable:Landroid/graphics/drawable/BitmapDrawable;
-    iget-object v2, p0, Landroid/graphics/drawable/AnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
+    iget-object v2, p0, Landroid/graphics/drawable/GifAnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
-    iget-object v2, v2, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->mDrawables:[Landroid/graphics/drawable/Drawable;
+    iget-object v2, v2, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     aput-object v0, v2, p1
 
     .line 52
-    iget-object v2, p0, Landroid/graphics/drawable/AnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
+    iget-object v2, p0, Landroid/graphics/drawable/GifAnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
     iget-object v2, v2, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mDurations:[I
 

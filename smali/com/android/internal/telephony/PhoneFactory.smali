@@ -285,7 +285,7 @@
     :try_start_4
     sget-boolean v8, Lcom/android/internal/telephony/PhoneFactory;->sMadeDefaults:Z
 
-    if-nez v8, :cond_bc
+    if-nez v8, :cond_bb
 
     .line 67
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -343,11 +343,11 @@
     invoke-direct {v8, v10}, Landroid/net/LocalServerSocket;-><init>(Ljava/lang/String;)V
     :try_end_2a
     .catchall {:try_start_23 .. :try_end_2a} :catchall_1c
-    .catch Ljava/io/IOException; {:try_start_23 .. :try_end_2a} :catch_be
+    .catch Ljava/io/IOException; {:try_start_23 .. :try_end_2a} :catch_bd
 
     .line 88
     :goto_2a
-    if-nez v2, :cond_c2
+    if-nez v2, :cond_c1
 
     .line 100
     :try_start_2c
@@ -418,7 +418,7 @@
 
     .line 117
     .local v3, lteOnCdma:I
-    packed-switch v3, :pswitch_data_126
+    packed-switch v3, :pswitch_data_122
 
     .line 129
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -437,12 +437,12 @@
     .local v0, cdmaSubscription:I
     const-string v8, "PHONE"
 
-    const-string/jumbo v10, "lteOnCdma not set, using PREFERRED_CDMA_SUBSCRIPTION"
+    const-string v10, "lteOnCdma not set, using PREFERRED_CDMA_SUBSCRIPTION"
 
     invoke-static {v8, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 135
-    :goto_7d
+    :goto_7c
     const-string v8, "PHONE"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -479,7 +479,7 @@
 
     .line 141
     .local v5, phoneType:I
-    if-ne v5, v12, :cond_eb
+    if-ne v5, v12, :cond_e8
 
     .line 142
     const-string v8, "PHONE"
@@ -504,8 +504,8 @@
     sput-object v8, Lcom/android/internal/telephony/PhoneFactory;->sProxyPhone:Lcom/android/internal/telephony/Phone;
 
     .line 161
-    :cond_b9
-    :goto_b9
+    :cond_b8
+    :goto_b8
     const/4 v8, 0x1
 
     sput-boolean v8, Lcom/android/internal/telephony/PhoneFactory;->sMadeDefaults:Z
@@ -518,7 +518,7 @@
     .end local v5           #phoneType:I
     .end local v6           #preferredNetworkMode:I
     .end local v7           #retryCount:I
-    :cond_bc
+    :cond_bb
     monitor-exit v9
 
     .line 164
@@ -527,7 +527,7 @@
     .line 84
     .restart local v2       #hasException:Z
     .restart local v7       #retryCount:I
-    :catch_be
+    :catch_bd
     move-exception v1
 
     .line 85
@@ -538,10 +538,10 @@
 
     .line 90
     .end local v1           #ex:Ljava/io/IOException;
-    :cond_c2
+    :cond_c1
     const/4 v8, 0x3
 
-    if-le v7, v8, :cond_cd
+    if-le v7, v8, :cond_cc
 
     .line 91
     new-instance v8, Ljava/lang/RuntimeException;
@@ -551,23 +551,23 @@
     invoke-direct {v8, v10}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v8
-    :try_end_cd
-    .catchall {:try_start_2c .. :try_end_cd} :catchall_1c
+    :try_end_cc
+    .catchall {:try_start_2c .. :try_end_cc} :catchall_1c
 
     .line 94
-    :cond_cd
+    :cond_cc
     const-wide/16 v10, 0x7d0
 
-    :try_start_cf
+    :try_start_ce
     invoke-static {v10, v11}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_d2
-    .catchall {:try_start_cf .. :try_end_d2} :catchall_1c
-    .catch Ljava/lang/InterruptedException; {:try_start_cf .. :try_end_d2} :catch_d4
+    :try_end_d1
+    .catchall {:try_start_ce .. :try_end_d1} :catchall_1c
+    .catch Ljava/lang/InterruptedException; {:try_start_ce .. :try_end_d1} :catch_d3
 
     goto/16 :goto_20
 
     .line 95
-    :catch_d4
+    :catch_d3
     move-exception v8
 
     goto/16 :goto_20
@@ -576,48 +576,48 @@
     .restart local v3       #lteOnCdma:I
     .restart local v4       #networkMode:I
     .restart local v6       #preferredNetworkMode:I
-    :pswitch_d7
+    :pswitch_d6
     const/4 v0, 0x1
 
     .line 120
     .restart local v0       #cdmaSubscription:I
-    :try_start_d8
+    :try_start_d7
     const-string v8, "PHONE"
 
-    const-string/jumbo v10, "lteOnCdma is 0 use SUBSCRIPTION_FROM_NV"
+    const-string v10, "lteOnCdma is 0 use SUBSCRIPTION_FROM_NV"
 
     invoke-static {v8, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_7d
+    goto :goto_7c
 
     .line 123
     .end local v0           #cdmaSubscription:I
-    :pswitch_e1
+    :pswitch_df
     const/4 v0, 0x0
 
     .line 124
     .restart local v0       #cdmaSubscription:I
     const-string v8, "PHONE"
 
-    const-string/jumbo v10, "lteOnCdma is 1 use SUBSCRIPTION_FROM_RUIM"
+    const-string v10, "lteOnCdma is 1 use SUBSCRIPTION_FROM_RUIM"
 
     invoke-static {v8, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_7d
+    goto :goto_7c
 
     .line 145
     .restart local v5       #phoneType:I
-    :cond_eb
+    :cond_e8
     const/4 v8, 0x2
 
-    if-ne v5, v8, :cond_b9
+    if-ne v5, v8, :cond_b8
 
     .line 146
     invoke-static {}, Lcom/android/internal/telephony/BaseCommands;->getLteOnCdmaModeStatic()I
 
     move-result v8
 
-    packed-switch v8, :pswitch_data_12e
+    packed-switch v8, :pswitch_data_12a
 
     .line 154
     const-string v8, "PHONE"
@@ -641,10 +641,10 @@
 
     sput-object v8, Lcom/android/internal/telephony/PhoneFactory;->sProxyPhone:Lcom/android/internal/telephony/Phone;
 
-    goto :goto_b9
+    goto :goto_b8
 
     .line 148
-    :pswitch_10d
+    :pswitch_10a
     const-string v8, "PHONE"
 
     const-string v10, "Creating CDMALTEPhone"
@@ -665,24 +665,22 @@
     invoke-direct {v8, v10}, Lcom/android/internal/telephony/PhoneProxy;-><init>(Lcom/android/internal/telephony/Phone;)V
 
     sput-object v8, Lcom/android/internal/telephony/PhoneFactory;->sProxyPhone:Lcom/android/internal/telephony/Phone;
-    :try_end_124
-    .catchall {:try_start_d8 .. :try_end_124} :catchall_1c
+    :try_end_121
+    .catchall {:try_start_d7 .. :try_end_121} :catchall_1c
 
-    goto :goto_b9
+    goto :goto_b8
 
     .line 117
-    nop
-
-    :pswitch_data_126
+    :pswitch_data_122
     .packed-switch 0x0
-        :pswitch_d7
-        :pswitch_e1
+        :pswitch_d6
+        :pswitch_df
     .end packed-switch
 
     .line 146
-    :pswitch_data_12e
+    :pswitch_data_12a
     .packed-switch 0x1
-        :pswitch_10d
+        :pswitch_10a
     .end packed-switch
 .end method
 

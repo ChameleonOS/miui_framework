@@ -301,7 +301,7 @@
     invoke-static {v0, v1}, Landroid/app/ContextImpl;->registerService(Ljava/lang/String;Landroid/app/ContextImpl$ServiceFetcher;)V
 
     .line 369
-    const-string/jumbo v0, "location"
+    const-string v0, "location"
 
     new-instance v1, Landroid/app/ContextImpl$20;
 

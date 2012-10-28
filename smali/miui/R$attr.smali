@@ -45,6 +45,8 @@
 
 .field public static final buttonSliderPressed:I = 0x601000a
 
+.field public static final capability:I = 0x6010030
+
 .field public static final care_streamactive:I = 0x6010006
 
 .field public static final circleDefaultBmp:I = 0x6010027
@@ -52,6 +54,8 @@
 .field public static final circleGreenBmp:I = 0x6010028
 
 .field public static final circleRedBmp:I = 0x6010029
+
+.field public static final contentAuthority:I = 0x601002d
 
 .field public static final diameterFactor:I = 0x6010023
 
@@ -67,13 +71,13 @@
 
 .field public static final indexerTextSize:I = 0x6010013
 
-.field public static final insideBottom:I = 0x6010020
+.field public static final insideHeight:I = 0x6010020
 
 .field public static final insideLeft:I = 0x601001d
 
-.field public static final insideRight:I = 0x601001f
-
 .field public static final insideTop:I = 0x601001e
+
+.field public static final insideWidth:I = 0x601001f
 
 .field public static final overlayBackground:I = 0x6010017
 
@@ -88,6 +92,10 @@
 .field public static final paintColor:I = 0x6010022
 
 .field public static final pathStrokeAlpha:I = 0x601002c
+
+.field public static final pushName:I = 0x601002f
+
+.field public static final pushType:I = 0x601002e
 
 .field public static final rightHintAnimationDrawable:I = 0x601000f
 

@@ -63,7 +63,7 @@
 
 .field public static final tab_indicator_text:I = 0x1060009
 
-.field public static final tab_indicator_text_v4:I = 0x106007b
+.field public static final tab_indicator_text_v4:I = 0x106007c
 
 .field public static final tertiary_text_dark:I = 0x1060010
 

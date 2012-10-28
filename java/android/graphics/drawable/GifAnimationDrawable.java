@@ -79,8 +79,8 @@ _L3:
                 mHelper.mFrames.remove(0);
             mHelper.decodeNextFrames();
             BitmapDrawable bitmapdrawable = new BitmapDrawable(mResources, gifframe.mImage);
-            ((DrawableContainer.DrawableContainerState) (super.mAnimationState)).mDrawables[i] = bitmapdrawable;
-            super.mAnimationState.mDurations[i] = gifframe.mDuration;
+            mAnimationState.mDrawables[i] = bitmapdrawable;
+            mAnimationState.mDurations[i] = gifframe.mDuration;
         }
     }
 

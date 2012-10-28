@@ -845,7 +845,7 @@
     :try_start_11
     invoke-virtual {p0, v4}, Landroid/app/DownloadManager;->query(Landroid/app/DownloadManager$Query;)Landroid/database/Cursor;
     :try_end_14
-    .catchall {:try_start_11 .. :try_end_14} :catchall_67
+    .catchall {:try_start_11 .. :try_end_14} :catchall_66
 
     move-result-object v0
 
@@ -870,7 +870,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_6e
+    if-eqz v7, :cond_6d
 
     .line 1008
     const-string/jumbo v7, "status"
@@ -887,7 +887,7 @@
     .local v5, status:I
     const/16 v7, 0x8
 
-    if-ne v7, v5, :cond_6e
+    if-ne v7, v5, :cond_6d
 
     .line 1010
     const-string v6, "destination"
@@ -933,7 +933,7 @@
 
     .line 1024
     :cond_50
-    const-string/jumbo v6, "local_filename"
+    const-string v6, "local_filename"
 
     invoke-interface {v0, v6}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
@@ -950,8 +950,8 @@
     invoke-direct {v6, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-static {v6}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-    :try_end_63
-    .catchall {:try_start_1d .. :try_end_63} :catchall_67
+    :try_end_62
+    .catchall {:try_start_1d .. :try_end_62} :catchall_66
 
     move-result-object v6
 
@@ -964,19 +964,19 @@
     .end local v2           #indx:I
     .end local v3           #path:Ljava/lang/String;
     .end local v5           #status:I
-    :catchall_67
+    :catchall_66
     move-exception v6
 
-    if-eqz v0, :cond_6d
+    if-eqz v0, :cond_6c
 
     .line 1032
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     .line 1031
-    :cond_6d
+    :cond_6c
     throw v6
 
-    :cond_6e
+    :cond_6d
     if-eqz v0, :cond_1c
 
     goto :goto_19

@@ -543,7 +543,7 @@
 
     move-result v27
 
-    if-eqz v27, :cond_2dd
+    if-eqz v27, :cond_2dc
 
     .line 900
     move-object/from16 v0, p0
@@ -572,7 +572,7 @@
 
     cmp-long v27, v20, v27
 
-    if-nez v27, :cond_3a9
+    if-nez v27, :cond_3a8
 
     .line 910
     move-object/from16 v0, p0
@@ -680,7 +680,7 @@
     if-eqz v27, :cond_1b6
 
     .line 924
-    if-eqz p3, :cond_30d
+    if-eqz p3, :cond_30c
 
     move-object/from16 v0, p0
 
@@ -693,7 +693,7 @@
 
     move-result v27
 
-    if-nez v27, :cond_30d
+    if-nez v27, :cond_30c
 
     .line 925
     move-object/from16 v0, p0
@@ -751,7 +751,7 @@
     :goto_1b6
     if-eqz v12, :cond_1ba
 
-    if-eqz v16, :cond_389
+    if-eqz v16, :cond_388
 
     .line 948
     :cond_1ba
@@ -798,7 +798,7 @@
     if-eqz v16, :cond_21f
 
     .line 985
-    if-eqz p3, :cond_413
+    if-eqz p3, :cond_412
 
     .line 986
     const-string/jumbo v27, "notification_sound"
@@ -929,7 +929,7 @@
 
     invoke-direct {v8, v0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
     :try_end_248
-    .catch Ljava/io/IOException; {:try_start_23b .. :try_end_248} :catch_454
+    .catch Ljava/io/IOException; {:try_start_23b .. :try_end_248} :catch_453
 
     .end local v7           #exif:Landroid/media/ExifInterface;
     .local v8, exif:Landroid/media/ExifInterface;
@@ -954,7 +954,7 @@
 
     move-result v27
 
-    if-eqz v27, :cond_272
+    if-eqz v27, :cond_271
 
     .line 854
     const-string v27, "latitude"
@@ -970,7 +970,7 @@
     invoke-virtual/range {v26 .. v28}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Float;)V
 
     .line 855
-    const-string/jumbo v27, "longitude"
+    const-string v27, "longitude"
 
     const/16 v28, 0x1
 
@@ -983,7 +983,7 @@
     invoke-virtual/range {v26 .. v28}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Float;)V
 
     .line 858
-    :cond_272
+    :cond_271
     invoke-virtual {v7}, Landroid/media/ExifInterface;->getGpsDateTime()J
 
     move-result-wide v23
@@ -994,7 +994,7 @@
 
     cmp-long v27, v23, v27
 
-    if-eqz v27, :cond_2a9
+    if-eqz v27, :cond_2a8
 
     .line 860
     const-string v27, "datetaken"
@@ -1006,8 +1006,8 @@
     invoke-virtual/range {v26 .. v28}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
     .line 872
-    :cond_285
-    :goto_285
+    :cond_284
+    :goto_284
     const-string v27, "Orientation"
 
     const/16 v28, -0x1
@@ -1031,15 +1031,15 @@
     if-eq v0, v1, :cond_e3
 
     .line 877
-    packed-switch v17, :pswitch_data_458
+    packed-switch v17, :pswitch_data_456
 
     .line 888
-    :pswitch_29c
+    :pswitch_29b
     const/4 v6, 0x0
 
     .line 891
     .local v6, degree:I
-    :goto_29d
+    :goto_29c
     const-string/jumbo v27, "orientation"
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1053,7 +1053,7 @@
     .line 866
     .end local v6           #degree:I
     .end local v17           #orientation:I
-    :cond_2a9
+    :cond_2a8
     invoke-virtual {v7}, Landroid/media/ExifInterface;->getDateTime()J
 
     move-result-wide v23
@@ -1063,7 +1063,7 @@
 
     cmp-long v27, v23, v27
 
-    if-eqz v27, :cond_285
+    if-eqz v27, :cond_284
 
     move-object/from16 v0, p0
 
@@ -1085,7 +1085,7 @@
 
     cmp-long v27, v27, v29
 
-    if-ltz v27, :cond_285
+    if-ltz v27, :cond_284
 
     .line 868
     const-string v27, "datetaken"
@@ -1096,34 +1096,34 @@
 
     invoke-virtual/range {v26 .. v28}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    goto :goto_285
+    goto :goto_284
 
     .line 879
     .restart local v17       #orientation:I
-    :pswitch_2d4
+    :pswitch_2d3
     const/16 v6, 0x5a
 
     .line 880
     .restart local v6       #degree:I
-    goto :goto_29d
+    goto :goto_29c
 
     .line 882
     .end local v6           #degree:I
-    :pswitch_2d7
+    :pswitch_2d6
     const/16 v6, 0xb4
 
     .line 883
     .restart local v6       #degree:I
-    goto :goto_29d
+    goto :goto_29c
 
     .line 885
     .end local v6           #degree:I
-    :pswitch_2da
+    :pswitch_2d9
     const/16 v6, 0x10e
 
     .line 886
     .restart local v6       #degree:I
-    goto :goto_29d
+    goto :goto_29c
 
     .line 901
     .end local v6           #degree:I
@@ -1133,7 +1133,7 @@
     .end local v23           #time:J
     .restart local v12       #inserter:Landroid/media/MediaInserter;
     .restart local v22       #tableUri:Landroid/net/Uri;
-    :cond_2dd
+    :cond_2dc
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/media/MediaScanner$MyMediaScannerClient;->mFileType:I
@@ -1144,7 +1144,7 @@
 
     move-result v27
 
-    if-eqz v27, :cond_2f5
+    if-eqz v27, :cond_2f4
 
     .line 902
     move-object/from16 v0, p0
@@ -1161,7 +1161,7 @@
     goto/16 :goto_115
 
     .line 903
-    :cond_2f5
+    :cond_2f4
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/media/MediaScanner$MyMediaScannerClient;->mFileType:I
@@ -1191,8 +1191,8 @@
     .line 929
     .restart local v16       #needToSetSettings:Z
     .restart local v19       #result:Landroid/net/Uri;
-    :cond_30d
-    if-eqz p2, :cond_34b
+    :cond_30c
+    if-eqz p2, :cond_34a
 
     move-object/from16 v0, p0
 
@@ -1205,7 +1205,7 @@
 
     move-result v27
 
-    if-nez v27, :cond_34b
+    if-nez v27, :cond_34a
 
     .line 930
     move-object/from16 v0, p0
@@ -1223,7 +1223,7 @@
 
     move-result v27
 
-    if-nez v27, :cond_347
+    if-nez v27, :cond_346
 
     move-object/from16 v0, p1
 
@@ -1255,13 +1255,13 @@
     if-eqz v27, :cond_1b6
 
     .line 932
-    :cond_347
+    :cond_346
     const/16 v16, 0x1
 
     goto/16 :goto_1b6
 
     .line 934
-    :cond_34b
+    :cond_34a
     if-eqz p4, :cond_1b6
 
     move-object/from16 v0, p0
@@ -1293,7 +1293,7 @@
 
     move-result v27
 
-    if-nez v27, :cond_385
+    if-nez v27, :cond_384
 
     move-object/from16 v0, p1
 
@@ -1325,13 +1325,13 @@
     if-eqz v27, :cond_1b6
 
     .line 937
-    :cond_385
+    :cond_384
     const/16 v16, 0x1
 
     goto/16 :goto_1b6
 
     .line 949
-    :cond_389
+    :cond_388
     move-object/from16 v0, p1
 
     iget v0, v0, Landroid/media/MediaScanner$FileEntry;->mFormat:I
@@ -1344,7 +1344,7 @@
 
     move/from16 v1, v28
 
-    if-ne v0, v1, :cond_3a0
+    if-ne v0, v1, :cond_39f
 
     .line 950
     move-object/from16 v0, v22
@@ -1356,7 +1356,7 @@
     goto/16 :goto_1ce
 
     .line 952
-    :cond_3a0
+    :cond_39f
     move-object/from16 v0, v22
 
     move-object/from16 v1, v26
@@ -1366,7 +1366,7 @@
     goto/16 :goto_1ce
 
     .line 961
-    :cond_3a9
+    :cond_3a8
     move-object/from16 v0, v22
 
     move-wide/from16 v1, v20
@@ -1395,7 +1395,7 @@
 
     move-result v27
 
-    if-nez v27, :cond_3de
+    if-nez v27, :cond_3dd
 
     .line 968
     move-object/from16 v0, p0
@@ -1414,14 +1414,14 @@
 
     move-result v27
 
-    if-eqz v27, :cond_3fb
+    if-eqz v27, :cond_3fa
 
     .line 970
     const/4 v15, 0x2
 
     .line 978
-    :cond_3d4
-    :goto_3d4
+    :cond_3d3
+    :goto_3d3
     const-string/jumbo v27, "media_type"
 
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1432,7 +1432,7 @@
 
     .line 981
     .end local v9           #fileType:I
-    :cond_3de
+    :cond_3dd
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/media/MediaScanner$MyMediaScannerClient;->this$0:Landroid/media/MediaScanner;
@@ -1464,49 +1464,49 @@
 
     .line 971
     .restart local v9       #fileType:I
-    :cond_3fb
+    :cond_3fa
     invoke-static {v9}, Landroid/media/MediaFile;->isVideoFileType(I)Z
 
     move-result v27
 
-    if-eqz v27, :cond_403
+    if-eqz v27, :cond_402
 
     .line 972
     const/4 v15, 0x3
 
-    goto :goto_3d4
+    goto :goto_3d3
 
     .line 973
-    :cond_403
+    :cond_402
     invoke-static {v9}, Landroid/media/MediaFile;->isImageFileType(I)Z
 
     move-result v27
 
-    if-eqz v27, :cond_40b
+    if-eqz v27, :cond_40a
 
     .line 974
     const/4 v15, 0x1
 
-    goto :goto_3d4
+    goto :goto_3d3
 
     .line 975
-    :cond_40b
+    :cond_40a
     invoke-static {v9}, Landroid/media/MediaFile;->isPlayListFileType(I)Z
 
     move-result v27
 
-    if-eqz v27, :cond_3d4
+    if-eqz v27, :cond_3d3
 
     .line 976
     const/4 v15, 0x4
 
-    goto :goto_3d4
+    goto :goto_3d3
 
     .line 990
     .end local v9           #fileType:I
     .end local v15           #mediaType:I
-    :cond_413
-    if-eqz p2, :cond_434
+    :cond_412
+    if-eqz p2, :cond_433
 
     .line 991
     const-string/jumbo v27, "ringtone"
@@ -1540,7 +1540,7 @@
     goto/16 :goto_21f
 
     .line 993
-    :cond_434
+    :cond_433
     if-eqz p4, :cond_21f
 
     .line 994
@@ -1580,22 +1580,20 @@
     .end local v19           #result:Landroid/net/Uri;
     .end local v22           #tableUri:Landroid/net/Uri;
     .restart local v7       #exif:Landroid/media/ExifInterface;
-    :catch_454
+    :catch_453
     move-exception v27
 
     goto/16 :goto_249
 
     .line 877
-    nop
-
-    :pswitch_data_458
+    :pswitch_data_456
     .packed-switch 0x3
-        :pswitch_2d7
-        :pswitch_29c
-        :pswitch_29c
-        :pswitch_2d4
-        :pswitch_29c
-        :pswitch_2da
+        :pswitch_2d6
+        :pswitch_29b
+        :pswitch_29b
+        :pswitch_2d3
+        :pswitch_29b
+        :pswitch_2d9
     .end packed-switch
 .end method
 

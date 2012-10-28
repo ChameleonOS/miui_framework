@@ -2933,7 +2933,7 @@
     move-result v6
 
     .local v6, type:I
-    if-eq v6, v11, :cond_e2
+    if-eq v6, v11, :cond_e1
 
     if-ne v6, v12, :cond_15
 
@@ -2941,7 +2941,7 @@
 
     move-result v7
 
-    if-le v7, v2, :cond_e2
+    if-le v7, v2, :cond_e1
 
     .line 1211
     :cond_15
@@ -3122,10 +3122,10 @@
 
     move-result v7
 
-    if-eqz v7, :cond_c8
+    if-eqz v7, :cond_c7
 
     .line 1247
-    const-string/jumbo v7, "literal"
+    const-string v7, "literal"
 
     invoke-interface {p1, v10, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -3133,7 +3133,7 @@
 
     .line 1248
     .local v3, path:Ljava/lang/String;
-    if-eqz v3, :cond_ab
+    if-eqz v3, :cond_aa
 
     .line 1249
     const/4 v7, 0x0
@@ -3143,14 +3143,14 @@
     goto :goto_32
 
     .line 1250
-    :cond_ab
+    :cond_aa
     const-string/jumbo v7, "prefix"
 
     invoke-interface {p1, v10, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    if-eqz v3, :cond_b9
+    if-eqz v3, :cond_b8
 
     .line 1251
     invoke-virtual {p0, v3, v11}, Landroid/content/IntentFilter;->addDataPath(Ljava/lang/String;I)V
@@ -3158,7 +3158,7 @@
     goto/16 :goto_32
 
     .line 1252
-    :cond_b9
+    :cond_b8
     const-string/jumbo v7, "sglob"
 
     invoke-interface {p1, v10, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -3176,7 +3176,7 @@
 
     .line 1256
     .end local v3           #path:Ljava/lang/String;
-    :cond_c8
+    :cond_c7
     const-string v7, "IntentFilter"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -3203,7 +3203,7 @@
 
     .line 1260
     .end local v5           #tagName:Ljava/lang/String;
-    :cond_e2
+    :cond_e1
     return-void
 .end method
 
@@ -3759,7 +3759,7 @@
     const/4 v2, 0x0
 
     :goto_e6
-    if-ge v2, v0, :cond_127
+    if-ge v2, v0, :cond_126
 
     .line 1187
     const-string/jumbo v5, "path"
@@ -3796,7 +3796,7 @@
 
     .line 1191
     :pswitch_106
-    const-string/jumbo v5, "literal"
+    const-string v5, "literal"
 
     invoke-virtual {v3}, Landroid/os/PatternMatcher;->getPath()Ljava/lang/String;
 
@@ -3807,7 +3807,7 @@
     goto :goto_fd
 
     .line 1194
-    :pswitch_111
+    :pswitch_110
     const-string/jumbo v5, "prefix"
 
     invoke-virtual {v3}, Landroid/os/PatternMatcher;->getPath()Ljava/lang/String;
@@ -3819,7 +3819,7 @@
     goto :goto_fd
 
     .line 1197
-    :pswitch_11c
+    :pswitch_11b
     const-string/jumbo v5, "sglob"
 
     invoke-virtual {v3}, Landroid/os/PatternMatcher;->getPath()Ljava/lang/String;
@@ -3832,14 +3832,16 @@
 
     .line 1202
     .end local v3           #pe:Landroid/os/PatternMatcher;
-    :cond_127
+    :cond_126
     return-void
 
     .line 1189
+    nop
+
     :pswitch_data_128
     .packed-switch 0x0
         :pswitch_106
-        :pswitch_111
-        :pswitch_11c
+        :pswitch_110
+        :pswitch_11b
     .end packed-switch
 .end method

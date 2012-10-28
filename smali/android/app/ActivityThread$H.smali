@@ -304,7 +304,7 @@
     .line 1191
     iget v3, p1, Landroid/os/Message;->what:I
 
-    packed-switch v3, :pswitch_data_326
+    packed-switch v3, :pswitch_data_324
 
     .line 1397
     :goto_a
@@ -895,7 +895,7 @@
 
     .line 1325
     :pswitch_209
-    const-string/jumbo v3, "lowMemory"
+    const-string v3, "lowMemory"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
@@ -910,7 +910,7 @@
     goto/16 :goto_a
 
     .line 1330
-    :pswitch_219
+    :pswitch_218
     const-string v3, "activityConfigChanged"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -930,14 +930,14 @@
     goto/16 :goto_a
 
     .line 1335
-    :pswitch_22c
+    :pswitch_22b
     iget-object v6, p0, Landroid/app/ActivityThread$H;->this$0:Landroid/app/ActivityThread;
 
     iget v3, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v3, :cond_23d
+    if-eqz v3, :cond_23c
 
-    :goto_232
+    :goto_231
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v3, Landroid/app/ActivityThread$ProfilerControlData;
@@ -948,13 +948,13 @@
 
     goto/16 :goto_a
 
-    :cond_23d
+    :cond_23c
     move v4, v5
 
-    goto :goto_232
+    goto :goto_231
 
     .line 1338
-    :pswitch_23f
+    :pswitch_23e
     const-string v3, "backupCreateAgent"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -975,7 +975,7 @@
     goto/16 :goto_a
 
     .line 1343
-    :pswitch_252
+    :pswitch_251
     const-string v3, "backupDestroyAgent"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -996,7 +996,7 @@
     goto/16 :goto_a
 
     .line 1348
-    :pswitch_265
+    :pswitch_264
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v3
@@ -1006,7 +1006,7 @@
     goto/16 :goto_a
 
     .line 1351
-    :pswitch_26e
+    :pswitch_26d
     const-string/jumbo v3, "providerRemove"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -1026,7 +1026,7 @@
     goto/16 :goto_a
 
     .line 1356
-    :pswitch_282
+    :pswitch_281
     iget-object v3, p0, Landroid/app/ActivityThread$H;->this$0:Landroid/app/ActivityThread;
 
     invoke-virtual {v3}, Landroid/app/ActivityThread;->ensureJitEnabled()V
@@ -1034,7 +1034,7 @@
     goto/16 :goto_a
 
     .line 1359
-    :pswitch_289
+    :pswitch_288
     const-string v3, "broadcastPackage"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -1058,7 +1058,7 @@
     goto/16 :goto_a
 
     .line 1364
-    :pswitch_2a0
+    :pswitch_29f
     new-instance v4, Landroid/app/RemoteServiceException;
 
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -1070,12 +1070,12 @@
     throw v4
 
     .line 1366
-    :pswitch_2aa
+    :pswitch_2a9
     iget v3, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v3, :cond_2b7
+    if-eqz v3, :cond_2b6
 
-    :goto_2ae
+    :goto_2ad
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v3, Landroid/app/ActivityThread$DumpHeapData;
@@ -1084,13 +1084,13 @@
 
     goto/16 :goto_a
 
-    :cond_2b7
+    :cond_2b6
     move v4, v5
 
-    goto :goto_2ae
+    goto :goto_2ad
 
     .line 1369
-    :pswitch_2b9
+    :pswitch_2b8
     iget-object v4, p0, Landroid/app/ActivityThread$H;->this$0:Landroid/app/ActivityThread;
 
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -1103,7 +1103,7 @@
     goto/16 :goto_a
 
     .line 1372
-    :pswitch_2c4
+    :pswitch_2c3
     iget-object v4, p0, Landroid/app/ActivityThread$H;->this$0:Landroid/app/ActivityThread;
 
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -1116,7 +1116,7 @@
     goto/16 :goto_a
 
     .line 1375
-    :pswitch_2cf
+    :pswitch_2ce
     const-string/jumbo v3, "sleeping"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -1130,9 +1130,9 @@
 
     iget v7, p1, Landroid/os/Message;->arg1:I
 
-    if-eqz v7, :cond_2e7
+    if-eqz v7, :cond_2e6
 
-    :goto_2df
+    :goto_2de
     #calls: Landroid/app/ActivityThread;->handleSleeping(Landroid/os/IBinder;Z)V
     invoke-static {v6, v3, v4}, Landroid/app/ActivityThread;->access$2700(Landroid/app/ActivityThread;Landroid/os/IBinder;Z)V
 
@@ -1141,14 +1141,14 @@
 
     goto/16 :goto_a
 
-    :cond_2e7
+    :cond_2e6
     move v4, v5
 
     .line 1376
-    goto :goto_2df
+    goto :goto_2de
 
     .line 1380
-    :pswitch_2e9
+    :pswitch_2e8
     const-string/jumbo v3, "setCoreSettings"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -1169,7 +1169,7 @@
     goto/16 :goto_a
 
     .line 1385
-    :pswitch_2fd
+    :pswitch_2fc
     iget-object v4, p0, Landroid/app/ActivityThread$H;->this$0:Landroid/app/ActivityThread;
 
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -1182,7 +1182,7 @@
     goto/16 :goto_a
 
     .line 1388
-    :pswitch_308
+    :pswitch_307
     const-string/jumbo v3, "trimMemory"
 
     invoke-static {v8, v9, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
@@ -1200,7 +1200,7 @@
     goto/16 :goto_a
 
     .line 1393
-    :pswitch_31a
+    :pswitch_319
     iget-object v4, p0, Landroid/app/ActivityThread$H;->this$0:Landroid/app/ActivityThread;
 
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -1212,9 +1212,7 @@
     goto/16 :goto_a
 
     .line 1191
-    nop
-
-    :pswitch_data_326
+    :pswitch_data_324
     .packed-switch 0x64
         :pswitch_b
         :pswitch_3d
@@ -1241,23 +1239,23 @@
         :pswitch_182
         :pswitch_1fe
         :pswitch_209
-        :pswitch_219
+        :pswitch_218
         :pswitch_2b
-        :pswitch_22c
-        :pswitch_23f
-        :pswitch_252
-        :pswitch_265
-        :pswitch_26e
-        :pswitch_282
-        :pswitch_289
-        :pswitch_2a0
-        :pswitch_2aa
-        :pswitch_2b9
-        :pswitch_2cf
-        :pswitch_2e9
-        :pswitch_2fd
-        :pswitch_308
-        :pswitch_2c4
-        :pswitch_31a
+        :pswitch_22b
+        :pswitch_23e
+        :pswitch_251
+        :pswitch_264
+        :pswitch_26d
+        :pswitch_281
+        :pswitch_288
+        :pswitch_29f
+        :pswitch_2a9
+        :pswitch_2b8
+        :pswitch_2ce
+        :pswitch_2e8
+        :pswitch_2fc
+        :pswitch_307
+        :pswitch_2c3
+        :pswitch_319
     .end packed-switch
 .end method

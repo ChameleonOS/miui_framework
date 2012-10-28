@@ -68,7 +68,7 @@
 
     sget-object v1, Landroid/os/RecoverySystem;->RECOVERY_DIR:Ljava/io/File;
 
-    const-string/jumbo v2, "log"
+    const-string v2, "log"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

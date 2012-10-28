@@ -848,7 +848,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mId="
+    const-string v1, "mId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -887,7 +887,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mIsDefaultResId=0x"
+    const-string v1, "mIsDefaultResId=0x"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -426,13 +426,13 @@
     .line 840
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
     :cond_16
-    const-string/jumbo v2, "level-list"
+    const-string v2, "level-list"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_24
 
     .line 841
     new-instance v0, Landroid/graphics/drawable/LevelListDrawable;
@@ -444,14 +444,14 @@
 
     .line 846
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_25
+    :cond_24
     const-string v2, "layer-list"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_32
 
     .line 847
     new-instance v0, Landroid/graphics/drawable/LayerDrawable;
@@ -463,14 +463,14 @@
 
     .line 848
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_33
+    :cond_32
     const-string/jumbo v2, "transition"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_41
 
     .line 849
     new-instance v0, Landroid/graphics/drawable/TransitionDrawable;
@@ -482,14 +482,14 @@
 
     .line 850
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_42
+    :cond_41
     const-string v2, "color"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_50
+    if-eqz v2, :cond_4f
 
     .line 851
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
@@ -501,14 +501,14 @@
 
     .line 852
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_50
+    :cond_4f
     const-string/jumbo v2, "shape"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_5f
+    if-eqz v2, :cond_5e
 
     .line 853
     new-instance v0, Landroid/graphics/drawable/GradientDrawable;
@@ -520,14 +520,14 @@
 
     .line 854
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_5f
+    :cond_5e
     const-string/jumbo v2, "scale"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_6e
+    if-eqz v2, :cond_6d
 
     .line 855
     new-instance v0, Landroid/graphics/drawable/ScaleDrawable;
@@ -539,14 +539,14 @@
 
     .line 856
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_6e
+    :cond_6d
     const-string v2, "clip"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_7c
+    if-eqz v2, :cond_7b
 
     .line 857
     new-instance v0, Landroid/graphics/drawable/ClipDrawable;
@@ -558,14 +558,14 @@
 
     .line 858
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_7c
+    :cond_7b
     const-string/jumbo v2, "rotate"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_8b
+    if-eqz v2, :cond_8a
 
     .line 859
     new-instance v0, Landroid/graphics/drawable/RotateDrawable;
@@ -577,14 +577,14 @@
 
     .line 860
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_8b
+    :cond_8a
     const-string v2, "animated-rotate"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_9a
+    if-eqz v2, :cond_99
 
     .line 861
     new-instance v0, Landroid/graphics/drawable/AnimatedRotateDrawable;
@@ -596,14 +596,14 @@
 
     .line 862
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_9a
+    :cond_99
     const-string v2, "animation-list"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_a9
+    if-eqz v2, :cond_a8
 
     .line 863
     new-instance v0, Landroid/graphics/drawable/AnimationDrawable;
@@ -615,14 +615,14 @@
 
     .line 864
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_a9
+    :cond_a8
     const-string v2, "inset"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_b8
+    if-eqz v2, :cond_b7
 
     .line 865
     new-instance v0, Landroid/graphics/drawable/InsetDrawable;
@@ -634,14 +634,14 @@
 
     .line 866
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_b8
+    :cond_b7
     const-string v2, "bitmap"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_d3
+    if-eqz v2, :cond_d2
 
     .line 867
     new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
@@ -667,14 +667,14 @@
 
     .line 871
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_d3
+    :cond_d2
     const-string/jumbo v2, "nine-patch"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_ef
+    if-eqz v2, :cond_ee
 
     .line 872
     new-instance v0, Landroid/graphics/drawable/NinePatchDrawable;
@@ -700,7 +700,7 @@
 
     .line 877
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    :cond_ef
+    :cond_ee
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v3, Ljava/lang/StringBuilder;

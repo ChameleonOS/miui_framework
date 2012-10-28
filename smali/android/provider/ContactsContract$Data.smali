@@ -73,7 +73,7 @@
 
     aput-object v0, v2, v1
 
-    const-string/jumbo v0, "lookup"
+    const-string v0, "lookup"
 
     aput-object v0, v2, v4
 
@@ -95,14 +95,14 @@
 
     .line 4351
     .local v10, lookupUri:Landroid/net/Uri;
-    if-eqz v8, :cond_34
+    if-eqz v8, :cond_33
 
-    :try_start_1a
+    :try_start_19
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v0
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_33
 
     .line 4352
     const/4 v0, 0x0
@@ -122,40 +122,40 @@
     .line 4354
     .local v9, lookupKey:Ljava/lang/String;
     invoke-static {v6, v7, v9}, Landroid/provider/ContactsContract$Contacts;->getLookupUri(JLjava/lang/String;)Landroid/net/Uri;
-    :try_end_2d
-    .catchall {:try_start_1a .. :try_end_2d} :catchall_3a
+    :try_end_2c
+    .catchall {:try_start_19 .. :try_end_2c} :catchall_39
 
     move-result-object v10
 
     .line 4357
     .end local v10           #lookupUri:Landroid/net/Uri;
-    if-eqz v8, :cond_33
+    if-eqz v8, :cond_32
 
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     .line 4359
     .end local v6           #contactId:J
     .end local v9           #lookupKey:Ljava/lang/String;
-    :cond_33
-    :goto_33
+    :cond_32
+    :goto_32
     return-object v10
 
     .line 4357
     .restart local v10       #lookupUri:Landroid/net/Uri;
-    :cond_34
-    if-eqz v8, :cond_33
+    :cond_33
+    if-eqz v8, :cond_32
 
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    goto :goto_33
+    goto :goto_32
 
-    :catchall_3a
+    :catchall_39
     move-exception v0
 
-    if-eqz v8, :cond_40
+    if-eqz v8, :cond_3f
 
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    :cond_40
+    :cond_3f
     throw v0
 .end method

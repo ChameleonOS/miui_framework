@@ -22137,7 +22137,7 @@
     :cond_7b
     const-string/jumbo v1, "webview"
 
-    const-string/jumbo v2, "mInputDispatcher rejected the event!"
+    const-string v2, "mInputDispatcher rejected the event!"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 

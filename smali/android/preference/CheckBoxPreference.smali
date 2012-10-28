@@ -152,7 +152,7 @@
     .line 67
     check-cast v1, Landroid/widget/Checkable;
 
-    iget-boolean v2, p0, Landroid/preference/TwoStatePreference;->mChecked:Z
+    iget-boolean v2, p0, Landroid/preference/CheckBoxPreference;->mChecked:Z
 
     invoke-interface {v1, v2}, Landroid/widget/Checkable;->setChecked(Z)V
 

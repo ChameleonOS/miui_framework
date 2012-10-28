@@ -62,95 +62,95 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const-string/jumbo v1, "lockscreen.lockedoutpermanently"
+    const-string v1, "lockscreen.lockedoutpermanently"
 
     aput-object v1, v0, v2
 
-    const-string/jumbo v1, "lockscreen.lockoutattemptdeadline"
+    const-string v1, "lockscreen.lockoutattemptdeadline"
 
     aput-object v1, v0, v3
 
     const/4 v1, 0x2
 
-    const-string/jumbo v2, "lockscreen.patterneverchosen"
+    const-string v2, "lockscreen.patterneverchosen"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x3
 
-    const-string/jumbo v2, "lockscreen.password_type"
+    const-string v2, "lockscreen.password_type"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x4
 
-    const-string/jumbo v2, "lockscreen.password_type_alternate"
+    const-string v2, "lockscreen.password_type_alternate"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x5
 
-    const-string/jumbo v2, "lockscreen.password_salt"
+    const-string v2, "lockscreen.password_salt"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    const-string/jumbo v2, "lockscreen.disabled"
+    const-string v2, "lockscreen.disabled"
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    const-string/jumbo v2, "lockscreen.options"
+    const-string v2, "lockscreen.options"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    const-string/jumbo v2, "lockscreen.biometric_weak_fallback"
+    const-string v2, "lockscreen.biometric_weak_fallback"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    const-string/jumbo v2, "lockscreen.biometricweakeverchosen"
+    const-string v2, "lockscreen.biometricweakeverchosen"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    const-string/jumbo v2, "lockscreen.power_button_instantly_locks"
+    const-string v2, "lockscreen.power_button_instantly_locks"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    const-string/jumbo v2, "lockscreen.passwordhistory"
+    const-string v2, "lockscreen.passwordhistory"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    const-string/jumbo v2, "lock_pattern_autolock"
+    const-string v2, "lock_pattern_autolock"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    const-string/jumbo v2, "lock_biometric_weak_flags"
+    const-string v2, "lock_biometric_weak_flags"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    const-string/jumbo v2, "lock_pattern_visible_pattern"
+    const-string v2, "lock_pattern_visible_pattern"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
-    const-string/jumbo v2, "lock_pattern_tactile_feedback_enabled"
+    const-string v2, "lock_pattern_tactile_feedback_enabled"
 
     aput-object v2, v0, v1
 
@@ -750,7 +750,7 @@
 
     .line 364
     .local v0, db:Landroid/database/sqlite/SQLiteDatabase;
-    const-string/jumbo v1, "locksettings"
+    const-string v1, "locksettings"
 
     sget-object v2, Lcom/android/internal/widget/LockSettingsService;->COLUMNS_FOR_QUERY:[Ljava/lang/String;
 
@@ -779,14 +779,14 @@
     move-result-object v8
 
     .local v8, cursor:Landroid/database/Cursor;
-    if-eqz v8, :cond_32
+    if-eqz v8, :cond_31
 
     .line 368
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2e
 
     .line 369
     invoke-interface {v8, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -794,11 +794,11 @@
     move-result-object v9
 
     .line 371
-    :cond_2f
+    :cond_2e
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
     .line 373
-    :cond_32
+    :cond_31
     return-object v9
 .end method
 
@@ -1020,7 +1020,7 @@
 
     .line 351
     :try_start_24
-    const-string/jumbo v2, "locksettings"
+    const-string v2, "locksettings"
 
     const-string/jumbo v3, "name=? AND user=?"
 
@@ -1043,7 +1043,7 @@
     invoke-virtual {v1, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
     .line 353
-    const-string/jumbo v2, "locksettings"
+    const-string v2, "locksettings"
 
     const/4 v3, 0x0
 
@@ -1051,8 +1051,8 @@
 
     .line 354
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_44
-    .catchall {:try_start_24 .. :try_end_44} :catchall_48
+    :try_end_42
+    .catchall {:try_start_24 .. :try_end_42} :catchall_46
 
     .line 356
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
@@ -1061,7 +1061,7 @@
     return-void
 
     .line 356
-    :catchall_48
+    :catchall_46
     move-exception v2
 
     invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
@@ -1625,7 +1625,7 @@
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
     .line 319
-    const-string/jumbo v2, "locksettings"
+    const-string v2, "locksettings"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1657,8 +1657,8 @@
 
     .line 320
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_54
-    .catchall {:try_start_9 .. :try_end_54} :catchall_58
+    :try_end_53
+    .catchall {:try_start_9 .. :try_end_53} :catchall_57
 
     .line 322
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
@@ -1668,7 +1668,7 @@
 
     .line 322
     .end local v1           #file:Ljava/io/File;
-    :catchall_58
+    :catchall_57
     move-exception v2
 
     invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V

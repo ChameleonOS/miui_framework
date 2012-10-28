@@ -4284,33 +4284,33 @@
 
     .prologue
     .line 1092
-    if-nez p1, :cond_b
+    if-nez p1, :cond_a
 
     .line 1093
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "locale cannot be null"
+    const-string v1, "locale cannot be null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 1095
-    :cond_b
+    :cond_a
     iget-object v0, p0, Landroid/graphics/Paint;->mLocale:Ljava/util/Locale;
 
     invoke-virtual {p1, v0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_13
 
     .line 1098
-    :goto_13
+    :goto_12
     return-void
 
     .line 1096
-    :cond_14
+    :cond_13
     iput-object p1, p0, Landroid/graphics/Paint;->mLocale:Ljava/util/Locale;
 
     .line 1097
@@ -4322,7 +4322,7 @@
 
     invoke-static {v0, v1}, Landroid/graphics/Paint;->native_setTextLocale(ILjava/lang/String;)V
 
-    goto :goto_13
+    goto :goto_12
 .end method
 
 .method public native setTextScaleX(F)V

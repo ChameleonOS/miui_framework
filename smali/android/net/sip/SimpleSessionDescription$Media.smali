@@ -107,7 +107,7 @@
     const/16 v4, 0x20
 
     .line 368
-    const-string/jumbo v2, "m="
+    const-string v2, "m="
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -132,7 +132,7 @@
 
     const/4 v3, 0x1
 
-    if-eq v2, v3, :cond_28
+    if-eq v2, v3, :cond_27
 
     .line 370
     const/16 v2, 0x2f
@@ -146,7 +146,7 @@
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 372
-    :cond_28
+    :cond_27
     invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -163,12 +163,12 @@
     move-result-object v1
 
     .local v1, i$:Ljava/util/Iterator;
-    :goto_37
+    :goto_36
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_4b
+    if-eqz v2, :cond_4a
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -184,11 +184,11 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_37
+    goto :goto_36
 
     .line 376
     .end local v0           #format:Ljava/lang/String;
-    :cond_4b
+    :cond_4a
     const-string v2, "\r\n"
 
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

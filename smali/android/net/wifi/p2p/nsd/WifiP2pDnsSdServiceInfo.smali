@@ -47,7 +47,7 @@
     .line 66
     sget-object v0, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceInfo;->sVmPacket:Ljava/util/Map;
 
-    const-string/jumbo v1, "local."
+    const-string v1, "local."
 
     const-string v2, "c011"
 

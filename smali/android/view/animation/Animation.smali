@@ -108,7 +108,7 @@
 
     .prologue
     .line 93
-    const-string/jumbo v0, "log.closeguard.Animation"
+    const-string v0, "log.closeguard.Animation"
 
     const/4 v1, 0x0
 

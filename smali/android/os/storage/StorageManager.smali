@@ -620,20 +620,20 @@
 
     .line 435
     :cond_a
-    if-nez p3, :cond_15
+    if-nez p3, :cond_14
 
     .line 436
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "listener cannot be null"
+    const-string v3, "listener cannot be null"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
     .line 440
-    :cond_15
-    :try_start_15
+    :cond_14
+    :try_start_14
     iget-object v2, p0, Landroid/os/storage/StorageManager;->mObbActionListener:Landroid/os/storage/StorageManager$ObbActionListener;
 
     invoke-virtual {v2, p3}, Landroid/os/storage/StorageManager$ObbActionListener;->addListener(Landroid/os/storage/OnObbStateChangeListener;)I
@@ -647,19 +647,19 @@
     iget-object v3, p0, Landroid/os/storage/StorageManager;->mObbActionListener:Landroid/os/storage/StorageManager$ObbActionListener;
 
     invoke-interface {v2, p1, p2, v3, v1}, Landroid/os/storage/IMountService;->mountObb(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/IObbActionListener;I)V
-    :try_end_22
-    .catch Landroid/os/RemoteException; {:try_start_15 .. :try_end_22} :catch_24
+    :try_end_21
+    .catch Landroid/os/RemoteException; {:try_start_14 .. :try_end_21} :catch_23
 
     .line 442
     const/4 v2, 0x1
 
     .line 447
     .end local v1           #nonce:I
-    :goto_23
+    :goto_22
     return v2
 
     .line 443
-    :catch_24
+    :catch_23
     move-exception v0
 
     .line 444
@@ -673,7 +673,7 @@
     .line 447
     const/4 v2, 0x0
 
-    goto :goto_23
+    goto :goto_22
 .end method
 
 .method public registerListener(Landroid/os/storage/StorageEventListener;)V
@@ -740,20 +740,20 @@
 
     .line 475
     :cond_a
-    if-nez p3, :cond_15
+    if-nez p3, :cond_14
 
     .line 476
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "listener cannot be null"
+    const-string v3, "listener cannot be null"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
     .line 480
-    :cond_15
-    :try_start_15
+    :cond_14
+    :try_start_14
     iget-object v2, p0, Landroid/os/storage/StorageManager;->mObbActionListener:Landroid/os/storage/StorageManager$ObbActionListener;
 
     invoke-virtual {v2, p3}, Landroid/os/storage/StorageManager$ObbActionListener;->addListener(Landroid/os/storage/OnObbStateChangeListener;)I
@@ -767,19 +767,19 @@
     iget-object v3, p0, Landroid/os/storage/StorageManager;->mObbActionListener:Landroid/os/storage/StorageManager$ObbActionListener;
 
     invoke-interface {v2, p1, p2, v3, v1}, Landroid/os/storage/IMountService;->unmountObb(Ljava/lang/String;ZLandroid/os/storage/IObbActionListener;I)V
-    :try_end_22
-    .catch Landroid/os/RemoteException; {:try_start_15 .. :try_end_22} :catch_24
+    :try_end_21
+    .catch Landroid/os/RemoteException; {:try_start_14 .. :try_end_21} :catch_23
 
     .line 482
     const/4 v2, 0x1
 
     .line 487
     .end local v1           #nonce:I
-    :goto_23
+    :goto_22
     return v2
 
     .line 483
-    :catch_24
+    :catch_23
     move-exception v0
 
     .line 484
@@ -793,7 +793,7 @@
     .line 487
     const/4 v2, 0x0
 
-    goto :goto_23
+    goto :goto_22
 .end method
 
 .method public unregisterListener(Landroid/os/storage/StorageEventListener;)V

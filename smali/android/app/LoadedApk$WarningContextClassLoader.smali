@@ -271,7 +271,7 @@
 
     .prologue
     .line 426
-    const-string/jumbo v0, "loadClass"
+    const-string v0, "loadClass"
 
     invoke-direct {p0, v0}, Landroid/app/LoadedApk$WarningContextClassLoader;->warn(Ljava/lang/String;)V
 

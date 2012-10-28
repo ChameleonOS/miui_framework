@@ -126,10 +126,10 @@
     .line 1829
     iget v3, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mLimit:I
 
-    if-eqz v3, :cond_25
+    if-eqz v3, :cond_24
 
     .line 1830
-    const-string/jumbo v3, "limit"
+    const-string v3, "limit"
 
     iget v4, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mLimit:I
 
@@ -140,7 +140,7 @@
     invoke-virtual {v0, v3, v4}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     .line 1833
-    :cond_25
+    :cond_24
     iget-object v3, p0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;->mKinds:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -152,8 +152,8 @@
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_2c
-    if-ge v2, v1, :cond_5e
+    :goto_2b
+    if-ge v2, v1, :cond_5d
 
     .line 1835
     const-string/jumbo v4, "query"
@@ -201,10 +201,10 @@
     .line 1834
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2c
+    goto :goto_2b
 
     .line 1838
-    :cond_5e
+    :cond_5d
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v3

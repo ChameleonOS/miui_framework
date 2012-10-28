@@ -4330,7 +4330,7 @@
     .line 4684
     iget-object v4, p0, Landroid/view/ViewGroup;->mFocused:Landroid/view/View;
 
-    if-eqz v4, :cond_24
+    if-eqz v4, :cond_23
 
     .line 4685
     invoke-static {p1}, Landroid/view/ViewGroup;->debugIndent(I)Ljava/lang/String;
@@ -4347,7 +4347,7 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, "mFocused"
+    const-string v5, "mFocused"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4364,10 +4364,10 @@
 
     .line 4689
     .end local v3           #output:Ljava/lang/String;
-    :cond_24
+    :cond_23
     iget v4, p0, Landroid/view/ViewGroup;->mChildrenCount:I
 
-    if-eqz v4, :cond_45
+    if-eqz v4, :cond_44
 
     .line 4690
     invoke-static {p1}, Landroid/view/ViewGroup;->debugIndent(I)Ljava/lang/String;
@@ -4401,7 +4401,7 @@
 
     .line 4694
     .end local v3           #output:Ljava/lang/String;
-    :cond_45
+    :cond_44
     iget v1, p0, Landroid/view/ViewGroup;->mChildrenCount:I
 
     .line 4695
@@ -4409,8 +4409,8 @@
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_48
-    if-ge v2, v1, :cond_56
+    :goto_47
+    if-ge v2, v1, :cond_55
 
     .line 4696
     iget-object v4, p0, Landroid/view/ViewGroup;->mChildren:[Landroid/view/View;
@@ -4426,14 +4426,14 @@
     .line 4695
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_48
+    goto :goto_47
 
     .line 4700
     .end local v0           #child:Landroid/view/View;
-    :cond_56
+    :cond_55
     iget v4, p0, Landroid/view/ViewGroup;->mChildrenCount:I
 
-    if-eqz v4, :cond_77
+    if-eqz v4, :cond_76
 
     .line 4701
     invoke-static {p1}, Landroid/view/ViewGroup;->debugIndent(I)Ljava/lang/String;
@@ -4467,7 +4467,7 @@
 
     .line 4705
     .end local v3           #output:Ljava/lang/String;
-    :cond_77
+    :cond_76
     return-void
 .end method
 

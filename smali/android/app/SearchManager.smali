@@ -570,7 +570,7 @@
 
     .line 810
     .local v4, selArgs:[Ljava/lang/String;
-    if-eqz v3, :cond_5d
+    if-eqz v3, :cond_5c
 
     .line 811
     const/4 v0, 0x1
@@ -585,10 +585,10 @@
     .line 816
     .restart local v4       #selArgs:[Ljava/lang/String;
     :goto_41
-    if-lez p3, :cond_4d
+    if-lez p3, :cond_4c
 
     .line 817
-    const-string/jumbo v0, "limit"
+    const-string v0, "limit"
 
     invoke-static {p3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -597,7 +597,7 @@
     invoke-virtual {v8, v0, v5}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     .line 820
-    :cond_4d
+    :cond_4c
     invoke-virtual {v8}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1
@@ -620,7 +620,7 @@
 
     .line 813
     .end local v1           #uri:Landroid/net/Uri;
-    :cond_5d
+    :cond_5c
     invoke-virtual {v8, p2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     goto :goto_41

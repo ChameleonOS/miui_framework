@@ -70,15 +70,15 @@
     :cond_9
     iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Part;->meText:Ljava/lang/String;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_10
 
     .line 1445
-    const-string/jumbo v0, "m"
+    const-string v0, "m"
 
     goto :goto_8
 
     .line 1447
-    :cond_11
+    :cond_10
     const-string v0, ""
 
     goto :goto_8

@@ -76,13 +76,13 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "m.baidu.com"
+    const-string v4, "m.baidu.com"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v3
 
-    if-nez v3, :cond_3f
+    if-nez v3, :cond_3e
 
     invoke-virtual {v2}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
@@ -97,7 +97,7 @@
     if-eqz v3, :cond_2
 
     .line 27
-    :cond_3f
+    :cond_3e
     const-string v3, "from"
 
     invoke-virtual {v2, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
@@ -127,8 +127,8 @@
 
     .line 31
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->toString()Ljava/lang/String;
-    :try_end_59
-    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_59} :catch_5b
+    :try_end_58
+    .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_58} :catch_5a
 
     move-result-object p0
 
@@ -138,7 +138,7 @@
     .end local v0           #builder:Landroid/net/Uri$Builder;
     .end local v1           #from:Ljava/lang/String;
     .end local v2           #uri:Landroid/net/Uri;
-    :catch_5b
+    :catch_5a
     move-exception v3
 
     goto :goto_2

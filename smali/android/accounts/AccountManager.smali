@@ -2083,31 +2083,31 @@
 
     .prologue
     .line 1972
-    if-nez p1, :cond_b
+    if-nez p1, :cond_a
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "listener is null"
+    const-string v1, "listener is null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 1973
-    :cond_b
+    :cond_a
     iget-object v1, p0, Landroid/accounts/AccountManager;->mAccountsUpdatedListeners:Ljava/util/HashMap;
 
     monitor-enter v1
 
     .line 1974
-    :try_start_e
+    :try_start_d
     iget-object v0, p0, Landroid/accounts/AccountManager;->mAccountsUpdatedListeners:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1e
 
     .line 1975
     const-string v0, "AccountManager"
@@ -2120,11 +2120,11 @@
     monitor-exit v1
 
     .line 1983
-    :goto_1e
+    :goto_1d
     return-void
 
     .line 1978
-    :cond_1f
+    :cond_1e
     iget-object v0, p0, Landroid/accounts/AccountManager;->mAccountsUpdatedListeners:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2136,7 +2136,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_32
 
     .line 1980
     iget-object v0, p0, Landroid/accounts/AccountManager;->mContext:Landroid/content/Context;
@@ -2146,17 +2146,17 @@
     invoke-virtual {v0, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     .line 1982
-    :cond_33
+    :cond_32
     monitor-exit v1
 
-    goto :goto_1e
+    goto :goto_1d
 
-    :catchall_35
+    :catchall_34
     move-exception v0
 
     monitor-exit v1
-    :try_end_37
-    .catchall {:try_start_e .. :try_end_37} :catchall_35
+    :try_end_36
+    .catchall {:try_start_d .. :try_end_36} :catchall_34
 
     throw v0
 .end method

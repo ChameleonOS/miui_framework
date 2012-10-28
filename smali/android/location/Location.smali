@@ -2079,7 +2079,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mHasAltitude="
+    const-string v1, "mHasAltitude="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2118,7 +2118,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mHasSpeed="
+    const-string v1, "mHasSpeed="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2157,7 +2157,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mHasBearing="
+    const-string v1, "mHasBearing="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2196,7 +2196,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mHasAccuracy="
+    const-string v1, "mHasAccuracy="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2235,7 +2235,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "mExtras="
+    const-string v1, "mExtras="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -3812,7 +3812,7 @@
 
     .prologue
     .line 216
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -3864,7 +3864,7 @@
 
     .prologue
     .line 216
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
@@ -3936,9 +3936,9 @@
 
     .prologue
     .line 5633
-    iget v0, p0, Landroid/view/View;->mRight:I
+    iget v0, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v3, p0, Landroid/view/View;->mLeft:I
+    iget v3, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v0, v3
 
@@ -4045,9 +4045,9 @@
 
     .line 6348
     .local v1, dir:I
-    iget v12, p0, Landroid/view/View;->mRight:I
+    iget v12, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v13, p0, Landroid/view/View;->mLeft:I
+    iget v13, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v12, v13
 
@@ -4065,9 +4065,9 @@
 
     .line 6349
     .local v2, hspace:I
-    iget v12, p0, Landroid/view/View;->mBottom:I
+    iget v12, p0, Landroid/widget/TextView;->mBottom:I
 
-    iget v13, p0, Landroid/view/View;->mTop:I
+    iget v13, p0, Landroid/widget/TextView;->mTop:I
 
     sub-int/2addr v12, v13
 
@@ -4158,11 +4158,11 @@
     .line 6398
     .local v9, scrolly:I
     :goto_71
-    iget v12, p0, Landroid/view/View;->mScrollX:I
+    iget v12, p0, Landroid/widget/TextView;->mScrollX:I
 
     if-ne v8, v12, :cond_79
 
-    iget v12, p0, Landroid/view/View;->mScrollY:I
+    iget v12, p0, Landroid/widget/TextView;->mScrollY:I
 
     if-eq v9, v12, :cond_bb
 
@@ -4322,9 +4322,9 @@
     const/4 v1, 0x0
 
     .line 6931
-    iget v2, p0, Landroid/view/View;->mRight:I
+    iget v2, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v3, p0, Landroid/view/View;->mLeft:I
+    iget v3, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v2, v3
 
@@ -4428,7 +4428,7 @@
     const/4 v8, -0x2
 
     .line 6277
-    iget-object v0, p0, Landroid/view/View;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v0, p0, Landroid/widget/TextView;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
 
     iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
@@ -4456,9 +4456,9 @@
     if-eqz v0, :cond_93
 
     :cond_1c
-    iget v0, p0, Landroid/view/View;->mRight:I
+    iget v0, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v3, p0, Landroid/view/View;->mLeft:I
+    iget v3, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v0, v3
 
@@ -4506,9 +4506,9 @@
 
     sget-object v4, Landroid/widget/TextView;->UNKNOWN_BORING:Landroid/text/BoringLayout$Metrics;
 
-    iget v0, p0, Landroid/view/View;->mRight:I
+    iget v0, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v5, p0, Landroid/view/View;->mLeft:I
+    iget v5, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v0, v5
 
@@ -4536,13 +4536,13 @@
     if-eq v0, v3, :cond_8c
 
     .line 6298
-    iget-object v0, p0, Landroid/view/View;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v0, p0, Landroid/widget/TextView;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
 
     iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     if-eq v0, v8, :cond_74
 
-    iget-object v0, p0, Landroid/view/View;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v0, p0, Landroid/widget/TextView;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
 
     iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -4642,7 +4642,7 @@
     if-eqz v2, :cond_21
 
     .line 6240
-    iget-object v2, p0, Landroid/view/View;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v2, p0, Landroid/widget/TextView;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
 
     iget v2, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
@@ -4656,7 +4656,7 @@
 
     .line 6246
     :cond_10
-    iget-object v2, p0, Landroid/view/View;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v2, p0, Landroid/widget/TextView;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
 
     iget v2, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -4693,7 +4693,7 @@
 
     .line 6252
     :cond_27
-    iget-object v2, p0, Landroid/view/View;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v2, p0, Landroid/widget/TextView;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
 
     iget v2, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -8075,7 +8075,7 @@
     .line 3436
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v4, v0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -9000,7 +9000,7 @@
     const/4 v1, 0x0
 
     .line 7747
-    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -9647,13 +9647,13 @@
     :goto_79
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mRight:I
+    iget v0, v0, Landroid/widget/TextView;->mRight:I
 
     move/from16 v25, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mLeft:I
+    iget v0, v0, Landroid/widget/TextView;->mLeft:I
 
     move/from16 v26, v0
 
@@ -9675,13 +9675,13 @@
     .local v14, hspace:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mBottom:I
+    iget v0, v0, Landroid/widget/TextView;->mBottom:I
 
     move/from16 v25, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mTop:I
+    iget v0, v0, Landroid/widget/TextView;->mTop:I
 
     move/from16 v26, v0
 
@@ -9737,13 +9737,13 @@
     :cond_c5
     move-object/from16 v0, p0
 
-    iget v12, v0, Landroid/view/View;->mScrollX:I
+    iget v12, v0, Landroid/widget/TextView;->mScrollX:I
 
     .line 6461
     .local v12, hs:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollY:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollY:I
 
     move/from16 v21, v0
 
@@ -9858,7 +9858,7 @@
     :goto_11f
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollX:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollX:I
 
     move/from16 v25, v0
 
@@ -9868,7 +9868,7 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollY:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollY:I
 
     move/from16 v25, v0
 
@@ -9972,13 +9972,13 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollX:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollX:I
 
     move/from16 v26, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollY:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollY:I
 
     move/from16 v27, v0
 
@@ -10224,7 +10224,7 @@
     .local v7, duration:J
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollX:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollX:I
 
     move/from16 v25, v0
 
@@ -10234,7 +10234,7 @@
     .local v9, dx:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollY:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollY:I
 
     move/from16 v25, v0
 
@@ -10257,13 +10257,13 @@
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollX:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollX:I
 
     move/from16 v26, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollY:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollY:I
 
     move/from16 v27, v0
 
@@ -10634,7 +10634,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/view/View;->mScrollX:I
+    iput v0, p0, Landroid/widget/TextView;->mScrollX:I
 
     .line 6646
     iget-object v0, p0, Landroid/widget/TextView;->mScroller:Landroid/widget/Scroller;
@@ -10643,7 +10643,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/view/View;->mScrollY:I
+    iput v0, p0, Landroid/widget/TextView;->mScrollY:I
 
     .line 6647
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidateParentCaches()V
@@ -10790,7 +10790,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Landroid/view/View;->mLeft:I
+    iget v2, p0, Landroid/widget/TextView;->mLeft:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -10802,7 +10802,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Landroid/view/View;->mTop:I
+    iget v2, p0, Landroid/widget/TextView;->mTop:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -10814,7 +10814,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Landroid/view/View;->mRight:I
+    iget v2, p0, Landroid/widget/TextView;->mRight:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -10826,7 +10826,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Landroid/view/View;->mBottom:I
+    iget v2, p0, Landroid/widget/TextView;->mBottom:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -10838,7 +10838,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Landroid/view/View;->mScrollX:I
+    iget v2, p0, Landroid/widget/TextView;->mScrollX:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -10850,7 +10850,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Landroid/view/View;->mScrollY:I
+    iget v2, p0, Landroid/widget/TextView;->mScrollY:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -11647,14 +11647,14 @@
 
     .line 1512
     :cond_8
-    iget v1, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingBottom:I
 
     .line 1514
     :goto_a
     return v1
 
     :cond_b
-    iget v1, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingBottom:I
 
     iget v2, v0, Landroid/widget/TextView$Drawables;->mDrawablePadding:I
 
@@ -11721,14 +11721,14 @@
 
     .line 1525
     :cond_8
-    iget v1, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingLeft:I
 
     .line 1527
     :goto_a
     return v1
 
     :cond_b
-    iget v1, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingLeft:I
 
     iget v2, v0, Landroid/widget/TextView$Drawables;->mDrawablePadding:I
 
@@ -11758,14 +11758,14 @@
 
     .line 1538
     :cond_8
-    iget v1, p0, Landroid/view/View;->mPaddingRight:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     .line 1540
     :goto_a
     return v1
 
     :cond_b
-    iget v1, p0, Landroid/view/View;->mPaddingRight:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     iget v2, v0, Landroid/widget/TextView$Drawables;->mDrawablePadding:I
 
@@ -11832,14 +11832,14 @@
 
     .line 1499
     :cond_8
-    iget v1, p0, Landroid/view/View;->mPaddingTop:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingTop:I
 
     .line 1501
     :goto_a
     return v1
 
     :cond_b
-    iget v1, p0, Landroid/view/View;->mPaddingTop:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingTop:I
 
     iget v2, v0, Landroid/widget/TextView$Drawables;->mDrawablePadding:I
 
@@ -13136,9 +13136,9 @@
 
     move-result v3
 
-    iget v4, p0, Landroid/view/View;->mRight:I
+    iget v4, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v5, p0, Landroid/view/View;->mLeft:I
+    iget v5, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v4, v5
 
@@ -13202,7 +13202,7 @@
 
     move-result v0
 
-    iget v1, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingLeft:I
 
     sub-int/2addr v0, v1
 
@@ -13908,9 +13908,9 @@
     .restart local v0       #absoluteGravity:I
     .restart local v1       #layoutDirection:I
     :pswitch_40
-    iget v5, p0, Landroid/view/View;->mRight:I
+    iget v5, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v6, p0, Landroid/view/View;->mLeft:I
+    iget v6, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v5, v6
 
@@ -13966,9 +13966,9 @@
 
     move-result v5
 
-    iget v6, p0, Landroid/view/View;->mRight:I
+    iget v6, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v7, p0, Landroid/view/View;->mLeft:I
+    iget v7, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v6, v7
 
@@ -14020,7 +14020,7 @@
 
     move-result v0
 
-    iget v1, p0, Landroid/view/View;->mPaddingRight:I
+    iget v1, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     sub-int/2addr v0, v1
 
@@ -14090,7 +14090,7 @@
     .line 2506
     iget-object v0, p0, Landroid/widget/TextView;->mTextPaint:Landroid/text/TextPaint;
 
-    iget v0, v0, Landroid/graphics/Paint;->shadowColor:I
+    iget v0, v0, Landroid/text/TextPaint;->shadowColor:I
 
     return v0
 .end method
@@ -14226,7 +14226,7 @@
 
     .line 7702
     .local v0, locale:Ljava/util/Locale;
-    iget-object v3, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
 
     const-string/jumbo v4, "textservices"
 
@@ -15084,11 +15084,11 @@
 
     .line 4557
     .local v4, dirty:Landroid/graphics/Rect;
-    iget v7, p0, Landroid/view/View;->mScrollX:I
+    iget v7, p0, Landroid/widget/TextView;->mScrollX:I
 
     .line 4558
     .local v7, scrollX:I
-    iget v8, p0, Landroid/view/View;->mScrollY:I
+    iget v8, p0, Landroid/widget/TextView;->mScrollY:I
 
     .line 4563
     .local v8, scrollY:I
@@ -15116,9 +15116,9 @@
 
     .line 4568
     .local v0, compoundPaddingBottom:I
-    iget v10, p0, Landroid/view/View;->mBottom:I
+    iget v10, p0, Landroid/widget/TextView;->mBottom:I
 
-    iget v11, p0, Landroid/view/View;->mTop:I
+    iget v11, p0, Landroid/widget/TextView;->mTop:I
 
     sub-int/2addr v10, v11
 
@@ -15128,7 +15128,7 @@
 
     .line 4570
     .local v9, vspace:I
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Landroid/widget/TextView;->mPaddingLeft:I
 
     add-int/2addr v7, v10
 
@@ -15198,9 +15198,9 @@
 
     .line 4575
     .restart local v0       #compoundPaddingBottom:I
-    iget v10, p0, Landroid/view/View;->mBottom:I
+    iget v10, p0, Landroid/widget/TextView;->mBottom:I
 
-    iget v11, p0, Landroid/view/View;->mTop:I
+    iget v11, p0, Landroid/widget/TextView;->mTop:I
 
     sub-int/2addr v10, v11
 
@@ -15210,13 +15210,13 @@
 
     .line 4577
     .restart local v9       #vspace:I
-    iget v10, p0, Landroid/view/View;->mRight:I
+    iget v10, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v11, p0, Landroid/view/View;->mLeft:I
+    iget v11, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v10, v11
 
-    iget v11, p0, Landroid/view/View;->mPaddingRight:I
+    iget v11, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     sub-int/2addr v10, v11
 
@@ -15261,9 +15261,9 @@
 
     .line 4582
     .local v2, compoundPaddingRight:I
-    iget v10, p0, Landroid/view/View;->mRight:I
+    iget v10, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v11, p0, Landroid/view/View;->mLeft:I
+    iget v11, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v10, v11
 
@@ -15284,7 +15284,7 @@
     add-int/2addr v7, v10
 
     .line 4585
-    iget v10, p0, Landroid/view/View;->mPaddingTop:I
+    iget v10, p0, Landroid/widget/TextView;->mPaddingTop:I
 
     add-int/2addr v8, v10
 
@@ -15312,9 +15312,9 @@
 
     .line 4589
     .restart local v2       #compoundPaddingRight:I
-    iget v10, p0, Landroid/view/View;->mRight:I
+    iget v10, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v11, p0, Landroid/view/View;->mLeft:I
+    iget v11, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v10, v11
 
@@ -15335,13 +15335,13 @@
     add-int/2addr v7, v10
 
     .line 4592
-    iget v10, p0, Landroid/view/View;->mBottom:I
+    iget v10, p0, Landroid/widget/TextView;->mBottom:I
 
-    iget v11, p0, Landroid/view/View;->mTop:I
+    iget v11, p0, Landroid/widget/TextView;->mTop:I
 
     sub-int/2addr v10, v11
 
-    iget v11, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v11, p0, Landroid/widget/TextView;->mPaddingBottom:I
 
     sub-int/2addr v10, v11
 
@@ -15584,7 +15584,7 @@
     :goto_a0
     move-object/from16 v0, p0
 
-    iget v12, v0, Landroid/view/View;->mScrollX:I
+    iget v12, v0, Landroid/widget/TextView;->mScrollX:I
 
     add-int/2addr v12, v6
 
@@ -15592,7 +15592,7 @@
 
     move-object/from16 v0, p0
 
-    iget v14, v0, Landroid/view/View;->mScrollX:I
+    iget v14, v0, Landroid/widget/TextView;->mScrollX:I
 
     add-int/2addr v14, v9
 
@@ -16407,7 +16407,7 @@
     .line 5834
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Landroid/view/View;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
+    iget-object v2, v0, Landroid/widget/TextView;->mLayoutParams:Landroid/view/ViewGroup$LayoutParams;
 
     iget v0, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -17081,13 +17081,13 @@
     .local v2, bottom:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mBottom:I
+    iget v0, v0, Landroid/widget/TextView;->mBottom:I
 
     move/from16 v17, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mTop:I
+    iget v0, v0, Landroid/widget/TextView;->mTop:I
 
     move/from16 v18, v0
 
@@ -17126,7 +17126,7 @@
     :cond_68
     move-object/from16 v0, p0
 
-    iget v14, v0, Landroid/view/View;->mScrollY:I
+    iget v14, v0, Landroid/widget/TextView;->mScrollY:I
 
     .line 6609
     .local v14, vs:I
@@ -17158,13 +17158,13 @@
     :goto_82
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mRight:I
+    iget v0, v0, Landroid/widget/TextView;->mRight:I
 
     move/from16 v17, v0
 
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mLeft:I
+    iget v0, v0, Landroid/widget/TextView;->mLeft:I
 
     move/from16 v18, v0
 
@@ -17186,7 +17186,7 @@
     .local v6, hspace:I
     move-object/from16 v0, p0
 
-    iget v5, v0, Landroid/view/View;->mScrollX:I
+    iget v5, v0, Landroid/widget/TextView;->mScrollX:I
 
     .line 6619
     .local v5, hs:I
@@ -17977,7 +17977,7 @@
     .local v15, compoundPaddingBottom:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollX:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollX:I
 
     move/from16 v27, v0
 
@@ -17985,7 +17985,7 @@
     .local v27, scrollX:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mScrollY:I
+    iget v0, v0, Landroid/widget/TextView;->mScrollY:I
 
     move/from16 v28, v0
 
@@ -17993,7 +17993,7 @@
     .local v28, scrollY:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mRight:I
+    iget v0, v0, Landroid/widget/TextView;->mRight:I
 
     move/from16 v26, v0
 
@@ -18001,7 +18001,7 @@
     .local v26, right:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mLeft:I
+    iget v0, v0, Landroid/widget/TextView;->mLeft:I
 
     move/from16 v24, v0
 
@@ -18009,13 +18009,13 @@
     .local v24, left:I
     move-object/from16 v0, p0
 
-    iget v9, v0, Landroid/view/View;->mBottom:I
+    iget v9, v0, Landroid/widget/TextView;->mBottom:I
 
     .line 4765
     .local v9, bottom:I
     move-object/from16 v0, p0
 
-    iget v0, v0, Landroid/view/View;->mTop:I
+    iget v0, v0, Landroid/widget/TextView;->mTop:I
 
     move/from16 v29, v0
 
@@ -18060,7 +18060,7 @@
     .line 4781
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v2, v0, Landroid/widget/TextView;->mPaddingLeft:I
 
     add-int v2, v2, v27
 
@@ -18114,7 +18114,7 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mPaddingRight:I
+    iget v3, v0, Landroid/widget/TextView;->mPaddingRight:I
 
     sub-int/2addr v2, v3
 
@@ -18184,7 +18184,7 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mPaddingTop:I
+    iget v3, v0, Landroid/widget/TextView;->mPaddingTop:I
 
     add-int v3, v3, v28
 
@@ -18238,7 +18238,7 @@
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mPaddingBottom:I
+    iget v6, v0, Landroid/widget/TextView;->mPaddingBottom:I
 
     sub-int/2addr v3, v6
 
@@ -18364,11 +18364,11 @@
     .local v20, extendedPaddingBottom:I
     move-object/from16 v0, p0
 
-    iget v2, v0, Landroid/view/View;->mBottom:I
+    iget v2, v0, Landroid/widget/TextView;->mBottom:I
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mTop:I
+    iget v3, v0, Landroid/widget/TextView;->mTop:I
 
     sub-int/2addr v2, v3
 
@@ -18651,11 +18651,11 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mRight:I
+    iget v3, v0, Landroid/widget/TextView;->mRight:I
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Landroid/view/View;->mLeft:I
+    iget v6, v0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v3, v6
 
@@ -25329,9 +25329,9 @@
 
     sget-object v4, Landroid/widget/TextView;->UNKNOWN_BORING:Landroid/text/BoringLayout$Metrics;
 
-    iget v0, p0, Landroid/view/View;->mRight:I
+    iget v0, p0, Landroid/widget/TextView;->mRight:I
 
-    iget v5, p0, Landroid/view/View;->mLeft:I
+    iget v5, p0, Landroid/widget/TextView;->mLeft:I
 
     sub-int/2addr v0, v5
 
@@ -26410,19 +26410,19 @@
 
     .prologue
     .line 2115
-    iget v0, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v0, p0, Landroid/widget/TextView;->mPaddingLeft:I
 
     if-ne p1, v0, :cond_10
 
-    iget v0, p0, Landroid/view/View;->mPaddingRight:I
+    iget v0, p0, Landroid/widget/TextView;->mPaddingRight:I
 
     if-ne p3, v0, :cond_10
 
-    iget v0, p0, Landroid/view/View;->mPaddingTop:I
+    iget v0, p0, Landroid/widget/TextView;->mPaddingTop:I
 
     if-ne p2, v0, :cond_10
 
-    iget v0, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v0, p0, Landroid/widget/TextView;->mPaddingBottom:I
 
     if-eq p4, v0, :cond_13
 
@@ -26462,11 +26462,11 @@
 
     if-ne p3, v0, :cond_14
 
-    iget v0, p0, Landroid/view/View;->mPaddingTop:I
+    iget v0, p0, Landroid/widget/TextView;->mPaddingTop:I
 
     if-ne p2, v0, :cond_14
 
-    iget v0, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v0, p0, Landroid/widget/TextView;->mPaddingBottom:I
 
     if-eq p4, v0, :cond_17
 
@@ -28378,7 +28378,7 @@
 
     move-result v0
 
-    iget v1, p0, Landroid/view/View;->mScrollX:I
+    iget v1, p0, Landroid/widget/TextView;->mScrollX:I
 
     sub-int/2addr v0, v1
 
@@ -28394,7 +28394,7 @@
 
     move-result v1
 
-    iget v2, p0, Landroid/view/View;->mScrollY:I
+    iget v2, p0, Landroid/widget/TextView;->mScrollY:I
 
     sub-int v0, v1, v2
 

@@ -25,11 +25,11 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 // Referenced classes of package android.content.pm:
-//            ApplicationInfo, ActivityInfo, PackageItemInfo, ComponentInfo, 
-//            PackageManager, InstrumentationInfo, PackageInfo, ConfigurationInfo, 
-//            FeatureInfo, ServiceInfo, ProviderInfo, PermissionInfo, 
-//            Signature, PermissionGroupInfo, PathPermission, VerifierInfo, 
-//            ManifestDigest
+//            ApplicationInfo, ActivityInfo, PackageManager, InstrumentationInfo, 
+//            PackageInfo, ConfigurationInfo, FeatureInfo, ServiceInfo, 
+//            ProviderInfo, PermissionInfo, Signature, PermissionGroupInfo, 
+//            PackageItemInfo, PathPermission, VerifierInfo, ManifestDigest, 
+//            ComponentInfo
 
 public class PackageParser {
     public static final class ServiceIntentInfo extends IntentInfo {
@@ -672,12 +672,12 @@ _L4:
         if(activity == null)
             activityinfo = null;
         else
-        if(!copyNeeded(i, ((Component) (activity)).owner, j, ((Component) (activity)).metaData) && k == 0) {
+        if(!copyNeeded(i, activity.owner, j, activity.metaData) && k == 0) {
             activityinfo = activity.info;
         } else {
             activityinfo = new ActivityInfo(activity.info);
-            activityinfo.metaData = ((Component) (activity)).metaData;
-            activityinfo.applicationInfo = generateApplicationInfo(((Component) (activity)).owner, i, flag, j, k);
+            activityinfo.metaData = activity.metaData;
+            activityinfo.applicationInfo = generateApplicationInfo(activity.owner, i, flag, j, k);
         }
         return activityinfo;
     }
@@ -719,7 +719,7 @@ _L4:
         applicationinfo = new ApplicationInfo(package1.applicationInfo);
         if(k != 0) {
             applicationinfo.uid = UserId.getUid(k, applicationinfo.uid);
-            applicationinfo.dataDir = PackageManager.getDataDirForUser(k, ((PackageItemInfo) (applicationinfo)).packageName);
+            applicationinfo.dataDir = PackageManager.getDataDirForUser(k, applicationinfo.packageName);
         }
         if((i & 0x80) != 0)
             applicationinfo.metaData = package1.mAppMetaData;
@@ -753,7 +753,7 @@ _L10:
             instrumentationinfo = instrumentation.info;
         } else {
             instrumentationinfo = new InstrumentationInfo(instrumentation.info);
-            instrumentationinfo.metaData = ((Component) (instrumentation)).metaData;
+            instrumentationinfo.metaData = instrumentation.metaData;
         }
         return instrumentationinfo;
     }
@@ -808,7 +808,7 @@ _L10:
                 } else {
                     int l7 = 0;
                     for(int i8 = 0; i8 < k7; i8++)
-                        if(((ComponentInfo) (((Activity)package1.activities.get(i8)).info)).enabled)
+                        if(((Activity)package1.activities.get(i8)).info.enabled)
                             l7++;
 
                     packageinfo.activities = new ActivityInfo[l7];
@@ -848,7 +848,7 @@ _L10:
                     ActivityInfo aactivityinfo[];
                     int j7;
                     int l8;
-                    if(((ComponentInfo) (((Activity)package1.activities.get(j8)).info)).enabled || (i & 0x200) != 0) {
+                    if(((Activity)package1.activities.get(j8)).info.enabled || (i & 0x200) != 0) {
                         aactivityinfo1 = packageinfo.activities;
                         l8 = k8 + 1;
                         aactivityinfo1[k8] = generateActivityInfo((Activity)package1.activities.get(j8), i, flag, j, k);
@@ -868,7 +868,7 @@ _L10:
                 } else {
                     j6 = 0;
                     for(k6 = 0; k6 < i6; k6++)
-                        if(((ComponentInfo) (((Activity)package1.receivers.get(k6)).info)).enabled)
+                        if(((Activity)package1.receivers.get(k6)).info.enabled)
                             j6++;
 
                     packageinfo.receivers = new ActivityInfo[j6];
@@ -876,7 +876,7 @@ _L10:
                 l6 = 0;
                 i7 = 0;
                 while(l6 < i6)  {
-                    if(((ComponentInfo) (((Activity)package1.receivers.get(l6)).info)).enabled || (i & 0x200) != 0) {
+                    if(((Activity)package1.receivers.get(l6)).info.enabled || (i & 0x200) != 0) {
                         aactivityinfo = packageinfo.receivers;
                         j7 = i7 + 1;
                         aactivityinfo[i7] = generateActivityInfo((Activity)package1.receivers.get(l6), i, flag, j, k);
@@ -896,7 +896,7 @@ _L10:
                 } else {
                     l4 = 0;
                     for(i5 = 0; i5 < k4; i5++)
-                        if(((ComponentInfo) (((Service)package1.services.get(i5)).info)).enabled)
+                        if(((Service)package1.services.get(i5)).info.enabled)
                             l4++;
 
                     packageinfo.services = new ServiceInfo[l4];
@@ -904,7 +904,7 @@ _L10:
                 j5 = 0;
                 k5 = 0;
                 while(j5 < k4)  {
-                    if(((ComponentInfo) (((Service)package1.services.get(j5)).info)).enabled || (i & 0x200) != 0) {
+                    if(((Service)package1.services.get(j5)).info.enabled || (i & 0x200) != 0) {
                         aserviceinfo = packageinfo.services;
                         l5 = k5 + 1;
                         aserviceinfo[k5] = generateServiceInfo((Service)package1.services.get(j5), i, flag, j, k);
@@ -924,7 +924,7 @@ _L10:
                 } else {
                     j3 = 0;
                     for(k3 = 0; k3 < i3; k3++)
-                        if(((ComponentInfo) (((Provider)package1.providers.get(k3)).info)).enabled)
+                        if(((Provider)package1.providers.get(k3)).info.enabled)
                             j3++;
 
                     packageinfo.providers = new ProviderInfo[j3];
@@ -932,7 +932,7 @@ _L10:
                 l3 = 0;
                 i4 = 0;
                 while(l3 < i3)  {
-                    if(((ComponentInfo) (((Provider)package1.providers.get(l3)).info)).enabled || (i & 0x200) != 0) {
+                    if(((Provider)package1.providers.get(l3)).info.enabled || (i & 0x200) != 0) {
                         aproviderinfo = packageinfo.providers;
                         j4 = i4 + 1;
                         aproviderinfo[i4] = generateProviderInfo((Provider)package1.providers.get(l3), i, flag, j, k);
@@ -1002,7 +1002,7 @@ _L10:
             permissiongroupinfo = permissiongroup.info;
         } else {
             permissiongroupinfo = new PermissionGroupInfo(permissiongroup.info);
-            permissiongroupinfo.metaData = ((Component) (permissiongroup)).metaData;
+            permissiongroupinfo.metaData = permissiongroup.metaData;
         }
         return permissiongroupinfo;
     }
@@ -1016,7 +1016,7 @@ _L10:
             permissioninfo = permission.info;
         } else {
             permissioninfo = new PermissionInfo(permission.info);
-            permissioninfo.metaData = ((Component) (permission)).metaData;
+            permissioninfo.metaData = permission.metaData;
         }
         return permissioninfo;
     }
@@ -1026,14 +1026,14 @@ _L10:
         if(provider == null)
             providerinfo = null;
         else
-        if(!copyNeeded(i, ((Component) (provider)).owner, j, ((Component) (provider)).metaData) && ((i & 0x800) != 0 || provider.info.uriPermissionPatterns == null) && k == 0) {
+        if(!copyNeeded(i, provider.owner, j, provider.metaData) && ((i & 0x800) != 0 || provider.info.uriPermissionPatterns == null) && k == 0) {
             providerinfo = provider.info;
         } else {
             providerinfo = new ProviderInfo(provider.info);
-            providerinfo.metaData = ((Component) (provider)).metaData;
+            providerinfo.metaData = provider.metaData;
             if((i & 0x800) == 0)
                 providerinfo.uriPermissionPatterns = null;
-            providerinfo.applicationInfo = generateApplicationInfo(((Component) (provider)).owner, i, flag, j, k);
+            providerinfo.applicationInfo = generateApplicationInfo(provider.owner, i, flag, j, k);
         }
         return providerinfo;
     }
@@ -1043,12 +1043,12 @@ _L10:
         if(service == null)
             serviceinfo = null;
         else
-        if(!copyNeeded(i, ((Component) (service)).owner, j, ((Component) (service)).metaData) && k == UserId.getUserId(((ComponentInfo) (service.info)).applicationInfo.uid)) {
+        if(!copyNeeded(i, service.owner, j, service.metaData) && k == UserId.getUserId(service.info.applicationInfo.uid)) {
             serviceinfo = service.info;
         } else {
             serviceinfo = new ServiceInfo(service.info);
-            serviceinfo.metaData = ((Component) (service)).metaData;
-            serviceinfo.applicationInfo = generateApplicationInfo(((Component) (service)).owner, i, flag, j, k);
+            serviceinfo.metaData = service.metaData;
+            serviceinfo.applicationInfo = generateApplicationInfo(service.owner, i, flag, j, k);
         }
         return serviceinfo;
     }
@@ -1108,12 +1108,12 @@ _L2:
         if(flag2)
             activity.info.exported = typedarray.getBoolean(6, false);
         activity.info.theme = typedarray.getResourceId(0, 0);
-        activity.info.uiOptions = typedarray.getInt(26, ((ComponentInfo) (activity.info)).applicationInfo.uiOptions);
+        activity.info.uiOptions = typedarray.getInt(26, activity.info.applicationInfo.uiOptions);
         String s1 = typedarray.getNonConfigurationString(27, 0);
         String s2;
         boolean flag3;
         if(s1 != null) {
-            String s5 = buildClassName(((PackageItemInfo) (activity.info)).packageName, s1, as);
+            String s5 = buildClassName(activity.info.packageName, s1, as);
             String s4;
             ActivityInfo activityinfo2;
             ActivityInfo activityinfo3;
@@ -1129,7 +1129,7 @@ _L2:
             if(as[0] == null) {
                 activity.info.parentActivityName = s5;
             } else {
-                Log.e("PackageParser", (new StringBuilder()).append("Activity ").append(((PackageItemInfo) (activity.info)).name).append(" specified invalid parentActivityName ").append(s1).toString());
+                Log.e("PackageParser", (new StringBuilder()).append("Activity ").append(activity.info.name).append(" specified invalid parentActivityName ").append(s1).toString());
                 as[0] = null;
             }
         }
@@ -1146,7 +1146,7 @@ _L2:
             activityinfo.permission = s3;
         }
         s4 = typedarray.getNonConfigurationString(8, 0);
-        activity.info.taskAffinity = buildTaskAffinityName(((PackageItemInfo) (package1.applicationInfo)).packageName, package1.applicationInfo.taskAffinity, s4, as);
+        activity.info.taskAffinity = buildTaskAffinityName(package1.applicationInfo.packageName, package1.applicationInfo.taskAffinity, s4, as);
         activity.info.flags = 0;
         if(typedarray.getBoolean(9, false)) {
             activityinfo12 = activity.info;
@@ -1206,7 +1206,7 @@ _L2:
             activity.info.configChanges = 0;
         }
         typedarray.recycle();
-        if(flag && (0x10000000 & package1.applicationInfo.flags) != 0 && ((ComponentInfo) (activity.info)).processName == package1.packageName)
+        if(flag && (0x10000000 & package1.applicationInfo.flags) != 0 && activity.info.processName == package1.packageName)
             as[0] = "Heavy-weight applications can not have receivers in main process";
         if(as[0] != null) {
             activity = null;
@@ -1232,13 +1232,13 @@ _L2:
                     if(activityintentinfo.countActions() == 0)
                         Slog.w("PackageParser", (new StringBuilder()).append("No actions in intent filter at ").append(mArchiveSourcePath).append(" ").append(xmlpullparser.getPositionDescription()).toString());
                     else
-                        ((Component) (activity)).intents.add(activityintentinfo);
+                        activity.intents.add(activityintentinfo);
                     continue;
                 }
                 continue; /* Loop/switch isn't completed */
             }
             if(xmlpullparser.getName().equals("meta-data")) {
-                Bundle bundle = parseMetaData(resources, xmlpullparser, attributeset, ((Component) (activity)).metaData, as);
+                Bundle bundle = parseMetaData(resources, xmlpullparser, attributeset, activity.metaData, as);
                 activity.metaData = bundle;
                 if(bundle != null)
                     continue;
@@ -1255,7 +1255,7 @@ _L2:
         if(!flag2) {
             ActivityInfo activityinfo1 = activity.info;
             boolean flag4;
-            if(((Component) (activity)).intents.size() > 0)
+            if(activity.intents.size() > 0)
                 flag4 = true;
             else
                 flag4 = false;
@@ -1279,7 +1279,7 @@ _L1:
 _L4:
         return activity1;
 _L2:
-        String s1 = buildClassName(((PackageItemInfo) (package1.applicationInfo)).packageName, s, as);
+        String s1 = buildClassName(package1.applicationInfo.packageName, s, as);
         if(s1 == null) {
             typedarray.recycle();
             activity1 = null;
@@ -1300,7 +1300,7 @@ label1:
             {
                 if(k < j) {
                     Activity activity2 = (Activity)package1.activities.get(k);
-                    if(!s1.equals(((PackageItemInfo) (activity2.info)).name))
+                    if(!s1.equals(activity2.info.name))
                         break label1;
                     activity = activity2;
                 }
@@ -1317,14 +1317,14 @@ label1:
         activityinfo.targetActivity = s1;
         activityinfo.configChanges = activity.info.configChanges;
         activityinfo.flags = activity.info.flags;
-        activityinfo.icon = ((PackageItemInfo) (activity.info)).icon;
-        activityinfo.logo = ((PackageItemInfo) (activity.info)).logo;
-        activityinfo.labelRes = ((PackageItemInfo) (activity.info)).labelRes;
-        activityinfo.nonLocalizedLabel = ((PackageItemInfo) (activity.info)).nonLocalizedLabel;
+        activityinfo.icon = activity.info.icon;
+        activityinfo.logo = activity.info.logo;
+        activityinfo.labelRes = activity.info.labelRes;
+        activityinfo.nonLocalizedLabel = activity.info.nonLocalizedLabel;
         activityinfo.launchMode = activity.info.launchMode;
-        activityinfo.processName = ((ComponentInfo) (activity.info)).processName;
-        if(((ComponentInfo) (activityinfo)).descriptionRes == 0)
-            activityinfo.descriptionRes = ((ComponentInfo) (activity.info)).descriptionRes;
+        activityinfo.processName = activity.info.processName;
+        if(activityinfo.descriptionRes == 0)
+            activityinfo.descriptionRes = activity.info.descriptionRes;
         activityinfo.screenOrientation = activity.info.screenOrientation;
         activityinfo.taskAffinity = activity.info.taskAffinity;
         activityinfo.theme = activity.info.theme;
@@ -1354,11 +1354,11 @@ label1:
         }
         s3 = typedarray.getNonConfigurationString(9, 0);
         if(s3 != null) {
-            s4 = buildClassName(((PackageItemInfo) (activity1.info)).packageName, s3, as);
+            s4 = buildClassName(activity1.info.packageName, s3, as);
             if(as[0] == null) {
                 activity1.info.parentActivityName = s4;
             } else {
-                Log.e("PackageParser", (new StringBuilder()).append("Activity alias ").append(((PackageItemInfo) (activity1.info)).name).append(" specified invalid parentActivityName ").append(s3).toString());
+                Log.e("PackageParser", (new StringBuilder()).append("Activity alias ").append(activity1.info.name).append(" specified invalid parentActivityName ").append(s3).toString());
                 as[0] = null;
             }
         }
@@ -1382,13 +1382,13 @@ label1:
                     if(activityintentinfo.countActions() == 0)
                         Slog.w("PackageParser", (new StringBuilder()).append("No actions in intent filter at ").append(mArchiveSourcePath).append(" ").append(xmlpullparser.getPositionDescription()).toString());
                     else
-                        ((Component) (activity1)).intents.add(activityintentinfo);
+                        activity1.intents.add(activityintentinfo);
                     continue;
                 }
                 continue; /* Loop/switch isn't completed */
             }
             if(xmlpullparser.getName().equals("meta-data")) {
-                Bundle bundle = parseMetaData(resources, xmlpullparser, attributeset, ((Component) (activity1)).metaData, as);
+                Bundle bundle = parseMetaData(resources, xmlpullparser, attributeset, activity1.metaData, as);
                 activity1.metaData = bundle;
                 if(bundle != null)
                     continue;
@@ -1401,7 +1401,7 @@ label1:
         if(!flag) {
             ActivityInfo activityinfo1 = activity1.info;
             boolean flag1;
-            if(((Component) (activity1)).intents.size() > 0)
+            if(activity1.intents.size() > 0)
                 flag1 = true;
             else
                 flag1 = false;
@@ -1444,7 +1444,7 @@ _L2:
         TypedArray typedarray;
         String s1;
         applicationinfo = package1.applicationInfo;
-        s = ((PackageItemInfo) (package1.applicationInfo)).packageName;
+        s = package1.applicationInfo.packageName;
         typedarray = resources.obtainAttributes(attributeset, com.android.internal.R.styleable.AndroidManifestApplication);
         s1 = typedarray.getNonConfigurationString(3, 0);
         if(s1 == null) goto _L2; else goto _L1
@@ -1523,14 +1523,14 @@ _L2:
             s5 = typedarray.getNonConfigurationString(12, 0);
         else
             s5 = typedarray.getNonResourceString(12);
-        applicationinfo.taskAffinity = buildTaskAffinityName(((PackageItemInfo) (applicationinfo)).packageName, ((PackageItemInfo) (applicationinfo)).packageName, s5, as);
+        applicationinfo.taskAffinity = buildTaskAffinityName(applicationinfo.packageName, applicationinfo.packageName, s5, as);
         if(as[0] == null) {
             String s8;
             if(package1.applicationInfo.targetSdkVersion >= 8)
                 s8 = typedarray.getNonConfigurationString(11, 0);
             else
                 s8 = typedarray.getNonResourceString(11);
-            applicationinfo.processName = buildProcessName(((PackageItemInfo) (applicationinfo)).packageName, null, s8, i, mSeparateProcesses, as);
+            applicationinfo.processName = buildProcessName(applicationinfo.packageName, null, s8, i, mSeparateProcesses, as);
             applicationinfo.enabled = typedarray.getBoolean(9, true);
         }
         applicationinfo.uiOptions = typedarray.getInt(25, 0);
@@ -2238,7 +2238,7 @@ _L20:
             as[0] = (new StringBuilder()).append(s).append(" does not specify android:name").toString();
             flag = false;
         } else {
-            packageiteminfo.name = buildClassName(((PackageItemInfo) (package1.applicationInfo)).packageName, s1, as);
+            packageiteminfo.name = buildClassName(package1.applicationInfo.packageName, s1, as);
             if(packageiteminfo.name == null) {
                 flag = false;
             } else {
@@ -2493,11 +2493,11 @@ _L5:
             permission = null;
         } else {
             typedarray.recycle();
-            int i = ((PackageItemInfo) (permission.info)).name.indexOf('.');
+            int i = permission.info.name.indexOf('.');
             if(i > 0)
-                i = ((PackageItemInfo) (permission.info)).name.indexOf('.', i + 1);
+                i = permission.info.name.indexOf('.', i + 1);
             if(i < 0) {
-                as[0] = (new StringBuilder()).append("<permission-tree> name has less than three segments: ").append(((PackageItemInfo) (permission.info)).name).toString();
+                as[0] = (new StringBuilder()).append("<permission-tree> name has less than three segments: ").append(permission.info.name).toString();
                 mParseError = -108;
                 permission = null;
             } else {
@@ -2570,7 +2570,7 @@ _L2:
         provider.info.multiprocess = typedarray.getBoolean(9, false);
         provider.info.initOrder = typedarray.getInt(12, 0);
         typedarray.recycle();
-        if((0x10000000 & package1.applicationInfo.flags) != 0 && ((ComponentInfo) (provider.info)).processName == package1.packageName) {
+        if((0x10000000 & package1.applicationInfo.flags) != 0 && provider.info.processName == package1.packageName) {
             as[0] = "Heavy-weight applications can not have providers in main process";
             provider = null;
         } else
@@ -2598,7 +2598,7 @@ _L4:
         if(!xmlpullparser.getName().equals("meta-data")) goto _L2; else goto _L1
 _L1:
         Bundle bundle;
-        bundle = parseMetaData(resources, xmlpullparser, attributeset, ((Component) (provider)).metaData, as);
+        bundle = parseMetaData(resources, xmlpullparser, attributeset, provider.metaData, as);
         provider.metaData = bundle;
         if(bundle != null) goto _L4; else goto _L3
 _L3:
@@ -2739,7 +2739,7 @@ _L2:
             serviceinfo2.flags = 2 | serviceinfo2.flags;
         }
         typedarray.recycle();
-        if((0x10000000 & package1.applicationInfo.flags) != 0 && ((ComponentInfo) (service.info)).processName == package1.packageName) {
+        if((0x10000000 & package1.applicationInfo.flags) != 0 && service.info.processName == package1.packageName) {
             as[0] = "Heavy-weight applications can not have services in main process";
             service = null;
             continue; /* Loop/switch isn't completed */
@@ -2756,13 +2756,13 @@ _L2:
                 if(!parseIntent(resources, xmlpullparser, attributeset, i, serviceintentinfo, as, false)) {
                     service = null;
                 } else {
-                    ((Component) (service)).intents.add(serviceintentinfo);
+                    service.intents.add(serviceintentinfo);
                     continue;
                 }
                 continue; /* Loop/switch isn't completed */
             }
             if(xmlpullparser.getName().equals("meta-data")) {
-                Bundle bundle = parseMetaData(resources, xmlpullparser, attributeset, ((Component) (service)).metaData, as);
+                Bundle bundle = parseMetaData(resources, xmlpullparser, attributeset, service.metaData, as);
                 service.metaData = bundle;
                 if(bundle != null)
                     continue;
@@ -2775,7 +2775,7 @@ _L2:
         if(!flag) {
             ServiceInfo serviceinfo1 = service.info;
             boolean flag1;
-            if(((Component) (service)).intents.size() > 0)
+            if(service.intents.size() > 0)
                 flag1 = true;
             else
                 flag1 = false;

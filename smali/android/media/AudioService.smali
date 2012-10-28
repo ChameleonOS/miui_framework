@@ -399,14 +399,14 @@
     .line 3569
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/media/AudioService;->mAudioFocusLock:Ljava/lang/Object;
 
     .line 3571
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/media/AudioService;->mRingingLock:Ljava/lang/Object;
 
@@ -437,14 +437,14 @@
     .line 175
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/AudioService;->mSettingsLock:Ljava/lang/Object;
 
     .line 180
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/AudioService;->mSoundEffectsLock:Ljava/lang/Object;
 
@@ -659,7 +659,7 @@
     .line 398
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/AudioService;->mForceControlStreamLock:Ljava/lang/Object;
 
@@ -672,7 +672,7 @@
     .line 410
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/AudioService;->mBluetoothA2dpEnabledLock:Ljava/lang/Object;
 
@@ -719,7 +719,7 @@
     .line 3971
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/AudioService;->mVoiceEventLock:Ljava/lang/Object;
 
@@ -733,7 +733,7 @@
     .line 4147
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/media/AudioService;->mCurrentRcLock:Ljava/lang/Object;
 
@@ -11466,12 +11466,12 @@
     :try_start_3
     iget-boolean v8, p0, Landroid/media/AudioService;->mBootCompleted:Z
 
-    if-nez v8, :cond_12
+    if-nez v8, :cond_11
 
     .line 1456
     const-string v8, "AudioService"
 
-    const-string/jumbo v10, "loadSoundEffects() called before boot complete"
+    const-string v10, "loadSoundEffects() called before boot complete"
 
     invoke-static {v8, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -11481,35 +11481,35 @@
     monitor-exit v9
 
     .line 1559
-    :goto_11
+    :goto_10
     return v8
 
     .line 1460
-    :cond_12
+    :cond_11
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPool:Landroid/media/SoundPool;
 
-    if-eqz v8, :cond_1c
+    if-eqz v8, :cond_1b
 
     .line 1461
     const/4 v8, 0x1
 
     monitor-exit v9
 
-    goto :goto_11
+    goto :goto_10
 
     .line 1558
-    :catchall_19
+    :catchall_18
     move-exception v8
 
     monitor-exit v9
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_19
+    :try_end_1a
+    .catchall {:try_start_3 .. :try_end_1a} :catchall_18
 
     throw v8
 
     .line 1463
-    :cond_1c
-    :try_start_1c
+    :cond_1b
+    :try_start_1b
     new-instance v8, Landroid/media/SoundPool;
 
     const/4 v10, 0x4
@@ -11521,13 +11521,13 @@
     invoke-direct {v8, v10, v11, v12}, Landroid/media/SoundPool;-><init>(III)V
 
     iput-object v8, p0, Landroid/media/AudioService;->mSoundPool:Landroid/media/SoundPool;
-    :try_end_26
-    .catchall {:try_start_1c .. :try_end_26} :catchall_19
+    :try_end_25
+    .catchall {:try_start_1b .. :try_end_25} :catchall_18
 
     .line 1466
     const/4 v8, 0x0
 
-    :try_start_27
+    :try_start_26
     iput-object v8, p0, Landroid/media/AudioService;->mSoundPoolCallBack:Landroid/media/AudioService$SoundPoolCallback;
 
     .line 1467
@@ -11546,28 +11546,28 @@
     iget-object v8, p0, Landroid/media/AudioService;->mSoundEffectsLock:Ljava/lang/Object;
 
     invoke-virtual {v8}, Ljava/lang/Object;->wait()V
-    :try_end_3a
-    .catchall {:try_start_27 .. :try_end_3a} :catchall_19
-    .catch Ljava/lang/InterruptedException; {:try_start_27 .. :try_end_3a} :catch_60
+    :try_end_39
+    .catchall {:try_start_26 .. :try_end_39} :catchall_18
+    .catch Ljava/lang/InterruptedException; {:try_start_26 .. :try_end_39} :catch_5e
 
     .line 1475
-    :goto_3a
-    :try_start_3a
+    :goto_39
+    :try_start_39
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPoolCallBack:Landroid/media/AudioService$SoundPoolCallback;
 
-    if-nez v8, :cond_69
+    if-nez v8, :cond_67
 
     .line 1476
     const-string v8, "AudioService"
 
-    const-string/jumbo v10, "loadSoundEffects() could not create SoundPool listener or thread"
+    const-string v10, "loadSoundEffects() could not create SoundPool listener or thread"
 
     invoke-static {v8, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1477
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPoolLooper:Landroid/os/Looper;
 
-    if-eqz v8, :cond_52
+    if-eqz v8, :cond_50
 
     .line 1478
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPoolLooper:Landroid/os/Looper;
@@ -11580,7 +11580,7 @@
     iput-object v8, p0, Landroid/media/AudioService;->mSoundPoolLooper:Landroid/os/Looper;
 
     .line 1481
-    :cond_52
+    :cond_50
     const/4 v8, 0x0
 
     iput-object v8, p0, Landroid/media/AudioService;->mSoundPoolListenerThread:Landroid/media/AudioService$SoundPoolListenerThread;
@@ -11600,10 +11600,10 @@
 
     monitor-exit v9
 
-    goto :goto_11
+    goto :goto_10
 
     .line 1471
-    :catch_60
+    :catch_5e
     move-exception v0
 
     .line 1472
@@ -11614,11 +11614,11 @@
 
     invoke-static {v8, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_3a
+    goto :goto_39
 
     .line 1492
     .end local v0           #e:Ljava/lang/InterruptedException;
-    :cond_69
+    :cond_67
     sget-object v8, Landroid/media/AudioService;->SOUND_EFFECT_FILES:[Ljava/lang/String;
 
     array-length v8, v8
@@ -11630,12 +11630,12 @@
     const/4 v2, 0x0
 
     .local v2, fileIdx:I
-    :goto_6f
+    :goto_6d
     sget-object v8, Landroid/media/AudioService;->SOUND_EFFECT_FILES:[Ljava/lang/String;
 
     array-length v8, v8
 
-    if-ge v2, v8, :cond_7a
+    if-ge v2, v8, :cond_78
 
     .line 1494
     const/4 v8, -0x1
@@ -11645,10 +11645,10 @@
     .line 1493
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6f
+    goto :goto_6d
 
     .line 1502
-    :cond_7a
+    :cond_78
     const/4 v4, 0x0
 
     .line 1503
@@ -11656,10 +11656,10 @@
     const/4 v1, 0x0
 
     .local v1, effect:I
-    :goto_7c
+    :goto_7a
     const/16 v8, 0x9
 
-    if-ge v1, v8, :cond_103
+    if-ge v1, v8, :cond_101
 
     .line 1505
     iget-object v8, p0, Landroid/media/AudioService;->SOUND_EFFECT_FILES_MAP:[[I
@@ -11670,16 +11670,16 @@
 
     aget v8, v8, v10
 
-    if-nez v8, :cond_8c
+    if-nez v8, :cond_8a
 
     .line 1503
-    :goto_89
+    :goto_87
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7c
+    goto :goto_7a
 
     .line 1508
-    :cond_8c
+    :cond_8a
     iget-object v8, p0, Landroid/media/AudioService;->SOUND_EFFECT_FILES_MAP:[[I
 
     aget-object v8, v8, v1
@@ -11692,7 +11692,7 @@
 
     const/4 v10, -0x1
 
-    if-ne v8, v10, :cond_f2
+    if-ne v8, v10, :cond_f0
 
     .line 1509
     new-instance v8, Ljava/lang/StringBuilder;
@@ -11745,7 +11745,7 @@
 
     .line 1513
     .local v6, sampleId:I
-    if-gtz v6, :cond_e0
+    if-gtz v6, :cond_de
 
     .line 1514
     const-string v8, "AudioService"
@@ -11770,10 +11770,10 @@
 
     invoke-static {v8, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_89
+    goto :goto_87
 
     .line 1516
-    :cond_e0
+    :cond_de
     iget-object v8, p0, Landroid/media/AudioService;->SOUND_EFFECT_FILES_MAP:[[I
 
     aget-object v8, v8, v1
@@ -11796,12 +11796,12 @@
     .line 1518
     move v4, v6
 
-    goto :goto_89
+    goto :goto_87
 
     .line 1521
     .end local v3           #filePath:Ljava/lang/String;
     .end local v6           #sampleId:I
-    :cond_f2
+    :cond_f0
     iget-object v8, p0, Landroid/media/AudioService;->SOUND_EFFECT_FILES_MAP:[[I
 
     aget-object v8, v8, v1
@@ -11820,21 +11820,21 @@
 
     aput v11, v8, v10
 
-    goto :goto_89
+    goto :goto_87
 
     .line 1525
-    :cond_103
-    if-eqz v4, :cond_170
+    :cond_101
+    if-eqz v4, :cond_16d
 
     .line 1526
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPoolCallBack:Landroid/media/AudioService$SoundPoolCallback;
 
     invoke-virtual {v8, v4}, Landroid/media/AudioService$SoundPoolCallback;->setLastSample(I)V
-    :try_end_10a
-    .catchall {:try_start_3a .. :try_end_10a} :catchall_19
+    :try_end_108
+    .catchall {:try_start_39 .. :try_end_108} :catchall_18
 
     .line 1529
-    :try_start_10a
+    :try_start_108
     iget-object v8, p0, Landroid/media/AudioService;->mSoundEffectsLock:Ljava/lang/Object;
 
     invoke-virtual {v8}, Ljava/lang/Object;->wait()V
@@ -11843,19 +11843,19 @@
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPoolCallBack:Landroid/media/AudioService$SoundPoolCallback;
 
     invoke-virtual {v8}, Landroid/media/AudioService$SoundPoolCallback;->status()I
-    :try_end_114
-    .catchall {:try_start_10a .. :try_end_114} :catchall_19
-    .catch Ljava/lang/InterruptedException; {:try_start_10a .. :try_end_114} :catch_166
+    :try_end_112
+    .catchall {:try_start_108 .. :try_end_112} :catchall_18
+    .catch Ljava/lang/InterruptedException; {:try_start_108 .. :try_end_112} :catch_163
 
     move-result v7
 
     .line 1539
     .local v7, status:I
-    :goto_115
-    :try_start_115
+    :goto_113
+    :try_start_113
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPoolLooper:Landroid/os/Looper;
 
-    if-eqz v8, :cond_121
+    if-eqz v8, :cond_11f
 
     .line 1540
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPoolLooper:Landroid/os/Looper;
@@ -11868,13 +11868,13 @@
     iput-object v8, p0, Landroid/media/AudioService;->mSoundPoolLooper:Landroid/os/Looper;
 
     .line 1543
-    :cond_121
+    :cond_11f
     const/4 v8, 0x0
 
     iput-object v8, p0, Landroid/media/AudioService;->mSoundPoolListenerThread:Landroid/media/AudioService$SoundPoolListenerThread;
 
     .line 1544
-    if-eqz v7, :cond_17c
+    if-eqz v7, :cond_179
 
     .line 1545
     const-string v10, "AudioService"
@@ -11883,13 +11883,13 @@
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v11, "loadSoundEffects(), Error "
+    const-string v11, "loadSoundEffects(), Error "
 
     invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
 
-    if-eqz v4, :cond_172
+    if-eqz v4, :cond_16f
 
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPoolCallBack:Landroid/media/AudioService$SoundPoolCallback;
 
@@ -11897,7 +11897,7 @@
 
     move-result v8
 
-    :goto_13c
+    :goto_139
     invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v8
@@ -11917,10 +11917,10 @@
     .line 1549
     const/4 v1, 0x0
 
-    :goto_14e
+    :goto_14b
     const/16 v8, 0x9
 
-    if-ge v1, v8, :cond_174
+    if-ge v1, v8, :cond_171
 
     .line 1550
     iget-object v8, p0, Landroid/media/AudioService;->SOUND_EFFECT_FILES_MAP:[[I
@@ -11931,7 +11931,7 @@
 
     aget v8, v8, v10
 
-    if-lez v8, :cond_163
+    if-lez v8, :cond_160
 
     .line 1551
     iget-object v8, p0, Landroid/media/AudioService;->SOUND_EFFECT_FILES_MAP:[[I
@@ -11945,14 +11945,14 @@
     aput v11, v8, v10
 
     .line 1549
-    :cond_163
+    :cond_160
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_14e
+    goto :goto_14b
 
     .line 1531
     .end local v7           #status:I
-    :catch_166
+    :catch_163
     move-exception v0
 
     .line 1532
@@ -11968,25 +11968,25 @@
 
     .line 1534
     .restart local v7       #status:I
-    goto :goto_115
+    goto :goto_113
 
     .line 1536
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v7           #status:I
-    :cond_170
+    :cond_16d
     const/4 v7, -0x1
 
     .restart local v7       #status:I
-    goto :goto_115
+    goto :goto_113
 
     .line 1545
-    :cond_172
+    :cond_16f
     const/4 v8, -0x1
 
-    goto :goto_13c
+    goto :goto_139
 
     .line 1555
-    :cond_174
+    :cond_171
     iget-object v8, p0, Landroid/media/AudioService;->mSoundPool:Landroid/media/SoundPool;
 
     invoke-virtual {v8}, Landroid/media/SoundPool;->release()V
@@ -11997,22 +11997,22 @@
     iput-object v8, p0, Landroid/media/AudioService;->mSoundPool:Landroid/media/SoundPool;
 
     .line 1558
-    :cond_17c
+    :cond_179
     monitor-exit v9
-    :try_end_17d
-    .catchall {:try_start_115 .. :try_end_17d} :catchall_19
+    :try_end_17a
+    .catchall {:try_start_113 .. :try_end_17a} :catchall_18
 
     .line 1559
-    if-nez v7, :cond_182
+    if-nez v7, :cond_17f
 
     const/4 v8, 0x1
 
-    goto/16 :goto_11
+    goto/16 :goto_10
 
-    :cond_182
+    :cond_17f
     const/4 v8, 0x0
 
-    goto/16 :goto_11
+    goto/16 :goto_10
 .end method
 
 .method public onSendFinished(Landroid/app/PendingIntent;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V
