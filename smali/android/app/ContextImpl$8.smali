@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 301
+    .line 317
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .parameter "ctx"
 
     .prologue
-    .line 303
+    .line 319
     new-instance v0, Landroid/content/ClipboardManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getOuterContext()Landroid/content/Context;

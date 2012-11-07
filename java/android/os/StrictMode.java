@@ -1106,6 +1106,12 @@ _L3:
         return flag;
     }
 
+    static String ignoreDebugBuild(String s) {
+        if("userdebug".equals(s))
+            s = "user";
+        return s;
+    }
+
     public static void incrementExpectedActivityCount(Class class1) {
         if(class1 != null) goto _L2; else goto _L1
 _L1:
@@ -1556,12 +1562,7 @@ _L5:
 
     static  {
         LOG_V = Log.isLoggable("StrictMode", 2);
-        boolean flag;
-        if("user".equals(Build.TYPE) || "userdebug".equals(Build.TYPE))
-            flag = true;
-        else
-            flag = false;
-        IS_USER_BUILD = flag;
+        IS_USER_BUILD = "user".equals(ignoreDebugBuild(Build.TYPE));
         IS_ENG_BUILD = "eng".equals(Build.TYPE);
         sVmPolicy = VmPolicy.LAX;
     }

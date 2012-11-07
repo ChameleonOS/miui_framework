@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 // Referenced classes of package com.android.internal.telephony.gsm:
-//            VoiceMailConstants, MiuiSpnOverrideImpl, SmsMessage, MiuiSpnOverride, 
-//            SimTlv, SpnOverride, UsimServiceTable
+//            VoiceMailConstants, MiuiSpnOverrideImpl, SmsMessage, SimTlv, 
+//            SpnOverride, UsimServiceTable, MiuiSpnOverride
 
 public class SIMRecords extends IccRecords {
     private static final class Get_Spn_Fsm_State extends Enum {
@@ -51,6 +51,26 @@ public class SIMRecords extends IccRecords {
 
         private Get_Spn_Fsm_State(String s, int i) {
             super(s, i);
+        }
+    }
+
+    static class Injector {
+
+        static boolean isMatchingOperator(SIMRecords simrecords, String s, String s1) {
+            boolean flag;
+            flag = true;
+            break MISSING_BLOCK_LABEL_2;
+            if(!s.equals(s1) && !MiuiSpnOverride.getInstance().getEquivalentOperatorNumeric(s).equals(MiuiSpnOverride.getInstance().getEquivalentOperatorNumeric(simrecords.getOperatorNumeric())))
+                flag = false;
+            return flag;
+        }
+
+        static void updateSpnDisplayCondition(SIMRecords simrecords) {
+            if(!TextUtils.isEmpty(simrecords.getSpn()))
+                simrecords.spnDisplayCondition = 0;
+        }
+
+        Injector() {
         }
     }
 
@@ -308,11 +328,7 @@ _L5:
 _L1:
         return flag;
 _L2:
-        if(s.equals(getOperatorNumeric())) {
-            flag = true;
-            continue; /* Loop/switch isn't completed */
-        }
-        if(MiuiSpnOverride.getInstance().getEquivalentOperatorNumeric(s).equals(MiuiSpnOverride.getInstance().getEquivalentOperatorNumeric(getOperatorNumeric()))) {
+        if(Injector.isMatchingOperator(this, s, getOperatorNumeric())) {
             flag = true;
             continue; /* Loop/switch isn't completed */
         }
@@ -362,8 +378,7 @@ label0:
     private void setSpnFromConfig(String s) {
         if(mSpnOverride.containsCarrier(s)) {
             super.spn = mSpnOverride.getSpn(s);
-            if(!TextUtils.isEmpty(super.spn))
-                spnDisplayCondition = 0;
+            Injector.updateSpnDisplayCondition(this);
         }
     }
 
@@ -469,6 +484,10 @@ _L3:
         else
             s = imsi.substring(0, 3 + super.mncLength);
         return s;
+    }
+
+    String getSpn() {
+        return super.spn;
     }
 
     public UsimServiceTable getUsimServiceTable() {

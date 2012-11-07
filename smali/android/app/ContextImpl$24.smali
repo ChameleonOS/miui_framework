@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 407
+    .line 423
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,20 +32,20 @@
     .parameter "ctx"
 
     .prologue
-    .line 409
+    .line 425
     const-string/jumbo v2, "power"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 410
+    .line 426
     .local v0, b:Landroid/os/IBinder;
     invoke-static {v0}, Landroid/os/IPowerManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IPowerManager;
 
     move-result-object v1
 
-    .line 411
+    .line 427
     .local v1, service:Landroid/os/IPowerManager;
     new-instance v2, Landroid/os/PowerManager;
 

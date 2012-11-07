@@ -69,6 +69,8 @@
 
 .field public static final float_panel_arrow_top_offset:I = 0x60a0027
 
+.field public static final floating_view_hidden_size:I = 0x60a002f
+
 .field public static final list_primary_text_size:I = 0x60a0002
 
 .field public static final list_secondary_text_size:I = 0x60a0003
@@ -79,7 +81,13 @@
 
 .field public static final magnifier_finger_offset:I = 0x60a0019
 
+.field public static final min_anchor_velocity:I = 0x60a002b
+
+.field public static final miro_primary_menu_item_title:I = 0x60a002d
+
 .field public static final notification_icon_size:I = 0x60a0001
+
+.field public static final over_distance:I = 0x60a002c
 
 .field public static final resource_perview_font_padding:I = 0x60a0029
 
@@ -97,7 +105,41 @@
 
 .field public static final text_handle_visible_height:I = 0x60a0004
 
+.field public static final translate_slop:I = 0x60a002a
+
 .field public static final two_floors_action_bar_height:I = 0x60a0017
+
+.field public static final v5_list_view_double_line_height:I = 0x60a003e
+
+.field public static final v5_list_view_single_line_height:I = 0x60a003d
+
+.field public static final v5_list_view_treble_line_height:I = 0x60a003f
+
+.field public static final v5_text_font_size_button:I = 0x60a0038
+
+.field public static final v5_text_font_size_edit_mode_button:I = 0x60a0039
+
+.field public static final v5_text_font_size_large:I = 0x60a0030
+
+.field public static final v5_text_font_size_list_primary:I = 0x60a0035
+
+.field public static final v5_text_font_size_list_secondary:I = 0x60a003b
+
+.field public static final v5_text_font_size_main_page_title:I = 0x60a0033
+
+.field public static final v5_text_font_size_medium:I = 0x60a0031
+
+.field public static final v5_text_font_size_memo:I = 0x60a003c
+
+.field public static final v5_text_font_size_preference_category:I = 0x60a003a
+
+.field public static final v5_text_font_size_primary:I = 0x60a0036
+
+.field public static final v5_text_font_size_small:I = 0x60a0032
+
+.field public static final v5_text_font_size_textedit:I = 0x60a0037
+
+.field public static final v5_text_font_size_title:I = 0x60a0034
 
 
 # direct methods
@@ -105,7 +147,7 @@
     .registers 1
 
     .prologue
-    .line 486
+    .line 850
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

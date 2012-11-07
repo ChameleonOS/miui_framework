@@ -153,13 +153,6 @@ _L8:
 
     private static class HomeView extends FrameLayout {
 
-        private void setIcon() {
-            if(mCompactMode && mUpView.getVisibility() == 0)
-                mIconView.setImageDrawable(null);
-            else
-                mIconView.setImageDrawable(mIconDrawable);
-        }
-
         public boolean dispatchHoverEvent(MotionEvent motionevent) {
             return onHoverEvent(motionevent);
         }
@@ -169,26 +162,27 @@ _L8:
             return true;
         }
 
+        ImageView getIconView() {
+            return mIconView;
+        }
+
         public int getLeftOffset() {
             int i;
-            if(!mCompactMode && mUpView.getVisibility() == 8)
+            if(Injector.getUpViewVisibility(this, mUpView) == 8)
                 i = mUpWidth;
             else
                 i = 0;
             return i;
         }
 
+        View getUpView() {
+            return mUpView;
+        }
+
         protected void onFinishInflate() {
             mUpView = findViewById(0x102023b);
             mIconView = (ImageView)findViewById(0x102002c);
-            if(mUpView instanceof ImageView) {
-                boolean flag;
-                if((float)((ImageView)mUpView).getDrawable().getMinimumWidth() > TypedValue.applyDimension(1, 20F, getResources().getDisplayMetrics()))
-                    flag = true;
-                else
-                    flag = false;
-                mCompactMode = flag;
-            }
+            Injector.switchToCompactMode(this);
         }
 
         protected void onLayout(boolean flag, int i, int j, int k, int l) {
@@ -276,8 +270,8 @@ _L6:
         }
 
         public void setIcon(Drawable drawable) {
-            mIconDrawable = drawable;
-            setIcon();
+            mIconView.setImageDrawable(drawable);
+            Injector.setIcon(this, drawable);
         }
 
         public void setUp(boolean flag) {
@@ -288,11 +282,11 @@ _L6:
             else
                 i = 8;
             view.setVisibility(i);
-            setIcon();
+            Injector.setIcon(this);
         }
 
-        private boolean mCompactMode;
-        private Drawable mIconDrawable;
+        boolean mCompactMode;
+        Drawable mIconDrawable;
         private ImageView mIconView;
         private View mUpView;
         private int mUpWidth;
@@ -356,6 +350,42 @@ _L6:
 
         SavedState(Parcelable parcelable) {
             super(parcelable);
+        }
+    }
+
+    static class Injector {
+
+        static int getUpViewVisibility(HomeView homeview, View view) {
+            byte byte0 = 8;
+            if(homeview.mCompactMode || view.getVisibility() != byte0)
+                byte0 = 0;
+            return byte0;
+        }
+
+        static void setIcon(HomeView homeview) {
+            ImageView imageview = homeview.getIconView();
+            if(homeview.mCompactMode && homeview.getUpView().getVisibility() == 0)
+                imageview.setImageDrawable(null);
+            else
+                imageview.setImageDrawable(homeview.mIconDrawable);
+        }
+
+        static void setIcon(HomeView homeview, Drawable drawable) {
+            homeview.mIconDrawable = drawable;
+            setIcon(homeview);
+        }
+
+        static void switchToCompactMode(HomeView homeview) {
+            boolean flag = true;
+            View view = homeview.getUpView();
+            if(view instanceof ImageView) {
+                if((float)((ImageView)view).getDrawable().getMinimumWidth() <= TypedValue.applyDimension(flag, 20F, homeview.getResources().getDisplayMetrics()))
+                    flag = false;
+                homeview.mCompactMode = flag;
+            }
+        }
+
+        Injector() {
         }
     }
 

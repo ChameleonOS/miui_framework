@@ -91,7 +91,7 @@
 
 .field public static final android_ic_lockscreen_chevron_right:I = 0x602014e
 
-.field public static final android_ic_lockscreen_glowdot:I = 0x60201c8
+.field public static final android_ic_lockscreen_glowdot:I = 0x60201fb
 
 .field public static final android_ic_lockscreen_handle_pressed:I = 0x6020150
 
@@ -133,7 +133,7 @@
 
 .field public static final android_menu_selector:I = 0x602013b
 
-.field public static final android_notification_item_background_color:I = 0x60201c9
+.field public static final android_notification_item_background_color:I = 0x60201fc
 
 .field public static final android_notification_item_background_color_pressed:I = 0x602014b
 
@@ -374,6 +374,8 @@
 .field public static final ic_menu_moreoverflow_holo_light:I = 0x6020152
 
 .field public static final ic_menu_moreoverflow_normal_holo_light:I = 0x6020153
+
+.field public static final ic_menu_search:I = 0x60201b8
 
 .field public static final ic_menu_share:I = 0x6020198
 
@@ -793,6 +795,8 @@
 
 .field public static final rounded_corner_top_right:I = 0x60200e2
 
+.field public static final screen_button_notification_icon:I = 0x60201f0
+
 .field public static final screen_on_proximity_sensor_hint:I = 0x6020031
 
 .field public static final screen_view_arrow_left:I = 0x60200e3
@@ -879,7 +883,111 @@
 
 .field public static final stat_sys_call_record:I = 0x6020109
 
-.field public static final tab_bg:I = 0x60201b8
+.field public static final status_bar_toggle_ac:I = 0x60201c9
+
+.field public static final status_bar_toggle_alarm_off:I = 0x60201ca
+
+.field public static final status_bar_toggle_alarm_on:I = 0x60201cb
+
+.field public static final status_bar_toggle_bluetooth_off:I = 0x60201cc
+
+.field public static final status_bar_toggle_bluetooth_on:I = 0x60201cd
+
+.field public static final status_bar_toggle_brightness_auto:I = 0x60201ce
+
+.field public static final status_bar_toggle_brightness_half:I = 0x60201cf
+
+.field public static final status_bar_toggle_brightness_manual:I = 0x60201d0
+
+.field public static final status_bar_toggle_brightness_off:I = 0x60201d1
+
+.field public static final status_bar_toggle_brightness_on:I = 0x60201d2
+
+.field public static final status_bar_toggle_data_off:I = 0x60201d3
+
+.field public static final status_bar_toggle_data_on:I = 0x60201d4
+
+.field public static final status_bar_toggle_divider:I = 0x60201d5
+
+.field public static final status_bar_toggle_flight_mode_off:I = 0x60201d8
+
+.field public static final status_bar_toggle_flight_mode_on:I = 0x60201d9
+
+.field public static final status_bar_toggle_gps_off:I = 0x60201da
+
+.field public static final status_bar_toggle_gps_on:I = 0x60201db
+
+.field public static final status_bar_toggle_lock:I = 0x60201dc
+
+.field public static final status_bar_toggle_mute_off:I = 0x60201dd
+
+.field public static final status_bar_toggle_mute_on:I = 0x60201de
+
+.field public static final status_bar_toggle_network_3g2g:I = 0x60201df
+
+.field public static final status_bar_toggle_power_high:I = 0x602022a
+
+.field public static final status_bar_toggle_power_low:I = 0x602022b
+
+.field public static final status_bar_toggle_power_middle:I = 0x602022c
+
+.field public static final status_bar_toggle_privacy_mode_off:I = 0x60201e0
+
+.field public static final status_bar_toggle_privacy_mode_on:I = 0x60201e1
+
+.field public static final status_bar_toggle_reboot:I = 0x60201e2
+
+.field public static final status_bar_toggle_rotate_off:I = 0x60201e3
+
+.field public static final status_bar_toggle_rotate_off_land:I = 0x60201e4
+
+.field public static final status_bar_toggle_rotate_on:I = 0x60201e5
+
+.field public static final status_bar_toggle_screen_button_disabled:I = 0x60201e6
+
+.field public static final status_bar_toggle_screen_button_enabled:I = 0x60201e7
+
+.field public static final status_bar_toggle_screenshot:I = 0x60201e8
+
+.field public static final status_bar_toggle_shutdown:I = 0x60201ea
+
+.field public static final status_bar_toggle_sync_auto_active:I = 0x60201ee
+
+.field public static final status_bar_toggle_sync_auto_active_0:I = 0x60201f1
+
+.field public static final status_bar_toggle_sync_auto_active_1:I = 0x60201f2
+
+.field public static final status_bar_toggle_sync_auto_active_2:I = 0x60201f3
+
+.field public static final status_bar_toggle_sync_auto_active_3:I = 0x60201f4
+
+.field public static final status_bar_toggle_sync_manual_active:I = 0x60201ef
+
+.field public static final status_bar_toggle_sync_manual_active_0:I = 0x60201f5
+
+.field public static final status_bar_toggle_sync_manual_active_1:I = 0x60201f6
+
+.field public static final status_bar_toggle_sync_manual_active_2:I = 0x60201f7
+
+.field public static final status_bar_toggle_sync_manual_active_3:I = 0x60201f8
+
+.field public static final status_bar_toggle_sync_off:I = 0x60201f9
+
+.field public static final status_bar_toggle_sync_on:I = 0x60201fa
+
+.field public static final status_bar_toggle_torch_off:I = 0x60201c8
+
+.field public static final status_bar_toggle_torch_on:I = 0x60201d6
+
+.field public static final status_bar_toggle_vibrate_off:I = 0x60201d7
+
+.field public static final status_bar_toggle_vibrate_on:I = 0x60201e9
+
+.field public static final status_bar_toggle_wifi_off:I = 0x60201eb
+
+.field public static final status_bar_toggle_wifi_on:I = 0x60201ec
+
+.field public static final status_bar_toggle_wifi_problem:I = 0x60201ed
 
 .field public static final tab_divider:I = 0x60201b9
 
@@ -929,6 +1037,196 @@
 
 .field public static final textview_panel_separator:I = 0x6020111
 
+.field public static final v5_bottom_bar_bg_light:I = 0x60201fd
+
+.field public static final v5_bottom_bar_edit_icon_light:I = 0x6020251
+
+.field public static final v5_bottom_bar_edit_icon_normal_light:I = 0x6020252
+
+.field public static final v5_bottom_bar_edit_icon_pressed_light:I = 0x6020253
+
+.field public static final v5_bottom_bar_favorite_icon_light:I = 0x602024f
+
+.field public static final v5_bottom_bar_favorite_icon_normal_light:I = 0x6020254
+
+.field public static final v5_bottom_bar_favorite_icon_pressed_light:I = 0x6020255
+
+.field public static final v5_bottom_bar_icon_bg_light:I = 0x602022d
+
+.field public static final v5_bottom_bar_icon_normal_bg_light:I = 0x602022e
+
+.field public static final v5_bottom_bar_icon_pressed_bg_light:I = 0x602022f
+
+.field public static final v5_bottom_bar_more_icon_light:I = 0x6020230
+
+.field public static final v5_bottom_bar_more_icon_normal_light:I = 0x6020231
+
+.field public static final v5_bottom_bar_more_icon_pressed_light:I = 0x6020232
+
+.field public static final v5_bottom_bar_more_icon_selected_light:I = 0x6020233
+
+.field public static final v5_bottom_bar_placeholder:I = 0x60201fe
+
+.field public static final v5_bottom_bar_top_line_light:I = 0x60201ff
+
+.field public static final v5_bottom_bar_unfavorite_icon_light:I = 0x6020250
+
+.field public static final v5_bottom_bar_unfavorite_icon_normal_light:I = 0x6020256
+
+.field public static final v5_bottom_bar_unfavorite_icon_pressed_light:I = 0x6020257
+
+.field public static final v5_btn_checkbox_light:I = 0x6020249
+
+.field public static final v5_btn_checkbox_off_disabled_light:I = 0x602023d
+
+.field public static final v5_btn_checkbox_off_normal_light:I = 0x602023e
+
+.field public static final v5_btn_checkbox_on_disabled_light:I = 0x602023f
+
+.field public static final v5_btn_checkbox_on_normal_light:I = 0x6020240
+
+.field public static final v5_edit_mode_bottom_bar_bg_light:I = 0x6020200
+
+.field public static final v5_edit_mode_bottom_bar_list_bg_light:I = 0x6020201
+
+.field public static final v5_edit_mode_bottom_bar_list_item_bg_light:I = 0x602021d
+
+.field public static final v5_edit_mode_bottom_bar_list_item_bg_normal_light:I = 0x6020202
+
+.field public static final v5_edit_mode_bottom_bar_list_item_bg_pressed_light:I = 0x6020203
+
+.field public static final v5_edit_mode_top_bar_bg_light:I = 0x6020204
+
+.field public static final v5_edit_mode_top_bar_button_default_light:I = 0x6020205
+
+.field public static final v5_edit_mode_top_bar_button_light:I = 0x602021e
+
+.field public static final v5_edit_mode_top_bar_button_main_light:I = 0x602021f
+
+.field public static final v5_edit_mode_top_bar_button_normal_light:I = 0x6020206
+
+.field public static final v5_edit_mode_top_bar_button_pressed_light:I = 0x6020207
+
+.field public static final v5_edit_text_bg_light:I = 0x6020208
+
+.field public static final v5_edit_text_search_bg_light:I = 0x6020209
+
+.field public static final v5_edit_text_search_clear_btn_light:I = 0x6020259
+
+.field public static final v5_edit_text_search_clear_btn_on_light:I = 0x6020258
+
+.field public static final v5_group_first_item_bg_light:I = 0x602025a
+
+.field public static final v5_group_item_bg_light:I = 0x602025e
+
+.field public static final v5_group_last_item_bg_light:I = 0x602025b
+
+.field public static final v5_group_middle_item_bg_light:I = 0x602025c
+
+.field public static final v5_group_single_item_bg_light:I = 0x602025d
+
+.field public static final v5_list_view_first_item_bg_normal_light:I = 0x602020a
+
+.field public static final v5_list_view_first_item_bg_pressed_light:I = 0x602020b
+
+.field public static final v5_list_view_first_item_bg_selected_light:I = 0x602020c
+
+.field public static final v5_list_view_item_bg_light:I = 0x6020220
+
+.field public static final v5_list_view_last_item_bg_normal_light:I = 0x602020d
+
+.field public static final v5_list_view_last_item_bg_pressed_light:I = 0x602020e
+
+.field public static final v5_list_view_last_item_bg_selected_light:I = 0x602020f
+
+.field public static final v5_list_view_middle_item_bg_normal_light:I = 0x6020210
+
+.field public static final v5_list_view_middle_item_bg_pressed_light:I = 0x6020211
+
+.field public static final v5_list_view_middle_item_bg_selected_light:I = 0x6020212
+
+.field public static final v5_list_view_single_item_bg_normal_light:I = 0x6020213
+
+.field public static final v5_list_view_single_item_bg_pressed_light:I = 0x6020214
+
+.field public static final v5_list_view_single_item_bg_selected_light:I = 0x6020215
+
+.field public static final v5_preference_first_item_bg_normal:I = 0x6020241
+
+.field public static final v5_preference_first_item_bg_pressed:I = 0x6020242
+
+.field public static final v5_preference_item_bg:I = 0x602024a
+
+.field public static final v5_preference_last_item_bg_normal:I = 0x6020243
+
+.field public static final v5_preference_last_item_bg_pressed:I = 0x6020244
+
+.field public static final v5_preference_middle_item_bg_normal:I = 0x6020245
+
+.field public static final v5_preference_middle_item_bg_pressed:I = 0x6020246
+
+.field public static final v5_preference_single_item_bg_normal:I = 0x6020247
+
+.field public static final v5_preference_single_item_bg_pressed:I = 0x6020248
+
+.field public static final v5_secondary_tab_bg_left_normal_light:I = 0x6020237
+
+.field public static final v5_secondary_tab_bg_left_pressed_light:I = 0x6020238
+
+.field public static final v5_secondary_tab_bg_light:I = 0x6020236
+
+.field public static final v5_secondary_tab_bg_middle_normal_light:I = 0x6020239
+
+.field public static final v5_secondary_tab_bg_middle_pressed_light:I = 0x602023a
+
+.field public static final v5_secondary_tab_bg_right_normal_light:I = 0x602023b
+
+.field public static final v5_secondary_tab_bg_right_pressed_light:I = 0x602023c
+
+.field public static final v5_secondary_tab_indicator_bg_light:I = 0x6020234
+
+.field public static final v5_secondary_tab_indicator_shadow_light:I = 0x6020235
+
+.field public static final v5_tab_bg_left_normal_light:I = 0x6020223
+
+.field public static final v5_tab_bg_left_pressed_light:I = 0x6020224
+
+.field public static final v5_tab_bg_light:I = 0x6020222
+
+.field public static final v5_tab_bg_middle_normal_light:I = 0x6020225
+
+.field public static final v5_tab_bg_middle_pressed_light:I = 0x6020226
+
+.field public static final v5_tab_bg_right_normal_light:I = 0x6020227
+
+.field public static final v5_tab_bg_right_pressed_light:I = 0x6020228
+
+.field public static final v5_tab_indicator_arrow_light:I = 0x6020229
+
+.field public static final v5_tab_indicator_bg_light:I = 0x6020216
+
+.field public static final v5_tab_indicator_bg_no_title_light:I = 0x6020217
+
+.field public static final v5_tab_indicator_placeholder:I = 0x6020218
+
+.field public static final v5_tab_indicator_shadow_light:I = 0x6020219
+
+.field public static final v5_title_bar_back_button_large_light:I = 0x602024d
+
+.field public static final v5_title_bar_back_button_large_normal_light:I = 0x602024b
+
+.field public static final v5_title_bar_back_button_large_pressed_light:I = 0x602024c
+
+.field public static final v5_title_bar_back_button_light:I = 0x6020221
+
+.field public static final v5_title_bar_back_button_normal_light:I = 0x602021a
+
+.field public static final v5_title_bar_back_button_pressed_light:I = 0x602021b
+
+.field public static final v5_title_bar_bg_light:I = 0x602021c
+
+.field public static final v5_top_placeholder_mainpage:I = 0x602024e
+
 .field public static final word_photo_bg:I = 0x60201c7
 
 
@@ -937,7 +1235,7 @@
     .registers 1
 
     .prologue
-    .line 540
+    .line 938
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

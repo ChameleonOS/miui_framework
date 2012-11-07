@@ -3514,37 +3514,37 @@ _L2:
     }
 
     Resources getTopLevelResources(String s, CompatibilityInfo compatibilityinfo) {
-        Resources resources;
+        Object obj;
         ResourcesKey resourceskey;
-        resources = null;
+        obj = null;
         resourceskey = new ResourcesKey(s, compatibilityinfo.applicationScale);
         HashMap hashmap = mPackages;
         hashmap;
         JVM INSTR monitorenter ;
-        Resources resources1;
+        Resources resources;
         WeakReference weakreference = (WeakReference)mActiveResources.get(resourceskey);
         if(weakreference == null)
-            break MISSING_BLOCK_LABEL_226;
-        resources1 = (Resources)weakreference.get();
+            break MISSING_BLOCK_LABEL_230;
+        resources = (Resources)weakreference.get();
 _L7:
-        if(resources1 == null || !resources1.getAssets().isUpToDate()) goto _L2; else goto _L1
+        if(resources == null || !resources.getAssets().isUpToDate()) goto _L2; else goto _L1
 _L1:
-        resources = resources1;
+        obj = resources;
           goto _L3
 _L2:
         AssetManager assetmanager = new AssetManager();
         if(assetmanager.addAssetPath(s) == 0) goto _L3; else goto _L4
 _L4:
-        Resources resources2 = MiuiClassFactory.newResources(assetmanager, getDisplayMetricsLocked(null, false), getConfiguration(), compatibilityinfo);
+        MiuiResources miuiresources = new MiuiResources(assetmanager, getDisplayMetricsLocked(null, false), getConfiguration(), compatibilityinfo);
         HashMap hashmap1 = mPackages;
         hashmap1;
         JVM INSTR monitorenter ;
         WeakReference weakreference1 = (WeakReference)mActiveResources.get(resourceskey);
         if(weakreference1 != null)
-            resources = (Resources)weakreference1.get();
-        if(resources == null || !resources.getAssets().isUpToDate()) goto _L6; else goto _L5
+            obj = (Resources)weakreference1.get();
+        if(obj == null || !((Resources) (obj)).getAssets().isUpToDate()) goto _L6; else goto _L5
 _L5:
-        resources2.getAssets().close();
+        miuiresources.getAssets().close();
           goto _L3
         Exception exception1;
         exception1;
@@ -3555,14 +3555,18 @@ _L5:
         JVM INSTR monitorexit ;
         throw exception;
 _L6:
-        mActiveResources.put(resourceskey, new WeakReference(resources2));
+        mActiveResources.put(resourceskey, new WeakReference(miuiresources));
         hashmap1;
         JVM INSTR monitorexit ;
-        resources = resources2;
+        obj = miuiresources;
 _L3:
-        return resources;
-        resources1 = null;
+        return ((Resources) (obj));
+        resources = null;
           goto _L7
+    }
+
+    Resources getTopLevelResources(String s, String s1, LoadedApk loadedapk) {
+        return getTopLevelResources(s, s1, loadedapk.mCompatibilityInfo.get());
     }
 
     Resources getTopLevelResources(String s, String s1, CompatibilityInfo compatibilityinfo) {
@@ -4037,8 +4041,3 @@ _L5:
         hashmap;
         JVM INSTR monitorenter ;
         ArrayList arraylist = (ArrayList)mOnPauseListeners.get(activity);
-        if(arraylist == null) {
-            arraylist = new ArrayList();
-            mOnPauseListeners.put(activity, arraylist);
-        }
-      

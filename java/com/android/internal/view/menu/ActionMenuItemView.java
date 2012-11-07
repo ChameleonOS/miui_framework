@@ -97,6 +97,24 @@ public class ActionMenuItemView extends TextView
         setEnabled(menuitemimpl.isEnabled());
     }
 
+    boolean miuiOnMeasure(int i, int j) {
+        if(mSavedPaddingLeft >= 0)
+            super.setPadding(mSavedPaddingLeft, getPaddingTop(), mSavedPaddingRight, getPaddingBottom());
+        super.onMeasure(0, j);
+        if(android.view.View.MeasureSpec.getMode(i) != 0) {
+            int k = getMeasuredWidth();
+            super.onMeasure(i, j);
+            if(!hasText() && mIcon != null) {
+                super.setPadding((getMeasuredWidth() - mIcon.getIntrinsicWidth()) / 2, getPaddingTop(), getPaddingRight(), getPaddingBottom());
+            } else {
+                int l = (getMeasuredWidth() - k) / 2;
+                super.setPadding(l + super.mPaddingLeft, super.mPaddingTop, l + super.mPaddingRight, super.mPaddingBottom);
+                super.onMeasure(i, j);
+            }
+        }
+        return true;
+    }
+
     public boolean needsDividerAfter() {
         return hasText();
     }
@@ -139,20 +157,28 @@ public class ActionMenuItemView extends TextView
     }
 
     protected void onMeasure(int i, int j) {
-        if(mSavedPaddingLeft >= 0)
-            super.setPadding(mSavedPaddingLeft, getPaddingTop(), mSavedPaddingRight, getPaddingBottom());
-        super.onMeasure(0, j);
-        if(android.view.View.MeasureSpec.getMode(i) != 0) {
-            int k = getMeasuredWidth();
-            super.onMeasure(i, j);
-            if(!hasText() && mIcon != null) {
-                super.setPadding((getMeasuredWidth() - mIcon.getIntrinsicWidth()) / 2, getPaddingTop(), getPaddingRight(), getPaddingBottom());
-            } else {
-                int l = (getMeasuredWidth() - k) / 2;
-                super.setPadding(l + super.mPaddingLeft, super.mPaddingTop, l + super.mPaddingRight, super.mPaddingBottom);
-                super.onMeasure(i, j);
-            }
-        }
+        if(!miuiOnMeasure(i, j)) goto _L2; else goto _L1
+_L1:
+        return;
+_L2:
+        boolean flag = hasText();
+        if(flag && mSavedPaddingLeft >= 0)
+            super.setPadding(mSavedPaddingLeft, getPaddingTop(), getPaddingRight(), getPaddingBottom());
+        super.onMeasure(i, j);
+        int k = android.view.View.MeasureSpec.getMode(i);
+        int l = android.view.View.MeasureSpec.getSize(i);
+        int i1 = getMeasuredWidth();
+        int j1;
+        if(k == 0x80000000)
+            j1 = Math.min(l, mMinWidth);
+        else
+            j1 = mMinWidth;
+        if(k != 0x40000000 && mMinWidth > 0 && i1 < j1)
+            super.onMeasure(android.view.View.MeasureSpec.makeMeasureSpec(j1, 0x40000000), j);
+        if(!flag && mIcon != null)
+            super.setPadding((getMeasuredWidth() - mIcon.getIntrinsicWidth()) / 2, getPaddingTop(), getPaddingRight(), getPaddingBottom());
+        if(true) goto _L1; else goto _L3
+_L3:
     }
 
     public void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityevent) {
@@ -217,6 +243,6 @@ public class ActionMenuItemView extends TextView
     private MenuBuilder.ItemInvoker mItemInvoker;
     private int mMinWidth;
     private int mSavedPaddingLeft;
-    private int mSavedPaddingRight;
+    int mSavedPaddingRight;
     private CharSequence mTitle;
 }

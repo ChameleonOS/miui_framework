@@ -12,12 +12,11 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.*;
 import android.util.Log;
-import android.view.CompatibilityInfoHolder;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
 // Referenced classes of package android.app:
-//            ActivityThread, ContextImpl, LoadedApk
+//            ActivityThread, ContextImpl
 
 final class ApplicationPackageManager extends PackageManager {
     static final class ResourceName {
@@ -795,7 +794,7 @@ _L1:
                 s1 = applicationinfo.sourceDir;
             else
                 s1 = applicationinfo.publicSourceDir;
-            resources = activitythread.getTopLevelResources(s, s1, mContext.mPackageInfo.mCompatibilityInfo.get());
+            resources = activitythread.getTopLevelResources(s, s1, mContext.mPackageInfo);
             if(resources == null)
                 throw new android.content.pm.PackageManager.NameNotFoundException((new StringBuilder()).append("Unable to open ").append(applicationinfo.publicSourceDir).toString());
         }

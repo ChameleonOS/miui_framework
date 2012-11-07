@@ -53,7 +53,7 @@ public class ResolverActivity extends AlertActivity
                 textview1.setVisibility(8);
             }
             if(displayresolveinfo.displayIcon == null)
-                displayresolveinfo.displayIcon = displayresolveinfo.ri.loadIcon(mPm);
+                displayresolveinfo.displayIcon = Injector.loadIconForResolveInfo(ResolverActivity.this, displayresolveinfo.ri);
             imageview.setImageDrawable(displayresolveinfo.displayIcon);
         }
 
@@ -305,6 +305,16 @@ _L4:
             displayLabel = charsequence;
             extendedInfo = charsequence1;
             origIntent = intent;
+        }
+    }
+
+    static class Injector {
+
+        static Drawable loadIconForResolveInfo(ResolverActivity resolveractivity, ResolveInfo resolveinfo) {
+            return resolveinfo.loadIcon(resolveractivity.getPackageManager());
+        }
+
+        Injector() {
         }
     }
 

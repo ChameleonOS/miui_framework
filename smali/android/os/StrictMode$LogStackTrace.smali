@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 1647
+    .line 1652
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1647
+    .line 1652
     invoke-direct {p0}, Landroid/os/StrictMode$LogStackTrace;-><init>()V
 
     return-void

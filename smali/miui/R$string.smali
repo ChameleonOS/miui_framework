@@ -35,9 +35,9 @@
 
 .field public static final android_common_name_suffixes:I = 0x60c019d
 
-.field public static final android_config_defaultDreamComponent:I = 0x60c0201
+.field public static final android_config_defaultDreamComponent:I = 0x60c023f
 
-.field public static final android_date_time_set:I = 0x60c0202
+.field public static final android_date_time_set:I = 0x60c0240
 
 .field public static final android_dial_number_using:I = 0x60c01a0
 
@@ -149,11 +149,11 @@
 
 .field public static final android_twenty_four_hour_time_format:I = 0x60c0194
 
-.field public static final android_usb_cd_installer_notification_title:I = 0x60c0207
+.field public static final android_usb_cd_installer_notification_title:I = 0x60c0245
 
-.field public static final android_usb_mtp_notification_title:I = 0x60c0205
+.field public static final android_usb_mtp_notification_title:I = 0x60c0243
 
-.field public static final android_usb_ptp_notification_title:I = 0x60c0206
+.field public static final android_usb_ptp_notification_title:I = 0x60c0244
 
 .field public static final android_volume_alarm:I = 0x60c01a6
 
@@ -675,6 +675,8 @@
 
 .field public static final description_size:I = 0x60c000f
 
+.field public static final description_summary:I = 0x60c0238
+
 .field public static final description_unknown:I = 0x60c000b
 
 .field public static final description_uploadtime:I = 0x60c0010
@@ -742,6 +744,8 @@
 .field public static final heavy_snow:I = 0x60c0082
 
 .field public static final hoar_frost_falls:I = 0x60c007f
+
+.field public static final incoming_call_vibrate_hint:I = 0x60c0228
 
 .field public static final insects_awaken:I = 0x60c0070
 
@@ -819,6 +823,8 @@
 
 .field public static final memory_clear_result:I = 0x60c01fc
 
+.field public static final miro_menu_overflow:I = 0x60c0246
+
 .field public static final miui_copyright_title:I = 0x60c0030
 
 .field public static final miui_privacy_policy_title:I = 0x60c0032
@@ -826,6 +832,8 @@
 .field public static final miui_user_agreement_title:I = 0x60c0031
 
 .field public static final miui_user_manual_title:I = 0x60c0200
+
+.field public static final mms_vibrate_hint:I = 0x60c022a
 
 .field public static final month_of_april:I = 0x60c01c1
 
@@ -855,13 +863,19 @@
 
 .field public static final national_day:I = 0x60c006a
 
-.field public static final national_father_day:I = 0x60c0204
+.field public static final national_father_day:I = 0x60c0242
 
 .field public static final never:I = 0x60c01b0
 
 .field public static final new_years_day:I = 0x60c005f
 
 .field public static final no_sim:I = 0x60c01dc
+
+.field public static final no_vibrate_hint:I = 0x60c0218
+
+.field public static final not_all_vibrate_hint:I = 0x60c022b
+
+.field public static final notification_vibrate_hint:I = 0x60c0229
 
 .field public static final online_hottest:I = 0x60c001c
 
@@ -879,7 +893,7 @@
 
 .field public static final payphone:I = 0x60c003e
 
-.field public static final peace_day:I = 0x60c0203
+.field public static final peace_day:I = 0x60c0241
 
 .field public static final perm_activate_dspt:I = 0x60c01d0
 
@@ -890,6 +904,10 @@
 .field public static final perm_get_user_info_dspt:I = 0x60c01d3
 
 .field public static final perm_get_user_info_lab:I = 0x60c01d2
+
+.field public static final perm_payment_dspt:I = 0x60c022f
+
+.field public static final perm_payment_lab:I = 0x60c022e
 
 .field public static final perm_send_push_dspt:I = 0x60c01ff
 
@@ -917,6 +935,8 @@
 
 .field public static final resource_apply:I = 0x60c0019
 
+.field public static final resource_buy:I = 0x60c0230
+
 .field public static final resource_can_not_selected:I = 0x60c01b9
 
 .field public static final resource_default:I = 0x60c0007
@@ -935,6 +955,16 @@
 
 .field public static final resource_downloading:I = 0x60c0018
 
+.field public static final resource_get_auth:I = 0x60c0234
+
+.field public static final resource_get_auth_checking:I = 0x60c0235
+
+.field public static final resource_get_auth_failed:I = 0x60c0237
+
+.field public static final resource_get_auth_missing:I = 0x60c024d
+
+.field public static final resource_get_auth_retrieving:I = 0x60c0236
+
 .field public static final resource_local:I = 0x60c0014
 
 .field public static final resource_mute:I = 0x60c0006
@@ -942,6 +972,12 @@
 .field public static final resource_notification_default:I = 0x60c0009
 
 .field public static final resource_online:I = 0x60c0015
+
+.field public static final resource_price_format:I = 0x60c0239
+
+.field public static final resource_price_free:I = 0x60c0232
+
+.field public static final resource_price_unit:I = 0x60c0233
 
 .field public static final resource_ringtone_default:I = 0x60c0008
 
@@ -961,15 +997,27 @@
 
 .field public static final resourcebrowser_lable:I = 0x60c0002
 
+.field public static final resources_importing:I = 0x60c0231
+
 .field public static final reverse_all:I = 0x60c0178
 
 .field public static final safetylegal_activity_unreachable:I = 0x60c002f
+
+.field public static final screen_button_disabled_message:I = 0x60c0216
+
+.field public static final screen_button_enabled_message:I = 0x60c0217
+
+.field public static final screen_button_notification_text:I = 0x60c022d
+
+.field public static final screen_button_notification_title:I = 0x60c022c
 
 .field public static final screen_on_proximity_sensor_hint:I = 0x60c01f2
 
 .field public static final screen_on_proximity_sensor_summary:I = 0x60c01f3
 
 .field public static final screen_on_proximity_sensor_title:I = 0x60c01f4
+
+.field public static final screen_rotation_freeze_message:I = 0x60c0215
 
 .field public static final sd_not_available:I = 0x60c0038
 
@@ -991,6 +1039,8 @@
 
 .field public static final send_sms_for_sync_title:I = 0x60c01e8
 
+.field public static final settings_separator:I = 0x60c0227
+
 .field public static final sim_account_name:I = 0x60c01a7
 
 .field public static final sim_changed_reactivate_notice:I = 0x60c01ed
@@ -1002,6 +1052,76 @@
 .field public static final solar_calendar:I = 0x60c01b5
 
 .field public static final spring_begins:I = 0x60c006e
+
+.field public static final status_bar_toggle_ac:I = 0x60c0201
+
+.field public static final status_bar_toggle_advanced_sync_action:I = 0x60c021a
+
+.field public static final status_bar_toggle_bluetooth:I = 0x60c0202
+
+.field public static final status_bar_toggle_bluetooth_action:I = 0x60c021d
+
+.field public static final status_bar_toggle_brightness:I = 0x60c0203
+
+.field public static final status_bar_toggle_brightness_action:I = 0x60c021e
+
+.field public static final status_bar_toggle_data:I = 0x60c0204
+
+.field public static final status_bar_toggle_data_action:I = 0x60c021b
+
+.field public static final status_bar_toggle_divider:I = 0x60c0205
+
+.field public static final status_bar_toggle_divider_action:I = 0x60c021c
+
+.field public static final status_bar_toggle_flight_mode:I = 0x60c0206
+
+.field public static final status_bar_toggle_flight_mode_action:I = 0x60c021f
+
+.field public static final status_bar_toggle_gps:I = 0x60c0207
+
+.field public static final status_bar_toggle_gps_action:I = 0x60c0220
+
+.field public static final status_bar_toggle_lock:I = 0x60c0208
+
+.field public static final status_bar_toggle_mute:I = 0x60c0209
+
+.field public static final status_bar_toggle_mute_action:I = 0x60c0221
+
+.field public static final status_bar_toggle_network_type:I = 0x60c020a
+
+.field public static final status_bar_toggle_network_type_action:I = 0x60c0222
+
+.field public static final status_bar_toggle_power_mode:I = 0x60c0248
+
+.field public static final status_bar_toggle_power_mode_action:I = 0x60c0247
+
+.field public static final status_bar_toggle_privacy_mode:I = 0x60c020b
+
+.field public static final status_bar_toggle_reboot:I = 0x60c020c
+
+.field public static final status_bar_toggle_rotate:I = 0x60c020d
+
+.field public static final status_bar_toggle_rotate_action:I = 0x60c0223
+
+.field public static final status_bar_toggle_screen_button:I = 0x60c020e
+
+.field public static final status_bar_toggle_screenshot:I = 0x60c020f
+
+.field public static final status_bar_toggle_shutdown:I = 0x60c0210
+
+.field public static final status_bar_toggle_sync:I = 0x60c0211
+
+.field public static final status_bar_toggle_sync_action:I = 0x60c0224
+
+.field public static final status_bar_toggle_torch:I = 0x60c0212
+
+.field public static final status_bar_toggle_vibrate:I = 0x60c0213
+
+.field public static final status_bar_toggle_vibrate_action:I = 0x60c0225
+
+.field public static final status_bar_toggle_wifi:I = 0x60c0214
+
+.field public static final status_bar_toggle_wifi_action:I = 0x60c0226
 
 .field public static final stopping_the_heat:I = 0x60c007b
 
@@ -1028,6 +1148,26 @@
 .field public static final the_rains:I = 0x60c006f
 
 .field public static final the_spring_festival:I = 0x60c0058
+
+.field public static final theme_update_complete_content_fail:I = 0x60c024c
+
+.field public static final theme_update_complete_content_success:I = 0x60c024b
+
+.field public static final theme_update_complete_title:I = 0x60c024a
+
+.field public static final theme_update_request_content:I = 0x60c023b
+
+.field public static final theme_update_request_continue_content:I = 0x60c023c
+
+.field public static final theme_update_request_title:I = 0x60c023a
+
+.field public static final theme_updating_content:I = 0x60c0249
+
+.field public static final theme_updating_precontent:I = 0x60c023e
+
+.field public static final theme_updating_title:I = 0x60c023d
+
+.field public static final to_vibrate_settings:I = 0x60c0219
 
 .field public static final unknown:I = 0x60c003c
 
@@ -1061,7 +1201,7 @@
     .registers 1
 
     .prologue
-    .line 1512
+    .line 2167
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

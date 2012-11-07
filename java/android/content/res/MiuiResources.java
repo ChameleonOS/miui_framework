@@ -5,15 +5,14 @@
 package android.content.res;
 
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.NinePatchDrawable;
 import android.text.TextUtils;
 import android.util.*;
 import java.io.InputStream;
 import miui.content.res.*;
 
 // Referenced classes of package android.content.res:
-//            Resources, AssetManager, TypedArray, Configuration, 
-//            CompatibilityInfo
+//            Resources, AssetManager, TypedArray, SimulateNinePngUtil, 
+//            Configuration, CompatibilityInfo
 
 public final class MiuiResources extends Resources {
     public final class MIUITheme extends Resources.Theme {
@@ -183,13 +182,12 @@ _L3:
         options1 = new android.graphics.BitmapFactory.Options();
         options1.inDensity = themefileinfo.mDensity;
         options = options1;
-        boolean flag;
-        drawable = Drawable.createFromResourceStream(this, typedvalue, themefileinfo.mInput, s, options);
-        if(drawable == null || !s.endsWith(".9.png"))
-            break MISSING_BLOCK_LABEL_135;
-        flag = drawable instanceof NinePatchDrawable;
-        if(!flag)
-            drawable = null;
+        Drawable drawable1;
+        InputStream inputstream = themefileinfo.mInput;
+        if(s.endsWith(".9.png"))
+            inputstream = SimulateNinePngUtil.convertIntoNinePngStream(inputstream);
+        drawable1 = Drawable.createFromResourceStream(this, typedvalue, inputstream, s, options);
+        drawable = drawable1;
 _L6:
         try {
             themefileinfo.mInput.close();

@@ -93,7 +93,7 @@
     .end annotation
 
     .prologue
-    .line 79
+    .line 78
     if-eqz p1, :cond_11
 
     instance-of v1, p1, Lmiui/widget/SlidingButton;
@@ -102,10 +102,10 @@
 
     move-object v0, p1
 
-    .line 80
+    .line 79
     check-cast v0, Lmiui/widget/SlidingButton;
 
-    .line 81
+    .line 80
     .local v0, slidingButton:Lmiui/widget/SlidingButton;
     new-instance v1, Landroid/preference/CheckBoxPreference$1;
 
@@ -113,7 +113,7 @@
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setOnCheckedChangedListener(Lmiui/widget/SlidingButton$OnCheckedChangedListener;)V
 
-    .line 93
+    .line 92
     .end local v0           #slidingButton:Lmiui/widget/SlidingButton;
     :cond_11
     return-void
@@ -159,13 +159,13 @@
     .line 68
     invoke-virtual {p0, v0}, Landroid/preference/CheckBoxPreference;->sendAccessibilityEvent(Landroid/view/View;)V
 
-    .line 72
+    .line 71
     :cond_1b
     invoke-direct {p0, v0}, Landroid/preference/CheckBoxPreference;->setSlidingButtonListener(Landroid/view/View;)V
 
-    .line 74
+    .line 73
     invoke-virtual {p0, p1}, Landroid/preference/CheckBoxPreference;->syncSummaryView(Landroid/view/View;)V
 
-    .line 75
+    .line 74
     return-void
 .end method

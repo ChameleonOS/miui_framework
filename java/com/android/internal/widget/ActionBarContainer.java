@@ -16,6 +16,22 @@ import android.widget.FrameLayout;
 //            ActionBarView, ScrollingTabContainerView
 
 public class ActionBarContainer extends FrameLayout {
+    static class Injector {
+
+        static void setBounds(ActionBarContainer actionbarcontainer, int i, int j, int k, int l) {
+            Drawable drawable = actionbarcontainer.getActionBarBackground();
+            if(drawable != null && actionbarcontainer.getActionBarView().getHeight() == 0) {
+                drawable.setBounds(i, j, k, l);
+                actionbarcontainer.setIsStacked(false);
+            } else {
+                actionbarcontainer.getStackedBackground().setBounds(i, j, k, l);
+            }
+        }
+
+        Injector() {
+        }
+    }
+
 
     public ActionBarContainer(Context context) {
         this(context, null);
@@ -46,6 +62,18 @@ _L2:
             flag = false;
         if(true) goto _L4; else goto _L3
 _L3:
+    }
+
+    Drawable getActionBarBackground() {
+        return mBackground;
+    }
+
+    ActionBarView getActionBarView() {
+        return mActionBarView;
+    }
+
+    Drawable getStackedBackground() {
+        return mStackedBackground;
     }
 
     public View getTabContainer() {
@@ -139,12 +167,7 @@ _L3:
                 flag3 = false;
             mIsStacked = flag3;
             if(flag3) {
-                if(mBackground != null && mActionBarView.getHeight() == 0) {
-                    mBackground.setBounds(mTabContainer.getLeft(), mTabContainer.getTop(), mTabContainer.getRight(), mTabContainer.getBottom());
-                    mIsStacked = false;
-                } else {
-                    mStackedBackground.setBounds(mTabContainer.getLeft(), mTabContainer.getTop(), mTabContainer.getRight(), mTabContainer.getBottom());
-                }
+                Injector.setBounds(this, mTabContainer.getLeft(), mTabContainer.getTop(), mTabContainer.getRight(), mTabContainer.getBottom());
                 flag2 = true;
             }
         }
@@ -178,6 +201,10 @@ _L3:
     public boolean onTouchEvent(MotionEvent motionevent) {
         super.onTouchEvent(motionevent);
         return true;
+    }
+
+    void setIsStacked(boolean flag) {
+        mIsStacked = flag;
     }
 
     public void setPrimaryBackground(Drawable drawable) {

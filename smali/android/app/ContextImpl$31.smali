@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 451
+    .line 467
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .parameter "ctx"
 
     .prologue
-    .line 453
+    .line 469
     new-instance v0, Landroid/app/UiModeManager;
 
     invoke-direct {v0}, Landroid/app/UiModeManager;-><init>()V

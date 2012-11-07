@@ -488,14 +488,15 @@ label0:
         super.mPdu = abyte0;
         pduparser = new PduParser(abyte0);
         super.scAddress = pduparser.getSCAddress();
+        if(super.scAddress == null);
         i = pduparser.getByte();
         mti = i & 3;
         mti;
-        JVM INSTR tableswitch 0 3: default 68
-    //                   0 79
-    //                   1 86
-    //                   2 95
-    //                   3 79;
+        JVM INSTR tableswitch 0 3: default 76
+    //                   0 87
+    //                   1 94
+    //                   2 103
+    //                   3 87;
            goto _L1 _L2 _L3 _L4 _L2
 _L1:
         throw new RuntimeException("Unsupported message type");

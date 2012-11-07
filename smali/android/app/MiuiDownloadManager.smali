@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/MiuiDownloadManager$CursorTranslator;,
         Landroid/app/MiuiDownloadManager$Query;,
         Landroid/app/MiuiDownloadManager$Request;
     }
@@ -202,7 +201,7 @@
     .parameter "context"
 
     .prologue
-    .line 426
+    .line 406
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -220,15 +219,15 @@
 
     move-result-object v1
 
-    .line 429
+    .line 409
     :goto_e
     return-object v1
 
-    .line 428
+    .line 408
     :catch_f
     move-exception v0
 
-    .line 429
+    .line 409
     .local v0, e:Landroid/provider/Settings$SettingNotFoundException;
     const/4 v1, 0x0
 
@@ -390,17 +389,17 @@
     .line 390
     move-object v0, p0
 
-    check-cast v0, Landroid/app/MiuiDownloadManager$CursorTranslator;
+    check-cast v0, Landroid/app/DownloadManager$CursorTranslator;
 
     .line 391
-    .local v0, cusorTranslator:Landroid/app/MiuiDownloadManager$CursorTranslator;
+    .local v0, cusorTranslator:Landroid/app/DownloadManager$CursorTranslator;
     const-string/jumbo v1, "status"
 
-    invoke-virtual {v0, v1}, Landroid/app/MiuiDownloadManager$CursorTranslator;->getColumnIndex(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Landroid/app/DownloadManager$CursorTranslator;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/app/MiuiDownloadManager$CursorTranslator;->getInt(I)I
+    invoke-virtual {v0, v1}, Landroid/app/DownloadManager$CursorTranslator;->getInt(I)I
 
     move-result v1
 
@@ -431,17 +430,17 @@
     move-object v0, p0
 
     .line 378
-    check-cast v0, Landroid/app/MiuiDownloadManager$CursorTranslator;
+    check-cast v0, Landroid/app/DownloadManager$CursorTranslator;
 
     .line 379
-    .local v0, cusorTranslator:Landroid/app/MiuiDownloadManager$CursorTranslator;
+    .local v0, cusorTranslator:Landroid/app/DownloadManager$CursorTranslator;
     const-string/jumbo v3, "status"
 
-    invoke-virtual {v0, v3}, Landroid/app/MiuiDownloadManager$CursorTranslator;->getColumnIndex(Ljava/lang/String;)I
+    invoke-virtual {v0, v3}, Landroid/app/DownloadManager$CursorTranslator;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v3
 
-    invoke-virtual {v0, v3}, Landroid/app/MiuiDownloadManager$CursorTranslator;->getInt(I)I
+    invoke-virtual {v0, v3}, Landroid/app/DownloadManager$CursorTranslator;->getInt(I)I
 
     move-result v2
 
@@ -512,7 +511,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 434
+    .line 414
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -542,7 +541,7 @@
     .parameter "size"
 
     .prologue
-    .line 447
+    .line 427
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -562,7 +561,7 @@
 
     .prologue
     .line 401
-    invoke-static {p0}, Landroid/app/MiuiDownloadManager$CursorTranslator;->translateStatus(I)I
+    invoke-static {p0}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
 
     move-result v0
 
@@ -675,7 +674,7 @@
 
     new-array v4, v8, [I
 
-    fill-array-data v4, :array_76
+    fill-array-data v4, :array_78
 
     invoke-static {v4}, Landroid/app/MiuiDownloadManager;->getWhereArgsForStatuses([I)[Ljava/lang/String;
 
@@ -693,7 +692,9 @@
     .local v1, whereArgs:[Ljava/lang/String;
     iget-object v3, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
-    iget-object v4, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
+    invoke-virtual {p0}, Landroid/app/MiuiDownloadManager;->getBaseUri()Landroid/net/Uri;
+
+    move-result-object v4
 
     invoke-virtual {v3, v4, v0, v2, v1}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
@@ -703,7 +704,7 @@
     .line 326
     nop
 
-    :array_76
+    :array_78
     .array-data 0x4
         0x1t 0x0t 0x0t 0x0t
         0x2t 0x0t 0x0t 0x0t
@@ -720,7 +721,9 @@
 
     sget-object v2, Landroid/app/MiuiDownloadManager;->MIUI_UNDERLYING_COLUMNS:[Ljava/lang/String;
 
-    iget-object v3, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
+    invoke-virtual {p0}, Landroid/app/MiuiDownloadManager;->getBaseUri()Landroid/net/Uri;
+
+    move-result-object v3
 
     invoke-virtual {p1, v1, v2, v3}, Landroid/app/DownloadManager$Query;->runQuery(Landroid/content/ContentResolver;[Ljava/lang/String;Landroid/net/Uri;)Landroid/database/Cursor;
 
@@ -728,23 +731,25 @@
 
     .line 293
     .local v0, underlyingCursor:Landroid/database/Cursor;
-    if-nez v0, :cond_e
+    if-nez v0, :cond_10
 
     .line 294
     const/4 v1, 0x0
 
     .line 296
-    :goto_d
+    :goto_f
     return-object v1
 
-    :cond_e
-    new-instance v1, Landroid/app/MiuiDownloadManager$CursorTranslator;
+    :cond_10
+    new-instance v1, Landroid/app/DownloadManager$CursorTranslator;
 
-    iget-object v2, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
+    invoke-virtual {p0}, Landroid/app/MiuiDownloadManager;->getBaseUri()Landroid/net/Uri;
 
-    invoke-direct {v1, v0, v2}, Landroid/app/MiuiDownloadManager$CursorTranslator;-><init>(Landroid/database/Cursor;Landroid/net/Uri;)V
+    move-result-object v2
 
-    goto :goto_d
+    invoke-direct {v1, v0, v2}, Landroid/app/DownloadManager$CursorTranslator;-><init>(Landroid/database/Cursor;Landroid/net/Uri;)V
+
+    goto :goto_f
 .end method
 
 .method public varargs removeRecordOnly([J)I
@@ -773,7 +778,9 @@
     :cond_d
     iget-object v0, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
+    invoke-virtual {p0}, Landroid/app/MiuiDownloadManager;->getBaseUri()Landroid/net/Uri;
+
+    move-result-object v1
 
     invoke-static {p1}, Landroid/app/MiuiDownloadManager;->getWhereClauseForIds([J)Ljava/lang/String;
 
@@ -887,7 +894,9 @@
     .local v1, whereArgs:[Ljava/lang/String;
     iget-object v3, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
-    iget-object v4, p0, Landroid/app/MiuiDownloadManager;->mBaseUri:Landroid/net/Uri;
+    invoke-virtual {p0}, Landroid/app/MiuiDownloadManager;->getBaseUri()Landroid/net/Uri;
+
+    move-result-object v4
 
     invoke-virtual {v3, v4, v0, v2, v1}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 

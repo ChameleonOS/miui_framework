@@ -151,6 +151,23 @@ public class GlowPadView extends View {
         mPointCloud.glowManager.setRadius(mGlowRadius);
     }
 
+    private void announceTargets() {
+        StringBuilder stringbuilder = new StringBuilder();
+        int i = mTargetDrawables.size();
+        for(int j = 0; j < i; j++) {
+            String s = getTargetDescription(j);
+            String s1 = getDirectionDescription(j);
+            if(!TextUtils.isEmpty(s) && !TextUtils.isEmpty(s1)) {
+                Object aobj[] = new Object[1];
+                aobj[0] = s;
+                stringbuilder.append(String.format(s1, aobj));
+            }
+        }
+
+        if(stringbuilder.length() > 0)
+            announceForAccessibility(stringbuilder.toString());
+    }
+
     private void assignDefaultsIfNeeded() {
         if(mOuterRadius == 0.0F)
             mOuterRadius = (float)Math.max(mOuterRing.getWidth(), mOuterRing.getHeight()) / 2.0F;
@@ -196,9 +213,27 @@ _L6:
           goto _L8
     }
 
+    private void deactivateTargets() {
+        int i = mTargetDrawables.size();
+        for(int j = 0; j < i; j++)
+            ((TargetDrawable)mTargetDrawables.get(j)).setState(TargetDrawable.STATE_INACTIVE);
+
+        mActiveTarget = -1;
+    }
+
     private void dispatchOnFinishFinalAnimation() {
         if(mOnTriggerListener != null)
             mOnTriggerListener.onFinishFinalAnimation();
+    }
+
+    private void dispatchTriggerEvent(int i) {
+        vibrate();
+        if(mOnTriggerListener != null)
+            mOnTriggerListener.onTrigger(this, i);
+    }
+
+    private float dist2(float f, float f1) {
+        return f * f + f1 * f1;
     }
 
     private void dump() {
@@ -245,6 +280,23 @@ _L4:
         else
             f = mGlowRadius;
         return square(f);
+    }
+
+    private String getTargetDescription(int i) {
+        if(mTargetDescriptions != null && !mTargetDescriptions.isEmpty()) goto _L2; else goto _L1
+_L1:
+        mTargetDescriptions = loadDescriptions(mTargetDescriptionsResourceId);
+        if(mTargetDrawables.size() == mTargetDescriptions.size()) goto _L2; else goto _L3
+_L3:
+        String s;
+        Log.w("GlowPadView", "The number of target drawables must be equal to the number of target descriptions.");
+        s = null;
+_L5:
+        return s;
+_L2:
+        s = (String)mTargetDescriptions.get(i);
+        if(true) goto _L5; else goto _L4
+_L4:
     }
 
     private void handleCancel(MotionEvent motionevent) {
@@ -399,6 +451,21 @@ _L2:
 _L4:
     }
 
+    private void setGrabbedState(int i) {
+        if(i != mGrabbedState) {
+            if(i != 0)
+                vibrate();
+            mGrabbedState = i;
+            if(mOnTriggerListener != null) {
+                if(i == 0)
+                    mOnTriggerListener.onReleased(this, 1);
+                else
+                    mOnTriggerListener.onGrabbed(this, 1);
+                mOnTriggerListener.onGrabbedStateChange(this, i);
+            }
+        }
+    }
+
     private void showGlow(int i, int j, float f, android.animation.Animator.AnimatorListener animatorlistener) {
         mGlowAnimations.cancel();
         AnimationBundle animationbundle = mGlowAnimations;
@@ -480,6 +547,20 @@ _L4:
         mPointCloud.waveManager.setAlpha(0.0F);
     }
 
+    private boolean trySwitchToFirstTouchState(float f, float f1) {
+        boolean flag = true;
+        float f2 = f - mWaveCenterX;
+        float f3 = f1 - mWaveCenterY;
+        if(mAlwaysTrackFinger || dist2(f2, f3) <= getScaledGlowRadiusSquared()) {
+            switchToState(2, f, f1);
+            updateGlowPosition(f2, f3);
+            mDragging = flag;
+        } else {
+            flag = false;
+        }
+        return flag;
+    }
+
     private void updateGlowPosition(float f, float f1) {
         mPointCloud.glowManager.setX(f);
         mPointCloud.glowManager.setY(f1);
@@ -504,39 +585,33 @@ _L4:
 
     }
 
-    void announceTargets() {
-        StringBuilder stringbuilder = new StringBuilder();
-        int i = mTargetDrawables.size();
-        for(int j = 0; j < i; j++) {
-            String s = getTargetDescription(j);
-            String s1 = getDirectionDescription(j);
-            if(!TextUtils.isEmpty(s) && !TextUtils.isEmpty(s1)) {
-                Object aobj[] = new Object[1];
-                aobj[0] = s;
-                stringbuilder.append(String.format(s1, aobj));
-            }
-        }
-
-        if(stringbuilder.length() > 0)
-            announceForAccessibility(stringbuilder.toString());
+    private void vibrate() {
+        if(mVibrator != null)
+            mVibrator.vibrate(mVibrationDuration);
     }
 
-    void deactivateTargets() {
-        int i = mTargetDrawables.size();
-        for(int j = 0; j < i; j++)
-            ((TargetDrawable)mTargetDrawables.get(j)).setState(TargetDrawable.STATE_INACTIVE);
-
-        mActiveTarget = -1;
+    void callAnnounceTargets() {
+        announceTargets();
     }
 
-    void dispatchTriggerEvent(int i) {
+    void callDeactivateTargets() {
+        deactivateTargets();
+    }
+
+    void callDispatchTriggerEvent(int i) {
+        dispatchTriggerEvent(i);
+    }
+
+    String callGetTargetDescription(int i) {
+        return getTargetDescription(i);
+    }
+
+    void callSetGrabbedState(int i) {
+        setGrabbedState(i);
+    }
+
+    void callVibrate() {
         vibrate();
-        if(mOnTriggerListener != null)
-            mOnTriggerListener.onTrigger(this, i);
-    }
-
-    float dist2(float f, float f1) {
-        return f * f + f1 * f1;
     }
 
     void doFinish() {
@@ -559,8 +634,36 @@ _L4:
         setGrabbedState(0);
     }
 
+    int getActiveTarget() {
+        return mActiveTarget;
+    }
+
     public int getDirectionDescriptionsResourceId() {
         return mDirectionDescriptionsResourceId;
+    }
+
+    boolean getDragging() {
+        return mDragging;
+    }
+
+    TargetDrawable getHandleDrawable() {
+        return mHandleDrawable;
+    }
+
+    float getOuterRadius() {
+        return mOuterRadius;
+    }
+
+    TargetDrawable getOuterRing() {
+        return mOuterRing;
+    }
+
+    android.animation.Animator.AnimatorListener getResetListener() {
+        return mResetListener;
+    }
+
+    android.animation.Animator.AnimatorListener getResetListenerWithPing() {
+        return mResetListenerWithPing;
     }
 
     public int getResourceIdForTarget(int i) {
@@ -573,6 +676,10 @@ _L4:
         return j;
     }
 
+    float getSnapMargin() {
+        return mSnapMargin;
+    }
+
     protected int getSuggestedMinimumHeight() {
         return (int)(Math.max(mOuterRing.getHeight(), 2.0F * mOuterRadius) + (float)mMaxTargetHeight);
     }
@@ -581,25 +688,16 @@ _L4:
         return (int)(Math.max(mOuterRing.getWidth(), 2.0F * mOuterRadius) + (float)mMaxTargetWidth);
     }
 
-    String getTargetDescription(int i) {
-        if(mTargetDescriptions != null && !mTargetDescriptions.isEmpty()) goto _L2; else goto _L1
-_L1:
-        mTargetDescriptions = loadDescriptions(mTargetDescriptionsResourceId);
-        if(mTargetDrawables.size() == mTargetDescriptions.size()) goto _L2; else goto _L3
-_L3:
-        String s;
-        Log.w("GlowPadView", "The number of target drawables must be equal to the number of target descriptions.");
-        s = null;
-_L5:
-        return s;
-_L2:
-        s = (String)mTargetDescriptions.get(i);
-        if(true) goto _L5; else goto _L4
-_L4:
+    AnimationBundle getTargetAnimations() {
+        return mTargetAnimations;
     }
 
     public int getTargetDescriptionsResourceId() {
         return mTargetDescriptionsResourceId;
+    }
+
+    ArrayList getTargetDrawables() {
+        return mTargetDrawables;
     }
 
     public int getTargetPosition(int i) {
@@ -619,6 +717,18 @@ _L2:
 
     public int getTargetResourceId() {
         return mTargetResourceId;
+    }
+
+    android.animation.ValueAnimator.AnimatorUpdateListener getUpdateListener() {
+        return mUpdateListener;
+    }
+
+    float getWaveCenterX() {
+        return mWaveCenterX;
+    }
+
+    float getWaveCenterY() {
+        return mWaveCenterY;
     }
 
     void handleMove(MotionEvent motionevent) {
@@ -965,10 +1075,22 @@ _L3:
         mGlowAnimations.start();
     }
 
+    void setActiveTarget(int i) {
+        mActiveTarget = i;
+    }
+
+    void setAnimatingTargets(boolean flag) {
+        mAnimatingTargets = flag;
+    }
+
     public void setDirectionDescriptionsResourceId(int i) {
         mDirectionDescriptionsResourceId = i;
         if(mDirectionDescriptions != null)
             mDirectionDescriptions.clear();
+    }
+
+    void setDragging(boolean flag) {
+        mDragging = flag;
     }
 
     public void setEnableTarget(int i, boolean flag) {
@@ -988,19 +1110,8 @@ label0:
         } while(true);
     }
 
-    void setGrabbedState(int i) {
-        if(i != mGrabbedState) {
-            if(i != 0)
-                vibrate();
-            mGrabbedState = i;
-            if(mOnTriggerListener != null) {
-                if(i == 0)
-                    mOnTriggerListener.onReleased(this, 1);
-                else
-                    mOnTriggerListener.onGrabbed(this, 1);
-                mOnTriggerListener.onGrabbedStateChange(this, i);
-            }
-        }
+    void setGlowRadius(float f) {
+        mGlowRadius = f;
     }
 
     public void setOnTriggerListener(OnTriggerListener ontriggerlistener) {
@@ -1136,25 +1247,6 @@ _L7:
 _L8:
     }
 
-    boolean trySwitchToFirstTouchState(float f, float f1) {
-        boolean flag = true;
-        float f2 = f - mWaveCenterX;
-        float f3 = f1 - mWaveCenterY;
-        if(mAlwaysTrackFinger || dist2(f2, f3) <= getScaledGlowRadiusSquared()) {
-            switchToState(2, f, f1);
-            updateGlowPosition(f2, f3);
-            mDragging = flag;
-        } else {
-            flag = false;
-        }
-        return flag;
-    }
-
-    void vibrate() {
-        if(mVibrator != null)
-            mVibrator.vibrate(mVibrationDuration);
-    }
-
     private static final boolean DEBUG = false;
     private static final int HIDE_ANIMATION_DELAY = 200;
     private static final int HIDE_ANIMATION_DURATION = 200;
@@ -1179,19 +1271,19 @@ _L8:
     private static final float TARGET_SCALE_COLLAPSED = 0.8F;
     private static final float TARGET_SCALE_EXPANDED = 1F;
     private static final int WAVE_ANIMATION_DURATION = 1350;
-    int mActiveTarget;
+    private int mActiveTarget;
     private boolean mAlwaysTrackFinger;
-    boolean mAnimatingTargets;
+    private boolean mAnimatingTargets;
     private Tweener mBackgroundAnimator;
     private ArrayList mDirectionDescriptions;
     private int mDirectionDescriptionsResourceId;
-    boolean mDragging;
+    private boolean mDragging;
     private int mFeedbackCount;
     private AnimationBundle mGlowAnimations;
-    float mGlowRadius;
+    private float mGlowRadius;
     private int mGrabbedState;
     private int mGravity;
-    TargetDrawable mHandleDrawable;
+    private TargetDrawable mHandleDrawable;
     private int mHorizontalInset;
     private boolean mInitialLayout;
     private float mInnerRadius;
@@ -1199,10 +1291,10 @@ _L8:
     private int mMaxTargetWidth;
     private int mNewTargetResources;
     private OnTriggerListener mOnTriggerListener;
-    float mOuterRadius;
-    TargetDrawable mOuterRing;
+    private float mOuterRadius;
+    private TargetDrawable mOuterRing;
     private PointCloud mPointCloud;
-    android.animation.Animator.AnimatorListener mResetListener = new AnimatorListenerAdapter() {
+    private android.animation.Animator.AnimatorListener mResetListener = new AnimatorListenerAdapter() {
 
         public void onAnimationEnd(Animator animator) {
             switchToState(0, mWaveCenterX, mWaveCenterY);
@@ -1216,7 +1308,7 @@ _L8:
                 super();
             }
     };
-    android.animation.Animator.AnimatorListener mResetListenerWithPing = new AnimatorListenerAdapter() {
+    private android.animation.Animator.AnimatorListener mResetListenerWithPing = new AnimatorListenerAdapter() {
 
         public void onAnimationEnd(Animator animator) {
             ping();
@@ -1231,11 +1323,11 @@ _L8:
                 super();
             }
     };
-    float mSnapMargin;
-    AnimationBundle mTargetAnimations;
+    private float mSnapMargin;
+    private AnimationBundle mTargetAnimations;
     private ArrayList mTargetDescriptions;
     private int mTargetDescriptionsResourceId;
-    ArrayList mTargetDrawables;
+    private ArrayList mTargetDrawables;
     private int mTargetResourceId;
     private android.animation.Animator.AnimatorListener mTargetUpdateListener = new AnimatorListenerAdapter() {
 
@@ -1255,7 +1347,7 @@ _L8:
                 super();
             }
     };
-    android.animation.ValueAnimator.AnimatorUpdateListener mUpdateListener = new android.animation.ValueAnimator.AnimatorUpdateListener() {
+    private android.animation.ValueAnimator.AnimatorUpdateListener mUpdateListener = new android.animation.ValueAnimator.AnimatorUpdateListener() {
 
         public void onAnimationUpdate(ValueAnimator valueanimator) {
             invalidate();
@@ -1272,19 +1364,30 @@ _L8:
     private int mVibrationDuration;
     private Vibrator mVibrator;
     private AnimationBundle mWaveAnimations;
-    float mWaveCenterX;
-    float mWaveCenterY;
+    private float mWaveCenterX;
+    private float mWaveCenterY;
+
+
 
 
 
 
 /*
-    static int access$102(GlowPadView glowpadview, int i) {
+    static int access$302(GlowPadView glowpadview, int i) {
         glowpadview.mNewTargetResources = i;
         return i;
     }
 
 */
 
+
+
+/*
+    static boolean access$502(GlowPadView glowpadview, boolean flag) {
+        glowpadview.mAnimatingTargets = flag;
+        return flag;
+    }
+
+*/
 
 }

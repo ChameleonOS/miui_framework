@@ -15,6 +15,16 @@ import miui.telephony.ExtraTelephonyManager;
 //            CellLocation, PhoneStateListener
 
 public class TelephonyManager {
+    static class Injector {
+
+        static String getSimOperator(String s) {
+            return ExtraTelephonyManager.getSimOperator(TelephonyManager.getContext());
+        }
+
+        Injector() {
+        }
+    }
+
 
     private TelephonyManager() {
     }
@@ -32,6 +42,10 @@ public class TelephonyManager {
 
     public static TelephonyManager from(Context context) {
         return (TelephonyManager)context.getSystemService("phone");
+    }
+
+    static Context getContext() {
+        return sContext;
     }
 
     public static TelephonyManager getDefault() {
@@ -552,7 +566,7 @@ _L1:
     }
 
     public String getSimOperator() {
-        return ExtraTelephonyManager.getSimOperator(sContext);
+        return Injector.getSimOperator(SystemProperties.get("gsm.sim.operator.numeric"));
     }
 
     public String getSimOperatorName() {

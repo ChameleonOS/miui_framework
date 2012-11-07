@@ -30,6 +30,10 @@ public class LockPatternUtils {
         mContentResolver = context.getContentResolver();
     }
 
+    public static byte[] callPatternToHash(List list) {
+        return patternToHash(list);
+    }
+
     public static int computePasswordQuality(String s) {
         boolean flag = false;
         boolean flag1 = false;
@@ -127,7 +131,7 @@ _L2:
 _L1:
     }
 
-    protected static byte[] patternToHash(List list) {
+    private static byte[] patternToHash(List list) {
         if(list != null) goto _L2; else goto _L1
 _L1:
         byte abyte1[] = null;

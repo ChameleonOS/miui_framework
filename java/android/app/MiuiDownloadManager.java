@@ -15,22 +15,6 @@ import java.util.List;
 //            DownloadManager
 
 public class MiuiDownloadManager extends DownloadManager {
-    private static class CursorTranslator extends DownloadManager.CursorTranslator {
-
-        long getPausedReason(int i) {
-            long l;
-            if(i == 193)
-                l = 5L;
-            else
-                l = super.getPausedReason(i);
-            return l;
-        }
-
-        public CursorTranslator(Cursor cursor, Uri uri) {
-            super(cursor, uri);
-        }
-    }
-
     public static class Query extends DownloadManager.Query {
 
         void addExtraSelectionParts(List list) {
@@ -59,8 +43,8 @@ public class MiuiDownloadManager extends DownloadManager {
             if(i != 1 && i != 2)
                 throw new IllegalArgumentException((new StringBuilder()).append("Invalid direction: ").append(i).toString());
             if(s.equals("_id")) {
-                super.mOrderByColumn = "_id";
-                super.mOrderDirection = i;
+                setOrderByColumn("_id");
+                setOrderDirection(i);
             } else {
                 super.orderBy(s, i);
             }
@@ -196,7 +180,7 @@ _L1:
     }
 
     public static boolean isDownloadSuccess(Cursor cursor) {
-        CursorTranslator cursortranslator = (CursorTranslator)cursor;
+        DownloadManager.CursorTranslator cursortranslator = (DownloadManager.CursorTranslator)cursor;
         boolean flag;
         if(cursortranslator.getInt(cursortranslator.getColumnIndex("status")) == 8)
             flag = true;
@@ -207,9 +191,9 @@ _L1:
 
     public static boolean isDownloading(Cursor cursor) {
         boolean flag;
-        CursorTranslator cursortranslator;
+        DownloadManager.CursorTranslator cursortranslator;
         flag = false;
-        cursortranslator = (CursorTranslator)cursor;
+        cursortranslator = (DownloadManager.CursorTranslator)cursor;
         cursortranslator.getInt(cursortranslator.getColumnIndex("status"));
         JVM INSTR tableswitch 1 2: default 40
     //                   1 42
@@ -247,7 +231,7 @@ _L3:
     }
 
     public static int translateStatus(int i) {
-        return CursorTranslator.translateStatus(i);
+        return DownloadManager.CursorTranslator.translateStatus(i);
     }
 
     public transient void pauseDownload(long al[]) {
@@ -266,16 +250,16 @@ _L3:
         ai[0] = 1;
         ai[1] = 2;
         String as3[] = (String[])concatArrays(as2, getWhereArgsForStatuses(ai), java/lang/String);
-        mResolver.update(mBaseUri, contentvalues, s, as3);
+        mResolver.update(getBaseUri(), contentvalues, s, as3);
     }
 
     public Cursor query(DownloadManager.Query query1) {
-        Cursor cursor = query1.runQuery(mResolver, MIUI_UNDERLYING_COLUMNS, mBaseUri);
+        Cursor cursor = query1.runQuery(mResolver, MIUI_UNDERLYING_COLUMNS, getBaseUri());
         Object obj;
         if(cursor == null)
             obj = null;
         else
-            obj = new CursorTranslator(cursor, mBaseUri);
+            obj = new DownloadManager.CursorTranslator(cursor, getBaseUri());
         return ((Cursor) (obj));
     }
 
@@ -283,7 +267,7 @@ _L3:
         if(al == null || al.length == 0)
             throw new IllegalArgumentException("input param 'ids' can't be null");
         else
-            return mResolver.delete(mBaseUri, getWhereClauseForIds(al), getWhereArgsForIds(al));
+            return mResolver.delete(getBaseUri(), getWhereClauseForIds(al), getWhereArgsForIds(al));
     }
 
     public transient void resumeDownload(long al[]) {
@@ -297,7 +281,7 @@ _L3:
         int ai[] = new int[1];
         ai[0] = 4;
         String as2[] = (String[])concatArrays(as1, getWhereArgsForStatuses(ai), java/lang/String);
-        mResolver.update(mBaseUri, contentvalues, s, as2);
+        mResolver.update(getBaseUri(), contentvalues, s, as2);
     }
 
     public static final String ACTION_DOWNLOAD_DELETED = "android.intent.action.DOWNLOAD_DELETED";

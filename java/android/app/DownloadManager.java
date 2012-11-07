@@ -71,10 +71,7 @@ _L3:
         private String getLocalUri() {
             long l = getLong(getColumnIndex("destination"));
             String s1;
-            if(l == 4L)
-                s1 = getString(getColumnIndex("hint"));
-            else
-            if(l == 0L || l == 6L) {
+            if(l == 4L || l == 0L || l == 6L) {
                 String s = getString(getColumnIndex("local_filename"));
                 if(s == null)
                     s1 = null;
@@ -85,6 +82,29 @@ _L3:
                 s1 = ContentUris.withAppendedId(mBaseUri, l1).toString();
             }
             return s1;
+        }
+
+        private long getPausedReason(int i) {
+            i;
+            JVM INSTR tableswitch 194 196: default 28
+        //                       194 35
+        //                       195 40
+        //                       196 47;
+               goto _L1 _L2 _L3 _L4
+_L1:
+            long l = Injector.getPausedReason(i);
+_L6:
+            return l;
+_L2:
+            l = 1L;
+            continue; /* Loop/switch isn't completed */
+_L3:
+            l = 2L;
+            continue; /* Loop/switch isn't completed */
+_L4:
+            l = 3L;
+            if(true) goto _L6; else goto _L5
+_L5:
         }
 
         private long getReason(int i) {
@@ -145,6 +165,10 @@ _L6:
 _L7:
         }
 
+        String callGetLocalUri() {
+            return getLocalUri();
+        }
+
         public int getInt(int i) {
             return (int)getLong(i);
         }
@@ -161,33 +185,10 @@ _L7:
             return l;
         }
 
-        long getPausedReason(int i) {
-            i;
-            JVM INSTR tableswitch 194 196: default 28
-        //                       194 34
-        //                       195 39
-        //                       196 46;
-               goto _L1 _L2 _L3 _L4
-_L1:
-            long l = 4L;
-_L6:
-            return l;
-_L2:
-            l = 1L;
-            continue; /* Loop/switch isn't completed */
-_L3:
-            l = 2L;
-            continue; /* Loop/switch isn't completed */
-_L4:
-            l = 3L;
-            if(true) goto _L6; else goto _L5
-_L5:
-        }
-
         public String getString(int i) {
             String s;
             if(getColumnName(i).equals("local_uri"))
-                s = getLocalUri();
+                s = Injector.getLocalUri(this);
             else
                 s = super.getString(i);
             return s;
@@ -271,7 +272,7 @@ _L5:
                     arraylist1.add(statusClause("=", 200));
                 if((0x10 & mStatusFlags.intValue()) != 0)
                     arraylist1.add((new StringBuilder()).append("(").append(statusClause(">=", 400)).append(" AND ").append(statusClause("<", 600)).append(")").toString());
-                arraylist.add((new StringBuilder()).append("(").append(joinStrings(" OR ", arraylist1)).append(")").toString());
+                arraylist.add(Injector.addParens(joinStrings(" OR ", arraylist1)));
             }
             if(mOnlyIncludeVisibleInDownloadsUi)
                 arraylist.add("is_visible_in_downloads_ui != '0'");
@@ -301,12 +302,20 @@ _L5:
             return this;
         }
 
+        void setOrderByColumn(String s) {
+            mOrderByColumn = s;
+        }
+
+        void setOrderDirection(int i) {
+            mOrderDirection = i;
+        }
+
         public static final int ORDER_ASCENDING = 1;
         public static final int ORDER_DESCENDING = 2;
         private long mIds[];
         private boolean mOnlyIncludeVisibleInDownloadsUi;
-        String mOrderByColumn;
-        int mOrderDirection;
+        private String mOrderByColumn;
+        private int mOrderDirection;
         private Integer mStatusFlags;
 
         public Query() {
@@ -536,6 +545,34 @@ _L5:
         }
     }
 
+    static class Injector {
+
+        static String addParens(String s) {
+            return (new StringBuilder()).append("(").append(s).append(")").toString();
+        }
+
+        static String getLocalUri(CursorTranslator cursortranslator) {
+            String s;
+            if(cursortranslator.getLong(cursortranslator.getColumnIndex("destination")) == 4L)
+                s = cursortranslator.getString(cursortranslator.getColumnIndex("hint"));
+            else
+                s = cursortranslator.callGetLocalUri();
+            return s;
+        }
+
+        public static long getPausedReason(int i) {
+            long l;
+            if(i == 193)
+                l = 5L;
+            else
+                l = 4L;
+            return l;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public DownloadManager(ContentResolver contentresolver, String s) {
         mBaseUri = android.provider.Downloads.Impl.CONTENT_URI;
@@ -640,6 +677,10 @@ _L1:
     public long enqueue(Request request) {
         ContentValues contentvalues = request.toContentValues(mPackageName);
         return Long.parseLong(mResolver.insert(android.provider.Downloads.Impl.CONTENT_URI, contentvalues).getLastPathSegment());
+    }
+
+    Uri getBaseUri() {
+        return mBaseUri;
     }
 
     Uri getDownloadUri(long l) {
@@ -831,7 +872,7 @@ _L1:
     public static final int STATUS_RUNNING = 2;
     public static final int STATUS_SUCCESSFUL = 8;
     public static final String UNDERLYING_COLUMNS[];
-    Uri mBaseUri;
+    private Uri mBaseUri;
     private String mPackageName;
     private ContentResolver mResolver;
 

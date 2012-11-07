@@ -581,6 +581,21 @@ _L1:
         }
     }
 
+    static class Injector {
+
+        static int checkSignatures(PackageManager packagemanager, int i, int j, String s) {
+            int k;
+            if(ExtraPackageManager.isTrustedAccountSignature(packagemanager, s, i, j))
+                k = 0;
+            else
+                k = -3;
+            return k;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public AccountManagerService(Context context) {
         this(context, context.getPackageManager(), ((IAccountAuthenticatorCache) (new AccountAuthenticatorCache(context))));
@@ -1021,7 +1036,7 @@ _L1:
         if(!((AuthenticatorDescription)serviceinfo.type).type.equals(s)) goto _L4; else goto _L3
 _L3:
         boolean flag;
-        if(serviceinfo.uid == i || ExtraPackageManager.isTrustedAccountSignature(mPackageManager, s, serviceinfo.uid, i))
+        if(serviceinfo.uid == i || Injector.checkSignatures(mPackageManager, serviceinfo.uid, i, s) == 0)
             flag = true;
         else
             flag = false;

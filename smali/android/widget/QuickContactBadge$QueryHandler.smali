@@ -25,20 +25,20 @@
     .parameter "cr"
 
     .prologue
-    .line 259
+    .line 271
     iput-object p1, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
 
-    .line 260
+    .line 272
     invoke-direct {p0, p2}, Landroid/content/AsyncQueryHandler;-><init>(Landroid/content/ContentResolver;)V
 
-    .line 261
+    .line 273
     return-void
 .end method
 
 
 # virtual methods
 .method protected onQueryComplete(ILjava/lang/Object;Landroid/database/Cursor;)V
-    .registers 14
+    .registers 15
     .parameter "token"
     .parameter "cookie"
     .parameter "cursor"
@@ -47,220 +47,227 @@
     .end annotation
 
     .prologue
-    const/4 v9, 0x3
-
-    .line 266
-    const/4 v4, 0x0
-
-    .line 267
-    .local v4, lookupUri:Landroid/net/Uri;
-    const/4 v2, 0x0
-
-    .line 268
-    .local v2, createUri:Landroid/net/Uri;
+    .line 278
     const/4 v5, 0x0
 
-    .line 271
-    .local v5, trigger:Z
-    packed-switch p1, :pswitch_data_88
-
-    .line 301
-    .end local p2
-    :cond_7
-    :goto_7
-    if-eqz p3, :cond_c
-
-    .line 302
-    invoke-interface {p3}, Landroid/database/Cursor;->close()V
-
-    .line 306
-    :cond_c
-    iget-object v6, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
-
-    #setter for: Landroid/widget/QuickContactBadge;->mContactUri:Landroid/net/Uri;
-    invoke-static {v6, v4}, Landroid/widget/QuickContactBadge;->access$002(Landroid/widget/QuickContactBadge;Landroid/net/Uri;)Landroid/net/Uri;
-
-    .line 307
-    iget-object v6, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
-
-    #calls: Landroid/widget/QuickContactBadge;->onContactUriChanged()V
-    invoke-static {v6}, Landroid/widget/QuickContactBadge;->access$100(Landroid/widget/QuickContactBadge;)V
-
-    .line 309
-    if-eqz v5, :cond_75
-
-    if-eqz v4, :cond_75
-
-    .line 311
-    iget-object v6, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
-
-    invoke-virtual {v6}, Landroid/widget/QuickContactBadge;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    iget-object v7, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
-
-    iget-object v8, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
-
-    iget-object v8, v8, Landroid/widget/QuickContactBadge;->mExcludeMimes:[Ljava/lang/String;
-
-    invoke-static {v6, v7, v4, v9, v8}, Landroid/provider/ContactsContract$QuickContact;->showQuickContact(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;I[Ljava/lang/String;)V
-
-    .line 318
-    :cond_29
-    :goto_29
-    return-void
-
-    .line 273
-    .restart local p2
-    :pswitch_2a
-    const/4 v5, 0x1
-
-    .line 274
-    :try_start_2b
-    const-string/jumbo v6, "tel"
-
-    check-cast p2, Ljava/lang/String;
-
-    .end local p2
-    const/4 v7, 0x0
-
-    invoke-static {v6, p2, v7}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v2
-
-    .line 278
-    :pswitch_35
-    if-eqz p3, :cond_7
-
-    invoke-interface {p3}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_7
-
     .line 279
-    const/4 v6, 0x0
-
-    invoke-interface {p3, v6}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v0
+    .local v5, lookupUri:Landroid/net/Uri;
+    const/4 v2, 0x0
 
     .line 280
-    .local v0, contactId:J
+    .local v2, createUri:Landroid/net/Uri;
+    const/4 v6, 0x0
+
+    .line 283
+    .local v6, trigger:Z
+    packed-switch p1, :pswitch_data_8e
+
+    .line 313
+    .end local p2
+    :cond_6
+    :goto_6
+    if-eqz p3, :cond_b
+
+    .line 314
+    invoke-interface {p3}, Landroid/database/Cursor;->close()V
+
+    .line 318
+    :cond_b
+    iget-object v7, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+
+    #setter for: Landroid/widget/QuickContactBadge;->mContactUri:Landroid/net/Uri;
+    invoke-static {v7, v5}, Landroid/widget/QuickContactBadge;->access$002(Landroid/widget/QuickContactBadge;Landroid/net/Uri;)Landroid/net/Uri;
+
+    .line 319
+    iget-object v7, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+
+    #calls: Landroid/widget/QuickContactBadge;->onContactUriChanged()V
+    invoke-static {v7}, Landroid/widget/QuickContactBadge;->access$100(Landroid/widget/QuickContactBadge;)V
+
+    .line 321
+    iget-object v7, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+
+    invoke-static {v7, v6, v5, v2}, Landroid/widget/QuickContactBadge$Injector;->showQuickContactForStranger(Landroid/widget/QuickContactBadge;ZLandroid/net/Uri;Landroid/net/Uri;)Landroid/net/Uri;
+
+    move-result-object v2
+
+    .line 322
+    if-eqz v6, :cond_7b
+
+    if-eqz v5, :cond_7b
+
+    .line 324
+    iget-object v7, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+
+    invoke-virtual {v7}, Landroid/widget/QuickContactBadge;->getContext()Landroid/content/Context;
+
+    move-result-object v7
+
+    iget-object v8, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+
+    const/4 v9, 0x3
+
+    iget-object v10, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+
+    iget-object v10, v10, Landroid/widget/QuickContactBadge;->mExcludeMimes:[Ljava/lang/String;
+
+    invoke-static {v7, v8, v5, v9, v10}, Landroid/provider/ContactsContract$QuickContact;->showQuickContact(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;I[Ljava/lang/String;)V
+
+    .line 331
+    :cond_2f
+    :goto_2f
+    return-void
+
+    .line 285
+    .restart local p2
+    :pswitch_30
     const/4 v6, 0x1
 
-    invoke-interface {p3, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 281
-    .local v3, lookupKey:Ljava/lang/String;
-    invoke-static {v0, v1, v3}, Landroid/provider/ContactsContract$Contacts;->getLookupUri(JLjava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v4
-
-    .line 282
-    goto :goto_7
-
-    .line 287
-    .end local v0           #contactId:J
-    .end local v3           #lookupKey:Ljava/lang/String;
-    .restart local p2
-    :pswitch_4c
-    const/4 v5, 0x1
-
-    .line 288
-    const-string/jumbo v6, "mailto"
+    .line 286
+    :try_start_31
+    const-string/jumbo v7, "tel"
 
     check-cast p2, Ljava/lang/String;
 
     .end local p2
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
-    invoke-static {v6, p2, v7}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v7, p2, v8}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 292
-    :pswitch_57
-    if-eqz p3, :cond_7
+    .line 290
+    :pswitch_3b
+    if-eqz p3, :cond_6
 
     invoke-interface {p3}, Landroid/database/Cursor;->moveToFirst()Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_7
+    if-eqz v7, :cond_6
 
-    .line 293
-    const/4 v6, 0x0
+    .line 291
+    const/4 v7, 0x0
 
-    invoke-interface {p3, v6}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {p3, v7}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v0
 
-    .line 294
-    .restart local v0       #contactId:J
-    const/4 v6, 0x1
+    .line 292
+    .local v0, contactId:J
+    const/4 v7, 0x1
 
-    invoke-interface {p3, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 295
-    .restart local v3       #lookupKey:Ljava/lang/String;
-    invoke-static {v0, v1, v3}, Landroid/provider/ContactsContract$Contacts;->getLookupUri(JLjava/lang/String;)Landroid/net/Uri;
-    :try_end_6c
-    .catchall {:try_start_2b .. :try_end_6c} :catchall_6e
+    invoke-interface {p3, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    goto :goto_7
+    .line 293
+    .local v4, lookupKey:Ljava/lang/String;
+    invoke-static {v0, v1, v4}, Landroid/provider/ContactsContract$Contacts;->getLookupUri(JLjava/lang/String;)Landroid/net/Uri;
 
-    .line 301
+    move-result-object v5
+
+    .line 294
+    goto :goto_6
+
+    .line 299
     .end local v0           #contactId:J
-    .end local v3           #lookupKey:Ljava/lang/String;
-    :catchall_6e
-    move-exception v6
+    .end local v4           #lookupKey:Ljava/lang/String;
+    .restart local p2
+    :pswitch_52
+    const/4 v6, 0x1
 
-    if-eqz p3, :cond_74
+    .line 300
+    const-string/jumbo v7, "mailto"
 
-    .line 302
-    invoke-interface {p3}, Landroid/database/Cursor;->close()V
+    check-cast p2, Ljava/lang/String;
 
-    .line 301
-    :cond_74
-    throw v6
+    .end local p2
+    const/4 v8, 0x0
+
+    invoke-static {v7, p2, v8}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v2
+
+    .line 304
+    :pswitch_5d
+    if-eqz p3, :cond_6
+
+    invoke-interface {p3}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    .line 305
+    const/4 v7, 0x0
+
+    invoke-interface {p3, v7}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v0
+
+    .line 306
+    .restart local v0       #contactId:J
+    const/4 v7, 0x1
+
+    invoke-interface {p3, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 307
+    .restart local v4       #lookupKey:Ljava/lang/String;
+    invoke-static {v0, v1, v4}, Landroid/provider/ContactsContract$Contacts;->getLookupUri(JLjava/lang/String;)Landroid/net/Uri;
+    :try_end_72
+    .catchall {:try_start_31 .. :try_end_72} :catchall_74
+
+    move-result-object v5
+
+    goto :goto_6
 
     .line 313
-    :cond_75
-    if-eqz v2, :cond_29
+    .end local v0           #contactId:J
+    .end local v4           #lookupKey:Ljava/lang/String;
+    :catchall_74
+    move-exception v7
 
-    .line 315
-    iget-object v6, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+    if-eqz p3, :cond_7a
 
-    invoke-virtual {v6}, Landroid/widget/QuickContactBadge;->getContext()Landroid/content/Context;
+    .line 314
+    invoke-interface {p3}, Landroid/database/Cursor;->close()V
 
-    move-result-object v6
+    .line 313
+    :cond_7a
+    throw v7
 
+    .line 326
+    :cond_7b
+    if-eqz v2, :cond_2f
+
+    .line 328
+    new-instance v3, Landroid/content/Intent;
+
+    const-string v7, "com.android.contacts.action.SHOW_OR_CREATE_CONTACT"
+
+    invoke-direct {v3, v7, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    .line 329
+    .local v3, intent:Landroid/content/Intent;
     iget-object v7, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
 
-    iget-object v8, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
+    invoke-virtual {v7}, Landroid/widget/QuickContactBadge;->getContext()Landroid/content/Context;
 
-    iget-object v8, v8, Landroid/widget/QuickContactBadge;->mExcludeMimes:[Ljava/lang/String;
+    move-result-object v7
 
-    invoke-static {v6, v7, v2, v9, v8}, Landroid/provider/ContactsContract$QuickContact;->showQuickContact(Landroid/content/Context;Landroid/view/View;Landroid/net/Uri;I[Ljava/lang/String;)V
+    invoke-virtual {v7, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    goto :goto_29
+    goto :goto_2f
 
-    .line 271
-    nop
-
-    :pswitch_data_88
+    .line 283
+    :pswitch_data_8e
     .packed-switch 0x0
-        :pswitch_57
-        :pswitch_35
-        :pswitch_4c
-        :pswitch_2a
+        :pswitch_5d
+        :pswitch_3b
+        :pswitch_52
+        :pswitch_30
     .end packed-switch
 .end method

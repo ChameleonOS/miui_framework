@@ -96,7 +96,7 @@ public class RingtonePreference extends Preference
         intent.putExtra("android.intent.extra.ringtone.SHOW_SILENT", mShowSilent);
         intent.putExtra("android.intent.extra.ringtone.TYPE", mRingtoneType);
         intent.putExtra("android.intent.extra.ringtone.TITLE", getTitle());
-        intent.setClassName("com.android.thememanager", "com.android.thememanager.ThemeResourceTabActivity");
+        intent.setClassName("com.android.thememanager", "com.android.thememanager.activity.ThemeTabActivity");
     }
 
     protected Uri onRestoreRingtone() {

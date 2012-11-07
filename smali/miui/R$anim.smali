@@ -45,6 +45,26 @@
 
 .field public static final lock_screen_controlview_fade_out:I = 0x6040004
 
+.field public static final miro_editmode_bottom_in:I = 0x604001a
+
+.field public static final miro_editmode_bottom_out:I = 0x604001b
+
+.field public static final miro_editmode_top_in:I = 0x604001c
+
+.field public static final miro_editmode_top_out:I = 0x604001d
+
+.field public static final miro_menu_list_header_in:I = 0x6040018
+
+.field public static final miro_menu_list_header_out:I = 0x6040019
+
+.field public static final miro_menu_list_item_in:I = 0x6040014
+
+.field public static final miro_menu_list_layout_anim:I = 0x6040015
+
+.field public static final miro_menu_primary_bar_layout_anim:I = 0x6040016
+
+.field public static final miro_menu_primary_item_in:I = 0x6040017
+
 .field public static final miui_phone_close_enter:I = 0x6040012
 
 .field public static final miui_phone_close_exit:I = 0x6040013

@@ -51,9 +51,71 @@ public abstract class Drawable {
         public abstract void unscheduleDrawable(Drawable drawable, Runnable runnable);
     }
 
+    static class Injector {
+
+        static boolean compareStateSet(Drawable drawable, int ai[]) {
+            boolean flag;
+            boolean flag1;
+            flag = true;
+            flag1 = false;
+            if(ai != drawable.mStateSet) goto _L2; else goto _L1
+_L1:
+            return flag;
+_L2:
+            if(ai == null) {
+                if(drawable.mStateSet[0] != 0)
+                    flag = false;
+                continue; /* Loop/switch isn't completed */
+            }
+            if(ai.length > drawable.mStateSet.length) {
+                int ai1[] = new int[drawable.mStateSet.length + ai.length];
+                System.arraycopy(drawable.mStateSet, 0, ai1, 0, drawable.mStateSet.length);
+                drawable.mStateSet = ai1;
+            }
+            int i = 0;
+            do {
+                if(i >= ai.length)
+                    break;
+                if(ai[i] != drawable.mStateSet[i]) {
+                    flag = false;
+                    continue; /* Loop/switch isn't completed */
+                }
+                i++;
+            } while(true);
+            if(drawable.mStateSet.length == ai.length || drawable.mStateSet[ai.length] == 0)
+                flag1 = flag;
+            flag = flag1;
+            if(true) goto _L1; else goto _L3
+_L3:
+        }
+
+        static void copyStateSet(Drawable drawable, int ai[]) {
+            if(ai == null) {
+                Arrays.fill(drawable.mStateSet, 0, drawable.mStateSet.length, 0);
+            } else {
+                System.arraycopy(ai, 0, drawable.mStateSet, 0, ai.length);
+                Arrays.fill(drawable.mStateSet, ai.length, drawable.mStateSet.length, 0);
+            }
+        }
+
+        static boolean miuiSetState(Drawable drawable, int ai[]) {
+            boolean flag;
+            if(!compareStateSet(drawable, ai)) {
+                copyStateSet(drawable, ai);
+                flag = drawable.onStateChange(ai);
+            } else {
+                flag = false;
+            }
+            return flag;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public Drawable() {
-        mStateSet = StateSet.WILD_CARD;
+        mStateSet = new int[android.R.styleable.DrawableStates.length];
         mLevel = 0;
         mChangingConfigurations = 0;
         mBounds = ZERO_BOUNDS_RECT;
@@ -411,14 +473,7 @@ _L3:
     }
 
     public boolean setState(int ai[]) {
-        boolean flag;
-        if(!Arrays.equals(mStateSet, ai)) {
-            mStateSet = ai;
-            flag = onStateChange(ai);
-        } else {
-            flag = false;
-        }
-        return flag;
+        return Injector.miuiSetState(this, ai);
     }
 
     public boolean setVisible(boolean flag, boolean flag1) {
@@ -448,4 +503,14 @@ _L3:
     private int mStateSet[];
     private boolean mVisible;
 
+
+
+
+/*
+    static int[] access$002(Drawable drawable, int ai[]) {
+        drawable.mStateSet = ai;
+        return ai;
+    }
+
+*/
 }

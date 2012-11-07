@@ -41,13 +41,21 @@
 
 .field public static final config_show_rounded_corners_default:I = 0x608000b
 
+.field public static final max_anchor_duration:I = 0x608000d
+
+.field public static final max_menu_item_count:I = 0x6080010
+
+.field public static final max_visible_tab_count:I = 0x608000e
+
+.field public static final menu_expand_duartion:I = 0x608000f
+
 
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
     .prologue
-    .line 1394
+    .line 2016
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

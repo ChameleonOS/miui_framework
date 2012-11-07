@@ -28,7 +28,7 @@
     .registers 1
 
     .prologue
-    .line 1040
+    .line 1045
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
     .registers 2
 
     .prologue
-    .line 1042
+    .line 1047
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -52,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 1040
+    .line 1045
     invoke-virtual {p0}, Landroid/os/StrictMode$3;->initialValue()Landroid/os/Handler;
 
     move-result-object v0

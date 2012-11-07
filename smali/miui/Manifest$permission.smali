@@ -25,6 +25,8 @@
 
 .field public static final FIND_DEVICE:Ljava/lang/String; = "com.miui.cloudservice.permission.FIND_DEVICE"
 
+.field public static final PAYMENT:Ljava/lang/String; = "com.xiaomi.xmsf.permission.PAYMENT"
+
 .field public static final SEND_PUSH:Ljava/lang/String; = "com.xiaomi.permission.SEND_PUSH"
 
 .field public static final TIGGER_TOGGLE:Ljava/lang/String; = "com.android.SystemUI.permission.TIGGER_TOGGLE"

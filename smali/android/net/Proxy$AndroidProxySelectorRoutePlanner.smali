@@ -26,13 +26,13 @@
     .parameter "context"
 
     .prologue
-    .line 291
+    .line 304
     invoke-direct {p0, p1, p2}, Lorg/apache/http/impl/conn/ProxySelectorRoutePlanner;-><init>(Lorg/apache/http/conn/scheme/SchemeRegistry;Ljava/net/ProxySelector;)V
 
-    .line 292
+    .line 305
     iput-object p3, p0, Landroid/net/Proxy$AndroidProxySelectorRoutePlanner;->mContext:Landroid/content/Context;
 
-    .line 293
+    .line 306
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .end annotation
 
     .prologue
-    .line 298
+    .line 311
     .local p1, proxies:Ljava/util/List;,"Ljava/util/List<Ljava/net/Proxy;>;"
     iget-object v0, p0, Landroid/net/Proxy$AndroidProxySelectorRoutePlanner;->mContext:Landroid/content/Context;
 
@@ -82,7 +82,7 @@
     .parameter "context"
 
     .prologue
-    .line 304
+    .line 317
     iget-object v0, p0, Landroid/net/Proxy$AndroidProxySelectorRoutePlanner;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
@@ -103,7 +103,7 @@
     .parameter "context"
 
     .prologue
-    .line 310
+    .line 323
     iget-object v1, p0, Landroid/net/Proxy$AndroidProxySelectorRoutePlanner;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
@@ -114,16 +114,16 @@
 
     move-result-object v0
 
-    .line 311
+    .line 324
     .local v0, proxy:Lorg/apache/http/HttpHost;
     if-nez v0, :cond_12
 
-    .line 312
+    .line 325
     new-instance v1, Lorg/apache/http/conn/routing/HttpRoute;
 
     invoke-direct {v1, p1}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Lorg/apache/http/HttpHost;)V
 
-    .line 314
+    .line 327
     :goto_11
     return-object v1
 

@@ -23,7 +23,7 @@ import java.util.*;
 //            CdmaCall
 
 public class CdmaServiceStateTracker extends ServiceStateTracker {
-    private class LocaleChangedIntentReceiver extends BroadcastReceiver {
+    class LocaleChangedIntentReceiver extends BroadcastReceiver {
 
         public void onReceive(Context context, Intent intent) {
             if(((PhoneBase) (phone)).mIsTheCurrentActivePhone) goto _L2; else goto _L1
@@ -40,17 +40,17 @@ _L3:
 
         final CdmaServiceStateTracker this$0;
 
-        private LocaleChangedIntentReceiver() {
+        LocaleChangedIntentReceiver() {
             this$0 = CdmaServiceStateTracker.this;
             super();
         }
-
     }
 
 
     public CdmaServiceStateTracker(CDMAPhone cdmaphone) {
         boolean flag = false;
         super();
+        mIntentReceiver = new LocaleChangedIntentReceiver();
         mCurrentOtaspMode = 0;
         mNitzUpdateSpacing = SystemProperties.getInt("ro.nitz_update_spacing", 0x927c0);
         mNitzUpdateDiff = SystemProperties.getInt("ro.nitz_update_diff", 2000);
@@ -69,7 +69,6 @@ _L3:
         isEriTextLoaded = false;
         isSubscriptionFromRuim = false;
         currentCarrier = null;
-        mIntentReceiver = new LocaleChangedIntentReceiver();
         mAutoTimeObserver = new ContentObserver(new Handler()) {
 
             public void onChange(boolean flag2) {
@@ -287,12 +286,6 @@ _L6:
         if(!flag || flag2 || flag3)
             flag1 = false;
         return flag1;
-    }
-
-    private void monitorLocaleChange() {
-        IntentFilter intentfilter = new IntentFilter();
-        intentfilter.addAction("android.intent.action.LOCALE_CHANGED");
-        phone.getContext().registerReceiver(mIntentReceiver, intentfilter);
     }
 
     private void queueNextSignalStrengthPoll() {
@@ -1134,6 +1127,12 @@ _L2:
         Log.e("CDMA", (new StringBuilder()).append("[CdmaSST] ").append(s).toString());
     }
 
+    void monitorLocaleChange() {
+        IntentFilter intentfilter = new IntentFilter();
+        intentfilter.addAction("android.intent.action.LOCALE_CHANGED");
+        phone.getContext().registerReceiver(mIntentReceiver, intentfilter);
+    }
+
     protected void onSignalStrengthResult(AsyncResult asyncresult) {
         super.mSignalStrength;
         if(asyncresult.exception != null) {
@@ -1558,7 +1557,7 @@ _L3:
     protected boolean mGotCountryCode;
     protected int mHomeNetworkId[];
     protected int mHomeSystemId[];
-    private BroadcastReceiver mIntentReceiver;
+    BroadcastReceiver mIntentReceiver;
     private boolean mIsInPrl;
     protected boolean mIsMinInfoReady;
     protected String mMdn;

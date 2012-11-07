@@ -29,6 +29,10 @@ public class Toast {
             }
         }
 
+        android.view.WindowManager.LayoutParams getParams() {
+            return mParams;
+        }
+
         public void handleHide() {
             if(mView != null) {
                 if(mView.getParent() != null)
@@ -104,7 +108,6 @@ public class Toast {
         WindowManagerImpl mWM;
         int mX;
         int mY;
-
 
         TN() {
             mGravity = 81;
@@ -220,7 +223,7 @@ _L1:
     }
 
     public void setType(int i) {
-        mTN.mParams.type = i;
+        mTN.getParams().type = i;
     }
 
     public void setView(View view) {

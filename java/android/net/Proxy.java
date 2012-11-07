@@ -22,7 +22,7 @@ import org.apache.http.impl.conn.ProxySelectorRoutePlanner;
 import org.apache.http.protocol.HttpContext;
 
 // Referenced classes of package android.net:
-//            ExtraProxy, ConnectivityManager, ProxyProperties, NetworkUtils
+//            ConnectivityManager, ProxyProperties, NetworkUtils
 
 public final class Proxy {
     static class AndroidProxySelectorRoutePlanner extends ProxySelectorRoutePlanner {
@@ -50,6 +50,21 @@ public final class Proxy {
         public AndroidProxySelectorRoutePlanner(SchemeRegistry schemeregistry, ProxySelector proxyselector, Context context) {
             super(schemeregistry, proxyselector);
             mContext = context;
+        }
+    }
+
+    static class Injector {
+
+        static String getHostName(InetSocketAddress inetsocketaddress) {
+            String s = null;
+            if(inetsocketaddress.getAddress() != null)
+                s = inetsocketaddress.getAddress().getHostAddress();
+            if(TextUtils.isEmpty(s))
+                s = inetsocketaddress.getHostName();
+            return s;
+        }
+
+        Injector() {
         }
     }
 
@@ -122,10 +137,12 @@ _L3:
     public static final HttpHost getPreferredHttpHost(Context context, String s) {
         java.net.Proxy proxy = getProxy(context, s);
         HttpHost httphost;
-        if(proxy.equals(java.net.Proxy.NO_PROXY))
+        if(proxy.equals(java.net.Proxy.NO_PROXY)) {
             httphost = null;
-        else
-            httphost = ExtraProxy.getPreferredHttpHost((InetSocketAddress)proxy.address());
+        } else {
+            InetSocketAddress inetsocketaddress = (InetSocketAddress)proxy.address();
+            httphost = new HttpHost(Injector.getHostName(inetsocketaddress), inetsocketaddress.getPort(), "http");
+        }
         return httphost;
     }
 

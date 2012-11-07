@@ -21,6 +21,19 @@ import java.util.TimeZone;
 //            DateUtils
 
 public class DateFormat {
+    static class Injector {
+
+        static String check24HourFormatForChina(Context context, String s) {
+            Locale locale = context.getResources().getConfiguration().locale;
+            if(Locale.CHINA.equals(locale))
+                s = "24";
+            return s;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public DateFormat() {
     }
@@ -358,29 +371,18 @@ _L4:
         boolean flag;
         String s;
         flag = true;
-        s = android.provider.Settings.System.getString(context.getContentResolver(), "time_12_24");
+        s = Injector.check24HourFormatForChina(context, android.provider.Settings.System.getString(context.getContentResolver(), "time_12_24"));
         if(s != null) goto _L2; else goto _L1
 _L1:
-        Locale locale = context.getResources().getConfiguration().locale;
-        if(!Locale.CHINA.equals(locale)) goto _L4; else goto _L3
-_L3:
-        return flag;
-_L4:
-        Object obj = sLocaleLock;
-        obj;
-        JVM INSTR monitorenter ;
-        if(sIs24HourLocale != null && sIs24HourLocale.equals(locale)) {
-            flag = sIs24Hour;
-            continue; /* Loop/switch isn't completed */
-        }
-        break MISSING_BLOCK_LABEL_81;
-        Exception exception;
-        exception;
-        throw exception;
-        obj;
-        JVM INSTR monitorexit ;
         Object obj1;
         boolean flag1;
+        Locale locale = context.getResources().getConfiguration().locale;
+        synchronized(sLocaleLock) {
+            if(sIs24HourLocale != null && sIs24HourLocale.equals(locale)) {
+                flag = sIs24Hour;
+                break MISSING_BLOCK_LABEL_194;
+            }
+        }
         java.text.DateFormat dateformat = java.text.DateFormat.getTimeInstance(flag, locale);
         if(dateformat instanceof SimpleDateFormat) {
             if(((SimpleDateFormat)dateformat).toPattern().indexOf('H') >= 0)
@@ -394,25 +396,27 @@ _L4:
         obj1;
         JVM INSTR monitorenter ;
         sIs24HourLocale = locale;
-        if(s.equals("12")) goto _L6; else goto _L5
-_L5:
+        if(s.equals("12"))
+            break MISSING_BLOCK_LABEL_175;
         flag1 = flag;
-_L7:
+_L3:
         sIs24Hour = flag1;
 _L2:
         Exception exception1;
         if(s == null || s.equals("12"))
             flag = false;
-        continue; /* Loop/switch isn't completed */
-_L6:
+        break MISSING_BLOCK_LABEL_194;
+        exception;
+        obj;
+        JVM INSTR monitorexit ;
+        throw exception;
         flag1 = false;
-          goto _L7
+          goto _L3
         exception1;
         obj1;
         JVM INSTR monitorexit ;
         throw exception1;
-        if(true) goto _L3; else goto _L8
-_L8:
+        return flag;
     }
 
     private static final String zeroPad(int i, int j) {

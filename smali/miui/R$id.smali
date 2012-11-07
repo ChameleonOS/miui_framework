@@ -89,6 +89,8 @@
 
 .field public static final buttonSelectAll:I = 0x60b001a
 
+.field public static final buttonWebSearch:I = 0x60b008a
+
 .field public static final cancel_menu_item:I = 0x60b006e
 
 .field public static final cancel_menu_item_icon:I = 0x60b0075
@@ -103,7 +105,11 @@
 
 .field public static final childroot:I = 0x60b007e
 
+.field public static final container:I = 0x60b009c
+
 .field public static final content:I = 0x60b0062
+
+.field public static final controlButtons:I = 0x60b009d
 
 .field public static final coverview:I = 0x60b007f
 
@@ -143,6 +149,10 @@
 
 .field public static final line1:I = 0x60b0033
 
+.field public static final loadingMsg:I = 0x60b009e
+
+.field public static final loadingProgressBar:I = 0x60b009f
+
 .field public static final loadingprogressbar:I = 0x60b004f
 
 .field public static final lock_screen_battery_info:I = 0x60b0032
@@ -163,9 +173,21 @@
 
 .field public static final mark:I = 0x60b006f
 
+.field public static final menu_container:I = 0x60b0092
+
 .field public static final message:I = 0x60b0028
 
 .field public static final minute:I = 0x60b0046
+
+.field public static final miro_bottom_bar_container:I = 0x60b0095
+
+.field public static final miro_container:I = 0x60b0093
+
+.field public static final miro_content_container:I = 0x60b0094
+
+.field public static final miro_top_bar_container:I = 0x60b0096
+
+.field public static final motion_container:I = 0x60b0097
 
 .field public static final music_spectrum_visualizer:I = 0x60b0040
 
@@ -207,6 +229,10 @@
 
 .field public static final previous:I = 0x60b0042
 
+.field public static final primary_bar:I = 0x60b0090
+
+.field public static final primary_bar_mask:I = 0x60b0091
+
 .field public static final recommendlist:I = 0x60b0080
 
 .field public static final resourceauthor:I = 0x60b0053
@@ -220,6 +246,8 @@
 .field public static final resourcemodifiedtime:I = 0x60b0055
 
 .field public static final resourcesize:I = 0x60b0065
+
+.field public static final resourcesummary:I = 0x60b00a0
 
 .field public static final resourceversion:I = 0x60b0056
 
@@ -247,6 +275,8 @@
 
 .field public static final separator3:I = 0x60b001e
 
+.field public static final shadow_background:I = 0x60b008f
+
 .field public static final slider_group:I = 0x60b000e
 
 .field public static final status:I = 0x60b0026
@@ -261,7 +291,17 @@
 
 .field public static final sync_failed:I = 0x60b0082
 
+.field public static final tab_container:I = 0x60b0098
+
 .field public static final tablayout:I = 0x60b0051
+
+.field public static final tag_editmode_checkbox:I = 0x60b008d
+
+.field public static final tag_editmode_token:I = 0x60b008c
+
+.field public static final tag_identification:I = 0x60b008e
+
+.field public static final tag_page_scroll_effect:I = 0x60b008b
 
 .field public static final text:I = 0x60b0037
 
@@ -283,11 +323,21 @@
 
 .field public static final title:I = 0x60b0041
 
+.field public static final title_container:I = 0x60b009a
+
 .field public static final topHeader_account:I = 0x60b0077
 
 .field public static final top_flag:I = 0x60b004b
 
 .field public static final unlock_sim_via_puk:I = 0x60b002f
+
+.field public static final v5_bottom_placeholder:I = 0x60b00a2
+
+.field public static final v5_title_bar_container:I = 0x60b009b
+
+.field public static final v5_top_placeholder:I = 0x60b00a1
+
+.field public static final view_pager:I = 0x60b0099
 
 .field public static final visible_panel:I = 0x60b000d
 
@@ -297,7 +347,7 @@
     .registers 1
 
     .prologue
-    .line 1016
+    .line 1565
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

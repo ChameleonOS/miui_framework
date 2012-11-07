@@ -35,7 +35,7 @@
     .registers 1
 
     .prologue
-    .line 5831
+    .line 5917
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
@@ -49,10 +49,10 @@
     .registers 1
 
     .prologue
-    .line 5841
+    .line 5927
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5842
+    .line 5928
     return-void
 .end method
 
@@ -61,62 +61,62 @@
     .parameter "child"
 
     .prologue
-    .line 5846
+    .line 5932
     sget-object v2, Landroid/view/ViewGroup$HoverTarget;->sRecycleLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 5847
+    .line 5933
     :try_start_3
     sget-object v1, Landroid/view/ViewGroup$HoverTarget;->sRecycleBin:Landroid/view/ViewGroup$HoverTarget;
 
     if-nez v1, :cond_10
 
-    .line 5848
+    .line 5934
     new-instance v0, Landroid/view/ViewGroup$HoverTarget;
 
     invoke-direct {v0}, Landroid/view/ViewGroup$HoverTarget;-><init>()V
 
-    .line 5855
+    .line 5941
     .local v0, target:Landroid/view/ViewGroup$HoverTarget;
     :goto_c
     monitor-exit v2
     :try_end_d
     .catchall {:try_start_3 .. :try_end_d} :catchall_20
 
-    .line 5856
+    .line 5942
     iput-object p0, v0, Landroid/view/ViewGroup$HoverTarget;->child:Landroid/view/View;
 
-    .line 5857
+    .line 5943
     return-object v0
 
-    .line 5850
+    .line 5936
     .end local v0           #target:Landroid/view/ViewGroup$HoverTarget;
     :cond_10
     :try_start_10
     sget-object v0, Landroid/view/ViewGroup$HoverTarget;->sRecycleBin:Landroid/view/ViewGroup$HoverTarget;
 
-    .line 5851
+    .line 5937
     .restart local v0       #target:Landroid/view/ViewGroup$HoverTarget;
     iget-object v1, v0, Landroid/view/ViewGroup$HoverTarget;->next:Landroid/view/ViewGroup$HoverTarget;
 
     sput-object v1, Landroid/view/ViewGroup$HoverTarget;->sRecycleBin:Landroid/view/ViewGroup$HoverTarget;
 
-    .line 5852
+    .line 5938
     sget v1, Landroid/view/ViewGroup$HoverTarget;->sRecycledCount:I
 
     add-int/lit8 v1, v1, -0x1
 
     sput v1, Landroid/view/ViewGroup$HoverTarget;->sRecycledCount:I
 
-    .line 5853
+    .line 5939
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/view/ViewGroup$HoverTarget;->next:Landroid/view/ViewGroup$HoverTarget;
 
     goto :goto_c
 
-    .line 5855
+    .line 5941
     .end local v0           #target:Landroid/view/ViewGroup$HoverTarget;
     :catchall_20
     move-exception v1
@@ -134,12 +134,12 @@
     .registers 4
 
     .prologue
-    .line 5861
+    .line 5947
     sget-object v1, Landroid/view/ViewGroup$HoverTarget;->sRecycleLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 5862
+    .line 5948
     :try_start_3
     sget v0, Landroid/view/ViewGroup$HoverTarget;->sRecycledCount:I
 
@@ -147,34 +147,34 @@
 
     if-ge v0, v2, :cond_1a
 
-    .line 5863
+    .line 5949
     sget-object v0, Landroid/view/ViewGroup$HoverTarget;->sRecycleBin:Landroid/view/ViewGroup$HoverTarget;
 
     iput-object v0, p0, Landroid/view/ViewGroup$HoverTarget;->next:Landroid/view/ViewGroup$HoverTarget;
 
-    .line 5864
+    .line 5950
     sput-object p0, Landroid/view/ViewGroup$HoverTarget;->sRecycleBin:Landroid/view/ViewGroup$HoverTarget;
 
-    .line 5865
+    .line 5951
     sget v0, Landroid/view/ViewGroup$HoverTarget;->sRecycledCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     sput v0, Landroid/view/ViewGroup$HoverTarget;->sRecycledCount:I
 
-    .line 5869
+    .line 5955
     :goto_15
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/ViewGroup$HoverTarget;->child:Landroid/view/View;
 
-    .line 5870
+    .line 5956
     monitor-exit v1
 
-    .line 5871
+    .line 5957
     return-void
 
-    .line 5867
+    .line 5953
     :cond_1a
     const/4 v0, 0x0
 
@@ -182,7 +182,7 @@
 
     goto :goto_15
 
-    .line 5870
+    .line 5956
     :catchall_1e
     move-exception v0
 

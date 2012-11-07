@@ -198,25 +198,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_30
 
     .line 261
     const-string v0, "_id"
 
-    iput-object v0, p0, Landroid/app/DownloadManager$Query;->mOrderByColumn:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/app/MiuiDownloadManager$Query;->setOrderByColumn(Ljava/lang/String;)V
 
     .line 262
-    iput p2, p0, Landroid/app/DownloadManager$Query;->mOrderDirection:I
+    invoke-virtual {p0, p2}, Landroid/app/MiuiDownloadManager$Query;->setOrderDirection(I)V
 
     .line 266
-    :goto_2d
+    :goto_2f
     return-object p0
 
     .line 265
-    :cond_2e
+    :cond_30
     invoke-super {p0, p1, p2}, Landroid/app/DownloadManager$Query;->orderBy(Ljava/lang/String;I)Landroid/app/DownloadManager$Query;
 
-    goto :goto_2d
+    goto :goto_2f
 .end method
 
 .method public setFilterByAppData(Ljava/lang/String;)Landroid/app/MiuiDownloadManager$Query;

@@ -83,6 +83,22 @@ public class TimePicker extends FrameLayout {
         public abstract void onTimeChanged(TimePicker timepicker, int i, int j);
     }
 
+    class OnMinuteChangeListener
+        implements NumberPicker.OnValueChangeListener {
+
+        public void onValueChange(NumberPicker numberpicker, int i, int j) {
+            callUpdateInputState();
+            callOnTimeChanged();
+        }
+
+        final TimePicker this$0;
+
+        OnMinuteChangeListener() {
+            this$0 = TimePicker.this;
+            super();
+        }
+    }
+
 
     public TimePicker(Context context) {
         this(context, null);
@@ -138,8 +154,41 @@ public class TimePicker extends FrameLayout {
         mMinuteSpinner.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
 
             public void onValueChange(NumberPicker numberpicker, int k, int l) {
+                boolean flag;
+                int i1;
+                int j1;
+                flag = true;
                 updateInputState();
+                i1 = mMinuteSpinner.getMinValue();
+                j1 = mMinuteSpinner.getMaxValue();
+                if(k != j1 || l != i1) goto _L2; else goto _L1
+_L1:
+                int l1 = 1 + mHourSpinner.getValue();
+                if(!is24HourView() && l1 == 12) {
+                    TimePicker timepicker1 = TimePicker.this;
+                    if(mIsAm)
+                        flag = false;
+                    timepicker1.mIsAm = flag;
+                    updateAmPmControl();
+                }
+                mHourSpinner.setValue(l1);
+_L4:
                 onTimeChanged();
+                return;
+_L2:
+                if(k == i1 && l == j1) {
+                    int k1 = -1 + mHourSpinner.getValue();
+                    if(!is24HourView() && k1 == 11) {
+                        TimePicker timepicker = TimePicker.this;
+                        if(mIsAm)
+                            flag = false;
+                        timepicker.mIsAm = flag;
+                        updateAmPmControl();
+                    }
+                    mHourSpinner.setValue(k1);
+                }
+                if(true) goto _L4; else goto _L3
+_L3:
             }
 
             final TimePicker this$0;
@@ -149,6 +198,7 @@ public class TimePicker extends FrameLayout {
                 super();
             }
         });
+        mMinuteSpinner.setOnValueChangedListener(new OnMinuteChangeListener());
         mMinuteSpinnerInput = (EditText)mMinuteSpinner.findViewById(0x10202fc);
         mMinuteSpinnerInput.setImeOptions(5);
         mAmPmStrings = (new DateFormatSymbols()).getAmPmStrings();
@@ -221,6 +271,12 @@ public class TimePicker extends FrameLayout {
         setContentDescriptions();
         if(getImportantForAccessibility() == 0)
             setImportantForAccessibility(1);
+    }
+
+    private void onTimeChanged() {
+        sendAccessibilityEvent(4);
+        if(mOnTimeChangedListener != null)
+            mOnTimeChangedListener.onTimeChanged(this, getCurrentHour().intValue(), getCurrentMinute().intValue());
     }
 
     private void setContentDescriptions() {
@@ -305,6 +361,14 @@ _L4:
 _L5:
     }
 
+    void callOnTimeChanged() {
+        onTimeChanged();
+    }
+
+    void callUpdateInputState() {
+        updateInputState();
+    }
+
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent accessibilityevent) {
         onPopulateAccessibilityEvent(accessibilityevent);
         return true;
@@ -377,12 +441,6 @@ _L5:
 
     protected Parcelable onSaveInstanceState() {
         return new SavedState(super.onSaveInstanceState(), getCurrentHour().intValue(), getCurrentMinute().intValue());
-    }
-
-    void onTimeChanged() {
-        sendAccessibilityEvent(4);
-        if(mOnTimeChangedListener != null)
-            mOnTimeChangedListener.onTimeChanged(this, getCurrentHour().intValue(), getCurrentMinute().intValue());
     }
 
     public void setCurrentHour(Integer integer) {
@@ -475,5 +533,8 @@ _L5:
     }
 
 */
+
+
+
 
 }

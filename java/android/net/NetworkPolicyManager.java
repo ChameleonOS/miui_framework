@@ -89,10 +89,6 @@ public class NetworkPolicyManager {
         return (NetworkPolicyManager)context.getSystemService("netpolicy");
     }
 
-    public static NetworkPolicyManager getSystemService(Context context) {
-        return from(context);
-    }
-
     public static boolean isUidValidForPolicy(Context context, int i) {
         boolean flag;
         if(i < 10000 || i > 19999)

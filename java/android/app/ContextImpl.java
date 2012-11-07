@@ -30,7 +30,8 @@ import android.nfc.NfcManager;
 import android.os.*;
 import android.os.storage.StorageManager;
 import android.telephony.TelephonyManager;
-import android.util.*;
+import android.util.AndroidRuntimeException;
+import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.WindowManagerImpl;
 import android.view.accessibility.AccessibilityManager;
@@ -44,9 +45,9 @@ import java.util.HashMap;
 // Referenced classes of package android.app:
 //            LoadedApk, WallpaperManager, ActivityThread, ActivityManagerNative, 
 //            IActivityManager, ApplicationPackageManager, ReceiverRestrictedContext, SharedPreferencesImpl, 
-//            Activity, Instrumentation, KeyguardManager, NotificationManager, 
-//            SearchManager, StatusBarManager, UiModeManager, ActivityManager, 
-//            AlarmManager
+//            Activity, Instrumentation, MiuiDownloadManager, KeyguardManager, 
+//            NotificationManager, SearchManager, StatusBarManager, UiModeManager, 
+//            ActivityManager, AlarmManager
 
 class ContextImpl extends Context {
     private static final class ApplicationContentResolver extends ContentResolver {
@@ -142,6 +143,30 @@ label0:
         }
     }
 
+    static class Injector {
+
+        static void checkPriority(ContextImpl contextimpl, IntentFilter intentfilter) {
+            if(contextimpl.mPackageInfo == null) goto _L2; else goto _L1
+_L1:
+            ApplicationInfo applicationinfo = contextimpl.mPackageInfo.getApplicationInfo();
+            if(applicationinfo == null || (1 & applicationinfo.flags) != 0) goto _L2; else goto _L3
+_L3:
+            if(intentfilter.getPriority() < 1000) goto _L5; else goto _L4
+_L4:
+            intentfilter.setPriority(999);
+_L2:
+            return;
+_L5:
+            if(intentfilter.getPriority() <= -1000)
+                intentfilter.setPriority(-999);
+            if(true) goto _L2; else goto _L6
+_L6:
+        }
+
+        Injector() {
+        }
+    }
+
 
     ContextImpl() {
         mActivityToken = null;
@@ -166,24 +191,6 @@ label0:
         mMainThread = contextimpl.mMainThread;
         mContentResolver = contextimpl.mContentResolver;
         mOuterContext = this;
-    }
-
-    private void checkPriority(IntentFilter intentfilter) {
-        if(mPackageInfo == null) goto _L2; else goto _L1
-_L1:
-        ApplicationInfo applicationinfo = mPackageInfo.getApplicationInfo();
-        if(applicationinfo == null || (1 & applicationinfo.flags) != 0) goto _L2; else goto _L3
-_L3:
-        if(intentfilter.getPriority() < 1000) goto _L5; else goto _L4
-_L4:
-        intentfilter.setPriority(999);
-_L2:
-        return;
-_L5:
-        if(intentfilter.getPriority() <= -1000)
-            intentfilter.setPriority(-999);
-        if(true) goto _L2; else goto _L6
-_L6:
     }
 
     static DropBoxManager createDropBoxManager() {
@@ -312,7 +319,7 @@ _L6:
                     handler = mMainThread.getHandler();
                 iintentreceiver = (new LoadedApk.ReceiverDispatcher(broadcastreceiver, context, handler, null, true)).getIIntentReceiver();
             }
-        checkPriority(intentfilter);
+        Injector.checkPriority(this, intentfilter);
         intent1 = ActivityManagerNative.getDefault().registerReceiver(mMainThread.getApplicationThread(), mBasePackageName, iintentreceiver, intentfilter, s);
         intent = intent1;
 _L2:
@@ -1379,7 +1386,7 @@ _L3:
         registerService("download", new ServiceFetcher() {
 
             public Object createService(ContextImpl contextimpl) {
-                return MiuiClassFactory.newDownloadManager(contextimpl.getContentResolver(), contextimpl.getPackageName());
+                return new MiuiDownloadManager(contextimpl.getContentResolver(), contextimpl.getPackageName());
             }
 
         });

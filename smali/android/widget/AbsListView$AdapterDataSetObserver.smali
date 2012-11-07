@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 6086
+    .line 6097
     iput-object p1, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     invoke-direct {p0, p1}, Landroid/widget/AdapterView$AdapterDataSetObserver;-><init>(Landroid/widget/AdapterView;)V
@@ -38,10 +38,10 @@
     .registers 2
 
     .prologue
-    .line 6089
+    .line 6100
     invoke-super {p0}, Landroid/widget/AdapterView$AdapterDataSetObserver;->onChanged()V
 
-    .line 6090
+    .line 6101
     iget-object v0, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 6091
+    .line 6102
     iget-object v0, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0}, Landroid/widget/FastScroller;->onSectionsChanged()V
 
-    .line 6093
+    .line 6104
     :cond_14
     return-void
 .end method
@@ -70,10 +70,10 @@
     .registers 2
 
     .prologue
-    .line 6097
+    .line 6108
     invoke-super {p0}, Landroid/widget/AdapterView$AdapterDataSetObserver;->onInvalidated()V
 
-    .line 6098
+    .line 6109
     iget-object v0, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 6099
+    .line 6110
     iget-object v0, p0, Landroid/widget/AbsListView$AdapterDataSetObserver;->this$0:Landroid/widget/AbsListView;
 
     #getter for: Landroid/widget/AbsListView;->mFastScroller:Landroid/widget/FastScroller;
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0}, Landroid/widget/FastScroller;->onSectionsChanged()V
 
-    .line 6101
+    .line 6112
     :cond_14
     return-void
 .end method

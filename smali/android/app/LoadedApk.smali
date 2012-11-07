@@ -1968,7 +1968,7 @@
 .end method
 
 .method public getResources(Landroid/app/ActivityThread;)Landroid/content/res/Resources;
-    .registers 5
+    .registers 4
     .parameter "mainThread"
     .annotation build Landroid/annotation/MiuiHook;
         value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
@@ -1978,27 +1978,21 @@
     .line 477
     iget-object v0, p0, Landroid/app/LoadedApk;->mResources:Landroid/content/res/Resources;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_e
 
     .line 478
     iget-object v0, p0, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/app/LoadedApk;->mResDir:Ljava/lang/String;
 
-    iget-object v2, p0, Landroid/app/LoadedApk;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
-
-    invoke-virtual {v2}, Landroid/view/CompatibilityInfoHolder;->get()Landroid/content/res/CompatibilityInfo;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v0, v1, v2}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/content/res/CompatibilityInfo;)Landroid/content/res/Resources;
+    invoke-virtual {p1, v0, v1, p0}, Landroid/app/ActivityThread;->getTopLevelResources(Ljava/lang/String;Ljava/lang/String;Landroid/app/LoadedApk;)Landroid/content/res/Resources;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/LoadedApk;->mResources:Landroid/content/res/Resources;
 
     .line 480
-    :cond_14
+    :cond_e
     iget-object v0, p0, Landroid/app/LoadedApk;->mResources:Landroid/content/res/Resources;
 
     return-object v0

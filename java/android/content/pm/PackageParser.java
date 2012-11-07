@@ -543,6 +543,33 @@ label3:
         }
     }
 
+    static class Injector {
+
+        static int checkPriority(int i, int j) {
+            if((i & 1) != 0) goto _L2; else goto _L1
+_L1:
+            if(j < 1000) goto _L4; else goto _L3
+_L3:
+            j = 999;
+_L2:
+            return j;
+_L4:
+            if(j <= -1000)
+                j = -999;
+            if(true) goto _L2; else goto _L5
+_L5:
+        }
+
+        static String filterNameError(String s, String s1) {
+            if("miui".equals(s))
+                s1 = null;
+            return s1;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public PackageParser(String s) {
         mParseError = 1;
@@ -631,21 +658,6 @@ _L3:
             else
                 s1 = buildCompoundName(s, charsequence, "taskAffinity", as);
         return s1;
-    }
-
-    private int checkPriority(int i, int j) {
-        if((i & 1) != 0) goto _L2; else goto _L1
-_L1:
-        if(j < 1000) goto _L4; else goto _L3
-_L3:
-        j = 999;
-_L2:
-        return j;
-_L4:
-        if(j <= -1000)
-            j = -999;
-        if(true) goto _L2; else goto _L5
-_L5:
     }
 
     private static boolean copyNeeded(int i, Package package1, int j, Bundle bundle) {
@@ -1694,7 +1706,7 @@ _L12:
     private boolean parseIntent(Resources resources, XmlPullParser xmlpullparser, AttributeSet attributeset, int i, IntentInfo intentinfo, String as[], boolean flag) throws XmlPullParserException, IOException {
         int j;
         TypedArray typedarray = resources.obtainAttributes(attributeset, com.android.internal.R.styleable.AndroidManifestIntentFilter);
-        intentinfo.setPriority(checkPriority(i, typedarray.getInt(2, 0)));
+        intentinfo.setPriority(Injector.checkPriority(i, typedarray.getInt(2, 0)));
         TypedValue typedvalue = typedarray.peekValue(0);
         if(typedvalue != null) {
             int l = typedvalue.resourceId;
@@ -1712,7 +1724,7 @@ _L5:
         do {
             k = xmlpullparser.next();
             if(k == 1 || k == 3 && xmlpullparser.getDepth() <= j)
-                break MISSING_BLOCK_LABEL_548;
+                break MISSING_BLOCK_LABEL_547;
         } while(k == 3 || k == 4);
         s = xmlpullparser.getName();
         if(!s.equals("action")) goto _L2; else goto _L1
@@ -1734,7 +1746,7 @@ _L2:
 label0:
         {
             if(!s.equals("category"))
-                break MISSING_BLOCK_LABEL_286;
+                break MISSING_BLOCK_LABEL_285;
             s8 = attributeset.getAttributeValue("http://schemas.android.com/apk/res/android", "name");
             if(s8 != null && s8 != "")
                 break label0;
@@ -1748,11 +1760,11 @@ label0:
         TypedArray typedarray1;
         String s1;
         if(!s.equals("data"))
-            break MISSING_BLOCK_LABEL_482;
+            break MISSING_BLOCK_LABEL_481;
         typedarray1 = resources.obtainAttributes(attributeset, com.android.internal.R.styleable.AndroidManifestData);
         s1 = typedarray1.getNonConfigurationString(0, 0);
         if(s1 == null)
-            break MISSING_BLOCK_LABEL_328;
+            break MISSING_BLOCK_LABEL_327;
         intentinfo.addDataType(s1);
         String s2 = typedarray1.getNonConfigurationString(1, 0);
         if(s2 != null)
@@ -1884,8 +1896,8 @@ _L2:
             package1.mVersionName = package1.mVersionName.intern();
         String s1 = typedarray.getNonConfigurationString(0, 0);
         if(s1 != null && s1.length() > 0) {
-            String s14 = validateName(s1, true);
-            if(s14 != null && !"android".equals(s) && !"miui".equals(s)) {
+            String s14 = Injector.filterNameError(s, validateName(s1, true));
+            if(s14 != null && !"android".equals(s)) {
                 as[0] = (new StringBuilder()).append("<manifest> specifies bad sharedUserId name \"").append(s1).append("\": ").append(s14).toString();
                 mParseError = -107;
                 package1 = null;
@@ -2163,7 +2175,7 @@ _L12:
 _L15:
         SplitPermissionInfo splitpermissioninfo;
         if(i3 >= l2)
-            break MISSING_BLOCK_LABEL_2355;
+            break MISSING_BLOCK_LABEL_2349;
         splitpermissioninfo = SPLIT_PERMISSIONS[i3];
         if(package1.applicationInfo.targetSdkVersion < splitpermissioninfo.targetSdk && package1.requestedPermissions.contains(splitpermissioninfo.rootPerm))
             break; /* Loop/switch isn't completed */
@@ -2288,8 +2300,8 @@ _L2:
             packagelite = null;
             continue; /* Loop/switch isn't completed */
         }
-        String s1 = validateName(s, true);
-        if(s1 != null && !"android".equals(s) && !"miui".equals(s)) {
+        String s1 = Injector.filterNameError(s, validateName(s, true));
+        if(s1 != null && !"android".equals(s)) {
             as[0] = (new StringBuilder()).append("<manifest> specifies bad package name \"").append(s).append("\": ").append(s1).toString();
             packagelite = null;
             continue; /* Loop/switch isn't completed */
@@ -2414,8 +2426,8 @@ _L5:
             if(s1 == null || s1.length() == 0) {
                 as[0] = "<manifest> does not specify package";
             } else {
-                String s2 = validateName(s1, true);
-                if(s2 != null && !"android".equals(s1) && !"miui".equals(s1))
+                String s2 = Injector.filterNameError(s1, validateName(s1, true));
+                if(s2 != null && !"android".equals(s1))
                     as[0] = (new StringBuilder()).append("<manifest> specifies bad package name \"").append(s1).append("\": ").append(s2).toString();
                 else
                     s = s1.intern();
@@ -3056,21 +3068,22 @@ label0:
 _L5:
         return package1;
         XmlResourceParser xmlresourceparser;
-        Resources resources;
+        MiuiResources miuiresources;
         boolean flag;
         xmlresourceparser = null;
-        resources = null;
+        miuiresources = null;
         flag = true;
         AssetManager assetmanager = new AssetManager();
         int j = assetmanager.addAssetPath(mArchiveSourcePath);
         if(j == 0) goto _L2; else goto _L1
 _L1:
+        MiuiResources miuiresources1 = new MiuiResources(assetmanager, displaymetrics, null);
         XmlResourceParser xmlresourceparser1;
-        resources = MiuiClassFactory.newResources(assetmanager, displaymetrics, null);
         assetmanager.setConfiguration(0, 0, null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, android.os.Build.VERSION.RESOURCES_SDK_INT);
         xmlresourceparser1 = assetmanager.openXmlResourceParser(j, "AndroidManifest.xml");
         xmlresourceparser = xmlresourceparser1;
         flag = false;
+        miuiresources = miuiresources1;
 _L6:
         if(!flag) goto _L4; else goto _L3
 _L3:
@@ -3093,7 +3106,7 @@ _L4:
         as = new String[1];
         package1 = null;
         obj = null;
-        Package package2 = parsePackage(resources, xmlresourceparser, i, as);
+        Package package2 = parsePackage(((Resources) (miuiresources)), xmlresourceparser, i, as);
         package1 = package2;
 _L7:
         if(package1 == null) {
@@ -3124,6 +3137,9 @@ _L7:
           goto _L7
         exception;
         assetmanager = null;
+          goto _L8
+        exception;
+        miuiresources = miuiresources1;
           goto _L8
     }
 

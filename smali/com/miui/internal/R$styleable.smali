@@ -37,6 +37,10 @@
 
 .field public static final AlphabetFastIndexer_overlayTextSize:I = 0x8
 
+.field public static final FixedListView:[I = null
+
+.field public static final FixedListView_maxItemCount:I = 0x0
+
 .field public static final GradientTextView:[I = null
 
 .field public static final GradientTextView_endColor:I = 0x1
@@ -129,86 +133,235 @@
 
 .field public static final SpectrumVisualizer_update_enable:I = 0x5
 
+.field public static final TabLayout:[I = null
+
+.field public static final TabLayout_backgroundLeft:I = 0x1
+
+.field public static final TabLayout_backgroundMiddle:I = 0x0
+
+.field public static final TabLayout_backgroundRight:I = 0x2
+
+.field public static final V5_Theme:[I = null
+
+.field public static final V5_Theme_v5_bottom_bar_bg:I = 0x1c
+
+.field public static final V5_Theme_v5_bottom_bar_edit_icon:I = 0x0
+
+.field public static final V5_Theme_v5_bottom_bar_favorite_icon:I = 0x33
+
+.field public static final V5_Theme_v5_bottom_bar_icon_bg:I = 0x2a
+
+.field public static final V5_Theme_v5_bottom_bar_icon_text_color:I = 0xe
+
+.field public static final V5_Theme_v5_bottom_bar_icon_text_shadow:I = 0xf
+
+.field public static final V5_Theme_v5_bottom_bar_list_text_color:I = 0x10
+
+.field public static final V5_Theme_v5_bottom_bar_more_icon:I = 0x2b
+
+.field public static final V5_Theme_v5_bottom_bar_top_line:I = 0x1d
+
+.field public static final V5_Theme_v5_bottom_bar_unfavorite_icon:I = 0x34
+
+.field public static final V5_Theme_v5_bottom_placeholder:I = 0x31
+
+.field public static final V5_Theme_v5_button_text_color:I = 0x12
+
+.field public static final V5_Theme_v5_edit_mode_bottom_bar_bg:I = 0x21
+
+.field public static final V5_Theme_v5_edit_mode_bottom_bar_list_bg:I = 0x22
+
+.field public static final V5_Theme_v5_edit_mode_bottom_bar_list_item_bg:I = 0x23
+
+.field public static final V5_Theme_v5_edit_mode_top_bar_bg:I = 0x1e
+
+.field public static final V5_Theme_v5_edit_mode_top_bar_button:I = 0x1f
+
+.field public static final V5_Theme_v5_edit_mode_top_bar_button_main:I = 0x20
+
+.field public static final V5_Theme_v5_edit_text_bg:I = 0x1a
+
+.field public static final V5_Theme_v5_edit_text_search_bg:I = 0x1b
+
+.field public static final V5_Theme_v5_edit_text_search_clear_btn:I = 0x1
+
+.field public static final V5_Theme_v5_group_item_bg:I = 0x35
+
+.field public static final V5_Theme_v5_list_secondary_text_color:I = 0x14
+
+.field public static final V5_Theme_v5_list_secondary_text_shadow:I = 0x15
+
+.field public static final V5_Theme_v5_list_text_color:I = 0x13
+
+.field public static final V5_Theme_v5_list_view_item_bg:I = 0x24
+
+.field public static final V5_Theme_v5_menu_preference_list_color:I = 0x11
+
+.field public static final V5_Theme_v5_primary_text_color:I = 0x2
+
+.field public static final V5_Theme_v5_secondary_tab_bg:I = 0x2e
+
+.field public static final V5_Theme_v5_secondary_tab_indicator_bg:I = 0x2c
+
+.field public static final V5_Theme_v5_secondary_tab_indicator_style:I = 0x2d
+
+.field public static final V5_Theme_v5_secondary_tab_indicator_text_color:I = 0xc
+
+.field public static final V5_Theme_v5_secondary_tab_indicator_text_shadow:I = 0xd
+
+.field public static final V5_Theme_v5_secondary_tab_style:I = 0x2f
+
+.field public static final V5_Theme_v5_secondary_text_color:I = 0x3
+
+.field public static final V5_Theme_v5_tab_bg:I = 0x26
+
+.field public static final V5_Theme_v5_tab_indicator_arrow:I = 0x28
+
+.field public static final V5_Theme_v5_tab_indicator_arrow_style:I = 0x29
+
+.field public static final V5_Theme_v5_tab_indicator_bg:I = 0x18
+
+.field public static final V5_Theme_v5_tab_indicator_bg_no_title:I = 0x19
+
+.field public static final V5_Theme_v5_tab_indicator_style:I = 0x25
+
+.field public static final V5_Theme_v5_tab_style:I = 0x27
+
+.field public static final V5_Theme_v5_tertiary_text_color:I = 0x4
+
+.field public static final V5_Theme_v5_text_color_disable:I = 0x5
+
+.field public static final V5_Theme_v5_text_color_hilighted:I = 0x8
+
+.field public static final V5_Theme_v5_text_color_hint:I = 0x7
+
+.field public static final V5_Theme_v5_text_color_pressed:I = 0x6
+
+.field public static final V5_Theme_v5_title_bar_back_button:I = 0x17
+
+.field public static final V5_Theme_v5_title_bar_back_button_large:I = 0x32
+
+.field public static final V5_Theme_v5_title_bar_bg:I = 0x16
+
+.field public static final V5_Theme_v5_title_text_color:I = 0x9
+
+.field public static final V5_Theme_v5_title_text_color_no_activated:I = 0xa
+
+.field public static final V5_Theme_v5_title_text_shadow:I = 0xb
+
+.field public static final V5_Theme_v5_top_placeholder:I = 0x30
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 5
 
     .prologue
-    const/4 v2, 0x7
+    const/4 v4, 0x7
 
-    const/4 v1, 0x2
+    const/4 v3, 0x2
 
-    .line 2254
+    .line 3088
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_42
+    fill-array-data v0, :array_5e
 
     sput-object v0, Lcom/miui/internal/R$styleable;->AlphabetFastIndexer:[I
 
-    .line 2414
-    new-array v0, v1, [I
-
-    fill-array-data v0, :array_5a
-
-    sput-object v0, Lcom/miui/internal/R$styleable;->GradientTextView:[I
-
-    .line 2481
-    const/16 v0, 0xc
+    .line 3246
+    const/4 v0, 0x1
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_62
+    const/4 v1, 0x0
 
-    sput-object v0, Lcom/miui/internal/R$styleable;->LockPatternView:[I
+    const v2, 0x6010031
 
-    .line 2644
-    const/4 v0, 0x4
+    aput v2, v0, v1
+
+    sput-object v0, Lcom/miui/internal/R$styleable;->FixedListView:[I
+
+    .line 3279
+    new-array v0, v3, [I
+
+    fill-array-data v0, :array_76
+
+    sput-object v0, Lcom/miui/internal/R$styleable;->GradientTextView:[I
+
+    .line 3346
+    const/16 v0, 0xc
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_7e
 
+    sput-object v0, Lcom/miui/internal/R$styleable;->LockPatternView:[I
+
+    .line 3509
+    const/4 v0, 0x4
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_9a
+
     sput-object v0, Lcom/miui/internal/R$styleable;->MicloudPush:[I
 
-    .line 2719
-    new-array v0, v1, [I
+    .line 3584
+    new-array v0, v3, [I
 
-    fill-array-data v0, :array_8a
+    fill-array-data v0, :array_a6
 
     sput-object v0, Lcom/miui/internal/R$styleable;->MiuiInCallAnswerWidgetHorizontal:[I
 
-    .line 2766
+    .line 3631
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_92
+    fill-array-data v0, :array_ae
 
     sput-object v0, Lcom/miui/internal/R$styleable;->PhotoFrameView:[I
 
-    .line 2877
-    new-array v0, v2, [I
+    .line 3742
+    new-array v0, v4, [I
 
-    fill-array-data v0, :array_a0
+    fill-array-data v0, :array_bc
 
     sput-object v0, Lcom/miui/internal/R$styleable;->SlidingButton:[I
 
-    .line 2975
-    new-array v0, v2, [I
+    .line 3840
+    new-array v0, v4, [I
 
-    fill-array-data v0, :array_b2
+    fill-array-data v0, :array_ce
 
     sput-object v0, Lcom/miui/internal/R$styleable;->SpectrumVisualizer:[I
 
+    .line 3960
+    const/4 v0, 0x3
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_e0
+
+    sput-object v0, Lcom/miui/internal/R$styleable;->TabLayout:[I
+
+    .line 4111
+    const/16 v0, 0x36
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_ea
+
+    sput-object v0, Lcom/miui/internal/R$styleable;->V5_Theme:[I
+
     return-void
 
-    .line 2254
+    .line 3088
     nop
 
-    :array_42
+    :array_5e
     .array-data 0x4
         0x12t 0x0t 0x1t 0x6t
         0x13t 0x0t 0x1t 0x6t
@@ -222,15 +375,15 @@
         0x1bt 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2414
-    :array_5a
+    .line 3279
+    :array_76
     .array-data 0x4
         0x10t 0x0t 0x1t 0x6t
         0x11t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2481
-    :array_62
+    .line 3346
+    :array_7e
     .array-data 0x4
         0x21t 0x0t 0x1t 0x6t
         0x22t 0x0t 0x1t 0x6t
@@ -246,8 +399,8 @@
         0x2ct 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2644
-    :array_7e
+    .line 3509
+    :array_9a
     .array-data 0x4
         0x2dt 0x0t 0x1t 0x6t
         0x2et 0x0t 0x1t 0x6t
@@ -255,15 +408,15 @@
         0x30t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2719
-    :array_8a
+    .line 3584
+    :array_a6
     .array-data 0x4
         0x7t 0x0t 0x1t 0x6t
         0xft 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2766
-    :array_92
+    .line 3631
+    :array_ae
     .array-data 0x4
         0x1ct 0x0t 0x1t 0x6t
         0x1dt 0x0t 0x1t 0x6t
@@ -272,8 +425,8 @@
         0x20t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2877
-    :array_a0
+    .line 3742
+    :array_bc
     .array-data 0x4
         0x8t 0x0t 0x1t 0x6t
         0x9t 0x0t 0x1t 0x6t
@@ -284,8 +437,8 @@
         0xet 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 2975
-    :array_b2
+    .line 3840
+    :array_ce
     .array-data 0x4
         0x0t 0x0t 0x1t 0x6t
         0x1t 0x0t 0x1t 0x6t
@@ -295,13 +448,80 @@
         0x5t 0x0t 0x1t 0x6t
         0x6t 0x0t 0x1t 0x6t
     .end array-data
+
+    .line 3960
+    :array_e0
+    .array-data 0x4
+        0x32t 0x0t 0x1t 0x6t
+        0x33t 0x0t 0x1t 0x6t
+        0x34t 0x0t 0x1t 0x6t
+    .end array-data
+
+    .line 4111
+    :array_ea
+    .array-data 0x4
+        0x35t 0x0t 0x1t 0x6t
+        0x36t 0x0t 0x1t 0x6t
+        0x37t 0x0t 0x1t 0x6t
+        0x38t 0x0t 0x1t 0x6t
+        0x39t 0x0t 0x1t 0x6t
+        0x3at 0x0t 0x1t 0x6t
+        0x3bt 0x0t 0x1t 0x6t
+        0x3ct 0x0t 0x1t 0x6t
+        0x3dt 0x0t 0x1t 0x6t
+        0x3et 0x0t 0x1t 0x6t
+        0x3ft 0x0t 0x1t 0x6t
+        0x40t 0x0t 0x1t 0x6t
+        0x41t 0x0t 0x1t 0x6t
+        0x42t 0x0t 0x1t 0x6t
+        0x43t 0x0t 0x1t 0x6t
+        0x44t 0x0t 0x1t 0x6t
+        0x45t 0x0t 0x1t 0x6t
+        0x46t 0x0t 0x1t 0x6t
+        0x47t 0x0t 0x1t 0x6t
+        0x48t 0x0t 0x1t 0x6t
+        0x49t 0x0t 0x1t 0x6t
+        0x4at 0x0t 0x1t 0x6t
+        0x4bt 0x0t 0x1t 0x6t
+        0x4ct 0x0t 0x1t 0x6t
+        0x4dt 0x0t 0x1t 0x6t
+        0x4et 0x0t 0x1t 0x6t
+        0x4ft 0x0t 0x1t 0x6t
+        0x50t 0x0t 0x1t 0x6t
+        0x51t 0x0t 0x1t 0x6t
+        0x52t 0x0t 0x1t 0x6t
+        0x53t 0x0t 0x1t 0x6t
+        0x54t 0x0t 0x1t 0x6t
+        0x55t 0x0t 0x1t 0x6t
+        0x56t 0x0t 0x1t 0x6t
+        0x57t 0x0t 0x1t 0x6t
+        0x58t 0x0t 0x1t 0x6t
+        0x59t 0x0t 0x1t 0x6t
+        0x5at 0x0t 0x1t 0x6t
+        0x5bt 0x0t 0x1t 0x6t
+        0x5ct 0x0t 0x1t 0x6t
+        0x5dt 0x0t 0x1t 0x6t
+        0x5et 0x0t 0x1t 0x6t
+        0x5ft 0x0t 0x1t 0x6t
+        0x60t 0x0t 0x1t 0x6t
+        0x61t 0x0t 0x1t 0x6t
+        0x62t 0x0t 0x1t 0x6t
+        0x63t 0x0t 0x1t 0x6t
+        0x64t 0x0t 0x1t 0x6t
+        0x65t 0x0t 0x1t 0x6t
+        0x66t 0x0t 0x1t 0x6t
+        0x67t 0x0t 0x1t 0x6t
+        0x68t 0x0t 0x1t 0x6t
+        0x69t 0x0t 0x1t 0x6t
+        0x6at 0x0t 0x1t 0x6t
+    .end array-data
 .end method
 
 .method public constructor <init>()V
     .registers 1
 
     .prologue
-    .line 2223
+    .line 3057
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

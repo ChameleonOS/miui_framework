@@ -89,6 +89,16 @@ public class Activity extends ContextThemeWrapper
 
     }
 
+    static class Injector {
+
+        static void checkAccessControl(Activity activity) {
+            FirewallManager.checkAccessControl(activity.mParent, activity.getContentResolver(), activity.getPackageName(), activity.getPackageManager(), activity.mMainThread.getApplicationThread(), activity.getToken(), activity.mEmbeddedID);
+        }
+
+        Injector() {
+        }
+    }
+
 
     public Activity() {
         mTemporaryPause = false;
@@ -726,6 +736,10 @@ _L1:
 
     public final int getTitleColor() {
         return mTitleColor;
+    }
+
+    IBinder getToken() {
+        return mToken;
     }
 
     public final int getVolumeControlStream() {
@@ -1411,7 +1425,7 @@ _L5:
     protected void onResume() {
         getApplication().dispatchActivityResumed(this);
         mCalled = true;
-        FirewallManager.checkAccessControl(mParent, getContentResolver(), getPackageName(), getPackageManager(), mMainThread.getApplicationThread(), mToken, mEmbeddedID);
+        Injector.checkAccessControl(this);
     }
 
     HashMap onRetainNonConfigurationChildInstances() {

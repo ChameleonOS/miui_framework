@@ -10,6 +10,7 @@ import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.util.Log;
 
 // Referenced classes of package com.android.internal.telephony:
 //            IccProvider, IIccPhoneBook
@@ -73,8 +74,12 @@ _L2:
 _L1:
     }
 
+    private void log(String s) {
+        Log.d("IccProvider", (new StringBuilder()).append("[IccProvider] ").append(s).toString());
+    }
+
     public String getType(Uri uri) {
-        URL_MATCHER.match(uri);
+        getURL_MATCHER().match(uri);
         JVM INSTR tableswitch 4 5: default 28
     //                   4 36
     //                   5 36;
@@ -90,7 +95,7 @@ _L3:
     }
 
     public Cursor query(Uri uri, String as[], String s, String as1[], String s1) {
-        URL_MATCHER.match(uri);
+        getURL_MATCHER().match(uri);
         JVM INSTR tableswitch 4 5: default 28
     //                   4 44
     //                   5 53;
@@ -109,10 +114,12 @@ _L4:
     }
 
     private static final int ADNCAPACITY = 5;
+    private static final boolean DBG = false;
     private static final int FREEADN = 4;
+    private static final String TAG = "IccProvider";
 
     static  {
-        URL_MATCHER.addURI("icc", "freeadn", 4);
-        URL_MATCHER.addURI("icc", "adncapacity", 5);
+        getURL_MATCHER().addURI("icc", "freeadn", 4);
+        getURL_MATCHER().addURI("icc", "adncapacity", 5);
     }
 }

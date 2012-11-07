@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 276
+    .line 284
     iput-object p1, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickFillInIntent;
 
     iput-object p2, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
@@ -53,14 +53,14 @@
 
     const/high16 v7, 0x3f00
 
-    .line 279
+    .line 287
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/View;
 
-    .line 281
+    .line 289
     .local v1, parent:Landroid/view/View;
     :goto_a
     instance-of v5, v1, Landroid/widget/AdapterView;
@@ -71,7 +71,7 @@
 
     if-nez v5, :cond_19
 
-    .line 282
+    .line 290
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
@@ -82,24 +82,24 @@
     .restart local v1       #parent:Landroid/view/View;
     goto :goto_a
 
-    .line 285
+    .line 293
     :cond_19
     instance-of v5, v1, Landroid/appwidget/AppWidgetHostView;
 
     if-eqz v5, :cond_25
 
-    .line 288
+    .line 296
     const-string v5, "RemoteViews"
 
     const-string v6, "Collection item doesn\'t have AdapterView parent"
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 314
+    .line 322
     :goto_24
     return-void
 
-    .line 293
+    .line 301
     :cond_25
     invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -109,7 +109,7 @@
 
     if-nez v5, :cond_35
 
-    .line 294
+    .line 302
     const-string v5, "RemoteViews"
 
     const-string v6, "Attempting setOnClickFillInIntent without calling setPendingIntentTemplate on parent."
@@ -118,7 +118,7 @@
 
     goto :goto_24
 
-    .line 299
+    .line 307
     :cond_35
     invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -126,7 +126,7 @@
 
     check-cast v2, Landroid/app/PendingIntent;
 
-    .line 301
+    .line 309
     .local v2, pendingIntent:Landroid/app/PendingIntent;
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -142,22 +142,22 @@
 
     iget v0, v5, Landroid/content/res/CompatibilityInfo;->applicationScale:F
 
-    .line 303
+    .line 311
     .local v0, appScale:F
     const/4 v5, 0x2
 
     new-array v3, v5, [I
 
-    .line 304
+    .line 312
     .local v3, pos:[I
     invoke-virtual {p1, v3}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 306
+    .line 314
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
-    .line 307
+    .line 315
     .local v4, rect:Landroid/graphics/Rect;
     aget v5, v3, v6
 
@@ -171,7 +171,7 @@
 
     iput v5, v4, Landroid/graphics/Rect;->left:I
 
-    .line 308
+    .line 316
     aget v5, v3, v8
 
     int-to-float v5, v5
@@ -184,7 +184,7 @@
 
     iput v5, v4, Landroid/graphics/Rect;->top:I
 
-    .line 309
+    .line 317
     aget v5, v3, v6
 
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
@@ -203,7 +203,7 @@
 
     iput v5, v4, Landroid/graphics/Rect;->right:I
 
-    .line 310
+    .line 318
     aget v5, v3, v8
 
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
@@ -222,14 +222,14 @@
 
     iput v5, v4, Landroid/graphics/Rect;->bottom:I
 
-    .line 312
+    .line 320
     iget-object v5, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickFillInIntent;
 
     iget-object v5, v5, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->fillInIntent:Landroid/content/Intent;
 
     invoke-virtual {v5, v4}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
-    .line 313
+    .line 321
     iget-object v5, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent$1;->val$handler:Landroid/widget/RemoteViews$OnClickHandler;
 
     iget-object v6, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent$1;->this$1:Landroid/widget/RemoteViews$SetOnClickFillInIntent;

@@ -39,13 +39,27 @@ public class AnimationDrawable extends DrawableContainer
             return new AnimationDrawable(this, resources);
         }
 
-        int mDurations[];
+        void setDuration(int i, int j) {
+            mDurations[i] = j;
+        }
+
+        private int mDurations[];
         private boolean mOneShot;
 
 
 
 /*
-        static boolean access$002(AnimationState animationstate, boolean flag) {
+        static int[] access$002(AnimationState animationstate, int ai[]) {
+            animationstate.mDurations = ai;
+            return ai;
+        }
+
+*/
+
+
+
+/*
+        static boolean access$102(AnimationState animationstate, boolean flag) {
             animationstate.mOneShot = flag;
             return flag;
         }
@@ -113,6 +127,10 @@ _L3:
         mAnimationState.addFrame(drawable, i);
         if(mCurFrame < 0)
             setFrame(0, true, false);
+    }
+
+    AnimationState getAnimationState() {
+        return mAnimationState;
     }
 
     public int getDuration(int i) {
@@ -225,7 +243,7 @@ _L3:
         super.unscheduleSelf(runnable);
     }
 
-    AnimationState mAnimationState;
+    private AnimationState mAnimationState;
     private int mCurFrame;
     private boolean mMutated;
 }

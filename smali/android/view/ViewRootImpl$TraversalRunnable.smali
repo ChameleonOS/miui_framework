@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 4239
+    .line 4243
     iput-object p1, p0, Landroid/view/ViewRootImpl$TraversalRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .registers 2
 
     .prologue
-    .line 4242
+    .line 4246
     iget-object v0, p0, Landroid/view/ViewRootImpl$TraversalRunnable;->this$0:Landroid/view/ViewRootImpl;
 
     invoke-virtual {v0}, Landroid/view/ViewRootImpl;->doTraversal()V
 
-    .line 4243
+    .line 4247
     return-void
 .end method

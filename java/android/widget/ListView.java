@@ -1196,6 +1196,7 @@ label0:
     }
 
     private void setupChild(View view, int i, int j, boolean flag, int k, boolean flag1, boolean flag2) {
+        AbsListView.Injector.tagSequenceState(view, i, super.mAdapter);
         boolean flag3;
         boolean flag4;
         int l;

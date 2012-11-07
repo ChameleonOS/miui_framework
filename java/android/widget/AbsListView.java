@@ -850,9 +850,41 @@ _L4:
         public static final int SCROLL_STATE_TOUCH_SCROLL = 1;
     }
 
+    static class Injector {
+
+        static boolean isOutOfTouchRange(AbsListView abslistview, MotionEvent motionevent) {
+            boolean flag;
+            if(motionevent.getX() < (float)abslistview.mTouchPaddingLeft || motionevent.getX() > (float)(abslistview.getWidth() - abslistview.mTouchPaddingRight))
+                flag = true;
+            else
+                flag = false;
+            return flag;
+        }
+
+        static void tagSequenceState(View view, int i, Adapter adapter) {
+            if(i == 0) {
+                int j;
+                if(adapter.getCount() == 1)
+                    j = 0x10100a3;
+                else
+                    j = 0x10100a4;
+                view.setAdditionalState(j);
+            } else
+            if(i == -1 + adapter.getCount())
+                view.setAdditionalState(0x10100a6);
+            else
+                view.setAdditionalState(0x10100a5);
+        }
+
+        Injector() {
+        }
+    }
+
 
     public AbsListView(Context context) {
         super(context);
+        mTouchPaddingLeft = 0;
+        mTouchPaddingRight = 0;
         mChoiceMode = 0;
         mLayoutMode = 0;
         mDeferNotifyDataSetChanged = false;
@@ -865,8 +897,6 @@ _L4:
         mSelectionRightPadding = 0;
         mSelectionBottomPadding = 0;
         mListPadding = new Rect();
-        mTouchPaddingLeft = 0;
-        mTouchPaddingRight = 0;
         mWidthMeasureSpec = 0;
         mTouchMode = -1;
         mSelectedTop = 0;
@@ -896,6 +926,8 @@ _L4:
 
     public AbsListView(Context context, AttributeSet attributeset, int i) {
         super(context, attributeset, i);
+        mTouchPaddingLeft = 0;
+        mTouchPaddingRight = 0;
         mChoiceMode = 0;
         mLayoutMode = 0;
         mDeferNotifyDataSetChanged = false;
@@ -908,8 +940,6 @@ _L4:
         mSelectionRightPadding = 0;
         mSelectionBottomPadding = 0;
         mListPadding = new Rect();
-        mTouchPaddingLeft = 0;
-        mTouchPaddingRight = 0;
         mWidthMeasureSpec = 0;
         mTouchMode = -1;
         mSelectedTop = 0;
@@ -1110,15 +1140,6 @@ _L7:
     private void initVelocityTrackerIfNotExists() {
         if(mVelocityTracker == null)
             mVelocityTracker = VelocityTracker.obtain();
-    }
-
-    private boolean isOutOfTouchRange(MotionEvent motionevent) {
-        boolean flag;
-        if(motionevent.getX() < (float)mTouchPaddingLeft || motionevent.getX() > (float)(getWidth() - mTouchPaddingRight))
-            flag = true;
-        else
-            flag = false;
-        return flag;
     }
 
     private void onSecondaryPointerUp(MotionEvent motionevent) {
@@ -2910,7 +2931,7 @@ _L5:
 
     public boolean onTouchEvent(MotionEvent motionevent) {
         boolean flag;
-        if(isOutOfTouchRange(motionevent))
+        if(Injector.isOutOfTouchRange(this, motionevent))
             flag = true;
         else
         if(!isEnabled()) {

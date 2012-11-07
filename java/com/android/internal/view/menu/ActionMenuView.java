@@ -54,6 +54,26 @@ public class ActionMenuView extends LinearLayout
         public abstract boolean needsDividerBefore();
     }
 
+    static class Injector {
+
+        static void layout(View view, int i, int j, int k, int l) {
+            int i1 = view.getMeasuredWidth();
+            int j1 = view.getMeasuredHeight();
+            if((5 & ((android.widget.LinearLayout.LayoutParams) ((LayoutParams)view.getLayoutParams())).gravity) != 0)
+                view.layout(k - i1, j, k, j + j1);
+            else
+            if((3 & ((android.widget.LinearLayout.LayoutParams) ((LayoutParams)view.getLayoutParams())).gravity) != 0) {
+                view.layout(i, j, i + i1, j + j1);
+            } else {
+                int k1 = (k - i) / 2 - i1 / 2;
+                view.layout(k1, j, k1 + i1, j + j1);
+            }
+        }
+
+        Injector() {
+        }
+    }
+
 
     public ActionMenuView(Context context) {
         this(context, null);
@@ -478,16 +498,10 @@ _L2:
         View view1 = getChildAt(0);
         int j5 = view1.getMeasuredWidth();
         int k5 = view1.getMeasuredHeight();
-        int l5 = j1 - k5 / 2;
-        if((5 & ((android.widget.LinearLayout.LayoutParams) ((LayoutParams)view1.getLayoutParams())).gravity) != 0)
-            view1.layout(k - j5, l5, k, l5 + k5);
-        else
-        if((3 & ((android.widget.LinearLayout.LayoutParams) ((LayoutParams)view1.getLayoutParams())).gravity) != 0) {
-            view1.layout(i, l5, i + j5, l5 + k5);
-        } else {
-            int i6 = (k - i) / 2 - j5 / 2;
-            view1.layout(i6, l5, i6 + j5, l5 + k5);
-        }
+        int l5 = (k - i) / 2 - j5 / 2;
+        int i6 = j1 - k5 / 2;
+        view1.layout(l5, i6, l5 + j5, i6 + k5);
+        Injector.layout(view1, i, i6, k, l);
         if(true) goto _L4; else goto _L3
 _L3:
         int l2;

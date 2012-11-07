@@ -354,7 +354,9 @@
     iput-object v3, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     .line 118
-    iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getHandleDrawable()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v3
 
     invoke-virtual {v3}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->getWidth()I
 
@@ -364,7 +366,7 @@
 
     int-to-float v3, v3
 
-    iput v3, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mGlowRadius:F
+    invoke-virtual {p0, v3}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setGlowRadius(F)V
 
     .line 119
     return-void
@@ -417,28 +419,44 @@
     return-void
 .end method
 
+.method private dist2(FF)F
+    .registers 5
+    .parameter "dx"
+    .parameter "dy"
+
+    .prologue
+    .line 253
+    mul-float v0, p1, p1
+
+    mul-float v1, p2, p2
+
+    add-float/2addr v0, v1
+
+    return v0
+.end method
+
 .method private hideRightHintAnim()V
     .registers 3
 
     .prologue
-    .line 488
+    .line 501
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    .line 489
+    .line 502
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_f
 
-    .line 490
+    .line 503
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->end()V
 
-    .line 492
+    .line 505
     :cond_f
     return-void
 .end method
@@ -447,7 +465,7 @@
     .registers 4
 
     .prologue
-    .line 226
+    .line 233
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -468,7 +486,7 @@
 
     check-cast v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 227
+    .line 234
     .local v1, target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
     const/4 v2, 0x0
 
@@ -476,7 +494,7 @@
 
     goto :goto_6
 
-    .line 229
+    .line 236
     .end local v1           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
     :cond_17
     return-void
@@ -487,7 +505,7 @@
     .parameter "resourceId"
 
     .prologue
-    .line 232
+    .line 239
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getContext()Landroid/content/Context;
 
     move-result-object v6
@@ -496,25 +514,25 @@
 
     move-result-object v3
 
-    .line 233
+    .line 240
     .local v3, res:Landroid/content/res/Resources;
     invoke-virtual {v3, p1}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 234
+    .line 241
     .local v0, array:Landroid/content/res/TypedArray;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->length()I
 
     move-result v1
 
-    .line 235
+    .line 242
     .local v1, count:I
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 236
+    .line 243
     .local v4, targetDrawables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/widget/multiwaveview/TargetDrawable;>;"
     const/4 v2, 0x0
 
@@ -522,12 +540,12 @@
     :goto_16
     if-ge v2, v1, :cond_2d
 
-    .line 237
+    .line 244
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v5
 
-    .line 238
+    .line 245
     .local v5, value:Landroid/util/TypedValue;
     new-instance v7, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
@@ -540,29 +558,29 @@
 
     invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 236
+    .line 243
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_16
 
-    .line 238
+    .line 245
     :cond_2b
     const/4 v6, 0x0
 
     goto :goto_22
 
-    .line 240
+    .line 247
     .end local v5           #value:Landroid/util/TypedValue;
     :cond_2d
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 241
+    .line 248
     iput-object v4, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightDrawables:Ljava/util/ArrayList;
 
-    .line 242
+    .line 249
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->updateTargetLightPositions()V
 
-    .line 243
+    .line 250
     return-void
 .end method
 
@@ -573,17 +591,21 @@
     .parameter "animate"
 
     .prologue
-    .line 529
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .line 542
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getHandleDrawable()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setX(F)V
 
-    .line 530
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .line 543
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getHandleDrawable()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v0
 
     invoke-virtual {v0, p2}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setY(F)V
 
-    .line 531
+    .line 544
     return-void
 .end method
 
@@ -593,32 +615,32 @@
     .prologue
     const/4 v8, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     const/high16 v7, 0x3f80
 
-    .line 400
+    .line 411
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getOuterRing()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v0
+
+    .line 413
+    .local v0, outerRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
     iput-boolean v8, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mShowingOuterRing:Z
 
-    .line 401
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mOuterRingAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+    .line 414
+    iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mOuterRingAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->cancel()V
+    invoke-virtual {v1}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->cancel()V
 
-    .line 402
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .line 415
+    invoke-virtual {v0, v2}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setScaleX(F)V
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setScaleX(F)V
+    .line 416
+    invoke-virtual {v0, v2}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setScaleY(F)V
 
-    .line 403
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setScaleY(F)V
-
-    .line 404
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mOuterRingAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
-
-    iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .line 417
+    iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mOuterRingAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
     const-wide/16 v2, 0x12c
 
@@ -692,7 +714,7 @@
 
     new-instance v6, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$2;
 
-    invoke-direct {v6, p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$2;-><init>(Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;)V
+    invoke-direct {v6, p0, v0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$2;-><init>(Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;Lcom/android/internal/widget/multiwaveview/TargetDrawable;)V
 
     aput-object v6, v4, v5
 
@@ -708,18 +730,18 @@
 
     aput-object v6, v4, v5
 
-    invoke-static {v1, v2, v3, v4}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
+    invoke-static {v0, v2, v3, v4}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
 
-    .line 420
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mOuterRingAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+    .line 433
+    iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mOuterRingAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
-    invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->start()V
+    invoke-virtual {v1}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->start()V
 
-    .line 421
+    .line 434
     return-void
 .end method
 
@@ -728,14 +750,14 @@
     .parameter "i"
 
     .prologue
-    .line 481
+    .line 494
     sget-object v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->STATE_HINT_ANIM:[[I
 
     array-length v0, v0
 
     if-ge p1, v0, :cond_11
 
-    .line 482
+    .line 495
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     sget-object v1, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->STATE_HINT_ANIM:[[I
@@ -744,10 +766,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    .line 483
+    .line 496
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->invalidate()V
 
-    .line 485
+    .line 498
     :cond_11
     return-void
 .end method
@@ -760,7 +782,7 @@
 
     const/4 v4, 0x2
 
-    .line 495
+    .line 508
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     const-string v2, "alpha"
@@ -773,24 +795,24 @@
 
     move-result-object v0
 
-    .line 496
+    .line 509
     .local v0, showHintAnimationAlpha:Landroid/animation/ObjectAnimator;
     const-wide/16 v1, 0x12c
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 497
+    .line 510
     const-wide/16 v1, 0x190
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
-    .line 498
+    .line 511
     invoke-virtual {v0, v5}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 499
+    .line 512
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 501
+    .line 514
     new-array v1, v4, [F
 
     fill-array-data v1, :array_62
@@ -801,26 +823,26 @@
 
     iput-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
-    .line 502
+    .line 515
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x5dc
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 503
+    .line 516
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1, v5}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 504
+    .line 517
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0xc8
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 505
+    .line 518
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     new-instance v2, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;
@@ -829,29 +851,29 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 522
+    .line 535
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     const/4 v2, -0x1
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
 
-    .line 523
+    .line 536
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
 
-    .line 524
+    .line 537
     iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 525
+    .line 538
     return-void
 
-    .line 495
+    .line 508
     nop
 
     :array_5a
@@ -860,7 +882,7 @@
         0x0t 0x0t 0x80t 0x3ft
     .end array-data
 
-    .line 501
+    .line 514
     :array_62
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -872,7 +894,7 @@
     .registers 4
 
     .prologue
-    .line 188
+    .line 192
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -893,7 +915,7 @@
 
     check-cast v0, Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    .line 189
+    .line 193
     .local v0, anim:Lcom/android/internal/widget/multiwaveview/Tweener;
     iget-object v2, v0, Lcom/android/internal/widget/multiwaveview/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
@@ -901,14 +923,14 @@
 
     goto :goto_6
 
-    .line 191
+    .line 195
     .end local v0           #anim:Lcom/android/internal/widget/multiwaveview/Tweener;
     :cond_18
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 192
+    .line 196
     return-void
 .end method
 
@@ -916,12 +938,16 @@
     .registers 5
 
     .prologue
-    .line 384
+    .line 395
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    iget v1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterX:F
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getWaveCenterX()F
 
-    iget v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRadius:F
+    move-result v1
+
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getOuterRadius()F
+
+    move-result v2
 
     const v3, 0x3f266666
 
@@ -931,14 +957,16 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setX(F)V
 
-    .line 385
+    .line 396
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    iget v1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterY:F
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getWaveCenterY()F
+
+    move-result v1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setY(F)V
 
-    .line 386
+    .line 397
     return-void
 .end method
 
@@ -946,7 +974,7 @@
     .registers 5
 
     .prologue
-    .line 377
+    .line 388
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -959,7 +987,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_29
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -967,16 +995,22 @@
 
     check-cast v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 378
+    .line 389
     .local v1, targetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    iget v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterX:F
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getWaveCenterX()F
+
+    move-result v2
 
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setX(F)V
 
-    .line 379
-    iget v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterX:F
+    .line 390
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getWaveCenterX()F
 
-    iget v3, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterY:F
+    move-result v2
+
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getWaveCenterY()F
+
+    move-result v3
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
 
@@ -986,15 +1020,15 @@
 
     goto :goto_6
 
-    .line 381
+    .line 392
     .end local v1           #targetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_23
+    :cond_29
     return-void
 .end method
 
 
 # virtual methods
-.method protected doFinish()V
+.method doFinish()V
     .registers 14
 
     .prologue
@@ -1008,29 +1042,33 @@
 
     const/4 v4, 0x0
 
-    .line 425
-    iget v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mActiveTarget:I
+    .line 438
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getActiveTarget()I
 
-    .line 426
+    move-result v0
+
+    .line 439
     .local v0, activeTarget:I
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_9d
+    if-eq v0, v2, :cond_a6
 
     move v1, v3
 
-    .line 428
+    .line 441
     .local v1, targetHit:Z
-    :goto_c
+    :goto_e
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
     invoke-virtual {v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->cancel()V
 
-    .line 429
-    if-eqz v1, :cond_a0
+    .line 442
+    if-eqz v1, :cond_a9
 
-    .line 430
-    iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
+    .line 443
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetDrawables()Ljava/util/ArrayList;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1042,21 +1080,21 @@
 
     invoke-virtual {v2, v5}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    .line 432
+    .line 445
     invoke-virtual {p0, v4, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->hideTargets(ZZ)V
 
-    .line 433
+    .line 446
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->hideRightHintAnim()V
 
-    .line 436
-    iget v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mActiveTarget:I
+    .line 449
+    invoke-virtual {p0, v0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->callDispatchTriggerEvent(I)V
 
-    invoke-virtual {p0, v2}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->dispatchTriggerEvent(I)V
-
-    .line 437
+    .line 450
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
-    iget-object v5, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getHandleDrawable()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v5
 
     const-wide/16 v6, 0x0
 
@@ -1134,7 +1172,9 @@
 
     const/16 v3, 0xb
 
-    iget-object v9, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getUpdateListener()Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+    move-result-object v9
 
     aput-object v9, v8, v3
 
@@ -1146,7 +1186,9 @@
 
     const/16 v3, 0xd
 
-    iget-object v9, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mResetListener:Landroid/animation/Animator$AnimatorListener;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getResetListener()Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v9
 
     aput-object v9, v8, v3
 
@@ -1156,34 +1198,36 @@
 
     invoke-virtual {v2, v3}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
 
-    .line 456
-    :goto_92
+    .line 469
+    :goto_9a
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
     invoke-virtual {v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->start()V
 
-    .line 458
-    iput-boolean v4, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mDragging:Z
+    .line 471
+    invoke-virtual {p0, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setDragging(Z)V
 
-    .line 459
-    invoke-virtual {p0, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setGrabbedState(I)V
+    .line 472
+    invoke-virtual {p0, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->callSetGrabbedState(I)V
 
-    .line 460
+    .line 473
     return-void
 
     .end local v1           #targetHit:Z
-    :cond_9d
+    :cond_a6
     move v1, v4
 
-    .line 426
-    goto/16 :goto_c
+    .line 439
+    goto/16 :goto_e
 
-    .line 447
+    .line 460
     .restart local v1       #targetHit:Z
-    :cond_a0
+    :cond_a9
     iget-object v5, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getHandleDrawable()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v6
 
     const-wide/16 v7, 0x12c
 
@@ -1259,7 +1303,9 @@
 
     const/16 v2, 0xb
 
-    iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getUpdateListener()Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+    move-result-object v3
 
     aput-object v3, v9, v2
 
@@ -1271,13 +1317,17 @@
 
     const/16 v3, 0xd
 
-    iget-boolean v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mDragging:Z
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getDragging()Z
 
-    if-eqz v2, :cond_10a
+    move-result v2
 
-    iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mResetListenerWithPing:Landroid/animation/Animator$AnimatorListener;
+    if-eqz v2, :cond_11b
 
-    :goto_100
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getResetListenerWithPing()Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v2
+
+    :goto_111
     aput-object v2, v9, v3
 
     invoke-static {v6, v7, v8, v9}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
@@ -1286,78 +1336,76 @@
 
     invoke-virtual {v5, v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
 
-    goto :goto_92
+    goto :goto_9a
 
-    :cond_10a
-    iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mResetListener:Landroid/animation/Animator$AnimatorListener;
+    :cond_11b
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getResetListener()Landroid/animation/Animator$AnimatorListener;
 
-    goto :goto_100
+    move-result-object v2
+
+    goto :goto_111
 .end method
 
-.method protected handleMove(Landroid/view/MotionEvent;)V
+.method handleMove(Landroid/view/MotionEvent;)V
     .registers 42
     .parameter "event"
 
     .prologue
-    .line 247
-    move-object/from16 v0, p0
+    .line 258
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getDragging()Z
 
-    iget-boolean v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mDragging:Z
+    move-result v33
 
-    move/from16 v33, v0
+    if-nez v33, :cond_7
 
-    if-nez v33, :cond_9
-
-    .line 350
-    :goto_8
+    .line 361
+    :goto_6
     return-void
 
-    .line 252
-    :cond_9
+    .line 263
+    :cond_7
     const/4 v4, -0x1
 
-    .line 253
+    .line 264
     .local v4, activeTarget:I
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getHistorySize()I
 
     move-result v11
 
-    .line 254
+    .line 265
     .local v11, historySize:I
-    move-object/from16 v0, p0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetDrawables()Ljava/util/ArrayList;
 
-    iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
+    move-result-object v27
 
-    move-object/from16 v27, v0
-
-    .line 255
+    .line 266
     .local v27, targets:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/widget/multiwaveview/TargetDrawable;>;"
     invoke-virtual/range {v27 .. v27}, Ljava/util/ArrayList;->size()I
 
     move-result v16
 
-    .line 256
+    .line 267
     .local v16, ntargets:I
     const/16 v31, 0x0
 
-    .line 257
+    .line 268
     .local v31, x:F
     const/16 v32, 0x0
 
-    .line 258
+    .line 269
     .local v32, y:F
     const/4 v13, 0x0
 
     .local v13, k:I
-    :goto_1d
+    :goto_19
     add-int/lit8 v33, v11, 0x1
 
     move/from16 v0, v33
 
-    if-ge v13, v0, :cond_2c0
+    if-ge v13, v0, :cond_2a8
 
-    .line 259
-    if-ge v13, v11, :cond_141
+    .line 270
+    if-ge v13, v11, :cond_12f
 
     move-object/from16 v0, p1
 
@@ -1365,10 +1413,10 @@
 
     move-result v9
 
-    .line 260
+    .line 271
     .local v9, eventX:F
-    :goto_2b
-    if-ge v13, v11, :cond_147
+    :goto_27
+    if-ge v13, v11, :cond_135
 
     move-object/from16 v0, p1
 
@@ -1376,28 +1424,24 @@
 
     move-result v10
 
-    .line 262
+    .line 273
     .local v10, eventY:F
-    :goto_33
-    move-object/from16 v0, p0
+    :goto_2f
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getWaveCenterX()F
 
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterX:F
-
-    move/from16 v33, v0
+    move-result v33
 
     sub-float v29, v9, v33
 
-    .line 263
+    .line 274
     .local v29, tx:F
-    move-object/from16 v0, p0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getWaveCenterY()F
 
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mWaveCenterY:F
-
-    move/from16 v33, v0
+    move-result v33
 
     sub-float v30, v10, v33
 
-    .line 264
+    .line 275
     .local v30, ty:F
     move-object/from16 v0, p0
 
@@ -1405,7 +1449,7 @@
 
     move/from16 v2, v30
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->dist2(FF)F
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->dist2(FF)F
 
     move-result v33
 
@@ -1425,36 +1469,32 @@
 
     move/from16 v28, v0
 
-    .line 265
+    .line 276
     .local v28, touchRadius:F
-    move-object/from16 v0, p0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getOuterRadius()F
 
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRadius:F
-
-    move/from16 v33, v0
+    move-result v33
 
     cmpl-float v33, v28, v33
 
-    if-lez v33, :cond_14d
+    if-lez v33, :cond_13b
 
-    move-object/from16 v0, p0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getOuterRadius()F
 
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRadius:F
-
-    move/from16 v33, v0
+    move-result v33
 
     div-float v17, v33, v28
 
-    .line 266
+    .line 277
     .local v17, scale:F
-    :goto_6d
+    :goto_61
     mul-float v14, v29, v17
 
-    .line 267
+    .line 278
     .local v14, limitX:F
     mul-float v15, v30, v17
 
-    .line 268
+    .line 279
     .local v15, limitY:F
     move/from16 v0, v30
 
@@ -1478,13 +1518,11 @@
 
     move-result-wide v6
 
-    .line 270
+    .line 281
     .local v6, angleRad:D
-    move-object/from16 v0, p0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetDrawables()Ljava/util/ArrayList;
 
-    iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
-
-    move-object/from16 v33, v0
+    move-result-object v33
 
     invoke-virtual/range {v33 .. v33}, Ljava/util/ArrayList;->size()I
 
@@ -1496,48 +1534,44 @@
 
     move/from16 v1, v34
 
-    if-ne v0, v1, :cond_151
+    if-ne v0, v1, :cond_13f
 
     const/16 v18, 0x1
 
-    .line 271
+    .line 282
     .local v18, singleTarget:Z
-    :goto_98
-    if-eqz v18, :cond_155
+    :goto_8a
+    if-eqz v18, :cond_143
 
-    .line 273
-    move-object/from16 v0, p0
+    .line 284
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getOuterRadius()F
 
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRadius:F
+    move-result v33
 
-    move/from16 v33, v0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getSnapMargin()F
 
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mSnapMargin:F
-
-    move/from16 v34, v0
+    move-result v34
 
     sub-float v20, v33, v34
 
-    .line 274
+    .line 285
     .local v20, snapRadius:F
     cmpl-float v33, v28, v20
 
-    if-lez v33, :cond_b1
+    if-lez v33, :cond_9f
 
-    .line 275
+    .line 286
     const/4 v4, 0x0
 
-    .line 276
+    .line 287
     move/from16 v31, v14
 
-    .line 277
+    .line 288
     move/from16 v32, v15
 
-    .line 302
-    :cond_b1
-    :goto_b1
+    .line 313
+    :cond_9f
+    :goto_9f
     const/16 v33, 0x0
 
     move-object/from16 v0, p0
@@ -1550,21 +1584,21 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->moveHandleTo(FFZ)V
 
-    .line 304
+    .line 315
     const/16 v33, -0x1
 
     move/from16 v0, v33
 
-    if-eq v4, v0, :cond_252
+    if-eq v4, v0, :cond_23c
 
-    .line 305
+    .line 316
     const/16 v33, 0x2
 
     move/from16 v0, v33
 
-    if-ne v4, v0, :cond_1e5
+    if-ne v4, v0, :cond_1cf
 
-    .line 306
+    .line 317
     const/16 v33, 0x6
 
     move-object/from16 v0, p0
@@ -1577,8 +1611,8 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->switchToState(IFF)V
 
-    .line 313
-    :goto_d7
+    .line 324
+    :goto_c5
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightDrawables:Ljava/util/ArrayList;
@@ -1593,7 +1627,7 @@
 
     check-cast v8, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 314
+    .line 325
     .local v8, currentTargetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
     move-object/from16 v0, p0
 
@@ -1601,16 +1635,16 @@
 
     move-object/from16 v33, v0
 
-    if-nez v33, :cond_205
+    if-nez v33, :cond_1ef
 
-    .line 315
+    .line 326
     move-object/from16 v0, p0
 
     iput-object v8, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mCurrentTargetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 322
-    :cond_f1
-    :goto_f1
+    .line 333
+    :cond_df
+    :goto_df
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
@@ -1621,13 +1655,13 @@
 
     move-result v33
 
-    if-lez v33, :cond_100
+    if-lez v33, :cond_ee
 
-    .line 323
+    .line 334
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->stopTargetLightAnimation()V
 
-    .line 325
-    :cond_100
+    .line 336
+    :cond_ee
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
@@ -1688,14 +1722,14 @@
 
     invoke-virtual/range {v33 .. v34}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 258
+    .line 269
     .end local v8           #currentTargetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :goto_13d
+    :goto_12b
     add-int/lit8 v13, v13, 0x1
 
-    goto/16 :goto_1d
+    goto/16 :goto_19
 
-    .line 259
+    .line 270
     .end local v6           #angleRad:D
     .end local v9           #eventX:F
     .end local v10           #eventY:F
@@ -1707,74 +1741,70 @@
     .end local v28           #touchRadius:F
     .end local v29           #tx:F
     .end local v30           #ty:F
-    :cond_141
+    :cond_12f
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v9
 
-    goto/16 :goto_2b
+    goto/16 :goto_27
 
-    .line 260
+    .line 271
     .restart local v9       #eventX:F
-    :cond_147
+    :cond_135
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v10
 
-    goto/16 :goto_33
+    goto/16 :goto_2f
 
-    .line 265
+    .line 276
     .restart local v10       #eventY:F
     .restart local v28       #touchRadius:F
     .restart local v29       #tx:F
     .restart local v30       #ty:F
-    :cond_14d
+    :cond_13b
     const/high16 v17, 0x3f80
 
-    goto/16 :goto_6d
+    goto/16 :goto_61
 
-    .line 270
+    .line 281
     .restart local v6       #angleRad:D
     .restart local v14       #limitX:F
     .restart local v15       #limitY:F
     .restart local v17       #scale:F
-    :cond_151
+    :cond_13f
     const/16 v18, 0x0
 
-    goto/16 :goto_98
+    goto/16 :goto_8a
 
-    .line 281
+    .line 292
     .restart local v18       #singleTarget:Z
-    :cond_155
-    move-object/from16 v0, p0
+    :cond_143
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getOuterRadius()F
 
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRadius:F
+    move-result v33
 
-    move/from16 v33, v0
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getSnapMargin()F
 
-    move-object/from16 v0, p0
-
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mSnapMargin:F
-
-    move/from16 v34, v0
+    move-result v34
 
     sub-float v20, v33, v34
 
-    .line 282
+    .line 293
     .restart local v20       #snapRadius:F
     mul-float v19, v20, v20
 
-    .line 284
+    .line 295
     .local v19, snapDistance2:F
     const/4 v12, 0x0
 
     .local v12, i:I
-    :goto_166
+    :goto_150
     move/from16 v0, v16
 
-    if-ge v12, v0, :cond_1df
+    if-ge v12, v0, :cond_1c9
 
-    .line 285
+    .line 296
     move-object/from16 v0, v27
 
     invoke-virtual {v0, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1783,7 +1813,7 @@
 
     check-cast v21, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 287
+    .line 298
     .local v21, target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
     int-to-double v0, v12
 
@@ -1809,7 +1839,7 @@
 
     div-double v25, v33, v35
 
-    .line 288
+    .line 299
     .local v25, targetMinRad:D
     int-to-double v0, v12
 
@@ -1835,31 +1865,31 @@
 
     div-double v23, v33, v35
 
-    .line 289
+    .line 300
     .local v23, targetMaxRad:D
     invoke-virtual/range {v21 .. v21}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->isEnabled()Z
 
     move-result v33
 
-    if-eqz v33, :cond_1da
+    if-eqz v33, :cond_1c4
 
-    .line 290
+    .line 301
     cmpl-double v33, v6, v25
 
-    if-lez v33, :cond_1b2
+    if-lez v33, :cond_19c
 
     cmpg-double v33, v6, v23
 
-    if-lez v33, :cond_1c8
+    if-lez v33, :cond_1b2
 
-    :cond_1b2
+    :cond_19c
     const-wide v33, 0x401921fb54442d18L
 
     add-double v33, v33, v6
 
     cmpl-double v33, v33, v25
 
-    if-lez v33, :cond_1dd
+    if-lez v33, :cond_1c7
 
     const-wide v33, 0x401921fb54442d18L
 
@@ -1867,15 +1897,15 @@
 
     cmpg-double v33, v33, v23
 
-    if-gtz v33, :cond_1dd
+    if-gtz v33, :cond_1c7
 
-    :cond_1c8
+    :cond_1b2
     const/4 v5, 0x1
 
-    .line 294
+    .line 305
     .local v5, angleMatches:Z
-    :goto_1c9
-    if-eqz v5, :cond_1da
+    :goto_1b3
+    if-eqz v5, :cond_1c4
 
     move-object/from16 v0, p0
 
@@ -1883,49 +1913,49 @@
 
     move/from16 v2, v30
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->dist2(FF)F
+    invoke-direct {v0, v1, v2}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->dist2(FF)F
 
     move-result v33
 
     cmpl-float v33, v33, v19
 
-    if-lez v33, :cond_1da
+    if-lez v33, :cond_1c4
 
-    .line 295
+    .line 306
     move v4, v12
 
-    .line 284
+    .line 295
     .end local v5           #angleMatches:Z
-    :cond_1da
+    :cond_1c4
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_166
+    goto :goto_150
 
-    .line 290
-    :cond_1dd
+    .line 301
+    :cond_1c7
     const/4 v5, 0x0
 
-    goto :goto_1c9
+    goto :goto_1b3
 
-    .line 299
+    .line 310
     .end local v21           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
     .end local v23           #targetMaxRad:D
     .end local v25           #targetMinRad:D
-    :cond_1df
+    :cond_1c9
     move/from16 v31, v14
 
-    .line 300
+    .line 311
     move/from16 v32, v15
 
-    goto/16 :goto_b1
+    goto/16 :goto_9f
 
-    .line 307
+    .line 318
     .end local v12           #i:I
     .end local v19           #snapDistance2:F
-    :cond_1e5
-    if-nez v4, :cond_1f6
+    :cond_1cf
+    if-nez v4, :cond_1e0
 
-    .line 308
+    .line 319
     const/16 v33, 0x7
 
     move-object/from16 v0, p0
@@ -1938,10 +1968,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->switchToState(IFF)V
 
-    goto/16 :goto_d7
+    goto/16 :goto_c5
 
-    .line 310
-    :cond_1f6
+    .line 321
+    :cond_1e0
     const/16 v33, 0x4
 
     move-object/from16 v0, p0
@@ -1954,11 +1984,11 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->switchToState(IFF)V
 
-    goto/16 :goto_d7
+    goto/16 :goto_c5
 
-    .line 316
+    .line 327
     .restart local v8       #currentTargetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_205
+    :cond_1ef
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mCurrentTargetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
@@ -1967,9 +1997,9 @@
 
     move-object/from16 v0, v33
 
-    if-eq v0, v8, :cond_f1
+    if-eq v0, v8, :cond_df
 
-    .line 317
+    .line 328
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
@@ -2030,16 +2060,16 @@
 
     invoke-virtual/range {v33 .. v34}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 320
+    .line 331
     move-object/from16 v0, p0
 
     iput-object v8, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mCurrentTargetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    goto/16 :goto_f1
+    goto/16 :goto_df
 
-    .line 329
+    .line 340
     .end local v8           #currentTargetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_252
+    :cond_23c
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
@@ -2050,22 +2080,22 @@
 
     move-result v33
 
-    if-lez v33, :cond_261
+    if-lez v33, :cond_24b
 
-    .line 330
+    .line 341
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->stopTargetLightAnimation()V
 
-    .line 332
-    :cond_261
+    .line 343
+    :cond_24b
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mCurrentTargetLight:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     move-object/from16 v33, v0
 
-    if-eqz v33, :cond_2a6
+    if-eqz v33, :cond_290
 
-    .line 333
+    .line 344
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
@@ -2126,8 +2156,8 @@
 
     invoke-virtual/range {v33 .. v34}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 337
-    :cond_2a6
+    .line 348
+    :cond_290
     const/16 v33, 0x3
 
     move-object/from16 v0, p0
@@ -2140,20 +2170,18 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->switchToState(IFF)V
 
-    .line 338
-    move-object/from16 v0, p0
+    .line 349
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getHandleDrawable()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    iget-object v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-
-    move-object/from16 v33, v0
+    move-result-object v33
 
     const/high16 v34, 0x3f80
 
     invoke-virtual/range {v33 .. v34}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    goto/16 :goto_13d
+    goto/16 :goto_12b
 
-    .line 342
+    .line 353
     .end local v6           #angleRad:D
     .end local v9           #eventX:F
     .end local v10           #eventY:F
@@ -2165,27 +2193,25 @@
     .end local v28           #touchRadius:F
     .end local v29           #tx:F
     .end local v30           #ty:F
-    :cond_2c0
-    move-object/from16 v0, p0
+    :cond_2a8
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getActiveTarget()I
 
-    iget v0, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mActiveTarget:I
-
-    move/from16 v33, v0
+    move-result v33
 
     move/from16 v0, v33
 
-    if-eq v0, v4, :cond_2f0
+    if-eq v0, v4, :cond_2d6
 
     const/16 v33, -0x1
 
     move/from16 v0, v33
 
-    if-eq v4, v0, :cond_2f0
+    if-eq v4, v0, :cond_2d6
 
-    .line 343
-    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->vibrate()V
+    .line 354
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->callVibrate()V
 
-    .line 344
+    .line 355
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/view/View;->mContext:Landroid/content/Context;
@@ -2200,16 +2226,16 @@
 
     move-result v33
 
-    if-eqz v33, :cond_2f0
+    if-eqz v33, :cond_2d6
 
-    .line 345
+    .line 356
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetDescription(I)Ljava/lang/String;
+    invoke-virtual {v0, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->callGetTargetDescription(I)Ljava/lang/String;
 
     move-result-object v22
 
-    .line 346
+    .line 357
     .local v22, targetContentDescription:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -2217,203 +2243,209 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 349
+    .line 360
     .end local v22           #targetContentDescription:Ljava/lang/String;
-    :cond_2f0
+    :cond_2d6
     move-object/from16 v0, p0
 
-    iput v4, v0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mActiveTarget:I
+    invoke-virtual {v0, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setActiveTarget(I)V
 
-    goto/16 :goto_8
+    goto/16 :goto_6
 .end method
 
-.method protected hideTargets(ZZ)V
-    .registers 15
+.method hideTargets(ZZ)V
+    .registers 16
     .parameter "animate"
     .parameter "expanded"
 
     .prologue
-    .line 196
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+    .line 200
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetAnimations()Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
+    move-result-object v6
+
+    .line 201
+    .local v6, targetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetDrawables()Ljava/util/ArrayList;
+
+    move-result-object v7
+
+    .line 203
+    .local v7, targetDrawables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/widget/multiwaveview/TargetDrawable;>;"
     invoke-virtual {v6}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->cancel()V
 
-    .line 199
-    iput-boolean p1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mAnimatingTargets:Z
+    .line 206
+    invoke-virtual {p0, p1}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setAnimatingTargets(Z)V
 
-    .line 200
-    if-eqz p1, :cond_64
+    .line 207
+    if-eqz p1, :cond_67
 
     const/16 v1, 0xc8
 
-    .line 201
+    .line 208
     .local v1, duration:I
-    :goto_b
-    if-eqz p1, :cond_66
+    :goto_12
+    if-eqz p1, :cond_69
 
     const/16 v0, 0xc8
 
-    .line 203
+    .line 210
     .local v0, delay:I
-    :goto_f
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
-
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    :goto_16
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .line 204
+    .line 211
     .local v4, length:I
     sget-object v3, Lcom/android/internal/widget/multiwaveview/Ease$Cubic;->easeOut:Landroid/animation/TimeInterpolator;
 
-    .line 205
+    .line 212
     .local v3, interpolator:Landroid/animation/TimeInterpolator;
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_18
-    if-ge v2, v4, :cond_68
+    :goto_1d
+    if-ge v2, v4, :cond_6b
 
-    .line 206
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
-
-    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 213
+    invoke-virtual {v7, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 207
+    .line 214
     .local v5, target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    sget-object v6, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_INACTIVE:[I
+    sget-object v8, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_INACTIVE:[I
 
-    invoke-virtual {v5, v6}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
+    invoke-virtual {v5, v8}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    .line 208
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+    .line 215
+    int-to-long v8, v1
 
-    int-to-long v7, v1
+    const/16 v10, 0x8
 
-    const/16 v9, 0x8
-
-    new-array v9, v9, [Ljava/lang/Object;
-
-    const/4 v10, 0x0
-
-    const-string v11, "ease"
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    aput-object v3, v9, v10
-
-    const/4 v10, 0x2
-
-    const-string v11, "alpha"
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x3
+    new-array v10, v10, [Ljava/lang/Object;
 
     const/4 v11, 0x0
 
-    invoke-static {v11}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    const-string v12, "ease"
 
-    move-result-object v11
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
+    const/4 v11, 0x1
 
-    const/4 v10, 0x4
+    aput-object v3, v10, v11
 
-    const-string v11, "delay"
+    const/4 v11, 0x2
 
-    aput-object v11, v9, v10
+    const-string v12, "alpha"
 
-    const/4 v10, 0x5
+    aput-object v12, v10, v11
+
+    const/4 v11, 0x3
+
+    const/4 v12, 0x0
+
+    invoke-static {v12}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v12
+
+    aput-object v12, v10, v11
+
+    const/4 v11, 0x4
+
+    const-string v12, "delay"
+
+    aput-object v12, v10, v11
+
+    const/4 v11, 0x5
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v11
+    move-result-object v12
 
-    aput-object v11, v9, v10
+    aput-object v12, v10, v11
 
-    const/4 v10, 0x6
+    const/4 v11, 0x6
 
-    const-string/jumbo v11, "onUpdate"
+    const-string/jumbo v12, "onUpdate"
 
-    aput-object v11, v9, v10
+    aput-object v12, v10, v11
 
-    const/4 v10, 0x7
+    const/4 v11, 0x7
 
-    iget-object v11, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getUpdateListener()Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    aput-object v11, v9, v10
+    move-result-object v12
 
-    invoke-static {v5, v7, v8, v9}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
+    aput-object v12, v10, v11
 
-    move-result-object v7
+    invoke-static {v5, v8, v9, v10}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    invoke-virtual {v6, v7}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
+    move-result-object v8
 
-    .line 205
+    invoke-virtual {v6, v8}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
+
+    .line 212
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_18
+    goto :goto_1d
 
-    .line 200
+    .line 207
     .end local v0           #delay:I
     .end local v1           #duration:I
     .end local v2           #i:I
     .end local v3           #interpolator:Landroid/animation/TimeInterpolator;
     .end local v4           #length:I
     .end local v5           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_64
+    :cond_67
     const/4 v1, 0x0
 
-    goto :goto_b
+    goto :goto_12
 
-    .line 201
+    .line 208
     .restart local v1       #duration:I
-    :cond_66
+    :cond_69
     const/4 v0, 0x0
 
-    goto :goto_f
+    goto :goto_16
 
-    .line 214
+    .line 221
     .restart local v0       #delay:I
     .restart local v2       #i:I
     .restart local v3       #interpolator:Landroid/animation/TimeInterpolator;
     .restart local v4       #length:I
-    :cond_68
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
-
+    :cond_6b
     invoke-virtual {v6}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->start()V
 
-    .line 217
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .line 224
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getOuterRing()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    const/4 v7, 0x0
+    move-result-object v8
 
-    invoke-virtual {v6, v7}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
+    const/4 v9, 0x0
 
-    .line 219
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
+    invoke-virtual {v8, v9}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    .line 226
+    iget-object v8, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
 
-    move-result v6
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
-    if-lez v6, :cond_7e
+    move-result v8
 
-    .line 220
+    if-lez v8, :cond_81
+
+    .line 227
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->stopTargetLightAnimation()V
 
-    .line 222
-    :cond_7e
+    .line 229
+    :cond_81
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->hideTargetLight()V
 
-    .line 223
+    .line 230
     return-void
 .end method
 
@@ -2422,12 +2454,14 @@
     .parameter "canvas"
 
     .prologue
-    .line 361
-    iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mOuterRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .line 372
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getOuterRing()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v2
 
     invoke-virtual {v2, p1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 362
+    .line 373
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightDrawables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -2435,13 +2469,13 @@
     move-result-object v0
 
     .local v0, i$:Ljava/util/Iterator;
-    :cond_b
-    :goto_b
+    :cond_d
+    :goto_d
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_1f
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2449,31 +2483,33 @@
 
     check-cast v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 363
+    .line 374
     .local v1, target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_d
 
-    .line 364
+    .line 375
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    goto :goto_b
+    goto :goto_d
 
-    .line 367
+    .line 378
     .end local v1           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_1d
-    iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
+    :cond_1f
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetDrawables()Ljava/util/ArrayList;
+
+    move-result-object v2
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_23
-    :goto_23
+    :cond_27
+    :goto_27
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_39
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2481,28 +2517,30 @@
 
     check-cast v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 368
+    .line 379
     .restart local v1       #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_27
 
-    .line 369
+    .line 380
     invoke-virtual {v1, p1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    goto :goto_23
+    goto :goto_27
 
-    .line 372
+    .line 383
     .end local v1           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_35
+    :cond_39
     iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mRightHintAnimTargetDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     invoke-virtual {v2, p1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 373
-    iget-object v2, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    .line 384
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getHandleDrawable()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+
+    move-result-object v2
 
     invoke-virtual {v2, p1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 374
+    .line 385
     return-void
 .end method
 
@@ -2515,16 +2553,16 @@
     .parameter "bottom"
 
     .prologue
-    .line 354
+    .line 365
     invoke-super/range {p0 .. p5}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->onLayout(ZIIII)V
 
-    .line 355
+    .line 366
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->updateTargetLightPositions()V
 
-    .line 356
+    .line 367
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->updateRightHintAnimPositions()V
 
-    .line 357
+    .line 368
     return-void
 .end method
 
@@ -2535,35 +2573,37 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 465
+    .line 478
     iget-boolean v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mShowingOuterRing:Z
 
     if-eqz v1, :cond_6
 
-    .line 477
+    .line 490
     :cond_5
     :goto_5
     return v0
 
-    .line 469
+    .line 482
     :cond_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v1
 
-    if-le v1, v0, :cond_20
+    if-le v1, v0, :cond_23
 
-    .line 470
-    iget-boolean v1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mDragging:Z
+    .line 483
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getDragging()Z
+
+    move-result v1
 
     if-eqz v1, :cond_5
 
-    .line 471
+    .line 484
     const/4 v1, -0x1
 
-    iput v1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mActiveTarget:I
+    invoke-virtual {p0, v1}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setActiveTarget(I)V
 
-    .line 472
+    .line 485
     const/4 v1, 0x5
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -2578,8 +2618,8 @@
 
     goto :goto_5
 
-    .line 477
-    :cond_20
+    .line 490
+    :cond_23
     invoke-super {p0, p1}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -2592,239 +2632,245 @@
     .parameter "animate"
 
     .prologue
-    .line 390
+    .line 401
     invoke-super {p0, p1}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->reset(Z)V
 
-    .line 391
+    .line 402
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->hideRightHintAnim()V
 
-    .line 392
+    .line 403
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->stop()V
 
-    .line 394
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+    .line 405
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetAnimations()Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+
+    move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->stop()V
 
-    .line 395
+    .line 406
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->showOuterRing()V
 
-    .line 396
+    .line 407
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->startRightHintAnim()V
 
-    .line 397
+    .line 408
     return-void
 .end method
 
-.method protected showTargets(Z)V
-    .registers 15
+.method showTargets(Z)V
+    .registers 16
     .parameter "animate"
 
     .prologue
     const/16 v1, 0xc8
 
-    const/4 v5, 0x0
+    const/4 v7, 0x0
 
-    const/high16 v12, 0x3f80
-
-    .line 164
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
-
-    invoke-virtual {v6}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->stop()V
+    const/high16 v13, 0x3f80
 
     .line 165
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetAnimations()Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
 
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
-
-    move-result v6
-
-    if-lez v6, :cond_15
+    move-result-object v5
 
     .line 166
-    invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->stopTargetLightAnimation()V
+    .local v5, targetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getTargetDrawables()Ljava/util/ArrayList;
+
+    move-result-object v6
 
     .line 168
-    :cond_15
-    iput-boolean p1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mAnimatingTargets:Z
+    .local v6, targetDrawables:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/internal/widget/multiwaveview/TargetDrawable;>;"
+    invoke-virtual {v5}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->stop()V
 
     .line 169
-    if-eqz p1, :cond_8d
+    iget-object v8, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mTargetLightAnimations:Ljava/util/ArrayList;
+
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+
+    move-result v8
+
+    if-lez v8, :cond_1b
+
+    .line 170
+    invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->stopTargetLightAnimation()V
+
+    .line 172
+    :cond_1b
+    invoke-virtual {p0, p1}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setAnimatingTargets(Z)V
+
+    .line 173
+    if-eqz p1, :cond_90
 
     move v0, v1
 
-    .line 170
+    .line 174
     .local v0, delay:I
-    :goto_1a
-    if-eqz p1, :cond_8f
+    :goto_21
+    if-eqz p1, :cond_92
 
-    .line 171
+    .line 175
     .local v1, duration:I
-    :goto_1c
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
-
+    :goto_23
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 172
+    .line 176
     .local v3, length:I
     const/4 v2, 0x0
 
     .local v2, i:I
-    :goto_23
-    if-ge v2, v3, :cond_91
+    :goto_28
+    if-ge v2, v3, :cond_94
 
-    .line 173
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetDrawables:Ljava/util/ArrayList;
-
+    .line 177
     invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 174
+    .line 178
     .local v4, target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    sget-object v6, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_INACTIVE:[I
+    sget-object v8, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_INACTIVE:[I
 
-    invoke-virtual {v4, v6}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
+    invoke-virtual {v4, v8}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    .line 175
-    iget-object v6, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+    .line 179
+    int-to-long v8, v1
 
-    int-to-long v7, v1
+    const/16 v10, 0xc
 
-    const/16 v9, 0xc
+    new-array v10, v10, [Ljava/lang/Object;
 
-    new-array v9, v9, [Ljava/lang/Object;
+    const-string v11, "ease"
 
-    const-string v10, "ease"
+    aput-object v11, v10, v7
 
-    aput-object v10, v9, v5
+    const/4 v11, 0x1
 
-    const/4 v10, 0x1
+    sget-object v12, Lcom/android/internal/widget/multiwaveview/Ease$Cubic;->easeOut:Landroid/animation/TimeInterpolator;
 
-    sget-object v11, Lcom/android/internal/widget/multiwaveview/Ease$Cubic;->easeOut:Landroid/animation/TimeInterpolator;
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
+    const/4 v11, 0x2
 
-    const/4 v10, 0x2
+    const-string v12, "alpha"
 
-    const-string v11, "alpha"
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
+    const/4 v11, 0x3
 
-    const/4 v10, 0x3
+    invoke-static {v13}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {v12}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v12
 
-    move-result-object v11
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
+    const/4 v11, 0x4
 
-    const/4 v10, 0x4
+    const-string/jumbo v12, "scaleX"
 
-    const-string/jumbo v11, "scaleX"
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
+    const/4 v11, 0x5
 
-    const/4 v10, 0x5
+    invoke-static {v13}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {v12}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v12
 
-    move-result-object v11
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
+    const/4 v11, 0x6
 
-    const/4 v10, 0x6
+    const-string/jumbo v12, "scaleY"
 
-    const-string/jumbo v11, "scaleY"
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
+    const/4 v11, 0x7
 
-    const/4 v10, 0x7
+    invoke-static {v13}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {v12}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v12
 
-    move-result-object v11
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
+    const/16 v11, 0x8
 
-    const/16 v10, 0x8
+    const-string v12, "delay"
 
-    const-string v11, "delay"
+    aput-object v12, v10, v11
 
-    aput-object v11, v9, v10
-
-    const/16 v10, 0x9
+    const/16 v11, 0x9
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v11
+    move-result-object v12
 
-    aput-object v11, v9, v10
+    aput-object v12, v10, v11
 
-    const/16 v10, 0xa
+    const/16 v11, 0xa
 
-    const-string/jumbo v11, "onUpdate"
+    const-string/jumbo v12, "onUpdate"
 
-    aput-object v11, v9, v10
+    aput-object v12, v10, v11
 
-    const/16 v10, 0xb
+    const/16 v11, 0xb
 
-    iget-object v11, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getUpdateListener()Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    aput-object v11, v9, v10
+    move-result-object v12
 
-    invoke-static {v4, v7, v8, v9}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
+    aput-object v12, v10, v11
 
-    move-result-object v7
+    invoke-static {v4, v8, v9, v10}, Lcom/android/internal/widget/multiwaveview/Tweener;->to(Ljava/lang/Object;J[Ljava/lang/Object;)Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    invoke-virtual {v6, v7}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
+    move-result-object v8
 
-    .line 172
+    invoke-virtual {v5, v8}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->add(Ljava/lang/Object;)Z
+
+    .line 176
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_23
+    goto :goto_28
 
     .end local v0           #delay:I
     .end local v1           #duration:I
     .end local v2           #i:I
     .end local v3           #length:I
     .end local v4           #target:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-    :cond_8d
-    move v0, v5
+    :cond_90
+    move v0, v7
 
-    .line 169
-    goto :goto_1a
+    .line 173
+    goto :goto_21
 
     .restart local v0       #delay:I
-    :cond_8f
-    move v1, v5
+    :cond_92
+    move v1, v7
 
-    .line 170
-    goto :goto_1c
+    .line 174
+    goto :goto_23
 
-    .line 183
+    .line 187
     .restart local v1       #duration:I
     .restart local v2       #i:I
     .restart local v3       #length:I
-    :cond_91
-    iget-object v5, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mTargetAnimations:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
-
+    :cond_94
     invoke-virtual {v5}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->start()V
 
-    .line 184
+    .line 188
     invoke-direct {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->hideTargetLight()V
 
-    .line 185
+    .line 189
     return-void
 .end method
 
-.method protected switchToState(IFF)V
+.method switchToState(IFF)V
     .registers 6
     .parameter "state"
     .parameter "x"
@@ -2832,131 +2878,123 @@
 
     .prologue
     .line 123
-    packed-switch p1, :pswitch_data_5e
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getHandleDrawable()Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
-    .line 160
-    :cond_3
-    :goto_3
-    :pswitch_3
+    move-result-object v0
+
+    .line 124
+    .local v0, handleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    packed-switch p1, :pswitch_data_54
+
+    .line 161
+    :cond_7
+    :goto_7
+    :pswitch_7
     return-void
 
-    .line 125
-    :pswitch_4
-    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->deactivateTargets()V
-
     .line 126
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    :pswitch_8
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->callDeactivateTargets()V
 
+    .line 127
     sget-object v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_INACTIVE:[I
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    .line 127
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-
+    .line 128
     const/high16 v1, 0x3f80
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    goto :goto_3
-
-    .line 131
-    :pswitch_16
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->stop()V
+    goto :goto_7
 
     .line 132
-    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->deactivateTargets()V
+    :pswitch_16
+    iget-object v1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHandleAnimation:Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;
+
+    invoke-virtual {v1}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->stop()V
 
     .line 133
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-
-    sget-object v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_ACTIVE:[I
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->callDeactivateTargets()V
 
     .line 134
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->setGrabbedState(I)V
-
-    .line 135
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    .line 136
-    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->announceTargets()V
-
-    goto :goto_3
-
-    .line 141
-    :pswitch_39
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-
     sget-object v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_ACTIVE:[I
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    goto :goto_3
+    .line 135
+    const/4 v1, 0x1
 
-    .line 145
-    :pswitch_41
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
+    invoke-virtual {p0, v1}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->callSetGrabbedState(I)V
 
+    .line 136
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Landroid/view/accessibility/AccessibilityManager;->getInstance(Landroid/content/Context;)Landroid/view/accessibility/AccessibilityManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    .line 137
+    invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->callAnnounceTargets()V
+
+    goto :goto_7
+
+    .line 142
+    :pswitch_37
+    sget-object v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_ACTIVE:[I
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
+
+    goto :goto_7
+
+    .line 146
+    :pswitch_3d
     sget-object v1, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->STATE_DECLINE_HANDLE:[I
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    goto :goto_3
+    goto :goto_7
 
-    .line 149
-    :pswitch_49
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-
+    .line 150
+    :pswitch_43
     sget-object v1, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->STATE_ANSWER_HANDLE:[I
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    goto :goto_3
+    goto :goto_7
 
-    .line 153
-    :pswitch_51
-    iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView;->mHandleDrawable:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
-
+    .line 154
+    :pswitch_49
     sget-object v1, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->STATE_ACTIVE:[I
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setState([I)V
 
-    goto :goto_3
+    goto :goto_7
 
-    .line 157
-    :pswitch_59
+    .line 158
+    :pswitch_4f
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->doFinish()V
 
-    goto :goto_3
+    goto :goto_7
 
-    .line 123
+    .line 124
     nop
 
-    :pswitch_data_5e
+    :pswitch_data_54
     .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
+        :pswitch_8
+        :pswitch_7
         :pswitch_16
-        :pswitch_39
-        :pswitch_51
-        :pswitch_59
-        :pswitch_41
+        :pswitch_37
         :pswitch_49
+        :pswitch_4f
+        :pswitch_3d
+        :pswitch_43
     .end packed-switch
 .end method

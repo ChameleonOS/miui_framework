@@ -45,6 +45,21 @@ public class ResolveInfo
         }
     }
 
+    static class Injector {
+
+        static Drawable getDrawable(ResolveInfo resolveinfo, PackageManager packagemanager, String s, int i, ApplicationInfo applicationinfo) {
+            Object obj;
+            if(resolveinfo.activityInfo != null)
+                obj = resolveinfo.activityInfo;
+            else
+                obj = resolveinfo.serviceInfo;
+            return MiuiThemeHelper.getDrawable(packagemanager, s, i, applicationinfo, ((PackageItemInfo) (obj)), MiuiThemeHelper.isCustomizedIcon(resolveinfo.filter));
+        }
+
+        Injector() {
+        }
+    }
+
 
     public ResolveInfo() {
         specificIndex = -1;
@@ -89,15 +104,6 @@ _L2:
           goto _L4
     }
 
-
-    private Drawable loadDrawableFromTheme(PackageManager packagemanager, String s, ApplicationInfo applicationinfo) {
-        Object obj;
-        if(activityInfo != null)
-            obj = activityInfo;
-        else
-            obj = serviceInfo;
-        return MiuiThemeHelper.getDrawable(packagemanager, s, icon, applicationinfo, ((PackageItemInfo) (obj)), MiuiThemeHelper.isCustomizedIcon(filter));
-    }
 
     public int describeContents() {
         return 0;
@@ -146,7 +152,7 @@ _L3:
     public Drawable loadIcon(PackageManager packagemanager) {
         if(resolvePackageName == null || icon == 0) goto _L2; else goto _L1
 _L1:
-        Drawable drawable = loadDrawableFromTheme(packagemanager, resolvePackageName, null);
+        Drawable drawable = Injector.getDrawable(this, packagemanager, resolvePackageName, icon, null);
         if(drawable == null) goto _L2; else goto _L3
 _L3:
         return drawable;
@@ -159,7 +165,7 @@ _L2:
             obj = serviceInfo;
         applicationinfo = ((ComponentInfo) (obj)).applicationInfo;
         if(icon != 0) {
-            drawable = loadDrawableFromTheme(packagemanager, ((PackageItemInfo) (obj)).packageName, applicationinfo);
+            drawable = Injector.getDrawable(this, packagemanager, ((PackageItemInfo) (obj)).packageName, icon, applicationinfo);
             if(drawable != null)
                 continue; /* Loop/switch isn't completed */
         }

@@ -87,6 +87,21 @@ _L3:
         }
     }
 
+    static class Injector {
+
+        static boolean checkFireWallForSms(SMSDispatcher smsdispatcher, byte abyte0[][]) {
+            boolean flag = true;
+            if(ExtraTelephony.checkFirewallForSms(smsdispatcher.mContext, abyte0))
+                smsdispatcher.acknowledgeLastIncomingSms(flag, -1, null);
+            else
+                flag = false;
+            return flag;
+        }
+
+        Injector() {
+        }
+    }
+
 
     protected SMSDispatcher(PhoneBase phonebase, SmsStorageMonitor smsstoragemonitor, SmsUsageMonitor smsusagemonitor) {
         boolean flag = true;
@@ -261,9 +276,7 @@ _L1:
     }
 
     protected void dispatchPdus(byte abyte0[][]) {
-        if(ExtraTelephony.checkFirewallForSms(mContext, abyte0)) {
-            acknowledgeLastIncomingSms(true, -1, null);
-        } else {
+        if(!Injector.checkFireWallForSms(this, abyte0)) {
             Intent intent = new Intent("android.provider.Telephony.SMS_RECEIVED");
             intent.putExtra("pdus", abyte0);
             intent.putExtra("format", getFormat());
@@ -272,9 +285,7 @@ _L1:
     }
 
     protected void dispatchPortAddressedPdus(byte abyte0[][], int i) {
-        if(ExtraTelephony.checkFirewallForSms(mContext, abyte0)) {
-            acknowledgeLastIncomingSms(true, -1, null);
-        } else {
+        if(!Injector.checkFireWallForSms(this, abyte0)) {
             Intent intent = new Intent("android.intent.action.DATA_SMS_RECEIVED", Uri.parse((new StringBuilder()).append("sms://localhost:").append(i).toString()));
             intent.putExtra("pdus", abyte0);
             intent.putExtra("format", getFormat());

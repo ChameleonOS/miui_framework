@@ -32,23 +32,26 @@ public class QuickContactBadge extends ImageView
             flag = false;
             i;
             JVM INSTR tableswitch 0 3: default 40
-        //                       0 167
-        //                       1 117
-        //                       2 152
-        //                       3 102;
+        //                       0 182
+        //                       1 132
+        //                       2 167
+        //                       3 117;
                goto _L1 _L2 _L3 _L4 _L5
 _L1:
             if(cursor != null)
                 cursor.close();
             mContactUri = uri;
             onContactUriChanged();
+            Uri uri3 = Injector.showQuickContactForStranger(QuickContactBadge.this, flag, uri, uri1);
             Exception exception;
             Uri uri2;
             if(flag && uri != null)
                 android.provider.ContactsContract.QuickContact.showQuickContact(getContext(), QuickContactBadge.this, uri, 3, mExcludeMimes);
             else
-            if(uri1 != null)
-                android.provider.ContactsContract.QuickContact.showQuickContact(getContext(), QuickContactBadge.this, uri1, 3, mExcludeMimes);
+            if(uri3 != null) {
+                Intent intent = new Intent("com.android.contacts.action.SHOW_OR_CREATE_CONTACT", uri3);
+                getContext().startActivity(intent);
+            }
             return;
 _L5:
             flag = true;
@@ -78,6 +81,20 @@ _L7:
         public QueryHandler(ContentResolver contentresolver) {
             this$0 = QuickContactBadge.this;
             super(contentresolver);
+        }
+    }
+
+    static class Injector {
+
+        static Uri showQuickContactForStranger(QuickContactBadge quickcontactbadge, boolean flag, Uri uri, Uri uri1) {
+            if(!flag || uri == null) {
+                android.provider.ContactsContract.QuickContact.showQuickContact(quickcontactbadge.getContext(), quickcontactbadge, uri1, 3, quickcontactbadge.mExcludeMimes);
+                uri1 = null;
+            }
+            return uri1;
+        }
+
+        Injector() {
         }
     }
 
@@ -168,14 +185,15 @@ _L3:
         super.onDraw(canvas);
         break MISSING_BLOCK_LABEL_5;
         if(isEnabled() && mOverlay != null && mOverlay.getIntrinsicWidth() != 0 && mOverlay.getIntrinsicHeight() != 0) {
-            mOverlay.setBounds(0, 0, getWidth(), getHeight());
-            if(super.mPaddingTop == 0 && super.mPaddingLeft == 0 && super.mPaddingBottom == 0 && super.mPaddingRight == 0) {
+            mOverlay.setBounds(0, 0, getWidth() - super.mPaddingRight, getHeight() - super.mPaddingBottom);
+            if(super.mPaddingTop == 0 && super.mPaddingLeft == 0) {
                 mOverlay.draw(canvas);
             } else {
-                int i = getWidth() - super.mPaddingRight;
-                int j = getHeight() - super.mPaddingBottom;
-                mOverlay.setBounds(super.mPaddingLeft, super.mPaddingTop, i, j);
+                int i = canvas.getSaveCount();
+                canvas.save();
+                canvas.translate(super.mPaddingLeft, super.mPaddingTop);
                 mOverlay.draw(canvas);
+                canvas.restoreToCount(i);
             }
         }
         return;

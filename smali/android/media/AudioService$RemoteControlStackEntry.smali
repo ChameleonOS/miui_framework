@@ -53,37 +53,37 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 4276
+    .line 4288
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4235
+    .line 4247
     iput v0, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mRccId:I
 
-    .line 4277
+    .line 4289
     iput-object p1, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mMediaIntent:Landroid/app/PendingIntent;
 
-    .line 4278
+    .line 4290
     iput-object p2, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mReceiverComponent:Landroid/content/ComponentName;
 
-    .line 4279
+    .line 4291
     iput v0, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mCallingUid:I
 
-    .line 4280
+    .line 4292
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mRcClient:Landroid/media/IRemoteControlClient;
 
-    .line 4281
+    .line 4293
     invoke-static {}, Landroid/media/AudioService;->access$8104()I
 
     move-result v0
 
     iput v0, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mRccId:I
 
-    .line 4283
+    .line 4295
     invoke-virtual {p0}, Landroid/media/AudioService$RemoteControlStackEntry;->resetPlaybackInfo()V
 
-    .line 4284
+    .line 4296
     return-void
 .end method
 
@@ -98,13 +98,13 @@
     .end annotation
 
     .prologue
-    .line 4301
+    .line 4313
     invoke-virtual {p0}, Landroid/media/AudioService$RemoteControlStackEntry;->unlinkToRcClientDeath()V
 
-    .line 4302
+    .line 4314
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 4303
+    .line 4315
     return-void
 .end method
 
@@ -116,34 +116,34 @@
 
     const/4 v1, 0x1
 
-    .line 4266
+    .line 4278
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mPlaybackType:I
 
-    .line 4267
+    .line 4279
     iput v2, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mPlaybackVolume:I
 
-    .line 4268
+    .line 4280
     iput v2, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mPlaybackVolumeMax:I
 
-    .line 4269
+    .line 4281
     iput v1, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mPlaybackVolumeHandling:I
 
-    .line 4270
+    .line 4282
     const/4 v0, 0x3
 
     iput v0, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mPlaybackStream:I
 
-    .line 4271
+    .line 4283
     iput v1, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mPlaybackState:I
 
-    .line 4272
+    .line 4284
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mRemoteVolumeObs:Landroid/media/IRemoteVolumeObserver;
 
-    .line 4273
+    .line 4285
     return-void
 .end method
 
@@ -151,7 +151,7 @@
     .registers 5
 
     .prologue
-    .line 4287
+    .line 4299
     iget-object v1, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mRcClientDeathHandler:Landroid/media/AudioService$RcClientDeathHandler;
 
     if-eqz v1, :cond_1b
@@ -165,7 +165,7 @@
 
     if-eqz v1, :cond_1b
 
-    .line 4289
+    .line 4301
     :try_start_c
     iget-object v1, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mRcClientDeathHandler:Landroid/media/AudioService$RcClientDeathHandler;
 
@@ -180,23 +180,23 @@
 
     invoke-interface {v1, v2, v3}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 4290
+    .line 4302
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/media/AudioService$RemoteControlStackEntry;->mRcClientDeathHandler:Landroid/media/AudioService$RcClientDeathHandler;
     :try_end_1b
     .catch Ljava/util/NoSuchElementException; {:try_start_c .. :try_end_1b} :catch_1c
 
-    .line 4297
+    .line 4309
     :cond_1b
     :goto_1b
     return-void
 
-    .line 4291
+    .line 4303
     :catch_1c
     move-exception v0
 
-    .line 4293
+    .line 4305
     .local v0, e:Ljava/util/NoSuchElementException;
     const-string v1, "AudioService"
 
@@ -226,7 +226,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4294
+    .line 4306
     invoke-virtual {v0}, Ljava/util/NoSuchElementException;->printStackTrace()V
 
     goto :goto_1b

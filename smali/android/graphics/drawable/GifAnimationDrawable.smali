@@ -357,20 +357,22 @@
 
     .line 51
     .local v0, drawable:Landroid/graphics/drawable/BitmapDrawable;
-    iget-object v2, p0, Landroid/graphics/drawable/GifAnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
+    invoke-virtual {p0}, Landroid/graphics/drawable/GifAnimationDrawable;->getAnimationState()Landroid/graphics/drawable/AnimationDrawable$AnimationState;
+
+    move-result-object v2
 
     iget-object v2, v2, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     aput-object v0, v2, p1
 
     .line 52
-    iget-object v2, p0, Landroid/graphics/drawable/GifAnimationDrawable;->mAnimationState:Landroid/graphics/drawable/AnimationDrawable$AnimationState;
+    invoke-virtual {p0}, Landroid/graphics/drawable/GifAnimationDrawable;->getAnimationState()Landroid/graphics/drawable/AnimationDrawable$AnimationState;
 
-    iget-object v2, v2, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->mDurations:[I
+    move-result-object v2
 
     iget v3, v1, Lmiui/util/DecodeGifImageHelper$GifFrame;->mDuration:I
 
-    aput v3, v2, p1
+    invoke-virtual {v2, p1, v3}, Landroid/graphics/drawable/AnimationDrawable$AnimationState;->setDuration(II)V
 
     goto :goto_b
 .end method

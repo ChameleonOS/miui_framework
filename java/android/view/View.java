@@ -783,6 +783,29 @@ public class View
         }
     }
 
+    static class Injector {
+
+        static boolean isHapticEnabledExplictly(View view, int i) {
+            boolean flag;
+            if((i & 4) != 0 && !view.mHapticEnabledExplicitly)
+                flag = false;
+            else
+                flag = true;
+            return flag;
+        }
+
+        static void performHapticFeedbackOnDown(View view) {
+            view.performHapticFeedback(1, 4);
+        }
+
+        static void performHapticFeedbackOnRelease(View view) {
+            view.performHapticFeedback(2, 4);
+        }
+
+        Injector() {
+        }
+    }
+
 
     View() {
         mCurrentAnimation = null;
@@ -810,6 +833,7 @@ public class View
         else
             inputeventconsistencyverifier = null;
         mInputEventConsistencyVerifier = inputeventconsistencyverifier;
+        mAdditionalState = 0;
         mResources = null;
     }
 
@@ -841,6 +865,7 @@ public class View
         else
             inputeventconsistencyverifier = null;
         mInputEventConsistencyVerifier = inputeventconsistencyverifier;
+        mAdditionalState = 0;
         mContext = context;
         if(context != null)
             resources = context.getResources();
@@ -3573,6 +3598,10 @@ _L8:
             mTransformationInfo = new TransformationInfo();
     }
 
+    void fillAdditionalState(int ai[]) {
+        ai[-1 + ai.length] = mAdditionalState;
+    }
+
     public View findFocus() {
         if((2 & mPrivateFlags) == 0)
             this = null;
@@ -5759,6 +5788,7 @@ _L2:
         if((l & 2) != 0)
             k |= 0x200;
         ai = VIEW_STATE_SETS[k];
+        fillAdditionalState(ai);
         if(i != 0) {
             int ai1[];
             if(ai != null) {
@@ -6256,13 +6286,13 @@ _L2:
             continue; /* Loop/switch isn't completed */
         motionevent.getAction();
         JVM INSTR tableswitch 0 3: default 140
-    //                   0 346
+    //                   0 343
     //                   1 145
-    //                   2 446
-    //                   3 434;
+    //                   2 440
+    //                   3 428;
            goto _L3 _L4 _L5 _L6 _L7
 _L6:
-        break MISSING_BLOCK_LABEL_446;
+        break MISSING_BLOCK_LABEL_440;
 _L3:
         break; /* Loop/switch isn't completed */
 _L5:
@@ -6287,9 +6317,9 @@ _L8:
                 if(!flag2) {
                     if(mPerformClick == null)
                         mPerformClick = new PerformClick();
+                    Injector.performHapticFeedbackOnRelease(this);
                     if(!post(mPerformClick))
                         performClick();
-                    performHapticFeedback(2, 4);
                 }
             }
             if(mUnsetPressedState == null)
@@ -6313,7 +6343,7 @@ _L4:
             } else {
                 setPressed(true);
                 checkForLongClick(0);
-                performHapticFeedback(1, 4);
+                Injector.performHapticFeedbackOnDown(this);
             }
           goto _L10
 _L7:
@@ -6582,7 +6612,7 @@ _L22:
         boolean flag;
         flag = false;
         break MISSING_BLOCK_LABEL_2;
-        if(mAttachInfo != null && ((j & 4) == 0 || mHapticEnabledExplicitly) && ((j & 1) != 0 || isHapticFeedbackEnabled())) {
+        if(mAttachInfo != null && Injector.isHapticEnabledExplictly(this, j) && ((j & 1) != 0 || isHapticFeedbackEnabled())) {
             AttachInfo.Callbacks callbacks = mAttachInfo.mRootCallbacks;
             if((j & 2) != 0)
                 flag = true;
@@ -7111,6 +7141,14 @@ _L6:
             invalidate(true);
             refreshDrawableState();
             dispatchSetActivated(flag);
+        }
+    }
+
+    public void setAdditionalState(int i) {
+        if(i != mAdditionalState) {
+            mAdditionalState = i;
+            invalidate(true);
+            refreshDrawableState();
         }
     }
 
@@ -8993,6 +9031,7 @@ _L3:
     private int mAccessibilityCursorPosition;
     AccessibilityDelegate mAccessibilityDelegate;
     int mAccessibilityViewId;
+    int mAdditionalState;
     private ViewPropertyAnimator mAnimator;
     AttachInfo mAttachInfo;
     private Drawable mBackground;
@@ -9121,7 +9160,7 @@ _L3:
 
         VIEW_STATE_SETS = new int[1 << VIEW_STATE_IDS.length / 2][];
         for(int j = 0; j < VIEW_STATE_SETS.length; j++) {
-            int ai7[] = new int[Integer.bitCount(j)];
+            int ai7[] = new int[1 + Integer.bitCount(j)];
             int k = 0;
             for(int l = 0; l < ai3.length; l += 2)
                 if((j & ai3[l + 1]) != 0) {

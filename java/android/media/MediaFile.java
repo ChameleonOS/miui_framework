@@ -22,6 +22,29 @@ public class MediaFile {
         }
     }
 
+    static class Injector {
+
+        static void addAPE() {
+            MediaFile.addFileType("APE", 1001, "audio/x-monkeys-audio");
+        }
+
+        static boolean isFFMpegAudoFileType(int i) {
+            boolean flag;
+            if(i >= 1001 && i <= 1001)
+                flag = true;
+            else
+                flag = false;
+            return flag;
+        }
+
+        static boolean isWMAEnabled() {
+            return true;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public MediaFile() {
     }
@@ -111,7 +134,7 @@ _L4:
 
     public static boolean isAudioFileType(int i) {
         boolean flag = true;
-        if((i < flag || i > 10) && (i < 11 || i > 13) && (i < 1001 || i > 1001))
+        if((i < flag || i > 10) && (i < 11 || i > 13) && !Injector.isFFMpegAudoFileType(i))
             flag = false;
         return flag;
     }
@@ -278,7 +301,8 @@ _L2:
         addFileType("WAV", 3, "audio/x-wav", 12296);
         addFileType("AMR", 4, "audio/amr");
         addFileType("AWB", 5, "audio/amr-wb");
-        addFileType("WMA", 6, "audio/x-ms-wma", 47361);
+        if(Injector.isWMAEnabled())
+            addFileType("WMA", 6, "audio/x-ms-wma", 47361);
         addFileType("OGG", 7, "audio/ogg", 47362);
         addFileType("OGG", 7, "application/ogg", 47362);
         addFileType("OGA", 7, "application/ogg", 47362);
@@ -294,7 +318,7 @@ _L2:
         addFileType("RTX", 11, "audio/midi");
         addFileType("OTA", 11, "audio/midi");
         addFileType("MXMF", 11, "audio/midi");
-        addFileType("APE", 1001, "audio/x-monkeys-audio");
+        Injector.addAPE();
         addFileType("MPEG", 21, "video/mpeg", 12299);
         addFileType("MPG", 21, "video/mpeg", 12299);
         addFileType("MP4", 21, "video/mp4", 12299);

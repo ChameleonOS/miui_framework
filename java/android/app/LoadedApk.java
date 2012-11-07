@@ -862,7 +862,7 @@ _L11:
 
     public Resources getResources(ActivityThread activitythread) {
         if(mResources == null)
-            mResources = activitythread.getTopLevelResources(mPackageName, mResDir, mCompatibilityInfo.get());
+            mResources = activitythread.getTopLevelResources(mPackageName, mResDir, this);
         return mResources;
     }
 

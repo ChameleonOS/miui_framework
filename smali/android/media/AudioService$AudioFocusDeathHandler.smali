@@ -30,15 +30,15 @@
     .parameter "cb"
 
     .prologue
-    .line 3757
+    .line 3769
     iput-object p1, p0, Landroid/media/AudioService$AudioFocusDeathHandler;->this$0:Landroid/media/AudioService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3758
+    .line 3770
     iput-object p2, p0, Landroid/media/AudioService$AudioFocusDeathHandler;->mCb:Landroid/os/IBinder;
 
-    .line 3759
+    .line 3771
     return-void
 .end method
 
@@ -48,14 +48,14 @@
     .registers 4
 
     .prologue
-    .line 3762
+    .line 3774
     invoke-static {}, Landroid/media/AudioService;->access$7800()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 3763
+    .line 3775
     :try_start_5
     const-string v0, "AudioService"
 
@@ -63,7 +63,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3764
+    .line 3776
     iget-object v0, p0, Landroid/media/AudioService$AudioFocusDeathHandler;->this$0:Landroid/media/AudioService;
 
     iget-object v2, p0, Landroid/media/AudioService$AudioFocusDeathHandler;->mCb:Landroid/os/IBinder;
@@ -71,13 +71,13 @@
     #calls: Landroid/media/AudioService;->removeFocusStackEntryForClient(Landroid/os/IBinder;)V
     invoke-static {v0, v2}, Landroid/media/AudioService;->access$7900(Landroid/media/AudioService;Landroid/os/IBinder;)V
 
-    .line 3765
+    .line 3777
     monitor-exit v1
 
-    .line 3766
+    .line 3778
     return-void
 
-    .line 3765
+    .line 3777
     :catchall_15
     move-exception v0
 
@@ -92,7 +92,7 @@
     .registers 2
 
     .prologue
-    .line 3769
+    .line 3781
     iget-object v0, p0, Landroid/media/AudioService$AudioFocusDeathHandler;->mCb:Landroid/os/IBinder;
 
     return-object v0

@@ -108,6 +108,21 @@ _L7:
 
     }
 
+    static class Injector {
+
+        static String appendMiuiVersion(StringBuilder stringbuilder, String s) {
+            String s1 = android.os.Build.VERSION.INCREMENTAL;
+            if(s1.length() > 0) {
+                stringbuilder.append(" MIUI/");
+                stringbuilder.append(s1);
+            }
+            return "";
+        }
+
+        Injector() {
+        }
+    }
+
 
     public RuntimeInit() {
     }
@@ -125,6 +140,10 @@ _L2:
         Slog.e("AndroidRuntime", illegalargumentexception.getMessage());
         if(true) goto _L2; else goto _L1
 _L1:
+    }
+
+    public static String callGetDefaultUserAgent() {
+        return getDefaultUserAgent();
     }
 
     private static final void commonInit() {
@@ -152,7 +171,7 @@ _L1:
         return mApplicationObject;
     }
 
-    public static String getDefaultUserAgent() {
+    private static String getDefaultUserAgent() {
         StringBuilder stringbuilder = new StringBuilder(64);
         stringbuilder.append("Dalvik/");
         stringbuilder.append(System.getProperty("java.vm.version"));
@@ -169,9 +188,9 @@ _L1:
                 stringbuilder.append(s2);
             }
         }
-        s1 = android.os.Build.VERSION.INCREMENTAL;
+        s1 = Injector.appendMiuiVersion(stringbuilder, Build.ID);
         if(s1.length() > 0) {
-            stringbuilder.append(" MIUI/");
+            stringbuilder.append(" Build/");
             stringbuilder.append(s1);
         }
         stringbuilder.append(")");

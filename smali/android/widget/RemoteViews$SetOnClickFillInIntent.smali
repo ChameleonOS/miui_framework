@@ -34,20 +34,20 @@
     .parameter "fillInIntent"
 
     .prologue
-    .line 247
+    .line 255
     iput-object p1, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    .line 248
+    .line 256
     iput p2, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->viewId:I
 
-    .line 249
+    .line 257
     iput-object p3, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->fillInIntent:Landroid/content/Intent;
 
-    .line 250
+    .line 258
     return-void
 .end method
 
@@ -57,21 +57,21 @@
     .parameter "parcel"
 
     .prologue
-    .line 252
+    .line 260
     iput-object p1, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    .line 253
+    .line 261
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->viewId:I
 
-    .line 254
+    .line 262
     sget-object v0, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -82,7 +82,7 @@
 
     iput-object v0, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->fillInIntent:Landroid/content/Intent;
 
-    .line 255
+    .line 263
     return-void
 .end method
 
@@ -95,23 +95,23 @@
     .parameter "handler"
 
     .prologue
-    .line 265
+    .line 273
     iget v2, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->viewId:I
 
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 266
+    .line 274
     .local v1, target:Landroid/view/View;
     if-nez v1, :cond_9
 
-    .line 319
+    .line 327
     :cond_8
     :goto_8
     return-void
 
-    .line 268
+    .line 276
     :cond_9
     iget-object v2, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->this$0:Landroid/widget/RemoteViews;
 
@@ -122,7 +122,7 @@
 
     if-nez v2, :cond_19
 
-    .line 269
+    .line 277
     const-string v2, "RemoteViews"
 
     const-string v3, "The method setOnClickFillInIntent is available only from RemoteViewsFactory (ie. on collection items)."
@@ -131,11 +131,11 @@
 
     goto :goto_8
 
-    .line 273
+    .line 281
     :cond_19
     if-ne v1, p1, :cond_24
 
-    .line 274
+    .line 282
     const v2, 0x1020239
 
     iget-object v3, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->fillInIntent:Landroid/content/Intent;
@@ -144,7 +144,7 @@
 
     goto :goto_8
 
-    .line 275
+    .line 283
     :cond_24
     if-eqz v1, :cond_8
 
@@ -152,12 +152,12 @@
 
     if-eqz v2, :cond_8
 
-    .line 276
+    .line 284
     new-instance v0, Landroid/widget/RemoteViews$SetOnClickFillInIntent$1;
 
     invoke-direct {v0, p0, p3}, Landroid/widget/RemoteViews$SetOnClickFillInIntent$1;-><init>(Landroid/widget/RemoteViews$SetOnClickFillInIntent;Landroid/widget/RemoteViews$OnClickHandler;)V
 
-    .line 317
+    .line 325
     .local v0, listener:Landroid/view/View$OnClickListener;
     invoke-virtual {v1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -170,23 +170,23 @@
     .parameter "flags"
 
     .prologue
-    .line 258
+    .line 266
     const/16 v0, 0x9
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 259
+    .line 267
     iget v0, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 260
+    .line 268
     iget-object v0, p0, Landroid/widget/RemoteViews$SetOnClickFillInIntent;->fillInIntent:Landroid/content/Intent;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Landroid/content/Intent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 261
+    .line 269
     return-void
 .end method

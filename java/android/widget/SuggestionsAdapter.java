@@ -48,6 +48,16 @@ class SuggestionsAdapter extends ResourceCursorAdapter
         }
     }
 
+    static class Injector {
+
+        static Drawable getDrawable(PackageManager packagemanager, String s, int i, ActivityInfo activityinfo) {
+            return activityinfo.loadIcon(packagemanager);
+        }
+
+        Injector() {
+        }
+    }
+
 
     public SuggestionsAdapter(Context context, SearchView searchview, SearchableInfo searchableinfo, WeakHashMap weakhashmap) {
         super(context, 0x10900a1, null, true);
@@ -130,7 +140,7 @@ _L1:
 _L4:
         return drawable;
 _L2:
-        drawable = activityinfo.loadIcon(packagemanager);
+        drawable = Injector.getDrawable(packagemanager, componentname.getPackageName(), i, activityinfo);
         if(drawable == null) {
             Log.w("SuggestionsAdapter", (new StringBuilder()).append("Invalid icon resource ").append(i).append(" for ").append(componentname.flattenToShortString()).toString());
             drawable = null;

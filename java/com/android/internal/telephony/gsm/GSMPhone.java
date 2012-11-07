@@ -45,6 +45,22 @@ public class GSMPhone extends PhoneBase {
         }
     }
 
+    static class Injector {
+
+        static String checkEmptyImei(GSMPhone gsmphone, String s) {
+            Context context = gsmphone.getContext();
+            if(TextUtils.isEmpty(s) && !context.getPackageManager().hasSystemFeature("android.hardware.telephony") && context.getPackageManager().hasSystemFeature("android.hardware.wifi")) {
+                WifiInfo wifiinfo = ((WifiManager)context.getSystemService("wifi")).getConnectionInfo();
+                if(wifiinfo != null)
+                    s = wifiinfo.getMacAddress();
+            }
+            return s;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public GSMPhone(Context context, CommandsInterface commandsinterface, PhoneNotifier phonenotifier) {
         this(context, commandsinterface, phonenotifier, false);
@@ -694,11 +710,7 @@ _L5:
     }
 
     public String getDeviceId() {
-        if(TextUtils.isEmpty(mImei) && !super.mContext.getPackageManager().hasSystemFeature("android.hardware.telephony") && super.mContext.getPackageManager().hasSystemFeature("android.hardware.wifi")) {
-            WifiInfo wifiinfo = ((WifiManager)super.mContext.getSystemService("wifi")).getConnectionInfo();
-            if(wifiinfo != null)
-                mImei = wifiinfo.getMacAddress();
-        }
+        mImei = Injector.checkEmptyImei(this, mImei);
         return mImei;
     }
 

@@ -10,7 +10,7 @@ import android.os.RemoteException;
 import miui.provider.ExtraTelephony;
 
 // Referenced classes of package com.android.internal.telephony:
-//            Phone, WspTypeDecoder, SMSDispatcher, IWapPushManager
+//            Phone, WspTypeDecoder, IWapPushManager, SMSDispatcher
 
 public class WapPushOverSms {
     private class WapPushConnection
@@ -72,6 +72,21 @@ public class WapPushOverSms {
         }
     }
 
+    static class Injector {
+
+        static boolean checkFirewallForWapPush(WapPushOverSms wappushoversms, byte abyte0[]) {
+            boolean flag = true;
+            if(ExtraTelephony.checkFirewallForWapPush(wappushoversms.getContext(), abyte0))
+                wappushoversms.getSmsDispatcher().acknowledgeLastIncomingSms(flag, -1, null);
+            else
+                flag = false;
+            return flag;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public WapPushOverSms(Phone phone, SMSDispatcher smsdispatcher) {
         mWapConn = null;
@@ -81,7 +96,7 @@ public class WapPushOverSms {
         mWapConn.bindWapPushManager();
     }
 
-    public int dispatchWapPdu(byte abyte0[], String s) {
+    public int dispatchWapPdu(byte abyte0[]) {
         int j;
         int k;
         int l;
@@ -97,7 +112,7 @@ _L10:
 _L2:
         int i1;
         int j1;
-        String s1;
+        String s;
         long l1;
         int k1;
         byte abyte1[];
@@ -113,31 +128,31 @@ _L2:
             j2 = 2;
             continue; /* Loop/switch isn't completed */
         }
-        s1 = pduDecoder.getValueString();
+        s = pduDecoder.getValueString();
         l1 = pduDecoder.getValue32();
         k1 = j1 + pduDecoder.getDecodedDataLength();
         abyte1 = new byte[i1];
         System.arraycopy(abyte0, j1, abyte1, 0, abyte1.length);
-        if(s1 == null || !s1.equals("application/vnd.wap.coc")) goto _L4; else goto _L3
+        if(s == null || !s.equals("application/vnd.wap.coc")) goto _L4; else goto _L3
 _L3:
         byte abyte2[] = abyte0;
 _L8:
+        String s2;
         String s3;
-        String s4;
         boolean flag;
         IWapPushManager iwappushmanager;
         if(!pduDecoder.seekXWapApplicationId(k1, -1 + (k1 + i1)))
-            break MISSING_BLOCK_LABEL_460;
+            break MISSING_BLOCK_LABEL_444;
         int k2 = (int)pduDecoder.getValue32();
         pduDecoder.decodeXWapApplicationId(k2);
-        s3 = pduDecoder.getValueString();
-        if(s3 == null)
-            s3 = Integer.toString((int)pduDecoder.getValue32());
+        s2 = pduDecoder.getValueString();
+        if(s2 == null)
+            s2 = Integer.toString((int)pduDecoder.getValue32());
         int i2;
-        if(s1 == null)
-            s4 = Long.toString(l1);
+        if(s == null)
+            s3 = Long.toString(l1);
         else
-            s4 = s1;
+            s3 = s;
         flag = true;
         iwappushmanager = mWapConn.getWapPushManager();
         if(iwappushmanager != null) goto _L6; else goto _L5
@@ -146,14 +161,13 @@ _L5:
             j2 = 1;
             continue; /* Loop/switch isn't completed */
         }
-        break MISSING_BLOCK_LABEL_460;
+        break MISSING_BLOCK_LABEL_444;
 _L4:
         i2 = j1 + i1;
         abyte2 = new byte[abyte0.length - i2];
         System.arraycopy(abyte0, i2, abyte2, 0, abyte2.length);
-        if(!ExtraTelephony.checkFirewallForWapPush(mContext, abyte2)) goto _L8; else goto _L7
+        if(!Injector.checkFirewallForWapPush(this, abyte2)) goto _L8; else goto _L7
 _L7:
-        mSmsDispatcher.acknowledgeLastIncomingSms(true, -1, null);
         j2 = -1;
         continue; /* Loop/switch isn't completed */
 _L6:
@@ -164,39 +178,53 @@ _L6:
         intent1.putExtra("header", abyte1);
         intent1.putExtra("data", abyte2);
         intent1.putExtra("contentTypeParameters", pduDecoder.getContentParameters());
-        l2 = iwappushmanager.processMessage(s3, s4, intent1);
+        l2 = iwappushmanager.processMessage(s2, s3, intent1);
         if((l2 & 1) > 0 && (0x8000 & l2) == 0)
             flag = false;
           goto _L5
         RemoteException remoteexception;
         remoteexception;
-        if(s1 == null) {
+        if(s == null) {
             j2 = 2;
         } else {
-            String s2;
+            String s1;
             Intent intent;
-            if(s1.equals("application/vnd.wap.mms-message"))
-                s2 = "android.permission.RECEIVE_MMS";
+            if(s.equals("application/vnd.wap.mms-message"))
+                s1 = "android.permission.RECEIVE_MMS";
             else
-                s2 = "android.permission.RECEIVE_WAP_PUSH";
+                s1 = "android.permission.RECEIVE_WAP_PUSH";
             intent = new Intent("android.provider.Telephony.WAP_PUSH_RECEIVED");
-            intent.setType(s1);
+            intent.setType(s);
             intent.putExtra("transactionId", j);
             intent.putExtra("pduType", l);
             intent.putExtra("header", abyte1);
             intent.putExtra("data", abyte2);
             intent.putExtra("contentTypeParameters", pduDecoder.getContentParameters());
-            intent.putExtra("address", s);
-            mSmsDispatcher.dispatch(intent, s2);
+            intent.putExtra("address", mAddress);
+            mSmsDispatcher.dispatch(intent, s1);
             j2 = -1;
         }
         if(true) goto _L10; else goto _L9
 _L9:
     }
 
+    public int dispatchWapPdu(byte abyte0[], String s) {
+        mAddress = s;
+        return dispatchWapPdu(abyte0);
+    }
+
+    Context getContext() {
+        return mContext;
+    }
+
+    SMSDispatcher getSmsDispatcher() {
+        return mSmsDispatcher;
+    }
+
     private static final String LOG_TAG = "WAP PUSH";
     private final int BIND_RETRY_INTERVAL = 1000;
     private final int WAKE_LOCK_TIMEOUT = 5000;
+    String mAddress;
     private final Context mContext;
     private SMSDispatcher mSmsDispatcher;
     private WapPushConnection mWapConn;

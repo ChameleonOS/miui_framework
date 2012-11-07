@@ -201,6 +201,21 @@ public abstract class DataConnectionTracker extends Handler {
         }
     }
 
+    static class Injector {
+
+        static boolean getAnyDataEnabled(DataConnectionTracker dataconnectiontracker, boolean flag) {
+            boolean flag1;
+            if(dataconnectiontracker.isMmsDataEnabled() || flag)
+                flag1 = true;
+            else
+                flag1 = false;
+            return flag1;
+        }
+
+        Injector() {
+        }
+    }
+
 
     protected DataConnectionTracker(PhoneBase phonebase) {
         mDataEnabledLock = new Object();
@@ -692,19 +707,16 @@ _L3:
         obj;
         JVM INSTR monitorenter ;
         boolean flag;
-        flag = isMmsDataEnabled();
-        if(!flag) {
-            if(!mInternalDataEnabled || !mUserDataEnabled || !sPolicyDataEnabled || enabledCount == 0)
-                break MISSING_BLOCK_LABEL_77;
-            flag = true;
-        }
-_L2:
-        if(!flag)
-            log((new StringBuilder()).append("getAnyDataEnabled ").append(flag).toString());
-        return flag;
-        flag = false;
-        if(true) goto _L2; else goto _L1
+        if(!mInternalDataEnabled || !mUserDataEnabled || !sPolicyDataEnabled || enabledCount == 0)
+            break MISSING_BLOCK_LABEL_78;
+        flag = true;
 _L1:
+        boolean flag1 = Injector.getAnyDataEnabled(this, flag);
+        if(!flag1)
+            log((new StringBuilder()).append("getAnyDataEnabled ").append(flag1).toString());
+        return flag1;
+        flag = false;
+          goto _L1
         Exception exception;
         exception;
         obj;

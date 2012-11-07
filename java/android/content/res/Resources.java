@@ -20,8 +20,8 @@ import org.xmlpull.v1.XmlPullParserException;
 
 // Referenced classes of package android.content.res:
 //            Configuration, XmlBlock, AssetManager, CompatibilityInfo, 
-//            ColorStateList, TypedArray, MiuiClassFactory, XmlResourceParser, 
-//            AssetFileDescriptor
+//            ColorStateList, TypedArray, MiuiTypedArray, MiuiResources, 
+//            XmlResourceParser, AssetFileDescriptor
 
 public class Resources {
     public class Theme {
@@ -98,6 +98,25 @@ public class Resources {
 
         public NotFoundException(String s) {
             super(s);
+        }
+    }
+
+    static class Injector {
+
+        static Drawable createFromResourceStream(Resources resources, TypedValue typedvalue, InputStream inputstream, String s, android.graphics.BitmapFactory.Options options) {
+            Drawable drawable = resources.loadOverlayDrawable(typedvalue, mId);
+            if(drawable == null)
+                drawable = Drawable.createFromResourceStream(resources, typedvalue, inputstream, s, options);
+            return drawable;
+        }
+
+        static void setDrawableId(int i) {
+            mId = i;
+        }
+
+        private static int mId;
+
+        Injector() {
         }
     }
 
@@ -251,27 +270,26 @@ label0:
         TypedValue typedvalue = mTmpValue;
         typedvalue;
         JVM INSTR monitorenter ;
-        TypedArray typedarray = mCachedStyledAttributes;
-        if(typedarray == null) goto _L2; else goto _L1
+        Object obj = mCachedStyledAttributes;
+        if(obj == null) goto _L2; else goto _L1
 _L1:
         mCachedStyledAttributes = null;
-        typedarray.mLength = i;
-        int k = i * 6;
-        if(typedarray.mData.length < k) {
-            typedarray.mData = new int[k];
-            typedarray.mIndices = new int[i + 1];
+        obj.mLength = i;
+        int j = i * 6;
+        if(((TypedArray) (obj)).mData.length < j) {
+            obj.mData = new int[j];
+            obj.mIndices = new int[i + 1];
         }
           goto _L3
         Exception exception;
         exception;
         throw exception;
 _L2:
-        int j = i * 6;
-        typedarray = MiuiClassFactory.newTypedArray(this, new int[j], new int[i + 1], i);
+        obj = new MiuiTypedArray(this, new int[i * 6], new int[i + 1], i);
         typedvalue;
         JVM INSTR monitorexit ;
 _L3:
-        return typedarray;
+        return ((TypedArray) (obj));
     }
 
     private NativePluralRules getPluralRule() {
@@ -288,12 +306,12 @@ _L3:
         Object obj = mSync;
         obj;
         JVM INSTR monitorenter ;
-        Resources resources = mSystem;
-        if(resources == null) {
-            resources = MiuiClassFactory.newResources();
-            mSystem = resources;
+        Object obj1 = mSystem;
+        if(obj1 == null) {
+            obj1 = new MiuiResources();
+            mSystem = ((Resources) (obj1));
         }
-        return resources;
+        return ((Resources) (obj1));
     }
 
     public static int selectDefaultTheme(int i, int j) {
@@ -814,7 +832,7 @@ _L2:
                 if(typedvalue.string == null)
                     throw new NotFoundException((new StringBuilder()).append("Resource is not a Drawable (color or path): ").append(typedvalue).toString());
                 String s = typedvalue.string.toString();
-                if(s.endsWith(".xml")) {
+                if(s.endsWith(".xml"))
                     try {
                         XmlResourceParser xmlresourceparser = loadXmlResourceParser(s, i, typedvalue.assetCookie, "drawable");
                         obj = Drawable.createFromXml(this, xmlresourceparser);
@@ -825,20 +843,18 @@ _L2:
                         notfoundexception1.initCause(exception2);
                         throw notfoundexception1;
                     }
-                } else {
-                    obj = loadOverlayDrawable(typedvalue, i);
-                    if(obj == null)
-                        try {
-                            InputStream inputstream = mAssets.openNonAsset(typedvalue.assetCookie, s, 2);
-                            obj = Drawable.createFromResourceStream(this, typedvalue, inputstream, s, null);
-                            inputstream.close();
-                        }
-                        catch(Exception exception) {
-                            NotFoundException notfoundexception = new NotFoundException((new StringBuilder()).append("File ").append(s).append(" from drawable resource ID #0x").append(Integer.toHexString(i)).toString());
-                            notfoundexception.initCause(exception);
-                            throw notfoundexception;
-                        }
-                }
+                else
+                    try {
+                        InputStream inputstream = mAssets.openNonAsset(typedvalue.assetCookie, s, 2);
+                        Injector.setDrawableId(i);
+                        obj = Injector.createFromResourceStream(this, typedvalue, inputstream, s, null);
+                        inputstream.close();
+                    }
+                    catch(Exception exception) {
+                        NotFoundException notfoundexception = new NotFoundException((new StringBuilder()).append("File ").append(s).append(" from drawable resource ID #0x").append(Integer.toHexString(i)).toString());
+                        notfoundexception.initCause(exception);
+                        throw notfoundexception;
+                    }
             }
         }
         if(obj != null) {
@@ -861,7 +877,7 @@ _L3:
         typedvalue1;
         JVM INSTR monitorenter ;
         if(!flag)
-            break MISSING_BLOCK_LABEL_509;
+            break MISSING_BLOCK_LABEL_500;
         mColorDrawableCache.put(l, new WeakReference(constantstate1));
 _L6:
         typedvalue1;

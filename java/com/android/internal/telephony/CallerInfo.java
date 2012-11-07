@@ -25,6 +25,22 @@ import java.util.Locale;
 import miui.telephony.ExtraCallerInfo;
 
 public class CallerInfo {
+    static class Injector {
+
+        static int getColumnIndex(Cursor cursor, String s) {
+            return miui.telephony.CallerInfo.getColumnIndex(mContactRef, s, cursor);
+        }
+
+        static void setContactRef(Uri uri) {
+            mContactRef = uri;
+        }
+
+        private static Uri mContactRef;
+
+        Injector() {
+        }
+    }
+
 
     public CallerInfo() {
         extra = new ExtraCallerInfo();
@@ -74,15 +90,16 @@ public class CallerInfo {
                 int i = cursor.getColumnIndex("display_name");
                 if(i != -1)
                     callerinfo.name = cursor.getString(i);
-                int j = miui.telephony.CallerInfo.getColumnIndex(uri, "number", cursor);
+                Injector.setContactRef(uri);
+                int j = Injector.getColumnIndex(cursor, "number");
                 if(j != -1)
                     callerinfo.phoneNumber = cursor.getString(j);
-                int k = miui.telephony.CallerInfo.getColumnIndex(uri, "normalized_number", cursor);
+                int k = Injector.getColumnIndex(cursor, "normalized_number");
                 if(k != -1)
                     callerinfo.normalizedNumber = cursor.getString(k);
-                int l = miui.telephony.CallerInfo.getColumnIndex(uri, "label", cursor);
+                int l = Injector.getColumnIndex(cursor, "label");
                 if(l != -1) {
-                    int l1 = miui.telephony.CallerInfo.getColumnIndex(uri, "type", cursor);
+                    int l1 = Injector.getColumnIndex(cursor, "type");
                     if(l1 != -1) {
                         callerinfo.numberType = cursor.getInt(l1);
                         callerinfo.numberLabel = cursor.getString(l);

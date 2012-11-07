@@ -41,6 +41,21 @@ public class PhoneNumberUtils {
         }
     }
 
+    static class Injector {
+
+        static void appendNonSeparator(StringBuilder stringbuilder, char c) {
+            if(Character.digit(c, 10) == -1 && PhoneNumberUtils.isNonSeparator(c))
+                stringbuilder.append(c);
+        }
+
+        static int getEffectiveLength(String s) {
+            return 1 + PhoneNumberUtils.callIndexOfLastNetworkChar(s);
+        }
+
+        Injector() {
+        }
+    }
+
 
     public PhoneNumberUtils() {
     }
@@ -84,6 +99,10 @@ _L2:
         }
         if(true) goto _L4; else goto _L3
 _L3:
+    }
+
+    static int callIndexOfLastNetworkChar(String s) {
+        return indexOfLastNetworkChar(s);
     }
 
     public static String calledPartyBCDFragmentToString(byte abyte0[], int i, int j) {
@@ -296,13 +315,9 @@ _L4:
         int k;
         int l;
         int i1;
-        int j1;
-        int k1;
         k = indexOfLastNetworkChar(s);
-        l = k + 1;
-        i1 = indexOfLastNetworkChar(s1);
-        j1 = i1 + 1;
-        k1 = 0;
+        l = indexOfLastNetworkChar(s1);
+        i1 = 0;
 _L8:
 label0:
         {
@@ -312,7 +327,7 @@ label1:
                 char c;
                 char c1;
                 do {
-                    if(k < 0 || i1 < 0)
+                    if(k < 0 || l < 0)
                         break label1;
                     flag1 = false;
                     c = s.charAt(k);
@@ -321,9 +336,9 @@ label1:
                         flag1 = true;
                         i++;
                     }
-                    c1 = s1.charAt(i1);
+                    c1 = s1.charAt(l);
                     if(!isDialable(c1)) {
-                        i1--;
+                        l--;
                         flag1 = true;
                         j++;
                     }
@@ -331,23 +346,23 @@ label1:
                 if(c1 == c || c == 'N' || c1 == 'N')
                     break label0;
             }
-            if(k1 < 7) {
-                int l1 = l - i;
-                if(l1 == j1 - j && l1 == k1)
+            if(i1 < 7) {
+                int j1 = Injector.getEffectiveLength(s) - i;
+                if(j1 == Injector.getEffectiveLength(s1) - j && j1 == i1)
                     flag = true;
                 else
                     flag = false;
             } else
-            if(k1 >= 7 && (k < 0 || i1 < 0))
+            if(i1 >= 7 && (k < 0 || l < 0))
                 flag = true;
             else
-            if(matchIntlPrefix(s, k + 1) && matchIntlPrefix(s1, i1 + 1))
+            if(matchIntlPrefix(s, k + 1) && matchIntlPrefix(s1, l + 1))
                 flag = true;
             else
-            if(matchTrunkPrefix(s, k + 1) && matchIntlPrefixAndCC(s1, i1 + 1))
+            if(matchTrunkPrefix(s, k + 1) && matchIntlPrefixAndCC(s1, l + 1))
                 flag = true;
             else
-            if(matchTrunkPrefix(s1, i1 + 1) && matchIntlPrefixAndCC(s, k + 1))
+            if(matchTrunkPrefix(s1, l + 1) && matchIntlPrefixAndCC(s, k + 1))
                 flag = true;
             else
                 flag = false;
@@ -356,8 +371,8 @@ _L5:
         if(true) goto _L7; else goto _L6
 _L6:
         k--;
-        i1--;
-        k1++;
+        l--;
+        i1++;
           goto _L8
     }
 
@@ -1585,11 +1600,12 @@ _L3:
 _L1:
         char c;
         c = s.charAt(j);
+        Injector.appendNonSeparator(stringbuilder, c);
         int k = Character.digit(c, 10);
         if(k != -1) {
             stringbuilder.append(k);
         } else {
-            if((j != 0 || c != '+') && !isNonSeparator(c))
+            if(j != 0 || c != '+')
                 continue; /* Loop/switch isn't completed */
             stringbuilder.append(c);
         }

@@ -20,10 +20,30 @@ import java.io.PrintWriter;
 import java.util.*;
 
 // Referenced classes of package com.android.internal.telephony.gsm:
-//            GSMPhone, SIMRecords, SpnOverride, GsmCallTracker, 
-//            GsmCall
+//            GSMPhone, GsmCallTracker, GsmCall, SIMRecords, 
+//            SpnOverride
 
 final class GsmServiceStateTracker extends ServiceStateTracker {
+    static class Injector {
+
+        static String getPlmn(GsmServiceStateTracker gsmservicestatetracker, String s) {
+            String s1 = ((SIMRecords)((PhoneBase) (gsmservicestatetracker.phone)).mIccRecords).mSpnOverride.getSpn(((ServiceStateTracker) (gsmservicestatetracker)).ss.getOperatorNumeric());
+            if(!TextUtils.isEmpty(s1))
+                s = s1;
+            return s;
+        }
+
+        static String getSpn(GsmServiceStateTracker gsmservicestatetracker, String s) {
+            String s1 = ((SIMRecords)((PhoneBase) (gsmservicestatetracker.phone)).mIccRecords).mSpnOverride.getSpn(((PhoneBase) (gsmservicestatetracker.phone)).mIccRecords.getOperatorNumeric());
+            if(!TextUtils.isEmpty(s1))
+                s = s1;
+            return s;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public GsmServiceStateTracker(GSMPhone gsmphone) {
         boolean flag = false;
@@ -209,13 +229,6 @@ _L1:
             obj = timezone.getID();
         log(stringbuilder.append(obj).toString());
         return timezone;
-    }
-
-    private String getPlmn() {
-        String s = ((SIMRecords)((PhoneBase) (phone)).mIccRecords).mSpnOverride.getSpn(super.ss.getOperatorNumeric());
-        if(TextUtils.isEmpty(s))
-            s = super.ss.getOperatorAlphaLong();
-        return s;
     }
 
     private boolean isGprsConsistent(int i, int j) {
@@ -1393,10 +1406,8 @@ _L3:
 
     protected void updateSpnDisplay() {
         int i = ((PhoneBase) (phone)).mIccRecords.getDisplayRule(super.ss.getOperatorNumeric());
-        String s = ((SIMRecords)((PhoneBase) (phone)).mIccRecords).mSpnOverride.getSpn(((PhoneBase) (phone)).mIccRecords.getOperatorNumeric());
-        if(TextUtils.isEmpty(s))
-            s = ((PhoneBase) (phone)).mIccRecords.getServiceProviderName();
-        String s1 = getPlmn();
+        String s = Injector.getSpn(this, ((PhoneBase) (phone)).mIccRecords.getServiceProviderName());
+        String s1 = Injector.getPlmn(this, super.ss.getOperatorAlphaLong());
         if(mEmergencyOnly && super.cm.getRadioState().isOn()) {
             s1 = Resources.getSystem().getText(0x1040310).toString();
             log((new StringBuilder()).append("updateSpnDisplay: emergency only and radio is on plmn='").append(s1).append("'").toString());

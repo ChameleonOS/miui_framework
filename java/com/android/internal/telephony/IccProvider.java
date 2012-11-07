@@ -60,6 +60,10 @@ _L2:
 _L1:
     }
 
+    static UriMatcher getURL_MATCHER() {
+        return URL_MATCHER;
+    }
+
     private MatrixCursor loadFromEf(int i) {
         List list = null;
         List list1;
@@ -111,6 +115,10 @@ _L1:
             aobj[3] = Integer.valueOf(i);
             matrixcursor.addRow(aobj);
         }
+    }
+
+    private void log(String s) {
+        Log.d("IccProvider", (new StringBuilder()).append("[IccProvider] ").append(s).toString());
     }
 
     private String normalizeValue(String s) {
@@ -247,9 +255,9 @@ _L3:
 _L5:
         StringBuilder stringbuilder = new StringBuilder("content://icc/");
         i;
-        JVM INSTR tableswitch 1 2: default 148
-    //                   1 167
-    //                   2 179;
+        JVM INSTR tableswitch 1 2: default 152
+    //                   1 171
+    //                   2 183;
            goto _L7 _L8 _L9
 _L7:
         stringbuilder.append(0);
@@ -261,10 +269,6 @@ _L8:
 _L9:
         stringbuilder.append("fdn/");
           goto _L7
-    }
-
-    void log(String s) {
-        Log.d("IccProvider", (new StringBuilder()).append("[IccProvider] ").append(s).toString());
     }
 
     public boolean onCreate() {
@@ -322,7 +326,7 @@ _L1:
 
     private static final String ADDRESS_BOOK_COLUMN_NAMES[];
     private static final int ADN = 1;
-    static final boolean DBG = false;
+    private static final boolean DBG = false;
     private static final int FDN = 2;
     private static final int SDN = 3;
     private static final String STR_EMAILS = "emails";
@@ -330,7 +334,7 @@ _L1:
     private static final String STR_PIN2 = "pin2";
     private static final String STR_TAG = "tag";
     private static final String TAG = "IccProvider";
-    static final UriMatcher URL_MATCHER;
+    private static final UriMatcher URL_MATCHER;
 
     static  {
         String as[] = new String[4];

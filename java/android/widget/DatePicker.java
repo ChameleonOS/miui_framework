@@ -90,6 +90,36 @@ public class DatePicker extends FrameLayout {
         public abstract void onDateChanged(DatePicker datepicker, int i, int j, int k);
     }
 
+    class OnDateChangeListener
+        implements NumberPicker.OnValueChangeListener {
+
+        public void onValueChange(NumberPicker numberpicker, int i, int j) {
+            updateInputState();
+            mTempDate.setTimeInMillis(mCurrentDate.getTimeInMillis());
+            if(numberpicker == mDaySpinner)
+                mTempDate.add(5, j - i);
+            else
+            if(numberpicker == mMonthSpinner)
+                mTempDate.add(2, j - i);
+            else
+            if(numberpicker == mYearSpinner)
+                mTempDate.set(1, j);
+            else
+                throw new IllegalArgumentException();
+            setDate(mTempDate.get(1), mTempDate.get(2), mTempDate.get(5));
+            updateSpinners();
+            updateCalendarView();
+            notifyDateChanged();
+        }
+
+        final DatePicker this$0;
+
+        OnDateChangeListener() {
+            this$0 = DatePicker.this;
+            super();
+        }
+    }
+
 
     public DatePicker(Context context) {
         this(context, null);
@@ -114,17 +144,30 @@ public class DatePicker extends FrameLayout {
         int l = typedarray.getResourceId(6, 0x1090035);
         typedarray.recycle();
         ((LayoutInflater)context.getSystemService("layout_inflater")).inflate(l, this, true);
-        NumberPicker.OnValueChangeListener onvaluechangelistener = new NumberPicker.OnValueChangeListener() {
+        new NumberPicker.OnValueChangeListener() {
 
             public void onValueChange(NumberPicker numberpicker, int i1, int j1) {
                 updateInputState();
                 mTempDate.setTimeInMillis(mCurrentDate.getTimeInMillis());
-                if(numberpicker == mDaySpinner)
-                    mTempDate.add(5, j1 - i1);
-                else
-                if(numberpicker == mMonthSpinner)
-                    mTempDate.add(2, j1 - i1);
-                else
+                if(numberpicker == mDaySpinner) {
+                    int k1 = mTempDate.getActualMaximum(5);
+                    if(i1 == k1 && j1 == 1)
+                        mTempDate.add(5, 1);
+                    else
+                    if(i1 == 1 && j1 == k1)
+                        mTempDate.add(5, -1);
+                    else
+                        mTempDate.add(5, j1 - i1);
+                } else
+                if(numberpicker == mMonthSpinner) {
+                    if(i1 == 11 && j1 == 0)
+                        mTempDate.add(2, 1);
+                    else
+                    if(i1 == 0 && j1 == 11)
+                        mTempDate.add(2, -1);
+                    else
+                        mTempDate.add(2, j1 - i1);
+                } else
                 if(numberpicker == mYearSpinner)
                     mTempDate.set(1, j1);
                 else
@@ -142,6 +185,7 @@ public class DatePicker extends FrameLayout {
                 super();
             }
         };
+        OnDateChangeListener ondatechangelistener = new OnDateChangeListener();
         mSpinners = (LinearLayout)findViewById(0x102026e);
         mCalendarView = (CalendarView)findViewById(0x1020272);
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -162,18 +206,18 @@ public class DatePicker extends FrameLayout {
         mDaySpinner = (NumberPicker)findViewById(0x1020270);
         mDaySpinner.setFormatter(NumberPicker.TWO_DIGIT_FORMATTER);
         mDaySpinner.setOnLongPressUpdateInterval(100L);
-        mDaySpinner.setOnValueChangedListener(onvaluechangelistener);
+        mDaySpinner.setOnValueChangedListener(ondatechangelistener);
         mDaySpinnerInput = (EditText)mDaySpinner.findViewById(0x10202fc);
         mMonthSpinner = (NumberPicker)findViewById(0x102026f);
         mMonthSpinner.setMinValue(0);
         mMonthSpinner.setMaxValue(-1 + mNumberOfMonths);
         mMonthSpinner.setDisplayedValues(mShortMonths);
         mMonthSpinner.setOnLongPressUpdateInterval(200L);
-        mMonthSpinner.setOnValueChangedListener(onvaluechangelistener);
+        mMonthSpinner.setOnValueChangedListener(ondatechangelistener);
         mMonthSpinnerInput = (EditText)mMonthSpinner.findViewById(0x10202fc);
         mYearSpinner = (NumberPicker)findViewById(0x1020271);
         mYearSpinner.setOnLongPressUpdateInterval(100L);
-        mYearSpinner.setOnValueChangedListener(onvaluechangelistener);
+        mYearSpinner.setOnValueChangedListener(ondatechangelistener);
         mYearSpinnerInput = (EditText)mYearSpinner.findViewById(0x10202fc);
         if(!flag && !flag1) {
             setSpinnersShown(true);

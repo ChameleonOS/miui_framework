@@ -12,10 +12,23 @@ import android.util.Log;
 import java.util.Arrays;
 
 // Referenced classes of package com.android.internal.telephony:
-//            IccUtils, MiuiAdnUtils
+//            IccUtils, GsmAlphabet, MiuiAdnUtils
 
 public class AdnRecord
     implements Parcelable {
+    static class Injector {
+
+        static String adnRecordError(AdnRecord adnrecord, String s) {
+            return (new StringBuilder()).append(s).append(" - [").append(adnrecord.number).append(",").append(adnrecord.alphaTag).append(",").append(adnrecord.emails).append("]").toString();
+        }
+
+        static void arraycopy(Object obj, int i, Object obj1, int j, int k) {
+        }
+
+        Injector() {
+        }
+    }
+
 
     public AdnRecord(int i, int j, String s, String s1) {
         alphaTag = null;
@@ -61,21 +74,24 @@ public class AdnRecord
     }
 
     private void parseRecord(byte abyte0[]) {
-        alphaTag = IccUtils.adnStringFieldToString(abyte0, 0, -14 + abyte0.length);
-        int i = -14 + abyte0.length;
-        int j = 0xff & abyte0[i];
-        number = PhoneNumberUtils.calledPartyBCDToString(abyte0, i + 1, j);
-        extRecord = 0xff & abyte0[-1 + abyte0.length];
-        emails = null;
-_L1:
-        return;
-        RuntimeException runtimeexception;
-        runtimeexception;
-        Log.w("GSM", (new StringBuilder()).append("Error parsing AdnRecord - [").append(number).append(",").append(alphaTag).append(",").append(emails).append("]").toString(), runtimeexception);
-        number = "";
-        alphaTag = "";
-        emails = null;
-          goto _L1
+        try {
+            alphaTag = IccUtils.adnStringFieldToString(abyte0, 0, -14 + abyte0.length);
+            int i = -14 + abyte0.length;
+            int j = 0xff & abyte0[i];
+            if(j > 255) {
+                number = "";
+            } else {
+                number = PhoneNumberUtils.calledPartyBCDToString(abyte0, i + 1, j);
+                extRecord = 0xff & abyte0[-1 + abyte0.length];
+                emails = null;
+            }
+        }
+        catch(RuntimeException runtimeexception) {
+            Log.w("GSM", Injector.adnRecordError(this, "Error parsing AdnRecord"), runtimeexception);
+            number = "";
+            alphaTag = "";
+            emails = null;
+        }
     }
 
     private static boolean stringCompareNullEqualsEmpty(String s, String s1) {
@@ -129,8 +145,11 @@ _L2:
             abyte0[j + 0] = (byte)abyte1.length;
             abyte0[j + 12] = -1;
             abyte0[j + 13] = -1;
-            if(!TextUtils.isEmpty(alphaTag))
+            if(!TextUtils.isEmpty(alphaTag)) {
+                byte abyte2[] = GsmAlphabet.stringToGsm8BitPacked(alphaTag);
+                Injector.arraycopy(abyte2, 0, abyte0, 0, abyte2.length);
                 MiuiAdnUtils.encodeAlphaTag(abyte0, alphaTag, j);
+            }
         }
         if(true) goto _L4; else goto _L3
 _L3:
@@ -226,7 +245,7 @@ _L3:
     static final int FOOTER_SIZE_BYTES = 14;
     static final String LOG_TAG = "GSM";
     static final int MAX_EXT_CALLED_PARTY_LENGTH = 10;
-    static final int MAX_NUMBER_SIZE_BYTES = 11;
+    static final int MAX_NUMBER_SIZE_BYTES = 255;
     String alphaTag;
     int efid;
     String emails[];

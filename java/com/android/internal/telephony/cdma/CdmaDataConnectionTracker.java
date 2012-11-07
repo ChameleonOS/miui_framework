@@ -30,6 +30,33 @@ import miui.net.FirewallManager;
 //            CdmaDataConnection
 
 public final class CdmaDataConnectionTracker extends DataConnectionTracker {
+    static class Injector {
+
+        static void onDataSetupComplete(CdmaDataConnectionTracker cdmadataconnectiontracker) {
+            DataConnectionAc dataconnectionac = null;
+            ApnSetting apnsetting = cdmadataconnectiontracker.getActiveApn();
+            Iterator iterator = cdmadataconnectiontracker.getDataConnectionAsyncChannels().values().iterator();
+            do {
+                if(!iterator.hasNext())
+                    break;
+                DataConnectionAc dataconnectionac1 = (DataConnectionAc)iterator.next();
+                if(!dataconnectionac1.getApnSettingSync().equals(apnsetting))
+                    continue;
+                dataconnectionac = dataconnectionac1;
+                break;
+            } while(true);
+            if(dataconnectionac != null && apnsetting != null)
+                FirewallManager.getInstance().onDataConnected(0, FirewallManager.encodeApnSetting(apnsetting), dataconnectionac.getLinkPropertiesSync().getInterfaceName());
+        }
+
+        static void onDisconnectDone(CdmaDataConnectionTracker cdmadataconnectiontracker) {
+            FirewallManager.getInstance().onDataDisconnected(0, FirewallManager.encodeApnSetting(cdmadataconnectiontracker.getActiveApn()));
+        }
+
+        Injector() {
+        }
+    }
+
 
     CdmaDataConnectionTracker(CDMAPhone cdmaphone) {
         super(cdmaphone);
@@ -37,21 +64,33 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
         String as[] = new String[1];
         as[0] = "dun";
         mDunApnTypes = as;
-        mPollNetStat = new Runnable() ;
+        mPollNetStat = new Runnable() {
+
+            public void run() {
+                long l = 
+// JavaClassFileOutputException: get_constant: invalid tag
+
+            final CdmaDataConnectionTracker this$0;
+
+             {
+                this$0 = CdmaDataConnectionTracker.this;
+                super();
+            }
+        };
         mCdmaPhone = cdmaphone;
-        cdmaphone.mCM.registerForAvailable(this, 0x42001, null);
-        cdmaphone.mCM.registerForOffOrNotAvailable(this, 0x42006, null);
-        cdmaphone.mIccRecords.registerForRecordsLoaded(this, 0x42002, null);
-        cdmaphone.mCM.registerForDataNetworkStateChanged(this, 0x42004, null);
+        ((PhoneBase) (cdmaphone)).mCM.registerForAvailable(this, 0x42001, null);
+        ((PhoneBase) (cdmaphone)).mCM.registerForOffOrNotAvailable(this, 0x42006, null);
+        ((PhoneBase) (cdmaphone)).mIccRecords.registerForRecordsLoaded(this, 0x42002, null);
+        ((PhoneBase) (cdmaphone)).mCM.registerForDataNetworkStateChanged(this, 0x42004, null);
         cdmaphone.mCT.registerForVoiceCallEnded(this, 0x42008, null);
         cdmaphone.mCT.registerForVoiceCallStarted(this, 0x42007, null);
         cdmaphone.mSST.registerForDataConnectionAttached(this, 0x42003, null);
         cdmaphone.mSST.registerForDataConnectionDetached(this, 0x42014, null);
         cdmaphone.mSST.registerForRoamingOn(this, 0x4200b, null);
         cdmaphone.mSST.registerForRoamingOff(this, 0x4200c, null);
-        cdmaphone.mCM.registerForCdmaOtaProvision(this, 0x42019, null);
-        mCdmaSSM = CdmaSubscriptionSourceManager.getInstance(cdmaphone.getContext(), cdmaphone.mCM, this, 0x42015, null);
-        mDataConnectionTracker = this;
+        ((PhoneBase) (cdmaphone)).mCM.registerForCdmaOtaProvision(this, 0x42019, null);
+        mCdmaSSM = CdmaSubscriptionSourceManager.getInstance(cdmaphone.getContext(), ((PhoneBase) (cdmaphone)).mCM, this, 0x42015, null);
+        super.mDataConnectionTracker = this;
         createAllDataConnectionList();
         broadcastMessenger();
         String as1[] = mCdmaPhone.getContext().getResources().getStringArray(0x107001e);
@@ -68,20 +107,20 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
 
     private void cleanUpConnection(boolean flag, String s, boolean flag1) {
         log((new StringBuilder()).append("cleanUpConnection: reason: ").append(s).toString());
-        if(mReconnectIntent != null) {
-            ((AlarmManager)mPhone.getContext().getSystemService("alarm")).cancel(mReconnectIntent);
-            mReconnectIntent = null;
+        if(super.mReconnectIntent != null) {
+            ((AlarmManager)super.mPhone.getContext().getSystemService("alarm")).cancel(super.mReconnectIntent);
+            super.mReconnectIntent = null;
         }
         setState(com.android.internal.telephony.DataConnectionTracker.State.DISCONNECTING);
         notifyOffApnsOfAvailability(s);
         boolean flag2 = false;
-        Iterator iterator = mDataConnections.values().iterator();
+        Iterator iterator = super.mDataConnections.values().iterator();
         do {
             if(!iterator.hasNext())
                 break;
             DataConnection dataconnection = (DataConnection)iterator.next();
             if(dataconnection != null) {
-                DataConnectionAc dataconnectionac = (DataConnectionAc)mDataConnectionAsyncChannels.get(Integer.valueOf(dataconnection.getDataConnectionId()));
+                DataConnectionAc dataconnectionac = (DataConnectionAc)super.mDataConnectionAsyncChannels.get(Integer.valueOf(dataconnection.getDataConnectionId()));
                 if(flag) {
                     if(flag1) {
                         log("cleanUpConnection: teardown, conn.tearDownAll");
@@ -115,14 +154,14 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
                 log("Could not configure using DEFAULT_DATA_RETRY_CONFIG=default_randomization=2000,5000,10000,20000,40000,80000:5000,160000:5000,320000:5000,640000:5000,1280000:5000,1800000:5000");
                 retrymanager.configure(20, 2000, 1000);
             }
-            int j = mUniqueIdGenerator.getAndIncrement();
+            int j = super.mUniqueIdGenerator.getAndIncrement();
             CdmaDataConnection cdmadataconnection = CdmaDataConnection.makeDataConnection(mCdmaPhone, j, retrymanager, this);
-            mDataConnections.put(Integer.valueOf(j), cdmadataconnection);
+            super.mDataConnections.put(Integer.valueOf(j), cdmadataconnection);
             DataConnectionAc dataconnectionac = new DataConnectionAc(cdmadataconnection, "CDMA");
-            int k = dataconnectionac.fullyConnectSync(mPhone.getContext(), this, cdmadataconnection.getHandler());
+            int k = dataconnectionac.fullyConnectSync(super.mPhone.getContext(), this, cdmadataconnection.getHandler());
             if(k == 0) {
                 log("Fully connected");
-                mDataConnectionAsyncChannels.put(Integer.valueOf(dataconnectionac.dataConnection.getDataConnectionId()), dataconnectionac);
+                super.mDataConnectionAsyncChannels.put(Integer.valueOf(dataconnectionac.dataConnection.getDataConnectionId()), dataconnectionac);
             } else {
                 log((new StringBuilder()).append("Could not connect to dcac.dataConnection=").append(dataconnectionac.dataConnection).append(" status=").append(k).toString());
             }
@@ -131,12 +170,12 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     }
 
     private void destroyAllDataConnectionList() {
-        if(mDataConnections != null)
-            mDataConnections.clear();
+        if(super.mDataConnections != null)
+            super.mDataConnections.clear();
     }
 
     private CdmaDataConnection findFreeDataConnection() {
-        Iterator iterator = mDataConnectionAsyncChannels.values().iterator();
+        Iterator iterator = super.mDataConnectionAsyncChannels.values().iterator();
 _L4:
         if(!iterator.hasNext()) goto _L2; else goto _L1
 _L1:
@@ -159,24 +198,7 @@ _L5:
         setState(com.android.internal.telephony.DataConnectionTracker.State.CONNECTED);
         notifyDataConnection(s);
         startNetStatPoll();
-        ((DataConnection)mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
-    }
-
-    private void notifyFirewallDataSetupComplete() {
-        DataConnectionAc dataconnectionac = null;
-        ApnSetting apnsetting = mActiveApn;
-        Iterator iterator = mDataConnectionAsyncChannels.values().iterator();
-        do {
-            if(!iterator.hasNext())
-                break;
-            DataConnectionAc dataconnectionac1 = (DataConnectionAc)iterator.next();
-            if(!dataconnectionac1.getApnSettingSync().equals(apnsetting))
-                continue;
-            dataconnectionac = dataconnectionac1;
-            break;
-        } while(true);
-        if(dataconnectionac != null && apnsetting != null)
-            FirewallManager.getInstance().onDataConnected(0, FirewallManager.encodeApnSetting(apnsetting), dataconnectionac.getLinkPropertiesSync().getInterfaceName());
+        ((DataConnection)super.mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
     }
 
     private void notifyNoData(com.android.internal.telephony.DataConnection.FailCause failcause) {
@@ -185,14 +207,14 @@ _L5:
     }
 
     private void onCdmaDataDetached() {
-        if(mState == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED) {
+        if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED) {
             startNetStatPoll();
             notifyDataConnection("cdmaDataDetached");
         } else {
-            if(mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED) {
+            if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED) {
                 cleanUpConnection(false, "cdmaDataDetached", false);
-                ((DataConnection)mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
-                CdmaCellLocation cdmacelllocation = (CdmaCellLocation)(CdmaCellLocation)mPhone.getCellLocation();
+                ((DataConnection)super.mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
+                CdmaCellLocation cdmacelllocation = (CdmaCellLocation)(CdmaCellLocation)super.mPhone.getCellLocation();
                 Object aobj[] = new Object[2];
                 int i;
                 if(cdmacelllocation != null)
@@ -222,7 +244,7 @@ _L3:
 _L2:
         return;
 _L4:
-        ((DataConnection)mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
+        ((DataConnection)super.mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
         if(true) goto _L2; else goto _L5
 _L5:
     }
@@ -230,17 +252,17 @@ _L5:
     private void onRestartRadio() {
         if(mPendingRestartRadio) {
             log("************TURN OFF RADIO**************");
-            mPhone.mCM.setRadioPower(false, null);
+            super.mPhone.mCM.setRadioPower(false, null);
             mPendingRestartRadio = false;
         }
     }
 
     private void reconnectAfterFail(com.android.internal.telephony.DataConnection.FailCause failcause, String s, int i) {
-        if(mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED) {
+        if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED) {
             int j = i;
             if(j < 0) {
-                j = ((DataConnection)mDataConnections.get(Integer.valueOf(0))).getRetryTimer();
-                ((DataConnection)mDataConnections.get(Integer.valueOf(0))).increaseRetryCount();
+                j = ((DataConnection)super.mDataConnections.get(Integer.valueOf(0))).getRetryTimer();
+                ((DataConnection)super.mDataConnections.get(Integer.valueOf(0))).increaseRetryCount();
             }
             startAlarmForReconnect(j, s);
             if(!shouldPostNotification(failcause))
@@ -251,11 +273,11 @@ _L5:
     }
 
     private void resetPollStats() {
-        mTxPkts = -1L;
-        mRxPkts = -1L;
-        mSentSinceLastRecv = 0L;
-        mNetStatPollPeriod = 1000;
-        mNoRecvPollCount = 0;
+        super.mTxPkts = -1L;
+        super.mRxPkts = -1L;
+        super.mSentSinceLastRecv = 0L;
+        super.mNetStatPollPeriod = 1000;
+        super.mNoRecvPollCount = 0;
     }
 
     private boolean retryAfterDisconnected(String s) {
@@ -276,19 +298,19 @@ _L5:
             String as[];
             byte byte0;
             Message message;
-            if(mRequestedApnType.equals("dun")) {
+            if(super.mRequestedApnType.equals("dun")) {
                 as = mDunApnTypes;
                 byte0 = 3;
             } else {
                 as = mDefaultApnTypes;
                 byte0 = 0;
             }
-            mActiveApn = new ApnSetting(byte0, "", "", "", "", "", "", "", "", "", "", 0, as, "IP", "IP", true, 0);
-            log((new StringBuilder()).append("call conn.bringUp mActiveApn=").append(mActiveApn).toString());
+            super.mActiveApn = new ApnSetting(byte0, "", "", "", "", "", "", "", "", "", "", 0, as, "IP", "IP", true, 0);
+            log((new StringBuilder()).append("call conn.bringUp mActiveApn=").append(super.mActiveApn).toString());
             message = obtainMessage();
             message.what = 0x42000;
             message.obj = s;
-            cdmadataconnection.bringUp(message, mActiveApn);
+            cdmadataconnection.bringUp(message, super.mActiveApn);
             setState(com.android.internal.telephony.DataConnectionTracker.State.INITING);
             notifyDataConnection(s);
             flag = true;
@@ -307,11 +329,11 @@ _L5:
 
     private void startAlarmForReconnect(int i, String s) {
         log((new StringBuilder()).append("Data Connection activate failed. Scheduling next attempt for ").append(i / 1000).append("s").toString());
-        AlarmManager alarmmanager = (AlarmManager)mPhone.getContext().getSystemService("alarm");
+        AlarmManager alarmmanager = (AlarmManager)super.mPhone.getContext().getSystemService("alarm");
         Intent intent = new Intent("com.android.internal.telephony.cdma-reconnect");
         intent.putExtra("reconnect_alarm_extra_reason", s);
-        mReconnectIntent = PendingIntent.getBroadcast(mPhone.getContext(), 0, intent, 0);
-        alarmmanager.set(2, SystemClock.elapsedRealtime() + (long)i, mReconnectIntent);
+        super.mReconnectIntent = PendingIntent.getBroadcast(super.mPhone.getContext(), 0, intent, 0);
+        alarmmanager.set(2, SystemClock.elapsedRealtime() + (long)i, super.mReconnectIntent);
     }
 
     private void startDelayedRetry(com.android.internal.telephony.DataConnection.FailCause failcause, String s, int i) {
@@ -328,7 +350,7 @@ _L5:
         else
             s1 = s;
         log(stringbuilder.append(s1).toString());
-        if(mPhone.getSimulatedRadioControl() != null) {
+        if(super.mPhone.getSimulatedRadioControl() != null) {
             setState(com.android.internal.telephony.DataConnectionTracker.State.CONNECTED);
             notifyDataConnection(s);
             notifyOffApnsOfAvailability(s);
@@ -336,9 +358,9 @@ _L5:
             flag = true;
         } else {
             mCdmaPhone.mSST.getCurrentDataConnectionState();
-            mPhone.getServiceState().getRoaming();
+            super.mPhone.getServiceState().getRoaming();
             mCdmaPhone.mSST.getDesiredPowerState();
-            if((mState == com.android.internal.telephony.DataConnectionTracker.State.IDLE || mState == com.android.internal.telephony.DataConnectionTracker.State.SCANNING) && isDataAllowed() && getAnyDataEnabled() && !isEmergency()) {
+            if((super.mState == com.android.internal.telephony.DataConnectionTracker.State.IDLE || super.mState == com.android.internal.telephony.DataConnectionTracker.State.SCANNING) && isDataAllowed() && getAnyDataEnabled() && !isEmergency()) {
                 flag = setupData(s);
                 notifyOffApnsOfAvailability(s);
             } else {
@@ -350,7 +372,7 @@ _L5:
     }
 
     private void writeEventLogCdmaDataDrop() {
-        CdmaCellLocation cdmacelllocation = (CdmaCellLocation)(CdmaCellLocation)mPhone.getCellLocation();
+        CdmaCellLocation cdmacelllocation = (CdmaCellLocation)(CdmaCellLocation)super.mPhone.getCellLocation();
         Object aobj[] = new Object[2];
         int i;
         if(cdmacelllocation != null)
@@ -365,10 +387,10 @@ _L5:
     public void dispose() {
         cleanUpConnection(false, null, false);
         dispose();
-        mPhone.mCM.unregisterForAvailable(this);
-        mPhone.mCM.unregisterForOffOrNotAvailable(this);
-        mCdmaPhone.mIccRecords.unregisterForRecordsLoaded(this);
-        mPhone.mCM.unregisterForDataNetworkStateChanged(this);
+        super.mPhone.mCM.unregisterForAvailable(this);
+        super.mPhone.mCM.unregisterForOffOrNotAvailable(this);
+        ((PhoneBase) (mCdmaPhone)).mIccRecords.unregisterForRecordsLoaded(this);
+        super.mPhone.mCM.unregisterForDataNetworkStateChanged(this);
         mCdmaPhone.mCT.unregisterForVoiceCallEnded(this);
         mCdmaPhone.mCT.unregisterForVoiceCallStarted(this);
         mCdmaPhone.mSST.unregisterForDataConnectionAttached(this);
@@ -376,7 +398,7 @@ _L5:
         mCdmaPhone.mSST.unregisterForRoamingOn(this);
         mCdmaPhone.mSST.unregisterForRoamingOff(this);
         mCdmaSSM.dispose(this);
-        mPhone.mCM.unregisterForCdmaOtaProvision(this);
+        super.mPhone.mCM.unregisterForCdmaOtaProvision(this);
         destroyAllDataConnectionList();
     }
 
@@ -405,6 +427,14 @@ _L5:
         return "com.android.internal.telephony.cdma-reconnect";
     }
 
+    ApnSetting getActiveApn() {
+        return super.mActiveApn;
+    }
+
+    HashMap getDataConnectionAsyncChannels() {
+        return super.mDataConnectionAsyncChannels;
+    }
+
     /**
      * @deprecated Method getState is deprecated
      */
@@ -412,7 +442,7 @@ _L5:
     public com.android.internal.telephony.DataConnectionTracker.State getState(String s) {
         this;
         JVM INSTR monitorenter ;
-        com.android.internal.telephony.DataConnectionTracker.State state = mState;
+        com.android.internal.telephony.DataConnectionTracker.State state = super.mState;
         this;
         JVM INSTR monitorexit ;
         return state;
@@ -425,12 +455,12 @@ _L5:
         log((new StringBuilder()).append("gotoIdleAndNotifyDataConnection: reason=").append(s).toString());
         setState(com.android.internal.telephony.DataConnectionTracker.State.IDLE);
         notifyDataConnection(s);
-        mActiveApn = null;
+        super.mActiveApn = null;
     }
 
     public void handleMessage(Message message) {
         log((new StringBuilder()).append("CdmaDCT handleMessage msg=").append(message).toString());
-        if(mPhone.mIsTheCurrentActivePhone && !mIsDisposed) goto _L2; else goto _L1
+        if(super.mPhone.mIsTheCurrentActivePhone && !super.mIsDisposed) goto _L2; else goto _L1
 _L1:
         log("Ignore CDMA msgs since CDMA phone is inactive");
 _L4:
@@ -495,15 +525,15 @@ _L2:
 
     protected boolean isDataAllowed() {
         boolean flag;
-        synchronized(mDataEnabledLock) {
-            flag = mInternalDataEnabled;
+        synchronized(super.mDataEnabledLock) {
+            flag = super.mInternalDataEnabled;
         }
         int i = mCdmaPhone.mSST.getCurrentDataConnectionState();
         boolean flag1;
         boolean flag2;
         boolean flag3;
         boolean flag4;
-        if(mPhone.getServiceState().getRoaming() && !getDataOnRoamingEnabled())
+        if(super.mPhone.getServiceState().getRoaming() && !getDataOnRoamingEnabled())
             flag1 = true;
         else
             flag1 = false;
@@ -512,18 +542,18 @@ _L2:
             flag3 = true;
         else
             flag3 = false;
-        if((i == 0 || mAutoAttachOnCreation) && (flag3 || mCdmaPhone.mIccRecords.getRecordsLoaded()) && (mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed() || mPhone.getState() == com.android.internal.telephony.Phone.State.IDLE) && !flag1 && flag && flag2 && !mPendingRestartRadio && (mPhone.getLteOnCdmaMode() == 1 || !mCdmaPhone.needsOtaServiceProvisioning()))
+        if((i == 0 || super.mAutoAttachOnCreation) && (flag3 || ((PhoneBase) (mCdmaPhone)).mIccRecords.getRecordsLoaded()) && (mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed() || super.mPhone.getState() == com.android.internal.telephony.Phone.State.IDLE) && !flag1 && flag && flag2 && !mPendingRestartRadio && (super.mPhone.getLteOnCdmaMode() == 1 || !mCdmaPhone.needsOtaServiceProvisioning()))
             flag4 = true;
         else
             flag4 = false;
         if(!flag4) {
             String s = "";
-            if(i != 0 && !mAutoAttachOnCreation)
+            if(i != 0 && !super.mAutoAttachOnCreation)
                 s = (new StringBuilder()).append(s).append(" - psState= ").append(i).toString();
-            if(!flag3 && !mCdmaPhone.mIccRecords.getRecordsLoaded())
+            if(!flag3 && !((PhoneBase) (mCdmaPhone)).mIccRecords.getRecordsLoaded())
                 s = (new StringBuilder()).append(s).append(" - RUIM not loaded").toString();
-            if(!mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed() && mPhone.getState() != com.android.internal.telephony.Phone.State.IDLE)
-                s = (new StringBuilder()).append(s).append(" - concurrentVoiceAndData not allowed and state= ").append(mPhone.getState()).toString();
+            if(!mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed() && super.mPhone.getState() != com.android.internal.telephony.Phone.State.IDLE)
+                s = (new StringBuilder()).append(s).append(" - concurrentVoiceAndData not allowed and state= ").append(super.mPhone.getState()).toString();
             if(flag1)
                 s = (new StringBuilder()).append(s).append(" - Roaming").toString();
             if(!flag)
@@ -545,18 +575,18 @@ _L2:
 
     protected boolean isDataPossible(String s) {
         boolean flag;
-        if(isDataAllowed() && (!getAnyDataEnabled() || mState != com.android.internal.telephony.DataConnectionTracker.State.FAILED && mState != com.android.internal.telephony.DataConnectionTracker.State.IDLE))
+        if(isDataAllowed() && (!getAnyDataEnabled() || super.mState != com.android.internal.telephony.DataConnectionTracker.State.FAILED && super.mState != com.android.internal.telephony.DataConnectionTracker.State.IDLE))
             flag = true;
         else
             flag = false;
         if(!flag && isDataAllowed())
-            log((new StringBuilder()).append("Data not possible.  No coverage: dataState = ").append(mState).toString());
+            log((new StringBuilder()).append("Data not possible.  No coverage: dataState = ").append(super.mState).toString());
         return flag;
     }
 
     public boolean isDisconnected() {
         boolean flag;
-        if(mState == com.android.internal.telephony.DataConnectionTracker.State.IDLE || mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED)
+        if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.IDLE || super.mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED)
             flag = true;
         else
             flag = false;
@@ -589,7 +619,7 @@ _L2:
         if(asyncresult.userObj instanceof String)
             s = (String)asyncresult.userObj;
         if(isDataSetupCompleteOk(asyncresult)) {
-            notifyFirewallDataSetupComplete();
+            Injector.onDataSetupComplete(this);
             notifyDefaultData(s);
         } else {
             com.android.internal.telephony.DataConnection.FailCause failcause = (com.android.internal.telephony.DataConnection.FailCause)(com.android.internal.telephony.DataConnection.FailCause)asyncresult.result;
@@ -617,7 +647,7 @@ _L2:
         boolean flag;
         int i;
         int j;
-        if(mState != com.android.internal.telephony.DataConnectionTracker.State.CONNECTED)
+        if(super.mState != com.android.internal.telephony.DataConnectionTracker.State.CONNECTED)
             break MISSING_BLOCK_LABEL_208;
         flag = false;
         i = 0;
@@ -643,15 +673,15 @@ label0:
 
                 case 2: // '\002'
                     log("onDataStateChanged: active=LINK_ACTIVE && CONNECTED, ignore");
-                    mActivity = com.android.internal.telephony.DataConnectionTracker.Activity.NONE;
-                    mPhone.notifyDataActivity();
+                    super.mActivity = com.android.internal.telephony.DataConnectionTracker.Activity.NONE;
+                    super.mPhone.notifyDataActivity();
                     startNetStatPoll();
                     break;
 
                 case 1: // '\001'
                     log("onDataStateChanged active=LINK_DOWN && CONNECTED, dormant");
-                    mActivity = com.android.internal.telephony.DataConnectionTracker.Activity.DORMANT;
-                    mPhone.notifyDataActivity();
+                    super.mActivity = com.android.internal.telephony.DataConnectionTracker.Activity.DORMANT;
+                    super.mPhone.notifyDataActivity();
                     stopNetStatPoll();
                     break;
                 }
@@ -662,7 +692,7 @@ label0:
 _L3:
         j++;
           goto _L4
-        log((new StringBuilder()).append("onDataStateChanged: not connected, state=").append(mState).append(" ignoring").toString());
+        log((new StringBuilder()).append("onDataStateChanged: not connected, state=").append(super.mState).append(" ignoring").toString());
         if(true) goto _L1; else goto _L5
 _L5:
     }
@@ -673,7 +703,7 @@ _L5:
         if(asyncresult.userObj instanceof String)
             s = (String)asyncresult.userObj;
         setState(com.android.internal.telephony.DataConnectionTracker.State.IDLE);
-        FirewallManager.getInstance().onDataDisconnected(0, FirewallManager.encodeApnSetting(mActiveApn));
+        Injector.onDisconnectDone(this);
         if(mPendingRestartRadio)
             removeMessages(0x4201a);
         if(mCdmaPhone.mSST.processPendingRadioPowerOffAfterDataOff())
@@ -681,7 +711,7 @@ _L5:
         else
             onRestartRadio();
         notifyDataConnection(s);
-        mActiveApn = null;
+        super.mActiveApn = null;
         if(retryAfterDisconnected(s))
             startAlarmForReconnect(APN_DELAY_MILLIS, s);
     }
@@ -691,25 +721,25 @@ _L5:
     }
 
     protected void onNVReady() {
-        if(mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED)
+        if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED)
             cleanUpAllConnections(null);
         sendMessage(obtainMessage(0x42003));
     }
 
     protected void onRadioAvailable() {
-        if(mPhone.getSimulatedRadioControl() != null) {
+        if(super.mPhone.getSimulatedRadioControl() != null) {
             setState(com.android.internal.telephony.DataConnectionTracker.State.CONNECTED);
             notifyDataConnection(null);
             log("We're on the simulator; assuming data is connected");
         }
         notifyOffApnsOfAvailability(null);
-        if(mState != com.android.internal.telephony.DataConnectionTracker.State.IDLE)
+        if(super.mState != com.android.internal.telephony.DataConnectionTracker.State.IDLE)
             cleanUpAllConnections(null);
     }
 
     protected void onRadioOffOrNotAvailable() {
-        ((DataConnection)mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
-        if(mPhone.getSimulatedRadioControl() != null) {
+        ((DataConnection)super.mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
+        if(super.mPhone.getSimulatedRadioControl() != null) {
             log("We're on the simulator; assuming radio off is meaningless");
         } else {
             log("Radio is off and clean up all connection");
@@ -718,13 +748,13 @@ _L5:
     }
 
     protected void onRecordsLoaded() {
-        if(mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED)
+        if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.FAILED)
             cleanUpAllConnections(null);
         sendMessage(obtainMessage(0x42003, "simLoaded"));
     }
 
     protected void onRoamingOff() {
-        if(mUserDataEnabled)
+        if(super.mUserDataEnabled)
             if(!getDataOnRoamingEnabled()) {
                 notifyOffApnsOfAvailability("roamingOff");
                 trySetupData("roamingOff");
@@ -734,7 +764,7 @@ _L5:
     }
 
     protected void onRoamingOn() {
-        if(mUserDataEnabled)
+        if(super.mUserDataEnabled)
             if(getDataOnRoamingEnabled()) {
                 trySetupData("roamingOn");
                 notifyDataConnection("roamingOn");
@@ -750,7 +780,7 @@ _L5:
     }
 
     protected void onVoiceCallEnded() {
-        if(mState == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED) {
+        if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED) {
             if(!mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed()) {
                 startNetStatPoll();
                 notifyDataConnection("2GVoiceCallEnded");
@@ -759,13 +789,13 @@ _L5:
             }
             notifyOffApnsOfAvailability("2GVoiceCallEnded");
         } else {
-            ((DataConnection)mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
+            ((DataConnection)super.mDataConnections.get(Integer.valueOf(0))).resetRetryCount();
             trySetupData("2GVoiceCallEnded");
         }
     }
 
     protected void onVoiceCallStarted() {
-        if(mState == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED && !mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed()) {
+        if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED && !mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed()) {
             stopNetStatPoll();
             notifyDataConnection("2GVoiceCallStarted");
             notifyOffApnsOfAvailability("2GVoiceCallStarted");
@@ -784,26 +814,26 @@ _L5:
 
     protected void setState(com.android.internal.telephony.DataConnectionTracker.State state) {
         log((new StringBuilder()).append("setState: ").append(state).toString());
-        if(mState != state) {
+        if(super.mState != state) {
             Object aobj[] = new Object[2];
-            aobj[0] = mState.toString();
+            aobj[0] = super.mState.toString();
             aobj[1] = state.toString();
             EventLog.writeEvent(50115, aobj);
-            mState = state;
+            super.mState = state;
         }
     }
 
     protected void startNetStatPoll() {
-        if(mState == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED && !mNetStatPollEnabled) {
+        if(super.mState == com.android.internal.telephony.DataConnectionTracker.State.CONNECTED && !super.mNetStatPollEnabled) {
             log("[DataConnection] Start poll NetStat");
             resetPollStats();
-            mNetStatPollEnabled = true;
+            super.mNetStatPollEnabled = true;
             mPollNetStat.run();
         }
     }
 
     protected void stopNetStatPoll() {
-        mNetStatPollEnabled = false;
+        super.mNetStatPollEnabled = false;
         removeCallbacks(mPollNetStat);
         log("[DataConnection] Stop poll NetStat");
     }
@@ -901,7 +931,7 @@ _L5:
 
 /*
     static int access$2508(CdmaDataConnectionTracker cdmadataconnectiontracker) {
-        int i = cdmadataconnectiontracker.mNoRecvPollCount;
+        int i = ((DataConnectionTracker) (cdmadataconnectiontracker)).mNoRecvPollCount;
         cdmadataconnectiontracker.mNoRecvPollCount = i + 1;
         return i;
     }
@@ -973,7 +1003,7 @@ _L5:
 
 /*
     static long access$914(CdmaDataConnectionTracker cdmadataconnectiontracker, long l) {
-        long l1 = l + cdmadataconnectiontracker.mSentSinceLastRecv;
+        long l1 = l + ((DataConnectionTracker) (cdmadataconnectiontracker)).mSentSinceLastRecv;
         cdmadataconnectiontracker.mSentSinceLastRecv = l1;
         return l1;
     }

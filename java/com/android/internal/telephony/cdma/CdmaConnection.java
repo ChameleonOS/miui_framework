@@ -45,6 +45,19 @@ _L4:
         }
     }
 
+    static class Injector {
+
+        static String nullifyString(String s) {
+            return null;
+        }
+
+        static void setPostDialState(CdmaConnection cdmaconnection, com.android.internal.telephony.Connection.PostDialState postdialstate) {
+        }
+
+        Injector() {
+        }
+    }
+
 
     CdmaConnection(Context context, DriverCall drivercall, CdmaCallTracker cdmacalltracker, int i) {
         cause = com.android.internal.telephony.Connection.DisconnectCause.NOT_DISCONNECTED;
@@ -313,9 +326,10 @@ _L5:
         if(PhoneNumberUtils.is12Key(c))
             ((CallTracker) (owner)).cm.sendDtmf(c, h.obtainMessage(flag));
         else
-        if(c == ',')
+        if(c == ',') {
+            Injector.setPostDialState(this, com.android.internal.telephony.Connection.PostDialState.PAUSE);
             h.sendMessageDelayed(h.obtainMessage(2), 2000L);
-        else
+        } else
         if(c == ';')
             setPostDialState(com.android.internal.telephony.Connection.PostDialState.WAIT);
         else
@@ -558,12 +572,24 @@ _L17:
     }
 
     public String getRemainingPostDialString() {
-        String s;
-        if(postDialState == com.android.internal.telephony.Connection.PostDialState.CANCELLED || postDialState == com.android.internal.telephony.Connection.PostDialState.COMPLETE || postDialString == null || postDialString.length() <= nextPostDialChar)
-            s = "";
-        else
-            s = postDialString.substring(nextPostDialChar);
+        if(postDialState != com.android.internal.telephony.Connection.PostDialState.CANCELLED && postDialState != com.android.internal.telephony.Connection.PostDialState.COMPLETE && postDialString != null && postDialString.length() > nextPostDialChar) goto _L2; else goto _L1
+_L1:
+        String s = "";
+_L4:
         return s;
+_L2:
+        s = postDialString.substring(nextPostDialChar);
+        if(Injector.nullifyString(s) != null) {
+            int i = s.indexOf(';');
+            int j = s.indexOf(',');
+            if(i > 0 && (i < j || j <= 0))
+                s = s.substring(0, i);
+            else
+            if(j > 0)
+                s = s.substring(0, j);
+        }
+        if(true) goto _L4; else goto _L3
+_L3:
     }
 
     public com.android.internal.telephony.Call.State getState() {

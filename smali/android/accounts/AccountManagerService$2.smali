@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 235
+    .line 247
     iput-object p1, p0, Landroid/accounts/AccountManagerService$2;->this$0:Landroid/accounts/AccountManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +40,12 @@
     .parameter "intent"
 
     .prologue
-    .line 238
+    .line 250
     iget-object v0, p0, Landroid/accounts/AccountManagerService$2;->this$0:Landroid/accounts/AccountManagerService;
 
     #calls: Landroid/accounts/AccountManagerService;->onUserRemoved(Landroid/content/Intent;)V
     invoke-static {v0, p2}, Landroid/accounts/AccountManagerService;->access$100(Landroid/accounts/AccountManagerService;Landroid/content/Intent;)V
 
-    .line 239
+    .line 251
     return-void
 .end method

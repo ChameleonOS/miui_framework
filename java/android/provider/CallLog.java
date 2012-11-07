@@ -27,7 +27,7 @@ _L1:
                 callerinfo.name = "";
 _L4:
             Cursor cursor;
-            ContentValues contentvalues = getExtraCallLogValues();
+            ContentValues contentvalues = Injector.getExtraCallLogValues(new ContentValues(5));
             contentvalues.put("number", s);
             contentvalues.put("type", Integer.valueOf(j));
             contentvalues.put("date", Long.valueOf(l));
@@ -41,38 +41,41 @@ _L4:
                 contentvalues.put("numberlabel", callerinfo.numberLabel);
             }
             if(callerinfo == null || callerinfo.person_id <= 0L)
-                break MISSING_BLOCK_LABEL_300;
+                break MISSING_BLOCK_LABEL_308;
+            Uri uri;
             if(callerinfo.normalizedNumber != null) {
                 String s2 = callerinfo.normalizedNumber;
-                Uri uri1 = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
+                Uri uri2 = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
                 String as2[] = new String[1];
                 as2[0] = "_id";
                 String as3[] = new String[2];
                 as3[0] = String.valueOf(callerinfo.person_id);
                 as3[1] = s2;
-                cursor = contentresolver.query(uri1, as2, "contact_id =? AND data4 =?", as3, null);
+                cursor = contentresolver.query(uri2, as2, "contact_id =? AND data4 =?", as3, null);
             } else {
                 String s1;
-                Uri uri;
+                Uri uri1;
                 String as[];
                 String as1[];
                 if(callerinfo.phoneNumber != null)
                     s1 = callerinfo.phoneNumber;
                 else
                     s1 = s;
-                uri = Uri.withAppendedPath(ContactsContract.CommonDataKinds.Callable.CONTENT_FILTER_URI, Uri.encode(s1));
+                uri1 = Uri.withAppendedPath(ContactsContract.CommonDataKinds.Callable.CONTENT_FILTER_URI, Uri.encode(s1));
                 as = new String[1];
                 as[0] = "_id";
                 as1 = new String[1];
                 as1[0] = String.valueOf(callerinfo.person_id);
-                cursor = contentresolver.query(uri, as, "contact_id =?", as1, null);
+                cursor = contentresolver.query(uri1, as, "contact_id =?", as1, null);
             }
             if(cursor == null)
-                break MISSING_BLOCK_LABEL_300;
+                break MISSING_BLOCK_LABEL_308;
             if(cursor.getCount() > 0 && cursor.moveToFirst())
                 contentresolver.update(ContactsContract.DataUsageFeedback.FEEDBACK_URI.buildUpon().appendPath(cursor.getString(0)).appendQueryParameter("type", "call").build(), new ContentValues(), null, null);
             cursor.close();
-            return contentresolver.insert(CONTENT_URI, contentvalues);
+            uri = contentresolver.insert(CONTENT_URI, contentvalues);
+            Injector.removeExpiredEntries(context);
+            return uri;
 _L2:
             if(i == Connection.PRESENTATION_PAYPHONE) {
                 s = "-3";
@@ -91,17 +94,6 @@ _L2:
             throw exception;
             if(true) goto _L4; else goto _L3
 _L3:
-        }
-
-        private static ContentValues getExtraCallLogValues() {
-            ContentValues contentvalues;
-            if(sExtraCallLogValues == null) {
-                contentvalues = new ContentValues(5);
-            } else {
-                contentvalues = sExtraCallLogValues;
-                sExtraCallLogValues = null;
-            }
-            return contentvalues;
         }
 
         public static String getLastOutgoingCall(Context context) {
@@ -170,7 +162,7 @@ _L3:
         public static final String TYPE = "type";
         public static final int VOICEMAIL_TYPE = 4;
         public static final String VOICEMAIL_URI = "voicemail_uri";
-        private static ContentValues sExtraCallLogValues = null;
+        static ContentValues sExtraCallLogValues = null;
 
         static  {
             CONTENT_URI = Uri.parse("content://call_log/calls");
@@ -178,6 +170,26 @@ _L3:
         }
 
         public Calls() {
+        }
+    }
+
+    static class Injector {
+
+        static ContentValues getExtraCallLogValues(ContentValues contentvalues) {
+            ContentValues contentvalues1;
+            if(Calls.sExtraCallLogValues == null) {
+                contentvalues1 = contentvalues;
+            } else {
+                contentvalues1 = Calls.sExtraCallLogValues;
+                Calls.sExtraCallLogValues = null;
+            }
+            return contentvalues1;
+        }
+
+        static void removeExpiredEntries(Context context) {
+        }
+
+        Injector() {
         }
     }
 

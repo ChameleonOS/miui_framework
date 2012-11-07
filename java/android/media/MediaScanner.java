@@ -197,8 +197,10 @@ _L10:
                     mediainserter.insertwithPriority(uri, contentvalues);
                 else
                     mediainserter.insert(uri, contentvalues);
-                if(uri1 != null)
-                    fileentry.mRowId = ContentUris.parseId(uri1);
+                if(uri1 != null) {
+                    l = ContentUris.parseId(uri1);
+                    fileentry.mRowId = l;
+                }
             } else {
                 uri1 = ContentUris.withAppendedId(uri, l);
                 contentvalues.remove("_data");
@@ -220,21 +222,21 @@ _L10:
                 }
                 mMediaProvider.update(uri1, contentvalues, null, null);
             }
-            if(flag5)
+            if(flag5) {
+                Injector.setAllSettingsIfNotSet(MediaScanner.this, fileentry, flag, flag1, flag2);
                 if(flag1) {
-                    setSettingIfNotSet("notification_sound", fileentry.mPath);
-                    setSettingIfNotSet("sms_delivered_sound", fileentry.mPath);
-                    setSettingIfNotSet("sms_received_sound", fileentry.mPath);
+                    setSettingIfNotSet("notification_sound", uri, l);
                     mDefaultNotificationSet = true;
                 } else
                 if(flag) {
-                    setSettingIfNotSet("ringtone", fileentry.mPath);
+                    setSettingIfNotSet("ringtone", uri, l);
                     mDefaultRingtoneSet = true;
                 } else
                 if(flag2) {
-                    setSettingIfNotSet("alarm_alert", fileentry.mPath);
+                    setSettingIfNotSet("alarm_alert", uri, l);
                     mDefaultAlarmSet = true;
                 }
+            }
             return uri1;
 _L5:
             k1 = i2;
@@ -265,16 +267,16 @@ _L11:
             if(i == -1) goto _L10; else goto _L12
 _L12:
             i;
-            JVM INSTR tableswitch 3 8: default 724
-        //                       3 803
-        //                       4 724
-        //                       5 724
-        //                       6 796
-        //                       7 724
-        //                       8 811;
+            JVM INSTR tableswitch 3 8: default 720
+        //                       3 799
+        //                       4 720
+        //                       5 720
+        //                       6 792
+        //                       7 720
+        //                       8 807;
                goto _L13 _L14 _L13 _L13 _L15 _L13 _L16
 _L16:
-            break MISSING_BLOCK_LABEL_811;
+            break MISSING_BLOCK_LABEL_807;
 _L13:
             j = 0;
 _L17:
@@ -362,11 +364,6 @@ _L1:
         private void setSettingIfNotSet(String s, Uri uri, long l) {
             if(TextUtils.isEmpty(android.provider.Settings.System.getString(mContext.getContentResolver(), s)))
                 android.provider.Settings.System.putString(mContext.getContentResolver(), s, ContentUris.withAppendedId(uri, l).toString());
-        }
-
-        private void setSettingIfNotSet(String s, String s1) {
-            if(TextUtils.isEmpty(android.provider.Settings.System.getString(mContext.getContentResolver(), s)))
-                android.provider.Settings.System.putString(mContext.getContentResolver(), s, Uri.fromFile(new File(s1)).toString());
         }
 
         private void testGenreNameConverter() {
@@ -790,6 +787,36 @@ _L3:
             mLastModified = l1;
             mFormat = i;
             mLastModifiedChanged = false;
+        }
+    }
+
+    static class Injector {
+
+        static void setAllSettingsIfNotSet(MediaScanner mediascanner, FileEntry fileentry, boolean flag, boolean flag1, boolean flag2) {
+            if(!flag1) goto _L2; else goto _L1
+_L1:
+            setSettingIfNotSet(mediascanner, "notification_sound", fileentry.mPath);
+            setSettingIfNotSet(mediascanner, "sms_delivered_sound", fileentry.mPath);
+            setSettingIfNotSet(mediascanner, "sms_received_sound", fileentry.mPath);
+_L4:
+            return;
+_L2:
+            if(flag)
+                setSettingIfNotSet(mediascanner, "ringtone", fileentry.mPath);
+            else
+            if(flag2)
+                setSettingIfNotSet(mediascanner, "alarm_alert", fileentry.mPath);
+            if(true) goto _L4; else goto _L3
+_L3:
+        }
+
+        static void setSettingIfNotSet(MediaScanner mediascanner, String s, String s1) {
+            Context context = mediascanner.getContext();
+            if(TextUtils.isEmpty(android.provider.Settings.System.getString(context.getContentResolver(), s)))
+                android.provider.Settings.System.putString(context.getContentResolver(), s, Uri.fromFile(new File(s1)).toString());
+        }
+
+        Injector() {
         }
     }
 
@@ -1483,6 +1510,10 @@ _L2:
     protected void finalize() {
         mContext.getContentResolver().releaseProvider(mMediaProvider);
         native_finalize();
+    }
+
+    Context getContext() {
+        return mContext;
     }
 
     FileEntry makeEntryFor(String s) {

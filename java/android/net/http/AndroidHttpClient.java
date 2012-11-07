@@ -72,6 +72,18 @@ public final class AndroidHttpClient
 
     }
 
+    static class Injector {
+
+        static String getUserAgent(String s) {
+            if(s == null)
+                s = RuntimeInit.callGetDefaultUserAgent();
+            return s;
+        }
+
+        Injector() {
+        }
+    }
+
 
     private AndroidHttpClient(ClientConnectionManager clientconnectionmanager, HttpParams httpparams) {
         mLeakedException = new IllegalStateException("AndroidHttpClient created and never closed");
@@ -141,12 +153,6 @@ public final class AndroidHttpClient
             }
         }
         return ((InputStream) (obj1));
-    }
-
-    private static String getUserAgent(String s) {
-        if(s == null)
-            s = RuntimeInit.getDefaultUserAgent();
-        return s;
     }
 
     private static boolean isBinaryContent(HttpUriRequest httpurirequest) {
@@ -226,7 +232,7 @@ label0:
             sslsessioncache = null;
         else
             sslsessioncache = new SSLSessionCache(context);
-        HttpProtocolParams.setUserAgent(basichttpparams, getUserAgent(s));
+        HttpProtocolParams.setUserAgent(basichttpparams, Injector.getUserAgent(s));
         schemeregistry = new SchemeRegistry();
         schemeregistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
         schemeregistry.register(new Scheme("https", SSLCertificateSocketFactory.getHttpSocketFactory(60000, sslsessioncache), 443));

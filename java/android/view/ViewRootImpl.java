@@ -999,7 +999,7 @@ _L10:
             continue; /* Loop/switch isn't completed */
 _L5:
             ResizedInfo resizedinfo = (ResizedInfo)message.obj;
-            if(tryToSkipResizedMsg(resizedinfo, message) || mWinFrame.width() == message.arg1 && mWinFrame.height() == message.arg2 && mPendingContentInsets.equals(resizedinfo.contentInsets) && mPendingVisibleInsets.equals(resizedinfo.visibleInsets) && ((ResizedInfo)message.obj).newConfig == null)
+            if(Injector.tryToSkipResizedMsg(ViewRootImpl.this, resizedinfo, message) || mWinFrame.width() == message.arg1 && mWinFrame.height() == message.arg2 && mPendingContentInsets.equals(resizedinfo.contentInsets) && mPendingVisibleInsets.equals(resizedinfo.visibleInsets) && ((ResizedInfo)message.obj).newConfig == null)
                 continue; /* Loop/switch isn't completed */
 _L6:
             if(mAdded) {
@@ -1197,8 +1197,26 @@ _L25:
         }
     }
 
+    static class Injector {
+
+        static boolean tryToSkipResizedMsg(ViewRootImpl viewrootimpl, ResizedInfo resizedinfo, Message message) {
+            boolean flag;
+            if(viewrootimpl.mWinFrame.width() == message.arg1 && viewrootimpl.mWinFrame.height() == message.arg2 && viewrootimpl.mPendingContentInsets.equals(resizedinfo.contentInsets) && ((ResizedInfo)message.obj).newConfig == null && viewrootimpl.mSkipResizedMsg) {
+                viewrootimpl.mSkipResizedMsg = false;
+                flag = true;
+            } else {
+                flag = false;
+            }
+            return flag;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public ViewRootImpl(Context context) {
+        mSkipResizedMsg = false;
         mLastTrackballTime = 0L;
         mAppVisible = true;
         mOrigWindowType = -1;
@@ -1208,7 +1226,6 @@ _L25:
         mWindowAttributesChangesFlag = 0;
         mFpsStartTime = -1L;
         mFpsPrevTime = -1L;
-        mSkipResizedMsg = false;
         InputEventConsistencyVerifier inputeventconsistencyverifier;
         PowerManager powermanager;
         if(InputEventConsistencyVerifier.isInstrumentationEnabled())
@@ -3273,17 +3290,6 @@ _L2:
 _L3:
     }
 
-    private boolean tryToSkipResizedMsg(ResizedInfo resizedinfo, Message message) {
-        boolean flag;
-        if(mWinFrame.width() == message.arg1 && mWinFrame.height() == message.arg2 && mPendingContentInsets.equals(resizedinfo.contentInsets) && ((ResizedInfo)message.obj).newConfig == null && mSkipResizedMsg) {
-            mSkipResizedMsg = false;
-            flag = true;
-        } else {
-            flag = false;
-        }
-        return flag;
-    }
-
     private void updateJoystickDirection(MotionEvent motionevent, boolean flag) {
         long l = motionevent.getEventTime();
         int i = motionevent.getMetaState();
@@ -4701,7 +4707,7 @@ _L17:
     Scroller mScroller;
     SendWindowContentChangedAccessibilityEvent mSendWindowContentChangedAccessibilityEvent;
     int mSeq;
-    private boolean mSkipResizedMsg;
+    boolean mSkipResizedMsg;
     int mSoftInputMode;
     boolean mStopped;
     private final Surface mSurface = new Surface();
@@ -4732,7 +4738,6 @@ _L17:
     boolean mWindowAttributesChanged;
     int mWindowAttributesChangesFlag;
     boolean mWindowsAnimating;
-
 
 
 

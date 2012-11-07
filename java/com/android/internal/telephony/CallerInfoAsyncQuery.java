@@ -168,6 +168,19 @@ _L3:
         public abstract void onQueryComplete(int i, Object obj, com.android.internal.telephony.CallerInfo callerinfo);
     }
 
+    static class Injector {
+
+        static String getPhoneNumber(String s) {
+            miui.telephony.PhoneNumberUtils.PhoneNumber phonenumber = miui.telephony.PhoneNumberUtils.PhoneNumber.parse(s);
+            if(phonenumber != null)
+                s = phonenumber.getNumberWithoutPrefix(true);
+            return s;
+        }
+
+        Injector() {
+        }
+    }
+
 
     private CallerInfoAsyncQuery() {
     }
@@ -181,13 +194,6 @@ _L3:
             mHandler.mQueryUri = uri;
             return;
         }
-    }
-
-    private static String getPhoneNumber(String s) {
-        miui.telephony.PhoneNumberUtils.PhoneNumber phonenumber = miui.telephony.PhoneNumberUtils.PhoneNumber.parse(s);
-        if(phonenumber != null)
-            s = phonenumber.getNumberWithoutPrefix(true);
-        return s;
     }
 
     private void release() {
@@ -233,7 +239,7 @@ _L3:
             as = new String[1];
             as[0] = s.toUpperCase();
         } else {
-            uri = Uri.withAppendedPath(android.provider.ContactsContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode(getPhoneNumber(s)));
+            uri = Uri.withAppendedPath(android.provider.ContactsContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode(Injector.getPhoneNumber(s)));
             s1 = null;
             as = null;
         }

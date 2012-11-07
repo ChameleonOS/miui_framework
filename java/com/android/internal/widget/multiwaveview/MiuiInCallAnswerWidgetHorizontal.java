@@ -38,7 +38,11 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
         if(typedarray.getValue(0, typedvalue))
             internalSetTargetLightResources(typedvalue.resourceId);
         mRightHintAnimTargetDrawable = new TargetDrawable(context.getResources(), typedarray.peekValue(1).resourceId);
-        super.mGlowRadius = super.mHandleDrawable.getWidth() / 2;
+        setGlowRadius(getHandleDrawable().getWidth() / 2);
+    }
+
+    private float dist2(float f, float f1) {
+        return f * f + f1 * f1;
     }
 
     private void hideRightHintAnim() {
@@ -73,17 +77,17 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
     }
 
     private void moveHandleTo(float f, float f1, boolean flag) {
-        super.mHandleDrawable.setX(f);
-        super.mHandleDrawable.setY(f1);
+        getHandleDrawable().setX(f);
+        getHandleDrawable().setY(f1);
     }
 
     private void showOuterRing() {
+        final TargetDrawable outerRing = getOuterRing();
         mShowingOuterRing = true;
         mOuterRingAnimation.cancel();
-        super.mOuterRing.setScaleX(0.0F);
-        super.mOuterRing.setScaleY(0.0F);
+        outerRing.setScaleX(0.0F);
+        outerRing.setScaleY(0.0F);
         GlowPadView.AnimationBundle animationbundle = mOuterRingAnimation;
-        TargetDrawable targetdrawable = super.mOuterRing;
         Object aobj[] = new Object[12];
         aobj[0] = "alpha";
         aobj[1] = Float.valueOf(1.0F);
@@ -97,21 +101,23 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
         aobj[9] = new android.animation.ValueAnimator.AnimatorUpdateListener() {
 
             public void onAnimationUpdate(ValueAnimator valueanimator) {
-                if(mOuterRing.getAlpha() < 0.1F)
-                    mOuterRing.setAlpha(1.0F);
+                if(outerRing.getAlpha() < 0.1F)
+                    outerRing.setAlpha(1.0F);
                 invalidate();
             }
 
             final MiuiInCallAnswerWidgetHorizontal this$0;
+            final TargetDrawable val$outerRing;
 
              {
                 this$0 = MiuiInCallAnswerWidgetHorizontal.this;
+                outerRing = targetdrawable;
                 super();
             }
         };
         aobj[10] = "onComplete";
         aobj[11] = mOuterRingListener;
-        animationbundle.add(Tweener.to(targetdrawable, 300L, aobj));
+        animationbundle.add(Tweener.to(outerRing, 300L, aobj));
         mOuterRingAnimation.start();
     }
 
@@ -172,21 +178,21 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
     }
 
     private void updateRightHintAnimPositions() {
-        mRightHintAnimTargetDrawable.setX(super.mWaveCenterX + 0.65F * super.mOuterRadius);
-        mRightHintAnimTargetDrawable.setY(super.mWaveCenterY);
+        mRightHintAnimTargetDrawable.setX(getWaveCenterX() + 0.65F * getOuterRadius());
+        mRightHintAnimTargetDrawable.setY(getWaveCenterY());
     }
 
     private void updateTargetLightPositions() {
         TargetDrawable targetdrawable;
-        for(Iterator iterator = mTargetLightDrawables.iterator(); iterator.hasNext(); targetdrawable.setY(Math.max(super.mWaveCenterX, super.mWaveCenterY))) {
+        for(Iterator iterator = mTargetLightDrawables.iterator(); iterator.hasNext(); targetdrawable.setY(Math.max(getWaveCenterX(), getWaveCenterY()))) {
             targetdrawable = (TargetDrawable)iterator.next();
-            targetdrawable.setX(super.mWaveCenterX);
+            targetdrawable.setX(getWaveCenterX());
         }
 
     }
 
-    protected void doFinish() {
-        int i = super.mActiveTarget;
+    void doFinish() {
+        int i = getActiveTarget();
         boolean flag;
         if(i != -1)
             flag = true;
@@ -194,12 +200,12 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
             flag = false;
         mHandleAnimation.cancel();
         if(flag) {
-            ((TargetDrawable)super.mTargetDrawables.get(i)).setState(TargetDrawable.STATE_ACTIVE);
+            ((TargetDrawable)getTargetDrawables().get(i)).setState(TargetDrawable.STATE_ACTIVE);
             hideTargets(false, false);
             hideRightHintAnim();
-            dispatchTriggerEvent(super.mActiveTarget);
+            callDispatchTriggerEvent(i);
             GlowPadView.AnimationBundle animationbundle1 = mHandleAnimation;
-            TargetDrawable targetdrawable1 = super.mHandleDrawable;
+            TargetDrawable targetdrawable1 = getHandleDrawable();
             Object aobj1[] = new Object[14];
             aobj1[0] = "ease";
             aobj1[1] = Ease.Quart.easeOut;
@@ -212,13 +218,13 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
             aobj1[8] = "y";
             aobj1[9] = Integer.valueOf(0);
             aobj1[10] = "onUpdate";
-            aobj1[11] = super.mUpdateListener;
+            aobj1[11] = getUpdateListener();
             aobj1[12] = "onComplete";
-            aobj1[13] = super.mResetListener;
+            aobj1[13] = getResetListener();
             animationbundle1.add(Tweener.to(targetdrawable1, 0L, aobj1));
         } else {
             GlowPadView.AnimationBundle animationbundle = mHandleAnimation;
-            TargetDrawable targetdrawable = super.mHandleDrawable;
+            TargetDrawable targetdrawable = getHandleDrawable();
             Object aobj[] = new Object[14];
             aobj[0] = "ease";
             aobj[1] = Ease.Quart.easeOut;
@@ -231,29 +237,29 @@ public class MiuiInCallAnswerWidgetHorizontal extends GlowPadView {
             aobj[8] = "y";
             aobj[9] = Integer.valueOf(0);
             aobj[10] = "onUpdate";
-            aobj[11] = super.mUpdateListener;
+            aobj[11] = getUpdateListener();
             aobj[12] = "onComplete";
             android.animation.Animator.AnimatorListener animatorlistener;
-            if(super.mDragging)
-                animatorlistener = super.mResetListenerWithPing;
+            if(getDragging())
+                animatorlistener = getResetListenerWithPing();
             else
-                animatorlistener = super.mResetListener;
+                animatorlistener = getResetListener();
             aobj[13] = animatorlistener;
             animationbundle.add(Tweener.to(targetdrawable, 300L, aobj));
         }
         mHandleAnimation.start();
-        super.mDragging = false;
-        setGrabbedState(0);
+        setDragging(false);
+        callSetGrabbedState(0);
     }
 
-    protected void handleMove(MotionEvent motionevent) {
-        if(super.mDragging) goto _L2; else goto _L1
+    void handleMove(MotionEvent motionevent) {
+        if(getDragging()) goto _L2; else goto _L1
 _L1:
         return;
 _L2:
         int i = -1;
         int j = motionevent.getHistorySize();
-        ArrayList arraylist = super.mTargetDrawables;
+        ArrayList arraylist = getTargetDrawables();
         int k = arraylist.size();
         float f = 0.0F;
         float f1 = 0.0F;
@@ -277,28 +283,28 @@ _L2:
                 f3 = motionevent.getHistoricalY(l);
             else
                 f3 = motionevent.getY();
-            f4 = f2 - super.mWaveCenterX;
-            f5 = f3 - super.mWaveCenterY;
+            f4 = f2 - getWaveCenterX();
+            f5 = f3 - getWaveCenterY();
             f6 = (float)Math.sqrt(dist2(f4, f5));
-            if(f6 > super.mOuterRadius)
-                f7 = super.mOuterRadius / f6;
+            if(f6 > getOuterRadius())
+                f7 = getOuterRadius() / f6;
             else
                 f7 = 1.0F;
             f8 = f4 * f7;
             f9 = f5 * f7;
             d = Math.atan2(-f5, f4);
-            if(super.mTargetDrawables.size() == 1)
+            if(getTargetDrawables().size() == 1)
                 flag = true;
             else
                 flag = false;
             if(flag) {
-                if(f6 > super.mOuterRadius - super.mSnapMargin) {
+                if(f6 > getOuterRadius() - getSnapMargin()) {
                     i = 0;
                     f = f8;
                     f1 = f9;
                 }
             } else {
-                float f10 = super.mOuterRadius - super.mSnapMargin;
+                float f10 = getOuterRadius() - getSnapMargin();
                 float f11 = f10 * f10;
                 int i1 = 0;
                 while(i1 < k)  {
@@ -371,23 +377,25 @@ _L2:
                     arraylist1.add(Tweener.to(targetdrawable, 20L, aobj));
                 }
                 switchToState(3, f, f1);
-                super.mHandleDrawable.setAlpha(1.0F);
+                getHandleDrawable().setAlpha(1.0F);
             }
             l++;
         }
-        if(super.mActiveTarget != i && i != -1) {
-            vibrate();
+        if(getActiveTarget() != i && i != -1) {
+            callVibrate();
             if(AccessibilityManager.getInstance(super.mContext).isEnabled())
-                announceForAccessibility(getTargetDescription(i));
+                announceForAccessibility(callGetTargetDescription(i));
         }
-        super.mActiveTarget = i;
+        setActiveTarget(i);
         if(true) goto _L1; else goto _L3
 _L3:
     }
 
-    protected void hideTargets(boolean flag, boolean flag1) {
-        super.mTargetAnimations.cancel();
-        super.mAnimatingTargets = flag;
+    void hideTargets(boolean flag, boolean flag1) {
+        GlowPadView.AnimationBundle animationbundle = getTargetAnimations();
+        ArrayList arraylist = getTargetDrawables();
+        animationbundle.cancel();
+        setAnimatingTargets(flag);
         int i;
         char c;
         int j;
@@ -400,12 +408,11 @@ _L3:
             c = '\310';
         else
             c = '\0';
-        j = super.mTargetDrawables.size();
+        j = arraylist.size();
         timeinterpolator = Ease.Cubic.easeOut;
         for(int k = 0; k < j; k++) {
-            TargetDrawable targetdrawable = (TargetDrawable)super.mTargetDrawables.get(k);
+            TargetDrawable targetdrawable = (TargetDrawable)arraylist.get(k);
             targetdrawable.setState(TargetDrawable.STATE_INACTIVE);
-            GlowPadView.AnimationBundle animationbundle = super.mTargetAnimations;
             long l = i;
             Object aobj[] = new Object[8];
             aobj[0] = "ease";
@@ -415,19 +422,19 @@ _L3:
             aobj[4] = "delay";
             aobj[5] = Integer.valueOf(c);
             aobj[6] = "onUpdate";
-            aobj[7] = super.mUpdateListener;
+            aobj[7] = getUpdateListener();
             animationbundle.add(Tweener.to(targetdrawable, l, aobj));
         }
 
-        super.mTargetAnimations.start();
-        super.mOuterRing.setAlpha(0.0F);
+        animationbundle.start();
+        getOuterRing().setAlpha(0.0F);
         if(mTargetLightAnimations.size() > 0)
             stopTargetLightAnimation();
         hideTargetLight();
     }
 
     protected void onDraw(Canvas canvas) {
-        super.mOuterRing.draw(canvas);
+        getOuterRing().draw(canvas);
         Iterator iterator = mTargetLightDrawables.iterator();
         do {
             if(!iterator.hasNext())
@@ -436,7 +443,7 @@ _L3:
             if(targetdrawable1 != null)
                 targetdrawable1.draw(canvas);
         } while(true);
-        Iterator iterator1 = super.mTargetDrawables.iterator();
+        Iterator iterator1 = getTargetDrawables().iterator();
         do {
             if(!iterator1.hasNext())
                 break;
@@ -445,7 +452,7 @@ _L3:
                 targetdrawable.draw(canvas);
         } while(true);
         mRightHintAnimTargetDrawable.draw(canvas);
-        super.mHandleDrawable.draw(canvas);
+        getHandleDrawable().draw(canvas);
     }
 
     protected void onLayout(boolean flag, int i, int j, int k, int l) {
@@ -461,8 +468,8 @@ _L1:
         return flag;
 _L2:
         if(motionevent.getPointerCount() > flag) {
-            if(super.mDragging) {
-                super.mActiveTarget = -1;
+            if(getDragging()) {
+                setActiveTarget(-1);
                 switchToState(5, motionevent.getX(), motionevent.getY());
             }
         } else {
@@ -476,17 +483,19 @@ _L3:
         super.reset(flag);
         hideRightHintAnim();
         mHandleAnimation.stop();
-        super.mTargetAnimations.stop();
+        getTargetAnimations().stop();
         showOuterRing();
         startRightHintAnim();
     }
 
-    protected void showTargets(boolean flag) {
+    void showTargets(boolean flag) {
         int i = 200;
-        super.mTargetAnimations.stop();
+        GlowPadView.AnimationBundle animationbundle = getTargetAnimations();
+        ArrayList arraylist = getTargetDrawables();
+        animationbundle.stop();
         if(mTargetLightAnimations.size() > 0)
             stopTargetLightAnimation();
-        super.mAnimatingTargets = flag;
+        setAnimatingTargets(flag);
         int j;
         int k;
         if(flag)
@@ -495,11 +504,10 @@ _L3:
             j = 0;
         if(!flag)
             i = 0;
-        k = super.mTargetDrawables.size();
+        k = arraylist.size();
         for(int l = 0; l < k; l++) {
-            TargetDrawable targetdrawable = (TargetDrawable)super.mTargetDrawables.get(l);
+            TargetDrawable targetdrawable = (TargetDrawable)arraylist.get(l);
             targetdrawable.setState(TargetDrawable.STATE_INACTIVE);
-            GlowPadView.AnimationBundle animationbundle = super.mTargetAnimations;
             long l1 = i;
             Object aobj[] = new Object[12];
             aobj[0] = "ease";
@@ -513,52 +521,53 @@ _L3:
             aobj[8] = "delay";
             aobj[9] = Integer.valueOf(j);
             aobj[10] = "onUpdate";
-            aobj[11] = super.mUpdateListener;
+            aobj[11] = getUpdateListener();
             animationbundle.add(Tweener.to(targetdrawable, l1, aobj));
         }
 
-        super.mTargetAnimations.start();
+        animationbundle.start();
         hideTargetLight();
     }
 
-    protected void switchToState(int i, float f, float f1) {
+    void switchToState(int i, float f, float f1) {
+        TargetDrawable targetdrawable = getHandleDrawable();
         i;
-        JVM INSTR tableswitch 0 7: default 48
-    //                   0 49
-    //                   1 48
+        JVM INSTR tableswitch 0 7: default 52
+    //                   0 53
+    //                   1 52
     //                   2 74
-    //                   3 120
-    //                   4 159
-    //                   5 172
-    //                   6 133
-    //                   7 146;
+    //                   3 118
+    //                   4 151
+    //                   5 162
+    //                   6 129
+    //                   7 140;
            goto _L1 _L2 _L1 _L3 _L4 _L5 _L6 _L7 _L8
 _L1:
         return;
 _L2:
-        deactivateTargets();
-        super.mHandleDrawable.setState(TargetDrawable.STATE_INACTIVE);
-        super.mHandleDrawable.setAlpha(1.0F);
+        callDeactivateTargets();
+        targetdrawable.setState(TargetDrawable.STATE_INACTIVE);
+        targetdrawable.setAlpha(1.0F);
         continue; /* Loop/switch isn't completed */
 _L3:
         mHandleAnimation.stop();
-        deactivateTargets();
-        super.mHandleDrawable.setState(TargetDrawable.STATE_ACTIVE);
-        setGrabbedState(1);
+        callDeactivateTargets();
+        targetdrawable.setState(TargetDrawable.STATE_ACTIVE);
+        callSetGrabbedState(1);
         if(AccessibilityManager.getInstance(super.mContext).isEnabled())
-            announceTargets();
+            callAnnounceTargets();
         continue; /* Loop/switch isn't completed */
 _L4:
-        super.mHandleDrawable.setState(TargetDrawable.STATE_ACTIVE);
+        targetdrawable.setState(TargetDrawable.STATE_ACTIVE);
         continue; /* Loop/switch isn't completed */
 _L7:
-        super.mHandleDrawable.setState(STATE_DECLINE_HANDLE);
+        targetdrawable.setState(STATE_DECLINE_HANDLE);
         continue; /* Loop/switch isn't completed */
 _L8:
-        super.mHandleDrawable.setState(STATE_ANSWER_HANDLE);
+        targetdrawable.setState(STATE_ANSWER_HANDLE);
         continue; /* Loop/switch isn't completed */
 _L5:
-        super.mHandleDrawable.setState(TargetDrawable.STATE_ACTIVE);
+        targetdrawable.setState(TargetDrawable.STATE_ACTIVE);
         continue; /* Loop/switch isn't completed */
 _L6:
         doFinish();

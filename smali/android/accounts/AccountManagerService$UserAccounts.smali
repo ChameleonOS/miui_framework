@@ -104,60 +104,60 @@
     .parameter "userId"
 
     .prologue
-    .line 175
+    .line 187
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
+    .line 171
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->credentialsPermissionNotificationIds:Ljava/util/HashMap;
 
-    .line 162
+    .line 174
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->signinRequiredNotificationIds:Ljava/util/HashMap;
 
-    .line 164
+    .line 176
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->cacheLock:Ljava/lang/Object;
 
-    .line 166
+    .line 178
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->accountCache:Ljava/util/HashMap;
 
-    .line 169
+    .line 181
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->userDataCache:Ljava/util/HashMap;
 
-    .line 172
+    .line 184
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->authTokenCache:Ljava/util/HashMap;
 
-    .line 176
+    .line 188
     iput p2, p0, Landroid/accounts/AccountManagerService$UserAccounts;->userId:I
 
-    .line 177
+    .line 189
     iget-object v1, p0, Landroid/accounts/AccountManagerService$UserAccounts;->cacheLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 178
+    .line 190
     :try_start_32
     new-instance v0, Landroid/accounts/AccountManagerService$DatabaseHelper;
 
@@ -165,13 +165,13 @@
 
     iput-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->openHelper:Landroid/accounts/AccountManagerService$DatabaseHelper;
 
-    .line 179
+    .line 191
     monitor-exit v1
 
-    .line 180
+    .line 192
     return-void
 
-    .line 179
+    .line 191
     :catchall_3b
     move-exception v0
 
@@ -187,7 +187,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 168
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->signinRequiredNotificationIds:Ljava/util/HashMap;
 
     return-object v0
@@ -198,7 +198,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 168
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->cacheLock:Ljava/lang/Object;
 
     return-object v0
@@ -209,7 +209,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 168
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->openHelper:Landroid/accounts/AccountManagerService$DatabaseHelper;
 
     return-object v0
@@ -220,7 +220,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 168
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->accountCache:Ljava/util/HashMap;
 
     return-object v0
@@ -231,7 +231,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 168
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->userDataCache:Ljava/util/HashMap;
 
     return-object v0
@@ -242,7 +242,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 168
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->authTokenCache:Ljava/util/HashMap;
 
     return-object v0
@@ -253,7 +253,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 168
     iget v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->userId:I
 
     return v0
@@ -264,7 +264,7 @@
     .parameter "x0"
 
     .prologue
-    .line 156
+    .line 168
     iget-object v0, p0, Landroid/accounts/AccountManagerService$UserAccounts;->credentialsPermissionNotificationIds:Ljava/util/HashMap;
 
     return-object v0

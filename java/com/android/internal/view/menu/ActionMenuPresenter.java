@@ -203,6 +203,16 @@ label0:
         }
     }
 
+    static class Injector {
+
+        static boolean showsOverflowMenuButton(ActionBarPolicy actionbarpolicy) {
+            return false;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public ActionMenuPresenter(Context context) {
         super(context, 0x109001b, 0x109001a);
@@ -437,7 +447,7 @@ _L3:
         Resources resources = context.getResources();
         ActionBarPolicy actionbarpolicy = ActionBarPolicy.get(context);
         if(!mReserveOverflowSet)
-            mReserveOverflow = false;
+            mReserveOverflow = Injector.showsOverflowMenuButton(actionbarpolicy);
         if(!mWidthLimitSet)
             mWidthLimit = actionbarpolicy.getEmbeddedMenuWidthLimit();
         if(!mMaxItemsSet)

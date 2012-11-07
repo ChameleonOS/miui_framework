@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 1367
+    .line 1372
     iput p2, p0, Landroid/os/StrictMode$4;->val$violationMaskSubset:I
 
     iput-object p3, p0, Landroid/os/StrictMode$4;->val$info:Landroid/os/StrictMode$ViolationInfo;
@@ -44,22 +44,22 @@
     .registers 7
 
     .prologue
-    .line 1369
+    .line 1374
     const/16 v3, 0xa
 
     invoke-static {v3}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 1371
+    .line 1376
     :try_start_5
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v0
 
-    .line 1372
+    .line 1377
     .local v0, am:Landroid/app/IActivityManager;
     if-nez v0, :cond_39
 
-    .line 1373
+    .line 1378
     const-string v3, "StrictMode"
 
     const-string v4, "No activity manager; failed to Dropbox violation."
@@ -68,7 +68,7 @@
     :try_end_12
     .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_12} :catch_45
 
-    .line 1383
+    .line 1388
     .end local v0           #am:Landroid/app/IActivityManager;
     :goto_12
     invoke-static {}, Landroid/os/StrictMode;->access$1400()Ljava/util/concurrent/atomic/AtomicInteger;
@@ -79,7 +79,7 @@
 
     move-result v2
 
-    .line 1384
+    .line 1389
     .local v2, outstanding:I
     invoke-static {}, Landroid/os/StrictMode;->access$800()Z
 
@@ -109,11 +109,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1385
+    .line 1390
     :cond_38
     return-void
 
-    .line 1375
+    .line 1380
     .end local v2           #outstanding:I
     .restart local v0       #am:Landroid/app/IActivityManager;
     :cond_39
@@ -132,12 +132,12 @@
 
     goto :goto_12
 
-    .line 1380
+    .line 1385
     .end local v0           #am:Landroid/app/IActivityManager;
     :catch_45
     move-exception v1
 
-    .line 1381
+    .line 1386
     .local v1, e:Landroid/os/RemoteException;
     const-string v3, "StrictMode"
 

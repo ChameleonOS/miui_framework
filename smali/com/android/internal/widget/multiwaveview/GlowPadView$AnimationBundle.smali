@@ -43,7 +43,7 @@
     .parameter
 
     .prologue
-    .line 135
+    .line 193
     iput-object p1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->this$0:Lcom/android/internal/widget/multiwaveview/GlowPadView;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
@@ -57,12 +57,12 @@
     .registers 5
 
     .prologue
-    .line 149
+    .line 207
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->size()I
 
     move-result v1
 
-    .line 150
+    .line 208
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -70,30 +70,30 @@
     :goto_5
     if-ge v2, v1, :cond_15
 
-    .line 151
+    .line 209
     invoke-virtual {p0, v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    .line 152
+    .line 210
     .local v0, anim:Lcom/android/internal/widget/multiwaveview/Tweener;
     iget-object v3, v0, Lcom/android/internal/widget/multiwaveview/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v3}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    .line 150
+    .line 208
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
 
-    .line 154
+    .line 212
     .end local v0           #anim:Lcom/android/internal/widget/multiwaveview/Tweener;
     :cond_15
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->clear()V
 
-    .line 155
+    .line 213
     return-void
 .end method
 
@@ -102,10 +102,10 @@
     .parameter "suspend"
 
     .prologue
-    .line 167
+    .line 225
     iput-boolean p1, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->mSuspended:Z
 
-    .line 168
+    .line 226
     return-void
 .end method
 
@@ -113,22 +113,22 @@
     .registers 5
 
     .prologue
-    .line 140
+    .line 198
     iget-boolean v3, p0, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->mSuspended:Z
 
     if-eqz v3, :cond_5
 
-    .line 146
+    .line 204
     :cond_4
     return-void
 
-    .line 141
+    .line 199
     :cond_5
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->size()I
 
     move-result v1
 
-    .line 142
+    .line 200
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -136,20 +136,20 @@
     :goto_a
     if-ge v2, v1, :cond_4
 
-    .line 143
+    .line 201
     invoke-virtual {p0, v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    .line 144
+    .line 202
     .local v0, anim:Lcom/android/internal/widget/multiwaveview/Tweener;
     iget-object v3, v0, Lcom/android/internal/widget/multiwaveview/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v3}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 142
+    .line 200
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_a
@@ -159,12 +159,12 @@
     .registers 5
 
     .prologue
-    .line 158
+    .line 216
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->size()I
 
     move-result v1
 
-    .line 159
+    .line 217
     .local v1, count:I
     const/4 v2, 0x0
 
@@ -172,29 +172,29 @@
     :goto_5
     if-ge v2, v1, :cond_15
 
-    .line 160
+    .line 218
     invoke-virtual {p0, v2}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/multiwaveview/Tweener;
 
-    .line 161
+    .line 219
     .local v0, anim:Lcom/android/internal/widget/multiwaveview/Tweener;
     iget-object v3, v0, Lcom/android/internal/widget/multiwaveview/Tweener;->animator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v3}, Landroid/animation/ObjectAnimator;->end()V
 
-    .line 159
+    .line 217
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
 
-    .line 163
+    .line 221
     .end local v0           #anim:Lcom/android/internal/widget/multiwaveview/Tweener;
     :cond_15
     invoke-virtual {p0}, Lcom/android/internal/widget/multiwaveview/GlowPadView$AnimationBundle;->clear()V
 
-    .line 164
+    .line 222
     return-void
 .end method

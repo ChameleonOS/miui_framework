@@ -2829,7 +2829,7 @@ _L21:
 
     private void hideFloatView() {
         if(mCopyFloatPanel != null)
-            mCopyFloatPanel.setVisibility(4);
+            mCopyFloatPanel.setVisibility(8);
     }
 
     private void hidePasteButton() {
@@ -3754,19 +3754,116 @@ _L3:
     private void showFloatView() {
         if(mCopyFloatPanel == null)
             mCopyFloatPanel = SelectionFloatPanel.getInstance(mContext, this);
-        if(mMenuLeft == -1) {
-            int ai[] = new int[4];
-            getSelectionHandles(ai);
-            int i = contentToViewDimension(ai[0]);
-            int j = contentToViewDimension(ai[1]);
-            int k = contentToViewDimension(ai[2]);
-            int l = contentToViewDimension(ai[3]);
-            mMenuLeft = (i + k) / 2;
-            if(j >= l)
-                j = l;
-            mMenuTop = j - 30;
+        if(mSelectingText) goto _L2; else goto _L1
+_L1:
+        mCopyFloatPanel.setVisibility(4);
+_L4:
+        return;
+_L2:
+        int i;
+        int j;
+        int i1;
+        int j1;
+        Rect rect1;
+        Rect rect3;
+        Rect rect4;
+        int k1;
+        Rect rect5;
+        View view = mCopyFloatPanel.findViewById(0x60b001b);
+        view.measure(0, 0);
+        i = view.getMeasuredWidth();
+        j = view.getMeasuredHeight();
+        int ai[] = new int[4];
+        getSelectionHandles(ai);
+        int k = contentToViewDimension(ai[0]);
+        int l = contentToViewDimension(ai[1]);
+        i1 = contentToViewDimension(ai[2]);
+        j1 = contentToViewDimension(ai[3]);
+        if(l >= j1) {
+            int j3 = j1;
+            j1 = l;
+            l = j3;
         }
-        mCopyFloatPanel.showAt(mMenuLeft, mMenuTop);
+        mMenuLeft = (k + i1) / 2 - i / 2;
+        Rect rect = new Rect();
+        rect1 = new Rect();
+        Point point = new Point();
+        getWebView().getGlobalVisibleRect(rect, point);
+        getWebView().getLocalVisibleRect(rect1);
+        if(mMenuLeft < rect1.left)
+            mMenuLeft = rect1.left;
+        if(i + mMenuLeft > rect1.left + rect1.width())
+            mMenuLeft = (rect1.left + rect1.width()) - i;
+        Rect rect2 = new Rect(mMenuLeft, mMenuTop, i + mMenuLeft, j + mMenuTop);
+        if(mSelectHandleLeft == null || mSelectHandleRight == null)
+            continue; /* Loop/switch isn't completed */
+        rect3 = mSelectHandleLeft.getBounds();
+        rect4 = mSelectHandleRight.getBounds();
+        k1 = (int)(80F * mContext.getResources().getDisplayMetrics().density);
+        mMenuTop = j1 - k1;
+        rect2.set(mMenuLeft, mMenuTop, i + mMenuLeft, j + mMenuTop);
+        rect5 = new Rect(rect2);
+        if(rect5.intersect(rect3))
+            mMenuTop = l - k1;
+        int l1 = k;
+        int i2 = l;
+        if(j1 < i1) {
+            l1 = k;
+            i2 = l;
+        }
+        Rect rect6 = new Rect(l1, l, i2, j1);
+        if(mMenuTop >= rect1.top && mMenuTop <= rect1.bottom && mMenuLeft >= rect1.left && mMenuLeft <= rect1.right)
+            break MISSING_BLOCK_LABEL_855;
+        if(rect6.intersect(rect1)) {
+            if(k < rect1.left || k >= rect1.right)
+                break; /* Loop/switch isn't completed */
+            int j2 = rect1.top;
+            if(l < j2)
+                break; /* Loop/switch isn't completed */
+            int k2 = rect1.bottom;
+            if(l >= k2)
+                break; /* Loop/switch isn't completed */
+            int l2 = rect1.top + rect1.height() / 2;
+            if(l < l2) {
+                mMenuTop = rect3.bottom + k1 / 4;
+                rect5.set(mMenuLeft, mMenuTop, i + mMenuLeft, j + mMenuTop);
+                if(rect5.intersect(rect4)) {
+                    mMenuTop = rect4.bottom + k1 / 4;
+                    if(mMenuTop > rect1.bottom)
+                        mMenuTop = rect4.top + k1 / 4;
+                }
+            } else {
+                mMenuTop = l - k1;
+                if(mMenuTop < rect1.top)
+                    mMenuTop = rect3.top;
+            }
+        }
+_L5:
+        mCopyFloatPanel.showAt(mMenuLeft + point.x, mMenuTop + getTitleHeight() + point.y);
+        if(true) goto _L4; else goto _L3
+_L3:
+        if(i1 >= rect1.left && i1 < rect1.right && j1 >= rect1.top && j1 < rect1.bottom) {
+            if(j1 < rect1.top + rect1.height() / 2)
+                mMenuTop = rect4.bottom + k1 / 4;
+            else
+                mMenuTop = j1 - k1;
+        } else {
+            mMenuLeft = (rect1.left + rect1.width() / 2) - i / 2;
+            mMenuTop = (rect1.top + rect1.height() / 2) - k1;
+        }
+          goto _L5
+        if(mMenuTop < rect1.top) {
+            int i3;
+            if(rect3.top > rect1.top)
+                i3 = rect3.top;
+            else
+                i3 = rect1.top + rect3.height() + k1 / 4;
+            mMenuTop = i3;
+            rect5.set(mMenuLeft, mMenuTop, i + mMenuLeft, j + mMenuTop);
+            if(rect5.intersect(rect4))
+                mMenuTop = rect4.bottom + k1 / 4;
+        }
+          goto _L5
     }
 
     private void showMagnifier(Canvas canvas, Rect rect, Rect rect1) {
@@ -5690,7 +5787,10 @@ _L4:
 _L2:
         if(mSelectingText) {
             mIsActionUp = false;
-            hideFloatView();
+            if(motionevent.getAction() == 3)
+                showFloatView();
+            else
+                hideFloatView();
         }
           goto _L4
     }
@@ -6943,6 +7043,16 @@ _L7:
 
     int viewToContentY(int i) {
         return viewToContentDimension(i - getTitleHeight());
+    }
+
+    public void webSearchText() {
+        String s = getSelection();
+        endSelectingText();
+        invalidate();
+        Intent intent = new Intent("android.intent.action.WEB_SEARCH");
+        intent.putExtra("new_search", true);
+        intent.putExtra("query", s);
+        getContext().startActivity(intent);
     }
 
     public boolean zoomIn() {

@@ -1608,6 +1608,18 @@ _L1:
         }
     }
 
+    static class Injector {
+
+        static int adjustDirection(VolumePanel volumepanel, int i, int j) {
+            if((i & 1) != 0 && !volumepanel.isVisible())
+                j = 0;
+            return j;
+        }
+
+        Injector() {
+        }
+    }
+
 
     public AudioService(Context context) {
         int ai[][] = new int[9][];
@@ -1922,12 +1934,6 @@ _L3:
         mHasRemotePlayback = false;
         mMainRemoteIsActive = false;
         postReevaluateRemote();
-    }
-
-    private int adjustDirection(int i, int j) {
-        if((i & 1) != 0 && !mVolumePanel.isVisible())
-            j = 0;
-        return j;
     }
 
     private void adjustRemoteVolume(int i, int j, int k) {
@@ -3805,7 +3811,7 @@ _L3:
             l = getActiveStreamType(j);
         if(l != -200 && (k & 4) != 0 && (mStreamVolumeAlias[l] != 2 || mKeyguardManager != null && mKeyguardManager.isKeyguardLocked()))
             k &= -5;
-        i1 = adjustDirection(k, i);
+        i1 = Injector.adjustDirection(mVolumePanel, k, i);
         if(l == -200)
             adjustRemoteVolume(3, i1, k & -5);
         else

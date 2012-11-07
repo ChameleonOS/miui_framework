@@ -19,7 +19,7 @@
     .registers 1
 
     .prologue
-    .line 430
+    .line 446
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .parameter "ctx"
 
     .prologue
-    .line 433
+    .line 449
     :try_start_0
     new-instance v1, Landroid/os/storage/StorageManager;
 
@@ -50,15 +50,15 @@
     :try_end_f
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_f} :catch_10
 
-    .line 436
+    .line 452
     :goto_f
     return-object v1
 
-    .line 434
+    .line 450
     :catch_10
     move-exception v0
 
-    .line 435
+    .line 451
     .local v0, rex:Landroid/os/RemoteException;
     const-string v1, "ApplicationContext"
 
@@ -66,7 +66,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 436
+    .line 452
     const/4 v1, 0x0
 
     goto :goto_f
