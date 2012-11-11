@@ -29,6 +29,8 @@
 
 .field public static final SEND_PUSH:Ljava/lang/String; = "com.xiaomi.permission.SEND_PUSH"
 
+.field public static final SHELL:Ljava/lang/String; = "miui.permission.SHELL"
+
 .field public static final TIGGER_TOGGLE:Ljava/lang/String; = "com.android.SystemUI.permission.TIGGER_TOGGLE"
 
 

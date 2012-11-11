@@ -161,6 +161,13 @@ public final class MiuiResources extends Resources {
         mHasValues = mThemeResources.hasValues();
     }
 
+    Drawable loadDrawable(TypedValue typedvalue, int i) throws Resources.NotFoundException {
+        Drawable drawable = super.loadDrawable(typedvalue, i);
+        if(drawable.isStateful())
+            drawable.setId(i);
+        return drawable;
+    }
+
     Drawable loadOverlayDrawable(TypedValue typedvalue, int i) {
         if(mSkipFiles.get(i) == null) goto _L2; else goto _L1
 _L1:

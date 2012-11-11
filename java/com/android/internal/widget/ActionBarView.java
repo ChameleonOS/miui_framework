@@ -1270,6 +1270,10 @@ _L12:
             mHomeLayout.setContentDescription(super.mContext.getResources().getText(0x10404d0));
     }
 
+    public void setHomeViewBackground(int i) {
+        mHomeLayout.setBackgroundResource(i);
+    }
+
     public void setIcon(int i) {
         setIcon(super.mContext.getResources().getDrawable(i));
     }

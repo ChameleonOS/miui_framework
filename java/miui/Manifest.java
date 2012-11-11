@@ -15,6 +15,7 @@ public final class Manifest {
         public static final String FIND_DEVICE = "com.miui.cloudservice.permission.FIND_DEVICE";
         public static final String PAYMENT = "com.xiaomi.xmsf.permission.PAYMENT";
         public static final String SEND_PUSH = "com.xiaomi.permission.SEND_PUSH";
+        public static final String SHELL = "miui.permission.SHELL";
         public static final String TIGGER_TOGGLE = "com.android.SystemUI.permission.TIGGER_TOGGLE";
 
         public permission() {

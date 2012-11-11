@@ -125,6 +125,10 @@
 
 .field public static final v5_button_text_light:I = 0x6070057
 
+.field public static final v5_checkable_btn_text_dark:I = 0x607006a
+
+.field public static final v5_checkable_btn_text_light:I = 0x607006b
+
 .field public static final v5_edit_text_color_dark:I = 0x6070049
 
 .field public static final v5_edit_text_color_light:I = 0x6070048
@@ -233,7 +237,7 @@
     .registers 1
 
     .prologue
-    .line 714
+    .line 789
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

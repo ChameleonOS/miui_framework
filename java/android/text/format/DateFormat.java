@@ -24,9 +24,11 @@ public class DateFormat {
     static class Injector {
 
         static String check24HourFormatForChina(Context context, String s) {
-            Locale locale = context.getResources().getConfiguration().locale;
-            if(Locale.CHINA.equals(locale))
-                s = "24";
+            if(s == null) {
+                Locale locale = context.getResources().getConfiguration().locale;
+                if(Locale.CHINA.equals(locale))
+                    s = "24";
+            }
             return s;
         }
 

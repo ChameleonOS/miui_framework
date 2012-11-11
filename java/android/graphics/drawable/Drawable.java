@@ -55,46 +55,43 @@ public abstract class Drawable {
 
         static boolean compareStateSet(Drawable drawable, int ai[]) {
             boolean flag;
-            boolean flag1;
-            flag = true;
-            flag1 = false;
-            if(ai != drawable.mStateSet) goto _L2; else goto _L1
+            int ai1[];
+            flag = false;
+            ai1 = drawable.getState();
+            if(ai != ai1) goto _L2; else goto _L1
 _L1:
+            flag = true;
+_L4:
             return flag;
 _L2:
             if(ai == null) {
-                if(drawable.mStateSet[0] != 0)
-                    flag = false;
+                if(ai1.length == 0 || ai1[0] == 0)
+                    flag = true;
                 continue; /* Loop/switch isn't completed */
             }
-            if(ai.length > drawable.mStateSet.length) {
-                int ai1[] = new int[drawable.mStateSet.length + ai.length];
-                System.arraycopy(drawable.mStateSet, 0, ai1, 0, drawable.mStateSet.length);
-                drawable.mStateSet = ai1;
+            if(ai.length > ai1.length) {
+                int ai2[] = new int[ai1.length + ai.length];
+                System.arraycopy(ai1, 0, ai2, 0, ai1.length);
+                ai1 = ai2;
+                drawable.setStateInternal(ai2);
             }
-            int i = 0;
-            do {
-                if(i >= ai.length)
-                    break;
-                if(ai[i] != drawable.mStateSet[i]) {
-                    flag = false;
+            for(int i = 0; i < ai.length; i++)
+                if(ai[i] != ai1[i])
                     continue; /* Loop/switch isn't completed */
-                }
-                i++;
-            } while(true);
-            if(drawable.mStateSet.length == ai.length || drawable.mStateSet[ai.length] == 0)
-                flag1 = flag;
-            flag = flag1;
-            if(true) goto _L1; else goto _L3
+
+            if(ai1.length == ai.length || ai1[ai.length] == 0)
+                flag = true;
+            if(true) goto _L4; else goto _L3
 _L3:
         }
 
         static void copyStateSet(Drawable drawable, int ai[]) {
+            int ai1[] = drawable.getState();
             if(ai == null) {
-                Arrays.fill(drawable.mStateSet, 0, drawable.mStateSet.length, 0);
+                Arrays.fill(ai1, 0, ai1.length, 0);
             } else {
-                System.arraycopy(ai, 0, drawable.mStateSet, 0, ai.length);
-                Arrays.fill(drawable.mStateSet, ai.length, drawable.mStateSet.length, 0);
+                System.arraycopy(ai, 0, ai1, 0, ai.length);
+                Arrays.fill(ai1, ai.length, ai1.length, 0);
             }
         }
 
@@ -115,12 +112,13 @@ _L3:
 
 
     public Drawable() {
-        mStateSet = new int[android.R.styleable.DrawableStates.length];
+        mStateSet = new int[0];
         mLevel = 0;
         mChangingConfigurations = 0;
         mBounds = ZERO_BOUNDS_RECT;
         mCallback = null;
         mVisible = true;
+        mId = -1;
     }
 
     public static Drawable createFromPath(String s) {
@@ -320,6 +318,10 @@ _L3:
         return this;
     }
 
+    public int getId() {
+        return mId;
+    }
+
     public int getIntrinsicHeight() {
         return -1;
     }
@@ -461,6 +463,10 @@ _L3:
     public void setFilterBitmap(boolean flag) {
     }
 
+    public void setId(int i) {
+        mId = i;
+    }
+
     public final boolean setLevel(int i) {
         boolean flag;
         if(mLevel != i) {
@@ -474,6 +480,10 @@ _L3:
 
     public boolean setState(int ai[]) {
         return Injector.miuiSetState(this, ai);
+    }
+
+    void setStateInternal(int ai[]) {
+        mStateSet = ai;
     }
 
     public boolean setVisible(boolean flag, boolean flag1) {
@@ -499,18 +509,9 @@ _L3:
     private Rect mBounds;
     private WeakReference mCallback;
     private int mChangingConfigurations;
+    int mId;
     private int mLevel;
     private int mStateSet[];
     private boolean mVisible;
 
-
-
-
-/*
-    static int[] access$002(Drawable drawable, int ai[]) {
-        drawable.mStateSet = ai;
-        return ai;
-    }
-
-*/
 }

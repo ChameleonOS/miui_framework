@@ -109,6 +109,10 @@
 
 .field public static final two_floors_action_bar_height:I = 0x60a0017
 
+.field public static final v5_alert_dialog_button_bar_height:I = 0x60a0041
+
+.field public static final v5_alert_dialog_title_height:I = 0x60a0040
+
 .field public static final v5_list_view_double_line_height:I = 0x60a003e
 
 .field public static final v5_list_view_single_line_height:I = 0x60a003d
@@ -147,7 +151,7 @@
     .registers 1
 
     .prologue
-    .line 850
+    .line 927
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

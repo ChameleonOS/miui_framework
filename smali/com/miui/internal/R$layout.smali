@@ -95,15 +95,15 @@
 
 .field public static final miro_activity:I = 0x603004a
 
-.field public static final miro_edit_menu_bar:I = 0x6030050
+.field public static final miro_edit_mode_menu_bar:I = 0x6030050
 
-.field public static final miro_edit_menu_list:I = 0x6030053
+.field public static final miro_edit_mode_menu_list:I = 0x6030053
 
-.field public static final miro_edit_menu_list_item:I = 0x6030054
+.field public static final miro_edit_mode_menu_list_item:I = 0x6030054
 
-.field public static final miro_edit_menu_primary_bar:I = 0x6030051
+.field public static final miro_edit_mode_menu_primary_bar:I = 0x6030051
 
-.field public static final miro_edit_menu_primary_item:I = 0x6030052
+.field public static final miro_edit_mode_menu_primary_item:I = 0x6030052
 
 .field public static final miro_menu_bar:I = 0x6030044
 
@@ -122,6 +122,8 @@
 .field public static final miro_tab_activity:I = 0x603004b
 
 .field public static final multi_select_action_mode_menu:I = 0x603001e
+
+.field public static final number_progress:I = 0x603005e
 
 .field public static final preference_widget_radiobutton:I = 0x6030034
 
@@ -181,6 +183,20 @@
 
 .field public static final text_selection_float_panel:I = 0x6030032
 
+.field public static final v5_alert_dialog:I = 0x603005a
+
+.field public static final v5_edit_mode_icon_menu_bar:I = 0x603005b
+
+.field public static final v5_edit_mode_icon_menu_bar_primary_item:I = 0x603005c
+
+.field public static final v5_edit_mode_icon_menu_bar_secondary_item:I = 0x603005d
+
+.field public static final v5_icon_menu_bar:I = 0x6030057
+
+.field public static final v5_icon_menu_bar_primary_item:I = 0x6030058
+
+.field public static final v5_icon_menu_bar_secondary_item:I = 0x6030059
+
 .field public static final v5_title_bar_large:I = 0x6030055
 
 .field public static final v5_title_bar_normal:I = 0x6030056
@@ -195,7 +211,7 @@
     .registers 1
 
     .prologue
-    .line 2049
+    .line 2251
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

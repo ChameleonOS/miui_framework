@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 190
+    .line 192
     iput-object p1, p0, Landroid/app/ListActivity$1;->this$0:Landroid/app/ListActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 192
+    .line 194
     iget-object v0, p0, Landroid/app/ListActivity$1;->this$0:Landroid/app/ListActivity;
 
     iget-object v0, v0, Landroid/app/ListActivity;->mList:Landroid/widget/ListView;
@@ -52,6 +52,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->focusableViewAvailable(Landroid/view/View;)V
 
-    .line 193
+    .line 195
     return-void
 .end method

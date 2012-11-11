@@ -45,19 +45,45 @@
 
 .field public static final android_body:I = 0x60b000c
 
+.field public static final android_button1:I = 0x60b00b6
+
+.field public static final android_button2:I = 0x60b00b4
+
+.field public static final android_button3:I = 0x60b00b5
+
+.field public static final android_buttonPanel:I = 0x60b00b3
+
 .field public static final android_clearDefaultHint:I = 0x60b0007
+
+.field public static final android_contentPanel:I = 0x60b00ae
+
+.field public static final android_custom:I = 0x60b00b2
+
+.field public static final android_customPanel:I = 0x60b00b1
+
+.field public static final android_icon:I = 0x60b00ad
 
 .field public static final android_inbox:I = 0x60b0088
 
 .field public static final android_inbox_more:I = 0x60b0089
 
+.field public static final android_message:I = 0x60b00b0
+
 .field public static final android_mount_button:I = 0x60b0009
 
+.field public static final android_parentPanel:I = 0x60b00aa
+
 .field public static final android_placeholder:I = 0x60b0023
+
+.field public static final android_scrollView:I = 0x60b00af
 
 .field public static final android_split_action_bar:I = 0x60b0005
 
 .field public static final android_title:I = 0x60b000b
+
+.field public static final android_title_template:I = 0x60b00ac
+
+.field public static final android_topPanel:I = 0x60b00ab
 
 .field public static final android_unmount_button:I = 0x60b000a
 
@@ -195,6 +221,14 @@
 
 .field public static final number:I = 0x60b0034
 
+.field public static final number_progress_1:I = 0x60b00b7
+
+.field public static final number_progress_2:I = 0x60b00b8
+
+.field public static final number_progress_3:I = 0x60b00b9
+
+.field public static final number_progress_percent:I = 0x60b00ba
+
 .field public static final ok_account:I = 0x60b007b
 
 .field public static final ok_menu_item:I = 0x60b006d
@@ -331,7 +365,21 @@
 
 .field public static final unlock_sim_via_puk:I = 0x60b002f
 
+.field public static final v5_bottom_bar_top_line:I = 0x60b00a3
+
 .field public static final v5_bottom_placeholder:I = 0x60b00a2
+
+.field public static final v5_icon_menu_bar_dim_container:I = 0x60b00a5
+
+.field public static final v5_icon_menu_bar_primary_container:I = 0x60b00a7
+
+.field public static final v5_icon_menu_bar_primary_item:I = 0x60b00a4
+
+.field public static final v5_icon_menu_bar_primary_mask:I = 0x60b00a6
+
+.field public static final v5_icon_menu_bar_real_primary_container:I = 0x60b00a8
+
+.field public static final v5_icon_menu_bar_secondary_container:I = 0x60b00a9
 
 .field public static final v5_title_bar_container:I = 0x60b009b
 
@@ -347,7 +395,7 @@
     .registers 1
 
     .prologue
-    .line 1565
+    .line 1716
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

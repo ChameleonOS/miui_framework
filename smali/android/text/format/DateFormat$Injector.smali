@@ -36,6 +36,9 @@
 
     .prologue
     .line 83
+    if-nez p1, :cond_16
+
+    .line 84
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -46,7 +49,7 @@
 
     iget-object v0, v1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    .line 84
+    .line 85
     .local v0, locale:Ljava/util/Locale;
     sget-object v1, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
 
@@ -54,13 +57,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_16
 
-    .line 85
+    .line 86
     const-string p1, "24"
 
-    .line 87
+    .line 89
+    .end local v0           #locale:Ljava/util/Locale;
     .end local p1
-    :cond_14
+    :cond_16
     return-object p1
 .end method

@@ -5,6 +5,7 @@
 package android.app;
 
 import android.content.*;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.*;
@@ -48,6 +49,17 @@ _L5:
 
         public ListenersHandler(Dialog dialog) {
             mDialog = new WeakReference(dialog);
+        }
+    }
+
+    static class Injector {
+
+        static void setDialogGravity(Dialog dialog, int i) {
+            if(i != 0 && dialog.mContext.getResources().getResourceEntryName(i).startsWith("V5"))
+                dialog.mWindow.setGravity(80);
+        }
+
+        Injector() {
         }
     }
 
@@ -98,6 +110,7 @@ _L5:
         window.setWindowManager(mWindowManager, null, null);
         window.setGravity(17);
         mListenersHandler = new ListenersHandler(this);
+        Injector.setDialogGravity(this, i);
     }
 
     protected Dialog(Context context, boolean flag, android.content.DialogInterface.OnCancelListener oncancellistener) {

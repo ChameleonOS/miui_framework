@@ -1181,6 +1181,8 @@
 
 .field public static final user_agreement5:I = 0x60c0037
 
+.field public static final v5_icon_menu_bar_more_item_label:I = 0x60c024e
+
 .field public static final valentines_day:I = 0x60c0060
 
 .field public static final vernal_equinox:I = 0x60c0071
@@ -1201,7 +1203,7 @@
     .registers 1
 
     .prologue
-    .line 2167
+    .line 2377
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

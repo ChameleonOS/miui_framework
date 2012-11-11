@@ -75,6 +75,10 @@
 
 .field public static final miui_player_control_view_out:I = 0x604000f
 
+.field public static final v5_dialog_enter:I = 0x604001e
+
+.field public static final v5_dialog_exit:I = 0x604001f
+
 
 # direct methods
 .method public constructor <init>()V

@@ -107,6 +107,12 @@
 
 .field public static final V5:I = 0x60d0039
 
+.field public static final V5_AlertDialog:I = 0x60d008d
+
+.field public static final V5_Animation:I = 0x60d008e
+
+.field public static final V5_Animation_Dialog:I = 0x60d008f
+
 .field public static final V5_TextAppearance:I = 0x60d003a
 
 .field public static final V5_TextAppearance_BottomBarIcon:I = 0x60d0047
@@ -116,6 +122,8 @@
 .field public static final V5_TextAppearance_Button:I = 0x60d004b
 
 .field public static final V5_TextAppearance_Button_Warn:I = 0x60d004c
+
+.field public static final V5_TextAppearance_DialogTitle:I = 0x60d008b
 
 .field public static final V5_TextAppearance_EditMode:I = 0x60d0043
 
@@ -165,11 +173,33 @@
 
 .field public static final V5_Theme_Dark_MainPage:I = 0x60d0078
 
+.field public static final V5_Theme_Dark_NoBottomBar:I = 0x60d0082
+
+.field public static final V5_Theme_Dark_NoTitle:I = 0x60d007b
+
 .field public static final V5_Theme_Light:I = 0x60d0067
+
+.field public static final V5_Theme_Light_Dialog:I = 0x60d0090
+
+.field public static final V5_Theme_Light_Dialog_Alert:I = 0x60d0094
+
+.field public static final V5_Theme_Light_Dialog_MinWidth:I = 0x60d0091
+
+.field public static final V5_Theme_Light_Dialog_NoTitle:I = 0x60d0092
+
+.field public static final V5_Theme_Light_Dialog_NoTitle_MinWidth:I = 0x60d0093
 
 .field public static final V5_Theme_Light_MainPage:I = 0x60d0079
 
+.field public static final V5_Theme_Light_NoBottomBar:I = 0x60d0081
+
+.field public static final V5_Theme_Light_NoTitle:I = 0x60d007a
+
+.field public static final V5_Theme_Light_Settings:I = 0x60d0089
+
 .field public static final V5_Widget:I = 0x60d0051
+
+.field public static final V5_Widget_ActionBar_Solid_Settings:I = 0x60d0088
 
 .field public static final V5_Widget_BottomBar:I = 0x60d0057
 
@@ -181,15 +211,31 @@
 
 .field public static final V5_Widget_BottomBar_TopLine:I = 0x60d0058
 
+.field public static final V5_Widget_Button:I = 0x60d007c
+
+.field public static final V5_Widget_Button_NegativeWarn:I = 0x60d007d
+
+.field public static final V5_Widget_Button_PositiveWarn:I = 0x60d0095
+
 .field public static final V5_Widget_CompoundButton:I = 0x60d0072
 
 .field public static final V5_Widget_CompoundButton_CheckBox:I = 0x60d0073
+
+.field public static final V5_Widget_CompoundButton_RadioButton:I = 0x60d008a
+
+.field public static final V5_Widget_DialogTitle:I = 0x60d008c
+
+.field public static final V5_Widget_DropDownItem:I = 0x60d0085
+
+.field public static final V5_Widget_DropDownItem_Spinner:I = 0x60d0086
 
 .field public static final V5_Widget_EditMode:I = 0x60d0059
 
 .field public static final V5_Widget_EditMode_Bottom:I = 0x60d005d
 
 .field public static final V5_Widget_EditMode_BottomBar:I = 0x60d005e
+
+.field public static final V5_Widget_EditMode_BottomBarIcon:I = 0x60d0080
 
 .field public static final V5_Widget_EditMode_BottomBar_List:I = 0x60d005f
 
@@ -215,9 +261,15 @@
 
 .field public static final V5_Widget_ListView_Item_TrebleLine:I = 0x60d0065
 
+.field public static final V5_Widget_ProgressBar:I = 0x60d0087
+
 .field public static final V5_Widget_SecondaryTab:I = 0x60d0071
 
 .field public static final V5_Widget_SecondaryTabIndicator:I = 0x60d0070
+
+.field public static final V5_Widget_Spinner:I = 0x60d007e
+
+.field public static final V5_Widget_Spinner_DropDown:I = 0x60d007f
 
 .field public static final V5_Widget_Tab:I = 0x60d006b
 
@@ -227,6 +279,10 @@
 
 .field public static final V5_Widget_TabIndicator_NoTitle:I = 0x60d006a
 
+.field public static final V5_Widget_TextView:I = 0x60d0083
+
+.field public static final V5_Widget_TextView_SpinnerItem:I = 0x60d0084
+
 .field public static final V5_Widget_Title:I = 0x60d0052
 
 .field public static final V5_Widget_Title_Back:I = 0x60d0053
@@ -234,8 +290,6 @@
 .field public static final V5_Widget_Title_Back_Large:I = 0x60d0075
 
 .field public static final V5_Widget_Title_Large:I = 0x60d0074
-
-.field public static final V5_Widget_TopPlaceholder:I = 0x60d007a
 
 .field public static final Widget_Button:I = 0x60d0002
 
@@ -267,7 +321,7 @@
     .registers 1
 
     .prologue
-    .line 2885
+    .line 3098
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

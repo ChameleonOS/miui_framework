@@ -675,6 +675,28 @@
 
 .field public static final menu_divider_vertical:I = 0x60200bf
 
+.field public static final number_progress_view_0:I = 0x602029a
+
+.field public static final number_progress_view_1:I = 0x602029b
+
+.field public static final number_progress_view_2:I = 0x602029c
+
+.field public static final number_progress_view_3:I = 0x602029d
+
+.field public static final number_progress_view_4:I = 0x602029e
+
+.field public static final number_progress_view_5:I = 0x602029f
+
+.field public static final number_progress_view_6:I = 0x60202a0
+
+.field public static final number_progress_view_7:I = 0x60202a1
+
+.field public static final number_progress_view_8:I = 0x60202a2
+
+.field public static final number_progress_view_9:I = 0x60202a3
+
+.field public static final number_progress_view_percent:I = 0x60202a4
+
 .field public static final orientation_lock:I = 0x60200c0
 
 .field public static final orientation_unlock:I = 0x60200c1
@@ -1075,6 +1097,12 @@
 
 .field public static final v5_bottom_bar_unfavorite_icon_pressed_light:I = 0x6020257
 
+.field public static final v5_btn_bg_light:I = 0x6020265
+
+.field public static final v5_btn_bg_negative_warn_light:I = 0x6020266
+
+.field public static final v5_btn_bg_positive_warn_light:I = 0x6020299
+
 .field public static final v5_btn_checkbox_light:I = 0x6020249
 
 .field public static final v5_btn_checkbox_off_disabled_light:I = 0x602023d
@@ -1085,7 +1113,59 @@
 
 .field public static final v5_btn_checkbox_on_normal_light:I = 0x6020240
 
+.field public static final v5_btn_inline_delete_light:I = 0x6020295
+
+.field public static final v5_btn_inline_delete_normal_light:I = 0x6020293
+
+.field public static final v5_btn_inline_delete_pressed_light:I = 0x6020294
+
+.field public static final v5_btn_next_light:I = 0x6020288
+
+.field public static final v5_btn_next_nomal_light:I = 0x6020286
+
+.field public static final v5_btn_next_pressed_light:I = 0x6020287
+
+.field public static final v5_btn_radio_light:I = 0x6020284
+
+.field public static final v5_btn_radio_off_first_light:I = 0x602027c
+
+.field public static final v5_btn_radio_off_last_light:I = 0x602027d
+
+.field public static final v5_btn_radio_off_middle_light:I = 0x602027e
+
+.field public static final v5_btn_radio_off_single_light:I = 0x602027f
+
+.field public static final v5_btn_radio_on_first_light:I = 0x6020280
+
+.field public static final v5_btn_radio_on_last_light:I = 0x6020281
+
+.field public static final v5_btn_radio_on_middle_light:I = 0x6020282
+
+.field public static final v5_btn_radio_on_single_light:I = 0x6020283
+
+.field public static final v5_btn_single_bg_negative_warn_normal_light:I = 0x602025f
+
+.field public static final v5_btn_single_bg_negative_warn_pressed_light:I = 0x6020260
+
+.field public static final v5_btn_single_bg_normal_light:I = 0x6020261
+
+.field public static final v5_btn_single_bg_positive_warn_disable_light:I = 0x6020296
+
+.field public static final v5_btn_single_bg_positive_warn_normal_light:I = 0x6020297
+
+.field public static final v5_btn_single_bg_positive_warn_pressed_light:I = 0x6020298
+
+.field public static final v5_btn_single_bg_pressed_light:I = 0x6020262
+
+.field public static final v5_dialog_bg_light:I = 0x6020285
+
 .field public static final v5_edit_mode_bottom_bar_bg_light:I = 0x6020200
+
+.field public static final v5_edit_mode_bottom_bar_icon_bg_light:I = 0x6020275
+
+.field public static final v5_edit_mode_bottom_bar_icon_normal_bg_light:I = 0x6020276
+
+.field public static final v5_edit_mode_bottom_bar_icon_pressed_bg_light:I = 0x6020277
 
 .field public static final v5_edit_mode_bottom_bar_list_bg_light:I = 0x6020201
 
@@ -1094,6 +1174,14 @@
 .field public static final v5_edit_mode_bottom_bar_list_item_bg_normal_light:I = 0x6020202
 
 .field public static final v5_edit_mode_bottom_bar_list_item_bg_pressed_light:I = 0x6020203
+
+.field public static final v5_edit_mode_bottom_bar_more_icon_light:I = 0x6020271
+
+.field public static final v5_edit_mode_bottom_bar_more_icon_normal_light:I = 0x6020272
+
+.field public static final v5_edit_mode_bottom_bar_more_icon_pressed_light:I = 0x6020273
+
+.field public static final v5_edit_mode_bottom_bar_more_icon_selected_light:I = 0x6020274
 
 .field public static final v5_edit_mode_top_bar_bg_light:I = 0x6020204
 
@@ -1112,6 +1200,8 @@
 .field public static final v5_edit_text_search_bg_light:I = 0x6020209
 
 .field public static final v5_edit_text_search_clear_btn_light:I = 0x6020259
+
+.field public static final v5_edit_text_search_clear_btn_off_light:I = 0x6020278
 
 .field public static final v5_edit_text_search_clear_btn_on_light:I = 0x6020258
 
@@ -1151,6 +1241,42 @@
 
 .field public static final v5_list_view_single_item_bg_selected_light:I = 0x6020215
 
+.field public static final v5_menu_list_view_bg_light:I = 0x602026f
+
+.field public static final v5_menu_list_view_first_item_bg_normal_light:I = 0x6020269
+
+.field public static final v5_menu_list_view_first_item_bg_pressed_light:I = 0x602026a
+
+.field public static final v5_menu_list_view_item_bg_light:I = 0x6020268
+
+.field public static final v5_menu_list_view_last_item_bg_normal_light:I = 0x602026d
+
+.field public static final v5_menu_list_view_last_item_bg_pressed_light:I = 0x602026e
+
+.field public static final v5_menu_list_view_middle_item_bg_normal_light:I = 0x602026b
+
+.field public static final v5_menu_list_view_middle_item_bg_pressed_light:I = 0x602026c
+
+.field public static final v5_menu_primary_mask_bg_light:I = 0x6020270
+
+.field public static final v5_popup_btn_first_normal_light:I = 0x602028a
+
+.field public static final v5_popup_btn_first_pressed_light:I = 0x602028b
+
+.field public static final v5_popup_btn_last_normal_light:I = 0x602028e
+
+.field public static final v5_popup_btn_last_pressed_light:I = 0x602028f
+
+.field public static final v5_popup_btn_light:I = 0x6020292
+
+.field public static final v5_popup_btn_middle_normal_light:I = 0x602028c
+
+.field public static final v5_popup_btn_middle_pressed_light:I = 0x602028d
+
+.field public static final v5_popup_btn_single_normal_light:I = 0x6020290
+
+.field public static final v5_popup_btn_single_pressed_light:I = 0x6020291
+
 .field public static final v5_preference_first_item_bg_normal:I = 0x6020241
 
 .field public static final v5_preference_first_item_bg_pressed:I = 0x6020242
@@ -1169,6 +1295,12 @@
 
 .field public static final v5_preference_single_item_bg_pressed:I = 0x6020248
 
+.field public static final v5_progress_bar_ani_light:I = 0x602027b
+
+.field public static final v5_progress_bar_bg_light:I = 0x6020279
+
+.field public static final v5_progress_bar_light:I = 0x602027a
+
 .field public static final v5_secondary_tab_bg_left_normal_light:I = 0x6020237
 
 .field public static final v5_secondary_tab_bg_left_pressed_light:I = 0x6020238
@@ -1186,6 +1318,12 @@
 .field public static final v5_secondary_tab_indicator_bg_light:I = 0x6020234
 
 .field public static final v5_secondary_tab_indicator_shadow_light:I = 0x6020235
+
+.field public static final v5_spinner_bg_light:I = 0x6020267
+
+.field public static final v5_spinner_bg_normal_light:I = 0x6020263
+
+.field public static final v5_spinner_bg_pressed_light:I = 0x6020264
 
 .field public static final v5_tab_bg_left_normal_light:I = 0x6020223
 
@@ -1227,6 +1365,8 @@
 
 .field public static final v5_top_placeholder_mainpage:I = 0x602024e
 
+.field public static final v5_window_bg_light:I = 0x6020289
+
 .field public static final word_photo_bg:I = 0x60201c7
 
 
@@ -1235,7 +1375,7 @@
     .registers 1
 
     .prologue
-    .line 938
+    .line 1017
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -197,6 +197,8 @@ public abstract class ActionBar {
     public void setHomeButtonEnabled(boolean flag) {
     }
 
+    public abstract void setHomeViewBackground(int i);
+
     public abstract void setIcon(int i);
 
     public abstract void setIcon(Drawable drawable);

@@ -25,6 +25,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.*;
 import miui.net.FirewallManager;
+import miui.util.UiUtils;
 
 // Referenced classes of package android.app:
 //            FragmentManagerImpl, Dialog, SearchManager, ActivityManagerNative, 
@@ -44,7 +45,7 @@ public class Activity extends ContextThemeWrapper
 
 
 /*
-        static boolean access$202(ManagedCursor managedcursor, boolean flag) {
+        static boolean access$302(ManagedCursor managedcursor, boolean flag) {
             managedcursor.mReleased = flag;
             return flag;
         }
@@ -54,7 +55,7 @@ public class Activity extends ContextThemeWrapper
 
 
 /*
-        static boolean access$302(ManagedCursor managedcursor, boolean flag) {
+        static boolean access$402(ManagedCursor managedcursor, boolean flag) {
             managedcursor.mUpdated = flag;
             return flag;
         }
@@ -93,6 +94,11 @@ public class Activity extends ContextThemeWrapper
 
         static void checkAccessControl(Activity activity) {
             FirewallManager.checkAccessControl(activity.mParent, activity.getContentResolver(), activity.getPackageName(), activity.getPackageManager(), activity.mMainThread.getApplicationThread(), activity.getToken(), activity.mEmbeddedID);
+        }
+
+        static void setActivityGravity(Activity activity) {
+            if(UiUtils.resolveAttribute(activity, 0x10100ae) == 0x60d008f)
+                activity.mWindow.setGravity(80);
         }
 
         Injector() {
@@ -997,6 +1003,7 @@ _L7:
         mFragments.dispatchCreate();
         getApplication().dispatchActivityCreated(this, bundle);
         mCalled = true;
+        Injector.setActivityGravity(this);
     }
 
     public void onCreateContextMenu(ContextMenu contextmenu, View view, android.view.ContextMenu.ContextMenuInfo contextmenuinfo) {
@@ -2282,4 +2289,5 @@ label0:
         ai[0] = 0x101009c;
         FOCUSED_STATE_SET = ai;
     }
+
 }

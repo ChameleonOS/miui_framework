@@ -30,158 +30,119 @@
 .end method
 
 .method static compareStateSet(Landroid/graphics/drawable/Drawable;[I)Z
-    .registers 8
+    .registers 9
     .parameter "d"
     .parameter "stateSet"
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
     const/4 v3, 0x0
 
     .line 131
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
 
-    move-result-object v4
+    move-result-object v0
 
-    if-ne p1, v4, :cond_9
+    .line 132
+    .local v0, drawableStateSet:[I
+    if-ne p1, v0, :cond_a
 
-    .line 150
-    :cond_8
-    :goto_8
-    return v2
+    move v3, v4
 
-    .line 135
+    .line 152
     :cond_9
-    if-nez p1, :cond_15
+    :goto_9
+    return v3
 
     .line 136
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
+    :cond_a
+    if-nez p1, :cond_15
 
-    move-result-object v4
+    .line 137
+    array-length v5, v0
 
-    aget v4, v4, v3
+    if-eqz v5, :cond_13
 
-    if-eqz v4, :cond_8
+    aget v5, v0, v3
 
-    move v2, v3
+    if-nez v5, :cond_9
 
-    goto :goto_8
+    :cond_13
+    move v3, v4
 
-    .line 139
-    :cond_15
-    array-length v4, p1
-
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
-
-    move-result-object v5
-
-    array-length v5, v5
-
-    if-le v4, v5, :cond_35
+    goto :goto_9
 
     .line 140
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
-
-    move-result-object v4
-
-    array-length v4, v4
-
+    :cond_15
     array-length v5, p1
 
-    add-int/2addr v4, v5
+    array-length v6, v0
 
-    new-array v1, v4, [I
+    if-le v5, v6, :cond_26
 
     .line 141
-    .local v1, newStates:[I
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
+    array-length v5, v0
 
-    move-result-object v4
+    array-length v6, p1
 
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
+    add-int/2addr v5, v6
 
-    move-result-object v5
-
-    array-length v5, v5
-
-    invoke-static {v4, v3, v1, v3, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    new-array v2, v5, [I
 
     .line 142
-    #setter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0, v1}, Landroid/graphics/drawable/Drawable;->access$002(Landroid/graphics/drawable/Drawable;[I)[I
+    .local v2, newStates:[I
+    array-length v5, v0
 
-    .line 145
-    .end local v1           #newStates:[I
-    :cond_35
-    const/4 v0, 0x0
+    invoke-static {v0, v3, v2, v3, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .local v0, i:I
-    :goto_36
-    array-length v4, p1
+    .line 143
+    move-object v0, v2
 
-    if-ge v0, v4, :cond_48
-
-    .line 146
-    aget v4, p1, v0
-
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
-
-    move-result-object v5
-
-    aget v5, v5, v0
-
-    if-eq v4, v5, :cond_45
-
-    move v2, v3
+    .line 144
+    invoke-virtual {p0, v2}, Landroid/graphics/drawable/Drawable;->setStateInternal([I)V
 
     .line 147
-    goto :goto_8
+    .end local v2           #newStates:[I
+    :cond_26
+    const/4 v1, 0x0
 
-    .line 145
-    :cond_45
-    add-int/lit8 v0, v0, 0x1
+    .local v1, i:I
+    :goto_27
+    array-length v5, p1
 
-    goto :goto_36
+    if-ge v1, v5, :cond_33
 
-    .line 150
-    :cond_48
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
+    .line 148
+    aget v5, p1, v1
 
-    move-result-object v4
+    aget v6, v0, v1
 
-    array-length v4, v4
+    if-ne v5, v6, :cond_9
+
+    .line 147
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_27
+
+    .line 152
+    :cond_33
+    array-length v5, v0
+
+    array-length v6, p1
+
+    if-eq v5, v6, :cond_3c
 
     array-length v5, p1
 
-    if-eq v4, v5, :cond_59
+    aget v5, v0, v5
 
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
+    if-nez v5, :cond_9
 
-    move-result-object v4
+    :cond_3c
+    move v3, v4
 
-    array-length v5, p1
-
-    aget v4, v4, v5
-
-    if-nez v4, :cond_5a
-
-    :cond_59
-    move v3, v2
-
-    :cond_5a
-    move v2, v3
-
-    goto :goto_8
+    goto :goto_9
 .end method
 
 .method static copyStateSet(Landroid/graphics/drawable/Drawable;[I)V
@@ -192,57 +153,38 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 155
-    if-nez p1, :cond_10
-
-    .line 156
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
+    .line 157
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
 
     move-result-object v0
 
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
+    .line 158
+    .local v0, drawableStateSet:[I
+    if-nez p1, :cond_c
 
-    move-result-object v1
-
-    array-length v1, v1
+    .line 159
+    array-length v1, v0
 
     invoke-static {v0, v3, v1, v3}, Ljava/util/Arrays;->fill([IIII)V
 
-    .line 161
-    :goto_f
+    .line 164
+    :goto_b
     return-void
 
-    .line 158
-    :cond_10
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
-
-    move-result-object v0
-
+    .line 161
+    :cond_c
     array-length v1, p1
 
     invoke-static {p1, v3, v0, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 159
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
-
-    move-result-object v0
-
+    .line 162
     array-length v1, p1
 
-    #getter for: Landroid/graphics/drawable/Drawable;->mStateSet:[I
-    invoke-static {p0}, Landroid/graphics/drawable/Drawable;->access$000(Landroid/graphics/drawable/Drawable;)[I
-
-    move-result-object v2
-
-    array-length v2, v2
+    array-length v2, v0
 
     invoke-static {v0, v1, v2, v3}, Ljava/util/Arrays;->fill([IIII)V
 
-    goto :goto_f
+    goto :goto_b
 .end method
 
 .method static miuiSetState(Landroid/graphics/drawable/Drawable;[I)Z

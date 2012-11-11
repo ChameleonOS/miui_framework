@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.*;
 
 // Referenced classes of package android.app:
-//            Activity
+//            Activity, ActionBar
 
 public class ListActivity extends Activity {
 
@@ -80,6 +80,12 @@ public class ListActivity extends Activity {
             setListAdapter(mAdapter);
         mHandler.post(mRequestFocus);
         mFinishedStart = true;
+    }
+
+    protected void onCreate(Bundle bundle) {
+        if(getThemeResId() == 0x60d0089)
+            getActionBar().setHomeViewBackground(0);
+        super.onCreate(bundle);
     }
 
     protected void onDestroy() {

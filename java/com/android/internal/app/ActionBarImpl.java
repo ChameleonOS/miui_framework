@@ -977,6 +977,10 @@ _L6:
         mActionView.setHomeButtonEnabled(flag);
     }
 
+    public void setHomeViewBackground(int i) {
+        mActionView.setHomeViewBackground(i);
+    }
+
     public void setIcon(int i) {
         mActionView.setIcon(i);
     }

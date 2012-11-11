@@ -851,6 +851,32 @@ _L4:
     }
 
     static class Injector {
+        static class ChildSequenceStateTaggingListener
+            implements android.view.ViewGroup.ChildSequenceStateTaggingListener {
+
+            public boolean onTaggingFirstChildSequenceState(ViewGroup viewgroup, View view) {
+                boolean flag;
+                if(((AdapterView) ((AbsListView)viewgroup)).mFirstPosition == 0)
+                    flag = true;
+                else
+                    flag = false;
+                return flag;
+            }
+
+            public boolean onTaggingLastChildSequenceState(ViewGroup viewgroup, View view) {
+                AbsListView abslistview = (AbsListView)viewgroup;
+                boolean flag;
+                if(((AdapterView) (abslistview)).mFirstPosition + abslistview.getChildCount() == abslistview.mAdapter.getCount())
+                    flag = true;
+                else
+                    flag = false;
+                return flag;
+            }
+
+            ChildSequenceStateTaggingListener() {
+            }
+        }
+
 
         static boolean isOutOfTouchRange(AbsListView abslistview, MotionEvent motionevent) {
             boolean flag;
@@ -861,20 +887,12 @@ _L4:
             return flag;
         }
 
-        static void tagSequenceState(View view, int i, Adapter adapter) {
-            if(i == 0) {
-                int j;
-                if(adapter.getCount() == 1)
-                    j = 0x10100a3;
-                else
-                    j = 0x10100a4;
-                view.setAdditionalState(j);
-            } else
-            if(i == -1 + adapter.getCount())
-                view.setAdditionalState(0x10100a6);
-            else
-                view.setAdditionalState(0x10100a5);
+        static void setChildSequenceStateTaggingListener(AbsListView abslistview) {
+            abslistview.setChildSequenceStateTaggingListener(mChildSequenceStateTaggingListener);
         }
+
+        static ChildSequenceStateTaggingListener mChildSequenceStateTaggingListener = new ChildSequenceStateTaggingListener();
+
 
         Injector() {
         }
@@ -1128,6 +1146,7 @@ _L7:
         mOverscrollDistance = viewconfiguration.getScaledOverscrollDistance();
         mOverflingDistance = viewconfiguration.getScaledOverflingDistance();
         mDensityScale = getContext().getResources().getDisplayMetrics().density;
+        Injector.setChildSequenceStateTaggingListener(this);
     }
 
     private void initOrResetVelocityTracker() {

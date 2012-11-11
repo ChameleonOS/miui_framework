@@ -17,8 +17,32 @@
     name = "Injector"
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;
+    }
+.end annotation
+
+
+# static fields
+.field static mChildSequenceStateTaggingListener:Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;
+
 
 # direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .prologue
+    .line 121
+    new-instance v0, Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;
+
+    invoke-direct {v0}, Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;-><init>()V
+
+    sput-object v0, Landroid/widget/AbsListView$Injector;->mChildSequenceStateTaggingListener:Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;
+
+    return-void
+.end method
+
 .method constructor <init>()V
     .registers 1
 
@@ -26,6 +50,7 @@
     .line 120
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
+    .line 131
     return-void
 .end method
 
@@ -35,7 +60,7 @@
     .parameter "ev"
 
     .prologue
-    .line 122
+    .line 124
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -66,11 +91,11 @@
 
     if-lez v0, :cond_1d
 
-    .line 124
+    .line 126
     :cond_1b
     const/4 v0, 0x1
 
-    .line 126
+    .line 128
     :goto_1c
     return v0
 
@@ -80,62 +105,16 @@
     goto :goto_1c
 .end method
 
-.method static tagSequenceState(Landroid/view/View;ILandroid/widget/Adapter;)V
-    .registers 5
-    .parameter "v"
-    .parameter "position"
-    .parameter "adapter"
+.method static setChildSequenceStateTaggingListener(Landroid/widget/AbsListView;)V
+    .registers 2
+    .parameter "list"
 
     .prologue
-    .line 130
-    if-nez p1, :cond_14
+    .line 145
+    sget-object v0, Landroid/widget/AbsListView$Injector;->mChildSequenceStateTaggingListener:Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;
 
-    .line 131
-    invoke-interface {p2}, Landroid/widget/Adapter;->getCount()I
+    invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->setChildSequenceStateTaggingListener(Landroid/view/ViewGroup$ChildSequenceStateTaggingListener;)V
 
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_10
-
-    const v0, 0x10100a3
-
-    :goto_c
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAdditionalState(I)V
-
-    .line 137
-    :goto_f
+    .line 146
     return-void
-
-    .line 131
-    :cond_10
-    const v0, 0x10100a4
-
-    goto :goto_c
-
-    .line 132
-    :cond_14
-    invoke-interface {p2}, Landroid/widget/Adapter;->getCount()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    if-ne p1, v0, :cond_23
-
-    .line 133
-    const v0, 0x10100a6
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAdditionalState(I)V
-
-    goto :goto_f
-
-    .line 135
-    :cond_23
-    const v0, 0x10100a5
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAdditionalState(I)V
-
-    goto :goto_f
 .end method
