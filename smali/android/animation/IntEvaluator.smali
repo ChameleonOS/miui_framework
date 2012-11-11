@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 22
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,12 +37,10 @@
     .parameter "endValue"
 
     .prologue
-    .line 39
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    .line 40
     .local v0, startInt:I
     int-to-float v1, v0
 
@@ -75,7 +72,6 @@
     .parameter "x2"
 
     .prologue
-    .line 22
     check-cast p2, Ljava/lang/Integer;
 
     .end local p2

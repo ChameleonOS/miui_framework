@@ -28,10 +28,8 @@
     .registers 2
 
     .prologue
-    .line 49
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -49,22 +47,18 @@
     .parameter "end"
 
     .prologue
-    .line 60
     if-ltz p1, :cond_6
 
     if-ltz p2, :cond_6
 
     if-ne p1, p2, :cond_8
 
-    .line 61
     :cond_6
     const/4 v0, 0x0
 
-    .line 65
     :goto_7
     return-object v0
 
-    .line 63
     :cond_8
     iget-object v0, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mSegment:[I
 
@@ -72,14 +66,12 @@
 
     aput p1, v0, v1
 
-    .line 64
     iget-object v0, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mSegment:[I
 
     const/4 v1, 0x1
 
     aput p2, v0, v1
 
-    .line 65
     iget-object v0, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mSegment:[I
 
     goto :goto_7
@@ -90,9 +82,7 @@
     .parameter "text"
 
     .prologue
-    .line 56
     iput-object p1, p0, Landroid/view/AccessibilityIterators$AbstractTextSegmentIterator;->mText:Ljava/lang/String;
 
-    .line 57
     return-void
 .end method

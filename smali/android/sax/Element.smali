@@ -43,22 +43,16 @@
     .parameter "depth"
 
     .prologue
-    .line 48
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
     iput-object p1, p0, Landroid/sax/Element;->parent:Landroid/sax/Element;
 
-    .line 50
     iput-object p2, p0, Landroid/sax/Element;->uri:Ljava/lang/String;
 
-    .line 51
     iput-object p3, p0, Landroid/sax/Element;->localName:Ljava/lang/String;
 
-    .line 52
     iput p4, p0, Landroid/sax/Element;->depth:I
 
-    .line 53
     return-void
 .end method
 
@@ -68,7 +62,6 @@
     .parameter "localName"
 
     .prologue
-    .line 172
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -144,14 +137,11 @@
     .end annotation
 
     .prologue
-    .line 191
     iget-object v2, p0, Landroid/sax/Element;->requiredChilden:Ljava/util/ArrayList;
 
-    .line 192
     .local v2, requiredChildren:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/sax/Element;>;"
     if-eqz v2, :cond_48
 
-    .line 193
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -162,20 +152,17 @@
     :goto_a
     if-ltz v1, :cond_48
 
-    .line 194
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/sax/Element;
 
-    .line 195
     .local v0, child:Landroid/sax/Element;
     iget-boolean v3, v0, Landroid/sax/Element;->visited:Z
 
     if-nez v3, :cond_45
 
-    .line 196
     new-instance v3, Landroid/sax/BadXmlException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -222,13 +209,11 @@
 
     throw v3
 
-    .line 193
     :cond_45
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_a
 
-    .line 203
     .end local v0           #child:Landroid/sax/Element;
     .end local v1           #i:I
     :cond_48
@@ -240,7 +225,6 @@
     .parameter "localName"
 
     .prologue
-    .line 60
     const-string v0, ""
 
     invoke-virtual {p0, v0, p1}, Landroid/sax/Element;->getChild(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;
@@ -256,12 +240,10 @@
     .parameter "localName"
 
     .prologue
-    .line 67
     iget-object v0, p0, Landroid/sax/Element;->endTextElementListener:Landroid/sax/EndTextElementListener;
 
     if-eqz v0, :cond_c
 
-    .line 68
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "This element already has an end text element listener. It cannot have children."
@@ -270,20 +252,17 @@
 
     throw v0
 
-    .line 72
     :cond_c
     iget-object v0, p0, Landroid/sax/Element;->children:Landroid/sax/Children;
 
     if-nez v0, :cond_17
 
-    .line 73
     new-instance v0, Landroid/sax/Children;
 
     invoke-direct {v0}, Landroid/sax/Children;-><init>()V
 
     iput-object v0, p0, Landroid/sax/Element;->children:Landroid/sax/Children;
 
-    .line 76
     :cond_17
     iget-object v0, p0, Landroid/sax/Element;->children:Landroid/sax/Children;
 
@@ -299,7 +278,6 @@
     .parameter "localName"
 
     .prologue
-    .line 86
     const-string v0, ""
 
     invoke-virtual {p0, v0, p1}, Landroid/sax/Element;->requireChild(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;
@@ -315,35 +293,29 @@
     .parameter "localName"
 
     .prologue
-    .line 95
     invoke-virtual {p0, p1, p2}, Landroid/sax/Element;->getChild(Ljava/lang/String;Ljava/lang/String;)Landroid/sax/Element;
 
     move-result-object v0
 
-    .line 97
     .local v0, child:Landroid/sax/Element;
     iget-object v1, p0, Landroid/sax/Element;->requiredChilden:Ljava/util/ArrayList;
 
     if-nez v1, :cond_15
 
-    .line 98
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Landroid/sax/Element;->requiredChilden:Ljava/util/ArrayList;
 
-    .line 99
     iget-object v1, p0, Landroid/sax/Element;->requiredChilden:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 106
     :cond_14
     :goto_14
     return-object v0
 
-    .line 101
     :cond_15
     iget-object v1, p0, Landroid/sax/Element;->requiredChilden:Ljava/util/ArrayList;
 
@@ -353,7 +325,6 @@
 
     if-nez v1, :cond_14
 
-    .line 102
     iget-object v1, p0, Landroid/sax/Element;->requiredChilden:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -365,14 +336,11 @@
     .registers 5
 
     .prologue
-    .line 179
     iget-object v1, p0, Landroid/sax/Element;->requiredChilden:Ljava/util/ArrayList;
 
-    .line 180
     .local v1, requiredChildren:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/sax/Element;>;"
     if-eqz v1, :cond_18
 
-    .line 181
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -383,7 +351,6 @@
     :goto_a
     if-ltz v0, :cond_18
 
-    .line 182
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -394,12 +361,10 @@
 
     iput-boolean v3, v2, Landroid/sax/Element;->visited:Z
 
-    .line 181
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_a
 
-    .line 185
     .end local v0           #i:I
     :cond_18
     return-void
@@ -410,13 +375,10 @@
     .parameter "elementListener"
 
     .prologue
-    .line 113
     invoke-virtual {p0, p1}, Landroid/sax/Element;->setStartElementListener(Landroid/sax/StartElementListener;)V
 
-    .line 114
     invoke-virtual {p0, p1}, Landroid/sax/Element;->setEndElementListener(Landroid/sax/EndElementListener;)V
 
-    .line 115
     return-void
 .end method
 
@@ -425,12 +387,10 @@
     .parameter "endElementListener"
 
     .prologue
-    .line 141
     iget-object v0, p0, Landroid/sax/Element;->endElementListener:Landroid/sax/EndElementListener;
 
     if-eqz v0, :cond_c
 
-    .line 142
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "End element listener has already been set."
@@ -439,11 +399,9 @@
 
     throw v0
 
-    .line 145
     :cond_c
     iput-object p1, p0, Landroid/sax/Element;->endElementListener:Landroid/sax/EndElementListener;
 
-    .line 146
     return-void
 .end method
 
@@ -452,12 +410,10 @@
     .parameter "endTextElementListener"
 
     .prologue
-    .line 153
     iget-object v0, p0, Landroid/sax/Element;->endTextElementListener:Landroid/sax/EndTextElementListener;
 
     if-eqz v0, :cond_c
 
-    .line 154
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "End text element listener has already been set."
@@ -466,13 +422,11 @@
 
     throw v0
 
-    .line 158
     :cond_c
     iget-object v0, p0, Landroid/sax/Element;->children:Landroid/sax/Children;
 
     if-eqz v0, :cond_18
 
-    .line 159
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "This element already has children. It cannot have an end text element listener."
@@ -481,11 +435,9 @@
 
     throw v0
 
-    .line 163
     :cond_18
     iput-object p1, p0, Landroid/sax/Element;->endTextElementListener:Landroid/sax/EndTextElementListener;
 
-    .line 164
     return-void
 .end method
 
@@ -494,12 +446,10 @@
     .parameter "startElementListener"
 
     .prologue
-    .line 130
     iget-object v0, p0, Landroid/sax/Element;->startElementListener:Landroid/sax/StartElementListener;
 
     if-eqz v0, :cond_c
 
-    .line 131
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Start element listener has already been set."
@@ -508,11 +458,9 @@
 
     throw v0
 
-    .line 134
     :cond_c
     iput-object p1, p0, Landroid/sax/Element;->startElementListener:Landroid/sax/StartElementListener;
 
-    .line 135
     return-void
 .end method
 
@@ -521,13 +469,10 @@
     .parameter "elementListener"
 
     .prologue
-    .line 121
     invoke-virtual {p0, p1}, Landroid/sax/Element;->setStartElementListener(Landroid/sax/StartElementListener;)V
 
-    .line 122
     invoke-virtual {p0, p1}, Landroid/sax/Element;->setEndTextElementListener(Landroid/sax/EndTextElementListener;)V
 
-    .line 123
     return-void
 .end method
 
@@ -535,7 +480,6 @@
     .registers 3
 
     .prologue
-    .line 168
     iget-object v0, p0, Landroid/sax/Element;->uri:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/sax/Element;->localName:Ljava/lang/String;

@@ -56,69 +56,48 @@
 
     const/4 v0, 0x0
 
-    .line 145
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
-    .line 38
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromXType:I
 
-    .line 39
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToXType:I
 
-    .line 40
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromYType:I
 
-    .line 41
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToYType:I
 
-    .line 43
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromXData:I
 
-    .line 44
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToXData:I
 
-    .line 45
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromYData:I
 
-    .line 46
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToYData:I
 
-    .line 48
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
-    .line 49
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
-    .line 50
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
 
-    .line 51
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
 
-    .line 146
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/animation/ScaleAnimation;->mResources:Landroid/content/res/Resources;
 
-    .line 147
     iput p1, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
-    .line 148
     iput p2, p0, Landroid/view/animation/ScaleAnimation;->mToX:F
 
-    .line 149
     iput p3, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
-    .line 150
     iput p4, p0, Landroid/view/animation/ScaleAnimation;->mToY:F
 
-    .line 151
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotX:F
 
-    .line 152
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotY:F
 
-    .line 153
     return-void
 .end method
 
@@ -136,78 +115,54 @@
 
     const/4 v1, 0x0
 
-    .line 172
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
-    .line 38
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mFromXType:I
 
-    .line 39
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mToXType:I
 
-    .line 40
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mFromYType:I
 
-    .line 41
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mToYType:I
 
-    .line 43
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mFromXData:I
 
-    .line 44
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mToXData:I
 
-    .line 45
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mFromYData:I
 
-    .line 46
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mToYData:I
 
-    .line 48
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
-    .line 49
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
-    .line 50
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
 
-    .line 51
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
 
-    .line 173
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/animation/ScaleAnimation;->mResources:Landroid/content/res/Resources;
 
-    .line 174
     iput p1, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
-    .line 175
     iput p2, p0, Landroid/view/animation/ScaleAnimation;->mToX:F
 
-    .line 176
     iput p3, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
-    .line 177
     iput p4, p0, Landroid/view/animation/ScaleAnimation;->mToY:F
 
-    .line 179
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
-    .line 180
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
-    .line 181
     iput p5, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
 
-    .line 182
     iput p6, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
 
-    .line 183
     invoke-direct {p0}, Landroid/view/animation/ScaleAnimation;->initializePivotPoint()V
 
-    .line 184
     return-void
 .end method
 
@@ -227,78 +182,54 @@
 
     const/4 v0, 0x0
 
-    .line 213
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
-    .line 38
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromXType:I
 
-    .line 39
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToXType:I
 
-    .line 40
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromYType:I
 
-    .line 41
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToYType:I
 
-    .line 43
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromXData:I
 
-    .line 44
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToXData:I
 
-    .line 45
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromYData:I
 
-    .line 46
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToYData:I
 
-    .line 48
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
-    .line 49
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
-    .line 50
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
 
-    .line 51
     iput v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
 
-    .line 214
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/animation/ScaleAnimation;->mResources:Landroid/content/res/Resources;
 
-    .line 215
     iput p1, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
-    .line 216
     iput p2, p0, Landroid/view/animation/ScaleAnimation;->mToX:F
 
-    .line 217
     iput p3, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
-    .line 218
     iput p4, p0, Landroid/view/animation/ScaleAnimation;->mToY:F
 
-    .line 220
     iput p6, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
 
-    .line 221
     iput p5, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
-    .line 222
     iput p8, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
 
-    .line 223
     iput p7, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
-    .line 224
     invoke-direct {p0}, Landroid/view/animation/ScaleAnimation;->initializePivotPoint()V
 
-    .line 225
     return-void
 .end method
 
@@ -314,60 +245,44 @@
 
     const/4 v4, 0x0
 
-    .line 63
     invoke-direct {p0, p1, p2}, Landroid/view/animation/Animation;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 38
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mFromXType:I
 
-    .line 39
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mToXType:I
 
-    .line 40
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mFromYType:I
 
-    .line 41
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mToYType:I
 
-    .line 43
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mFromXData:I
 
-    .line 44
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mToXData:I
 
-    .line 45
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mFromYData:I
 
-    .line 46
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mToYData:I
 
-    .line 48
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
-    .line 49
     iput v4, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
-    .line 50
     iput v5, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
 
-    .line 51
     iput v5, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
 
-    .line 65
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
     iput-object v3, p0, Landroid/view/animation/ScaleAnimation;->mResources:Landroid/content/res/Resources;
 
-    .line 67
     sget-object v3, Lcom/android/internal/R$styleable;->ScaleAnimation:[I
 
     invoke-virtual {p1, p2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 70
     .local v0, a:Landroid/content/res/TypedArray;
     const/4 v3, 0x2
 
@@ -375,26 +290,21 @@
 
     move-result-object v2
 
-    .line 72
     .local v2, tv:Landroid/util/TypedValue;
     iput v5, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
-    .line 73
     if-eqz v2, :cond_3d
 
-    .line 74
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     if-ne v3, v6, :cond_9d
 
-    .line 76
     invoke-virtual {v2}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v3
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
-    .line 82
     :cond_3d
     :goto_3d
     const/4 v3, 0x3
@@ -403,50 +313,40 @@
 
     move-result-object v2
 
-    .line 84
     iput v5, p0, Landroid/view/animation/ScaleAnimation;->mToX:F
 
-    .line 85
     if-eqz v2, :cond_50
 
-    .line 86
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     if-ne v3, v6, :cond_a6
 
-    .line 88
     invoke-virtual {v2}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v3
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mToX:F
 
-    .line 95
     :cond_50
     :goto_50
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v2
 
-    .line 97
     iput v5, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
-    .line 98
     if-eqz v2, :cond_62
 
-    .line 99
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     if-ne v3, v6, :cond_af
 
-    .line 101
     invoke-virtual {v2}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v3
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
-    .line 107
     :cond_62
     :goto_62
     const/4 v3, 0x5
@@ -455,25 +355,20 @@
 
     move-result-object v2
 
-    .line 109
     iput v5, p0, Landroid/view/animation/ScaleAnimation;->mToY:F
 
-    .line 110
     if-eqz v2, :cond_75
 
-    .line 111
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     if-ne v3, v6, :cond_b8
 
-    .line 113
     invoke-virtual {v2}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v3
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mToY:F
 
-    .line 120
     :cond_75
     :goto_75
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
@@ -484,18 +379,15 @@
 
     move-result-object v1
 
-    .line 122
     .local v1, d:Landroid/view/animation/Animation$Description;
     iget v3, v1, Landroid/view/animation/Animation$Description;->type:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
-    .line 123
     iget v3, v1, Landroid/view/animation/Animation$Description;->value:F
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
 
-    .line 125
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
@@ -506,72 +398,59 @@
 
     move-result-object v1
 
-    .line 127
     iget v3, v1, Landroid/view/animation/Animation$Description;->type:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
-    .line 128
     iget v3, v1, Landroid/view/animation/Animation$Description;->value:F
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
 
-    .line 130
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 132
     invoke-direct {p0}, Landroid/view/animation/ScaleAnimation;->initializePivotPoint()V
 
-    .line 133
     return-void
 
-    .line 78
     .end local v1           #d:Landroid/view/animation/Animation$Description;
     :cond_9d
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mFromXType:I
 
-    .line 79
     iget v3, v2, Landroid/util/TypedValue;->data:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mFromXData:I
 
     goto :goto_3d
 
-    .line 90
     :cond_a6
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mToXType:I
 
-    .line 91
     iget v3, v2, Landroid/util/TypedValue;->data:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mToXData:I
 
     goto :goto_50
 
-    .line 103
     :cond_af
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mFromYType:I
 
-    .line 104
     iget v3, v2, Landroid/util/TypedValue;->data:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mFromYData:I
 
     goto :goto_62
 
-    .line 115
     :cond_b8
     iget v3, v2, Landroid/util/TypedValue;->type:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mToYType:I
 
-    .line 116
     iget v3, v2, Landroid/util/TypedValue;->data:I
 
     iput v3, p0, Landroid/view/animation/ScaleAnimation;->mToYData:I
@@ -583,28 +462,23 @@
     .registers 2
 
     .prologue
-    .line 232
     iget v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
     if-nez v0, :cond_8
 
-    .line 233
     iget v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
 
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotX:F
 
-    .line 235
     :cond_8
     iget v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
     if-nez v0, :cond_10
 
-    .line 236
     iget v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
 
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotY:F
 
-    .line 238
     :cond_10
     return-void
 .end method
@@ -621,20 +495,16 @@
 
     const/high16 v6, 0x3f80
 
-    .line 242
     const/high16 v1, 0x3f80
 
-    .line 243
     .local v1, sx:F
     const/high16 v2, 0x3f80
 
-    .line 244
     .local v2, sy:F
     invoke-virtual {p0}, Landroid/view/animation/ScaleAnimation;->getScaleFactor()F
 
     move-result v0
 
-    .line 246
     .local v0, scale:F
     iget v3, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
@@ -648,7 +518,6 @@
 
     if-eqz v3, :cond_21
 
-    .line 247
     :cond_17
     iget v3, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
@@ -662,7 +531,6 @@
 
     add-float v1, v3, v4
 
-    .line 249
     :cond_21
     iget v3, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
@@ -676,7 +544,6 @@
 
     if-eqz v3, :cond_37
 
-    .line 250
     :cond_2d
     iget v3, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
@@ -690,7 +557,6 @@
 
     add-float v2, v3, v4
 
-    .line 253
     :cond_37
     iget v3, p0, Landroid/view/animation/ScaleAnimation;->mPivotX:F
 
@@ -704,18 +570,15 @@
 
     if-nez v3, :cond_4b
 
-    .line 254
     invoke-virtual {p2}, Landroid/view/animation/Transformation;->getMatrix()Landroid/graphics/Matrix;
 
     move-result-object v3
 
     invoke-virtual {v3, v1, v2}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 258
     :goto_4a
     return-void
 
-    .line 256
     :cond_4b
     invoke-virtual {p2}, Landroid/view/animation/Transformation;->getMatrix()Landroid/graphics/Matrix;
 
@@ -742,10 +605,8 @@
     .parameter "parentHeight"
 
     .prologue
-    .line 279
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/animation/Animation;->initialize(IIII)V
 
-    .line 281
     iget v1, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
     iget v2, p0, Landroid/view/animation/ScaleAnimation;->mFromXType:I
@@ -764,7 +625,6 @@
 
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromX:F
 
-    .line 282
     iget v1, p0, Landroid/view/animation/ScaleAnimation;->mToX:F
 
     iget v2, p0, Landroid/view/animation/ScaleAnimation;->mToXType:I
@@ -783,7 +643,6 @@
 
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToX:F
 
-    .line 283
     iget v1, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
     iget v2, p0, Landroid/view/animation/ScaleAnimation;->mFromYType:I
@@ -802,7 +661,6 @@
 
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mFromY:F
 
-    .line 284
     iget v1, p0, Landroid/view/animation/ScaleAnimation;->mToY:F
 
     iget v2, p0, Landroid/view/animation/ScaleAnimation;->mToYType:I
@@ -821,7 +679,6 @@
 
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mToY:F
 
-    .line 286
     iget v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotXType:I
 
     iget v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotXValue:F
@@ -832,7 +689,6 @@
 
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotX:F
 
-    .line 287
     iget v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotYType:I
 
     iget v1, p0, Landroid/view/animation/ScaleAnimation;->mPivotYValue:F
@@ -843,7 +699,6 @@
 
     iput v0, p0, Landroid/view/animation/ScaleAnimation;->mPivotY:F
 
-    .line 288
     return-void
 .end method
 
@@ -856,12 +711,10 @@
     .parameter "psize"
 
     .prologue
-    .line 262
     const/4 v1, 0x6
 
     if-ne p2, v1, :cond_e
 
-    .line 263
     int-to-float v1, p4
 
     int-to-float v2, p5
@@ -870,29 +723,24 @@
 
     move-result v0
 
-    .line 270
     .local v0, targetSize:F
     :goto_9
     if-nez p4, :cond_1c
 
-    .line 271
     const/high16 p1, 0x3f80
 
-    .line 274
     .end local v0           #targetSize:F
     .end local p1
     :cond_d
     :goto_d
     return p1
 
-    .line 264
     .restart local p1
     :cond_e
     const/4 v1, 0x5
 
     if-ne p2, v1, :cond_d
 
-    .line 265
     iget-object v1, p0, Landroid/view/animation/ScaleAnimation;->mResources:Landroid/content/res/Resources;
 
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -906,7 +754,6 @@
     .restart local v0       #targetSize:F
     goto :goto_9
 
-    .line 274
     :cond_1c
     int-to-float v1, p4
 

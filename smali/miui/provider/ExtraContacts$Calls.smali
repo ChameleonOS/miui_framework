@@ -63,7 +63,6 @@
     .registers 3
 
     .prologue
-    .line 208
     const-string v0, "content://call_log/calls_query"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -72,7 +71,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$Calls;->CONTENT_QUERY_URI:Landroid/net/Uri;
 
-    .line 231
     sget-object v0, Landroid/provider/CallLog$Calls;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -100,7 +98,6 @@
     .registers 1
 
     .prologue
-    .line 203
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -119,14 +116,12 @@
     .parameter "forwardedCall"
 
     .prologue
-    .line 361
     new-instance v0, Landroid/content/ContentValues;
 
     const/4 v1, 0x7
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 362
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "firewalltype"
 
@@ -136,7 +131,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 363
     const-string v1, "forwarded_call"
 
     invoke-static {p9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -145,10 +139,8 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 364
     invoke-static {v0}, Landroid/provider/CallLog$Calls;->setExtraCallLogValues(Landroid/content/ContentValues;)V
 
-    .line 365
     invoke-static/range {p0 .. p7}, Landroid/provider/CallLog$Calls;->addCall(Lcom/android/internal/telephony/CallerInfo;Landroid/content/Context;Ljava/lang/String;IIJI)Landroid/net/Uri;
 
     move-result-object v1

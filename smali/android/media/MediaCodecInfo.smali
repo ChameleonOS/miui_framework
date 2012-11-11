@@ -22,13 +22,10 @@
     .parameter "index"
 
     .prologue
-    .line 22
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
     iput p1, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
-    .line 24
     return-void
 .end method
 
@@ -39,7 +36,6 @@
     .parameter "type"
 
     .prologue
-    .line 211
     iget v0, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
     invoke-static {v0, p1}, Landroid/media/MediaCodecList;->getCodecCapabilities(ILjava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
@@ -53,7 +49,6 @@
     .registers 2
 
     .prologue
-    .line 30
     iget v0, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
     invoke-static {v0}, Landroid/media/MediaCodecList;->getCodecName(I)Ljava/lang/String;
@@ -67,7 +62,6 @@
     .registers 2
 
     .prologue
-    .line 44
     iget v0, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
     invoke-static {v0}, Landroid/media/MediaCodecList;->getSupportedTypes(I)[Ljava/lang/String;
@@ -81,7 +75,6 @@
     .registers 2
 
     .prologue
-    .line 37
     iget v0, p0, Landroid/media/MediaCodecInfo;->mIndex:I
 
     invoke-static {v0}, Landroid/media/MediaCodecList;->isEncoder(I)Z

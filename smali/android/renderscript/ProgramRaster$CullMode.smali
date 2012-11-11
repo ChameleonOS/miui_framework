@@ -48,7 +48,6 @@
 
     const/4 v2, 0x0
 
-    .line 37
     new-instance v0, Landroid/renderscript/ProgramRaster$CullMode;
 
     const-string v1, "BACK"
@@ -57,7 +56,6 @@
 
     sput-object v0, Landroid/renderscript/ProgramRaster$CullMode;->BACK:Landroid/renderscript/ProgramRaster$CullMode;
 
-    .line 41
     new-instance v0, Landroid/renderscript/ProgramRaster$CullMode;
 
     const-string v1, "FRONT"
@@ -66,7 +64,6 @@
 
     sput-object v0, Landroid/renderscript/ProgramRaster$CullMode;->FRONT:Landroid/renderscript/ProgramRaster$CullMode;
 
-    .line 45
     new-instance v0, Landroid/renderscript/ProgramRaster$CullMode;
 
     const-string v1, "NONE"
@@ -75,7 +72,6 @@
 
     sput-object v0, Landroid/renderscript/ProgramRaster$CullMode;->NONE:Landroid/renderscript/ProgramRaster$CullMode;
 
-    .line 33
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/renderscript/ProgramRaster$CullMode;
@@ -109,13 +105,10 @@
     .end annotation
 
     .prologue
-    .line 48
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 49
     iput p3, p0, Landroid/renderscript/ProgramRaster$CullMode;->mID:I
 
-    .line 50
     return-void
 .end method
 
@@ -124,7 +117,6 @@
     .parameter "name"
 
     .prologue
-    .line 33
     const-class v0, Landroid/renderscript/ProgramRaster$CullMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +132,6 @@
     .registers 1
 
     .prologue
-    .line 33
     sget-object v0, Landroid/renderscript/ProgramRaster$CullMode;->$VALUES:[Landroid/renderscript/ProgramRaster$CullMode;
 
     invoke-virtual {v0}, [Landroid/renderscript/ProgramRaster$CullMode;->clone()Ljava/lang/Object;

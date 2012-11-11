@@ -19,7 +19,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct {p0}, Landroid/database/Observable;-><init>()V
 
     return-void
@@ -31,12 +30,10 @@
     .registers 4
 
     .prologue
-    .line 31
     iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 36
     :try_start_3
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -50,7 +47,6 @@
     :goto_b
     if-ltz v0, :cond_1b
 
-    .line 37
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -61,19 +57,15 @@
 
     invoke-virtual {v1}, Landroid/database/DataSetObserver;->onChanged()V
 
-    .line 36
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_b
 
-    .line 39
     :cond_1b
     monitor-exit v2
 
-    .line 40
     return-void
 
-    .line 39
     .end local v0           #i:I
     :catchall_1d
     move-exception v1
@@ -89,12 +81,10 @@
     .registers 4
 
     .prologue
-    .line 48
     iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 49
     :try_start_3
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -108,7 +98,6 @@
     :goto_b
     if-ltz v0, :cond_1b
 
-    .line 50
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -119,19 +108,15 @@
 
     invoke-virtual {v1}, Landroid/database/DataSetObserver;->onInvalidated()V
 
-    .line 49
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_b
 
-    .line 52
     :cond_1b
     monitor-exit v2
 
-    .line 53
     return-void
 
-    .line 52
     .end local v0           #i:I
     :catchall_1d
     move-exception v1

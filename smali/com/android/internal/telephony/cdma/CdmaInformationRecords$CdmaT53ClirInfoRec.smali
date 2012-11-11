@@ -24,15 +24,12 @@
     .parameter "cause"
 
     .prologue
-    .line 234
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 235
     int-to-byte v0, p1
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaT53ClirInfoRec;->cause:B
 
-    .line 236
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .registers 3
 
     .prologue
-    .line 240
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

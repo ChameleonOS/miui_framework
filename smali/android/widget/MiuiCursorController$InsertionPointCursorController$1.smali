@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 353
     iput-object p1, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "v"
 
     .prologue
-    .line 356
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
     iget-object v0, v0, Landroid/widget/MiuiCursorController;->mOwner:Landroid/widget/Editor;
@@ -51,7 +49,6 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/Editor;->handleFloatPanelClick(Landroid/view/View;Landroid/widget/MiuiCursorController;)V
 
-    .line 357
     iget-object v0, p0, Landroid/widget/MiuiCursorController$InsertionPointCursorController$1;->this$0:Landroid/widget/MiuiCursorController$InsertionPointCursorController;
 
     #getter for: Landroid/widget/MiuiCursorController$InsertionPointCursorController;->mPanel:Landroid/widget/MiuiCursorController$FloatPanelViewController;
@@ -61,6 +58,5 @@
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController$FloatPanelViewController;->hide()V
 
-    .line 358
     return-void
 .end method

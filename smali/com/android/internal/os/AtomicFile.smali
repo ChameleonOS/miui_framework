@@ -15,13 +15,10 @@
     .parameter "baseName"
 
     .prologue
-    .line 47
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     iput-object p1, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
 
-    .line 49
     new-instance v0, Ljava/io/File;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -50,7 +47,6 @@
 
     iput-object v0, p0, Lcom/android/internal/os/AtomicFile;->mBackupName:Ljava/io/File;
 
-    .line 50
     return-void
 .end method
 
@@ -61,22 +57,17 @@
     .parameter "str"
 
     .prologue
-    .line 102
     if-eqz p1, :cond_14
 
-    .line 103
     invoke-static {p1}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 
-    .line 105
     :try_start_5
     invoke-virtual {p1}, Ljava/io/FileOutputStream;->close()V
 
-    .line 106
     iget-object v1, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
-    .line 107
     iget-object v1, p0, Lcom/android/internal/os/AtomicFile;->mBackupName:Ljava/io/File;
 
     iget-object v2, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
@@ -85,16 +76,13 @@
     :try_end_14
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_14} :catch_15
 
-    .line 112
     :cond_14
     :goto_14
     return-void
 
-    .line 108
     :catch_15
     move-exception v0
 
-    .line 109
     .local v0, e:Ljava/io/IOException;
     const-string v1, "AtomicFile"
 
@@ -110,33 +98,26 @@
     .parameter "str"
 
     .prologue
-    .line 90
     if-eqz p1, :cond_d
 
-    .line 91
     invoke-static {p1}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 
-    .line 93
     :try_start_5
     invoke-virtual {p1}, Ljava/io/FileOutputStream;->close()V
 
-    .line 94
     iget-object v1, p0, Lcom/android/internal/os/AtomicFile;->mBackupName:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_d} :catch_e
 
-    .line 99
     :cond_d
     :goto_d
     return-void
 
-    .line 95
     :catch_e
     move-exception v0
 
-    .line 96
     .local v0, e:Ljava/io/IOException;
     const-string v1, "AtomicFile"
 
@@ -151,7 +132,6 @@
     .registers 2
 
     .prologue
-    .line 53
     iget-object v0, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
 
     return-object v0
@@ -166,7 +146,6 @@
     .end annotation
 
     .prologue
-    .line 116
     :try_start_0
     new-instance v1, Ljava/io/FileOutputStream;
 
@@ -180,11 +159,9 @@
 
     return-object v1
 
-    .line 117
     :catch_9
     move-exception v0
 
-    .line 118
     .local v0, e:Ljava/io/FileNotFoundException;
     new-instance v1, Ljava/io/IOException;
 
@@ -222,7 +199,6 @@
     .end annotation
 
     .prologue
-    .line 134
     iget-object v0, p0, Lcom/android/internal/os/AtomicFile;->mBackupName:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
@@ -231,19 +207,16 @@
 
     if-eqz v0, :cond_14
 
-    .line 135
     iget-object v0, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 136
     iget-object v0, p0, Lcom/android/internal/os/AtomicFile;->mBackupName:Ljava/io/File;
 
     iget-object v1, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
 
     invoke-virtual {v0, v1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
-    .line 138
     :cond_14
     new-instance v0, Ljava/io/FileInputStream;
 
@@ -263,27 +236,22 @@
     .end annotation
 
     .prologue
-    .line 142
     invoke-virtual {p0}, Lcom/android/internal/os/AtomicFile;->openRead()Ljava/io/FileInputStream;
 
     move-result-object v5
 
-    .line 144
     .local v5, stream:Ljava/io/FileInputStream;
     const/4 v4, 0x0
 
-    .line 145
     .local v4, pos:I
     :try_start_5
     invoke-virtual {v5}, Ljava/io/FileInputStream;->available()I
 
     move-result v1
 
-    .line 146
     .local v1, avail:I
     new-array v2, v1, [B
 
-    .line 148
     .local v2, data:[B
     :cond_b
     :goto_b
@@ -297,38 +265,31 @@
 
     move-result v0
 
-    .line 151
     .local v0, amt:I
     if-gtz v0, :cond_17
 
-    .line 165
     invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
 
     return-object v2
 
-    .line 156
     :cond_17
     add-int/2addr v4, v0
 
-    .line 157
     :try_start_18
     invoke-virtual {v5}, Ljava/io/FileInputStream;->available()I
 
     move-result v1
 
-    .line 158
     array-length v6, v2
 
     sub-int/2addr v6, v4
 
     if-le v1, v6, :cond_b
 
-    .line 159
     add-int v6, v4, v1
 
     new-array v3, v6, [B
 
-    .line 160
     .local v3, newData:[B
     const/4 v6, 0x0
 
@@ -338,12 +299,10 @@
     :try_end_29
     .catchall {:try_start_18 .. :try_end_29} :catchall_2b
 
-    .line 161
     move-object v2, v3
 
     goto :goto_b
 
-    .line 165
     .end local v0           #amt:I
     .end local v1           #avail:I
     .end local v2           #data:[B
@@ -367,7 +326,6 @@
     .prologue
     const/4 v7, -0x1
 
-    .line 58
     iget-object v4, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
 
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
@@ -376,7 +334,6 @@
 
     if-eqz v4, :cond_41
 
-    .line 59
     iget-object v4, p0, Lcom/android/internal/os/AtomicFile;->mBackupName:Ljava/io/File;
 
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
@@ -385,7 +342,6 @@
 
     if-nez v4, :cond_4a
 
-    .line 60
     iget-object v4, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
 
     iget-object v5, p0, Lcom/android/internal/os/AtomicFile;->mBackupName:Ljava/io/File;
@@ -396,7 +352,6 @@
 
     if-nez v4, :cond_41
 
-    .line 61
     const-string v4, "AtomicFile"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -433,12 +388,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
     :cond_41
     :goto_41
     const/4 v3, 0x0
 
-    .line 70
     .local v3, str:Ljava/io/FileOutputStream;
     :try_start_42
     new-instance v3, Ljava/io/FileOutputStream;
@@ -450,12 +403,10 @@
     :try_end_49
     .catch Ljava/io/FileNotFoundException; {:try_start_42 .. :try_end_49} :catch_50
 
-    .line 86
     .restart local v3       #str:Ljava/io/FileOutputStream;
     :goto_49
     return-object v3
 
-    .line 65
     .end local v3           #str:Ljava/io/FileOutputStream;
     :cond_4a
     iget-object v4, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
@@ -464,11 +415,9 @@
 
     goto :goto_41
 
-    .line 71
     :catch_50
     move-exception v0
 
-    .line 72
     .local v0, e:Ljava/io/FileNotFoundException;
     iget-object v4, p0, Lcom/android/internal/os/AtomicFile;->mBaseName:Ljava/io/File;
 
@@ -476,7 +425,6 @@
 
     move-result-object v2
 
-    .line 73
     .local v2, parent:Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->mkdir()Z
 
@@ -484,7 +432,6 @@
 
     if-nez v4, :cond_78
 
-    .line 74
     new-instance v4, Ljava/io/IOException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -511,7 +458,6 @@
 
     throw v4
 
-    .line 76
     :cond_78
     invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
 
@@ -521,7 +467,6 @@
 
     invoke-static {v4, v5, v7, v7}, Landroid/os/FileUtils;->setPermissions(Ljava/lang/String;III)I
 
-    .line 81
     :try_start_81
     new-instance v3, Ljava/io/FileOutputStream;
 
@@ -534,12 +479,10 @@
     .restart local v3       #str:Ljava/io/FileOutputStream;
     goto :goto_49
 
-    .line 82
     .end local v3           #str:Ljava/io/FileOutputStream;
     :catch_89
     move-exception v1
 
-    .line 83
     .local v1, e2:Ljava/io/FileNotFoundException;
     new-instance v4, Ljava/io/IOException;
 
@@ -577,7 +520,6 @@
     .end annotation
 
     .prologue
-    .line 124
     :try_start_0
     new-instance v1, Ljava/io/FileOutputStream;
 
@@ -585,26 +527,21 @@
 
     invoke-direct {v1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 125
     .local v1, fos:Ljava/io/FileOutputStream;
     invoke-static {v1}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 
-    .line 126
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_d
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_d} :catch_e
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_d} :catch_2a
 
-    .line 131
     .end local v1           #fos:Ljava/io/FileOutputStream;
     :goto_d
     return-void
 
-    .line 127
     :catch_e
     move-exception v0
 
-    .line 128
     .local v0, e:Ljava/io/FileNotFoundException;
     new-instance v2, Ljava/io/IOException;
 
@@ -632,7 +569,6 @@
 
     throw v2
 
-    .line 129
     .end local v0           #e:Ljava/io/FileNotFoundException;
     :catch_2a
     move-exception v2

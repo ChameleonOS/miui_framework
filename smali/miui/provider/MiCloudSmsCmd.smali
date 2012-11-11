@@ -28,7 +28,6 @@
     .registers 1
 
     .prologue
-    .line 8
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +48,6 @@
 
     const/4 v0, 0x0
 
-    .line 36
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
@@ -72,12 +70,10 @@
 
     if-gez v9, :cond_1c
 
-    .line 60
     :cond_1b
     :goto_1b
     return v0
 
-    .line 40
     :cond_1c
     const-string v9, ","
 
@@ -85,7 +81,6 @@
 
     move-result-object v7
 
-    .line 41
     .local v7, params:[Ljava/lang/String;
     if-eqz v7, :cond_1b
 
@@ -93,29 +88,24 @@
 
     if-lt v9, v11, :cond_1b
 
-    .line 45
     aget-object v3, v7, v8
 
-    .line 46
     .local v3, cmd:Ljava/lang/String;
     const/4 v9, 0x2
 
     aget-object v1, v7, v9
 
-    .line 47
     .local v1, msgId:Ljava/lang/String;
     const/4 v9, 0x3
 
     aget-object v2, v7, v9
 
-    .line 49
     .local v2, time:Ljava/lang/String;
     const/4 v4, 0x0
 
     .local v4, pwd:Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 50
     .local v5, digest:Ljava/lang/String;
     const-string v9, "k"
 
@@ -125,13 +115,10 @@
 
     if-eqz v9, :cond_4d
 
-    .line 51
     aget-object v4, v7, v10
 
-    .line 52
     aget-object v5, v7, v11
 
-    .line 56
     :goto_3d
     const-string v9, "##"
 
@@ -139,7 +126,6 @@
 
     move-result v6
 
-    .line 57
     .local v6, index:I
     invoke-virtual {v5, v0, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -147,15 +133,12 @@
 
     move-object v0, p0
 
-    .line 59
     invoke-static/range {v0 .. v5}, Lmiui/provider/MiCloudSmsCmd;->sendCmd(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     move v0, v8
 
-    .line 60
     goto :goto_1b
 
-    .line 54
     .end local v6           #index:I
     :cond_4d
     aget-object v5, v7, v10
@@ -173,41 +156,33 @@
     .parameter "digest"
 
     .prologue
-    .line 64
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 65
     .local v1, intent:Landroid/content/Intent;
     const-string v2, "android.intent.extra.device_msgId"
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 66
     const-string v2, "android.intent.extra.device_time"
 
     invoke-virtual {v1, v2, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 67
     const-string v2, "android.intent.extra.device_digest"
 
     invoke-virtual {v1, v2, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 68
     const-string v2, "android.intent.extra.device_cmd"
 
     invoke-virtual {v1, v2, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 69
     const-string v2, "android.intent.extra.lock_password"
 
     invoke-virtual {v1, v2, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 71
     const/4 v0, 0x0
 
-    .line 72
     .local v0, action:Ljava/lang/String;
     const-string v2, "l"
 
@@ -217,10 +192,8 @@
 
     if-eqz v2, :cond_37
 
-    .line 73
     const-string/jumbo v0, "miui.intent.action.REQUEST_LOCATION"
 
-    .line 82
     :cond_2a
     :goto_2a
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -229,17 +202,13 @@
 
     if-nez v2, :cond_36
 
-    .line 83
     invoke-virtual {v1, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 84
     invoke-virtual {p0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 86
     :cond_36
     return-void
 
-    .line 74
     :cond_37
     const-string/jumbo v2, "n"
 
@@ -249,12 +218,10 @@
 
     if-eqz v2, :cond_44
 
-    .line 75
     const-string/jumbo v0, "miui.intent.action.NOISE"
 
     goto :goto_2a
 
-    .line 76
     :cond_44
     const-string v2, "k"
 
@@ -264,12 +231,10 @@
 
     if-eqz v2, :cond_50
 
-    .line 77
     const-string/jumbo v0, "miui.intent.action.LOCK_DEVICE"
 
     goto :goto_2a
 
-    .line 78
     :cond_50
     const-string/jumbo v2, "w"
 
@@ -279,7 +244,6 @@
 
     if-eqz v2, :cond_2a
 
-    .line 79
     const-string/jumbo v0, "miui.intent.action.WIPE_DATA"
 
     goto :goto_2a

@@ -40,10 +40,8 @@
     .registers 1
 
     .prologue
-    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 78
     return-void
 .end method
 
@@ -53,7 +51,6 @@
     .parameter "x1"
 
     .prologue
-    .line 37
     iput-object p1, p0, Lcom/android/internal/telephony/ims/IsimUiccRecords;->mIsimImpi:Ljava/lang/String;
 
     return-object p1
@@ -64,7 +61,6 @@
     .parameter "x0"
 
     .prologue
-    .line 37
     invoke-static {p0}, Lcom/android/internal/telephony/ims/IsimUiccRecords;->isimTlvToString([B)Ljava/lang/String;
 
     move-result-object v0
@@ -77,7 +73,6 @@
     .parameter "x0"
 
     .prologue
-    .line 37
     iget-object v0, p0, Lcom/android/internal/telephony/ims/IsimUiccRecords;->mIsimImpu:[Ljava/lang/String;
 
     return-object v0
@@ -89,7 +84,6 @@
     .parameter "x1"
 
     .prologue
-    .line 37
     iput-object p1, p0, Lcom/android/internal/telephony/ims/IsimUiccRecords;->mIsimImpu:[Ljava/lang/String;
 
     return-object p1
@@ -101,7 +95,6 @@
     .parameter "x1"
 
     .prologue
-    .line 37
     iput-object p1, p0, Lcom/android/internal/telephony/ims/IsimUiccRecords;->mIsimDomain:Ljava/lang/String;
 
     return-object p1
@@ -112,7 +105,6 @@
     .parameter "record"
 
     .prologue
-    .line 112
     new-instance v0, Lcom/android/internal/telephony/gsm/SimTlv;
 
     const/4 v1, 0x0
@@ -121,7 +113,6 @@
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/internal/telephony/gsm/SimTlv;-><init>([BII)V
 
-    .line 114
     .local v0, tlv:Lcom/android/internal/telephony/gsm/SimTlv;
     :cond_7
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->getTag()I
@@ -132,7 +123,6 @@
 
     if-ne v1, v2, :cond_1f
 
-    .line 115
     new-instance v1, Ljava/lang/String;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->getData()[B
@@ -147,11 +137,9 @@
 
     invoke-direct {v1, v2, v3}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
-    .line 120
     :goto_1e
     return-object v1
 
-    .line 117
     :cond_1f
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SimTlv;->nextObject()Z
 
@@ -159,14 +147,12 @@
 
     if-nez v1, :cond_7
 
-    .line 119
     const-string v1, "GSM"
 
     const-string v2, "[ISIM] can\'t find TLV tag in ISIM record, returning null"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 120
     const/4 v1, 0x0
 
     goto :goto_1e
@@ -184,7 +170,6 @@
 
     const/16 v2, 0x64
 
-    .line 96
     const/16 v0, 0x6f02
 
     new-instance v1, Lcom/android/internal/telephony/ims/IsimUiccRecords$EfIsimImpiLoaded;
@@ -197,7 +182,6 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
-    .line 98
     const/16 v0, 0x6f04
 
     new-instance v1, Lcom/android/internal/telephony/ims/IsimUiccRecords$EfIsimImpuLoaded;
@@ -210,7 +194,6 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/telephony/IccFileHandler;->loadEFLinearFixedAll(ILandroid/os/Message;)V
 
-    .line 100
     const/16 v0, 0x6f03
 
     new-instance v1, Lcom/android/internal/telephony/ims/IsimUiccRecords$EfIsimDomainLoaded;
@@ -223,7 +206,6 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/internal/telephony/IccFileHandler;->loadEFTransparent(ILandroid/os/Message;)V
 
-    .line 102
     const/4 v0, 0x3
 
     return v0
@@ -233,7 +215,6 @@
     .registers 2
 
     .prologue
-    .line 146
     iget-object v0, p0, Lcom/android/internal/telephony/ims/IsimUiccRecords;->mIsimDomain:Ljava/lang/String;
 
     return-object v0
@@ -243,7 +224,6 @@
     .registers 2
 
     .prologue
-    .line 137
     iget-object v0, p0, Lcom/android/internal/telephony/ims/IsimUiccRecords;->mIsimImpi:Ljava/lang/String;
 
     return-object v0
@@ -253,7 +233,6 @@
     .registers 2
 
     .prologue
-    .line 155
     iget-object v0, p0, Lcom/android/internal/telephony/ims/IsimUiccRecords;->mIsimImpu:[Ljava/lang/String;
 
     if-eqz v0, :cond_d
@@ -280,7 +259,6 @@
     .parameter "s"
 
     .prologue
-    .line 124
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -303,7 +281,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 125
     return-void
 .end method
 
@@ -312,7 +289,6 @@
     .parameter "s"
 
     .prologue
-    .line 128
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -335,6 +311,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 129
     return-void
 .end method

@@ -12,7 +12,6 @@
     .registers 1
 
     .prologue
-    .line 11
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
@@ -26,10 +25,8 @@
     .registers 1
 
     .prologue
-    .line 13
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
     return-void
 .end method
 
@@ -38,7 +35,6 @@
     .parameter "str"
 
     .prologue
-    .line 102
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -63,7 +59,6 @@
 
     if-nez v0, :cond_30
 
-    .line 103
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -88,7 +83,6 @@
 
     move-result-object p0
 
-    .line 105
     .end local p0
     :cond_30
     return-object p0
@@ -101,7 +95,6 @@
     .parameter "user"
 
     .prologue
-    .line 60
     const-string v0, "busybox chmod %s %s"
 
     const/4 v1, 0x2
@@ -135,7 +128,6 @@
     .parameter "user"
 
     .prologue
-    .line 56
     const-string v0, "busybox chown %s.%s %s"
 
     const/4 v1, 0x3
@@ -172,7 +164,6 @@
     .parameter "user"
 
     .prologue
-    .line 72
     const-string v0, "busybox cp -rf %s %s"
 
     const/4 v1, 0x2
@@ -208,7 +199,6 @@
     .parameter "user"
 
     .prologue
-    .line 64
     const-string v0, "busybox mkdir -p %s"
 
     const/4 v1, 0x1
@@ -237,7 +227,6 @@
     .parameter "user"
 
     .prologue
-    .line 68
     const-string v0, "busybox mv -f %s %s"
 
     const/4 v1, 0x2
@@ -273,7 +262,6 @@
     .parameter "user"
 
     .prologue
-    .line 76
     const-string v0, "busybox rm -r %s"
 
     const/4 v1, 0x1
@@ -302,7 +290,6 @@
     .parameter "args"
 
     .prologue
-    .line 84
     const/4 v0, 0x0
 
     invoke-static {v0, p0, p1, p2}, Lmiui/util/CommandLineUtils;->run(ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Z
@@ -328,7 +315,6 @@
 
     const/4 v4, 0x0
 
-    .line 88
     array-length v1, p3
 
     if-lez v1, :cond_23
@@ -337,7 +323,6 @@
 
     move-result-object v0
 
-    .line 89
     .local v0, cmd:Ljava/lang/String;
     :goto_b
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -369,10 +354,8 @@
     :cond_23
     move-object v0, p2
 
-    .line 88
     goto :goto_b
 
-    .line 89
     .restart local v0       #cmd:Ljava/lang/String;
     :cond_25
     new-array v1, v2, [Ljava/lang/String;
@@ -417,7 +400,6 @@
 
     const/4 v4, 0x0
 
-    .line 95
     array-length v1, p2
 
     if-lez v1, :cond_23
@@ -426,7 +408,6 @@
 
     move-result-object v0
 
-    .line 96
     .local v0, cmd:Ljava/lang/String;
     :goto_b
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -458,10 +439,8 @@
     :cond_23
     move-object v0, p1
 
-    .line 95
     goto :goto_b
 
-    .line 96
     .restart local v0       #cmd:Ljava/lang/String;
     :cond_25
     new-array v1, v2, [Ljava/lang/String;
@@ -496,10 +475,8 @@
     .parameter "cmd"
 
     .prologue
-    .line 17
     const/4 v2, 0x0
 
-    .line 20
     .local v2, result:Ljava/io/InputStream;
     :try_start_1
     sget-object v4, Lmiui/util/CommandLineUtils;->sLock:Ljava/lang/Object;
@@ -508,7 +485,6 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_4} :catch_1f
 
-    .line 21
     :try_start_4
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
@@ -518,40 +494,33 @@
 
     move-result-object v1
 
-    .line 22
     .local v1, p:Ljava/lang/Process;
     monitor-exit v4
     :try_end_d
     .catchall {:try_start_4 .. :try_end_d} :catchall_1c
 
-    .line 24
     :try_start_d
     invoke-virtual {v1}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v2
 
-    .line 25
     invoke-virtual {v1}, Ljava/lang/Process;->waitFor()I
 
     move-result v3
 
     if-eqz v3, :cond_1b
 
-    .line 26
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_1a
     .catch Ljava/lang/Exception; {:try_start_d .. :try_end_1a} :catch_1f
 
-    .line 27
     const/4 v2, 0x0
 
-    .line 33
     .end local v1           #p:Ljava/lang/Process;
     :cond_1b
     :goto_1b
     return-object v2
 
-    .line 22
     :catchall_1c
     move-exception v3
 
@@ -565,11 +534,9 @@
     :try_end_1f
     .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_1f} :catch_1f
 
-    .line 29
     :catch_1f
     move-exception v0
 
-    .line 30
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -582,10 +549,8 @@
     .parameter "cmd"
 
     .prologue
-    .line 37
     const/4 v2, 0x1
 
-    .line 40
     .local v2, result:Z
     :try_start_1
     sget-object v4, Lmiui/util/CommandLineUtils;->sLock:Ljava/lang/Object;
@@ -594,7 +559,6 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_4} :catch_1a
 
-    .line 41
     :try_start_4
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
@@ -604,13 +568,11 @@
 
     move-result-object v1
 
-    .line 42
     .local v1, p:Ljava/lang/Process;
     monitor-exit v4
     :try_end_d
     .catchall {:try_start_4 .. :try_end_d} :catchall_17
 
-    .line 44
     if-nez p0, :cond_16
 
     :try_start_f
@@ -622,16 +584,13 @@
 
     if-eqz v3, :cond_16
 
-    .line 45
     const/4 v2, 0x0
 
-    .line 52
     .end local v1           #p:Ljava/lang/Process;
     :cond_16
     :goto_16
     return v2
 
-    .line 42
     :catchall_17
     move-exception v3
 
@@ -645,15 +604,12 @@
     :try_end_1a
     .catch Ljava/lang/Exception; {:try_start_19 .. :try_end_1a} :catch_1a
 
-    .line 47
     :catch_1a
     move-exception v0
 
-    .line 48
     .local v0, e:Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 49
     const/4 v2, 0x0
 
     goto :goto_16
@@ -666,7 +622,6 @@
     .parameter "user"
 
     .prologue
-    .line 80
     const-string v0, "busybox ln -sf %s %s"
 
     const/4 v1, 0x2

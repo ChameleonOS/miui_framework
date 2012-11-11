@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 130
     iput-object p1, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection$1;->this$1:Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;
 
     iput-object p2, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection$1;->val$wapPushConnection:Landroid/content/ServiceConnection;
@@ -43,7 +42,6 @@
     .registers 5
 
     .prologue
-    .line 132
     :goto_0
     iget-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection$1;->this$1:Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;
 
@@ -54,7 +52,6 @@
 
     if-nez v0, :cond_27
 
-    .line 133
     iget-object v0, p0, Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection$1;->this$1:Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;
 
     #getter for: Lcom/android/internal/telephony/WapPushOverSms$WapPushConnection;->mOwner:Landroid/content/Context;
@@ -78,7 +75,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    .line 136
     const-wide/16 v0, 0x3e8
 
     :try_start_21
@@ -88,13 +84,11 @@
 
     goto :goto_0
 
-    .line 137
     :catch_25
     move-exception v0
 
     goto :goto_0
 
-    .line 141
     :cond_27
     return-void
 .end method

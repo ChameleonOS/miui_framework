@@ -512,7 +512,6 @@
     .registers 1
 
     .prologue
-    .line 22
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -523,22 +522,18 @@
     .parameter "format"
 
     .prologue
-    .line 280
     sparse-switch p0, :sswitch_data_8
 
-    .line 292
     const/4 v0, 0x0
 
     :goto_4
     return v0
 
-    .line 290
     :sswitch_5
     const/4 v0, 0x1
 
     goto :goto_4
 
-    .line 280
     nop
 
     :sswitch_data_8

@@ -14,7 +14,6 @@
     .registers 3
 
     .prologue
-    .line 22
     const/16 v0, 0x28
 
     new-array v0, v0, [Ljava/lang/String;
@@ -261,7 +260,6 @@
 
     sput-object v0, Lmiui/util/GraphicsUtils;->suffix:[Ljava/lang/String;
 
-    .line 31
     const-string v0, "[\u4e00-\u9fa5]"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -277,7 +275,6 @@
     .registers 1
 
     .prologue
-    .line 21
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -292,26 +289,20 @@
     .parameter "color"
 
     .prologue
-    .line 43
     if-gtz p2, :cond_4
 
-    .line 44
     const/4 v2, 0x0
 
-    .line 98
     :goto_3
     return-object v2
 
-    .line 46
     :cond_4
     if-gtz p3, :cond_8
 
-    .line 47
     const/4 v2, 0x0
 
     goto :goto_3
 
-    .line 49
     :cond_8
     invoke-static/range {p1 .. p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -319,12 +310,10 @@
 
     if-eqz v11, :cond_10
 
-    .line 50
     const/4 v2, 0x0
 
     goto :goto_3
 
-    .line 51
     :cond_10
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -334,38 +323,31 @@
 
     move-result-object v10
 
-    .line 52
     .local v10, word:Ljava/lang/String;
     if-nez v10, :cond_1c
 
-    .line 53
     const/4 v2, 0x0
 
     goto :goto_3
 
-    .line 54
     :cond_1c
     invoke-virtual {v10}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 55
     invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v11
 
     if-eqz v11, :cond_28
 
-    .line 56
     const/4 v2, 0x0
 
     goto :goto_3
 
-    .line 58
     :cond_28
     move-object/from16 v3, p0
 
-    .line 59
     .local v3, bmpSrc:Landroid/graphics/Bitmap;
     const/4 v11, 0x0
 
@@ -377,35 +359,29 @@
 
     move-result-object v2
 
-    .line 60
     .local v2, bmp:Landroid/graphics/Bitmap;
     new-instance v4, Landroid/graphics/Canvas;
 
     invoke-direct {v4, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 61
     .local v4, canvas:Landroid/graphics/Canvas;
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 62
     new-instance v8, Landroid/graphics/Paint;
 
     invoke-direct {v8}, Landroid/graphics/Paint;-><init>()V
 
-    .line 63
     .local v8, paint:Landroid/graphics/Paint;
     move/from16 v0, p4
 
     invoke-virtual {v8, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 64
     invoke-static/range {p1 .. p1}, Lmiui/util/GraphicsUtils;->isChinese(Ljava/lang/String;)Z
 
     move-result v11
 
     if-eqz v11, :cond_70
 
-    .line 65
     invoke-static/range {p2 .. p3}, Landroid/util/MathUtils;->min(II)F
 
     move-result v11
@@ -416,7 +392,6 @@
 
     invoke-virtual {v8, v11}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 66
     move/from16 v0, p2
 
     int-to-double v11, v0
@@ -445,7 +420,6 @@
 
     goto :goto_3
 
-    .line 68
     :cond_70
     const-string v11, " |\\.|-|,|\\(|\\)|\uff08|\uff09|\u2014"
 
@@ -453,27 +427,21 @@
 
     move-result-object v7
 
-    .line 69
     .local v7, nameStrs:[Ljava/lang/String;
     if-nez v7, :cond_7d
 
-    .line 70
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 71
     const/4 v2, 0x0
 
     goto :goto_3
 
-    .line 73
     :cond_7d
     const/4 v5, 0x0
 
-    .line 74
     .local v5, first:Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 75
     .local v9, second:Ljava/lang/String;
     const/4 v6, 0x0
 
@@ -483,7 +451,6 @@
 
     if-ge v6, v11, :cond_a3
 
-    .line 76
     aget-object v11, v7, v6
 
     invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -496,28 +463,23 @@
 
     if-nez v11, :cond_97
 
-    .line 77
     if-nez v5, :cond_9a
 
-    .line 78
     aget-object v11, v7, v6
 
     invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 75
     :cond_97
     :goto_97
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_80
 
-    .line 79
     :cond_9a
     if-nez v9, :cond_a3
 
-    .line 80
     aget-object v11, v7, v6
 
     invoke-virtual {v11}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -526,23 +488,18 @@
 
     goto :goto_97
 
-    .line 86
     :cond_a3
     if-nez v5, :cond_ab
 
-    .line 87
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 88
     const/4 v2, 0x0
 
     goto/16 :goto_3
 
-    .line 89
     :cond_ab
     if-nez v9, :cond_d3
 
-    .line 90
     invoke-static/range {p2 .. p3}, Landroid/util/MathUtils;->min(II)F
 
     move-result v11
@@ -553,7 +510,6 @@
 
     invoke-virtual {v8, v11}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 91
     move/from16 v0, p2
 
     int-to-double v11, v0
@@ -582,7 +538,6 @@
 
     goto/16 :goto_3
 
-    .line 93
     :cond_d3
     invoke-static/range {p2 .. p3}, Landroid/util/MathUtils;->min(II)F
 
@@ -594,7 +549,6 @@
 
     invoke-virtual {v8, v11}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 94
     move/from16 v0, p2
 
     int-to-double v11, v0
@@ -621,7 +575,6 @@
 
     invoke-virtual {v4, v5, v11, v12, v8}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 95
     move/from16 v0, p2
 
     int-to-double v11, v0
@@ -656,19 +609,16 @@
     .parameter "name"
 
     .prologue
-    .line 106
     invoke-static {p0}, Lmiui/util/GraphicsUtils;->isChinese(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_11
 
-    .line 107
     invoke-static {p0}, Lmiui/util/GraphicsUtils;->removeSuffix(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 108
     .local v1, word:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -676,17 +626,14 @@
 
     if-eqz v2, :cond_12
 
-    .line 109
     const/4 p0, 0x0
 
-    .line 113
     .end local p0
     .local v0, length:I
     :cond_11
     :goto_11
     return-object p0
 
-    .line 110
     .end local v0           #length:I
     .restart local p0
     :cond_12
@@ -694,7 +641,6 @@
 
     move-result v0
 
-    .line 111
     .restart local v0       #length:I
     add-int/lit8 v2, v0, -0x1
 
@@ -710,7 +656,6 @@
     .parameter "name"
 
     .prologue
-    .line 102
     sget-object v0, Lmiui/util/GraphicsUtils;->sAsiaLangPattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -735,29 +680,23 @@
 
     const/4 v9, 0x0
 
-    .line 156
     if-nez p0, :cond_6
 
-    .line 157
     const/4 v4, 0x0
 
-    .line 177
     :goto_5
     return-object v4
 
-    .line 160
     :cond_6
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v5
 
-    .line 161
     .local v5, width:I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
 
-    .line 162
     .local v1, height:I
     sget-object v6, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -765,13 +704,11 @@
 
     move-result-object v4
 
-    .line 163
     .local v4, round:Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v4}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 165
     .local v0, canvas:Landroid/graphics/Canvas;
     new-instance v3, Landroid/graphics/Paint;
 
@@ -779,7 +716,6 @@
 
     invoke-direct {v3, v6}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 166
     .local v3, paint:Landroid/graphics/Paint;
     invoke-static {v5, v1}, Ljava/lang/Math;->min(II)I
 
@@ -787,26 +723,21 @@
 
     div-int/lit8 v2, v6, 0x3
 
-    .line 167
     .local v2, minRound:I
     invoke-static {p1, v2}, Ljava/lang/Math;->min(II)I
 
     move-result p1
 
-    .line 168
     invoke-static {p2, v2}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    .line 170
     invoke-virtual {v0, v7, v7, v7, v7}, Landroid/graphics/Canvas;->drawARGB(IIII)V
 
-    .line 171
     const v6, -0xbdbdbe
 
     invoke-virtual {v3, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 172
     new-instance v6, Landroid/graphics/RectF;
 
     int-to-float v7, v5
@@ -821,7 +752,6 @@
 
     invoke-virtual {v0, v6, v7, v8, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 174
     new-instance v6, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -830,7 +760,6 @@
 
     invoke-virtual {v3, v6}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 175
     invoke-virtual {v0, p0, v9, v9, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     goto :goto_5
@@ -843,10 +772,8 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 118
     move-object v3, p0
 
-    .line 119
     .local v3, result:Ljava/lang/String;
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -854,23 +781,18 @@
 
     if-eqz v4, :cond_a
 
-    .line 120
     const/4 v4, 0x0
 
-    .line 144
     :goto_9
     return-object v4
 
-    .line 121
     :cond_a
     const/4 v1, 0x0
 
-    .line 123
     .local v1, found:Z
     :cond_b
     const/4 v1, 0x0
 
-    .line 124
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -881,7 +803,6 @@
 
     if-ge v2, v4, :cond_34
 
-    .line 125
     sget-object v4, Lmiui/util/GraphicsUtils;->suffix:[Ljava/lang/String;
 
     aget-object v4, v4, v2
@@ -892,10 +813,8 @@
 
     if-eqz v4, :cond_44
 
-    .line 126
     const/4 v1, 0x1
 
-    .line 127
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -914,7 +833,6 @@
 
     move-result-object v3
 
-    .line 138
     :cond_2e
     :goto_2e
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -923,7 +841,6 @@
 
     if-eqz v4, :cond_8c
 
-    .line 140
     :cond_34
     if-eqz v1, :cond_3c
 
@@ -933,11 +850,9 @@
 
     if-eqz v4, :cond_b
 
-    .line 141
     :cond_3c
     if-eqz v3, :cond_42
 
-    .line 142
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v3
@@ -945,10 +860,8 @@
     :cond_42
     move-object v4, v3
 
-    .line 144
     goto :goto_9
 
-    .line 129
     :cond_44
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
@@ -960,7 +873,6 @@
 
     move-result v0
 
-    .line 131
     .local v0, c:C
     const/16 v4, 0x41
 
@@ -1012,11 +924,9 @@
 
     if-ne v0, v4, :cond_2e
 
-    .line 134
     :cond_80
     const/4 v1, 0x1
 
-    .line 135
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -1029,7 +939,6 @@
 
     goto :goto_2e
 
-    .line 124
     .end local v0           #c:C
     :cond_8c
     add-int/lit8 v2, v2, 0x1

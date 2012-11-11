@@ -53,44 +53,35 @@
 
     const/4 v2, 0x0
 
-    .line 103
     sget-object v3, Landroid/media/audiofx/Virtualizer;->EFFECT_TYPE_VIRTUALIZER:Ljava/util/UUID;
 
     sget-object v4, Landroid/media/audiofx/Virtualizer;->EFFECT_TYPE_NULL:Ljava/util/UUID;
 
     invoke-direct {p0, v3, v4, p1, p2}, Landroid/media/audiofx/AudioEffect;-><init>(Ljava/util/UUID;Ljava/util/UUID;II)V
 
-    .line 69
     iput-boolean v2, p0, Landroid/media/audiofx/Virtualizer;->mStrengthSupported:Z
 
-    .line 74
     iput-object v5, p0, Landroid/media/audiofx/Virtualizer;->mParamListener:Landroid/media/audiofx/Virtualizer$OnParameterChangeListener;
 
-    .line 79
     iput-object v5, p0, Landroid/media/audiofx/Virtualizer;->mBaseParamListener:Landroid/media/audiofx/Virtualizer$BaseParameterListener;
 
-    .line 84
     new-instance v3, Ljava/lang/Object;
 
     invoke-direct/range {v3 .. v3}, Ljava/lang/Object;-><init>()V
 
     iput-object v3, p0, Landroid/media/audiofx/Virtualizer;->mParamListenerLock:Ljava/lang/Object;
 
-    .line 105
     if-nez p2, :cond_20
 
-    .line 106
     const-string v3, "Virtualizer"
 
     const-string v4, "WARNING: attaching a Virtualizer to global output mix is deprecated!"
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 109
     :cond_20
     new-array v0, v1, [I
 
-    .line 110
     .local v0, value:[I
     invoke-virtual {p0, v2, v0}, Landroid/media/audiofx/Virtualizer;->getParameter(I[I)I
 
@@ -98,7 +89,6 @@
 
     invoke-virtual {p0, v3}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
 
-    .line 111
     aget v3, v0, v2
 
     if-eqz v3, :cond_30
@@ -106,13 +96,11 @@
     :goto_2d
     iput-boolean v1, p0, Landroid/media/audiofx/Virtualizer;->mStrengthSupported:Z
 
-    .line 112
     return-void
 
     :cond_30
     move v1, v2
 
-    .line 111
     goto :goto_2d
 .end method
 
@@ -121,7 +109,6 @@
     .parameter "x0"
 
     .prologue
-    .line 51
     iget-object v0, p0, Landroid/media/audiofx/Virtualizer;->mParamListenerLock:Ljava/lang/Object;
 
     return-object v0
@@ -132,7 +119,6 @@
     .parameter "x0"
 
     .prologue
-    .line 51
     iget-object v0, p0, Landroid/media/audiofx/Virtualizer;->mParamListener:Landroid/media/audiofx/Virtualizer$OnParameterChangeListener;
 
     return-object v0
@@ -153,16 +139,13 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 277
     new-instance v0, Landroid/media/audiofx/Virtualizer$Settings;
 
     invoke-direct {v0}, Landroid/media/audiofx/Virtualizer$Settings;-><init>()V
 
-    .line 278
     .local v0, settings:Landroid/media/audiofx/Virtualizer$Settings;
     new-array v1, v2, [S
 
-    .line 279
     .local v1, value:[S
     invoke-virtual {p0, v2, v1}, Landroid/media/audiofx/Virtualizer;->getParameter(I[S)I
 
@@ -170,14 +153,12 @@
 
     invoke-virtual {p0, v2}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
 
-    .line 280
     const/4 v2, 0x0
 
     aget-short v2, v1, v2
 
     iput-short v2, v0, Landroid/media/audiofx/Virtualizer$Settings;->strength:S
 
-    .line 281
     return-object v0
 .end method
 
@@ -194,10 +175,8 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 149
     new-array v0, v1, [S
 
-    .line 150
     .local v0, value:[S
     invoke-virtual {p0, v1, v0}, Landroid/media/audiofx/Virtualizer;->getParameter(I[S)I
 
@@ -205,7 +184,6 @@
 
     invoke-virtual {p0, v1}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
 
-    .line 151
     const/4 v1, 0x0
 
     aget-short v1, v0, v1
@@ -217,7 +195,6 @@
     .registers 2
 
     .prologue
-    .line 120
     iget-boolean v0, p0, Landroid/media/audiofx/Virtualizer;->mStrengthSupported:Z
 
     return v0
@@ -228,21 +205,17 @@
     .parameter "listener"
 
     .prologue
-    .line 209
     iget-object v1, p0, Landroid/media/audiofx/Virtualizer;->mParamListenerLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 210
     :try_start_3
     iget-object v0, p0, Landroid/media/audiofx/Virtualizer;->mParamListener:Landroid/media/audiofx/Virtualizer$OnParameterChangeListener;
 
     if-nez v0, :cond_16
 
-    .line 211
     iput-object p1, p0, Landroid/media/audiofx/Virtualizer;->mParamListener:Landroid/media/audiofx/Virtualizer$OnParameterChangeListener;
 
-    .line 212
     new-instance v0, Landroid/media/audiofx/Virtualizer$BaseParameterListener;
 
     const/4 v2, 0x0
@@ -251,19 +224,15 @@
 
     iput-object v0, p0, Landroid/media/audiofx/Virtualizer;->mBaseParamListener:Landroid/media/audiofx/Virtualizer$BaseParameterListener;
 
-    .line 213
     iget-object v0, p0, Landroid/media/audiofx/Virtualizer;->mBaseParamListener:Landroid/media/audiofx/Virtualizer$BaseParameterListener;
 
     invoke-super {p0, v0}, Landroid/media/audiofx/AudioEffect;->setParameterListener(Landroid/media/audiofx/AudioEffect$OnParameterChangeListener;)V
 
-    .line 215
     :cond_16
     monitor-exit v1
 
-    .line 216
     return-void
 
-    .line 215
     :catchall_18
     move-exception v0
 
@@ -286,7 +255,6 @@
     .end annotation
 
     .prologue
-    .line 294
     const/4 v0, 0x1
 
     iget-short v1, p1, Landroid/media/audiofx/Virtualizer$Settings;->strength:S
@@ -297,7 +265,6 @@
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
 
-    .line 295
     return-void
 .end method
 
@@ -313,7 +280,6 @@
     .end annotation
 
     .prologue
-    .line 136
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0, p1}, Landroid/media/audiofx/Virtualizer;->setParameter(IS)I
@@ -322,6 +288,5 @@
 
     invoke-virtual {p0, v0}, Landroid/media/audiofx/Virtualizer;->checkStatus(I)V
 
-    .line 137
     return-void
 .end method

@@ -30,7 +30,6 @@
     .registers 1
 
     .prologue
-    .line 108
     new-instance v0, Landroid/graphics/Point$1;
 
     invoke-direct {v0}, Landroid/graphics/Point$1;-><init>()V
@@ -44,7 +43,6 @@
     .registers 1
 
     .prologue
-    .line 30
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,16 +54,12 @@
     .parameter "y"
 
     .prologue
-    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     iput p1, p0, Landroid/graphics/Point;->x:I
 
-    .line 34
     iput p2, p0, Landroid/graphics/Point;->y:I
 
-    .line 35
     return-void
 .end method
 
@@ -74,20 +68,16 @@
     .parameter "src"
 
     .prologue
-    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     iget v0, p1, Landroid/graphics/Point;->x:I
 
     iput v0, p0, Landroid/graphics/Point;->x:I
 
-    .line 39
     iget v0, p1, Landroid/graphics/Point;->y:I
 
     iput v0, p0, Landroid/graphics/Point;->y:I
 
-    .line 40
     return-void
 .end method
 
@@ -97,7 +87,6 @@
     .registers 2
 
     .prologue
-    .line 94
     const/4 v0, 0x0
 
     return v0
@@ -109,7 +98,6 @@
     .parameter "y"
 
     .prologue
-    .line 70
     iget v0, p0, Landroid/graphics/Point;->x:I
 
     if-ne v0, p1, :cond_a
@@ -136,17 +124,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 74
     instance-of v2, p1, Landroid/graphics/Point;
 
     if-eqz v2, :cond_15
 
     move-object v0, p1
 
-    .line 75
     check-cast v0, Landroid/graphics/Point;
 
-    .line 76
     .local v0, p:Landroid/graphics/Point;
     iget v2, p0, Landroid/graphics/Point;->x:I
 
@@ -162,7 +147,6 @@
 
     const/4 v1, 0x1
 
-    .line 78
     .end local v0           #p:Landroid/graphics/Point;
     :cond_15
     return v1
@@ -172,7 +156,6 @@
     .registers 3
 
     .prologue
-    .line 82
     iget v0, p0, Landroid/graphics/Point;->x:I
 
     mul-int/lit16 v0, v0, 0x7fc9
@@ -188,21 +171,18 @@
     .registers 2
 
     .prologue
-    .line 54
     iget v0, p0, Landroid/graphics/Point;->x:I
 
     neg-int v0, v0
 
     iput v0, p0, Landroid/graphics/Point;->x:I
 
-    .line 55
     iget v0, p0, Landroid/graphics/Point;->y:I
 
     neg-int v0, v0
 
     iput v0, p0, Landroid/graphics/Point;->y:I
 
-    .line 56
     return-void
 .end method
 
@@ -212,21 +192,18 @@
     .parameter "dy"
 
     .prologue
-    .line 62
     iget v0, p0, Landroid/graphics/Point;->x:I
 
     add-int/2addr v0, p1
 
     iput v0, p0, Landroid/graphics/Point;->x:I
 
-    .line 63
     iget v0, p0, Landroid/graphics/Point;->y:I
 
     add-int/2addr v0, p2
 
     iput v0, p0, Landroid/graphics/Point;->y:I
 
-    .line 64
     return-void
 .end method
 
@@ -235,21 +212,18 @@
     .parameter "in"
 
     .prologue
-    .line 133
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/graphics/Point;->x:I
 
-    .line 134
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/graphics/Point;->y:I
 
-    .line 135
     return-void
 .end method
 
@@ -259,13 +233,10 @@
     .parameter "y"
 
     .prologue
-    .line 46
     iput p1, p0, Landroid/graphics/Point;->x:I
 
-    .line 47
     iput p2, p0, Landroid/graphics/Point;->y:I
 
-    .line 48
     return-void
 .end method
 
@@ -273,7 +244,6 @@
     .registers 3
 
     .prologue
-    .line 86
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -321,16 +291,13 @@
     .parameter "flags"
 
     .prologue
-    .line 104
     iget v0, p0, Landroid/graphics/Point;->x:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 105
     iget v0, p0, Landroid/graphics/Point;->y:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 106
     return-void
 .end method

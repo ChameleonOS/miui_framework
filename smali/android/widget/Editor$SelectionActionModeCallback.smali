@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 2643
     iput-object p1, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 2643
     invoke-direct {p0, p1}, Landroid/widget/Editor$SelectionActionModeCallback;-><init>(Landroid/widget/Editor;)V
 
     return-void
@@ -55,7 +53,6 @@
     .parameter "item"
 
     .prologue
-    .line 2726
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-object v0, v0, Landroid/widget/Editor;->mCustomSelectionActionModeCallback:Landroid/view/ActionMode$Callback;
@@ -72,10 +69,8 @@
 
     if-eqz v0, :cond_12
 
-    .line 2728
     const/4 v0, 0x1
 
-    .line 2730
     :goto_11
     return v0
 
@@ -110,7 +105,6 @@
 
     const/4 v3, 0x0
 
-    .line 2647
     iget-object v5, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -128,7 +122,6 @@
 
     move-result-object v2
 
-    .line 2650
     .local v2, styledAttributes:Landroid/content/res/TypedArray;
     iget-object v5, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -151,7 +144,6 @@
 
     move-result v0
 
-    .line 2653
     .local v0, allowText:Z
     iget-object v5, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -172,29 +164,23 @@
 
     invoke-virtual {p1, v5}, Landroid/view/ActionMode;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 2655
     const/4 v5, 0x0
 
     invoke-virtual {p1, v5}, Landroid/view/ActionMode;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 2656
     invoke-virtual {p1, v4}, Landroid/view/ActionMode;->setTitleOptionalHint(Z)V
 
-    .line 2658
     const/4 v1, 0x0
 
-    .line 2659
     .local v1, selectAllIconId:I
     if-nez v0, :cond_4b
 
-    .line 2661
     const/4 v5, 0x3
 
     invoke-virtual {v2, v5, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
-    .line 2665
     :cond_4b
     const v5, 0x102001f
 
@@ -216,7 +202,6 @@
 
     invoke-interface {v5, v7}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    .line 2671
     iget-object v5, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -230,7 +215,6 @@
 
     if-eqz v5, :cond_89
 
-    .line 2672
     const v5, 0x1020020
 
     const v6, 0x1040003
@@ -255,7 +239,6 @@
 
     invoke-interface {v5, v7}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    .line 2680
     :cond_89
     iget-object v5, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -270,7 +253,6 @@
 
     if-eqz v5, :cond_b0
 
-    .line 2681
     const v5, 0x1020021
 
     const v6, 0x1040001
@@ -295,7 +277,6 @@
 
     invoke-interface {v5, v7}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    .line 2689
     :cond_b0
     iget-object v5, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -310,7 +291,6 @@
 
     if-eqz v5, :cond_d8
 
-    .line 2690
     const v5, 0x1020022
 
     const v6, 0x104000b
@@ -337,18 +317,15 @@
 
     invoke-interface {v5, v7}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    .line 2698
     :cond_d8
     invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 2700
     iget-object v5, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-object v5, v5, Landroid/widget/Editor;->mCustomSelectionActionModeCallback:Landroid/view/ActionMode$Callback;
 
     if-eqz v5, :cond_ec
 
-    .line 2701
     iget-object v5, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-object v5, v5, Landroid/widget/Editor;->mCustomSelectionActionModeCallback:Landroid/view/ActionMode$Callback;
@@ -359,12 +336,10 @@
 
     if-nez v5, :cond_ec
 
-    .line 2712
     :cond_eb
     :goto_eb
     return v3
 
-    .line 2707
     :cond_ec
     invoke-interface {p2}, Landroid/view/Menu;->hasVisibleItems()Z
 
@@ -378,7 +353,6 @@
 
     if-eqz v5, :cond_eb
 
-    .line 2708
     :cond_f8
     iget-object v3, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -388,7 +362,6 @@
 
     invoke-virtual {v3}, Landroid/widget/MiuiCursorController;->show()V
 
-    .line 2709
     iget-object v3, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -400,7 +373,6 @@
 
     move v3, v4
 
-    .line 2710
     goto :goto_eb
 .end method
 
@@ -409,21 +381,18 @@
     .parameter "mode"
 
     .prologue
-    .line 2735
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-object v0, v0, Landroid/widget/Editor;->mCustomSelectionActionModeCallback:Landroid/view/ActionMode$Callback;
 
     if-eqz v0, :cond_d
 
-    .line 2736
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-object v0, v0, Landroid/widget/Editor;->mCustomSelectionActionModeCallback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/ActionMode$Callback;->onDestroyActionMode(Landroid/view/ActionMode;)V
 
-    .line 2744
     :cond_d
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -431,7 +400,6 @@
 
     if-nez v0, :cond_36
 
-    .line 2745
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -458,7 +426,6 @@
 
     invoke-static {v0, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 2747
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -470,7 +437,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHasTransientState(Z)V
 
-    .line 2750
     :cond_36
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -478,14 +444,12 @@
 
     if-eqz v0, :cond_43
 
-    .line 2751
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-object v0, v0, Landroid/widget/Editor;->mSelectionModifierCursorController:Landroid/widget/MiuiCursorController;
 
     invoke-virtual {v0}, Landroid/widget/MiuiCursorController;->hide()V
 
-    .line 2754
     :cond_43
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
@@ -493,7 +457,6 @@
 
     iput-object v1, v0, Landroid/widget/Editor;->mSelectionActionMode:Landroid/view/ActionMode;
 
-    .line 2755
     return-void
 .end method
 
@@ -503,14 +466,12 @@
     .parameter "menu"
 
     .prologue
-    .line 2718
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-object v0, v0, Landroid/widget/Editor;->mCustomSelectionActionModeCallback:Landroid/view/ActionMode$Callback;
 
     if-eqz v0, :cond_f
 
-    .line 2719
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-object v0, v0, Landroid/widget/Editor;->mCustomSelectionActionModeCallback:Landroid/view/ActionMode$Callback;
@@ -519,7 +480,6 @@
 
     move-result v0
 
-    .line 2721
     :goto_e
     return v0
 

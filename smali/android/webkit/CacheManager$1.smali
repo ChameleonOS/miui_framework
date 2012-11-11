@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 434
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .registers 7
 
     .prologue
-    .line 438
     :try_start_0
     invoke-static {}, Landroid/webkit/CacheManager;->access$000()Ljava/io/File;
 
@@ -44,11 +42,9 @@
 
     move-result-object v1
 
-    .line 440
     .local v1, files:[Ljava/lang/String;
     if-eqz v1, :cond_3f
 
-    .line 441
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -57,7 +53,6 @@
 
     if-ge v2, v3, :cond_3f
 
-    .line 442
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Landroid/webkit/CacheManager;->access$000()Ljava/io/File;
@@ -68,7 +63,6 @@
 
     invoke-direct {v0, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 443
     .local v0, f:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
@@ -76,7 +70,6 @@
 
     if-nez v3, :cond_3b
 
-    .line 444
     const-string v3, "cache"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -105,20 +98,17 @@
     :try_end_3b
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_3b} :catch_3e
 
-    .line 441
     :cond_3b
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_b
 
-    .line 448
     .end local v0           #f:Ljava/io/File;
     .end local v1           #files:[Ljava/lang/String;
     .end local v2           #i:I
     :catch_3e
     move-exception v3
 
-    .line 451
     :cond_3f
     return-void
 .end method

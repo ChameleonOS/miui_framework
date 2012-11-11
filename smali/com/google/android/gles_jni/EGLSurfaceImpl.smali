@@ -16,16 +16,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 24
     invoke-direct {p0}, Ljavax/microedition/khronos/egl/EGLSurface;-><init>()V
 
-    .line 25
     iput v0, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mEGLSurface:I
 
-    .line 26
     iput v0, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mNativePixelRef:I
 
-    .line 27
     return-void
 .end method
 
@@ -34,18 +30,14 @@
     .parameter "surface"
 
     .prologue
-    .line 28
     invoke-direct {p0}, Ljavax/microedition/khronos/egl/EGLSurface;-><init>()V
 
-    .line 29
     iput p1, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mEGLSurface:I
 
-    .line 30
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mNativePixelRef:I
 
-    .line 31
     return-void
 .end method
 
@@ -60,15 +52,12 @@
 
     const/4 v2, 0x0
 
-    .line 35
     if-ne p0, p1, :cond_5
 
-    .line 40
     :cond_4
     :goto_4
     return v1
 
-    .line 36
     :cond_5
     if-eqz p1, :cond_11
 
@@ -90,10 +79,8 @@
     :cond_13
     move-object v0, p1
 
-    .line 38
     check-cast v0, Lcom/google/android/gles_jni/EGLSurfaceImpl;
 
-    .line 40
     .local v0, that:Lcom/google/android/gles_jni/EGLSurfaceImpl;
     iget v3, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mEGLSurface:I
 
@@ -110,7 +97,6 @@
     .registers 2
 
     .prologue
-    .line 46
     iget v0, p0, Lcom/google/android/gles_jni/EGLSurfaceImpl;->mEGLSurface:I
 
     return v0

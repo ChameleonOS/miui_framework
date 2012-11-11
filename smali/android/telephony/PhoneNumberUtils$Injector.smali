@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 58
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,14 +34,12 @@
     .parameter "c"
 
     .prologue
-    .line 64
     const/16 v1, 0xa
 
     invoke-static {p1, v1}, Ljava/lang/Character;->digit(CI)I
 
     move-result v0
 
-    .line 65
     .local v0, digit:I
     const/4 v1, -0x1
 
@@ -54,10 +51,8 @@
 
     if-eqz v1, :cond_12
 
-    .line 66
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 68
     :cond_12
     return-void
 .end method
@@ -67,7 +62,6 @@
     .parameter "str"
 
     .prologue
-    .line 60
     invoke-static {p0}, Landroid/telephony/PhoneNumberUtils;->callIndexOfLastNetworkChar(Ljava/lang/String;)I
 
     move-result v0

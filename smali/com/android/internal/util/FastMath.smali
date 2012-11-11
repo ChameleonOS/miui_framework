@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 22
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,14 +18,12 @@
     .parameter "value"
 
     .prologue
-    .line 30
     const/high16 v2, 0x4b80
 
     mul-float/2addr v2, p0
 
     float-to-long v0, v2
 
-    .line 31
     .local v0, lx:J
     const-wide/32 v2, 0x800000
 

@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 465
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,17 +44,14 @@
     .parameter "source"
 
     .prologue
-    .line 467
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 468
     .local v0, msg:Landroid/os/Message;
     #calls: Landroid/os/Message;->readFromParcel(Landroid/os/Parcel;)V
     invoke-static {v0, p1}, Landroid/os/Message;->access$000(Landroid/os/Message;Landroid/os/Parcel;)V
 
-    .line 469
     return-object v0
 .end method
 
@@ -64,7 +60,6 @@
     .parameter "x0"
 
     .prologue
-    .line 465
     invoke-virtual {p0, p1}, Landroid/os/Message$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/Message;
 
     move-result-object v0
@@ -77,7 +72,6 @@
     .parameter "size"
 
     .prologue
-    .line 473
     new-array v0, p1, [Landroid/os/Message;
 
     return-object v0
@@ -88,7 +82,6 @@
     .parameter "x0"
 
     .prologue
-    .line 465
     invoke-virtual {p0, p1}, Landroid/os/Message$1;->newArray(I)[Landroid/os/Message;
 
     move-result-object v0

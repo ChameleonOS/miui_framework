@@ -27,16 +27,12 @@
     .parameter "location"
 
     .prologue
-    .line 329
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 330
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
 
-    .line 331
     iput-object p2, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLocation:Landroid/telephony/SmsCbLocation;
 
-    .line 332
     return-void
 .end method
 
@@ -49,17 +45,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 341
     instance-of v2, p1, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
 
     if-eqz v2, :cond_21
 
     move-object v0, p1
 
-    .line 342
     check-cast v0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
 
-    .line 347
     .local v0, other:Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
     iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
 
@@ -87,7 +80,6 @@
 
     const/4 v1, 0x1
 
-    .line 351
     .end local v0           #other:Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;
     :cond_21
     return v1
@@ -97,7 +89,6 @@
     .registers 3
 
     .prologue
-    .line 336
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mHeader:Lcom/android/internal/telephony/gsm/SmsCbHeader;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/gsm/SmsCbHeader;->getSerialNumber()I
@@ -124,7 +115,6 @@
     .parameter "cid"
 
     .prologue
-    .line 365
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmSMSDispatcher$SmsCbConcatInfo;->mLocation:Landroid/telephony/SmsCbLocation;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/telephony/SmsCbLocation;->isInLocationArea(Ljava/lang/String;II)Z

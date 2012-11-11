@@ -28,7 +28,6 @@
     .parameter
 
     .prologue
-    .line 71
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$LocaleChangedIntentReceiver;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,7 +43,6 @@
     .parameter "intent"
 
     .prologue
-    .line 74
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$LocaleChangedIntentReceiver;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
     iget-object v0, v0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->phone:Lcom/android/internal/telephony/cdma/CDMAPhone;
@@ -53,7 +51,6 @@
 
     if-nez v0, :cond_27
 
-    .line 75
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -82,12 +79,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
     :cond_26
     :goto_26
     return-void
 
-    .line 80
     :cond_27
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -101,7 +96,6 @@
 
     if-eqz v0, :cond_26
 
-    .line 82
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$LocaleChangedIntentReceiver;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->updateSpnDisplay()V

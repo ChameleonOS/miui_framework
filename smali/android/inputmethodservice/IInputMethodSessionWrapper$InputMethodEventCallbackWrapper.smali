@@ -27,13 +27,10 @@
     .parameter "cb"
 
     .prologue
-    .line 58
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     iput-object p1, p0, Landroid/inputmethodservice/IInputMethodSessionWrapper$InputMethodEventCallbackWrapper;->mCb:Lcom/android/internal/view/IInputMethodCallback;
 
-    .line 60
     return-void
 .end method
 
@@ -45,7 +42,6 @@
     .parameter "handled"
 
     .prologue
-    .line 63
     :try_start_0
     iget-object v0, p0, Landroid/inputmethodservice/IInputMethodSessionWrapper$InputMethodEventCallbackWrapper;->mCb:Lcom/android/internal/view/IInputMethodCallback;
 
@@ -53,11 +49,9 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 66
     :goto_5
     return-void
 
-    .line 64
     :catch_6
     move-exception v0
 

@@ -18,7 +18,6 @@
     .registers 1
 
     .prologue
-    .line 11
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +29,6 @@
     .parameter "time"
 
     .prologue
-    .line 30
     const v0, 0x111d6
 
     const/4 v1, 0x2
@@ -55,7 +53,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 31
     return-void
 .end method
 
@@ -63,7 +60,6 @@
     .registers 2
 
     .prologue
-    .line 34
     const v0, 0x11206
 
     const/4 v1, 0x0
@@ -72,7 +68,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 35
     return-void
 .end method
 
@@ -82,7 +77,6 @@
     .parameter "newsize"
 
     .prologue
-    .line 38
     const v0, 0x11207
 
     const/4 v1, 0x2
@@ -107,7 +101,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 39
     return-void
 .end method
 
@@ -118,7 +111,6 @@
     .parameter "time"
 
     .prologue
-    .line 26
     const v0, 0x111d5
 
     const/4 v1, 0x3
@@ -151,6 +143,5 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 27
     return-void
 .end method

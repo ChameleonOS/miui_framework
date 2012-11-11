@@ -18,17 +18,14 @@
     .registers 2
 
     .prologue
-    .line 32
     invoke-direct {p0}, Landroid/os/Vibrator;-><init>()V
 
-    .line 30
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Landroid/os/SystemVibrator;->mToken:Landroid/os/Binder;
 
-    .line 33
     const-string/jumbo v0, "vibrator"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -41,7 +38,6 @@
 
     iput-object v0, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
 
-    .line 35
     return-void
 .end method
 
@@ -51,16 +47,13 @@
     .registers 4
 
     .prologue
-    .line 85
     iget-object v1, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
 
     if-nez v1, :cond_5
 
-    .line 93
     :goto_4
     return-void
 
-    .line 89
     :cond_5
     :try_start_5
     iget-object v1, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
@@ -73,11 +66,9 @@
 
     goto :goto_4
 
-    .line 90
     :catch_d
     move-exception v0
 
-    .line 91
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "Vibrator"
 
@@ -94,23 +85,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 39
     iget-object v1, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
 
     if-nez v1, :cond_d
 
-    .line 40
     const-string v1, "Vibrator"
 
     const-string v2, "Failed to vibrate; no vibrator service."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
     :goto_c
     return v0
 
-    .line 44
     :cond_d
     :try_start_d
     iget-object v1, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
@@ -123,7 +110,6 @@
 
     goto :goto_c
 
-    .line 45
     :catch_14
     move-exception v1
 
@@ -135,23 +121,19 @@
     .parameter "milliseconds"
 
     .prologue
-    .line 52
     iget-object v1, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
 
     if-nez v1, :cond_c
 
-    .line 53
     const-string v1, "Vibrator"
 
     const-string v2, "Failed to vibrate; no vibrator service."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 61
     :goto_b
     return-void
 
-    .line 57
     :cond_c
     :try_start_c
     iget-object v1, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
@@ -164,11 +146,9 @@
 
     goto :goto_b
 
-    .line 58
     :catch_14
     move-exception v0
 
-    .line 59
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "Vibrator"
 
@@ -185,29 +165,24 @@
     .parameter "repeat"
 
     .prologue
-    .line 65
     iget-object v1, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
 
     if-nez v1, :cond_c
 
-    .line 66
     const-string v1, "Vibrator"
 
     const-string v2, "Failed to vibrate; no vibrator service."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
     :goto_b
     return-void
 
-    .line 72
     :cond_c
     array-length v1, p1
 
     if-ge p2, v1, :cond_20
 
-    .line 74
     :try_start_f
     iget-object v1, p0, Landroid/os/SystemVibrator;->mService:Landroid/os/IVibratorService;
 
@@ -219,11 +194,9 @@
 
     goto :goto_b
 
-    .line 75
     :catch_17
     move-exception v0
 
-    .line 76
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "Vibrator"
 
@@ -233,7 +206,6 @@
 
     goto :goto_b
 
-    .line 79
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_20
     new-instance v1, Ljava/lang/ArrayIndexOutOfBoundsException;

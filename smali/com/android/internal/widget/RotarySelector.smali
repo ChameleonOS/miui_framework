@@ -129,12 +129,10 @@
     .parameter "context"
 
     .prologue
-    .line 162
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/widget/RotarySelector;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 163
     return-void
 .end method
 
@@ -146,53 +144,42 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 169
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 75
     iput v4, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 79
     iput-boolean v4, p0, Lcom/android/internal/widget/RotarySelector;->mAnimating:Z
 
-    .line 87
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mPaint:Landroid/graphics/Paint;
 
-    .line 90
     new-instance v3, Landroid/graphics/Matrix;
 
     invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBgMatrix:Landroid/graphics/Matrix;
 
-    .line 91
     new-instance v3, Landroid/graphics/Matrix;
 
     invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mArrowMatrix:Landroid/graphics/Matrix;
 
-    .line 96
     iput v4, p0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
 
-    .line 105
     iput-boolean v4, p0, Lcom/android/internal/widget/RotarySelector;->mTriggered:Z
 
-    .line 153
     iput v4, p0, Lcom/android/internal/widget/RotarySelector;->mDimplesOfFling:I
 
-    .line 171
     sget-object v3, Lcom/android/internal/R$styleable;->RotarySelector:[I
 
     invoke-virtual {p1, p2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 173
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v4, v4}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -200,15 +187,12 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mOrientation:I
 
-    .line 174
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 176
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 177
     .local v2, r:Landroid/content/res/Resources;
     invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
@@ -218,7 +202,6 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mDensity:F
 
-    .line 181
     const v3, 0x1080382
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
@@ -227,7 +210,6 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBackground:Landroid/graphics/Bitmap;
 
-    .line 182
     const v3, 0x1080383
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
@@ -236,7 +218,6 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimple:Landroid/graphics/Bitmap;
 
-    .line 183
     const v3, 0x1080384
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
@@ -245,7 +226,6 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleDim:Landroid/graphics/Bitmap;
 
-    .line 185
     const v3, 0x108037a
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
@@ -254,7 +234,6 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mArrowLongLeft:Landroid/graphics/Bitmap;
 
-    .line 186
     const v3, 0x108037d
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
@@ -263,7 +242,6 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mArrowLongRight:Landroid/graphics/Bitmap;
 
-    .line 187
     const v3, 0x1080380
 
     invoke-direct {p0, v3}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
@@ -272,7 +250,6 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mArrowShortLeftAndRight:Landroid/graphics/Bitmap;
 
-    .line 189
     new-instance v3, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v4, 0x3f80
@@ -281,7 +258,6 @@
 
     iput-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mInterpolator:Landroid/view/animation/DecelerateInterpolator;
 
-    .line 191
     iget v3, p0, Lcom/android/internal/widget/RotarySelector;->mDensity:F
 
     const/high16 v4, 0x42c8
@@ -292,7 +268,6 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mEdgeTriggerThresh:I
 
-    .line 193
     iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimple:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
@@ -301,7 +276,6 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleWidth:I
 
-    .line 195
     iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBackground:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
@@ -310,7 +284,6 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mBackgroundWidth:I
 
-    .line 196
     iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBackground:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
@@ -319,7 +292,6 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mBackgroundHeight:I
 
-    .line 197
     iget v3, p0, Lcom/android/internal/widget/RotarySelector;->mDensity:F
 
     const/high16 v4, 0x43c3
@@ -330,7 +302,6 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mOuterRadius:I
 
-    .line 198
     const v3, 0x43998000
 
     iget v4, p0, Lcom/android/internal/widget/RotarySelector;->mDensity:F
@@ -341,14 +312,12 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mInnerRadius:I
 
-    .line 200
     iget-object v3, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v1
 
-    .line 201
     .local v1, configuration:Landroid/view/ViewConfiguration;
     invoke-virtual {v1}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
@@ -358,14 +327,12 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mMinimumVelocity:I
 
-    .line 202
     invoke-virtual {v1}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
     move-result v3
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mMaximumVelocity:I
 
-    .line 203
     return-void
 .end method
 
@@ -374,22 +341,18 @@
     .parameter "whichHandle"
 
     .prologue
-    .line 704
     const-wide/16 v0, 0x14
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/widget/RotarySelector;->vibrate(J)V
 
-    .line 705
     iget-object v0, p0, Lcom/android/internal/widget/RotarySelector;->mOnDialTriggerListener:Lcom/android/internal/widget/RotarySelector$OnDialTriggerListener;
 
     if-eqz v0, :cond_e
 
-    .line 706
     iget-object v0, p0, Lcom/android/internal/widget/RotarySelector;->mOnDialTriggerListener:Lcom/android/internal/widget/RotarySelector$OnDialTriggerListener;
 
     invoke-interface {v0, p0, p1}, Lcom/android/internal/widget/RotarySelector$OnDialTriggerListener;->onDialTrigger(Landroid/view/View;I)V
 
-    .line 708
     :cond_e
     return-void
 .end method
@@ -402,18 +365,15 @@
     .parameter "y"
 
     .prologue
-    .line 683
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
 
-    .line 684
     .local v1, w:I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
 
-    .line 686
     .local v0, h:I
     div-int/lit8 v2, v1, 0x2
 
@@ -431,7 +391,6 @@
 
     invoke-virtual {p2, p1, v2, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 687
     return-void
 .end method
 
@@ -440,7 +399,6 @@
     .parameter "resId"
 
     .prologue
-    .line 206
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -464,22 +422,18 @@
     .parameter "x"
 
     .prologue
-    .line 466
     sub-int v4, p3, p2
 
     div-int/lit8 v0, v4, 0x2
 
-    .line 467
     .local v0, halfWidth:I
     add-int v1, p2, v0
 
-    .line 470
     .local v1, middleRadius:I
     div-int/lit8 v4, p1, 0x2
 
     sub-int v2, v4, p4
 
-    .line 473
     .local v2, triangleBottom:I
     mul-int v4, v1, v1
 
@@ -495,7 +449,6 @@
 
     double-to-int v3, v4
 
-    .line 480
     .local v3, triangleY:I
     sub-int v4, v1, v3
 
@@ -508,7 +461,6 @@
     .registers 2
 
     .prologue
-    .line 233
     iget v0, p0, Lcom/android/internal/widget/RotarySelector;->mOrientation:I
 
     if-nez v0, :cond_6
@@ -529,12 +481,10 @@
     .parameter "msg"
 
     .prologue
-    .line 764
     const-string v0, "RotarySelector"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 765
     return-void
 .end method
 
@@ -544,22 +494,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 659
     iput-boolean v0, p0, Lcom/android/internal/widget/RotarySelector;->mAnimating:Z
 
-    .line 660
     iput v0, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 661
     iput v0, p0, Lcom/android/internal/widget/RotarySelector;->mDimplesOfFling:I
 
-    .line 662
     invoke-direct {p0, v0}, Lcom/android/internal/widget/RotarySelector;->setGrabbedState(I)V
 
-    .line 663
     iput-boolean v0, p0, Lcom/android/internal/widget/RotarySelector;->mTriggered:Z
 
-    .line 664
     return-void
 .end method
 
@@ -568,27 +512,22 @@
     .parameter "newState"
 
     .prologue
-    .line 715
     iget v0, p0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
 
     if-eq p1, v0, :cond_11
 
-    .line 716
     iput p1, p0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
 
-    .line 717
     iget-object v0, p0, Lcom/android/internal/widget/RotarySelector;->mOnDialTriggerListener:Lcom/android/internal/widget/RotarySelector$OnDialTriggerListener;
 
     if-eqz v0, :cond_11
 
-    .line 718
     iget-object v0, p0, Lcom/android/internal/widget/RotarySelector;->mOnDialTriggerListener:Lcom/android/internal/widget/RotarySelector$OnDialTriggerListener;
 
     iget v1, p0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
 
     invoke-interface {v0, p0, v1}, Lcom/android/internal/widget/RotarySelector$OnDialTriggerListener;->onGrabbedStateChange(Landroid/view/View;I)V
 
-    .line 721
     :cond_11
     return-void
 .end method
@@ -602,39 +541,30 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 607
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/widget/RotarySelector;->mAnimating:Z
 
-    .line 608
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/widget/RotarySelector;->mAnimationStartTime:J
 
-    .line 609
     int-to-long v0, p3
 
     iput-wide v0, p0, Lcom/android/internal/widget/RotarySelector;->mAnimationDuration:J
 
-    .line 610
     iput p1, p0, Lcom/android/internal/widget/RotarySelector;->mAnimatingDeltaXStart:I
 
-    .line 611
     iput p2, p0, Lcom/android/internal/widget/RotarySelector;->mAnimatingDeltaXEnd:I
 
-    .line 612
     invoke-direct {p0, v2}, Lcom/android/internal/widget/RotarySelector;->setGrabbedState(I)V
 
-    .line 613
     iput v2, p0, Lcom/android/internal/widget/RotarySelector;->mDimplesOfFling:I
 
-    .line 614
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 615
     return-void
 .end method
 
@@ -645,19 +575,16 @@
     .parameter "pixelsPerSecond"
 
     .prologue
-    .line 618
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/widget/RotarySelector;->mAnimating:Z
 
-    .line 619
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/internal/widget/RotarySelector;->mAnimationStartTime:J
 
-    .line 620
     sub-int v0, p2, p1
 
     mul-int/lit16 v0, v0, 0x3e8
@@ -668,21 +595,16 @@
 
     iput-wide v0, p0, Lcom/android/internal/widget/RotarySelector;->mAnimationDuration:J
 
-    .line 621
     iput p1, p0, Lcom/android/internal/widget/RotarySelector;->mAnimatingDeltaXStart:I
 
-    .line 622
     iput p2, p0, Lcom/android/internal/widget/RotarySelector;->mAnimatingDeltaXEnd:I
 
-    .line 623
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/RotarySelector;->setGrabbedState(I)V
 
-    .line 624
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 625
     return-void
 .end method
 
@@ -690,7 +612,6 @@
     .registers 13
 
     .prologue
-    .line 628
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v8
@@ -699,13 +620,11 @@
 
     sub-long v5, v8, v10
 
-    .line 629
     .local v5, millisSoFar:J
     iget-wide v8, p0, Lcom/android/internal/widget/RotarySelector;->mAnimationDuration:J
 
     sub-long v3, v8, v5
 
-    .line 630
     .local v3, millisLeft:J
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mAnimatingDeltaXStart:I
 
@@ -713,13 +632,11 @@
 
     sub-int v7, v8, v9
 
-    .line 631
     .local v7, totalDeltaX:I
     if-gez v7, :cond_1f
 
     const/4 v1, 0x1
 
-    .line 633
     .local v1, goingRight:Z
     :goto_15
     const-wide/16 v8, 0x0
@@ -728,21 +645,17 @@
 
     if-gtz v8, :cond_21
 
-    .line 634
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->reset()V
 
-    .line 656
     :goto_1e
     return-void
 
-    .line 631
     .end local v1           #goingRight:Z
     :cond_1f
     const/4 v1, 0x0
 
     goto :goto_15
 
-    .line 638
     .restart local v1       #goingRight:Z
     :cond_21
     iget-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mInterpolator:Landroid/view/animation/DecelerateInterpolator;
@@ -759,7 +672,6 @@
 
     move-result v2
 
-    .line 640
     .local v2, interpolation:F
     int-to-float v8, v7
 
@@ -771,7 +683,6 @@
 
     float-to-int v0, v8
 
-    .line 641
     .local v0, dx:I
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mAnimatingDeltaXEnd:I
 
@@ -779,12 +690,10 @@
 
     iput v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 646
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mDimplesOfFling:I
 
     if-lez v8, :cond_4f
 
-    .line 647
     if-nez v1, :cond_53
 
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
@@ -795,7 +704,6 @@
 
     if-ge v8, v9, :cond_53
 
-    .line 649
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
     iget v9, p0, Lcom/android/internal/widget/RotarySelector;->mDimplesOfFling:I
@@ -808,14 +716,12 @@
 
     iput v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 655
     :cond_4f
     :goto_4f
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
     goto :goto_1e
 
-    .line 650
     :cond_53
     if-eqz v1, :cond_4f
 
@@ -827,7 +733,6 @@
 
     if-le v8, v9, :cond_4f
 
-    .line 652
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
     iget v9, p0, Lcom/android/internal/widget/RotarySelector;->mDimplesOfFling:I
@@ -848,7 +753,6 @@
     .parameter "duration"
 
     .prologue
-    .line 670
     monitor-enter p0
 
     :try_start_1
@@ -856,7 +760,6 @@
 
     if-nez v0, :cond_14
 
-    .line 671
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -871,7 +774,6 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/RotarySelector;->mVibrator:Landroid/os/Vibrator;
 
-    .line 674
     :cond_14
     iget-object v0, p0, Lcom/android/internal/widget/RotarySelector;->mVibrator:Landroid/os/Vibrator;
 
@@ -879,12 +781,10 @@
     :try_end_19
     .catchall {:try_start_1 .. :try_end_19} :catchall_1b
 
-    .line 675
     monitor-exit p0
 
     return-void
 
-    .line 670
     :catchall_1b
     move-exception v0
 
@@ -900,21 +800,17 @@
     .parameter "canvas"
 
     .prologue
-    .line 290
     invoke-super/range {p0 .. p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 292
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->getWidth()I
 
     move-result v13
 
-    .line 301
     .local v13, width:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->getHeight()I
 
     move-result v11
 
-    .line 304
     .local v11, height:I
     move-object/from16 v0, p0
 
@@ -924,10 +820,8 @@
 
     if-eqz v17, :cond_16
 
-    .line 305
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->updateAnimation()V
 
-    .line 309
     :cond_16
     move-object/from16 v0, p0
 
@@ -957,7 +851,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 312
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mArrowMatrix:Landroid/graphics/Matrix;
@@ -966,7 +859,6 @@
 
     invoke-virtual/range {v17 .. v17}, Landroid/graphics/Matrix;->reset()V
 
-    .line 313
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
@@ -975,7 +867,6 @@
 
     packed-switch v17, :pswitch_data_38c
 
-    .line 335
     new-instance v17, Ljava/lang/IllegalStateException;
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -1006,7 +897,6 @@
 
     throw v17
 
-    .line 318
     :pswitch_64
     move-object/from16 v0, p0
 
@@ -1020,14 +910,12 @@
 
     invoke-virtual/range {v17 .. v19}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 319
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v17
 
     if-nez v17, :cond_94
 
-    .line 320
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mArrowMatrix:Landroid/graphics/Matrix;
@@ -1042,7 +930,6 @@
 
     invoke-virtual/range {v17 .. v20}, Landroid/graphics/Matrix;->preRotate(FFF)Z
 
-    .line 321
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mArrowMatrix:Landroid/graphics/Matrix;
@@ -1057,7 +944,6 @@
 
     invoke-virtual/range {v17 .. v19}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 323
     :cond_94
     move-object/from16 v0, p0
 
@@ -1087,14 +973,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 338
     :goto_b1
     :pswitch_b1
     move-object/from16 v0, p0
 
     iget v5, v0, Lcom/android/internal/widget/RotarySelector;->mBackgroundHeight:I
 
-    .line 339
     .local v5, bgHeight:I
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
@@ -1104,7 +988,6 @@
 
     sub-int v6, v11, v5
 
-    .line 357
     .local v6, bgTop:I
     :goto_bd
     move-object/from16 v0, p0
@@ -1121,7 +1004,6 @@
 
     add-int v15, v17, v18
 
-    .line 358
     .local v15, xOffset:I
     move-object/from16 v0, p0
 
@@ -1153,7 +1035,6 @@
 
     move-result v9
 
-    .line 363
     .local v9, drawableY:I
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
@@ -1163,7 +1044,6 @@
 
     move v14, v15
 
-    .line 364
     .local v14, x:I
     :goto_f0
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
@@ -1174,7 +1054,6 @@
 
     add-int v16, v9, v6
 
-    .line 365
     .local v16, y:I
     :goto_f8
     move-object/from16 v0, p0
@@ -1191,7 +1070,6 @@
 
     if-eq v0, v1, :cond_2a6
 
-    .line 366
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mDimple:Landroid/graphics/Bitmap;
@@ -1208,7 +1086,6 @@
 
     invoke-direct {v0, v1, v2, v14, v3}, Lcom/android/internal/widget/RotarySelector;->drawCentered(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;II)V
 
-    .line 367
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleIcon:Landroid/graphics/Bitmap;
@@ -1225,7 +1102,6 @@
 
     invoke-direct {v0, v1, v2, v14, v3}, Lcom/android/internal/widget/RotarySelector;->drawCentered(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;II)V
 
-    .line 375
     :goto_128
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
@@ -1243,7 +1119,6 @@
 
     add-int v15, v17, v18
 
-    .line 378
     :goto_138
     move-object/from16 v0, p0
 
@@ -1275,14 +1150,12 @@
 
     move-result v9
 
-    .line 384
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v17
 
     if-eqz v17, :cond_2c5
 
-    .line 385
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mDimpleDim:Landroid/graphics/Bitmap;
@@ -1301,7 +1174,6 @@
 
     invoke-direct {v0, v1, v2, v15, v3}, Lcom/android/internal/widget/RotarySelector;->drawCentered(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;II)V
 
-    .line 394
     :goto_16f
     move-object/from16 v0, p0
 
@@ -1317,7 +1189,6 @@
 
     add-int v15, v17, v18
 
-    .line 395
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/widget/RotarySelector;->mBackgroundWidth:I
@@ -1348,7 +1219,6 @@
 
     move-result v9
 
-    .line 401
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v17
@@ -1357,7 +1227,6 @@
 
     move v14, v15
 
-    .line 402
     :goto_1a2
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
@@ -1367,7 +1236,6 @@
 
     add-int v16, v9, v6
 
-    .line 403
     :goto_1aa
     move-object/from16 v0, p0
 
@@ -1383,7 +1251,6 @@
 
     if-eq v0, v1, :cond_2e6
 
-    .line 404
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mDimple:Landroid/graphics/Bitmap;
@@ -1400,7 +1267,6 @@
 
     invoke-direct {v0, v1, v2, v14, v3}, Lcom/android/internal/widget/RotarySelector;->drawCentered(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;II)V
 
-    .line 405
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mRightHandleIcon:Landroid/graphics/Bitmap;
@@ -1417,7 +1283,6 @@
 
     invoke-direct {v0, v1, v2, v14, v3}, Lcom/android/internal/widget/RotarySelector;->drawCentered(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;II)V
 
-    .line 412
     :goto_1da
     move-object/from16 v0, p0
 
@@ -1441,7 +1306,6 @@
 
     sub-int v7, v17, v18
 
-    .line 413
     .local v7, dimpleLeft:I
     move-object/from16 v0, p0
 
@@ -1451,7 +1315,6 @@
 
     div-int/lit8 v10, v17, 0x2
 
-    .line 414
     .local v10, halfdimple:I
     :goto_1f8
     neg-int v0, v10
@@ -1462,7 +1325,6 @@
 
     if-le v7, v0, :cond_312
 
-    .line 415
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/widget/RotarySelector;->mBackgroundWidth:I
@@ -1493,14 +1355,12 @@
 
     move-result v9
 
-    .line 421
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v17
 
     if-eqz v17, :cond_2f9
 
-    .line 422
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mDimpleDim:Landroid/graphics/Bitmap;
@@ -1519,7 +1379,6 @@
 
     invoke-direct {v0, v1, v2, v7, v3}, Lcom/android/internal/widget/RotarySelector;->drawCentered(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;II)V
 
-    .line 426
     :goto_236
     move-object/from16 v0, p0
 
@@ -1529,10 +1388,8 @@
 
     sub-int v7, v7, v17
 
-    .line 427
     goto :goto_1f8
 
-    .line 326
     .end local v5           #bgHeight:I
     .end local v6           #bgTop:I
     .end local v7           #dimpleLeft:I
@@ -1554,14 +1411,12 @@
 
     invoke-virtual/range {v17 .. v19}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 327
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v17
 
     if-nez v17, :cond_27b
 
-    .line 328
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mArrowMatrix:Landroid/graphics/Matrix;
@@ -1576,7 +1431,6 @@
 
     invoke-virtual/range {v17 .. v20}, Landroid/graphics/Matrix;->preRotate(FFF)Z
 
-    .line 330
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mArrowMatrix:Landroid/graphics/Matrix;
@@ -1603,7 +1457,6 @@
 
     invoke-virtual/range {v17 .. v19}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 332
     :cond_27b
     move-object/from16 v0, p0
 
@@ -1635,14 +1488,12 @@
 
     goto/16 :goto_b1
 
-    .line 339
     .restart local v5       #bgHeight:I
     :cond_29a
     sub-int v6, v13, v5
 
     goto/16 :goto_bd
 
-    .line 363
     .restart local v6       #bgTop:I
     .restart local v9       #drawableY:I
     .restart local v15       #xOffset:I
@@ -1651,14 +1502,12 @@
 
     goto/16 :goto_f0
 
-    .line 364
     .restart local v14       #x:I
     :cond_2a2
     sub-int v16, v11, v15
 
     goto/16 :goto_f8
 
-    .line 369
     .restart local v16       #y:I
     :cond_2a6
     move-object/from16 v0, p0
@@ -1679,7 +1528,6 @@
 
     goto/16 :goto_128
 
-    .line 375
     :cond_2b9
     div-int/lit8 v17, v11, 0x2
 
@@ -1693,7 +1541,6 @@
 
     goto/16 :goto_138
 
-    .line 388
     :cond_2c5
     move-object/from16 v0, p0
 
@@ -1719,19 +1566,16 @@
 
     goto/16 :goto_16f
 
-    .line 401
     :cond_2de
     add-int v14, v9, v6
 
     goto/16 :goto_1a2
 
-    .line 402
     :cond_2e2
     sub-int v16, v11, v15
 
     goto/16 :goto_1aa
 
-    .line 407
     :cond_2e6
     move-object/from16 v0, p0
 
@@ -1751,7 +1595,6 @@
 
     goto/16 :goto_1da
 
-    .line 424
     .restart local v7       #dimpleLeft:I
     .restart local v10       #halfdimple:I
     :cond_2f9
@@ -1779,7 +1622,6 @@
 
     goto/16 :goto_236
 
-    .line 430
     :cond_312
     move-object/from16 v0, p0
 
@@ -1803,7 +1645,6 @@
 
     add-int v8, v17, v18
 
-    .line 431
     .local v8, dimpleRight:I
     move-object/from16 v0, p0
 
@@ -1813,12 +1654,10 @@
 
     add-int v12, v17, v10
 
-    .line 432
     .local v12, rightThresh:I
     :goto_330
     if-ge v8, v12, :cond_38a
 
-    .line 433
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/widget/RotarySelector;->mBackgroundWidth:I
@@ -1849,14 +1688,12 @@
 
     move-result v9
 
-    .line 439
     invoke-direct/range {p0 .. p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v17
 
     if-eqz v17, :cond_372
 
-    .line 440
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/widget/RotarySelector;->mDimpleDim:Landroid/graphics/Bitmap;
@@ -1875,7 +1712,6 @@
 
     invoke-direct {v0, v1, v2, v8, v3}, Lcom/android/internal/widget/RotarySelector;->drawCentered(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;II)V
 
-    .line 444
     :goto_369
     move-object/from16 v0, p0
 
@@ -1885,10 +1721,8 @@
 
     add-int v8, v8, v17
 
-    .line 445
     goto :goto_330
 
-    .line 442
     :cond_372
     move-object/from16 v0, p0
 
@@ -1914,11 +1748,9 @@
 
     goto :goto_369
 
-    .line 446
     :cond_38a
     return-void
 
-    .line 313
     nop
 
     :pswitch_data_38c
@@ -1935,7 +1767,6 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 269
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v4
@@ -1946,7 +1777,6 @@
 
     move-result v3
 
-    .line 272
     .local v3, length:I
     :goto_a
     const/high16 v4, 0x40c0
@@ -1957,7 +1787,6 @@
 
     float-to-int v1, v4
 
-    .line 273
     .local v1, arrowScrunch:I
     iget-object v4, p0, Lcom/android/internal/widget/RotarySelector;->mArrowShortLeftAndRight:Landroid/graphics/Bitmap;
 
@@ -1965,7 +1794,6 @@
 
     move-result v0
 
-    .line 279
     .local v0, arrowH:I
     iget v4, p0, Lcom/android/internal/widget/RotarySelector;->mBackgroundHeight:I
 
@@ -1973,7 +1801,6 @@
 
     sub-int v2, v4, v1
 
-    .line 281
     .local v2, height:I
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
@@ -1981,14 +1808,11 @@
 
     if-eqz v4, :cond_2a
 
-    .line 282
     invoke-virtual {p0, v3, v2}, Lcom/android/internal/widget/RotarySelector;->setMeasuredDimension(II)V
 
-    .line 286
     :goto_24
     return-void
 
-    .line 269
     .end local v0           #arrowH:I
     .end local v1           #arrowScrunch:I
     .end local v2           #height:I
@@ -2000,7 +1824,6 @@
 
     goto :goto_a
 
-    .line 284
     .restart local v0       #arrowH:I
     .restart local v1       #arrowScrunch:I
     .restart local v2       #height:I
@@ -2021,10 +1844,8 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 211
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
-    .line 213
     const/high16 v3, 0x4110
 
     iget v4, p0, Lcom/android/internal/widget/RotarySelector;->mDensity:F
@@ -2033,7 +1854,6 @@
 
     float-to-int v0, v3
 
-    .line 214
     .local v0, edgePadding:I
     iget v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleWidth:I
 
@@ -2043,7 +1863,6 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleX:I
 
-    .line 215
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v3
@@ -2052,7 +1871,6 @@
 
     move v2, p1
 
-    .line 216
     .local v2, length:I
     :goto_18
     sub-int v3, v2, v0
@@ -2065,7 +1883,6 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mRightHandleX:I
 
-    .line 217
     div-int/lit8 v3, v2, 0x2
 
     iget v4, p0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleX:I
@@ -2074,24 +1891,20 @@
 
     iput v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleSpacing:I
 
-    .line 220
     iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBgMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v3, v5, v5}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 221
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v3
 
     if-nez v3, :cond_48
 
-    .line 223
     iget v3, p0, Lcom/android/internal/widget/RotarySelector;->mBackgroundHeight:I
 
     sub-int v1, p1, v3
 
-    .line 224
     .local v1, left:I
     iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBgMatrix:Landroid/graphics/Matrix;
 
@@ -2099,7 +1912,6 @@
 
     invoke-virtual {v3, v4, v5, v5}, Landroid/graphics/Matrix;->preRotate(FFF)Z
 
-    .line 225
     iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBgMatrix:Landroid/graphics/Matrix;
 
     int-to-float v4, v1
@@ -2108,7 +1920,6 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 230
     .end local v1           #left:I
     :goto_45
     return-void
@@ -2117,10 +1928,8 @@
     :cond_46
     move v2, p2
 
-    .line 215
     goto :goto_18
 
-    .line 228
     .restart local v2       #length:I
     :cond_48
     iget-object v3, p0, Lcom/android/internal/widget/RotarySelector;->mBgMatrix:Landroid/graphics/Matrix;
@@ -2151,41 +1960,34 @@
 
     const/4 v11, 0x1
 
-    .line 491
     iget-boolean v8, p0, Lcom/android/internal/widget/RotarySelector;->mAnimating:Z
 
     if-eqz v8, :cond_b
 
-    .line 603
     :cond_a
     :goto_a
     return v11
 
-    .line 494
     :cond_b
     iget-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v8, :cond_15
 
-    .line 495
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v8
 
     iput-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 497
     :cond_15
     iget-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v8, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 499
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->getHeight()I
 
     move-result v2
 
-    .line 501
     .local v2, height:I
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
@@ -2199,39 +2001,31 @@
 
     float-to-int v1, v8
 
-    .line 504
     .local v1, eventX:I
     :goto_29
     iget v3, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleWidth:I
 
-    .line 506
     .local v3, hitWindow:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 507
     .local v0, action:I
     packed-switch v0, :pswitch_data_18e
 
     goto :goto_a
 
-    .line 510
     :pswitch_33
     iput-boolean v10, p0, Lcom/android/internal/widget/RotarySelector;->mTriggered:Z
 
-    .line 511
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
 
     if-eqz v8, :cond_3f
 
-    .line 512
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->reset()V
 
-    .line 513
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 515
     :cond_3f
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleX:I
 
@@ -2239,27 +2033,22 @@
 
     if-ge v1, v8, :cond_5e
 
-    .line 516
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleX:I
 
     sub-int v8, v1, v8
 
     iput v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 517
     invoke-direct {p0, v11}, Lcom/android/internal/widget/RotarySelector;->setGrabbedState(I)V
 
-    .line 518
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 519
     const-wide/16 v8, 0x14
 
     invoke-direct {p0, v8, v9}, Lcom/android/internal/widget/RotarySelector;->vibrate(J)V
 
     goto :goto_a
 
-    .line 501
     .end local v0           #action:I
     .end local v1           #eventX:I
     .end local v3           #hitWindow:I
@@ -2274,7 +2063,6 @@
 
     goto :goto_29
 
-    .line 520
     .restart local v0       #action:I
     .restart local v1       #eventX:I
     .restart local v3       #hitWindow:I
@@ -2285,43 +2073,35 @@
 
     if-le v1, v8, :cond_a
 
-    .line 521
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mRightHandleX:I
 
     sub-int v8, v1, v8
 
     iput v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 522
     invoke-direct {p0, v9}, Lcom/android/internal/widget/RotarySelector;->setGrabbedState(I)V
 
-    .line 523
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 524
     const-wide/16 v8, 0x14
 
     invoke-direct {p0, v8, v9}, Lcom/android/internal/widget/RotarySelector;->vibrate(J)V
 
     goto :goto_a
 
-    .line 530
     :pswitch_75
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
 
     if-ne v8, v11, :cond_db
 
-    .line 531
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleX:I
 
     sub-int v8, v1, v8
 
     iput v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 532
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 533
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v8
@@ -2332,7 +2112,6 @@
 
     move-result v5
 
-    .line 534
     .local v5, rightThresh:I
     :goto_8c
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mEdgeTriggerThresh:I
@@ -2345,16 +2124,12 @@
 
     if-nez v8, :cond_a
 
-    .line 535
     iput-boolean v11, p0, Lcom/android/internal/widget/RotarySelector;->mTriggered:Z
 
-    .line 536
     invoke-direct {p0, v11}, Lcom/android/internal/widget/RotarySelector;->dispatchTriggerEvent(I)V
 
-    .line 537
     iget-object v7, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 538
     .local v7, velocityTracker:Landroid/view/VelocityTracker;
     const/16 v8, 0x3e8
 
@@ -2364,7 +2139,6 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 539
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v8
@@ -2377,7 +2151,6 @@
 
     float-to-int v4, v8
 
-    .line 542
     .local v4, rawVelocity:I
     :goto_b0
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mMinimumVelocity:I
@@ -2386,7 +2159,6 @@
 
     move-result v6
 
-    .line 543
     .local v6, velocity:I
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleSpacing:I
 
@@ -2402,7 +2174,6 @@
 
     iput v8, p0, Lcom/android/internal/widget/RotarySelector;->mDimplesOfFling:I
 
-    .line 546
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleX:I
 
     sub-int v8, v1, v8
@@ -2424,10 +2195,8 @@
     :cond_d2
     move v5, v2
 
-    .line 533
     goto :goto_8c
 
-    .line 539
     .restart local v5       #rightThresh:I
     .restart local v7       #velocityTracker:Landroid/view/VelocityTracker;
     :cond_d4
@@ -2441,7 +2210,6 @@
 
     goto :goto_b0
 
-    .line 551
     .end local v5           #rightThresh:I
     .end local v7           #velocityTracker:Landroid/view/VelocityTracker;
     :cond_db
@@ -2449,17 +2217,14 @@
 
     if-ne v8, v9, :cond_a
 
-    .line 552
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mRightHandleX:I
 
     sub-int v8, v1, v8
 
     iput v8, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 553
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 554
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mEdgeTriggerThresh:I
 
     if-gt v1, v8, :cond_a
@@ -2468,16 +2233,12 @@
 
     if-nez v8, :cond_a
 
-    .line 555
     iput-boolean v11, p0, Lcom/android/internal/widget/RotarySelector;->mTriggered:Z
 
-    .line 556
     invoke-direct {p0, v9}, Lcom/android/internal/widget/RotarySelector;->dispatchTriggerEvent(I)V
 
-    .line 557
     iget-object v7, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 558
     .restart local v7       #velocityTracker:Landroid/view/VelocityTracker;
     const/16 v8, 0x3e8
 
@@ -2487,7 +2248,6 @@
 
     invoke-virtual {v7, v8, v9}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 559
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->isHoriz()Z
 
     move-result v8
@@ -2500,7 +2260,6 @@
 
     float-to-int v4, v8
 
-    .line 562
     .restart local v4       #rawVelocity:I
     :goto_10a
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mMinimumVelocity:I
@@ -2511,7 +2270,6 @@
 
     move-result v6
 
-    .line 563
     .restart local v6       #velocity:I
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mDimpleSpacing:I
 
@@ -2527,7 +2285,6 @@
 
     iput v8, p0, Lcom/android/internal/widget/RotarySelector;->mDimplesOfFling:I
 
-    .line 566
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mRightHandleX:I
 
     sub-int v8, v1, v8
@@ -2544,7 +2301,6 @@
 
     goto/16 :goto_a
 
-    .line 559
     .end local v4           #rawVelocity:I
     .end local v6           #velocity:I
     :cond_12e
@@ -2558,7 +2314,6 @@
 
     goto :goto_10a
 
-    .line 576
     .end local v7           #velocityTracker:Landroid/view/VelocityTracker;
     :pswitch_135
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
@@ -2575,7 +2330,6 @@
 
     if-le v8, v12, :cond_162
 
-    .line 579
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleX:I
 
     sub-int v8, v1, v8
@@ -2584,35 +2338,28 @@
 
     invoke-direct {p0, v8, v10, v9}, Lcom/android/internal/widget/RotarySelector;->startAnimation(III)V
 
-    .line 585
     :cond_14c
     :goto_14c
     iput v10, p0, Lcom/android/internal/widget/RotarySelector;->mRotaryOffsetX:I
 
-    .line 586
     invoke-direct {p0, v10}, Lcom/android/internal/widget/RotarySelector;->setGrabbedState(I)V
 
-    .line 587
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 588
     iget-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v8, :cond_a
 
-    .line 589
     iget-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v8}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 590
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     goto/16 :goto_a
 
-    .line 580
     :cond_162
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mGrabbedState:I
 
@@ -2628,7 +2375,6 @@
 
     if-le v8, v12, :cond_14c
 
-    .line 583
     iget v8, p0, Lcom/android/internal/widget/RotarySelector;->mRightHandleX:I
 
     sub-int v8, v1, v8
@@ -2639,31 +2385,25 @@
 
     goto :goto_14c
 
-    .line 595
     :pswitch_17a
     invoke-direct {p0}, Lcom/android/internal/widget/RotarySelector;->reset()V
 
-    .line 596
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 597
     iget-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v8, :cond_a
 
-    .line 598
     iget-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v8}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 599
     const/4 v8, 0x0
 
     iput-object v8, p0, Lcom/android/internal/widget/RotarySelector;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     goto/16 :goto_a
 
-    .line 507
     :pswitch_data_18e
     .packed-switch 0x0
         :pswitch_33
@@ -2678,21 +2418,17 @@
     .parameter "resId"
 
     .prologue
-    .line 245
     if-eqz p1, :cond_8
 
-    .line 246
     invoke-direct {p0, p1}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/widget/RotarySelector;->mLeftHandleIcon:Landroid/graphics/Bitmap;
 
-    .line 248
     :cond_8
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 249
     return-void
 .end method
 
@@ -2701,10 +2437,8 @@
     .parameter "l"
 
     .prologue
-    .line 697
     iput-object p1, p0, Lcom/android/internal/widget/RotarySelector;->mOnDialTriggerListener:Lcom/android/internal/widget/RotarySelector$OnDialTriggerListener;
 
-    .line 698
     return-void
 .end method
 
@@ -2713,20 +2447,16 @@
     .parameter "resId"
 
     .prologue
-    .line 260
     if-eqz p1, :cond_8
 
-    .line 261
     invoke-direct {p0, p1}, Lcom/android/internal/widget/RotarySelector;->getBitmapFor(I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/widget/RotarySelector;->mRightHandleIcon:Landroid/graphics/Bitmap;
 
-    .line 263
     :cond_8
     invoke-virtual {p0}, Lcom/android/internal/widget/RotarySelector;->invalidate()V
 
-    .line 264
     return-void
 .end method

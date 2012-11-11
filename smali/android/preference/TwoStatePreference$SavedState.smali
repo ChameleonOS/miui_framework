@@ -36,7 +36,6 @@
     .registers 1
 
     .prologue
-    .line 283
     new-instance v0, Landroid/preference/TwoStatePreference$SavedState$1;
 
     invoke-direct {v0}, Landroid/preference/TwoStatePreference$SavedState$1;-><init>()V
@@ -53,10 +52,8 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 269
     invoke-direct {p0, p1}, Landroid/preference/Preference$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 270
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -66,10 +63,8 @@
     :goto_a
     iput-boolean v0, p0, Landroid/preference/TwoStatePreference$SavedState;->checked:Z
 
-    .line 271
     return-void
 
-    .line 270
     :cond_d
     const/4 v0, 0x0
 
@@ -81,10 +76,8 @@
     .parameter "superState"
 
     .prologue
-    .line 280
     invoke-direct {p0, p1}, Landroid/preference/Preference$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 281
     return-void
 .end method
 
@@ -96,10 +89,8 @@
     .parameter "flags"
 
     .prologue
-    .line 275
     invoke-super {p0, p1, p2}, Landroid/preference/Preference$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 276
     iget-boolean v0, p0, Landroid/preference/TwoStatePreference$SavedState;->checked:Z
 
     if-eqz v0, :cond_c
@@ -109,10 +100,8 @@
     :goto_8
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 277
     return-void
 
-    .line 276
     :cond_c
     const/4 v0, 0x0
 

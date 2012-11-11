@@ -70,7 +70,6 @@
     .registers 1
 
     .prologue
-    .line 87
     new-instance v0, Lcom/android/internal/net/VpnConfig$1;
 
     invoke-direct {v0}, Lcom/android/internal/net/VpnConfig$1;-><init>()V
@@ -84,15 +83,12 @@
     .registers 3
 
     .prologue
-    .line 33
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/net/VpnConfig;->mtu:I
 
-    .line 66
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/internal/net/VpnConfig;->startTime:J
@@ -104,12 +100,10 @@
     .registers 3
 
     .prologue
-    .line 42
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 43
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "com.android.vpndialogs"
 
@@ -117,7 +111,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 44
     return-object v0
 .end method
 
@@ -127,12 +120,10 @@
     .parameter "config"
 
     .prologue
-    .line 48
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 49
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "com.android.vpndialogs"
 
@@ -140,17 +131,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 50
     const-string v1, "config"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 51
     const/high16 v1, 0x5080
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 53
     const/4 v2, 0x0
 
     if-nez p1, :cond_20
@@ -176,7 +164,6 @@
     .registers 2
 
     .prologue
-    .line 70
     const/4 v0, 0x0
 
     return v0
@@ -188,56 +175,45 @@
     .parameter "flags"
 
     .prologue
-    .line 75
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->user:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 76
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->interfaze:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 77
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->session:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 78
     iget v0, p0, Lcom/android/internal/net/VpnConfig;->mtu:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 79
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->addresses:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 80
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->routes:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 81
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->dnsServers:Ljava/util/List;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    .line 82
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->searchDomains:Ljava/util/List;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    .line 83
     iget-object v0, p0, Lcom/android/internal/net/VpnConfig;->configureIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    .line 84
     iget-wide v0, p0, Lcom/android/internal/net/VpnConfig;->startTime:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 85
     return-void
 .end method

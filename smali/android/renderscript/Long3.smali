@@ -16,10 +16,8 @@
     .registers 1
 
     .prologue
-    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     return-void
 .end method
 
@@ -30,18 +28,13 @@
     .parameter "initZ"
 
     .prologue
-    .line 30
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     iput-wide p1, p0, Landroid/renderscript/Long3;->x:J
 
-    .line 32
     iput-wide p3, p0, Landroid/renderscript/Long3;->y:J
 
-    .line 33
     iput-wide p5, p0, Landroid/renderscript/Long3;->z:J
 
-    .line 34
     return-void
 .end method

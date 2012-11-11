@@ -35,7 +35,6 @@
     .parameter
 
     .prologue
-    .line 1019
     iput-object p1, p0, Landroid/accounts/AccountManagerService$3;->this$0:Landroid/accounts/AccountManagerService;
 
     iput-object p7, p0, Landroid/accounts/AccountManagerService$3;->val$accountType:Ljava/lang/String;
@@ -54,38 +53,31 @@
     .parameter "result"
 
     .prologue
-    .line 1031
     if-eqz p1, :cond_16
 
-    .line 1032
     const-string v2, "authTokenLabelKey"
 
     invoke-virtual {p1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1033
     .local v1, label:Ljava/lang/String;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1034
     .local v0, bundle:Landroid/os/Bundle;
     const-string v2, "authTokenLabelKey"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1035
     invoke-super {p0, v0}, Landroid/accounts/AccountManagerService$Session;->onResult(Landroid/os/Bundle;)V
 
-    .line 1040
     .end local v0           #bundle:Landroid/os/Bundle;
     .end local v1           #label:Ljava/lang/String;
     :goto_15
     return-void
 
-    .line 1038
     :cond_16
     invoke-super {p0, p1}, Landroid/accounts/AccountManagerService$Session;->onResult(Landroid/os/Bundle;)V
 
@@ -101,14 +93,12 @@
     .end annotation
 
     .prologue
-    .line 1027
     iget-object v0, p0, Landroid/accounts/AccountManagerService$Session;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Landroid/accounts/AccountManagerService$3;->val$authTokenType:Ljava/lang/String;
 
     invoke-interface {v0, p0, v1}, Landroid/accounts/IAccountAuthenticator;->getAuthTokenLabel(Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;)V
 
-    .line 1028
     return-void
 .end method
 
@@ -117,7 +107,6 @@
     .parameter "now"
 
     .prologue
-    .line 1021
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -30,21 +30,16 @@
     .parameter "binder"
 
     .prologue
-    .line 174
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
-    .line 175
     iput-object p1, p0, Landroid/app/backup/RestoreSession;->mContext:Landroid/content/Context;
 
-    .line 176
     iput-object p2, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
-    .line 177
     return-void
 .end method
 
@@ -56,7 +51,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 162
     :try_start_1
     iget-object v1, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -65,18 +59,14 @@
     .catchall {:try_start_1 .. :try_end_6} :catchall_12
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_6} :catch_9
 
-    .line 166
     :goto_6
     iput-object v3, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
-    .line 168
     return-void
 
-    .line 163
     :catch_9
     move-exception v0
 
-    .line 164
     .local v0, e:Landroid/os/RemoteException;
     :try_start_a
     const-string v1, "RestoreSession"
@@ -89,7 +79,6 @@
 
     goto :goto_6
 
-    .line 166
     .end local v0           #e:Landroid/os/RemoteException;
     :catchall_12
     move-exception v1
@@ -104,10 +93,8 @@
     .parameter "observer"
 
     .prologue
-    .line 51
     const/4 v1, -0x1
 
-    .line 52
     .local v1, err:I
     new-instance v2, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -115,7 +102,6 @@
 
     invoke-direct {v2, p0, v3, p1}, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;-><init>(Landroid/app/backup/RestoreSession;Landroid/content/Context;Landroid/app/backup/RestoreObserver;)V
 
-    .line 54
     .local v2, obsWrapper:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
     :try_start_8
     iget-object v3, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
@@ -126,15 +112,12 @@
 
     move-result v1
 
-    .line 58
     :goto_e
     return v1
 
-    .line 55
     :catch_f
     move-exception v0
 
-    .line 56
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "RestoreSession"
 
@@ -151,30 +134,24 @@
     .parameter "observer"
 
     .prologue
-    .line 75
     const/4 v1, -0x1
 
-    .line 76
     .local v1, err:I
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     if-eqz v2, :cond_f
 
-    .line 77
     const-string v2, "RestoreSession"
 
     const-string/jumbo v3, "restoreAll() called during active restore"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 78
     const/4 v2, -0x1
 
-    .line 86
     :goto_e
     return v2
 
-    .line 80
     :cond_f
     new-instance v2, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -184,7 +161,6 @@
 
     iput-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
-    .line 82
     :try_start_18
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -199,14 +175,11 @@
     :goto_20
     move v2, v1
 
-    .line 86
     goto :goto_e
 
-    .line 83
     :catch_22
     move-exception v0
 
-    .line 84
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "RestoreSession"
 
@@ -223,30 +196,24 @@
     .parameter "observer"
 
     .prologue
-    .line 139
     const/4 v1, -0x1
 
-    .line 140
     .local v1, err:I
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     if-eqz v2, :cond_f
 
-    .line 141
     const-string v2, "RestoreSession"
 
     const-string/jumbo v3, "restorePackage() called during active restore"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 142
     const/4 v2, -0x1
 
-    .line 150
     :goto_e
     return v2
 
-    .line 144
     :cond_f
     new-instance v2, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -256,7 +223,6 @@
 
     iput-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
-    .line 146
     :try_start_18
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -271,14 +237,11 @@
     :goto_20
     move v2, v1
 
-    .line 150
     goto :goto_e
 
-    .line 147
     :catch_22
     move-exception v0
 
-    .line 148
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "RestoreSession"
 
@@ -296,30 +259,24 @@
     .parameter "packages"
 
     .prologue
-    .line 109
     const/4 v1, -0x1
 
-    .line 110
     .local v1, err:I
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
     if-eqz v2, :cond_f
 
-    .line 111
     const-string v2, "RestoreSession"
 
     const-string/jumbo v3, "restoreAll() called during active restore"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     const/4 v2, -0x1
 
-    .line 120
     :goto_e
     return v2
 
-    .line 114
     :cond_f
     new-instance v2, Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
@@ -329,7 +286,6 @@
 
     iput-object v2, p0, Landroid/app/backup/RestoreSession;->mObserver:Landroid/app/backup/RestoreSession$RestoreObserverWrapper;
 
-    .line 116
     :try_start_18
     iget-object v2, p0, Landroid/app/backup/RestoreSession;->mBinder:Landroid/app/backup/IRestoreSession;
 
@@ -344,14 +300,11 @@
     :goto_20
     move v2, v1
 
-    .line 120
     goto :goto_e
 
-    .line 117
     :catch_22
     move-exception v0
 
-    .line 118
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "RestoreSession"
 

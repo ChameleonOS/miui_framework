@@ -51,7 +51,6 @@
     .registers 1
 
     .prologue
-    .line 338
     new-instance v0, Landroid/net/LinkCapabilities$1;
 
     invoke-direct {v0}, Landroid/net/LinkCapabilities$1;-><init>()V
@@ -65,17 +64,14 @@
     .registers 2
 
     .prologue
-    .line 174
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 175
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
-    .line 176
     return-void
 .end method
 
@@ -84,13 +80,10 @@
     .parameter "source"
 
     .prologue
-    .line 183
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 184
     if-eqz p1, :cond_f
 
-    .line 185
     new-instance v0, Ljava/util/HashMap;
 
     iget-object v1, p1, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
@@ -99,11 +92,9 @@
 
     iput-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
-    .line 189
     :goto_e
     return-void
 
-    .line 187
     :cond_f
     new-instance v0, Ljava/util/HashMap;
 
@@ -119,7 +110,6 @@
     .parameter "x0"
 
     .prologue
-    .line 34
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     return-object v0
@@ -130,7 +120,6 @@
     .parameter "applicationRole"
 
     .prologue
-    .line 198
     new-instance v0, Landroid/net/LinkCapabilities;
 
     invoke-direct {v0}, Landroid/net/LinkCapabilities;-><init>()V
@@ -143,12 +132,10 @@
     .parameter "s"
 
     .prologue
-    .line 360
     const-string v0, "LinkCapabilities"
 
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 361
     return-void
 .end method
 
@@ -158,12 +145,10 @@
     .registers 2
 
     .prologue
-    .line 205
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 206
     return-void
 .end method
 
@@ -172,7 +157,6 @@
     .parameter "key"
 
     .prologue
-    .line 252
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -191,7 +175,6 @@
     .parameter "value"
 
     .prologue
-    .line 263
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsValue(Ljava/lang/Object;)Z
@@ -205,7 +188,6 @@
     .registers 2
 
     .prologue
-    .line 296
     const/4 v0, 0x0
 
     return v0
@@ -227,7 +209,6 @@
     .end annotation
 
     .prologue
-    .line 274
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -242,7 +223,6 @@
     .parameter "key"
 
     .prologue
-    .line 231
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -262,7 +242,6 @@
     .registers 2
 
     .prologue
-    .line 212
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
@@ -285,7 +264,6 @@
     .end annotation
 
     .prologue
-    .line 281
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -301,7 +279,6 @@
     .parameter "value"
 
     .prologue
-    .line 241
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -310,7 +287,6 @@
 
     invoke-virtual {v0, v1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 242
     return-void
 .end method
 
@@ -318,7 +294,6 @@
     .registers 2
 
     .prologue
-    .line 221
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
@@ -332,21 +307,17 @@
     .registers 6
 
     .prologue
-    .line 304
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 305
     .local v3, sb:Ljava/lang/StringBuilder;
     const-string/jumbo v4, "{"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 306
     const/4 v1, 0x1
 
-    .line 307
     .local v1, firstTime:Z
     iget-object v4, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
@@ -371,14 +342,11 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 308
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
     if-eqz v1, :cond_46
 
-    .line 309
     const/4 v1, 0x0
 
-    .line 313
     :goto_25
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -386,12 +354,10 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 314
     const-string v4, ":\""
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 315
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -400,24 +366,20 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 316
     const-string v4, "\""
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 317
     iget-object v4, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 319
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
     :goto_45
     return-object v4
 
-    .line 311
     .restart local v0       #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
     :cond_46
     const-string v4, ","
@@ -426,7 +388,6 @@
 
     goto :goto_25
 
-    .line 319
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
     :cond_4c
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -449,7 +410,6 @@
     .end annotation
 
     .prologue
-    .line 288
     iget-object v0, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -465,7 +425,6 @@
     .parameter "flags"
 
     .prologue
-    .line 327
     iget-object v2, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->size()I
@@ -474,7 +433,6 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 328
     iget-object v2, p0, Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -499,7 +457,6 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 329
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -513,7 +470,6 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 330
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -524,7 +480,6 @@
 
     goto :goto_13
 
-    .line 332
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
     :cond_36
     return-void

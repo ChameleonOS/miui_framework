@@ -18,7 +18,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,13 +28,11 @@
     .parameter "providerName"
 
     .prologue
-    .line 52
     :try_start_0
     invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 54
     .local v0, c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
@@ -47,16 +44,13 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_a} :catch_26
     .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_a} :catch_40
 
-    .line 62
     .end local v0           #c:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :goto_a
     return-object v2
 
-    .line 55
     :catch_b
     move-exception v1
 
-    .line 56
     .local v1, e:Ljava/lang/ClassNotFoundException;
     const-string v2, "WebViewFactory"
 
@@ -80,18 +74,15 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 62
     .end local v1           #e:Ljava/lang/ClassNotFoundException;
     :goto_24
     const/4 v2, 0x0
 
     goto :goto_a
 
-    .line 57
     :catch_26
     move-exception v1
 
-    .line 58
     .local v1, e:Ljava/lang/IllegalAccessException;
     const-string v2, "WebViewFactory"
 
@@ -117,12 +108,10 @@
 
     goto :goto_24
 
-    .line 59
     .end local v1           #e:Ljava/lang/IllegalAccessException;
     :catch_40
     move-exception v1
 
-    .line 60
     .local v1, e:Ljava/lang/InstantiationException;
     const-string v2, "WebViewFactory"
 
@@ -153,7 +142,6 @@
     .registers 2
 
     .prologue
-    .line 39
     const-class v1, Landroid/webkit/WebViewFactory;
 
     monitor-enter v1
@@ -167,13 +155,11 @@
     :try_end_9
     .catchall {:try_start_3 .. :try_end_9} :catchall_21
 
-    .line 46
     :goto_9
     monitor-exit v1
 
     return-object v0
 
-    .line 41
     :cond_b
     :try_start_b
     const-string v0, "android.webkit.WebViewClassic$Factory"
@@ -184,19 +170,16 @@
 
     sput-object v0, Landroid/webkit/WebViewFactory;->sProviderInstance:Landroid/webkit/WebViewFactoryProvider;
 
-    .line 42
     sget-object v0, Landroid/webkit/WebViewFactory;->sProviderInstance:Landroid/webkit/WebViewFactoryProvider;
 
     if-nez v0, :cond_1e
 
-    .line 44
     new-instance v0, Landroid/webkit/WebViewClassic$Factory;
 
     invoke-direct {v0}, Landroid/webkit/WebViewClassic$Factory;-><init>()V
 
     sput-object v0, Landroid/webkit/WebViewFactory;->sProviderInstance:Landroid/webkit/WebViewFactoryProvider;
 
-    .line 46
     :cond_1e
     sget-object v0, Landroid/webkit/WebViewFactory;->sProviderInstance:Landroid/webkit/WebViewFactoryProvider;
     :try_end_20
@@ -204,7 +187,6 @@
 
     goto :goto_9
 
-    .line 39
     :catchall_21
     move-exception v0
 

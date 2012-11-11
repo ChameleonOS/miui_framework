@@ -25,7 +25,6 @@
     .parameter "handler"
 
     .prologue
-    .line 761
     if-eqz p2, :cond_c
 
     invoke-virtual {p2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -35,13 +34,10 @@
     :goto_6
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 762
     iput-object p1, p0, Landroid/hardware/input/InputManager$InputDeviceListenerDelegate;->mListener:Landroid/hardware/input/InputManager$InputDeviceListener;
 
-    .line 763
     return-void
 
-    .line 761
     :cond_c
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
@@ -57,16 +53,13 @@
     .parameter "msg"
 
     .prologue
-    .line 767
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_1e
 
-    .line 778
     :goto_5
     return-void
 
-    .line 769
     :pswitch_6
     iget-object v0, p0, Landroid/hardware/input/InputManager$InputDeviceListenerDelegate;->mListener:Landroid/hardware/input/InputManager$InputDeviceListener;
 
@@ -76,7 +69,6 @@
 
     goto :goto_5
 
-    .line 772
     :pswitch_e
     iget-object v0, p0, Landroid/hardware/input/InputManager$InputDeviceListenerDelegate;->mListener:Landroid/hardware/input/InputManager$InputDeviceListener;
 
@@ -86,7 +78,6 @@
 
     goto :goto_5
 
-    .line 775
     :pswitch_16
     iget-object v0, p0, Landroid/hardware/input/InputManager$InputDeviceListenerDelegate;->mListener:Landroid/hardware/input/InputManager$InputDeviceListener;
 
@@ -96,7 +87,6 @@
 
     goto :goto_5
 
-    .line 767
     :pswitch_data_1e
     .packed-switch 0x1
         :pswitch_6

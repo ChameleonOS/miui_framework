@@ -614,10 +614,8 @@
     .registers 0
 
     .prologue
-    .line 330
     invoke-static {}, Landroid/opengl/GLES20;->_nativeClassInit()V
 
-    .line 331
     return-void
 .end method
 
@@ -625,7 +623,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -1202,7 +1199,6 @@
     .parameter "ptr"
 
     .prologue
-    .line 1921
     invoke-virtual {p5}, Ljava/nio/Buffer;->remaining()I
 
     move-result v6
@@ -1221,7 +1217,6 @@
 
     invoke-static/range {v0 .. v6}, Landroid/opengl/GLES20;->glVertexAttribPointerBounds(IIIZILjava/nio/Buffer;I)V
 
-    .line 1930
     return-void
 .end method
 

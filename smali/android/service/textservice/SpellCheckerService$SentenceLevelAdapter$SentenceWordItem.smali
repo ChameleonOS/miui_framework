@@ -30,20 +30,15 @@
     .parameter "end"
 
     .prologue
-    .line 344
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 345
     iput-object p1, p0, Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceWordItem;->mTextInfo:Landroid/view/textservice/TextInfo;
 
-    .line 346
     iput p2, p0, Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceWordItem;->mStart:I
 
-    .line 347
     sub-int v0, p3, p2
 
     iput v0, p0, Landroid/service/textservice/SpellCheckerService$SentenceLevelAdapter$SentenceWordItem;->mLength:I
 
-    .line 348
     return-void
 .end method

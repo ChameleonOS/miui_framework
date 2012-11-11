@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 647
     iput-object p1, p0, Landroid/view/ViewPropertyAnimator$2;->this$0:Landroid/view/ViewPropertyAnimator;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .registers 4
 
     .prologue
-    .line 650
     iget-object v0, p0, Landroid/view/ViewPropertyAnimator$2;->this$0:Landroid/view/ViewPropertyAnimator;
 
     #getter for: Landroid/view/ViewPropertyAnimator;->mView:Landroid/view/View;
@@ -55,6 +53,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 651
     return-void
 .end method

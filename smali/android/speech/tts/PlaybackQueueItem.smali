@@ -19,16 +19,12 @@
     .parameter "callerIdentity"
 
     .prologue
-    .line 12
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
     iput-object p1, p0, Landroid/speech/tts/PlaybackQueueItem;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
 
-    .line 14
     iput-object p2, p0, Landroid/speech/tts/PlaybackQueueItem;->mCallerIdentity:Ljava/lang/Object;
 
-    .line 15
     return-void
 .end method
 
@@ -38,7 +34,6 @@
     .registers 2
 
     .prologue
-    .line 18
     iget-object v0, p0, Landroid/speech/tts/PlaybackQueueItem;->mCallerIdentity:Ljava/lang/Object;
 
     return-object v0
@@ -48,7 +43,6 @@
     .registers 2
 
     .prologue
-    .line 22
     iget-object v0, p0, Landroid/speech/tts/PlaybackQueueItem;->mDispatcher:Landroid/speech/tts/TextToSpeechService$UtteranceProgressDispatcher;
 
     return-object v0

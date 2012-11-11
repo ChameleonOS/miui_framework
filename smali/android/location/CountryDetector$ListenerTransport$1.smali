@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 75
     iput-object p1, p0, Landroid/location/CountryDetector$ListenerTransport$1;->this$0:Landroid/location/CountryDetector$ListenerTransport;
 
     iput-object p2, p0, Landroid/location/CountryDetector$ListenerTransport$1;->val$country:Landroid/location/Country;
@@ -46,7 +45,6 @@
     .registers 3
 
     .prologue
-    .line 77
     iget-object v0, p0, Landroid/location/CountryDetector$ListenerTransport$1;->this$0:Landroid/location/CountryDetector$ListenerTransport;
 
     #getter for: Landroid/location/CountryDetector$ListenerTransport;->mListener:Landroid/location/CountryListener;
@@ -58,6 +56,5 @@
 
     invoke-interface {v0, v1}, Landroid/location/CountryListener;->onCountryDetected(Landroid/location/Country;)V
 
-    .line 78
     return-void
 .end method

@@ -47,7 +47,6 @@
     .registers 4
 
     .prologue
-    .line 69
     new-instance v0, Landroid/content/ComponentName;
 
     const-string v1, "com.android.providers.downloads"
@@ -58,7 +57,6 @@
 
     sput-object v0, Landroid/app/MiuiDownloadManager;->DOWNLOAD_UPDATE_RECEIVER_COMPONENT:Landroid/content/ComponentName;
 
-    .line 76
     sget-object v0, Landroid/app/MiuiDownloadManager;->UNDERLYING_COLUMNS:[Ljava/lang/String;
 
     const/4 v1, 0x2
@@ -96,13 +94,10 @@
     .parameter "packageName"
 
     .prologue
-    .line 286
     invoke-direct {p0, p1, p2}, Landroid/app/DownloadManager;-><init>(Landroid/content/ContentResolver;Ljava/lang/String;)V
 
-    .line 287
     iput-object p1, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
-    .line 288
     return-void
 .end method
 
@@ -111,10 +106,8 @@
     .parameter "values"
 
     .prologue
-    .line 370
     if-eqz p0, :cond_18
 
-    .line 371
     const-string/jumbo v0, "status"
 
     const/16 v1, 0xc0
@@ -125,7 +118,6 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 372
     const-string v0, "control"
 
     const/4 v1, 0x0
@@ -136,7 +128,6 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 374
     :cond_18
     return-void
 .end method
@@ -162,7 +153,6 @@
     .local p2, type:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     const/4 v3, 0x0
 
-    .line 87
     array-length v1, p0
 
     array-length v2, p1
@@ -179,20 +169,17 @@
 
     check-cast v0, [Ljava/lang/Object;
 
-    .line 88
     .local v0, dst:[Ljava/lang/Object;,"[TT;"
     array-length v1, p0
 
     invoke-static {p0, v3, v0, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 89
     array-length v1, p0
 
     array-length v2, p1
 
     invoke-static {p1, v3, v0, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 90
     return-object v0
 .end method
 
@@ -201,7 +188,6 @@
     .parameter "context"
 
     .prologue
-    .line 406
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -219,15 +205,12 @@
 
     move-result-object v1
 
-    .line 409
     :goto_e
     return-object v1
 
-    .line 408
     :catch_f
     move-exception v0
 
-    .line 409
     .local v0, e:Landroid/provider/Settings$SettingNotFoundException;
     const/4 v1, 0x0
 
@@ -239,12 +222,10 @@
     .parameter "statuses"
 
     .prologue
-    .line 362
     array-length v2, p0
 
     new-array v1, v2, [Ljava/lang/String;
 
-    .line 363
     .local v1, whereArgs:[Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -254,7 +235,6 @@
 
     if-ge v0, v2, :cond_12
 
-    .line 364
     aget v2, p0, v0
 
     invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -263,12 +243,10 @@
 
     aput-object v2, v1, v0
 
-    .line 363
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
 
-    .line 366
     :cond_12
     return-object v1
 .end method
@@ -279,18 +257,15 @@
     .parameter "jointConditions"
 
     .prologue
-    .line 348
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 349
     .local v1, whereClause:Ljava/lang/StringBuilder;
     const-string v2, "("
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 350
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -299,10 +274,8 @@
 
     if-ge v0, v2, :cond_51
 
-    .line 351
     if-lez v0, :cond_2a
 
-    .line 352
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -327,13 +300,11 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 354
     :cond_2a
     const-string/jumbo v2, "status"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 355
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -362,18 +333,15 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 350
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_b
 
-    .line 357
     :cond_51
     const-string v2, ")"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 358
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -386,12 +354,10 @@
     .parameter "cursor"
 
     .prologue
-    .line 390
     move-object v0, p0
 
     check-cast v0, Landroid/app/DownloadManager$CursorTranslator;
 
-    .line 391
     .local v0, cusorTranslator:Landroid/app/DownloadManager$CursorTranslator;
     const-string/jumbo v1, "status"
 
@@ -423,16 +389,13 @@
     .parameter "cursor"
 
     .prologue
-    .line 377
     const/4 v1, 0x0
 
     .local v1, ret:Z
     move-object v0, p0
 
-    .line 378
     check-cast v0, Landroid/app/DownloadManager$CursorTranslator;
 
-    .line 379
     .local v0, cusorTranslator:Landroid/app/DownloadManager$CursorTranslator;
     const-string/jumbo v3, "status"
 
@@ -444,21 +407,17 @@
 
     move-result v2
 
-    .line 380
     .local v2, status:I
     packed-switch v2, :pswitch_data_16
 
-    .line 386
     :goto_12
     return v1
 
-    .line 383
     :pswitch_13
     const/4 v1, 0x1
 
     goto :goto_12
 
-    .line 380
     nop
 
     :pswitch_data_16
@@ -475,33 +434,27 @@
     .parameter "unregisterIds"
 
     .prologue
-    .line 98
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.OPERATE_DOWNLOADSET_UPDATE_PROGRESS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 99
     .local v0, intent:Landroid/content/Intent;
     sget-object v1, Landroid/app/MiuiDownloadManager;->DOWNLOAD_UPDATE_RECEIVER_COMPONENT:Landroid/content/ComponentName;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 100
     const-string v1, "intent_extra_register_downloads_update_progress"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[J)Landroid/content/Intent;
 
-    .line 101
     const-string v1, "intent_extra_unregister_downloads_update_progress"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[J)Landroid/content/Intent;
 
-    .line 102
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 103
     return-void
 .end method
 
@@ -511,7 +464,6 @@
     .parameter "enabled"
 
     .prologue
-    .line 414
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -541,7 +493,6 @@
     .parameter "size"
 
     .prologue
-    .line 427
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -560,7 +511,6 @@
     .parameter "downloadsStatus"
 
     .prologue
-    .line 401
     invoke-static {p0}, Landroid/app/DownloadManager$CursorTranslator;->translateStatus(I)I
 
     move-result v0
@@ -581,12 +531,10 @@
 
     const/4 v6, 0x1
 
-    .line 320
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 321
     .local v0, values:Landroid/content/ContentValues;
     const-string/jumbo v3, "status"
 
@@ -598,7 +546,6 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 322
     const-string v3, "control"
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -607,7 +554,6 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 324
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -666,7 +612,6 @@
 
     move-result-object v2
 
-    .line 326
     .local v2, whereClause:Ljava/lang/String;
     invoke-static {p1}, Landroid/app/MiuiDownloadManager;->getWhereArgsForIds([J)[Ljava/lang/String;
 
@@ -688,7 +633,6 @@
 
     check-cast v1, [Ljava/lang/String;
 
-    .line 329
     .local v1, whereArgs:[Ljava/lang/String;
     iget-object v3, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
@@ -698,10 +642,8 @@
 
     invoke-virtual {v3, v4, v0, v2, v1}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 330
     return-void
 
-    .line 326
     nop
 
     :array_78
@@ -716,7 +658,6 @@
     .parameter "query"
 
     .prologue
-    .line 292
     iget-object v1, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
     sget-object v2, Landroid/app/MiuiDownloadManager;->MIUI_UNDERLYING_COLUMNS:[Ljava/lang/String;
@@ -729,14 +670,11 @@
 
     move-result-object v0
 
-    .line 293
     .local v0, underlyingCursor:Landroid/database/Cursor;
     if-nez v0, :cond_10
 
-    .line 294
     const/4 v1, 0x0
 
-    .line 296
     :goto_f
     return-object v1
 
@@ -757,14 +695,12 @@
     .parameter "ids"
 
     .prologue
-    .line 308
     if-eqz p1, :cond_5
 
     array-length v0, p1
 
     if-nez v0, :cond_d
 
-    .line 310
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -774,7 +710,6 @@
 
     throw v0
 
-    .line 312
     :cond_d
     iget-object v0, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
@@ -806,16 +741,13 @@
 
     const/4 v6, 0x0
 
-    .line 337
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 338
     .local v0, values:Landroid/content/ContentValues;
     invoke-static {v0}, Landroid/app/MiuiDownloadManager;->addRunningStatusAndControlRun(Landroid/content/ContentValues;)V
 
-    .line 339
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -866,7 +798,6 @@
 
     move-result-object v2
 
-    .line 341
     .local v2, whereClause:Ljava/lang/String;
     invoke-static {p1}, Landroid/app/MiuiDownloadManager;->getWhereArgsForIds([J)[Ljava/lang/String;
 
@@ -890,7 +821,6 @@
 
     check-cast v1, [Ljava/lang/String;
 
-    .line 344
     .local v1, whereArgs:[Ljava/lang/String;
     iget-object v3, p0, Landroid/app/MiuiDownloadManager;->mResolver:Landroid/content/ContentResolver;
 
@@ -900,6 +830,5 @@
 
     invoke-virtual {v3, v4, v0, v2, v1}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 345
     return-void
 .end method

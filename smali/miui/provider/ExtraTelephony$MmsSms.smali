@@ -59,7 +59,6 @@
     .registers 1
 
     .prologue
-    .line 387
     const-string v0, "content://mms-sms/message/preview"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -68,7 +67,6 @@
 
     sput-object v0, Lmiui/provider/ExtraTelephony$MmsSms;->CONTENT_PREVIEW_URI:Landroid/net/Uri;
 
-    .line 393
     const-string v0, "content://mms-sms/locked/all"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -77,7 +75,6 @@
 
     sput-object v0, Lmiui/provider/ExtraTelephony$MmsSms;->CONTENT_ALL_LOCKED_URI:Landroid/net/Uri;
 
-    .line 396
     const-string v0, "content://mms-sms/expired"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -86,7 +83,6 @@
 
     sput-object v0, Lmiui/provider/ExtraTelephony$MmsSms;->CONTENT_EXPIRED_URI:Landroid/net/Uri;
 
-    .line 399
     const-string v0, "content://mms-sms/recent-recipients"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -102,7 +98,6 @@
     .registers 1
 
     .prologue
-    .line 385
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

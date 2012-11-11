@@ -60,7 +60,6 @@
 
     const/4 v3, 0x0
 
-    .line 9
     new-instance v0, Landroid/annotation/MiuiHook$MiuiHookType;
 
     const-string v1, "CHANGE_ACCESS"
@@ -69,7 +68,6 @@
 
     sput-object v0, Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_ACCESS:Landroid/annotation/MiuiHook$MiuiHookType;
 
-    .line 10
     new-instance v0, Landroid/annotation/MiuiHook$MiuiHookType;
 
     const-string v1, "CHANGE_CODE"
@@ -86,7 +84,6 @@
 
     sput-object v0, Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE_AND_ACCESS:Landroid/annotation/MiuiHook$MiuiHookType;
 
-    .line 11
     new-instance v0, Landroid/annotation/MiuiHook$MiuiHookType;
 
     const-string v1, "CHANGE_PARAMETER"
@@ -113,7 +110,6 @@
 
     sput-object v0, Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_BASE_CLASS:Landroid/annotation/MiuiHook$MiuiHookType;
 
-    .line 12
     new-instance v0, Landroid/annotation/MiuiHook$MiuiHookType;
 
     const-string v1, "NEW_CLASS"
@@ -144,7 +140,6 @@
 
     sput-object v0, Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
 
-    .line 8
     const/16 v0, 0x9
 
     new-array v0, v0, [Landroid/annotation/MiuiHook$MiuiHookType;
@@ -209,7 +204,6 @@
     .end annotation
 
     .prologue
-    .line 8
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -220,7 +214,6 @@
     .parameter "name"
 
     .prologue
-    .line 8
     const-class v0, Landroid/annotation/MiuiHook$MiuiHookType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -236,7 +229,6 @@
     .registers 1
 
     .prologue
-    .line 8
     sget-object v0, Landroid/annotation/MiuiHook$MiuiHookType;->$VALUES:[Landroid/annotation/MiuiHook$MiuiHookType;
 
     invoke-virtual {v0}, [Landroid/annotation/MiuiHook$MiuiHookType;->clone()Ljava/lang/Object;

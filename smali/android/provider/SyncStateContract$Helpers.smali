@@ -25,7 +25,6 @@
     .registers 3
 
     .prologue
-    .line 59
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -51,7 +50,6 @@
     .registers 1
 
     .prologue
-    .line 58
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -71,7 +69,6 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 75
     sget-object v2, Landroid/provider/SyncStateContract$Helpers;->DATA_PROJECTION:[Ljava/lang/String;
 
     const-string v3, "account_name=? AND account_type=?"
@@ -100,18 +97,15 @@
 
     move-result-object v6
 
-    .line 79
     .local v6, c:Landroid/database/Cursor;
     if-nez v6, :cond_20
 
-    .line 80
     new-instance v0, Landroid/os/RemoteException;
 
     invoke-direct {v0}, Landroid/os/RemoteException;-><init>()V
 
     throw v0
 
-    .line 84
     :cond_20
     :try_start_20
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
@@ -120,7 +114,6 @@
 
     if-eqz v0, :cond_34
 
-    .line 85
     const-string v0, "data"
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -133,14 +126,11 @@
 
     move-result-object v5
 
-    .line 88
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 90
     :goto_33
     return-object v5
 
-    .line 88
     :cond_34
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
@@ -184,7 +174,6 @@
 
     const/4 v10, 0x1
 
-    .line 130
     sget-object v2, Landroid/provider/SyncStateContract$Helpers;->DATA_PROJECTION:[Ljava/lang/String;
 
     const-string v3, "account_name=? AND account_type=?"
@@ -211,18 +200,15 @@
 
     move-result-object v7
 
-    .line 133
     .local v7, c:Landroid/database/Cursor;
     if-nez v7, :cond_20
 
-    .line 134
     new-instance v0, Landroid/os/RemoteException;
 
     invoke-direct {v0}, Landroid/os/RemoteException;-><init>()V
 
     throw v0
 
-    .line 138
     :cond_20
     :try_start_20
     invoke-interface {v7}, Landroid/database/Cursor;->moveToNext()Z
@@ -231,14 +217,12 @@
 
     if-eqz v0, :cond_41
 
-    .line 139
     const/4 v0, 0x1
 
     invoke-interface {v7, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v8
 
-    .line 140
     .local v8, rowId:J
     const-string v0, "data"
 
@@ -250,7 +234,6 @@
 
     move-result-object v6
 
-    .line 141
     .local v6, blob:[B
     invoke-static {p1, v8, v9}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
 
@@ -262,16 +245,13 @@
 
     move-result-object v5
 
-    .line 144
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 146
     .end local v6           #blob:[B
     .end local v8           #rowId:J
     :goto_40
     return-object v5
 
-    .line 144
     :cond_41
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
@@ -298,32 +278,27 @@
     .end annotation
 
     .prologue
-    .line 114
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 115
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "data"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 116
     const-string v1, "account_name"
 
     iget-object v2, p2, Landroid/accounts/Account;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 117
     const-string v1, "account_type"
 
     iget-object v2, p2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 118
     invoke-virtual {p0, p1, v0}, Landroid/content/ContentProviderClient;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     move-result-object v1
@@ -338,18 +313,15 @@
     .parameter "data"
 
     .prologue
-    .line 160
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 161
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "data"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 162
     invoke-static {p0}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v1
@@ -387,18 +359,15 @@
     .parameter "data"
 
     .prologue
-    .line 179
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 180
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "data"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 181
     invoke-static {p0}, Landroid/content/ContentProviderOperation;->newUpdate(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v1
@@ -427,35 +396,29 @@
     .end annotation
 
     .prologue
-    .line 105
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 106
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "data"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 107
     const-string v1, "account_name"
 
     iget-object v2, p2, Landroid/accounts/Account;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 108
     const-string v1, "account_type"
 
     iget-object v2, p2, Landroid/accounts/Account;->type:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 109
     invoke-virtual {p0, p1, v0}, Landroid/content/ContentProviderClient;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    .line 110
     return-void
 .end method
 
@@ -473,20 +436,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 123
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 124
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "data"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 125
     invoke-virtual {p0, p1, v0, v2, v2}, Landroid/content/ContentProviderClient;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 126
     return-void
 .end method

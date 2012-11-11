@@ -32,17 +32,14 @@
     .registers 2
 
     .prologue
-    .line 706
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 707
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
-    .line 708
     return-void
 .end method
 
@@ -51,15 +48,12 @@
     .parameter "source"
 
     .prologue
-    .line 710
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 711
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 712
     .local v1, count:I
     new-instance v3, Ljava/util/ArrayList;
 
@@ -67,14 +61,12 @@
 
     iput-object v3, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
-    .line 713
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_f
     if-ge v2, v1, :cond_21
 
-    .line 714
     sget-object v3, Landroid/graphics/Bitmap;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -83,18 +75,15 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    .line 715
     .local v0, b:Landroid/graphics/Bitmap;
     iget-object v3, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 713
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_f
 
-    .line 717
     .end local v0           #b:Landroid/graphics/Bitmap;
     :cond_21
     return-void
@@ -107,7 +96,6 @@
     .parameter "memoryCounter"
 
     .prologue
-    .line 760
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -120,7 +108,6 @@
 
     if-ge v0, v1, :cond_17
 
-    .line 761
     iget-object v1, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -131,12 +118,10 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/RemoteViews$MemoryUsageCounter;->addBitmapMemory(Landroid/graphics/Bitmap;)V
 
-    .line 760
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 763
     :cond_17
     return-void
 .end method
@@ -146,16 +131,13 @@
     .parameter "bitmapCache"
 
     .prologue
-    .line 749
     iget-object v1, p1, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
-    .line 750
     .local v1, bitmapsToBeAdded:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/graphics/Bitmap;>;"
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 751
     .local v2, count:I
     const/4 v3, 0x0
 
@@ -163,14 +145,12 @@
     :goto_7
     if-ge v3, v2, :cond_1f
 
-    .line 752
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    .line 753
     .local v0, b:Landroid/graphics/Bitmap;
     iget-object v4, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
@@ -180,18 +160,15 @@
 
     if-nez v4, :cond_1c
 
-    .line 754
     iget-object v4, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 751
     :cond_1c
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_7
 
-    .line 757
     .end local v0           #b:Landroid/graphics/Bitmap;
     :cond_1f
     return-void
@@ -202,7 +179,6 @@
     .parameter "id"
 
     .prologue
-    .line 733
     const/4 v0, -0x1
 
     if-eq p1, v0, :cond_b
@@ -215,11 +191,9 @@
 
     if-lt p1, v0, :cond_d
 
-    .line 734
     :cond_b
     const/4 v0, 0x0
 
-    .line 736
     :goto_c
     return-object v0
 
@@ -240,17 +214,13 @@
     .parameter "b"
 
     .prologue
-    .line 720
     if-nez p1, :cond_4
 
-    .line 721
     const/4 v0, -0x1
 
-    .line 727
     :goto_3
     return v0
 
-    .line 723
     :cond_4
     iget-object v0, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
@@ -260,7 +230,6 @@
 
     if-eqz v0, :cond_13
 
-    .line 724
     iget-object v0, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -269,13 +238,11 @@
 
     goto :goto_3
 
-    .line 726
     :cond_13
     iget-object v0, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 727
     iget-object v0, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -293,25 +260,21 @@
     .parameter "flags"
 
     .prologue
-    .line 741
     iget-object v2, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 742
     .local v0, count:I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 743
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_a
     if-ge v1, v0, :cond_1a
 
-    .line 744
     iget-object v2, p0, Landroid/widget/RemoteViews$BitmapCache;->mBitmaps:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -322,12 +285,10 @@
 
     invoke-virtual {v2, p1, p2}, Landroid/graphics/Bitmap;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 743
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_a
 
-    .line 746
     :cond_1a
     return-void
 .end method

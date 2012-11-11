@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 133
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "source"
 
     .prologue
-    .line 136
     new-instance v0, Landroid/view/textservice/SentenceSuggestionsInfo;
 
     invoke-direct {v0, p1}, Landroid/view/textservice/SentenceSuggestionsInfo;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +56,6 @@
     .parameter "x0"
 
     .prologue
-    .line 133
     invoke-virtual {p0, p1}, Landroid/view/textservice/SentenceSuggestionsInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/textservice/SentenceSuggestionsInfo;
 
     move-result-object v0
@@ -71,7 +68,6 @@
     .parameter "size"
 
     .prologue
-    .line 141
     new-array v0, p1, [Landroid/view/textservice/SentenceSuggestionsInfo;
 
     return-object v0
@@ -82,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 133
     invoke-virtual {p0, p1}, Landroid/view/textservice/SentenceSuggestionsInfo$1;->newArray(I)[Landroid/view/textservice/SentenceSuggestionsInfo;
 
     move-result-object v0

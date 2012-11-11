@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 78
     iput-boolean p1, p0, Lcom/android/internal/view/RotationPolicy$1;->val$enabled:Z
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .registers 5
 
     .prologue
-    .line 82
     :try_start_0
     const-string/jumbo v2, "window"
 
@@ -53,23 +51,19 @@
 
     move-result-object v1
 
-    .line 84
     .local v1, wm:Landroid/view/IWindowManager;
     iget-boolean v2, p0, Lcom/android/internal/view/RotationPolicy$1;->val$enabled:Z
 
     if-eqz v2, :cond_14
 
-    .line 85
     const/4 v2, -0x1
 
     invoke-interface {v1, v2}, Landroid/view/IWindowManager;->freezeRotation(I)V
 
-    .line 92
     .end local v1           #wm:Landroid/view/IWindowManager;
     :goto_13
     return-void
 
-    .line 87
     .restart local v1       #wm:Landroid/view/IWindowManager;
     :cond_14
     invoke-interface {v1}, Landroid/view/IWindowManager;->thawRotation()V
@@ -78,12 +72,10 @@
 
     goto :goto_13
 
-    .line 89
     .end local v1           #wm:Landroid/view/IWindowManager;
     :catch_18
     move-exception v0
 
-    .line 90
     .local v0, exc:Landroid/os/RemoteException;
     const-string v2, "RotationPolicy"
 

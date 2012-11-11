@@ -82,10 +82,8 @@
     .registers 1
 
     .prologue
-    .line 48
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1766
     return-void
 .end method
 
@@ -93,7 +91,6 @@
     .registers 1
 
     .prologue
-    .line 2058
     const-string v0, "content://media/none/media_scanner"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -110,7 +107,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2083
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -131,11 +127,9 @@
 
     move-result-object v6
 
-    .line 2086
     .local v6, c:Landroid/database/Cursor;
     if-eqz v6, :cond_22
 
-    .line 2088
     :try_start_14
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -143,7 +137,6 @@
 
     if-eqz v0, :cond_23
 
-    .line 2089
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -152,15 +145,12 @@
 
     move-result-object v2
 
-    .line 2092
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 2095
     :cond_22
     :goto_22
     return-object v2
 
-    .line 2092
     :cond_23
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 

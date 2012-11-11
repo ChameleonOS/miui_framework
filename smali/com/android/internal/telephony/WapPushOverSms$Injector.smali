@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 64
     invoke-virtual {p0}, Lcom/android/internal/telephony/WapPushOverSms;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -48,7 +46,6 @@
 
     if-eqz v1, :cond_15
 
-    .line 65
     invoke-virtual {p0}, Lcom/android/internal/telephony/WapPushOverSms;->getSmsDispatcher()Lcom/android/internal/telephony/SMSDispatcher;
 
     move-result-object v1
@@ -59,7 +56,6 @@
 
     invoke-virtual {v1, v0, v2, v3}, Lcom/android/internal/telephony/SMSDispatcher;->acknowledgeLastIncomingSms(ZILandroid/os/Message;)V
 
-    .line 68
     :goto_14
     return v0
 

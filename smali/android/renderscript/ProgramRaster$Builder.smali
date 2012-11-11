@@ -28,23 +28,18 @@
     .parameter "rs"
 
     .prologue
-    .line 129
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 130
     iput-object p1, p0, Landroid/renderscript/ProgramRaster$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    .line 131
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/renderscript/ProgramRaster$Builder;->mPointSprite:Z
 
-    .line 132
     sget-object v0, Landroid/renderscript/ProgramRaster$CullMode;->BACK:Landroid/renderscript/ProgramRaster$CullMode;
 
     iput-object v0, p0, Landroid/renderscript/ProgramRaster$Builder;->mCullMode:Landroid/renderscript/ProgramRaster$CullMode;
 
-    .line 133
     return-void
 .end method
 
@@ -54,12 +49,10 @@
     .registers 6
 
     .prologue
-    .line 155
     iget-object v2, p0, Landroid/renderscript/ProgramRaster$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     invoke-virtual {v2}, Landroid/renderscript/RenderScript;->validate()V
 
-    .line 156
     iget-object v2, p0, Landroid/renderscript/ProgramRaster$Builder;->mRS:Landroid/renderscript/RenderScript;
 
     iget-boolean v3, p0, Landroid/renderscript/ProgramRaster$Builder;->mPointSprite:Z
@@ -72,7 +65,6 @@
 
     move-result v0
 
-    .line 157
     .local v0, id:I
     new-instance v1, Landroid/renderscript/ProgramRaster;
 
@@ -80,18 +72,15 @@
 
     invoke-direct {v1, v0, v2}, Landroid/renderscript/ProgramRaster;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 158
     .local v1, programRaster:Landroid/renderscript/ProgramRaster;
     iget-boolean v2, p0, Landroid/renderscript/ProgramRaster$Builder;->mPointSprite:Z
 
     iput-boolean v2, v1, Landroid/renderscript/ProgramRaster;->mPointSprite:Z
 
-    .line 159
     iget-object v2, p0, Landroid/renderscript/ProgramRaster$Builder;->mCullMode:Landroid/renderscript/ProgramRaster$CullMode;
 
     iput-object v2, v1, Landroid/renderscript/ProgramRaster;->mCullMode:Landroid/renderscript/ProgramRaster$CullMode;
 
-    .line 160
     return-object v1
 .end method
 
@@ -100,10 +89,8 @@
     .parameter "m"
 
     .prologue
-    .line 147
     iput-object p1, p0, Landroid/renderscript/ProgramRaster$Builder;->mCullMode:Landroid/renderscript/ProgramRaster$CullMode;
 
-    .line 148
     return-object p0
 .end method
 
@@ -112,9 +99,7 @@
     .parameter "enable"
 
     .prologue
-    .line 139
     iput-boolean p1, p0, Landroid/renderscript/ProgramRaster$Builder;->mPointSprite:Z
 
-    .line 140
     return-object p0
 .end method

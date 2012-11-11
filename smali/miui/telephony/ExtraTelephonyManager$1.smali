@@ -37,7 +37,6 @@
     .parameter
 
     .prologue
-    .line 130
     iput-object p1, p0, Lmiui/telephony/ExtraTelephonyManager$1;->val$context:Landroid/content/Context;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +55,6 @@
     .end annotation
 
     .prologue
-    .line 130
     invoke-virtual {p0}, Lmiui/telephony/ExtraTelephonyManager$1;->call()Ljava/lang/String;
 
     move-result-object v0
@@ -73,7 +71,6 @@
     .end annotation
 
     .prologue
-    .line 133
     iget-object v0, p0, Lmiui/telephony/ExtraTelephonyManager$1;->val$context:Landroid/content/Context;
 
     #calls: Lmiui/telephony/ExtraTelephonyManager;->waitAndGetDeviceId(Landroid/content/Context;)Ljava/lang/String;

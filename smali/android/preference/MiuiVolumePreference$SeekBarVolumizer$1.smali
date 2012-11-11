@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 237
     iput-object p1, p0, Landroid/preference/MiuiVolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/MiuiVolumePreference$SeekBarVolumizer;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,10 +39,8 @@
     .parameter "selfChange"
 
     .prologue
-    .line 240
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 241
     iget-object v1, p0, Landroid/preference/MiuiVolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/MiuiVolumePreference$SeekBarVolumizer;
 
     #getter for: Landroid/preference/MiuiVolumePreference$SeekBarVolumizer;->mSeekBar:Landroid/widget/SeekBar;
@@ -62,7 +59,6 @@
 
     if-eqz v1, :cond_3e
 
-    .line 242
     iget-object v1, p0, Landroid/preference/MiuiVolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/MiuiVolumePreference$SeekBarVolumizer;
 
     #getter for: Landroid/preference/MiuiVolumePreference$SeekBarVolumizer;->mAudioManager:Landroid/media/AudioManager;
@@ -101,7 +97,6 @@
 
     move-result v0
 
-    .line 245
     .local v0, volume:I
     :goto_35
     iget-object v1, p0, Landroid/preference/MiuiVolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/MiuiVolumePreference$SeekBarVolumizer;
@@ -113,12 +108,10 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 247
     .end local v0           #volume:I
     :cond_3e
     return-void
 
-    .line 242
     :cond_3f
     iget-object v1, p0, Landroid/preference/MiuiVolumePreference$SeekBarVolumizer$1;->this$1:Landroid/preference/MiuiVolumePreference$SeekBarVolumizer;
 

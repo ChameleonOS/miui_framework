@@ -30,18 +30,13 @@
     .parameter "s"
 
     .prologue
-    .line 74
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
     iput p1, p0, Lcom/android/internal/http/HttpDateTime$TimeOfDay;->hour:I
 
-    .line 76
     iput p2, p0, Lcom/android/internal/http/HttpDateTime$TimeOfDay;->minute:I
 
-    .line 77
     iput p3, p0, Lcom/android/internal/http/HttpDateTime$TimeOfDay;->second:I
 
-    .line 78
     return-void
 .end method

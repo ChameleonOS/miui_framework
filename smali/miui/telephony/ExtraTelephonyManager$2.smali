@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 159
     iput-object p1, p0, Lmiui/telephony/ExtraTelephonyManager$2;->val$future:Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "intent"
 
     .prologue
-    .line 162
     iget-object v0, p0, Lmiui/telephony/ExtraTelephonyManager$2;->val$future:Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;
 
     const-string v1, "device_id"
@@ -51,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;->setResult(Ljava/lang/Object;)V
 
-    .line 164
     return-void
 .end method

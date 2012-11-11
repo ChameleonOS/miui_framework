@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 3
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,7 +20,6 @@
     .parameter "length"
 
     .prologue
-    .line 5
     invoke-static {}, Lmiui/telephony/phonenumber/ChineseTelocation;->getInstance()Lmiui/telephony/phonenumber/ChineseTelocation;
 
     move-result-object v0

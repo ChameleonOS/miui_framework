@@ -19,7 +19,6 @@
     .registers 1
 
     .prologue
-    .line 813
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +29,6 @@
     .parameter "x0"
 
     .prologue
-    .line 813
     invoke-direct {p0}, Landroid/text/HtmlToSpannedConverter$Big;-><init>()V
 
     return-void

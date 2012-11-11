@@ -30,24 +30,18 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 78
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/webkit/WebStorage$Origin;->mOrigin:Ljava/lang/String;
 
-    .line 61
     iput-wide v1, p0, Landroid/webkit/WebStorage$Origin;->mQuota:J
 
-    .line 62
     iput-wide v1, p0, Landroid/webkit/WebStorage$Origin;->mUsage:J
 
-    .line 79
     iput-object p1, p0, Landroid/webkit/WebStorage$Origin;->mOrigin:Ljava/lang/String;
 
-    .line 80
     return-void
 .end method
 
@@ -59,27 +53,20 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 72
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/webkit/WebStorage$Origin;->mOrigin:Ljava/lang/String;
 
-    .line 61
     iput-wide v1, p0, Landroid/webkit/WebStorage$Origin;->mQuota:J
 
-    .line 62
     iput-wide v1, p0, Landroid/webkit/WebStorage$Origin;->mUsage:J
 
-    .line 73
     iput-object p1, p0, Landroid/webkit/WebStorage$Origin;->mOrigin:Ljava/lang/String;
 
-    .line 74
     iput-wide p2, p0, Landroid/webkit/WebStorage$Origin;->mQuota:J
 
-    .line 75
     return-void
 .end method
 
@@ -92,30 +79,22 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 65
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/webkit/WebStorage$Origin;->mOrigin:Ljava/lang/String;
 
-    .line 61
     iput-wide v1, p0, Landroid/webkit/WebStorage$Origin;->mQuota:J
 
-    .line 62
     iput-wide v1, p0, Landroid/webkit/WebStorage$Origin;->mUsage:J
 
-    .line 66
     iput-object p1, p0, Landroid/webkit/WebStorage$Origin;->mOrigin:Ljava/lang/String;
 
-    .line 67
     iput-wide p2, p0, Landroid/webkit/WebStorage$Origin;->mQuota:J
 
-    .line 68
     iput-wide p4, p0, Landroid/webkit/WebStorage$Origin;->mUsage:J
 
-    .line 69
     return-void
 .end method
 
@@ -125,7 +104,6 @@
     .registers 2
 
     .prologue
-    .line 93
     iget-object v0, p0, Landroid/webkit/WebStorage$Origin;->mOrigin:Ljava/lang/String;
 
     return-object v0
@@ -135,7 +113,6 @@
     .registers 3
 
     .prologue
-    .line 104
     iget-wide v0, p0, Landroid/webkit/WebStorage$Origin;->mQuota:J
 
     return-wide v0
@@ -145,7 +122,6 @@
     .registers 3
 
     .prologue
-    .line 114
     iget-wide v0, p0, Landroid/webkit/WebStorage$Origin;->mUsage:J
 
     return-wide v0

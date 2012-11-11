@@ -12,7 +12,6 @@
     .registers 1
 
     .prologue
-    .line 6
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,14 +22,12 @@
     .parameter "resolver"
 
     .prologue
-    .line 15
     const-string v1, "default_input_method"
 
     invoke-static {p0, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 17
     .local v0, defaultImeId:Ljava/lang/String;
     const-string v1, "com.sogou.inputmethod.mi/.SogouIME"
 
@@ -40,10 +37,8 @@
 
     if-eqz v1, :cond_10
 
-    .line 18
     const/4 v1, 0x1
 
-    .line 20
     :goto_f
     return v1
 

@@ -29,7 +29,6 @@
     .registers 1
 
     .prologue
-    .line 325
     const-string v0, "content://sms/inbox"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +44,6 @@
     .registers 1
 
     .prologue
-    .line 321
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -61,7 +59,6 @@
     .parameter "read"
 
     .prologue
-    .line 347
     sget-object v1, Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v7, 0x0

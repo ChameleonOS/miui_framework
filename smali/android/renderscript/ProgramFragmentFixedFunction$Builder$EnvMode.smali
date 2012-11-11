@@ -50,7 +50,6 @@
 
     const/4 v2, 0x1
 
-    .line 107
     new-instance v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
     const-string v1, "REPLACE"
@@ -59,7 +58,6 @@
 
     sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->REPLACE:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
-    .line 111
     new-instance v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
     const-string v1, "MODULATE"
@@ -68,7 +66,6 @@
 
     sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->MODULATE:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
-    .line 115
     new-instance v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
     const-string v1, "DECAL"
@@ -77,7 +74,6 @@
 
     sput-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->DECAL:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
-    .line 103
     new-array v0, v5, [Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
     sget-object v1, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->REPLACE:Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
@@ -109,13 +105,10 @@
     .end annotation
 
     .prologue
-    .line 118
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 119
     iput p3, p0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->mID:I
 
-    .line 120
     return-void
 .end method
 
@@ -124,7 +117,6 @@
     .parameter "name"
 
     .prologue
-    .line 103
     const-class v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +132,6 @@
     .registers 1
 
     .prologue
-    .line 103
     sget-object v0, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->$VALUES:[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
     invoke-virtual {v0}, [Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->clone()Ljava/lang/Object;

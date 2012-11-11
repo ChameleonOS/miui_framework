@@ -20,7 +20,6 @@
 
     const/4 v2, 0x0
 
-    .line 33
     new-array v0, v3, [C
 
     const/16 v1, 0xd
@@ -29,7 +28,6 @@
 
     sput-object v0, Landroid/text/method/HideReturnsTransformationMethod;->ORIGINAL:[C
 
-    .line 34
     new-array v0, v3, [C
 
     const v1, 0xfeff
@@ -45,7 +43,6 @@
     .registers 1
 
     .prologue
-    .line 31
     invoke-direct {p0}, Landroid/text/method/ReplacementTransformationMethod;-><init>()V
 
     return-void
@@ -55,19 +52,15 @@
     .registers 1
 
     .prologue
-    .line 51
     sget-object v0, Landroid/text/method/HideReturnsTransformationMethod;->sInstance:Landroid/text/method/HideReturnsTransformationMethod;
 
     if-eqz v0, :cond_7
 
-    .line 52
     sget-object v0, Landroid/text/method/HideReturnsTransformationMethod;->sInstance:Landroid/text/method/HideReturnsTransformationMethod;
 
-    .line 55
     :goto_6
     return-object v0
 
-    .line 54
     :cond_7
     new-instance v0, Landroid/text/method/HideReturnsTransformationMethod;
 
@@ -75,7 +68,6 @@
 
     sput-object v0, Landroid/text/method/HideReturnsTransformationMethod;->sInstance:Landroid/text/method/HideReturnsTransformationMethod;
 
-    .line 55
     sget-object v0, Landroid/text/method/HideReturnsTransformationMethod;->sInstance:Landroid/text/method/HideReturnsTransformationMethod;
 
     goto :goto_6
@@ -87,7 +79,6 @@
     .registers 2
 
     .prologue
-    .line 40
     sget-object v0, Landroid/text/method/HideReturnsTransformationMethod;->ORIGINAL:[C
 
     return-object v0
@@ -97,7 +88,6 @@
     .registers 2
 
     .prologue
-    .line 47
     sget-object v0, Landroid/text/method/HideReturnsTransformationMethod;->REPLACEMENT:[C
 
     return-object v0

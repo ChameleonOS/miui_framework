@@ -58,10 +58,8 @@
     .registers 3
 
     .prologue
-    .line 270
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 275
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -70,7 +68,6 @@
 
     iput-object v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writtenToDiskLatch:Ljava/util/concurrent/CountDownLatch;
 
-    .line 276
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writeToDiskResult:Z
@@ -83,7 +80,6 @@
     .parameter "x0"
 
     .prologue
-    .line 270
     invoke-direct {p0}, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;-><init>()V
 
     return-void
@@ -96,14 +92,11 @@
     .parameter "result"
 
     .prologue
-    .line 279
     iput-boolean p1, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writeToDiskResult:Z
 
-    .line 280
     iget-object v0, p0, Landroid/app/SharedPreferencesImpl$MemoryCommitResult;->writtenToDiskLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 281
     return-void
 .end method

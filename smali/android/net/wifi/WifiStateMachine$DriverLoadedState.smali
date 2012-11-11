@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 2066
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +37,6 @@
     .registers 3
 
     .prologue
-    .line 2070
     const v0, 0xc365
 
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->getName()Ljava/lang/String;
@@ -47,7 +45,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 2071
     return-void
 .end method
 
@@ -60,16 +57,13 @@
 
     const/4 v3, 0x0
 
-    .line 2075
     iget v5, p1, Landroid/os/Message;->what:I
 
     sparse-switch v5, :sswitch_data_de
 
-    .line 2114
     :goto_7
     return v3
 
-    .line 2077
     :sswitch_8
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -86,10 +80,8 @@
     :goto_13
     move v3, v4
 
-    .line 2114
     goto :goto_7
 
-    .line 2081
     :sswitch_15
     :try_start_15
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
@@ -112,7 +104,6 @@
     :try_end_26
     .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_26} :catch_6b
 
-    .line 2090
     :goto_26
     :try_start_26
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
@@ -131,7 +122,6 @@
 
     invoke-interface {v5, v6}, Landroid/os/INetworkManagementService;->setInterfaceDown(Ljava/lang/String;)V
 
-    .line 2092
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     #getter for: Landroid/net/wifi/WifiStateMachine;->mNwService:Landroid/os/INetworkManagementService;
@@ -153,7 +143,6 @@
     .catch Landroid/os/RemoteException; {:try_start_26 .. :try_end_45} :catch_85
     .catch Ljava/lang/IllegalStateException; {:try_start_26 .. :try_end_45} :catch_9f
 
-    .line 2099
     :goto_45
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -173,7 +162,6 @@
 
     if-eqz v5, :cond_b9
 
-    .line 2101
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     #getter for: Landroid/net/wifi/WifiStateMachine;->mWifiMonitor:Landroid/net/wifi/WifiMonitor;
@@ -183,7 +171,6 @@
 
     invoke-virtual {v3}, Landroid/net/wifi/WifiMonitor;->startMonitoring()V
 
-    .line 2102
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
@@ -198,11 +185,9 @@
 
     goto :goto_13
 
-    .line 2082
     :catch_6b
     move-exception v0
 
-    .line 2083
     .local v0, e:Ljava/lang/Exception;
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -229,12 +214,10 @@
 
     goto :goto_26
 
-    .line 2093
     .end local v0           #e:Ljava/lang/Exception;
     :catch_85
     move-exception v2
 
-    .line 2094
     .local v2, re:Landroid/os/RemoteException;
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -261,12 +244,10 @@
 
     goto :goto_45
 
-    .line 2095
     .end local v2           #re:Landroid/os/RemoteException;
     :catch_9f
     move-exception v1
 
-    .line 2096
     .local v1, ie:Ljava/lang/IllegalStateException;
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -293,7 +274,6 @@
 
     goto :goto_45
 
-    .line 2104
     .end local v1           #ie:Ljava/lang/IllegalStateException;
     :cond_b9
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
@@ -303,7 +283,6 @@
     #calls: Landroid/net/wifi/WifiStateMachine;->loge(Ljava/lang/String;)V
     invoke-static {v5, v6}, Landroid/net/wifi/WifiStateMachine;->access$400(Landroid/net/wifi/WifiStateMachine;Ljava/lang/String;)V
 
-    .line 2105
     iget-object v5, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     iget-object v6, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
@@ -320,7 +299,6 @@
 
     goto/16 :goto_13
 
-    .line 2109
     :sswitch_d1
     iget-object v3, p0, Landroid/net/wifi/WifiStateMachine$DriverLoadedState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -336,7 +314,6 @@
 
     goto/16 :goto_13
 
-    .line 2075
     :sswitch_data_de
     .sparse-switch
         0x20002 -> :sswitch_8

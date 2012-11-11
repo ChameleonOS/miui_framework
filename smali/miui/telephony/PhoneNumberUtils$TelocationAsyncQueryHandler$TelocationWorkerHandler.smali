@@ -25,13 +25,10 @@
     .parameter "looper"
 
     .prologue
-    .line 722
     iput-object p1, p0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerHandler;->this$0:Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler;
 
-    .line 723
     invoke-direct {p0, p1, p2}, Landroid/content/AsyncQueryHandler$WorkerHandler;-><init>(Landroid/content/AsyncQueryHandler;Landroid/os/Looper;)V
 
-    .line 724
     return-void
 .end method
 
@@ -42,12 +39,10 @@
     .parameter "msg"
 
     .prologue
-    .line 728
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;
 
-    .line 729
     .local v0, args:Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;
     iget v2, p1, Landroid/os/Message;->arg1:I
 
@@ -55,7 +50,6 @@
 
     if-ne v2, v3, :cond_14
 
-    .line 730
     iget-object v2, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->context:Landroid/content/Context;
 
     iget-object v3, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->phoneNumber:Ljava/lang/String;
@@ -66,7 +60,6 @@
 
     iput-object v2, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->location:Ljava/lang/String;
 
-    .line 732
     :cond_14
     iget-object v2, v0, Lmiui/telephony/PhoneNumberUtils$TelocationAsyncQueryHandler$TelocationWorkerArgs;->handler:Landroid/os/Handler;
 
@@ -76,20 +69,16 @@
 
     move-result-object v1
 
-    .line 733
     .local v1, reply:Landroid/os/Message;
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     iput v2, v1, Landroid/os/Message;->arg1:I
 
-    .line 734
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     iput-object v2, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 735
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 736
     return-void
 .end method

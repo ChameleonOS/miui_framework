@@ -16,17 +16,14 @@
     .registers 1
 
     .prologue
-    .line 19
     sget-object v0, Landroid/text/util/Linkify;->sUrlMatchFilter:Landroid/text/util/Linkify$MatchFilter;
 
     sput-object v0, Lmiui/text/util/Linkify;->sUrlMatchFilter:Landroid/text/util/Linkify$MatchFilter;
 
-    .line 25
     sget-object v0, Landroid/text/util/Linkify;->sPhoneNumberMatchFilter:Landroid/text/util/Linkify$MatchFilter;
 
     sput-object v0, Lmiui/text/util/Linkify;->sPhoneNumberMatchFilter:Landroid/text/util/Linkify$MatchFilter;
 
-    .line 33
     sget-object v0, Landroid/text/util/Linkify;->sPhoneNumberTransformFilter:Landroid/text/util/Linkify$TransformFilter;
 
     sput-object v0, Lmiui/text/util/Linkify;->sPhoneNumberTransformFilter:Landroid/text/util/Linkify$TransformFilter;
@@ -38,7 +35,6 @@
     .registers 1
 
     .prologue
-    .line 13
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,16 +52,13 @@
 
     const/4 v10, 0x0
 
-    .line 42
     if-nez p1, :cond_7
 
     move v1, v10
 
-    .line 86
     :goto_6
     return v1
 
-    .line 46
     :cond_7
     invoke-interface {p0}, Landroid/text/Spannable;->length()I
 
@@ -79,7 +72,6 @@
 
     check-cast v9, [Landroid/text/style/URLSpan;
 
-    .line 48
     .local v9, old:[Landroid/text/style/URLSpan;
     array-length v1, v9
 
@@ -89,29 +81,24 @@
     :goto_16
     if-ltz v6, :cond_20
 
-    .line 49
     aget-object v1, v9, v6
 
     invoke-interface {p0, v1}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 48
     add-int/lit8 v6, v6, -0x1
 
     goto :goto_16
 
-    .line 52
     :cond_20
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 54
     .local v0, links:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/text/util/Linkify$LinkSpec;>;"
     and-int/lit8 v1, p1, 0x1
 
     if-eqz v1, :cond_42
 
-    .line 55
     sget-object v2, Lmiui/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
 
     const/4 v1, 0x3
@@ -138,13 +125,11 @@
 
     invoke-static/range {v0 .. v5}, Lmiui/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
-    .line 60
     :cond_42
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_54
 
-    .line 61
     sget-object v2, Landroid/util/Patterns;->EMAIL_ADDRESS:Ljava/util/regex/Pattern;
 
     new-array v3, v11, [Ljava/lang/String;
@@ -159,13 +144,11 @@
 
     invoke-static/range {v0 .. v5}, Lmiui/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
-    .line 66
     :cond_54
     and-int/lit8 v1, p1, 0x4
 
     if-eqz v1, :cond_69
 
-    .line 67
     sget-object v2, Landroid/util/Patterns;->PHONE:Ljava/util/regex/Pattern;
 
     new-array v3, v11, [Ljava/lang/String;
@@ -182,20 +165,16 @@
 
     invoke-static/range {v0 .. v5}, Lmiui/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
-    .line 72
     :cond_69
     and-int/lit8 v1, p1, 0x8
 
     if-eqz v1, :cond_70
 
-    .line 73
     invoke-static {v0, p0}, Lmiui/text/util/Linkify;->gatherMapLinks(Ljava/util/ArrayList;Landroid/text/Spannable;)V
 
-    .line 76
     :cond_70
     invoke-static {v0}, Lmiui/text/util/Linkify;->pruneOverlaps(Ljava/util/ArrayList;)V
 
-    .line 78
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -204,10 +183,8 @@
 
     move v1, v10
 
-    .line 79
     goto :goto_6
 
-    .line 82
     :cond_7b
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -227,7 +204,6 @@
 
     check-cast v8, Landroid/text/util/Linkify$LinkSpec;
 
-    .line 83
     .local v8, link:Landroid/text/util/Linkify$LinkSpec;
     iget-object v1, v8, Landroid/text/util/Linkify$LinkSpec;->url:Ljava/lang/String;
 
@@ -243,7 +219,6 @@
     :cond_95
     move v1, v11
 
-    .line 86
     goto/16 :goto_6
 .end method
 
@@ -255,10 +230,8 @@
     .parameter "text"
 
     .prologue
-    .line 91
     invoke-static {p0, p1, p2, p3}, Landroid/text/util/Linkify;->applyLink(Ljava/lang/String;IILandroid/text/Spannable;)V
 
-    .line 92
     return-void
 .end method
 
@@ -288,11 +261,9 @@
     .end annotation
 
     .prologue
-    .line 97
     .local p0, links:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/text/util/Linkify$LinkSpec;>;"
     invoke-static/range {p0 .. p5}, Landroid/text/util/Linkify;->gatherLinks(Ljava/util/ArrayList;Landroid/text/Spannable;Ljava/util/regex/Pattern;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V
 
-    .line 99
     return-void
 .end method
 
@@ -313,11 +284,9 @@
     .end annotation
 
     .prologue
-    .line 107
     .local p0, links:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/text/util/Linkify$LinkSpec;>;"
     invoke-static {p0, p1}, Landroid/text/util/Linkify;->gatherMapLinks(Ljava/util/ArrayList;Landroid/text/Spannable;)V
 
-    .line 108
     return-void
 .end method
 
@@ -335,10 +304,8 @@
     .end annotation
 
     .prologue
-    .line 102
     .local p0, links:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/text/util/Linkify$LinkSpec;>;"
     invoke-static {p0}, Landroid/text/util/Linkify;->pruneOverlaps(Ljava/util/ArrayList;)V
 
-    .line 103
     return-void
 .end method

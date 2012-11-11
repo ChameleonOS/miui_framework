@@ -42,7 +42,6 @@
     .registers 3
 
     .prologue
-    .line 23
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/String;
@@ -92,7 +91,6 @@
     .registers 1
 
     .prologue
-    .line 5
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -103,14 +101,12 @@
     .parameter "prefix"
 
     .prologue
-    .line 84
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-nez v4, :cond_19
 
-    .line 85
     sget-object v0, Lmiui/telephony/phonenumber/Prefix;->SMS_PREFIXES:[Ljava/lang/String;
 
     .local v0, arr$:[Ljava/lang/String;
@@ -125,7 +121,6 @@
 
     aget-object v3, v0, v1
 
-    .line 86
     .local v3, sms:Ljava/lang/String;
     invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -133,10 +128,8 @@
 
     if-eqz v4, :cond_16
 
-    .line 87
     const/4 v4, 0x1
 
-    .line 91
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #i$:I
     .end local v2           #len$:I
@@ -144,7 +137,6 @@
     :goto_15
     return v4
 
-    .line 85
     .restart local v0       #arr$:[Ljava/lang/String;
     .restart local v1       #i$:I
     .restart local v2       #len$:I
@@ -154,7 +146,6 @@
 
     goto :goto_a
 
-    .line 91
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #i$:I
     .end local v2           #len$:I
@@ -182,30 +173,24 @@
 
     const/16 v2, 0x31
 
-    .line 28
     invoke-static {}, Lmiui/telephony/phonenumber/CountryCode;->isChinaEnvironment()Z
 
     move-result v0
 
     if-nez v0, :cond_13
 
-    .line 29
     const-string v0, ""
 
-    .line 80
     :goto_12
     return-object v0
 
-    .line 32
     :cond_13
     if-gtz p2, :cond_18
 
-    .line 33
     const-string v0, ""
 
     goto :goto_12
 
-    .line 36
     :cond_18
     invoke-virtual {p0, p1}, Ljava/lang/StringBuffer;->charAt(I)C
 
@@ -213,20 +198,17 @@
 
     sparse-switch v0, :sswitch_data_12c
 
-    .line 80
     :cond_1f
     :goto_1f
     const-string v0, ""
 
     goto :goto_12
 
-    .line 38
     :sswitch_22
     const/4 v0, 0x4
 
     if-le p2, v0, :cond_1f
 
-    .line 39
     add-int/lit8 v0, p1, 0x1
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuffer;->charAt(I)C
@@ -237,7 +219,6 @@
 
     goto :goto_1f
 
-    .line 41
     :sswitch_2f
     add-int/lit8 v0, p1, 0x2
 
@@ -257,7 +238,6 @@
 
     if-ne v0, v5, :cond_5a
 
-    .line 42
     add-int/lit8 v0, p1, 0x4
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuffer;->charAt(I)C
@@ -269,37 +249,31 @@
     :pswitch_4a
     goto :goto_1f
 
-    .line 43
     :pswitch_4b
     const-string v0, "10650"
 
     goto :goto_12
 
-    .line 44
     :pswitch_4e
     const-string v0, "10651"
 
     goto :goto_12
 
-    .line 45
     :pswitch_51
     const-string v0, "10656"
 
     goto :goto_12
 
-    .line 46
     :pswitch_54
     const-string v0, "10657"
 
     goto :goto_12
 
-    .line 47
     :pswitch_57
     const-string v0, "10659"
 
     goto :goto_12
 
-    .line 49
     :cond_5a
     add-int/lit8 v0, p1, 0x2
 
@@ -309,7 +283,6 @@
 
     if-ne v0, v2, :cond_1f
 
-    .line 50
     add-int/lit8 v0, p1, 0x3
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuffer;->charAt(I)C
@@ -330,7 +303,6 @@
 
     goto :goto_12
 
-    .line 54
     :sswitch_75
     add-int/lit8 v0, p1, 0x2
 
@@ -340,7 +312,6 @@
 
     if-ne v0, v5, :cond_1f
 
-    .line 55
     add-int/lit8 v0, p1, 0x3
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuffer;->charAt(I)C
@@ -361,7 +332,6 @@
 
     goto :goto_12
 
-    .line 56
     :cond_90
     add-int/lit8 v0, p1, 0x3
 
@@ -385,7 +355,6 @@
 
     goto/16 :goto_12
 
-    .line 60
     :sswitch_a6
     add-int/lit8 v0, p1, 0x2
 
@@ -395,7 +364,6 @@
 
     if-ne v0, v4, :cond_1f
 
-    .line 61
     add-int/lit8 v0, p1, 0x3
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuffer;->charAt(I)C
@@ -416,7 +384,6 @@
 
     goto/16 :goto_12
 
-    .line 62
     :cond_c2
     add-int/lit8 v0, p1, 0x3
 
@@ -438,7 +405,6 @@
 
     goto/16 :goto_12
 
-    .line 63
     :cond_d6
     add-int/lit8 v0, p1, 0x3
 
@@ -460,7 +426,6 @@
 
     goto/16 :goto_12
 
-    .line 64
     :cond_ea
     add-int/lit8 v0, p1, 0x3
 
@@ -482,7 +447,6 @@
 
     goto/16 :goto_12
 
-    .line 65
     :cond_fe
     add-int/lit8 v0, p1, 0x3
 
@@ -506,13 +470,11 @@
 
     goto/16 :goto_12
 
-    .line 72
     :sswitch_114
     const/16 v0, 0xd
 
     if-le p2, v0, :cond_1f
 
-    .line 73
     add-int/lit8 v0, p1, 0x1
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuffer;->charAt(I)C
@@ -529,19 +491,16 @@
 
     if-ne v0, v3, :cond_1f
 
-    .line 75
     const-string v0, "600"
 
     goto/16 :goto_12
 
-    .line 36
     :sswitch_data_12c
     .sparse-switch
         0x31 -> :sswitch_22
         0x36 -> :sswitch_114
     .end sparse-switch
 
-    .line 39
     :sswitch_data_136
     .sparse-switch
         0x30 -> :sswitch_2f
@@ -549,7 +508,6 @@
         0x37 -> :sswitch_a6
     .end sparse-switch
 
-    .line 42
     :pswitch_data_144
     .packed-switch 0x30
         :pswitch_4b

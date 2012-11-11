@@ -21,18 +21,14 @@
     .parameter "eventType"
 
     .prologue
-    .line 68
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/media/MediaSyncEvent;->mAudioSession:I
 
-    .line 69
     iput p1, p0, Landroid/media/MediaSyncEvent;->mType:I
 
-    .line 70
     return-void
 .end method
 
@@ -46,14 +42,12 @@
     .end annotation
 
     .prologue
-    .line 57
     invoke-static {p0}, Landroid/media/MediaSyncEvent;->isValidType(I)Z
 
     move-result v0
 
     if-nez v0, :cond_1f
 
-    .line 58
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -78,7 +72,6 @@
 
     throw v0
 
-    .line 61
     :cond_1f
     new-instance v0, Landroid/media/MediaSyncEvent;
 
@@ -92,22 +85,18 @@
     .parameter "type"
 
     .prologue
-    .line 114
     packed-switch p0, :pswitch_data_8
 
-    .line 119
     const/4 v0, 0x0
 
     :goto_4
     return v0
 
-    .line 117
     :pswitch_5
     const/4 v0, 0x1
 
     goto :goto_4
 
-    .line 114
     nop
 
     :pswitch_data_8
@@ -123,7 +112,6 @@
     .registers 2
 
     .prologue
-    .line 110
     iget v0, p0, Landroid/media/MediaSyncEvent;->mAudioSession:I
 
     return v0
@@ -133,7 +121,6 @@
     .registers 2
 
     .prologue
-    .line 100
     iget v0, p0, Landroid/media/MediaSyncEvent;->mType:I
 
     return v0
@@ -149,16 +136,12 @@
     .end annotation
 
     .prologue
-    .line 86
     if-lez p1, :cond_5
 
-    .line 87
     iput p1, p0, Landroid/media/MediaSyncEvent;->mAudioSession:I
 
-    .line 91
     return-object p0
 
-    .line 89
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

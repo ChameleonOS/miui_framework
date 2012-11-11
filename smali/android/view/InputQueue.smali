@@ -21,13 +21,10 @@
     .parameter "channel"
 
     .prologue
-    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     iput-object p1, p0, Landroid/view/InputQueue;->mChannel:Landroid/view/InputChannel;
 
-    .line 47
     return-void
 .end method
 
@@ -37,7 +34,6 @@
     .registers 2
 
     .prologue
-    .line 51
     iget-object v0, p0, Landroid/view/InputQueue;->mChannel:Landroid/view/InputChannel;
 
     return-object v0

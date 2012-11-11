@@ -31,7 +31,6 @@
     .registers 2
 
     .prologue
-    .line 38
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     new-instance v1, Lcom/android/internal/os/BinderInternal$GcWatcher;
@@ -49,10 +48,8 @@
     .registers 1
 
     .prologue
-    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
     return-void
 .end method
 
@@ -63,12 +60,10 @@
     .registers 1
 
     .prologue
-    .line 93
     const-string v0, "Binder"
 
     invoke-static {v0}, Lcom/android/internal/os/BinderInternal;->forceGc(Ljava/lang/String;)V
 
-    .line 94
     return-void
 .end method
 
@@ -77,19 +72,16 @@
     .parameter "reason"
 
     .prologue
-    .line 88
     const/16 v0, 0xab5
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 89
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Runtime;->gc()V
 
-    .line 90
     return-void
 .end method
 
@@ -100,7 +92,6 @@
     .registers 2
 
     .prologue
-    .line 68
     sget-wide v0, Lcom/android/internal/os/BinderInternal;->mLastGcTime:J
 
     return-wide v0

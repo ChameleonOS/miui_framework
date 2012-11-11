@@ -98,7 +98,6 @@
     .registers 1
 
     .prologue
-    .line 39
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -111,7 +110,6 @@
 
     sput v0, Lmiui/animation/ViewPropertyAnimator;->DISPLAY_METRICES_WIDTH:I
 
-    .line 40
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -124,7 +122,6 @@
 
     sput v0, Lmiui/animation/ViewPropertyAnimator;->DISPLAY_METRICES_HEIGHT:I
 
-    .line 42
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -142,10 +139,8 @@
     .parameter "toValue"
 
     .prologue
-    .line 103
     invoke-direct {p0}, Landroid/animation/Animator;-><init>()V
 
-    .line 44
     const/4 v0, 0x1
 
     new-array v0, v0, [F
@@ -162,29 +157,22 @@
 
     iput-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
-    .line 49
     const/4 v0, -0x1
 
     iput v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalVisibility:I
 
-    .line 50
     const/4 v0, 0x1
 
     iput v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
-    .line 104
     iput-object p1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
-    .line 105
     iput p2, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
-    .line 106
     iput p3, p0, Lmiui/animation/ViewPropertyAnimator;->mFromValue:F
 
-    .line 107
     iput p4, p0, Lmiui/animation/ViewPropertyAnimator;->mToValue:F
 
-    .line 109
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lmiui/animation/ViewPropertyAnimator$1;
@@ -193,7 +181,6 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 159
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lmiui/animation/ViewPropertyAnimator$2;
@@ -202,7 +189,6 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 165
     return-void
 .end method
 
@@ -211,7 +197,6 @@
     .parameter "x0"
 
     .prologue
-    .line 12
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     return-object v0
@@ -223,7 +208,6 @@
     .parameter "x1"
 
     .prologue
-    .line 12
     invoke-static {p0, p1}, Lmiui/animation/ViewPropertyAnimator;->setAnimator(Landroid/view/View;Landroid/animation/Animator;)V
 
     return-void
@@ -234,7 +218,6 @@
     .parameter "x0"
 
     .prologue
-    .line 12
     invoke-direct {p0}, Lmiui/animation/ViewPropertyAnimator;->setFinalValues()V
 
     return-void
@@ -245,7 +228,6 @@
     .parameter "x0"
 
     .prologue
-    .line 12
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFromValue:F
 
     return v0
@@ -256,7 +238,6 @@
     .parameter "x0"
 
     .prologue
-    .line 12
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mToValue:F
 
     return v0
@@ -268,7 +249,6 @@
     .parameter "x1"
 
     .prologue
-    .line 12
     invoke-direct {p0, p1}, Lmiui/animation/ViewPropertyAnimator;->setValue(F)V
 
     return-void
@@ -289,14 +269,12 @@
 
     const/4 v2, 0x2
 
-    .line 285
     const v1, 0x3b449ba6
 
     cmpl-float v1, p1, v1
 
     if-nez v1, :cond_32
 
-    .line 286
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     if-eq v1, v4, :cond_17
@@ -305,17 +283,14 @@
 
     if-ne v1, v3, :cond_31
 
-    .line 287
     :cond_17
     new-array v0, v2, [I
 
-    .line 288
     .local v0, location:[I
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 289
     sget v1, Lmiui/animation/ViewPropertyAnimator;->DISPLAY_METRICES_WIDTH:I
 
     const/4 v2, 0x0
@@ -326,12 +301,10 @@
 
     int-to-float p1, v1
 
-    .line 290
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     if-ne v1, v4, :cond_31
 
-    .line 291
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLeft()I
@@ -342,13 +315,11 @@
 
     add-float/2addr p1, v1
 
-    .line 336
     .end local v0           #location:[I
     :cond_31
     :goto_31
     return p1
 
-    .line 294
     :cond_32
     const v1, 0x3b83126f
 
@@ -356,7 +327,6 @@
 
     if-nez v1, :cond_61
 
-    .line 295
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     if-eq v1, v4, :cond_41
@@ -365,17 +335,14 @@
 
     if-ne v1, v3, :cond_31
 
-    .line 296
     :cond_41
     new-array v0, v2, [I
 
-    .line 297
     .restart local v0       #location:[I
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 298
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lmiui/animation/ViewPropertyAnimator;->getWidthOrMeasureWidth(Landroid/view/View;)F
@@ -392,12 +359,10 @@
 
     neg-float p1, v1
 
-    .line 299
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     if-ne v1, v4, :cond_31
 
-    .line 300
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLeft()I
@@ -410,7 +375,6 @@
 
     goto :goto_31
 
-    .line 303
     .end local v0           #location:[I
     :cond_61
     const v1, 0x3a83126f
@@ -419,7 +383,6 @@
 
     if-nez v1, :cond_8f
 
-    .line 304
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     if-eq v1, v5, :cond_70
@@ -428,17 +391,14 @@
 
     if-ne v1, v2, :cond_31
 
-    .line 305
     :cond_70
     new-array v0, v2, [I
 
-    .line 306
     .restart local v0       #location:[I
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 307
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-static {v1}, Lmiui/animation/ViewPropertyAnimator;->getHeightOrMeasureHeight(Landroid/view/View;)F
@@ -453,12 +413,10 @@
 
     neg-float p1, v1
 
-    .line 308
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     if-ne v1, v5, :cond_31
 
-    .line 309
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
@@ -471,7 +429,6 @@
 
     goto :goto_31
 
-    .line 312
     .end local v0           #location:[I
     :cond_8f
     const v1, 0x3b03126f
@@ -480,7 +437,6 @@
 
     if-nez v1, :cond_b9
 
-    .line 313
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     if-eq v1, v5, :cond_9e
@@ -489,17 +445,14 @@
 
     if-ne v1, v2, :cond_31
 
-    .line 314
     :cond_9e
     new-array v0, v2, [I
 
-    .line 315
     .restart local v0       #location:[I
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 316
     sget v1, Lmiui/animation/ViewPropertyAnimator;->DISPLAY_METRICES_HEIGHT:I
 
     aget v2, v0, v3
@@ -508,12 +461,10 @@
 
     int-to-float p1, v1
 
-    .line 317
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     if-ne v1, v5, :cond_31
 
-    .line 318
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
@@ -526,7 +477,6 @@
 
     goto/16 :goto_31
 
-    .line 321
     .end local v0           #location:[I
     :cond_b9
     const v1, 0x3c03126f
@@ -535,7 +485,6 @@
 
     if-nez v1, :cond_c8
 
-    .line 322
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-static {v1}, Lmiui/animation/ViewPropertyAnimator;->getHeightOrMeasureHeight(Landroid/view/View;)F
@@ -544,7 +493,6 @@
 
     goto/16 :goto_31
 
-    .line 323
     :cond_c8
     const v1, 0x3ba3d70a
 
@@ -552,7 +500,6 @@
 
     if-nez v1, :cond_d7
 
-    .line 324
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lmiui/animation/ViewPropertyAnimator;->getWidthOrMeasureWidth(Landroid/view/View;)F
@@ -561,7 +508,6 @@
 
     goto/16 :goto_31
 
-    .line 325
     :cond_d7
     const v1, 0x3c1374bc
 
@@ -569,7 +515,6 @@
 
     if-nez v1, :cond_e7
 
-    .line 326
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-static {v1}, Lmiui/animation/ViewPropertyAnimator;->getHeightOrMeasureHeight(Landroid/view/View;)F
@@ -580,7 +525,6 @@
 
     goto/16 :goto_31
 
-    .line 327
     :cond_e7
     const v1, 0x3bc49ba6
 
@@ -588,7 +532,6 @@
 
     if-nez v1, :cond_f7
 
-    .line 328
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lmiui/animation/ViewPropertyAnimator;->getWidthOrMeasureWidth(Landroid/view/View;)F
@@ -599,7 +542,6 @@
 
     goto/16 :goto_31
 
-    .line 329
     :cond_f7
     const v1, 0x3c23d70a
 
@@ -607,7 +549,6 @@
 
     if-nez v1, :cond_108
 
-    .line 330
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-static {v1}, Lmiui/animation/ViewPropertyAnimator;->getHeightOrMeasureHeight(Landroid/view/View;)F
@@ -618,7 +559,6 @@
 
     goto/16 :goto_31
 
-    .line 331
     :cond_108
     const v1, 0x3be56042
 
@@ -626,7 +566,6 @@
 
     if-nez v1, :cond_119
 
-    .line 332
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lmiui/animation/ViewPropertyAnimator;->getWidthOrMeasureWidth(Landroid/view/View;)F
@@ -637,7 +576,6 @@
 
     goto/16 :goto_31
 
-    .line 333
     :cond_119
     const v1, 0x7f7fffff
 
@@ -645,7 +583,6 @@
 
     if-nez v1, :cond_31
 
-    .line 334
     invoke-direct {p0}, Lmiui/animation/ViewPropertyAnimator;->getValue()F
 
     move-result p1
@@ -658,7 +595,6 @@
     .parameter "view"
 
     .prologue
-    .line 444
     sget-object v1, Lmiui/animation/ViewPropertyAnimator;->mAnimatorMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -667,14 +603,11 @@
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 445
     .local v0, anim:Landroid/animation/Animator;
     if-eqz v0, :cond_d
 
-    .line 446
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 448
     :cond_d
     return-void
 .end method
@@ -684,7 +617,6 @@
     .parameter "view"
 
     .prologue
-    .line 440
     sget-object v0, Lmiui/animation/ViewPropertyAnimator;->mAnimatorMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -703,16 +635,13 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 422
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
-    .line 423
     .local v0, height:I
     if-nez v0, :cond_16
 
-    .line 424
     invoke-static {v2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
@@ -723,12 +652,10 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/view/View;->measure(II)V
 
-    .line 426
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 428
     :cond_16
     int-to-float v1, v0
 
@@ -739,20 +666,16 @@
     .registers 3
 
     .prologue
-    .line 340
     const/4 v0, 0x1
 
-    .line 341
     .local v0, value:F
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     sparse-switch v1, :sswitch_data_4e
 
-    .line 373
     :goto_6
     return v0
 
-    .line 343
     :sswitch_7
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -760,10 +683,8 @@
 
     move-result v0
 
-    .line 344
     goto :goto_6
 
-    .line 346
     :sswitch_e
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -771,10 +692,8 @@
 
     move-result v0
 
-    .line 347
     goto :goto_6
 
-    .line 349
     :sswitch_15
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -782,10 +701,8 @@
 
     move-result v0
 
-    .line 350
     goto :goto_6
 
-    .line 352
     :sswitch_1c
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -793,10 +710,8 @@
 
     move-result v0
 
-    .line 353
     goto :goto_6
 
-    .line 355
     :sswitch_23
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -804,10 +719,8 @@
 
     move-result v0
 
-    .line 356
     goto :goto_6
 
-    .line 358
     :sswitch_2a
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -815,10 +728,8 @@
 
     move-result v0
 
-    .line 359
     goto :goto_6
 
-    .line 361
     :sswitch_31
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -826,10 +737,8 @@
 
     move-result v0
 
-    .line 362
     goto :goto_6
 
-    .line 364
     :sswitch_38
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -837,10 +746,8 @@
 
     move-result v0
 
-    .line 365
     goto :goto_6
 
-    .line 367
     :sswitch_3f
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -848,10 +755,8 @@
 
     move-result v0
 
-    .line 368
     goto :goto_6
 
-    .line 370
     :sswitch_46
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -861,7 +766,6 @@
 
     goto :goto_6
 
-    .line 341
     nop
 
     :sswitch_data_4e
@@ -887,12 +791,10 @@
     .parameter "toValue"
 
     .prologue
-    .line 99
     new-instance v0, Lmiui/animation/ViewPropertyAnimator;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lmiui/animation/ViewPropertyAnimator;-><init>(Landroid/view/View;IFF)V
 
-    .line 100
     .local v0, anim:Lmiui/animation/ViewPropertyAnimator;
     new-instance v1, Lmiui/animation/ViewPropertyAnimator$Builder;
 
@@ -907,19 +809,15 @@
     .parameter "anim"
 
     .prologue
-    .line 432
     if-eqz p1, :cond_8
 
-    .line 433
     sget-object v0, Lmiui/animation/ViewPropertyAnimator;->mAnimatorMap:Ljava/util/HashMap;
 
     invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 437
     :goto_7
     return-void
 
-    .line 435
     :cond_8
     sget-object v0, Lmiui/animation/ViewPropertyAnimator;->mAnimatorMap:Ljava/util/HashMap;
 
@@ -932,21 +830,18 @@
     .registers 3
 
     .prologue
-    .line 270
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalVisibility:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_c
 
-    .line 271
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalVisibility:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 273
     :cond_c
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
@@ -956,12 +851,10 @@
 
     if-eqz v0, :cond_18
 
-    .line 274
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
     invoke-direct {p0, v0}, Lmiui/animation/ViewPropertyAnimator;->setValue(F)V
 
-    .line 276
     :cond_18
     return-void
 .end method
@@ -971,16 +864,13 @@
     .parameter "value"
 
     .prologue
-    .line 377
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     sparse-switch v0, :sswitch_data_42
 
-    .line 409
     :goto_5
     return-void
 
-    .line 379
     :sswitch_6
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -988,7 +878,6 @@
 
     goto :goto_5
 
-    .line 382
     :sswitch_c
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -996,7 +885,6 @@
 
     goto :goto_5
 
-    .line 385
     :sswitch_12
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1004,7 +892,6 @@
 
     goto :goto_5
 
-    .line 388
     :sswitch_18
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1012,7 +899,6 @@
 
     goto :goto_5
 
-    .line 391
     :sswitch_1e
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1020,7 +906,6 @@
 
     goto :goto_5
 
-    .line 394
     :sswitch_24
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1028,7 +913,6 @@
 
     goto :goto_5
 
-    .line 397
     :sswitch_2a
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1036,7 +920,6 @@
 
     goto :goto_5
 
-    .line 400
     :sswitch_30
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1044,7 +927,6 @@
 
     goto :goto_5
 
-    .line 403
     :sswitch_36
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1052,7 +934,6 @@
 
     goto :goto_5
 
-    .line 406
     :sswitch_3c
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1060,7 +941,6 @@
 
     goto :goto_5
 
-    .line 377
     :sswitch_data_42
     .sparse-switch
         0x1 -> :sswitch_6
@@ -1080,7 +960,6 @@
     .registers 2
 
     .prologue
-    .line 279
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFromValue:F
 
     invoke-direct {p0, v0}, Lmiui/animation/ViewPropertyAnimator;->calulateAnimatorValue(F)F
@@ -1089,7 +968,6 @@
 
     iput v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFromValue:F
 
-    .line 280
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mToValue:F
 
     invoke-direct {p0, v0}, Lmiui/animation/ViewPropertyAnimator;->calulateAnimatorValue(F)F
@@ -1098,7 +976,6 @@
 
     iput v0, p0, Lmiui/animation/ViewPropertyAnimator;->mToValue:F
 
-    .line 281
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
     invoke-direct {p0, v0}, Lmiui/animation/ViewPropertyAnimator;->calulateAnimatorValue(F)F
@@ -1107,7 +984,6 @@
 
     iput v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
-    .line 282
     return-void
 .end method
 
@@ -1117,12 +993,10 @@
     .registers 2
 
     .prologue
-    .line 248
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 249
     return-void
 .end method
 
@@ -1130,14 +1004,12 @@
     .registers 3
 
     .prologue
-    .line 258
     invoke-super {p0}, Landroid/animation/Animator;->clone()Landroid/animation/Animator;
 
     move-result-object v0
 
     check-cast v0, Lmiui/animation/ViewPropertyAnimator;
 
-    .line 259
     .local v0, anim:Lmiui/animation/ViewPropertyAnimator;
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
@@ -1147,37 +1019,30 @@
 
     iput-object v1, v0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
-    .line 260
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     iput-object v1, v0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
-    .line 261
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
     iput v1, v0, Lmiui/animation/ViewPropertyAnimator;->mProperty:I
 
-    .line 262
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mFromValue:F
 
     iput v1, v0, Lmiui/animation/ViewPropertyAnimator;->mFromValue:F
 
-    .line 263
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mToValue:F
 
     iput v1, v0, Lmiui/animation/ViewPropertyAnimator;->mToValue:F
 
-    .line 264
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalVisibility:I
 
     iput v1, v0, Lmiui/animation/ViewPropertyAnimator;->mFinalVisibility:I
 
-    .line 265
     iget v1, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
     iput v1, v0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
-    .line 266
     return-object v0
 .end method
 
@@ -1190,7 +1055,6 @@
     .end annotation
 
     .prologue
-    .line 12
     invoke-virtual {p0}, Lmiui/animation/ViewPropertyAnimator;->clone()Landroid/animation/Animator;
 
     move-result-object v0
@@ -1202,12 +1066,10 @@
     .registers 2
 
     .prologue
-    .line 253
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->end()V
 
-    .line 254
     return-void
 .end method
 
@@ -1215,7 +1077,6 @@
     .registers 3
 
     .prologue
-    .line 185
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->getDuration()J
@@ -1229,7 +1090,6 @@
     .registers 2
 
     .prologue
-    .line 217
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
     return v0
@@ -1239,7 +1099,6 @@
     .registers 2
 
     .prologue
-    .line 209
     iget v0, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalVisibility:I
 
     return v0
@@ -1249,7 +1108,6 @@
     .registers 2
 
     .prologue
-    .line 193
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->getRepeatCount()I
@@ -1263,7 +1121,6 @@
     .registers 2
 
     .prologue
-    .line 201
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->getRepeatMode()I
@@ -1277,7 +1134,6 @@
     .registers 3
 
     .prologue
-    .line 169
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->getStartDelay()J
@@ -1294,16 +1150,13 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 412
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
-    .line 413
     .local v0, width:I
     if-nez v0, :cond_16
 
-    .line 414
     invoke-static {v2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
@@ -1314,12 +1167,10 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/view/View;->measure(II)V
 
-    .line 416
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
-    .line 418
     :cond_16
     int-to-float v1, v0
 
@@ -1330,7 +1181,6 @@
     .registers 2
 
     .prologue
-    .line 227
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->isRunning()Z
@@ -1345,12 +1195,10 @@
     .parameter "duration"
 
     .prologue
-    .line 179
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, p1, p2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 180
     return-object p0
 .end method
 
@@ -1359,10 +1207,8 @@
     .parameter "value"
 
     .prologue
-    .line 213
     iput p1, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalValue:F
 
-    .line 214
     return-void
 .end method
 
@@ -1371,10 +1217,8 @@
     .parameter "visibility"
 
     .prologue
-    .line 205
     iput p1, p0, Lmiui/animation/ViewPropertyAnimator;->mFinalVisibility:I
 
-    .line 206
     return-void
 .end method
 
@@ -1383,12 +1227,10 @@
     .parameter "value"
 
     .prologue
-    .line 222
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, p1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 223
     return-void
 .end method
 
@@ -1397,12 +1239,10 @@
     .parameter "value"
 
     .prologue
-    .line 189
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, p1}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
 
-    .line 190
     return-void
 .end method
 
@@ -1411,12 +1251,10 @@
     .parameter "value"
 
     .prologue
-    .line 197
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, p1}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
 
-    .line 198
     return-void
 .end method
 
@@ -1425,12 +1263,10 @@
     .parameter "startDelay"
 
     .prologue
-    .line 174
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, p1, p2}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 175
     return-void
 .end method
 
@@ -1438,26 +1274,21 @@
     .registers 4
 
     .prologue
-    .line 232
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-static {v1}, Lmiui/animation/ViewPropertyAnimator;->cancelAnimator(Landroid/view/View;)V
 
-    .line 233
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getAnimation()Landroid/view/animation/Animation;
 
     move-result-object v0
 
-    .line 234
     .local v0, animation:Landroid/view/animation/Animation;
     if-eqz v0, :cond_10
 
-    .line 235
     invoke-virtual {v0}, Landroid/view/animation/Animation;->cancel()V
 
-    .line 237
     :cond_10
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
@@ -1467,15 +1298,12 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 238
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-static {v1, p0}, Lmiui/animation/ViewPropertyAnimator;->setAnimator(Landroid/view/View;Landroid/animation/Animator;)V
 
-    .line 239
     invoke-direct {p0}, Lmiui/animation/ViewPropertyAnimator;->setupValues()V
 
-    .line 240
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
@@ -1484,19 +1312,16 @@
 
     if-eqz v1, :cond_2f
 
-    .line 241
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mView:Landroid/view/View;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 243
     :cond_2f
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator;->mAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 244
     return-void
 .end method

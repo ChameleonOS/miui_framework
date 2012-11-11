@@ -45,7 +45,6 @@
     .registers 3
 
     .prologue
-    .line 17
     const-class v0, Lmiui/provider/MusicSearchProvider;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -54,7 +53,6 @@
 
     sput-object v0, Lmiui/provider/MusicSearchProvider;->TAG:Ljava/lang/String;
 
-    .line 20
     const-string v0, "content://com.miui.player/search"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -63,7 +61,6 @@
 
     sput-object v0, Lmiui/provider/MusicSearchProvider;->URI:Landroid/net/Uri;
 
-    .line 30
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -95,10 +92,8 @@
     .registers 1
 
     .prologue
-    .line 16
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 242
     return-void
 .end method
 
@@ -107,7 +102,6 @@
     .parameter "type"
 
     .prologue
-    .line 37
     and-int/lit8 v0, p0, -0x4
 
     if-nez v0, :cond_6
@@ -130,23 +124,18 @@
     .parameter "dft"
 
     .prologue
-    .line 88
     move v2, p2
 
-    .line 89
     .local v2, type:I
     if-eqz p0, :cond_11
 
-    .line 90
     invoke-virtual {p0, p1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 91
     .local v1, param:Ljava/lang/String;
     if-eqz v1, :cond_11
 
-    .line 93
     :try_start_9
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
@@ -158,18 +147,15 @@
 
     move-result v2
 
-    .line 100
     .end local v1           #param:Ljava/lang/String;
     :cond_11
     :goto_11
     return v2
 
-    .line 94
     .restart local v1       #param:Ljava/lang/String;
     :catch_12
     move-exception v0
 
-    .line 95
     .local v0, e:Ljava/lang/NumberFormatException;
     sget-object v3, Lmiui/provider/MusicSearchProvider;->TAG:Ljava/lang/String;
 
@@ -185,7 +171,6 @@
     .parameter "uri"
 
     .prologue
-    .line 84
     const-string/jumbo v0, "limit"
 
     const/4 v1, -0x1
@@ -202,7 +187,6 @@
     .parameter "uri"
 
     .prologue
-    .line 80
     const-string/jumbo v0, "type"
 
     const/4 v1, 0x3
@@ -224,14 +208,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 52
     invoke-static {p1}, Lmiui/provider/MusicSearchProvider;->isValidType(I)Z
 
     move-result v0
 
     if-nez v0, :cond_20
 
-    .line 53
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -256,11 +238,9 @@
 
     throw v0
 
-    .line 56
     :cond_20
     const/4 v8, 0x0
 
-    .line 57
     .local v8, data:Landroid/os/Bundle;
     sget-object v0, Lmiui/provider/MusicSearchProvider;->URI:Landroid/net/Uri;
 
@@ -268,7 +248,6 @@
 
     move-result-object v6
 
-    .line 58
     .local v6, builder:Landroid/net/Uri$Builder;
     const-string/jumbo v0, "type"
 
@@ -288,7 +267,6 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 61
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -307,11 +285,9 @@
 
     move-result-object v7
 
-    .line 68
     .local v7, c:Landroid/database/Cursor;
     if-eqz v7, :cond_54
 
-    .line 70
     :try_start_4d
     invoke-interface {v7}, Landroid/database/Cursor;->getExtras()Landroid/os/Bundle;
     :try_end_50
@@ -319,10 +295,8 @@
 
     move-result-object v8
 
-    .line 72
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 76
     :cond_54
     if-eqz v8, :cond_65
 
@@ -337,7 +311,6 @@
     :goto_5f
     return-object v0
 
-    .line 72
     :catchall_60
     move-exception v0
 
@@ -348,6 +321,5 @@
     :cond_65
     move-object v0, v2
 
-    .line 76
     goto :goto_5f
 .end method

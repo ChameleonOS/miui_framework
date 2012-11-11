@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 68
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,12 +44,10 @@
     .parameter "source"
 
     .prologue
-    .line 70
     new-instance v0, Landroid/view/inputmethod/ExtractedTextRequest;
 
     invoke-direct {v0}, Landroid/view/inputmethod/ExtractedTextRequest;-><init>()V
 
-    .line 71
     .local v0, res:Landroid/view/inputmethod/ExtractedTextRequest;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -58,28 +55,24 @@
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedTextRequest;->token:I
 
-    .line 72
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedTextRequest;->flags:I
 
-    .line 73
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedTextRequest;->hintMaxLines:I
 
-    .line 74
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedTextRequest;->hintMaxChars:I
 
-    .line 75
     return-object v0
 .end method
 
@@ -88,7 +81,6 @@
     .parameter "x0"
 
     .prologue
-    .line 68
     invoke-virtual {p0, p1}, Landroid/view/inputmethod/ExtractedTextRequest$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/inputmethod/ExtractedTextRequest;
 
     move-result-object v0
@@ -101,7 +93,6 @@
     .parameter "size"
 
     .prologue
-    .line 79
     new-array v0, p1, [Landroid/view/inputmethod/ExtractedTextRequest;
 
     return-object v0
@@ -112,7 +103,6 @@
     .parameter "x0"
 
     .prologue
-    .line 68
     invoke-virtual {p0, p1}, Landroid/view/inputmethod/ExtractedTextRequest$1;->newArray(I)[Landroid/view/inputmethod/ExtractedTextRequest;
 
     move-result-object v0

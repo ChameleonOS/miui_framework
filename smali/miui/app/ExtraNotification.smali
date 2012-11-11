@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 3
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,12 +20,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 10
     const/4 v1, 0x2
 
     new-array v0, v1, [I
 
-    .line 11
     .local v0, values:[I
     div-int/lit8 v1, p0, 0x4
 
@@ -34,7 +31,6 @@
 
     aput v1, v0, v2
 
-    .line 12
     const/4 v1, 0x1
 
     aget v2, v0, v2
@@ -43,6 +39,5 @@
 
     aput v2, v0, v1
 
-    .line 13
     return-object v0
 .end method

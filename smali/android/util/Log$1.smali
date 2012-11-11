@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 101
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,9 +35,7 @@
     .parameter "what"
 
     .prologue
-    .line 103
     invoke-static {p1, p2}, Lcom/android/internal/os/RuntimeInit;->wtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 104
     return-void
 .end method

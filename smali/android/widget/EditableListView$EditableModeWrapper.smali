@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 234
     iput-object p1, p0, Landroid/widget/EditableListView$EditableModeWrapper;->this$0:Landroid/widget/EditableListView;
 
     invoke-direct {p0, p1}, Landroid/widget/AbsListView$MultiChoiceModeWrapper;-><init>(Landroid/widget/AbsListView;)V
@@ -40,7 +39,6 @@
     .parameter "mode"
 
     .prologue
-    .line 238
     iget-object v0, p0, Landroid/widget/EditableListView$EditableModeWrapper;->this$0:Landroid/widget/EditableListView;
 
     #getter for: Landroid/widget/EditableListView;->mIsUpdateBatchChecked:Z
@@ -59,12 +57,10 @@
 
     if-eqz v0, :cond_11
 
-    .line 246
     :cond_10
     :goto_10
     return-void
 
-    .line 243
     :cond_11
     iget-object v0, p0, Landroid/widget/EditableListView$EditableModeWrapper;->this$0:Landroid/widget/EditableListView;
 
@@ -74,7 +70,6 @@
 
     if-nez v0, :cond_10
 
-    .line 244
     invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
 
     goto :goto_10
@@ -88,7 +83,6 @@
     .parameter "checked"
 
     .prologue
-    .line 261
     iget-object v0, p0, Landroid/widget/EditableListView$EditableModeWrapper;->this$0:Landroid/widget/EditableListView;
 
     #getter for: Landroid/widget/EditableListView;->mMultiChoiceModeListener:Landroid/widget/EditableListView$EditableListViewListener;
@@ -98,10 +92,8 @@
 
     invoke-interface {v0, p1, p2}, Landroid/widget/EditableListView$EditableListViewListener;->onBatchCheckedStateChanged(Landroid/view/ActionMode;Z)V
 
-    .line 262
     invoke-direct {p0, p1}, Landroid/widget/EditableListView$EditableModeWrapper;->handleCheckedStateChanged(Landroid/view/ActionMode;)V
 
-    .line 263
     return-void
 .end method
 
@@ -113,7 +105,6 @@
     .parameter "checked"
 
     .prologue
-    .line 251
     iget-object v0, p0, Landroid/widget/EditableListView$EditableModeWrapper;->this$0:Landroid/widget/EditableListView;
 
     #calls: Landroid/widget/EditableListView;->isValidPos(I)Z
@@ -123,11 +114,9 @@
 
     if-nez v0, :cond_9
 
-    .line 257
     :goto_8
     return-void
 
-    .line 254
     :cond_9
     iget-object v0, p0, Landroid/widget/EditableListView$EditableModeWrapper;->this$0:Landroid/widget/EditableListView;
 
@@ -146,10 +135,8 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/widget/EditableListView$EditableListViewListener;->onItemCheckedStateChanged(Landroid/view/ActionMode;IJZ)V
 
-    .line 255
     invoke-direct {p0, p1}, Landroid/widget/EditableListView$EditableModeWrapper;->handleCheckedStateChanged(Landroid/view/ActionMode;)V
 
-    .line 256
     iget-object v0, p0, Landroid/widget/EditableListView$EditableModeWrapper;->this$0:Landroid/widget/EditableListView;
 
     #calls: Landroid/widget/EditableListView;->updateOnScreenCheckedViews()V

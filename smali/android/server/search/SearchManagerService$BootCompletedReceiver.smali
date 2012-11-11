@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 82
     iput-object p1, p0, Landroid/server/search/SearchManagerService$BootCompletedReceiver;->this$0:Landroid/server/search/SearchManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 82
     invoke-direct {p0, p1}, Landroid/server/search/SearchManagerService$BootCompletedReceiver;-><init>(Landroid/server/search/SearchManagerService;)V
 
     return-void
@@ -52,13 +50,11 @@
     .parameter "intent"
 
     .prologue
-    .line 85
     new-instance v0, Landroid/server/search/SearchManagerService$BootCompletedReceiver$1;
 
     invoke-direct {v0, p0}, Landroid/server/search/SearchManagerService$BootCompletedReceiver$1;-><init>(Landroid/server/search/SearchManagerService$BootCompletedReceiver;)V
 
     invoke-virtual {v0}, Landroid/server/search/SearchManagerService$BootCompletedReceiver$1;->start()V
 
-    .line 93
     return-void
 .end method

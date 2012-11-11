@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 26
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +26,6 @@
     .end annotation
 
     .prologue
-    .line 37
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -49,7 +47,6 @@
     .end annotation
 
     .prologue
-    .line 59
     .local p0, elements:[Ljava/lang/Object;,"[TE;"
     array-length v2, p0
 
@@ -59,16 +56,13 @@
 
     add-int/lit8 v0, v2, 0x5
 
-    .line 60
     .local v0, capacity:I
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 61
     .local v1, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<TE;>;"
     invoke-static {v1, p0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    .line 62
     return-object v1
 .end method

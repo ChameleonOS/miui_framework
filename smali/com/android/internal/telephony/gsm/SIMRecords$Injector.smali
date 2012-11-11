@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 60
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,19 +37,16 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 68
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_8
 
-    .line 75
     :cond_7
     :goto_7
     return v0
 
-    .line 71
     :cond_8
     invoke-static {}, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->getInstance()Lcom/android/internal/telephony/gsm/MiuiSpnOverride;
 
@@ -78,7 +74,6 @@
 
     if-nez v1, :cond_7
 
-    .line 75
     const/4 v0, 0x0
 
     goto :goto_7
@@ -89,7 +84,6 @@
     .parameter "records"
 
     .prologue
-    .line 62
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/SIMRecords;->getSpn()Ljava/lang/String;
 
     move-result-object v0
@@ -100,12 +94,10 @@
 
     if-nez v0, :cond_d
 
-    .line 63
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->spnDisplayCondition:I
 
-    .line 65
     :cond_d
     return-void
 .end method

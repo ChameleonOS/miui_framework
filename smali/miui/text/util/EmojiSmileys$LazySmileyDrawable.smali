@@ -32,23 +32,18 @@
 
     const/4 v1, 0x0
 
-    .line 74
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 70
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->mPaint:Landroid/graphics/Paint;
 
-    .line 75
     iput p1, p0, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->mResId:I
 
-    .line 76
     invoke-virtual {p0, v1, v1, v2, v2}, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->setBounds(IIII)V
 
-    .line 77
     return-void
 .end method
 
@@ -59,7 +54,6 @@
     .parameter "canvas"
 
     .prologue
-    .line 95
     invoke-virtual {p0}, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -74,7 +68,6 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 96
     return-void
 .end method
 
@@ -82,19 +75,15 @@
     .registers 5
 
     .prologue
-    .line 80
     iget-object v2, p0, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_7
 
-    .line 81
     iget-object v2, p0, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 89
     :goto_6
     return-object v2
 
-    .line 83
     :cond_7
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
@@ -106,7 +95,6 @@
 
     move-result-object v1
 
-    .line 84
     .local v1, d:Landroid/graphics/drawable/Drawable;
     instance-of v2, v1, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -114,10 +102,8 @@
 
     move-object v0, v1
 
-    .line 85
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 86
     .local v0, bd:Landroid/graphics/drawable/BitmapDrawable;
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -125,12 +111,10 @@
 
     iput-object v2, p0, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 87
     iget-object v2, p0, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     goto :goto_6
 
-    .line 89
     .end local v0           #bd:Landroid/graphics/drawable/BitmapDrawable;
     :cond_21
     const/4 v2, 0x0
@@ -142,7 +126,6 @@
     .registers 2
 
     .prologue
-    .line 121
     const/16 v0, 0x30
 
     return v0
@@ -152,7 +135,6 @@
     .registers 2
 
     .prologue
-    .line 116
     const/16 v0, 0x30
 
     return v0
@@ -162,7 +144,6 @@
     .registers 3
 
     .prologue
-    .line 100
     invoke-virtual {p0}, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -206,12 +187,10 @@
     .parameter "alpha"
 
     .prologue
-    .line 106
     iget-object v0, p0, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 107
     return-void
 .end method
 
@@ -220,11 +199,9 @@
     .parameter "cf"
 
     .prologue
-    .line 111
     iget-object v0, p0, Lmiui/text/util/EmojiSmileys$LazySmileyDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 112
     return-void
 .end method

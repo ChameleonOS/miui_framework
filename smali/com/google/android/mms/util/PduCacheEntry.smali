@@ -19,19 +19,14 @@
     .parameter "threadId"
 
     .prologue
-    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     iput-object p1, p0, Lcom/google/android/mms/util/PduCacheEntry;->mPdu:Lcom/google/android/mms/pdu/GenericPdu;
 
-    .line 29
     iput p2, p0, Lcom/google/android/mms/util/PduCacheEntry;->mMessageBox:I
 
-    .line 30
     iput-wide p3, p0, Lcom/google/android/mms/util/PduCacheEntry;->mThreadId:J
 
-    .line 31
     return-void
 .end method
 
@@ -41,7 +36,6 @@
     .registers 2
 
     .prologue
-    .line 38
     iget v0, p0, Lcom/google/android/mms/util/PduCacheEntry;->mMessageBox:I
 
     return v0
@@ -51,7 +45,6 @@
     .registers 2
 
     .prologue
-    .line 34
     iget-object v0, p0, Lcom/google/android/mms/util/PduCacheEntry;->mPdu:Lcom/google/android/mms/pdu/GenericPdu;
 
     return-object v0
@@ -61,7 +54,6 @@
     .registers 3
 
     .prologue
-    .line 42
     iget-wide v0, p0, Lcom/google/android/mms/util/PduCacheEntry;->mThreadId:J
 
     return-wide v0

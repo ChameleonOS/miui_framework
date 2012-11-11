@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 91
     new-instance v0, Landroid/view/inputmethod/CorrectionInfo$1;
 
     invoke-direct {v0}, Landroid/view/inputmethod/CorrectionInfo$1;-><init>()V
@@ -49,19 +48,14 @@
     .parameter "newText"
 
     .prologue
-    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     iput p1, p0, Landroid/view/inputmethod/CorrectionInfo;->mOffset:I
 
-    .line 39
     iput-object p2, p0, Landroid/view/inputmethod/CorrectionInfo;->mOldText:Ljava/lang/CharSequence;
 
-    .line 40
     iput-object p3, p0, Landroid/view/inputmethod/CorrectionInfo;->mNewText:Ljava/lang/CharSequence;
 
-    .line 41
     return-void
 .end method
 
@@ -70,17 +64,14 @@
     .parameter "source"
 
     .prologue
-    .line 43
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mOffset:I
 
-    .line 45
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -91,7 +82,6 @@
 
     iput-object v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mOldText:Ljava/lang/CharSequence;
 
-    .line 46
     sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -102,7 +92,6 @@
 
     iput-object v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mNewText:Ljava/lang/CharSequence;
 
-    .line 47
     return-void
 .end method
 
@@ -112,7 +101,6 @@
     .parameter "x1"
 
     .prologue
-    .line 27
     invoke-direct {p0, p1}, Landroid/view/inputmethod/CorrectionInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -124,7 +112,6 @@
     .registers 2
 
     .prologue
-    .line 103
     const/4 v0, 0x0
 
     return v0
@@ -134,7 +121,6 @@
     .registers 2
 
     .prologue
-    .line 68
     iget-object v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mNewText:Ljava/lang/CharSequence;
 
     return-object v0
@@ -144,7 +130,6 @@
     .registers 2
 
     .prologue
-    .line 54
     iget v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mOffset:I
 
     return v0
@@ -154,7 +139,6 @@
     .registers 2
 
     .prologue
-    .line 61
     iget-object v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mOldText:Ljava/lang/CharSequence;
 
     return-object v0
@@ -164,7 +148,6 @@
     .registers 3
 
     .prologue
-    .line 73
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -224,21 +207,17 @@
     .parameter "flags"
 
     .prologue
-    .line 83
     iget v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mOffset:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 84
     iget-object v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mOldText:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    .line 85
     iget-object v0, p0, Landroid/view/inputmethod/CorrectionInfo;->mNewText:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    .line 86
     return-void
 .end method

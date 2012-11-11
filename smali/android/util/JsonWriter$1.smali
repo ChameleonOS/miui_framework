@@ -23,7 +23,6 @@
     .registers 3
 
     .prologue
-    .line 496
     invoke-static {}, Landroid/util/JsonScope;->values()[Landroid/util/JsonScope;
 
     move-result-object v0

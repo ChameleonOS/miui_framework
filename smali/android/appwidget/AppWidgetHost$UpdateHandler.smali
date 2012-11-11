@@ -25,13 +25,10 @@
     .parameter "looper"
 
     .prologue
-    .line 77
     iput-object p1, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
-    .line 78
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 79
     return-void
 .end method
 
@@ -42,16 +39,13 @@
     .parameter "msg"
 
     .prologue
-    .line 82
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_28
 
-    .line 96
     :goto_5
     return-void
 
-    .line 84
     :pswitch_6
     iget-object v1, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
@@ -65,7 +59,6 @@
 
     goto :goto_5
 
-    .line 88
     :pswitch_12
     iget-object v1, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
@@ -79,7 +72,6 @@
 
     goto :goto_5
 
-    .line 92
     :pswitch_1e
     iget-object v0, p0, Landroid/appwidget/AppWidgetHost$UpdateHandler;->this$0:Landroid/appwidget/AppWidgetHost;
 
@@ -91,7 +83,6 @@
 
     goto :goto_5
 
-    .line 82
     :pswitch_data_28
     .packed-switch 0x1
         :pswitch_6

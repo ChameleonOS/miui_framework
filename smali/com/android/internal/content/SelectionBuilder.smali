@@ -23,17 +23,14 @@
     .registers 2
 
     .prologue
-    .line 33
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/content/SelectionBuilder;->mSelection:Ljava/lang/StringBuilder;
 
-    .line 35
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,21 +48,18 @@
     .parameter "selectionArgs"
 
     .prologue
-    .line 51
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_13
 
-    .line 52
     if-eqz p2, :cond_48
 
     array-length v4, p2
 
     if-lez v4, :cond_48
 
-    .line 53
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
     const-string v5, "Valid selection required when including arguments"
@@ -74,7 +68,6 @@
 
     throw v4
 
-    .line 61
     :cond_13
     iget-object v4, p0, Lcom/android/internal/content/SelectionBuilder;->mSelection:Ljava/lang/StringBuilder;
 
@@ -84,14 +77,12 @@
 
     if-lez v4, :cond_22
 
-    .line 62
     iget-object v4, p0, Lcom/android/internal/content/SelectionBuilder;->mSelection:Ljava/lang/StringBuilder;
 
     const-string v5, " AND "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 65
     :cond_22
     iget-object v4, p0, Lcom/android/internal/content/SelectionBuilder;->mSelection:Ljava/lang/StringBuilder;
 
@@ -109,10 +100,8 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 66
     if-eqz p2, :cond_48
 
-    .line 67
     move-object v1, p2
 
     .local v1, arr$:[Ljava/lang/Object;
@@ -127,7 +116,6 @@
 
     aget-object v0, v1, v2
 
-    .line 70
     .local v0, arg:Ljava/lang/Object;
     iget-object v4, p0, Lcom/android/internal/content/SelectionBuilder;->mSelectionArgs:Ljava/util/ArrayList;
 
@@ -137,12 +125,10 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 67
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_38
 
-    .line 74
     .end local v0           #arg:Ljava/lang/Object;
     .end local v1           #arr$:[Ljava/lang/Object;
     .end local v2           #i$:I
@@ -157,7 +143,6 @@
     .parameter "table"
 
     .prologue
-    .line 123
     invoke-virtual {p0}, Lcom/android/internal/content/SelectionBuilder;->getSelection()Ljava/lang/String;
 
     move-result-object v0
@@ -177,7 +162,6 @@
     .registers 2
 
     .prologue
-    .line 83
     iget-object v0, p0, Lcom/android/internal/content/SelectionBuilder;->mSelection:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -191,7 +175,6 @@
     .registers 3
 
     .prologue
-    .line 92
     iget-object v0, p0, Lcom/android/internal/content/SelectionBuilder;->mSelectionArgs:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/android/internal/content/SelectionBuilder;->mSelectionArgs:Ljava/util/ArrayList;
@@ -221,7 +204,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 100
     move-object v0, p0
 
     move-object v1, p1
@@ -254,7 +236,6 @@
     .parameter "limit"
 
     .prologue
-    .line 108
     invoke-virtual {p0}, Lcom/android/internal/content/SelectionBuilder;->getSelection()Ljava/lang/String;
 
     move-result-object v3
@@ -288,19 +269,16 @@
     .registers 3
 
     .prologue
-    .line 41
     iget-object v0, p0, Lcom/android/internal/content/SelectionBuilder;->mSelection:Ljava/lang/StringBuilder;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 42
     iget-object v0, p0, Lcom/android/internal/content/SelectionBuilder;->mSelectionArgs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 43
     return-object p0
 .end method
 
@@ -311,7 +289,6 @@
     .parameter "values"
 
     .prologue
-    .line 116
     invoke-virtual {p0}, Lcom/android/internal/content/SelectionBuilder;->getSelection()Ljava/lang/String;
 
     move-result-object v0

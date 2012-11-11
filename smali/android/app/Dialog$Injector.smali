@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 83
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .parameter "themeResId"
 
     .prologue
-    .line 85
     if-eqz p1, :cond_1b
 
     iget-object v0, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
@@ -56,14 +54,12 @@
 
     if-eqz v0, :cond_1b
 
-    .line 87
     iget-object v0, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
 
     const/16 v1, 0x50
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setGravity(I)V
 
-    .line 89
     :cond_1b
     return-void
 .end method

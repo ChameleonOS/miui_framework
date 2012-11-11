@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 98
     iput-object p1, p0, Landroid/content/ContentQueryMap$1;->this$0:Landroid/content/ContentQueryMap;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,7 +39,6 @@
     .parameter "selfChange"
 
     .prologue
-    .line 104
     iget-object v0, p0, Landroid/content/ContentQueryMap$1;->this$0:Landroid/content/ContentQueryMap;
 
     invoke-virtual {v0}, Landroid/content/ContentQueryMap;->countObservers()I
@@ -49,16 +47,13 @@
 
     if-eqz v0, :cond_e
 
-    .line 105
     iget-object v0, p0, Landroid/content/ContentQueryMap$1;->this$0:Landroid/content/ContentQueryMap;
 
     invoke-virtual {v0}, Landroid/content/ContentQueryMap;->requery()V
 
-    .line 109
     :goto_d
     return-void
 
-    .line 107
     :cond_e
     iget-object v0, p0, Landroid/content/ContentQueryMap$1;->this$0:Landroid/content/ContentQueryMap;
 

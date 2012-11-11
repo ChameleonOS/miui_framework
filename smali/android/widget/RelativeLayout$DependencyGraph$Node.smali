@@ -78,7 +78,6 @@
     .registers 2
 
     .prologue
-    .line 1471
     new-instance v0, Landroid/widget/RelativeLayout$DependencyGraph$Node$1;
 
     invoke-direct {v0}, Landroid/widget/RelativeLayout$DependencyGraph$Node$1;-><init>()V
@@ -102,17 +101,14 @@
     .registers 2
 
     .prologue
-    .line 1448
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1458
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependents:Ljava/util/HashMap;
 
-    .line 1463
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -127,7 +123,6 @@
     .parameter "view"
 
     .prologue
-    .line 1505
     sget-object v1, Landroid/widget/RelativeLayout$DependencyGraph$Node;->sPool:Landroid/util/Pool;
 
     invoke-interface {v1}, Landroid/util/Pool;->acquire()Landroid/util/Poolable;
@@ -136,11 +131,9 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
-    .line 1506
     .local v0, node:Landroid/widget/RelativeLayout$DependencyGraph$Node;
     iput-object p0, v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->view:Landroid/view/View;
 
-    .line 1508
     return-object v0
 .end method
 
@@ -150,7 +143,6 @@
     .registers 2
 
     .prologue
-    .line 1493
     iget-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->mNext:Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
     return-object v0
@@ -160,7 +152,6 @@
     .registers 2
 
     .prologue
-    .line 1448
     invoke-virtual {p0}, Landroid/widget/RelativeLayout$DependencyGraph$Node;->getNextPoolable()Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
     move-result-object v0
@@ -172,7 +163,6 @@
     .registers 2
 
     .prologue
-    .line 1497
     iget-boolean v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->mIsPooled:Z
 
     return v0
@@ -182,27 +172,22 @@
     .registers 2
 
     .prologue
-    .line 1512
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->view:Landroid/view/View;
 
-    .line 1513
     iget-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependents:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 1514
     iget-object v0, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->dependencies:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 1516
     sget-object v0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->sPool:Landroid/util/Pool;
 
     invoke-interface {v0, p0}, Landroid/util/Pool;->release(Landroid/util/Poolable;)V
 
-    .line 1517
     return-void
 .end method
 
@@ -211,10 +196,8 @@
     .parameter "element"
 
     .prologue
-    .line 1489
     iput-object p1, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->mNext:Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
-    .line 1490
     return-void
 .end method
 
@@ -223,7 +206,6 @@
     .parameter "x0"
 
     .prologue
-    .line 1448
     check-cast p1, Landroid/widget/RelativeLayout$DependencyGraph$Node;
 
     .end local p1
@@ -237,9 +219,7 @@
     .parameter "isPooled"
 
     .prologue
-    .line 1501
     iput-boolean p1, p0, Landroid/widget/RelativeLayout$DependencyGraph$Node;->mIsPooled:Z
 
-    .line 1502
     return-void
 .end method

@@ -31,7 +31,6 @@
     .parameter
 
     .prologue
-    .line 66
     iput-object p1, p0, Landroid/widget/TimePicker$OnMinuteChangeListener;->this$0:Landroid/widget/TimePicker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -48,16 +47,13 @@
     .parameter "newVal"
 
     .prologue
-    .line 69
     iget-object v0, p0, Landroid/widget/TimePicker$OnMinuteChangeListener;->this$0:Landroid/widget/TimePicker;
 
     invoke-virtual {v0}, Landroid/widget/TimePicker;->callUpdateInputState()V
 
-    .line 70
     iget-object v0, p0, Landroid/widget/TimePicker$OnMinuteChangeListener;->this$0:Landroid/widget/TimePicker;
 
     invoke-virtual {v0}, Landroid/widget/TimePicker;->callOnTimeChanged()V
 
-    .line 71
     return-void
 .end method

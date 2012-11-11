@@ -20,10 +20,8 @@
     .parameter "style"
 
     .prologue
-    .line 43
     invoke-direct {p0}, Landroid/graphics/PathEffect;-><init>()V
 
-    .line 44
     invoke-virtual {p1}, Landroid/graphics/Path;->ni()I
 
     move-result v0
@@ -36,7 +34,6 @@
 
     iput v0, p0, Landroid/graphics/PathEffect;->native_instance:I
 
-    .line 46
     return-void
 .end method
 

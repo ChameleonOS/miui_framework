@@ -17,10 +17,8 @@
     .registers 1
 
     .prologue
-    .line 5
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
     return-void
 .end method
 
@@ -41,7 +39,6 @@
     .end annotation
 
     .prologue
-    .line 53
     .local p0, manager:Lmiui/util/SimplePool$Manager;,"Lmiui/util/SimplePool$Manager<TT;>;"
     new-instance v0, Lmiui/util/SimplePool$PoolInstance;
 

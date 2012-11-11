@@ -38,7 +38,6 @@
     .registers 1
 
     .prologue
-    .line 70
     new-instance v0, Landroid/nfc/TransceiveResult$1;
 
     invoke-direct {v0}, Landroid/nfc/TransceiveResult$1;-><init>()V
@@ -54,16 +53,12 @@
     .parameter "data"
 
     .prologue
-    .line 38
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     iput p1, p0, Landroid/nfc/TransceiveResult;->mResult:I
 
-    .line 40
     iput-object p2, p0, Landroid/nfc/TransceiveResult;->mResponseData:[B
 
-    .line 41
     return-void
 .end method
 
@@ -73,7 +68,6 @@
     .registers 2
 
     .prologue
-    .line 58
     const/4 v0, 0x0
 
     return v0
@@ -88,12 +82,10 @@
     .end annotation
 
     .prologue
-    .line 44
     iget v0, p0, Landroid/nfc/TransceiveResult;->mResult:I
 
     packed-switch v0, :pswitch_data_20
 
-    .line 52
     :pswitch_5
     new-instance v0, Ljava/io/IOException;
 
@@ -103,13 +95,11 @@
 
     throw v0
 
-    .line 46
     :pswitch_d
     iget-object v0, p0, Landroid/nfc/TransceiveResult;->mResponseData:[B
 
     return-object v0
 
-    .line 48
     :pswitch_10
     new-instance v0, Landroid/nfc/TagLostException;
 
@@ -119,7 +109,6 @@
 
     throw v0
 
-    .line 50
     :pswitch_18
     new-instance v0, Ljava/io/IOException;
 
@@ -129,7 +118,6 @@
 
     throw v0
 
-    .line 44
     :pswitch_data_20
     .packed-switch 0x0
         :pswitch_d
@@ -145,29 +133,24 @@
     .parameter "flags"
 
     .prologue
-    .line 63
     iget v0, p0, Landroid/nfc/TransceiveResult;->mResult:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 64
     iget v0, p0, Landroid/nfc/TransceiveResult;->mResult:I
 
     if-nez v0, :cond_14
 
-    .line 65
     iget-object v0, p0, Landroid/nfc/TransceiveResult;->mResponseData:[B
 
     array-length v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 66
     iget-object v0, p0, Landroid/nfc/TransceiveResult;->mResponseData:[B
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    .line 68
     :cond_14
     return-void
 .end method

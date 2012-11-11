@@ -203,7 +203,6 @@
     .registers 1
 
     .prologue
-    .line 89
     const-string v0, "content://downloads/my_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -212,7 +211,6 @@
 
     sput-object v0, Landroid/provider/Downloads$Impl;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 96
     const-string v0, "content://downloads/all_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -221,7 +219,6 @@
 
     sput-object v0, Landroid/provider/Downloads$Impl;->ALL_DOWNLOADS_CONTENT_URI:Landroid/net/Uri;
 
-    .line 106
     const-string v0, "content://downloads/public_downloads"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -237,7 +234,6 @@
     .registers 1
 
     .prologue
-    .line 42
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -250,7 +246,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 547
     if-eq p0, v0, :cond_6
 
     const/4 v1, 0x3
@@ -272,7 +267,6 @@
     .parameter "status"
 
     .prologue
-    .line 530
     const/16 v0, 0x190
 
     if-lt p0, v0, :cond_a
@@ -297,7 +291,6 @@
     .parameter "status"
 
     .prologue
-    .line 556
     const/16 v0, 0xc8
 
     if-lt p0, v0, :cond_8
@@ -332,7 +325,6 @@
     .parameter "status"
 
     .prologue
-    .line 523
     const/16 v0, 0x190
 
     if-lt p0, v0, :cond_a
@@ -357,7 +349,6 @@
     .parameter "status"
 
     .prologue
-    .line 509
     const/16 v0, 0x64
 
     if-lt p0, v0, :cond_a
@@ -382,7 +373,6 @@
     .parameter "status"
 
     .prologue
-    .line 537
     const/16 v0, 0x1f4
 
     if-lt p0, v0, :cond_a
@@ -407,7 +397,6 @@
     .parameter "status"
 
     .prologue
-    .line 516
     const/16 v0, 0xc8
 
     if-lt p0, v0, :cond_a
@@ -432,10 +421,8 @@
     .parameter "status"
 
     .prologue
-    .line 720
     sparse-switch p0, :sswitch_data_50
 
-    .line 745
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -443,151 +430,126 @@
     :goto_7
     return-object v0
 
-    .line 721
     :sswitch_8
     const-string v0, "PENDING"
 
     goto :goto_7
 
-    .line 722
     :sswitch_b
     const-string v0, "RUNNING"
 
     goto :goto_7
 
-    .line 723
     :sswitch_e
     const-string v0, "PAUSED_BY_APP"
 
     goto :goto_7
 
-    .line 724
     :sswitch_11
     const-string v0, "WAITING_TO_RETRY"
 
     goto :goto_7
 
-    .line 725
     :sswitch_14
     const-string v0, "WAITING_FOR_NETWORK"
 
     goto :goto_7
 
-    .line 726
     :sswitch_17
     const-string v0, "QUEUED_FOR_WIFI"
 
     goto :goto_7
 
-    .line 727
     :sswitch_1a
     const-string v0, "INSUFFICIENT_SPACE_ERROR"
 
     goto :goto_7
 
-    .line 728
     :sswitch_1d
     const-string v0, "DEVICE_NOT_FOUND_ERROR"
 
     goto :goto_7
 
-    .line 729
     :sswitch_20
     const-string v0, "SUCCESS"
 
     goto :goto_7
 
-    .line 730
     :sswitch_23
     const-string v0, "BAD_REQUEST"
 
     goto :goto_7
 
-    .line 731
     :sswitch_26
     const-string v0, "NOT_ACCEPTABLE"
 
     goto :goto_7
 
-    .line 732
     :sswitch_29
     const-string v0, "LENGTH_REQUIRED"
 
     goto :goto_7
 
-    .line 733
     :sswitch_2c
     const-string v0, "PRECONDITION_FAILED"
 
     goto :goto_7
 
-    .line 734
     :sswitch_2f
     const-string v0, "FILE_ALREADY_EXISTS_ERROR"
 
     goto :goto_7
 
-    .line 735
     :sswitch_32
     const-string v0, "CANNOT_RESUME"
 
     goto :goto_7
 
-    .line 736
     :sswitch_35
     const-string v0, "CANCELED"
 
     goto :goto_7
 
-    .line 737
     :sswitch_38
     const-string v0, "UNKNOWN_ERROR"
 
     goto :goto_7
 
-    .line 738
     :sswitch_3b
     const-string v0, "FILE_ERROR"
 
     goto :goto_7
 
-    .line 739
     :sswitch_3e
     const-string v0, "UNHANDLED_REDIRECT"
 
     goto :goto_7
 
-    .line 740
     :sswitch_41
     const-string v0, "UNHANDLED_HTTP_CODE"
 
     goto :goto_7
 
-    .line 741
     :sswitch_44
     const-string v0, "HTTP_DATA_ERROR"
 
     goto :goto_7
 
-    .line 742
     :sswitch_47
     const-string v0, "HTTP_EXCEPTION"
 
     goto :goto_7
 
-    .line 743
     :sswitch_4a
     const-string v0, "TOO_MANY_REDIRECTS"
 
     goto :goto_7
 
-    .line 744
     :sswitch_4d
     const-string v0, "BLOCKED"
 
     goto :goto_7
 
-    .line 720
     :sswitch_data_50
     .sparse-switch
         0xbe -> :sswitch_8

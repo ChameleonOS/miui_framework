@@ -23,7 +23,6 @@
     .registers 3
 
     .prologue
-    .line 6430
     invoke-static {}, Landroid/text/Layout$Alignment;->values()[Landroid/text/Layout$Alignment;
 
     move-result-object v0

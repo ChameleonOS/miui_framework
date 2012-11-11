@@ -60,7 +60,6 @@
     .registers 1
 
     .prologue
-    .line 333
     new-instance v0, Lmiui/provider/MusicSearchProvider$MusicMeta$1;
 
     invoke-direct {v0}, Lmiui/provider/MusicSearchProvider$MusicMeta$1;-><init>()V
@@ -82,34 +81,24 @@
     .parameter "flag"
 
     .prologue
-    .line 263
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 264
     iput-wide p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mLocalId:J
 
-    .line 265
     iput-object p3, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mOnlineId:Ljava/lang/String;
 
-    .line 266
     iput-object p4, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mTitle:Ljava/lang/String;
 
-    .line 267
     iput-object p5, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mData:Ljava/lang/String;
 
-    .line 268
     iput-object p6, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mArtistName:Ljava/lang/String;
 
-    .line 269
     iput-object p7, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mAlbumName:Ljava/lang/String;
 
-    .line 270
     iput-wide p8, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mDuartion:J
 
-    .line 271
     iput p10, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mFlag:I
 
-    .line 272
     return-void
 .end method
 
@@ -118,66 +107,56 @@
     .parameter "source"
 
     .prologue
-    .line 322
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 323
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mLocalId:J
 
-    .line 324
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mOnlineId:Ljava/lang/String;
 
-    .line 325
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mTitle:Ljava/lang/String;
 
-    .line 326
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mData:Ljava/lang/String;
 
-    .line 327
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mArtistName:Ljava/lang/String;
 
-    .line 328
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mAlbumName:Ljava/lang/String;
 
-    .line 329
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mDuartion:J
 
-    .line 330
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mFlag:I
 
-    .line 331
     return-void
 .end method
 
@@ -187,7 +166,6 @@
     .registers 2
 
     .prologue
-    .line 307
     const/4 v0, 0x0
 
     return v0
@@ -202,15 +180,12 @@
 
     const/4 v2, 0x0
 
-    .line 276
     if-ne p0, p1, :cond_5
 
-    .line 286
     :cond_4
     :goto_4
     return v1
 
-    .line 280
     :cond_5
     instance-of v3, p1, Lmiui/provider/MusicSearchProvider$MusicMeta;
 
@@ -218,16 +193,13 @@
 
     move v1, v2
 
-    .line 281
     goto :goto_4
 
     :cond_b
     move-object v0, p1
 
-    .line 284
     check-cast v0, Lmiui/provider/MusicSearchProvider$MusicMeta;
 
-    .line 286
     .local v0, other:Lmiui/provider/MusicSearchProvider$MusicMeta;
     iget-wide v3, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mLocalId:J
 
@@ -311,7 +283,6 @@
     .registers 3
 
     .prologue
-    .line 298
     iget-wide v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mLocalId:J
 
     long-to-int v1, v0
@@ -341,7 +312,6 @@
     .registers 2
 
     .prologue
-    .line 302
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mOnlineId:Ljava/lang/String;
 
     if-eqz v0, :cond_6
@@ -363,46 +333,37 @@
     .parameter "flags"
 
     .prologue
-    .line 312
     iget-wide v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mLocalId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 313
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mOnlineId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 314
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mTitle:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 315
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mData:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 316
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mArtistName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 317
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mAlbumName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 318
     iget-wide v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mDuartion:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 319
     iget v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta;->mFlag:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 320
     return-void
 .end method

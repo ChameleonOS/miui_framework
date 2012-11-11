@@ -59,25 +59,20 @@
     .parameter "handler"
 
     .prologue
-    .line 238
     invoke-direct {p0}, Lcom/android/internal/textservice/ISpellCheckerSessionListener$Stub;-><init>()V
 
-    .line 229
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mPendingTasks:Ljava/util/Queue;
 
-    .line 239
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mOpened:Z
 
-    .line 240
     iput-object p1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mHandler:Landroid/os/Handler;
 
-    .line 241
     return-void
 .end method
 
@@ -89,7 +84,6 @@
     .parameter "x3"
 
     .prologue
-    .line 224
     invoke-direct {p0, p1, p2, p3}, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->processTask(Lcom/android/internal/textservice/ISpellCheckerSession;Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;Z)V
 
     return-void
@@ -100,21 +94,16 @@
     .parameter "scp"
 
     .prologue
-    .line 394
     monitor-enter p0
 
-    .line 395
     :try_start_1
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mISpellCheckerSession:Lcom/android/internal/textservice/ISpellCheckerSession;
 
-    .line 396
     .local v1, session:Lcom/android/internal/textservice/ISpellCheckerSession;
     if-nez v1, :cond_30
 
-    .line 397
     const/4 v0, 0x0
 
-    .line 398
     .local v0, closeTask:Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
     iget v3, p1, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mWhat:I
 
@@ -122,7 +111,6 @@
 
     if-ne v3, v4, :cond_22
 
-    .line 399
     :cond_b
     :goto_b
     iget-object v3, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mPendingTasks:Ljava/util/Queue;
@@ -133,7 +121,6 @@
 
     if-nez v3, :cond_22
 
-    .line 400
     iget-object v3, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mPendingTasks:Ljava/util/Queue;
 
     invoke-interface {v3}, Ljava/util/Queue;->poll()Ljava/lang/Object;
@@ -142,7 +129,6 @@
 
     check-cast v2, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
 
-    .line 401
     .local v2, tmp:Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
     iget v3, v2, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mWhat:I
 
@@ -150,49 +136,40 @@
 
     if-ne v3, v4, :cond_b
 
-    .line 404
     move-object v0, v2
 
     goto :goto_b
 
-    .line 408
     .end local v2           #tmp:Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
     :cond_22
     iget-object v3, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mPendingTasks:Ljava/util/Queue;
 
     invoke-interface {v3, p1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
-    .line 409
     if-eqz v0, :cond_2e
 
-    .line 410
     iget-object v3, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mPendingTasks:Ljava/util/Queue;
 
     invoke-interface {v3, v0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
-    .line 412
     :cond_2e
     monitor-exit p0
 
-    .line 416
     .end local v0           #closeTask:Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
     :goto_2f
     return-void
 
-    .line 414
     :cond_30
     monitor-exit p0
     :try_end_31
     .catchall {:try_start_1 .. :try_end_31} :catchall_36
 
-    .line 415
     const/4 v3, 0x0
 
     invoke-direct {p0, v1, p1, v3}, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->processTask(Lcom/android/internal/textservice/ISpellCheckerSession;Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;Z)V
 
     goto :goto_2f
 
-    .line 414
     .end local v1           #session:Lcom/android/internal/textservice/ISpellCheckerSession;
     :catchall_36
     move-exception v3
@@ -212,20 +189,17 @@
     .parameter "async"
 
     .prologue
-    .line 260
     if-nez p3, :cond_6
 
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mAsyncHandler:Landroid/os/Handler;
 
     if-nez v1, :cond_b5
 
-    .line 261
     :cond_6
     iget v1, p2, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mWhat:I
 
     packed-switch v1, :pswitch_data_c8
 
-    .line 312
     :goto_b
     iget v1, p2, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mWhat:I
 
@@ -233,51 +207,41 @@
 
     if-ne v1, v2, :cond_27
 
-    .line 315
     monitor-enter p0
 
-    .line 316
     const/4 v1, 0x0
 
     :try_start_12
     iput-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mISpellCheckerSession:Lcom/android/internal/textservice/ISpellCheckerSession;
 
-    .line 317
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mHandler:Landroid/os/Handler;
 
-    .line 318
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mThread:Landroid/os/HandlerThread;
 
     if-eqz v1, :cond_20
 
-    .line 319
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v1}, Landroid/os/HandlerThread;->quit()Z
 
-    .line 321
     :cond_20
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mThread:Landroid/os/HandlerThread;
 
-    .line 322
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mAsyncHandler:Landroid/os/Handler;
 
-    .line 323
     monitor-exit p0
     :try_end_27
     .catchall {:try_start_12 .. :try_end_27} :catchall_c5
 
-    .line 325
     :cond_27
     return-void
 
-    .line 267
     :pswitch_28
     :try_start_28
     invoke-interface {p1}, Lcom/android/internal/textservice/ISpellCheckerSession;->onCancel()V
@@ -286,11 +250,9 @@
 
     goto :goto_b
 
-    .line 268
     :catch_2c
     move-exception v0
 
-    .line 269
     .local v0, e:Landroid/os/RemoteException;
     invoke-static {}, Landroid/view/textservice/SpellCheckerSession;->access$200()Ljava/lang/String;
 
@@ -318,7 +280,6 @@
 
     goto :goto_b
 
-    .line 277
     .end local v0           #e:Landroid/os/RemoteException;
     :pswitch_48
     :try_start_48
@@ -334,11 +295,9 @@
 
     goto :goto_b
 
-    .line 279
     :catch_52
     move-exception v0
 
-    .line 280
     .restart local v0       #e:Landroid/os/RemoteException;
     invoke-static {}, Landroid/view/textservice/SpellCheckerSession;->access$200()Ljava/lang/String;
 
@@ -366,7 +325,6 @@
 
     goto :goto_b
 
-    .line 288
     .end local v0           #e:Landroid/os/RemoteException;
     :pswitch_6e
     :try_start_6e
@@ -380,11 +338,9 @@
 
     goto :goto_b
 
-    .line 290
     :catch_76
     move-exception v0
 
-    .line 291
     .restart local v0       #e:Landroid/os/RemoteException;
     invoke-static {}, Landroid/view/textservice/SpellCheckerSession;->access$200()Ljava/lang/String;
 
@@ -412,7 +368,6 @@
 
     goto/16 :goto_b
 
-    .line 299
     .end local v0           #e:Landroid/os/RemoteException;
     :pswitch_93
     :try_start_93
@@ -422,11 +377,9 @@
 
     goto/16 :goto_b
 
-    .line 300
     :catch_98
     move-exception v0
 
-    .line 301
     .restart local v0       #e:Landroid/os/RemoteException;
     invoke-static {}, Landroid/view/textservice/SpellCheckerSession;->access$200()Ljava/lang/String;
 
@@ -454,12 +407,10 @@
 
     goto/16 :goto_b
 
-    .line 308
     .end local v0           #e:Landroid/os/RemoteException;
     :cond_b5
     iput-object p1, p2, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;->mSession:Lcom/android/internal/textservice/ISpellCheckerSession;
 
-    .line 309
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mAsyncHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mAsyncHandler:Landroid/os/Handler;
@@ -474,7 +425,6 @@
 
     goto/16 :goto_b
 
-    .line 323
     :catchall_c5
     move-exception v1
 
@@ -485,7 +435,6 @@
 
     throw v1
 
-    .line 261
     :pswitch_data_c8
     .packed-switch 0x1
         :pswitch_28
@@ -503,7 +452,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 356
     new-instance v0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
 
     const/4 v1, 0x1
@@ -514,7 +462,6 @@
 
     invoke-direct {p0, v0}, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->processOrEnqueueTask(Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;)V
 
-    .line 357
     return-void
 .end method
 
@@ -524,7 +471,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 382
     new-instance v0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
 
     const/4 v1, 0x3
@@ -535,7 +481,6 @@
 
     invoke-direct {p0, v0}, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->processOrEnqueueTask(Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;)V
 
-    .line 383
     return-void
 .end method
 
@@ -545,7 +490,6 @@
     .parameter "suggestionsLimit"
 
     .prologue
-    .line 373
     new-instance v0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
 
     const/4 v1, 0x4
@@ -556,7 +500,6 @@
 
     invoke-direct {p0, v0}, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->processOrEnqueueTask(Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;)V
 
-    .line 376
     return-void
 .end method
 
@@ -567,7 +510,6 @@
     .parameter "sequentialWords"
 
     .prologue
-    .line 364
     new-instance v0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;
 
     const/4 v1, 0x2
@@ -576,7 +518,6 @@
 
     invoke-direct {p0, v0}, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->processOrEnqueueTask(Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$SpellCheckerParams;)V
 
-    .line 367
     return-void
 .end method
 
@@ -584,7 +525,6 @@
     .registers 2
 
     .prologue
-    .line 386
     iget-boolean v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mOpened:Z
 
     if-eqz v0, :cond_a
@@ -609,7 +549,6 @@
     .parameter "results"
 
     .prologue
-    .line 430
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mHandler:Landroid/os/Handler;
@@ -622,7 +561,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 432
     return-void
 .end method
 
@@ -631,16 +569,13 @@
     .parameter "results"
 
     .prologue
-    .line 420
     monitor-enter p0
 
-    .line 421
     :try_start_1
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_11
 
-    .line 422
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mHandler:Landroid/os/Handler;
@@ -653,14 +588,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 425
     :cond_11
     monitor-exit p0
 
-    .line 426
     return-void
 
-    .line 425
     :catchall_13
     move-exception v0
 
@@ -676,7 +608,6 @@
     .parameter "session"
 
     .prologue
-    .line 328
     monitor-enter p0
 
     :try_start_1
@@ -684,11 +615,9 @@
     :try_end_2
     .catchall {:try_start_1 .. :try_end_2} :catchall_46
 
-    .line 329
     :try_start_2
     iput-object p1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mISpellCheckerSession:Lcom/android/internal/textservice/ISpellCheckerSession;
 
-    .line 330
     invoke-interface {p1}, Lcom/android/internal/textservice/ISpellCheckerSession;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -701,7 +630,6 @@
 
     if-nez v0, :cond_2d
 
-    .line 333
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "SpellCheckerSession"
@@ -712,12 +640,10 @@
 
     iput-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mThread:Landroid/os/HandlerThread;
 
-    .line 335
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 336
     new-instance v0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl$1;
 
     iget-object v1, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mThread:Landroid/os/HandlerThread;
@@ -730,18 +656,15 @@
 
     iput-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mAsyncHandler:Landroid/os/Handler;
 
-    .line 343
     :cond_2d
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mOpened:Z
 
-    .line 344
     monitor-exit p0
     :try_end_31
     .catchall {:try_start_2 .. :try_end_31} :catchall_49
 
-    .line 347
     :goto_31
     :try_start_31
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mPendingTasks:Ljava/util/Queue;
@@ -752,7 +675,6 @@
 
     if-nez v0, :cond_4c
 
-    .line 348
     iget-object v0, p0, Landroid/view/textservice/SpellCheckerSession$SpellCheckerSessionListenerImpl;->mPendingTasks:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
@@ -769,7 +691,6 @@
 
     goto :goto_31
 
-    .line 328
     :catchall_46
     move-exception v0
 
@@ -777,7 +698,6 @@
 
     throw v0
 
-    .line 344
     :catchall_49
     move-exception v0
 
@@ -791,7 +711,6 @@
     :try_end_4c
     .catchall {:try_start_4b .. :try_end_4c} :catchall_46
 
-    .line 350
     :cond_4c
     monitor-exit p0
 

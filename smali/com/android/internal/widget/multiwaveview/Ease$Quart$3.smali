@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 85
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +40,6 @@
 
     const/4 v2, 0x0
 
-    .line 87
     div-float/2addr p1, v1
 
     const/high16 v0, 0x3f80

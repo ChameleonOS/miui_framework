@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 69
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .parameter "ri"
 
     .prologue
-    .line 71
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0

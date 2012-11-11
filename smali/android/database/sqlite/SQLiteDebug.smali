@@ -29,7 +29,6 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 39
     const-string v0, "SQLiteLog"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -38,7 +37,6 @@
 
     sput-boolean v0, Landroid/database/sqlite/SQLiteDebug;->DEBUG_SQL_LOG:Z
 
-    .line 47
     const-string v0, "SQLiteStatements"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -47,7 +45,6 @@
 
     sput-boolean v0, Landroid/database/sqlite/SQLiteDebug;->DEBUG_SQL_STATEMENTS:Z
 
-    .line 56
     const-string v0, "SQLiteTime"
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -56,7 +53,6 @@
 
     sput-boolean v0, Landroid/database/sqlite/SQLiteDebug;->DEBUG_SQL_TIME:Z
 
-    .line 63
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     sput-boolean v0, Landroid/database/sqlite/SQLiteDebug;->DEBUG_LOG_SLOW_QUERIES:Z
@@ -68,10 +64,8 @@
     .registers 1
 
     .prologue
-    .line 65
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     return-void
 .end method
 
@@ -81,10 +75,8 @@
     .parameter "args"
 
     .prologue
-    .line 163
     const/4 v4, 0x0
 
-    .line 164
     .local v4, verbose:Z
     move-object v1, p1
 
@@ -100,7 +92,6 @@
 
     aget-object v0, v1, v2
 
-    .line 165
     .local v0, arg:Ljava/lang/String;
     const-string v5, "-v"
 
@@ -110,21 +101,17 @@
 
     if-eqz v5, :cond_11
 
-    .line 166
     const/4 v4, 0x1
 
-    .line 164
     :cond_11
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 170
     .end local v0           #arg:Ljava/lang/String;
     :cond_14
     invoke-static {p0, v4}, Landroid/database/sqlite/SQLiteDatabase;->dumpAll(Landroid/util/Printer;Z)V
 
-    .line 171
     return-void
 .end method
 
@@ -132,23 +119,19 @@
     .registers 2
 
     .prologue
-    .line 151
     new-instance v0, Landroid/database/sqlite/SQLiteDebug$PagerStats;
 
     invoke-direct {v0}, Landroid/database/sqlite/SQLiteDebug$PagerStats;-><init>()V
 
-    .line 152
     .local v0, stats:Landroid/database/sqlite/SQLiteDebug$PagerStats;
     invoke-static {v0}, Landroid/database/sqlite/SQLiteDebug;->nativeGetPagerStats(Landroid/database/sqlite/SQLiteDebug$PagerStats;)V
 
-    .line 153
     invoke-static {}, Landroid/database/sqlite/SQLiteDatabase;->getDbStats()Ljava/util/ArrayList;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/database/sqlite/SQLiteDebug$PagerStats;->dbStats:Ljava/util/ArrayList;
 
-    .line 154
     return-object v0
 .end method
 
@@ -160,7 +143,6 @@
     .parameter "elapsedTimeMillis"
 
     .prologue
-    .line 82
     const-string v1, "db.log.slow_query_threshold"
 
     const/4 v2, -0x1
@@ -169,7 +151,6 @@
 
     move-result v0
 
-    .line 83
     .local v0, slowQueryMillis:I
     if-ltz v0, :cond_10
 

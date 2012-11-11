@@ -45,10 +45,8 @@
     .parameter "reason"
 
     .prologue
-    .line 191
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 192
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaNumberInfoRec;
 
     const/4 v1, 0x5
@@ -67,10 +65,8 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaRedirectingNumberInfoRec;->numberInfoRec:Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaNumberInfoRec;
 
-    .line 194
     iput p6, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaRedirectingNumberInfoRec;->redirectingReason:I
 
-    .line 195
     return-void
 .end method
 
@@ -80,7 +76,6 @@
     .registers 3
 
     .prologue
-    .line 199
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

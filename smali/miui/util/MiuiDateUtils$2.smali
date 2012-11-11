@@ -28,7 +28,6 @@
     .registers 1
 
     .prologue
-    .line 28
     invoke-direct {p0}, Lmiui/util/SimplePool$Manager;-><init>()V
 
     return-void
@@ -40,7 +39,6 @@
     .registers 2
 
     .prologue
-    .line 31
     new-instance v0, Landroid/text/format/Time;
 
     invoke-direct {v0}, Landroid/text/format/Time;-><init>()V
@@ -52,7 +50,6 @@
     .registers 2
 
     .prologue
-    .line 28
     invoke-virtual {p0}, Lmiui/util/MiuiDateUtils$2;->createInstance()Landroid/text/format/Time;
 
     move-result-object v0

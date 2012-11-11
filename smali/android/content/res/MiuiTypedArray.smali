@@ -16,10 +16,8 @@
     .parameter "len"
 
     .prologue
-    .line 13
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/content/res/TypedArray;-><init>(Landroid/content/res/Resources;[I[II)V
 
-    .line 14
     invoke-virtual {p0}, Landroid/content/res/MiuiTypedArray;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -28,7 +26,6 @@
 
     iput-boolean v0, p0, Landroid/content/res/MiuiTypedArray;->mIsMiuiResources:Z
 
-    .line 15
     return-void
 .end method
 
@@ -39,19 +36,16 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 36
     iget-boolean v3, p0, Landroid/content/res/MiuiTypedArray;->mIsMiuiResources:Z
 
     if-nez v3, :cond_7
 
     move-object v0, v4
 
-    .line 47
     :cond_6
     :goto_6
     return-object v0
 
-    .line 39
     :cond_7
     iget-object v3, p0, Landroid/content/res/TypedArray;->mData:[I
 
@@ -59,20 +53,17 @@
 
     aget v2, v3, v5
 
-    .line 40
     .local v2, type:I
     const/4 v3, 0x3
 
     if-ne v2, v3, :cond_22
 
-    .line 41
     iget-object v3, p0, Landroid/content/res/TypedArray;->mData:[I
 
     add-int/lit8 v5, p1, 0x3
 
     aget v1, v3, v5
 
-    .line 42
     .local v1, id:I
     invoke-virtual {p0}, Landroid/content/res/MiuiTypedArray;->getResources()Landroid/content/res/Resources;
 
@@ -84,7 +75,6 @@
 
     move-result-object v0
 
-    .line 43
     .local v0, cs:Ljava/lang/CharSequence;
     if-nez v0, :cond_6
 
@@ -93,7 +83,6 @@
     :cond_22
     move-object v0, v4
 
-    .line 47
     goto :goto_6
 .end method
 
@@ -104,23 +93,19 @@
     .parameter "index"
 
     .prologue
-    .line 28
     mul-int/lit8 v1, p1, 0x6
 
     invoke-direct {p0, v1}, Landroid/content/res/MiuiTypedArray;->loadStringValueAt(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 29
     .local v0, cs:Ljava/lang/CharSequence;
     if-eqz v0, :cond_d
 
-    .line 30
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 32
     :goto_c
     return-object v1
 
@@ -137,18 +122,15 @@
     .parameter "index"
 
     .prologue
-    .line 19
     mul-int/lit8 v1, p1, 0x6
 
     invoke-direct {p0, v1}, Landroid/content/res/MiuiTypedArray;->loadStringValueAt(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 20
     .local v0, cs:Ljava/lang/CharSequence;
     if-eqz v0, :cond_9
 
-    .line 23
     .end local v0           #cs:Ljava/lang/CharSequence;
     :goto_8
     return-object v0

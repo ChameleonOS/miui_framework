@@ -23,13 +23,11 @@
     .parameter "name"
 
     .prologue
-    .line 34
     .local p0, this:Landroid/util/IntProperty;,"Landroid/util/IntProperty<TT;>;"
     const-class v0, Ljava/lang/Integer;
 
     invoke-direct {p0, v0, p1}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    .line 35
     return-void
 .end method
 
@@ -48,7 +46,6 @@
     .end annotation
 
     .prologue
-    .line 45
     .local p0, this:Landroid/util/IntProperty;,"Landroid/util/IntProperty<TT;>;"
     .local p1, object:Ljava/lang/Object;,"TT;"
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -61,7 +58,6 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/util/IntProperty;->set(Ljava/lang/Object;Ljava/lang/Integer;)V
 
-    .line 46
     return-void
 .end method
 
@@ -71,7 +67,6 @@
     .parameter "x1"
 
     .prologue
-    .line 31
     .local p0, this:Landroid/util/IntProperty;,"Landroid/util/IntProperty<TT;>;"
     check-cast p2, Ljava/lang/Integer;
 

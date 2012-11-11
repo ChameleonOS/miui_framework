@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 31
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,20 +44,16 @@
     .parameter "source"
 
     .prologue
-    .line 34
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 35
     .local v1, size:I
     new-array v0, v1, [B
 
-    .line 36
     .local v0, data:[B
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readByteArray([B)V
 
-    .line 37
     new-instance v2, Lcom/android/internal/telephony/SmsRawData;
 
     invoke-direct {v2, v0}, Lcom/android/internal/telephony/SmsRawData;-><init>([B)V
@@ -71,7 +66,6 @@
     .parameter "x0"
 
     .prologue
-    .line 31
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SmsRawData$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/telephony/SmsRawData;
 
     move-result-object v0
@@ -84,7 +78,6 @@
     .parameter "size"
 
     .prologue
-    .line 41
     new-array v0, p1, [Lcom/android/internal/telephony/SmsRawData;
 
     return-object v0
@@ -95,7 +88,6 @@
     .parameter "x0"
 
     .prologue
-    .line 31
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/SmsRawData$1;->newArray(I)[Lcom/android/internal/telephony/SmsRawData;
 
     move-result-object v0

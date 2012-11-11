@@ -18,13 +18,10 @@
     .parameter "factor"
 
     .prologue
-    .line 9
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10
     iput p1, p0, Lmiui/animation/DampingInterpolator;->mFactor:F
 
-    .line 11
     iget v0, p0, Lmiui/animation/DampingInterpolator;->mFactor:F
 
     float-to-double v0, v0
@@ -35,7 +32,6 @@
 
     iput-wide v0, p0, Lmiui/animation/DampingInterpolator;->mAtanValue:D
 
-    .line 12
     return-void
 .end method
 
@@ -46,7 +42,6 @@
     .parameter "input"
 
     .prologue
-    .line 16
     iget v0, p0, Lmiui/animation/DampingInterpolator;->mFactor:F
 
     mul-float/2addr v0, p1

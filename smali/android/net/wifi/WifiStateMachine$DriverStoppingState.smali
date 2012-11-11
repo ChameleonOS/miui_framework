@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 2801
     iput-object p1, p0, Landroid/net/wifi/WifiStateMachine$DriverStoppingState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +37,6 @@
     .registers 3
 
     .prologue
-    .line 2805
     const v0, 0xc365
 
     invoke-virtual {p0}, Landroid/net/wifi/WifiStateMachine$DriverStoppingState;->getName()Ljava/lang/String;
@@ -47,7 +45,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 2806
     return-void
 .end method
 
@@ -56,19 +53,15 @@
     .parameter "message"
 
     .prologue
-    .line 2810
     iget v1, p1, Landroid/os/Message;->what:I
 
     sparse-switch v1, :sswitch_data_24
 
-    .line 2832
     const/4 v1, 0x0
 
-    .line 2834
     :goto_6
     return v1
 
-    .line 2812
     :sswitch_7
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$DriverStoppingState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -77,13 +70,11 @@
 
     move-result-object v0
 
-    .line 2813
     .local v0, state:Landroid/net/wifi/SupplicantState;
     sget-object v1, Landroid/net/wifi/SupplicantState;->INTERFACE_DISABLED:Landroid/net/wifi/SupplicantState;
 
     if-ne v0, v1, :cond_1c
 
-    .line 2814
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$DriverStoppingState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
     iget-object v2, p0, Landroid/net/wifi/WifiStateMachine$DriverStoppingState;->this$0:Landroid/net/wifi/WifiStateMachine;
@@ -96,7 +87,6 @@
     #calls: Landroid/net/wifi/WifiStateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v1, v2}, Landroid/net/wifi/WifiStateMachine;->access$10000(Landroid/net/wifi/WifiStateMachine;Lcom/android/internal/util/IState;)V
 
-    .line 2834
     .end local v0           #state:Landroid/net/wifi/SupplicantState;
     :cond_1c
     :goto_1c
@@ -104,7 +94,6 @@
 
     goto :goto_6
 
-    .line 2829
     :sswitch_1e
     iget-object v1, p0, Landroid/net/wifi/WifiStateMachine$DriverStoppingState;->this$0:Landroid/net/wifi/WifiStateMachine;
 
@@ -113,7 +102,6 @@
 
     goto :goto_1c
 
-    .line 2810
     :sswitch_data_24
     .sparse-switch
         0x2000d -> :sswitch_1e

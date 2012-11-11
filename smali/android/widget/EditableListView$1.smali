@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 101
     iput-object p1, p0, Landroid/widget/EditableListView$1;->this$0:Landroid/widget/EditableListView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -54,14 +53,12 @@
     .end annotation
 
     .prologue
-    .line 105
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Landroid/widget/EditableListView$1;->this$0:Landroid/widget/EditableListView;
 
     #calls: Landroid/widget/EditableListView;->enterEditModeInner()V
     invoke-static {v0}, Landroid/widget/EditableListView;->access$000(Landroid/widget/EditableListView;)V
 
-    .line 106
     const/4 v0, 0x1
 
     return v0

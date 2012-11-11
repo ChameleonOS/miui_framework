@@ -18,19 +18,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 36
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/RestrictedState;->setPsRestricted(Z)V
 
-    .line 38
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/RestrictedState;->setCsNormalRestricted(Z)V
 
-    .line 39
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/RestrictedState;->setCsEmergencyRestricted(Z)V
 
-    .line 40
     return-void
 .end method
 
@@ -43,7 +38,6 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 93
     :try_start_1
     move-object v0, p1
 
@@ -53,25 +47,20 @@
     :try_end_5
     .catch Ljava/lang/ClassCastException; {:try_start_1 .. :try_end_5} :catch_8
 
-    .line 98
     .local v2, s:Lcom/android/internal/telephony/RestrictedState;
     if-nez p1, :cond_a
 
-    .line 102
     .end local v2           #s:Lcom/android/internal/telephony/RestrictedState;
     :cond_7
     :goto_7
     return v3
 
-    .line 94
     :catch_8
     move-exception v1
 
-    .line 95
     .local v1, ex:Ljava/lang/ClassCastException;
     goto :goto_7
 
-    .line 102
     .end local v1           #ex:Ljava/lang/ClassCastException;
     .restart local v2       #s:Lcom/android/internal/telephony/RestrictedState;
     :cond_a
@@ -102,7 +91,6 @@
     .registers 2
 
     .prologue
-    .line 53
     iget-boolean v0, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
     return v0
@@ -112,7 +100,6 @@
     .registers 2
 
     .prologue
-    .line 67
     iget-boolean v0, p0, Lcom/android/internal/telephony/RestrictedState;->mCsNormalRestricted:Z
 
     return v0
@@ -122,7 +109,6 @@
     .registers 2
 
     .prologue
-    .line 85
     iget-boolean v0, p0, Lcom/android/internal/telephony/RestrictedState;->mCsNormalRestricted:Z
 
     if-eqz v0, :cond_a
@@ -146,7 +132,6 @@
     .registers 2
 
     .prologue
-    .line 81
     iget-boolean v0, p0, Lcom/android/internal/telephony/RestrictedState;->mPsRestricted:Z
 
     return v0
@@ -157,10 +142,8 @@
     .parameter "csEmergencyRestricted"
 
     .prologue
-    .line 46
     iput-boolean p1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
-    .line 47
     return-void
 .end method
 
@@ -169,10 +152,8 @@
     .parameter "csNormalRestricted"
 
     .prologue
-    .line 60
     iput-boolean p1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsNormalRestricted:Z
 
-    .line 61
     return-void
 .end method
 
@@ -181,10 +162,8 @@
     .parameter "psRestricted"
 
     .prologue
-    .line 74
     iput-boolean p1, p0, Lcom/android/internal/telephony/RestrictedState;->mPsRestricted:Z
 
-    .line 75
     return-void
 .end method
 
@@ -192,10 +171,8 @@
     .registers 4
 
     .prologue
-    .line 109
     const-string/jumbo v0, "none"
 
-    .line 111
     .local v0, csString:Ljava/lang/String;
     iget-boolean v1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
@@ -205,10 +182,8 @@
 
     if-eqz v1, :cond_2d
 
-    .line 112
     const-string v0, "all"
 
-    .line 119
     :cond_d
     :goto_d
     new-instance v1, Ljava/lang/StringBuilder;
@@ -243,7 +218,6 @@
 
     return-object v1
 
-    .line 113
     :cond_2d
     iget-boolean v1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
@@ -253,12 +227,10 @@
 
     if-nez v1, :cond_38
 
-    .line 114
     const-string v0, "emergency"
 
     goto :goto_d
 
-    .line 115
     :cond_38
     iget-boolean v1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
@@ -268,7 +240,6 @@
 
     if-eqz v1, :cond_d
 
-    .line 116
     const-string/jumbo v0, "normal call"
 
     goto :goto_d

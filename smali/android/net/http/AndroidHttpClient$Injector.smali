@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 84
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .parameter "userAgent"
 
     .prologue
-    .line 86
     if-eqz p0, :cond_3
 
     .end local p0

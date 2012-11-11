@@ -157,26 +157,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 92
     const/4 v0, 0x0
 
     sput-object v0, Ljavax/microedition/khronos/egl/EGL10;->EGL_DEFAULT_DISPLAY:Ljava/lang/Object;
 
-    .line 93
     new-instance v0, Lcom/google/android/gles_jni/EGLDisplayImpl;
 
     invoke-direct {v0, v1}, Lcom/google/android/gles_jni/EGLDisplayImpl;-><init>(I)V
 
     sput-object v0, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_DISPLAY:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 94
     new-instance v0, Lcom/google/android/gles_jni/EGLContextImpl;
 
     invoke-direct {v0, v1}, Lcom/google/android/gles_jni/EGLContextImpl;-><init>(I)V
 
     sput-object v0, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_CONTEXT:Ljavax/microedition/khronos/egl/EGLContext;
 
-    .line 95
     new-instance v0, Lcom/google/android/gles_jni/EGLSurfaceImpl;
 
     invoke-direct {v0, v1}, Lcom/google/android/gles_jni/EGLSurfaceImpl;-><init>(I)V

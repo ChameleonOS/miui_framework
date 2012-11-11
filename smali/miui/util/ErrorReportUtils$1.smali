@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 138
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +45,6 @@
     .parameter "x1"
 
     .prologue
-    .line 138
     check-cast p1, Lorg/apache/http/NameValuePair;
 
     .end local p1
@@ -66,7 +64,6 @@
     .parameter "p2"
 
     .prologue
-    .line 141
     invoke-interface {p1}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
 
     move-result-object v0

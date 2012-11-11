@@ -35,12 +35,10 @@
     .parameter
 
     .prologue
-    .line 281
     iput-object p1, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->this$0:Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager;
 
     invoke-direct {p0}, Lcom/android/internal/telephony/IntRangeManager;-><init>()V
 
-    .line 282
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -59,7 +57,6 @@
     .parameter "selected"
 
     .prologue
-    .line 301
     iget-object v6, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->mConfigList:Ljava/util/ArrayList;
 
     new-instance v0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
@@ -78,7 +75,6 @@
 
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 303
     return-void
 .end method
 
@@ -86,7 +82,6 @@
     .registers 4
 
     .prologue
-    .line 311
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->mConfigList:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -95,14 +90,11 @@
 
     if-eqz v1, :cond_a
 
-    .line 312
     const/4 v1, 0x1
 
-    .line 316
     :goto_9
     return v1
 
-    .line 314
     :cond_a
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->mConfigList:Ljava/util/ArrayList;
 
@@ -120,7 +112,6 @@
 
     check-cast v0, [Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
 
-    .line 316
     .local v0, configs:[Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->this$0:Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager;
 
@@ -136,11 +127,9 @@
     .registers 2
 
     .prologue
-    .line 291
     iget-object v0, p0, Lcom/android/internal/telephony/gsm/SimSmsInterfaceManager$CellBroadcastRangeManager;->mConfigList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 292
     return-void
 .end method

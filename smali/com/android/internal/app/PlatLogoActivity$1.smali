@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 101
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +41,12 @@
     .parameter "v"
 
     .prologue
-    .line 104
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget-object v0, v0, Lcom/android/internal/app/PlatLogoActivity;->mToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 105
     iget-object v0, p0, Lcom/android/internal/app/PlatLogoActivity$1;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     iget-object v0, v0, Lcom/android/internal/app/PlatLogoActivity;->mContent:Landroid/widget/ImageView;
@@ -58,6 +55,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 106
     return-void
 .end method

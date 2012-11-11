@@ -53,7 +53,6 @@
 
     const/4 v3, 0x0
 
-    .line 28
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "BEGIN_ARRAY"
@@ -62,7 +61,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->BEGIN_ARRAY:Landroid/util/JsonToken;
 
-    .line 34
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "END_ARRAY"
@@ -71,7 +69,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->END_ARRAY:Landroid/util/JsonToken;
 
-    .line 40
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "BEGIN_OBJECT"
@@ -80,7 +77,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->BEGIN_OBJECT:Landroid/util/JsonToken;
 
-    .line 46
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "END_OBJECT"
@@ -89,7 +85,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->END_OBJECT:Landroid/util/JsonToken;
 
-    .line 53
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "NAME"
@@ -98,7 +93,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->NAME:Landroid/util/JsonToken;
 
-    .line 58
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "STRING"
@@ -109,7 +103,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->STRING:Landroid/util/JsonToken;
 
-    .line 64
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "NUMBER"
@@ -120,7 +113,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->NUMBER:Landroid/util/JsonToken;
 
-    .line 69
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "BOOLEAN"
@@ -131,7 +123,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->BOOLEAN:Landroid/util/JsonToken;
 
-    .line 74
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "NULL"
@@ -142,7 +133,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->NULL:Landroid/util/JsonToken;
 
-    .line 81
     new-instance v0, Landroid/util/JsonToken;
 
     const-string v1, "END_DOCUMENT"
@@ -153,7 +143,6 @@
 
     sput-object v0, Landroid/util/JsonToken;->END_DOCUMENT:Landroid/util/JsonToken;
 
-    .line 22
     const/16 v0, 0xa
 
     new-array v0, v0, [Landroid/util/JsonToken;
@@ -224,7 +213,6 @@
     .end annotation
 
     .prologue
-    .line 22
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -235,7 +223,6 @@
     .parameter "name"
 
     .prologue
-    .line 22
     const-class v0, Landroid/util/JsonToken;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -251,7 +238,6 @@
     .registers 1
 
     .prologue
-    .line 22
     sget-object v0, Landroid/util/JsonToken;->$VALUES:[Landroid/util/JsonToken;
 
     invoke-virtual {v0}, [Landroid/util/JsonToken;->clone()Ljava/lang/Object;

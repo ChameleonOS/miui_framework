@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 141
     new-instance v0, Landroid/webkit/WebSettings$PluginState;
 
     const-string v1, "ON"
@@ -53,7 +52,6 @@
 
     sput-object v0, Landroid/webkit/WebSettings$PluginState;->ON:Landroid/webkit/WebSettings$PluginState;
 
-    .line 142
     new-instance v0, Landroid/webkit/WebSettings$PluginState;
 
     const-string v1, "ON_DEMAND"
@@ -62,7 +60,6 @@
 
     sput-object v0, Landroid/webkit/WebSettings$PluginState;->ON_DEMAND:Landroid/webkit/WebSettings$PluginState;
 
-    .line 143
     new-instance v0, Landroid/webkit/WebSettings$PluginState;
 
     const-string v1, "OFF"
@@ -71,7 +68,6 @@
 
     sput-object v0, Landroid/webkit/WebSettings$PluginState;->OFF:Landroid/webkit/WebSettings$PluginState;
 
-    .line 140
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/webkit/WebSettings$PluginState;
@@ -104,7 +100,6 @@
     .end annotation
 
     .prologue
-    .line 140
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +110,6 @@
     .parameter "name"
 
     .prologue
-    .line 140
     const-class v0, Landroid/webkit/WebSettings$PluginState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +125,6 @@
     .registers 1
 
     .prologue
-    .line 140
     sget-object v0, Landroid/webkit/WebSettings$PluginState;->$VALUES:[Landroid/webkit/WebSettings$PluginState;
 
     invoke-virtual {v0}, [Landroid/webkit/WebSettings$PluginState;->clone()Ljava/lang/Object;

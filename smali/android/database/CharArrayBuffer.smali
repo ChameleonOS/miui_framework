@@ -15,15 +15,12 @@
     .parameter "size"
 
     .prologue
-    .line 23
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
     new-array v0, p1, [C
 
     iput-object v0, p0, Landroid/database/CharArrayBuffer;->data:[C
 
-    .line 25
     return-void
 .end method
 
@@ -32,12 +29,9 @@
     .parameter "buf"
 
     .prologue
-    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     iput-object p1, p0, Landroid/database/CharArrayBuffer;->data:[C
 
-    .line 29
     return-void
 .end method

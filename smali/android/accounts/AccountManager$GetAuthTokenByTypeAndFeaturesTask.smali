@@ -97,24 +97,19 @@
     .end annotation
 
     .prologue
-    .line 1620
     .local p8, callback:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->this$0:Landroid/accounts/AccountManager;
 
-    .line 1621
     invoke-direct {p0, p1, p5, p9, p8}, Landroid/accounts/AccountManager$AmsTask;-><init>(Landroid/accounts/AccountManager;Landroid/app/Activity;Landroid/os/Handler;Landroid/accounts/AccountManagerCallback;)V
 
-    .line 1630
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mFuture:Landroid/accounts/AccountManagerFuture;
 
-    .line 1637
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mNumAccounts:I
 
-    .line 1622
     if-nez p2, :cond_15
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -125,26 +120,19 @@
 
     throw v0
 
-    .line 1623
     :cond_15
     iput-object p2, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mAccountType:Ljava/lang/String;
 
-    .line 1624
     iput-object p3, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mAuthTokenType:Ljava/lang/String;
 
-    .line 1625
     iput-object p4, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mFeatures:[Ljava/lang/String;
 
-    .line 1626
     iput-object p6, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mAddAccountOptions:Landroid/os/Bundle;
 
-    .line 1627
     iput-object p7, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mLoginOptions:Landroid/os/Bundle;
 
-    .line 1628
     iput-object p0, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mMyCallback:Landroid/accounts/AccountManagerCallback;
 
-    .line 1629
     return-void
 .end method
 
@@ -154,7 +142,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1615
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->setException(Ljava/lang/Throwable;)V
 
     return-void
@@ -166,7 +153,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1615
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->setException(Ljava/lang/Throwable;)V
 
     return-void
@@ -178,7 +164,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1615
     iput p1, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mNumAccounts:I
 
     return p1
@@ -190,7 +175,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1615
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->setException(Ljava/lang/Throwable;)V
 
     return-void
@@ -207,7 +191,6 @@
     .end annotation
 
     .prologue
-    .line 1640
     iget-object v0, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->this$0:Landroid/accounts/AccountManager;
 
     iget-object v1, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mAccountType:Ljava/lang/String;
@@ -222,7 +205,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/accounts/AccountManager;->getAccountsByTypeAndFeatures(Ljava/lang/String;[Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 
-    .line 1727
     return-void
 .end method
 
@@ -243,7 +225,6 @@
     .local p1, future:Landroid/accounts/AccountManagerFuture;,"Landroid/accounts/AccountManagerFuture<Landroid/os/Bundle;>;"
     const/4 v11, 0x1
 
-    .line 1731
     :try_start_1
     invoke-interface {p1}, Landroid/accounts/AccountManagerFuture;->getResult()Ljava/lang/Object;
 
@@ -251,20 +232,17 @@
 
     check-cast v10, Landroid/os/Bundle;
 
-    .line 1732
     .local v10, result:Landroid/os/Bundle;
     iget v0, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mNumAccounts:I
 
     if-nez v0, :cond_4a
 
-    .line 1733
     const-string v0, "authAccount"
 
     invoke-virtual {v10, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1734
     .local v7, accountName:Ljava/lang/String;
     const-string v0, "accountType"
 
@@ -272,7 +250,6 @@
 
     move-result-object v8
 
-    .line 1735
     .local v8, accountType:Ljava/lang/String;
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -286,7 +263,6 @@
 
     if-eqz v0, :cond_2e
 
-    .line 1736
     :cond_23
     new-instance v0, Landroid/accounts/AuthenticatorException;
 
@@ -296,14 +272,12 @@
 
     invoke-virtual {p0, v0}, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->setException(Ljava/lang/Throwable;)V
 
-    .line 1753
     .end local v7           #accountName:Ljava/lang/String;
     .end local v8           #accountType:Ljava/lang/String;
     .end local v10           #result:Landroid/os/Bundle;
     :goto_2d
     return-void
 
-    .line 1739
     .restart local v7       #accountName:Ljava/lang/String;
     .restart local v8       #accountType:Ljava/lang/String;
     .restart local v10       #result:Landroid/os/Bundle;
@@ -312,13 +286,11 @@
 
     invoke-direct {v1, v7, v8}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1740
     .local v1, account:Landroid/accounts/Account;
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mNumAccounts:I
 
-    .line 1741
     iget-object v0, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->this$0:Landroid/accounts/AccountManager;
 
     iget-object v2, p0, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->mAuthTokenType:Ljava/lang/String;
@@ -339,7 +311,6 @@
 
     goto :goto_2d
 
-    .line 1746
     .end local v1           #account:Landroid/accounts/Account;
     .end local v7           #accountName:Ljava/lang/String;
     .end local v8           #accountType:Ljava/lang/String;
@@ -347,13 +318,11 @@
     :catch_45
     move-exception v9
 
-    .line 1747
     .local v9, e:Landroid/accounts/OperationCanceledException;
     invoke-virtual {p0, v11}, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->cancel(Z)Z
 
     goto :goto_2d
 
-    .line 1745
     .end local v9           #e:Landroid/accounts/OperationCanceledException;
     .restart local v10       #result:Landroid/os/Bundle;
     :cond_4a
@@ -366,23 +335,19 @@
 
     goto :goto_2d
 
-    .line 1748
     .end local v10           #result:Landroid/os/Bundle;
     :catch_4e
     move-exception v9
 
-    .line 1749
     .local v9, e:Ljava/io/IOException;
     invoke-virtual {p0, v9}, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->setException(Ljava/lang/Throwable;)V
 
     goto :goto_2d
 
-    .line 1750
     .end local v9           #e:Ljava/io/IOException;
     :catch_53
     move-exception v9
 
-    .line 1751
     .local v9, e:Landroid/accounts/AuthenticatorException;
     invoke-virtual {p0, v9}, Landroid/accounts/AccountManager$GetAuthTokenByTypeAndFeaturesTask;->setException(Ljava/lang/Throwable;)V
 

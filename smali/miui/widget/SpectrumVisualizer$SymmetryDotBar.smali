@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 400
     iput-object p1, p0, Lmiui/widget/SpectrumVisualizer$SymmetryDotBar;->this$0:Lmiui/widget/SpectrumVisualizer;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .parameter "index"
 
     .prologue
-    .line 403
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lmiui/widget/SpectrumVisualizer$SymmetryDotBar;->this$0:Lmiui/widget/SpectrumVisualizer;
@@ -92,7 +90,6 @@
 
     mul-int v6, v1, v2
 
-    .line 404
     .local v6, top:I
     move-object/from16 v0, p0
 
@@ -102,7 +99,6 @@
 
     if-ge v6, v1, :cond_66
 
-    .line 405
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lmiui/widget/SpectrumVisualizer$SymmetryDotBar;->this$0:Lmiui/widget/SpectrumVisualizer;
@@ -157,7 +153,6 @@
 
     invoke-virtual/range {v1 .. v10}, Landroid/graphics/Canvas;->drawBitmap([IIIIIIIZLandroid/graphics/Paint;)V
 
-    .line 416
     :cond_66
     move-object/from16 v0, p0
 
@@ -203,7 +198,6 @@
 
     mul-int v14, v1, v2
 
-    .line 417
     .local v14, bottom:I
     move-object/from16 v0, p0
 
@@ -213,18 +207,15 @@
 
     if-le v14, v1, :cond_99
 
-    .line 418
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lmiui/widget/SpectrumVisualizer$SymmetryDotBar;->this$0:Lmiui/widget/SpectrumVisualizer;
 
     iget v14, v1, Lmiui/widget/SpectrumVisualizer;->mShadowDotbarHeight:I
 
-    .line 420
     :cond_99
     if-lez v14, :cond_ca
 
-    .line 421
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lmiui/widget/SpectrumVisualizer$SymmetryDotBar;->this$0:Lmiui/widget/SpectrumVisualizer;
@@ -273,7 +264,6 @@
 
     invoke-virtual/range {v7 .. v16}, Landroid/graphics/Canvas;->drawBitmap([IIIIIIIZLandroid/graphics/Paint;)V
 
-    .line 431
     :cond_ca
     return-void
 .end method

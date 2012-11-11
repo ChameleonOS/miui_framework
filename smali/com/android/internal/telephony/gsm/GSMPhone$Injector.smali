@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 97
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,12 +34,10 @@
     .parameter "imei"
 
     .prologue
-    .line 99
     invoke-virtual {p0}, Lcom/android/internal/telephony/gsm/GSMPhone;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 100
     .local v0, context:Landroid/content/Context;
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -72,7 +69,6 @@
 
     if-eqz v3, :cond_35
 
-    .line 103
     const-string/jumbo v3, "wifi"
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -81,22 +77,18 @@
 
     check-cast v2, Landroid/net/wifi/WifiManager;
 
-    .line 104
     .local v2, wifiManager:Landroid/net/wifi/WifiManager;
     invoke-virtual {v2}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v1
 
-    .line 105
     .local v1, wifiInfo:Landroid/net/wifi/WifiInfo;
     if-eqz v1, :cond_35
 
-    .line 106
     invoke-virtual {v1}, Landroid/net/wifi/WifiInfo;->getMacAddress()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 109
     .end local v1           #wifiInfo:Landroid/net/wifi/WifiInfo;
     .end local v2           #wifiManager:Landroid/net/wifi/WifiManager;
     :cond_35

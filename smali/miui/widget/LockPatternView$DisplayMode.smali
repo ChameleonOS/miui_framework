@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 138
     new-instance v0, Lmiui/widget/LockPatternView$DisplayMode;
 
     const-string v1, "Correct"
@@ -53,7 +52,6 @@
 
     sput-object v0, Lmiui/widget/LockPatternView$DisplayMode;->Correct:Lmiui/widget/LockPatternView$DisplayMode;
 
-    .line 143
     new-instance v0, Lmiui/widget/LockPatternView$DisplayMode;
 
     const-string v1, "Animate"
@@ -62,7 +60,6 @@
 
     sput-object v0, Lmiui/widget/LockPatternView$DisplayMode;->Animate:Lmiui/widget/LockPatternView$DisplayMode;
 
-    .line 148
     new-instance v0, Lmiui/widget/LockPatternView$DisplayMode;
 
     const-string v1, "Wrong"
@@ -71,7 +68,6 @@
 
     sput-object v0, Lmiui/widget/LockPatternView$DisplayMode;->Wrong:Lmiui/widget/LockPatternView$DisplayMode;
 
-    .line 133
     const/4 v0, 0x3
 
     new-array v0, v0, [Lmiui/widget/LockPatternView$DisplayMode;
@@ -104,7 +100,6 @@
     .end annotation
 
     .prologue
-    .line 133
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +110,6 @@
     .parameter "name"
 
     .prologue
-    .line 133
     const-class v0, Lmiui/widget/LockPatternView$DisplayMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +125,6 @@
     .registers 1
 
     .prologue
-    .line 133
     sget-object v0, Lmiui/widget/LockPatternView$DisplayMode;->$VALUES:[Lmiui/widget/LockPatternView$DisplayMode;
 
     invoke-virtual {v0}, [Lmiui/widget/LockPatternView$DisplayMode;->clone()Ljava/lang/Object;

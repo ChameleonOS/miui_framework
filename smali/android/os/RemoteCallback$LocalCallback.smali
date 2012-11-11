@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 40
     iput-object p1, p0, Landroid/os/RemoteCallback$LocalCallback;->this$0:Landroid/os/RemoteCallback;
 
     invoke-direct {p0}, Landroid/os/IRemoteCallback$Stub;-><init>()V
@@ -39,7 +38,6 @@
     .parameter "bundle"
 
     .prologue
-    .line 42
     iget-object v0, p0, Landroid/os/RemoteCallback$LocalCallback;->this$0:Landroid/os/RemoteCallback;
 
     iget-object v0, v0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
@@ -52,6 +50,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 43
     return-void
 .end method

@@ -34,32 +34,26 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 256
     iput-object p1, p0, Landroid/app/LauncherActivity$IconResizer;->this$0:Landroid/app/LauncherActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 250
     iput v1, p0, Landroid/app/LauncherActivity$IconResizer;->mIconWidth:I
 
-    .line 251
     iput v1, p0, Landroid/app/LauncherActivity$IconResizer;->mIconHeight:I
 
-    .line 253
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Landroid/app/LauncherActivity$IconResizer;->mOldBounds:Landroid/graphics/Rect;
 
-    .line 254
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1}, Landroid/graphics/Canvas;-><init>()V
 
     iput-object v1, p0, Landroid/app/LauncherActivity$IconResizer;->mCanvas:Landroid/graphics/Canvas;
 
-    .line 257
     iget-object v1, p0, Landroid/app/LauncherActivity$IconResizer;->mCanvas:Landroid/graphics/Canvas;
 
     new-instance v2, Landroid/graphics/PaintFlagsDrawFilter;
@@ -72,12 +66,10 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Canvas;->setDrawFilter(Landroid/graphics/DrawFilter;)V
 
-    .line 260
     invoke-virtual {p1}, Landroid/app/LauncherActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 261
     .local v0, resources:Landroid/content/res/Resources;
     const/high16 v1, 0x105
 
@@ -91,7 +83,6 @@
 
     iput v1, p0, Landroid/app/LauncherActivity$IconResizer;->mIconWidth:I
 
-    .line 263
     return-void
 .end method
 
@@ -104,26 +95,21 @@
     .prologue
     const/4 v13, 0x0
 
-    .line 278
     iget v8, p0, Landroid/app/LauncherActivity$IconResizer;->mIconWidth:I
 
-    .line 279
     .local v8, width:I
     iget v2, p0, Landroid/app/LauncherActivity$IconResizer;->mIconHeight:I
 
-    .line 281
     .local v2, height:I
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v4
 
-    .line 282
     .local v4, iconWidth:I
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v3
 
-    .line 284
     .local v3, iconHeight:I
     instance-of v11, p1, Landroid/graphics/drawable/PaintDrawable;
 
@@ -131,29 +117,23 @@
 
     move-object v5, p1
 
-    .line 285
     check-cast v5, Landroid/graphics/drawable/PaintDrawable;
 
-    .line 286
     .local v5, painter:Landroid/graphics/drawable/PaintDrawable;
     invoke-virtual {v5, v8}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicWidth(I)V
 
-    .line 287
     invoke-virtual {v5, v2}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicHeight(I)V
 
-    .line 290
     .end local v5           #painter:Landroid/graphics/drawable/PaintDrawable;
     :cond_1a
     if-lez v8, :cond_71
 
     if-lez v2, :cond_71
 
-    .line 291
     if-lt v8, v4, :cond_22
 
     if-ge v2, v3, :cond_7b
 
-    .line 292
     :cond_22
     int-to-float v11, v4
 
@@ -161,18 +141,15 @@
 
     div-float v6, v11, v12
 
-    .line 294
     .local v6, ratio:F
     if-le v4, v3, :cond_72
 
-    .line 295
     int-to-float v11, v8
 
     div-float/2addr v11, v6
 
     float-to-int v2, v11
 
-    .line 300
     :cond_2b
     :goto_2b
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getOpacity()I
@@ -185,7 +162,6 @@
 
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 302
     .local v0, c:Landroid/graphics/Bitmap$Config;
     :goto_34
     iget v11, p0, Landroid/app/LauncherActivity$IconResizer;->mIconWidth:I
@@ -196,15 +172,12 @@
 
     move-result-object v7
 
-    .line 303
     .local v7, thumb:Landroid/graphics/Bitmap;
     iget-object v1, p0, Landroid/app/LauncherActivity$IconResizer;->mCanvas:Landroid/graphics/Canvas;
 
-    .line 304
     .local v1, canvas:Landroid/graphics/Canvas;
     invoke-virtual {v1, v7}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 310
     iget-object v11, p0, Landroid/app/LauncherActivity$IconResizer;->mOldBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -213,14 +186,12 @@
 
     invoke-virtual {v11, v12}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 311
     iget v11, p0, Landroid/app/LauncherActivity$IconResizer;->mIconWidth:I
 
     sub-int/2addr v11, v8
 
     div-int/lit8 v9, v11, 0x2
 
-    .line 312
     .local v9, x:I
     iget v11, p0, Landroid/app/LauncherActivity$IconResizer;->mIconHeight:I
 
@@ -228,7 +199,6 @@
 
     div-int/lit8 v10, v11, 0x2
 
-    .line 313
     .local v10, y:I
     add-int v11, v9, v8
 
@@ -236,15 +206,12 @@
 
     invoke-virtual {p1, v9, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 314
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 315
     iget-object v11, p0, Landroid/app/LauncherActivity$IconResizer;->mOldBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v11}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 316
     new-instance p1, Landroid/graphics/drawable/BitmapDrawable;
 
     .end local p1
@@ -256,11 +223,9 @@
 
     invoke-direct {p1, v11, v7}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 317
     .restart local p1
     invoke-virtual {v1, v13}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 334
     .end local v0           #c:Landroid/graphics/Bitmap$Config;
     .end local v1           #canvas:Landroid/graphics/Canvas;
     .end local v6           #ratio:F
@@ -271,12 +236,10 @@
     :goto_71
     return-object p1
 
-    .line 296
     .restart local v6       #ratio:F
     :cond_72
     if-le v3, v4, :cond_2b
 
-    .line 297
     int-to-float v11, v2
 
     mul-float/2addr v11, v6
@@ -285,23 +248,19 @@
 
     goto :goto_2b
 
-    .line 300
     :cond_78
     sget-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     goto :goto_34
 
-    .line 318
     .end local v6           #ratio:F
     :cond_7b
     if-ge v4, v8, :cond_71
 
     if-ge v3, v2, :cond_71
 
-    .line 319
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    .line 320
     .restart local v0       #c:Landroid/graphics/Bitmap$Config;
     iget v11, p0, Landroid/app/LauncherActivity$IconResizer;->mIconWidth:I
 
@@ -311,15 +270,12 @@
 
     move-result-object v7
 
-    .line 321
     .restart local v7       #thumb:Landroid/graphics/Bitmap;
     iget-object v1, p0, Landroid/app/LauncherActivity$IconResizer;->mCanvas:Landroid/graphics/Canvas;
 
-    .line 322
     .restart local v1       #canvas:Landroid/graphics/Canvas;
     invoke-virtual {v1, v7}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 323
     iget-object v11, p0, Landroid/app/LauncherActivity$IconResizer;->mOldBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -328,18 +284,15 @@
 
     invoke-virtual {v11, v12}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 324
     sub-int v11, v8, v4
 
     div-int/lit8 v9, v11, 0x2
 
-    .line 325
     .restart local v9       #x:I
     sub-int v11, v2, v3
 
     div-int/lit8 v10, v11, 0x2
 
-    .line 326
     .restart local v10       #y:I
     add-int v11, v9, v4
 
@@ -347,15 +300,12 @@
 
     invoke-virtual {p1, v9, v10, v11, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 327
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 328
     iget-object v11, p0, Landroid/app/LauncherActivity$IconResizer;->mOldBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v11}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 329
     new-instance p1, Landroid/graphics/drawable/BitmapDrawable;
 
     .end local p1
@@ -367,7 +317,6 @@
 
     invoke-direct {p1, v11, v7}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 330
     .restart local p1
     invoke-virtual {v1, v13}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 

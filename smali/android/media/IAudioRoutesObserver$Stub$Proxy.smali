@@ -27,13 +27,10 @@
     .parameter "remote"
 
     .prologue
-    .line 69
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
     iput-object p1, p0, Landroid/media/IAudioRoutesObserver$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 71
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .registers 2
 
     .prologue
-    .line 74
     iget-object v0, p0, Landroid/media/IAudioRoutesObserver$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -59,32 +55,26 @@
     .end annotation
 
     .prologue
-    .line 82
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 84
     .local v0, _data:Landroid/os/Parcel;
     :try_start_4
     const-string v1, "android.media.IAudioRoutesObserver"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 85
     if-eqz p1, :cond_1f
 
-    .line 86
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 87
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/media/AudioRoutesInfo;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 92
     :goto_13
     iget-object v1, p0, Landroid/media/IAudioRoutesObserver$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -98,13 +88,10 @@
     :try_end_1b
     .catchall {:try_start_4 .. :try_end_1b} :catchall_24
 
-    .line 95
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 97
     return-void
 
-    .line 90
     :cond_1f
     const/4 v1, 0x0
 
@@ -115,7 +102,6 @@
 
     goto :goto_13
 
-    .line 95
     :catchall_24
     move-exception v1
 
@@ -128,7 +114,6 @@
     .registers 2
 
     .prologue
-    .line 78
     const-string v0, "android.media.IAudioRoutesObserver"
 
     return-object v0

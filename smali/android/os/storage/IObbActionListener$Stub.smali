@@ -34,15 +34,12 @@
     .registers 2
 
     .prologue
-    .line 37
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 38
     const-string v0, "IObbActionListener"
 
     invoke-virtual {p0, p0, v0}, Landroid/os/storage/IObbActionListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 39
     return-void
 .end method
 
@@ -51,17 +48,13 @@
     .parameter "obj"
 
     .prologue
-    .line 46
     if-nez p0, :cond_4
 
-    .line 47
     const/4 v0, 0x0
 
-    .line 53
     :goto_3
     return-object v0
 
-    .line 49
     :cond_4
     const-string v1, "IObbActionListener"
 
@@ -69,7 +62,6 @@
 
     move-result-object v0
 
-    .line 50
     .local v0, iin:Landroid/os/IInterface;
     if-eqz v0, :cond_13
 
@@ -77,12 +69,10 @@
 
     if-eqz v1, :cond_13
 
-    .line 51
     check-cast v0, Landroid/os/storage/IObbActionListener;
 
     goto :goto_3
 
-    .line 53
     :cond_13
     new-instance v0, Landroid/os/storage/IObbActionListener$Stub$Proxy;
 
@@ -98,7 +88,6 @@
     .registers 1
 
     .prologue
-    .line 57
     return-object p0
 .end method
 
@@ -117,10 +106,8 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 63
     sparse-switch p1, :sswitch_data_28
 
-    .line 81
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v3
@@ -128,7 +115,6 @@
     :goto_8
     return v3
 
-    .line 65
     :sswitch_9
     const-string v4, "IObbActionListener"
 
@@ -136,39 +122,32 @@
 
     goto :goto_8
 
-    .line 69
     :sswitch_f
     const-string v4, "IObbActionListener"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 71
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 73
     .local v0, filename:Ljava/lang/String;
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 75
     .local v1, nonce:I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 76
     .local v2, status:I
     invoke-virtual {p0, v0, v1, v2}, Landroid/os/storage/IObbActionListener$Stub;->onObbResult(Ljava/lang/String;II)V
 
-    .line 77
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto :goto_8
 
-    .line 63
     nop
 
     :sswitch_data_28

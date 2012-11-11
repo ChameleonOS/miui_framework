@@ -18,7 +18,6 @@
     .registers 1
 
     .prologue
-    .line 9
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +29,6 @@
     .parameter "number"
 
     .prologue
-    .line 26
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Lmiui/text/util/MiuiFormatter;->formatFileSize(Landroid/content/Context;JZ)Ljava/lang/String;
@@ -55,85 +53,64 @@
 
     const/4 v6, 0x0
 
-    .line 38
     if-nez p0, :cond_b
 
-    .line 39
     const-string v3, ""
 
-    .line 82
     :goto_a
     return-object v3
 
-    .line 42
     :cond_b
     long-to-float v0, p1
 
-    .line 43
     .local v0, result:F
     const v1, 0x60c01de
 
-    .line 44
     .local v1, suffix:I
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_17
 
-    .line 45
     const v1, 0x60c017b
 
-    .line 46
     div-float/2addr v0, v5
 
-    .line 48
     :cond_17
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_1f
 
-    .line 49
     const v1, 0x60c017c
 
-    .line 50
     div-float/2addr v0, v5
 
-    .line 52
     :cond_1f
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_27
 
-    .line 53
     const v1, 0x60c019b
 
-    .line 54
     div-float/2addr v0, v5
 
-    .line 56
     :cond_27
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_2f
 
-    .line 57
     const v1, 0x60c01df
 
-    .line 58
     div-float/2addr v0, v5
 
-    .line 60
     :cond_2f
     cmpl-float v3, v0, v4
 
     if-lez v3, :cond_37
 
-    .line 61
     const v1, 0x60c01e0
 
-    .line 62
     div-float/2addr v0, v5
 
-    .line 65
     :cond_37
     const/high16 v3, 0x3f80
 
@@ -141,7 +118,6 @@
 
     if-gez v3, :cond_62
 
-    .line 66
     const-string v3, "%.2f"
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -156,7 +132,6 @@
 
     move-result-object v2
 
-    .line 82
     .local v2, value:Ljava/lang/String;
     :goto_4b
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -183,7 +158,6 @@
 
     goto :goto_a
 
-    .line 67
     .end local v2           #value:Ljava/lang/String;
     :cond_62
     const/high16 v3, 0x4120
@@ -192,10 +166,8 @@
 
     if-gez v3, :cond_88
 
-    .line 68
     if-eqz p3, :cond_79
 
-    .line 69
     const-string v3, "%.1f"
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -213,7 +185,6 @@
     .restart local v2       #value:Ljava/lang/String;
     goto :goto_4b
 
-    .line 71
     .end local v2           #value:Ljava/lang/String;
     :cond_79
     const-string v3, "%.2f"
@@ -233,7 +204,6 @@
     .restart local v2       #value:Ljava/lang/String;
     goto :goto_4b
 
-    .line 73
     .end local v2           #value:Ljava/lang/String;
     :cond_88
     const/high16 v3, 0x42c8
@@ -242,10 +212,8 @@
 
     if-gez v3, :cond_ae
 
-    .line 74
     if-eqz p3, :cond_9f
 
-    .line 75
     const-string v3, "%.0f"
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -263,7 +231,6 @@
     .restart local v2       #value:Ljava/lang/String;
     goto :goto_4b
 
-    .line 77
     .end local v2           #value:Ljava/lang/String;
     :cond_9f
     const-string v3, "%.2f"
@@ -283,7 +250,6 @@
     .restart local v2       #value:Ljava/lang/String;
     goto :goto_4b
 
-    .line 80
     .end local v2           #value:Ljava/lang/String;
     :cond_ae
     const-string v3, "%.0f"
@@ -310,7 +276,6 @@
     .parameter "number"
 
     .prologue
-    .line 34
     const/4 v0, 0x1
 
     invoke-static {p0, p1, p2, v0}, Lmiui/text/util/MiuiFormatter;->formatFileSize(Landroid/content/Context;JZ)Ljava/lang/String;

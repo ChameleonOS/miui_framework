@@ -45,32 +45,24 @@
     .parameter "channelPath"
 
     .prologue
-    .line 73
     iput-object p1, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->this$0:Landroid/server/BluetoothHealthProfileHandler;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     iput-object p4, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mChannelFd:Landroid/os/ParcelFileDescriptor;
 
-    .line 75
     iput-boolean p5, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mMainChannel:Z
 
-    .line 76
     iput-object p6, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mChannelPath:Ljava/lang/String;
 
-    .line 77
     iput-object p2, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mDevice:Landroid/bluetooth/BluetoothDevice;
 
-    .line 78
     iput-object p3, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mConfig:Landroid/bluetooth/BluetoothHealthAppConfiguration;
 
-    .line 79
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mState:I
 
-    .line 80
     #calls: Landroid/server/BluetoothHealthProfileHandler;->getChannelId()I
     invoke-static {p1}, Landroid/server/BluetoothHealthProfileHandler;->access$000(Landroid/server/BluetoothHealthProfileHandler;)I
 
@@ -78,7 +70,6 @@
 
     iput v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mId:I
 
-    .line 81
     return-void
 .end method
 
@@ -87,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     iget-object v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mDevice:Landroid/bluetooth/BluetoothDevice;
 
     return-object v0
@@ -98,7 +88,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     iget v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mId:I
 
     return v0
@@ -109,7 +98,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     iget v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mChannelType:I
 
     return v0
@@ -121,7 +109,6 @@
     .parameter "x1"
 
     .prologue
-    .line 62
     iput p1, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mChannelType:I
 
     return p1
@@ -132,7 +119,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     iget-boolean v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mMainChannel:Z
 
     return v0
@@ -144,7 +130,6 @@
     .parameter "x1"
 
     .prologue
-    .line 62
     iput-boolean p1, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mMainChannel:Z
 
     return p1
@@ -155,7 +140,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     iget-object v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mChannelPath:Ljava/lang/String;
 
     return-object v0
@@ -167,7 +151,6 @@
     .parameter "x1"
 
     .prologue
-    .line 62
     iput-object p1, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mChannelPath:Ljava/lang/String;
 
     return-object p1
@@ -178,7 +161,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     iget-object v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mChannelFd:Landroid/os/ParcelFileDescriptor;
 
     return-object v0
@@ -190,7 +172,6 @@
     .parameter "x1"
 
     .prologue
-    .line 62
     iput-object p1, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mChannelFd:Landroid/os/ParcelFileDescriptor;
 
     return-object p1
@@ -201,7 +182,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     iget-object v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mConfig:Landroid/bluetooth/BluetoothHealthAppConfiguration;
 
     return-object v0
@@ -212,7 +192,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     iget v0, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mState:I
 
     return v0
@@ -224,7 +203,6 @@
     .parameter "x1"
 
     .prologue
-    .line 62
     iput p1, p0, Landroid/server/BluetoothHealthProfileHandler$HealthChannel;->mState:I
 
     return p1

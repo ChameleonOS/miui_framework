@@ -35,7 +35,6 @@
     .parameter
 
     .prologue
-    .line 2420
     iput-object p1, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +49,6 @@
     .parameter "params"
 
     .prologue
-    .line 2425
     const/4 v1, 0x0
 
     :try_start_1
@@ -62,15 +60,12 @@
 
     move-result-object v1
 
-    .line 2427
     :goto_7
     return-object v1
 
-    .line 2426
     :catch_8
     move-exception v0
 
-    .line 2427
     .local v0, e:Ljava/io/IOException;
     const/4 v1, 0x0
 
@@ -82,7 +77,6 @@
     .parameter "x0"
 
     .prologue
-    .line 2420
     check-cast p1, [Ljava/io/InputStream;
 
     .end local p1
@@ -98,21 +92,17 @@
     .parameter "draw"
 
     .prologue
-    .line 2433
     if-nez p1, :cond_b
 
-    .line 2434
     const-string/jumbo v2, "webview"
 
     const-string v3, "Failed to load view state!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2444
     :goto_a
     return-void
 
-    .line 2437
     :cond_b
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -120,7 +110,6 @@
 
     move-result v1
 
-    .line 2438
     .local v1, viewWidth:I
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
@@ -136,7 +125,6 @@
 
     sub-int v0, v2, v3
 
-    .line 2439
     .local v0, viewHeight:I
     new-instance v2, Landroid/graphics/Point;
 
@@ -144,7 +132,6 @@
 
     iput-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mViewSize:Landroid/graphics/Point;
 
-    .line 2440
     iget-object v2, p1, Landroid/webkit/WebViewCore$DrawData;->mViewState:Landroid/webkit/WebViewCore$ViewState;
 
     iget-object v3, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
@@ -155,13 +142,11 @@
 
     iput v3, v2, Landroid/webkit/WebViewCore$ViewState;->mDefaultScale:F
 
-    .line 2441
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     #setter for: Landroid/webkit/WebViewClassic;->mLoadedPicture:Landroid/webkit/WebViewCore$DrawData;
     invoke-static {v2, p1}, Landroid/webkit/WebViewClassic;->access$2002(Landroid/webkit/WebViewClassic;Landroid/webkit/WebViewCore$DrawData;)Landroid/webkit/WebViewCore$DrawData;
 
-    .line 2442
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     iget-object v3, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
@@ -175,7 +160,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/webkit/WebViewClassic;->setNewPicture(Landroid/webkit/WebViewCore$DrawData;Z)V
 
-    .line 2443
     iget-object v2, p0, Landroid/webkit/WebViewClassic$8;->this$0:Landroid/webkit/WebViewClassic;
 
     #getter for: Landroid/webkit/WebViewClassic;->mLoadedPicture:Landroid/webkit/WebViewCore$DrawData;
@@ -195,7 +179,6 @@
     .parameter "x0"
 
     .prologue
-    .line 2420
     check-cast p1, Landroid/webkit/WebViewCore$DrawData;
 
     .end local p1

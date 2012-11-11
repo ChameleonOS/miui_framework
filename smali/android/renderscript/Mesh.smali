@@ -29,10 +29,8 @@
     .parameter "rs"
 
     .prologue
-    .line 94
     invoke-direct {p0, p1, p2}, Landroid/renderscript/BaseObj;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 95
     return-void
 .end method
 
@@ -43,7 +41,6 @@
     .parameter "slot"
 
     .prologue
-    .line 138
     iget-object v0, p0, Landroid/renderscript/Mesh;->mIndexBuffers:[Landroid/renderscript/Allocation;
 
     aget-object v0, v0, p1
@@ -56,7 +53,6 @@
     .parameter "slot"
 
     .prologue
-    .line 147
     iget-object v0, p0, Landroid/renderscript/Mesh;->mPrimitives:[Landroid/renderscript/Mesh$Primitive;
 
     aget-object v0, v0, p1
@@ -68,15 +64,12 @@
     .registers 2
 
     .prologue
-    .line 124
     iget-object v0, p0, Landroid/renderscript/Mesh;->mIndexBuffers:[Landroid/renderscript/Allocation;
 
     if-nez v0, :cond_6
 
-    .line 125
     const/4 v0, 0x0
 
-    .line 127
     :goto_5
     return v0
 
@@ -93,7 +86,6 @@
     .parameter "slot"
 
     .prologue
-    .line 115
     iget-object v0, p0, Landroid/renderscript/Mesh;->mVertexBuffers:[Landroid/renderscript/Allocation;
 
     aget-object v0, v0, p1
@@ -105,15 +97,12 @@
     .registers 2
 
     .prologue
-    .line 103
     iget-object v0, p0, Landroid/renderscript/Mesh;->mVertexBuffers:[Landroid/renderscript/Allocation;
 
     if-nez v0, :cond_6
 
-    .line 104
     const/4 v0, 0x0
 
-    .line 106
     :goto_5
     return v0
 
@@ -133,10 +122,8 @@
 
     const/4 v10, 0x1
 
-    .line 152
     invoke-super {p0}, Landroid/renderscript/BaseObj;->updateFromNative()V
 
-    .line 153
     iget-object v6, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     iget-object v7, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
@@ -149,7 +136,6 @@
 
     move-result v4
 
-    .line 154
     .local v4, vtxCount:I
     iget-object v6, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
@@ -163,19 +149,15 @@
 
     move-result v1
 
-    .line 156
     .local v1, idxCount:I
     new-array v5, v4, [I
 
-    .line 157
     .local v5, vtxIDs:[I
     new-array v2, v1, [I
 
-    .line 158
     .local v2, idxIDs:[I
     new-array v3, v1, [I
 
-    .line 160
     .local v3, primitives:[I
     iget-object v6, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
@@ -187,7 +169,6 @@
 
     invoke-virtual {v6, v7, v5, v4}, Landroid/renderscript/RenderScript;->nMeshGetVertices(I[II)V
 
-    .line 161
     iget-object v6, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
 
     iget-object v7, p0, Landroid/renderscript/BaseObj;->mRS:Landroid/renderscript/RenderScript;
@@ -198,34 +179,28 @@
 
     invoke-virtual {v6, v7, v2, v3, v1}, Landroid/renderscript/RenderScript;->nMeshGetIndices(I[I[II)V
 
-    .line 163
     new-array v6, v4, [Landroid/renderscript/Allocation;
 
     iput-object v6, p0, Landroid/renderscript/Mesh;->mVertexBuffers:[Landroid/renderscript/Allocation;
 
-    .line 164
     new-array v6, v1, [Landroid/renderscript/Allocation;
 
     iput-object v6, p0, Landroid/renderscript/Mesh;->mIndexBuffers:[Landroid/renderscript/Allocation;
 
-    .line 165
     new-array v6, v1, [Landroid/renderscript/Mesh$Primitive;
 
     iput-object v6, p0, Landroid/renderscript/Mesh;->mPrimitives:[Landroid/renderscript/Mesh$Primitive;
 
-    .line 167
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_46
     if-ge v0, v4, :cond_63
 
-    .line 168
     aget v6, v5, v0
 
     if-eqz v6, :cond_60
 
-    .line 169
     iget-object v6, p0, Landroid/renderscript/Mesh;->mVertexBuffers:[Landroid/renderscript/Allocation;
 
     new-instance v7, Landroid/renderscript/Allocation;
@@ -238,32 +213,27 @@
 
     aput-object v7, v6, v0
 
-    .line 170
     iget-object v6, p0, Landroid/renderscript/Mesh;->mVertexBuffers:[Landroid/renderscript/Allocation;
 
     aget-object v6, v6, v0
 
     invoke-virtual {v6}, Landroid/renderscript/Allocation;->updateFromNative()V
 
-    .line 167
     :cond_60
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_46
 
-    .line 174
     :cond_63
     const/4 v0, 0x0
 
     :goto_64
     if-ge v0, v1, :cond_8d
 
-    .line 175
     aget v6, v2, v0
 
     if-eqz v6, :cond_7e
 
-    .line 176
     iget-object v6, p0, Landroid/renderscript/Mesh;->mIndexBuffers:[Landroid/renderscript/Allocation;
 
     new-instance v7, Landroid/renderscript/Allocation;
@@ -276,14 +246,12 @@
 
     aput-object v7, v6, v0
 
-    .line 177
     iget-object v6, p0, Landroid/renderscript/Mesh;->mIndexBuffers:[Landroid/renderscript/Allocation;
 
     aget-object v6, v6, v0
 
     invoke-virtual {v6}, Landroid/renderscript/Allocation;->updateFromNative()V
 
-    .line 179
     :cond_7e
     iget-object v6, p0, Landroid/renderscript/Mesh;->mPrimitives:[Landroid/renderscript/Mesh$Primitive;
 
@@ -297,12 +265,10 @@
 
     aput-object v7, v6, v0
 
-    .line 174
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_64
 
-    .line 181
     :cond_8d
     return-void
 .end method

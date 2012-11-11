@@ -39,35 +39,26 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 347
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 348
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mLocalId:J
 
-    .line 349
     iput-object v2, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mOnlineId:Ljava/lang/String;
 
-    .line 350
     iput-object v2, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mTitle:Ljava/lang/String;
 
-    .line 351
     iput-object v2, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mData:Ljava/lang/String;
 
-    .line 352
     iput-object v2, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mArtistName:Ljava/lang/String;
 
-    .line 353
     iput-object v2, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mAlbumName:Ljava/lang/String;
 
-    .line 354
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mDuartion:J
 
-    .line 355
     const/4 v0, 0x0
 
     iput v0, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mFlag:I
@@ -81,7 +72,6 @@
     .registers 12
 
     .prologue
-    .line 358
     new-instance v0, Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     iget-wide v1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mLocalId:J
@@ -110,10 +100,8 @@
     .parameter "albumName"
 
     .prologue
-    .line 388
     iput-object p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mAlbumName:Ljava/lang/String;
 
-    .line 389
     return-object p0
 .end method
 
@@ -122,10 +110,8 @@
     .parameter "artistName"
 
     .prologue
-    .line 383
     iput-object p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mArtistName:Ljava/lang/String;
 
-    .line 384
     return-object p0
 .end method
 
@@ -134,10 +120,8 @@
     .parameter "data"
 
     .prologue
-    .line 378
     iput-object p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mData:Ljava/lang/String;
 
-    .line 379
     return-object p0
 .end method
 
@@ -146,10 +130,8 @@
     .parameter "duration"
 
     .prologue
-    .line 393
     iput-wide p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mDuartion:J
 
-    .line 394
     return-object p0
 .end method
 
@@ -158,10 +140,8 @@
     .parameter "flag"
 
     .prologue
-    .line 398
     iput p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mFlag:I
 
-    .line 399
     return-object p0
 .end method
 
@@ -170,10 +150,8 @@
     .parameter "localId"
 
     .prologue
-    .line 363
     iput-wide p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mLocalId:J
 
-    .line 364
     return-object p0
 .end method
 
@@ -182,10 +160,8 @@
     .parameter "onlineId"
 
     .prologue
-    .line 368
     iput-object p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mOnlineId:Ljava/lang/String;
 
-    .line 369
     return-object p0
 .end method
 
@@ -194,9 +170,7 @@
     .parameter "title"
 
     .prologue
-    .line 373
     iput-object p1, p0, Lmiui/provider/MusicSearchProvider$MusicMeta$Builder;->mTitle:Ljava/lang/String;
 
-    .line 374
     return-object p0
 .end method

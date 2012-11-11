@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 125
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .parameter "input"
 
     .prologue
-    .line 127
     const/high16 v0, -0x4100
 
     const-wide v1, 0x400921fb54442d18L

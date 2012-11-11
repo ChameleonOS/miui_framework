@@ -24,13 +24,10 @@
     .parameter "cs"
 
     .prologue
-    .line 56
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
-    .line 57
     iput-object p1, p0, Landroid/text/style/MetricAffectingSpan$Passthrough;->mStyle:Landroid/text/style/MetricAffectingSpan;
 
-    .line 58
     return-void
 .end method
 
@@ -40,7 +37,6 @@
     .registers 2
 
     .prologue
-    .line 50
     invoke-virtual {p0}, Landroid/text/style/MetricAffectingSpan$Passthrough;->getUnderlying()Landroid/text/style/MetricAffectingSpan;
 
     move-result-object v0
@@ -52,7 +48,6 @@
     .registers 2
 
     .prologue
-    .line 82
     iget-object v0, p0, Landroid/text/style/MetricAffectingSpan$Passthrough;->mStyle:Landroid/text/style/MetricAffectingSpan;
 
     invoke-virtual {v0}, Landroid/text/style/MetricAffectingSpan;->getUnderlying()Landroid/text/style/MetricAffectingSpan;
@@ -67,12 +62,10 @@
     .parameter "tp"
 
     .prologue
-    .line 65
     iget-object v0, p0, Landroid/text/style/MetricAffectingSpan$Passthrough;->mStyle:Landroid/text/style/MetricAffectingSpan;
 
     invoke-virtual {v0, p1}, Landroid/text/style/MetricAffectingSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
-    .line 66
     return-void
 .end method
 
@@ -81,11 +74,9 @@
     .parameter "tp"
 
     .prologue
-    .line 73
     iget-object v0, p0, Landroid/text/style/MetricAffectingSpan$Passthrough;->mStyle:Landroid/text/style/MetricAffectingSpan;
 
     invoke-virtual {v0, p1}, Landroid/text/style/MetricAffectingSpan;->updateMeasureState(Landroid/text/TextPaint;)V
 
-    .line 74
     return-void
 .end method

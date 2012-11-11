@@ -33,7 +33,6 @@
     .parameter
 
     .prologue
-    .line 477
     iput-object p1, p0, Landroid/app/FragmentManagerImpl$4;->this$0:Landroid/app/FragmentManagerImpl;
 
     iput p2, p0, Landroid/app/FragmentManagerImpl$4;->val$id:I
@@ -51,7 +50,6 @@
     .registers 6
 
     .prologue
-    .line 479
     iget-object v0, p0, Landroid/app/FragmentManagerImpl$4;->this$0:Landroid/app/FragmentManagerImpl;
 
     iget-object v1, p0, Landroid/app/FragmentManagerImpl$4;->this$0:Landroid/app/FragmentManagerImpl;
@@ -68,6 +66,5 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/FragmentManagerImpl;->popBackStackState(Landroid/os/Handler;Ljava/lang/String;II)Z
 
-    .line 480
     return-void
 .end method

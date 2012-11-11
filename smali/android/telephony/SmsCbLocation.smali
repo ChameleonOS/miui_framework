@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 181
     new-instance v0, Landroid/telephony/SmsCbLocation$1;
 
     invoke-direct {v0}, Landroid/telephony/SmsCbLocation$1;-><init>()V
@@ -48,21 +47,16 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 44
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     const-string v0, ""
 
     iput-object v0, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
-    .line 46
     iput v1, p0, Landroid/telephony/SmsCbLocation;->mLac:I
 
-    .line 47
     iput v1, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
-    .line 48
     return-void
 .end method
 
@@ -71,31 +65,26 @@
     .parameter "in"
 
     .prologue
-    .line 73
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
-    .line 75
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbLocation;->mLac:I
 
-    .line 76
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
-    .line 77
     return-void
 .end method
 
@@ -106,19 +95,14 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 54
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     iput-object p1, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
-    .line 56
     iput v0, p0, Landroid/telephony/SmsCbLocation;->mLac:I
 
-    .line 57
     iput v0, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
-    .line 58
     return-void
 .end method
 
@@ -129,19 +113,14 @@
     .parameter "cid"
 
     .prologue
-    .line 64
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
     iput-object p1, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
-    .line 66
     iput p2, p0, Landroid/telephony/SmsCbLocation;->mLac:I
 
-    .line 67
     iput p3, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
-    .line 68
     return-void
 .end method
 
@@ -151,7 +130,6 @@
     .registers 2
 
     .prologue
-    .line 200
     const/4 v0, 0x0
 
     return v0
@@ -166,15 +144,12 @@
 
     const/4 v2, 0x0
 
-    .line 113
     if-ne p1, p0, :cond_5
 
-    .line 120
     :cond_4
     :goto_4
     return v1
 
-    .line 116
     :cond_5
     if-eqz p1, :cond_b
 
@@ -185,16 +160,13 @@
     :cond_b
     move v1, v2
 
-    .line 117
     goto :goto_4
 
     :cond_d
     move-object v0, p1
 
-    .line 119
     check-cast v0, Landroid/telephony/SmsCbLocation;
 
-    .line 120
     .local v0, other:Landroid/telephony/SmsCbLocation;
     iget-object v3, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
@@ -228,7 +200,6 @@
     .registers 2
 
     .prologue
-    .line 100
     iget v0, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
     return v0
@@ -238,7 +209,6 @@
     .registers 2
 
     .prologue
-    .line 92
     iget v0, p0, Landroid/telephony/SmsCbLocation;->mLac:I
 
     return v0
@@ -248,7 +218,6 @@
     .registers 2
 
     .prologue
-    .line 84
     iget-object v0, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
     return-object v0
@@ -258,14 +227,12 @@
     .registers 4
 
     .prologue
-    .line 105
     iget-object v1, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    .line 106
     .local v0, hash:I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -273,14 +240,12 @@
 
     add-int v0, v1, v2
 
-    .line 107
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
     add-int v0, v1, v2
 
-    .line 108
     return v0
 .end method
 
@@ -293,7 +258,6 @@
 
     const/4 v3, -0x1
 
-    .line 135
     iget v1, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
     if-eq v1, v3, :cond_d
@@ -304,12 +268,10 @@
 
     if-eq v1, v2, :cond_d
 
-    .line 141
     :cond_c
     :goto_c
     return v0
 
-    .line 138
     :cond_d
     iget v1, p0, Landroid/telephony/SmsCbLocation;->mLac:I
 
@@ -321,7 +283,6 @@
 
     if-ne v1, v2, :cond_c
 
-    .line 141
     :cond_17
     iget-object v0, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
@@ -345,7 +306,6 @@
 
     const/4 v0, 0x0
 
-    .line 153
     iget-object v1, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -354,12 +314,10 @@
 
     if-nez v1, :cond_b
 
-    .line 165
     :cond_a
     :goto_a
     return v0
 
-    .line 157
     :cond_b
     iget v1, p0, Landroid/telephony/SmsCbLocation;->mLac:I
 
@@ -369,7 +327,6 @@
 
     if-ne v1, p2, :cond_a
 
-    .line 161
     :cond_13
     iget v1, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
@@ -379,7 +336,6 @@
 
     if-ne v1, p3, :cond_a
 
-    .line 165
     :cond_1b
     const/4 v0, 0x1
 
@@ -392,7 +348,6 @@
     .prologue
     const/16 v2, 0x2c
 
-    .line 125
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -448,21 +403,17 @@
     .parameter "flags"
 
     .prologue
-    .line 176
     iget-object v0, p0, Landroid/telephony/SmsCbLocation;->mPlmn:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 177
     iget v0, p0, Landroid/telephony/SmsCbLocation;->mLac:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 178
     iget v0, p0, Landroid/telephony/SmsCbLocation;->mCid:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 179
     return-void
 .end method

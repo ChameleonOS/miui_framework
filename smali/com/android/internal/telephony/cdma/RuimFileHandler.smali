@@ -15,10 +15,8 @@
     .parameter "ci"
 
     .prologue
-    .line 45
     invoke-direct {p0, p1, p2, p3}, Lcom/android/internal/telephony/IccFileHandler;-><init>(Lcom/android/internal/telephony/IccCard;Ljava/lang/String;Lcom/android/internal/telephony/CommandsInterface;)V
 
-    .line 46
     return-void
 .end method
 
@@ -28,14 +26,12 @@
     .registers 3
 
     .prologue
-    .line 49
     const-string v0, "CDMA"
 
     const-string v1, "RuimFileHandler finalized"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 50
     return-void
 .end method
 
@@ -44,10 +40,8 @@
     .parameter "efid"
 
     .prologue
-    .line 72
     sparse-switch p1, :sswitch_data_c
 
-    .line 78
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->getCommonIccEFPath(I)Ljava/lang/String;
 
     move-result-object v0
@@ -55,13 +49,11 @@
     :goto_7
     return-object v0
 
-    .line 76
     :sswitch_8
     const-string v0, "3F007F25"
 
     goto :goto_7
 
-    .line 72
     nop
 
     :sswitch_data_c
@@ -77,10 +69,8 @@
     .parameter "msg"
 
     .prologue
-    .line 68
     invoke-super {p0, p1}, Lcom/android/internal/telephony/IccFileHandler;->handleMessage(Landroid/os/Message;)V
 
-    .line 69
     return-void
 .end method
 
@@ -93,7 +83,6 @@
     .parameter "onLoaded"
 
     .prologue
-    .line 57
     const/16 v1, 0xa
 
     const/4 v2, 0x0
@@ -104,7 +93,6 @@
 
     move-result-object v11
 
-    .line 60
     .local v11, response:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/internal/telephony/IccFileHandler;->mCi:Lcom/android/internal/telephony/CommandsInterface;
 
@@ -128,7 +116,6 @@
 
     invoke-interface/range {v1 .. v11}, Lcom/android/internal/telephony/CommandsInterface;->iccIOForApp(IILjava/lang/String;IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 63
     return-void
 .end method
 
@@ -137,7 +124,6 @@
     .parameter "msg"
 
     .prologue
-    .line 82
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -160,7 +146,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
     return-void
 .end method
 
@@ -169,7 +154,6 @@
     .parameter "msg"
 
     .prologue
-    .line 86
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -192,6 +176,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     return-void
 .end method

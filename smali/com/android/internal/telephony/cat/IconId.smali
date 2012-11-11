@@ -14,7 +14,6 @@
     .registers 1
 
     .prologue
-    .line 97
     invoke-direct {p0}, Lcom/android/internal/telephony/cat/ValueObject;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
     .registers 2
 
     .prologue
-    .line 102
     sget-object v0, Lcom/android/internal/telephony/cat/ComprehensionTlvTag;->ICON_ID:Lcom/android/internal/telephony/cat/ComprehensionTlvTag;
 
     return-object v0

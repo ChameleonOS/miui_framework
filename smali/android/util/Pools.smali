@@ -8,10 +8,8 @@
     .registers 1
 
     .prologue
-    .line 23
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
     return-void
 .end method
 
@@ -32,7 +30,6 @@
     .end annotation
 
     .prologue
-    .line 31
     .local p0, manager:Landroid/util/PoolableManager;,"Landroid/util/PoolableManager<TT;>;"
     new-instance v0, Landroid/util/FinitePool;
 
@@ -57,7 +54,6 @@
     .end annotation
 
     .prologue
-    .line 27
     .local p0, manager:Landroid/util/PoolableManager;,"Landroid/util/PoolableManager<TT;>;"
     new-instance v0, Landroid/util/FinitePool;
 
@@ -82,7 +78,6 @@
     .end annotation
 
     .prologue
-    .line 35
     .local p0, pool:Landroid/util/Pool;,"Landroid/util/Pool<TT;>;"
     new-instance v0, Landroid/util/SynchronizedPool;
 
@@ -110,7 +105,6 @@
     .end annotation
 
     .prologue
-    .line 39
     .local p0, pool:Landroid/util/Pool;,"Landroid/util/Pool<TT;>;"
     new-instance v0, Landroid/util/SynchronizedPool;
 

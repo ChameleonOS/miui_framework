@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 234
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,14 +49,12 @@
 
     const/4 v2, -0x1
 
-    .line 237
     iget v4, p1, Lcom/android/internal/os/ProcessStats$Stats;->rel_utime:I
 
     iget v5, p1, Lcom/android/internal/os/ProcessStats$Stats;->rel_stime:I
 
     add-int v0, v4, v5
 
-    .line 238
     .local v0, ta:I
     iget v4, p2, Lcom/android/internal/os/ProcessStats$Stats;->rel_utime:I
 
@@ -65,14 +62,11 @@
 
     add-int v1, v4, v5
 
-    .line 239
     .local v1, tb:I
     if-eq v0, v1, :cond_15
 
-    .line 240
     if-le v0, v1, :cond_13
 
-    .line 248
     :cond_12
     :goto_12
     return v2
@@ -80,10 +74,8 @@
     :cond_13
     move v2, v3
 
-    .line 240
     goto :goto_12
 
-    .line 242
     :cond_15
     iget-boolean v4, p1, Lcom/android/internal/os/ProcessStats$Stats;->added:Z
 
@@ -91,7 +83,6 @@
 
     if-eq v4, v5, :cond_21
 
-    .line 243
     iget-boolean v4, p1, Lcom/android/internal/os/ProcessStats$Stats;->added:Z
 
     if-nez v4, :cond_12
@@ -100,7 +91,6 @@
 
     goto :goto_12
 
-    .line 245
     :cond_21
     iget-boolean v4, p1, Lcom/android/internal/os/ProcessStats$Stats;->removed:Z
 
@@ -108,7 +98,6 @@
 
     if-eq v4, v5, :cond_2d
 
-    .line 246
     iget-boolean v4, p1, Lcom/android/internal/os/ProcessStats$Stats;->added:Z
 
     if-nez v4, :cond_12
@@ -117,7 +106,6 @@
 
     goto :goto_12
 
-    .line 248
     :cond_2d
     const/4 v2, 0x0
 
@@ -130,7 +118,6 @@
     .parameter "x1"
 
     .prologue
-    .line 234
     check-cast p1, Lcom/android/internal/os/ProcessStats$Stats;
 
     .end local p1

@@ -30,7 +30,6 @@
     .registers 1
 
     .prologue
-    .line 73
     new-instance v0, Landroid/content/pm/VerifierInfo$1;
 
     invoke-direct {v0}, Landroid/content/pm/VerifierInfo$1;-><init>()V
@@ -45,17 +44,14 @@
     .parameter "source"
 
     .prologue
-    .line 57
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/VerifierInfo;->packageName:Ljava/lang/String;
 
-    .line 59
     invoke-virtual {p1}, Landroid/os/Parcel;->readSerializable()Ljava/io/Serializable;
 
     move-result-object v0
@@ -64,7 +60,6 @@
 
     iput-object v0, p0, Landroid/content/pm/VerifierInfo;->publicKey:Ljava/security/PublicKey;
 
-    .line 60
     return-void
 .end method
 
@@ -74,7 +69,6 @@
     .parameter "x1"
 
     .prologue
-    .line 30
     invoke-direct {p0, p1}, Landroid/content/pm/VerifierInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -86,10 +80,8 @@
     .parameter "publicKey"
 
     .prologue
-    .line 46
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
     if-eqz p1, :cond_b
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -98,7 +90,6 @@
 
     if-nez v0, :cond_14
 
-    .line 48
     :cond_b
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -108,11 +99,9 @@
 
     throw v0
 
-    .line 49
     :cond_14
     if-nez p2, :cond_1f
 
-    .line 50
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "publicKey must not be null"
@@ -121,14 +110,11 @@
 
     throw v0
 
-    .line 53
     :cond_1f
     iput-object p1, p0, Landroid/content/pm/VerifierInfo;->packageName:Ljava/lang/String;
 
-    .line 54
     iput-object p2, p0, Landroid/content/pm/VerifierInfo;->publicKey:Ljava/security/PublicKey;
 
-    .line 55
     return-void
 .end method
 
@@ -138,7 +124,6 @@
     .registers 2
 
     .prologue
-    .line 64
     const/4 v0, 0x0
 
     return v0
@@ -150,16 +135,13 @@
     .parameter "flags"
 
     .prologue
-    .line 69
     iget-object v0, p0, Landroid/content/pm/VerifierInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 70
     iget-object v0, p0, Landroid/content/pm/VerifierInfo;->publicKey:Ljava/security/PublicKey;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeSerializable(Ljava/io/Serializable;)V
 
-    .line 71
     return-void
 .end method

@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 154
     iput-object p1, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity$3;->this$0:Lcom/android/internal/app/HeavyWeightSwitcherActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +41,9 @@
     .parameter "v"
 
     .prologue
-    .line 156
     iget-object v0, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity$3;->this$0:Lcom/android/internal/app/HeavyWeightSwitcherActivity;
 
     invoke-virtual {v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->finish()V
 
-    .line 157
     return-void
 .end method

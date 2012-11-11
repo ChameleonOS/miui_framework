@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 51
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .parameter "password"
 
     .prologue
-    .line 60
     if-eqz p1, :cond_7
 
     array-length v1, p0
@@ -47,15 +45,12 @@
     :cond_7
     move-object v0, p1
 
-    .line 69
     :goto_8
     return-object v0
 
-    .line 63
     :cond_9
     const/4 v0, 0x0
 
-    .line 65
     .local v0, hashed:[B
     :try_start_a
     const-string v1, "MD5"
@@ -68,7 +63,6 @@
 
     move-result-object v0
 
-    .line 66
     invoke-static {v0}, Lcom/android/internal/widget/LockSettingsService$Injector;->toHex([B)Ljava/lang/String;
 
     move-result-object v1
@@ -81,7 +75,6 @@
 
     goto :goto_8
 
-    .line 67
     :catch_1d
     move-exception v1
 
@@ -93,14 +86,11 @@
     .parameter "ary"
 
     .prologue
-    .line 73
     const-string v0, "0123456789ABCDEF"
 
-    .line 74
     .local v0, hex:Ljava/lang/String;
     const-string v2, ""
 
-    .line 75
     .local v2, ret:Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -110,7 +100,6 @@
 
     if-ge v1, v3, :cond_43
 
-    .line 76
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -139,7 +128,6 @@
 
     move-result-object v2
 
-    .line 77
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -166,12 +154,10 @@
 
     move-result-object v2
 
-    .line 75
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 79
     :cond_43
     return-object v2
 .end method

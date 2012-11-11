@@ -12,7 +12,6 @@
     .registers 1
 
     .prologue
-    .line 21
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,7 +23,6 @@
     .parameter "msg"
 
     .prologue
-    .line 29
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -33,7 +31,6 @@
 
     move-result-object v0
 
-    .line 30
     .local v0, className:Ljava/lang/String;
     const-string v1, "CAT"
 
@@ -73,7 +70,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 32
     return-void
 .end method
 
@@ -83,7 +79,6 @@
     .parameter "msg"
 
     .prologue
-    .line 39
     const-string v0, "CAT"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -110,6 +105,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 40
     return-void
 .end method

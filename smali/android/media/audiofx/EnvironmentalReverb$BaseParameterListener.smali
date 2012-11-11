@@ -27,12 +27,10 @@
     .parameter
 
     .prologue
-    .line 460
     iput-object p1, p0, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/EnvironmentalReverb;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 462
     return-void
 .end method
 
@@ -42,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 459
     invoke-direct {p0, p1}, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;-><init>(Landroid/media/audiofx/EnvironmentalReverb;)V
 
     return-void
@@ -64,10 +61,8 @@
 
     const/4 v5, 0x0
 
-    .line 464
     const/4 v0, 0x0
 
-    .line 466
     .local v0, l:Landroid/media/audiofx/EnvironmentalReverb$OnParameterChangeListener;
     iget-object v3, p0, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/EnvironmentalReverb;
 
@@ -78,7 +73,6 @@
 
     monitor-enter v4
 
-    .line 467
     :try_start_b
     iget-object v3, p0, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/EnvironmentalReverb;
 
@@ -89,7 +83,6 @@
 
     if-eqz v3, :cond_19
 
-    .line 468
     iget-object v3, p0, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/EnvironmentalReverb;
 
     #getter for: Landroid/media/audiofx/EnvironmentalReverb;->mParamListener:Landroid/media/audiofx/EnvironmentalReverb$OnParameterChangeListener;
@@ -97,36 +90,29 @@
 
     move-result-object v0
 
-    .line 470
     :cond_19
     monitor-exit v4
     :try_end_1a
     .catchall {:try_start_b .. :try_end_1a} :catchall_3b
 
-    .line 471
     if-eqz v0, :cond_3a
 
-    .line 472
     const/4 v1, -0x1
 
-    .line 473
     .local v1, p:I
     const/4 v2, -0x1
 
-    .line 475
     .local v2, v:I
     array-length v3, p3
 
     if-ne v3, v7, :cond_27
 
-    .line 476
     iget-object v3, p0, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/EnvironmentalReverb;
 
     invoke-virtual {v3, p3, v5}, Landroid/media/audiofx/EnvironmentalReverb;->byteArrayToInt([BI)I
 
     move-result v1
 
-    .line 478
     :cond_27
     array-length v3, p4
 
@@ -134,32 +120,27 @@
 
     if-ne v3, v4, :cond_3e
 
-    .line 479
     iget-object v3, p0, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/EnvironmentalReverb;
 
     invoke-virtual {v3, p4, v5}, Landroid/media/audiofx/EnvironmentalReverb;->byteArrayToShort([BI)S
 
     move-result v2
 
-    .line 483
     :cond_31
     :goto_31
     if-eq v1, v6, :cond_3a
 
     if-eq v2, v6, :cond_3a
 
-    .line 484
     iget-object v3, p0, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/EnvironmentalReverb;
 
     invoke-interface {v0, v3, p2, v1, v2}, Landroid/media/audiofx/EnvironmentalReverb$OnParameterChangeListener;->onParameterChange(Landroid/media/audiofx/EnvironmentalReverb;III)V
 
-    .line 487
     .end local v1           #p:I
     .end local v2           #v:I
     :cond_3a
     return-void
 
-    .line 470
     :catchall_3b
     move-exception v3
 
@@ -170,7 +151,6 @@
 
     throw v3
 
-    .line 480
     .restart local v1       #p:I
     .restart local v2       #v:I
     :cond_3e
@@ -178,7 +158,6 @@
 
     if-ne v3, v7, :cond_31
 
-    .line 481
     iget-object v3, p0, Landroid/media/audiofx/EnvironmentalReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/EnvironmentalReverb;
 
     invoke-virtual {v3, p4, v5}, Landroid/media/audiofx/EnvironmentalReverb;->byteArrayToInt([BI)I

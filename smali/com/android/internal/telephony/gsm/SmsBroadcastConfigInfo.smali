@@ -25,25 +25,18 @@
     .parameter "selected"
 
     .prologue
-    .line 48
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
     iput p1, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->fromServiceId:I
 
-    .line 50
     iput p2, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->toServiceId:I
 
-    .line 51
     iput p3, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->fromCodeScheme:I
 
-    .line 52
     iput p4, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->toCodeScheme:I
 
-    .line 53
     iput-boolean p5, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->selected:Z
 
-    .line 54
     return-void
 .end method
 
@@ -53,7 +46,6 @@
     .registers 2
 
     .prologue
-    .line 95
     iget v0, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->fromCodeScheme:I
 
     return v0
@@ -63,7 +55,6 @@
     .registers 2
 
     .prologue
-    .line 67
     iget v0, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->fromServiceId:I
 
     return v0
@@ -73,7 +64,6 @@
     .registers 2
 
     .prologue
-    .line 109
     iget v0, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->toCodeScheme:I
 
     return v0
@@ -83,7 +73,6 @@
     .registers 2
 
     .prologue
-    .line 81
     iget v0, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->toServiceId:I
 
     return v0
@@ -93,7 +82,6 @@
     .registers 2
 
     .prologue
-    .line 123
     iget-boolean v0, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->selected:Z
 
     return v0
@@ -104,10 +92,8 @@
     .parameter "fromCodeScheme"
 
     .prologue
-    .line 88
     iput p1, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->fromCodeScheme:I
 
-    .line 89
     return-void
 .end method
 
@@ -116,10 +102,8 @@
     .parameter "fromServiceId"
 
     .prologue
-    .line 60
     iput p1, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->fromServiceId:I
 
-    .line 61
     return-void
 .end method
 
@@ -128,10 +112,8 @@
     .parameter "selected"
 
     .prologue
-    .line 116
     iput-boolean p1, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->selected:Z
 
-    .line 117
     return-void
 .end method
 
@@ -140,10 +122,8 @@
     .parameter "toCodeScheme"
 
     .prologue
-    .line 102
     iput p1, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->toCodeScheme:I
 
-    .line 103
     return-void
 .end method
 
@@ -152,10 +132,8 @@
     .parameter "toServiceId"
 
     .prologue
-    .line 74
     iput p1, p0, Lcom/android/internal/telephony/gsm/SmsBroadcastConfigInfo;->toServiceId:I
 
-    .line 75
     return-void
 .end method
 
@@ -165,7 +143,6 @@
     .prologue
     const/16 v2, 0x2c
 
-    .line 128
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

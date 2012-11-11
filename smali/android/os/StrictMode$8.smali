@@ -28,7 +28,6 @@
     .registers 1
 
     .prologue
-    .line 1796
     invoke-direct {p0}, Landroid/util/Singleton;-><init>()V
 
     return-void
@@ -40,7 +39,6 @@
     .registers 2
 
     .prologue
-    .line 1798
     const-string/jumbo v0, "window"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -58,7 +56,6 @@
     .registers 2
 
     .prologue
-    .line 1796
     invoke-virtual {p0}, Landroid/os/StrictMode$8;->create()Landroid/view/IWindowManager;
 
     move-result-object v0

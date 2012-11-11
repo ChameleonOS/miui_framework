@@ -19,13 +19,10 @@
     .parameter "data"
 
     .prologue
-    .line 47
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 48
     iput-object p1, p0, Landroid/app/backup/BackupDataInputStream;->mData:Landroid/app/backup/BackupDataInput;
 
-    .line 49
     return-void
 .end method
 
@@ -35,7 +32,6 @@
     .registers 2
 
     .prologue
-    .line 104
     iget-object v0, p0, Landroid/app/backup/BackupDataInputStream;->key:Ljava/lang/String;
 
     return-object v0
@@ -54,29 +50,24 @@
 
     const/4 v2, 0x0
 
-    .line 59
     iget-object v0, p0, Landroid/app/backup/BackupDataInputStream;->mOneByte:[B
 
-    .line 60
     .local v0, one:[B
     iget-object v1, p0, Landroid/app/backup/BackupDataInputStream;->mOneByte:[B
 
     if-nez v1, :cond_c
 
-    .line 61
     new-array v0, v3, [B
 
     .end local v0           #one:[B
     iput-object v0, p0, Landroid/app/backup/BackupDataInputStream;->mOneByte:[B
 
-    .line 63
     .restart local v0       #one:[B
     :cond_c
     iget-object v1, p0, Landroid/app/backup/BackupDataInputStream;->mData:Landroid/app/backup/BackupDataInput;
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/app/backup/BackupDataInput;->readEntityData([BII)I
 
-    .line 64
     aget-byte v1, v0, v2
 
     return v1
@@ -92,7 +83,6 @@
     .end annotation
 
     .prologue
-    .line 94
     iget-object v0, p0, Landroid/app/backup/BackupDataInputStream;->mData:Landroid/app/backup/BackupDataInput;
 
     const/4 v1, 0x0
@@ -118,7 +108,6 @@
     .end annotation
 
     .prologue
-    .line 81
     iget-object v0, p0, Landroid/app/backup/BackupDataInputStream;->mData:Landroid/app/backup/BackupDataInput;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/app/backup/BackupDataInput;->readEntityData([BII)I
@@ -132,7 +121,6 @@
     .registers 2
 
     .prologue
-    .line 114
     iget v0, p0, Landroid/app/backup/BackupDataInputStream;->dataSize:I
 
     return v0

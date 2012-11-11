@@ -32,22 +32,16 @@
     .parameter "number"
 
     .prologue
-    .line 51
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
     iput-boolean p1, p0, Lcom/android/internal/telephony/test/CallInfo;->isMT:Z
 
-    .line 53
     iput-object p2, p0, Lcom/android/internal/telephony/test/CallInfo;->state:Lcom/android/internal/telephony/test/CallInfo$State;
 
-    .line 54
     iput-boolean p3, p0, Lcom/android/internal/telephony/test/CallInfo;->isMpty:Z
 
-    .line 55
     iput-object p4, p0, Lcom/android/internal/telephony/test/CallInfo;->number:Ljava/lang/String;
 
-    .line 57
     invoke-virtual {p4}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -64,16 +58,13 @@
 
     if-ne v0, v1, :cond_1f
 
-    .line 58
     const/16 v0, 0x91
 
     iput v0, p0, Lcom/android/internal/telephony/test/CallInfo;->TOA:I
 
-    .line 62
     :goto_1e
     return-void
 
-    .line 60
     :cond_1f
     const/16 v0, 0x81
 
@@ -87,7 +78,6 @@
     .parameter "number"
 
     .prologue
-    .line 71
     new-instance v0, Lcom/android/internal/telephony/test/CallInfo;
 
     const/4 v1, 0x1
@@ -108,7 +98,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 66
     new-instance v0, Lcom/android/internal/telephony/test/CallInfo;
 
     sget-object v1, Lcom/android/internal/telephony/test/CallInfo$State;->DIALING:Lcom/android/internal/telephony/test/CallInfo$State;
@@ -124,7 +113,6 @@
     .registers 3
 
     .prologue
-    .line 110
     iget-object v0, p0, Lcom/android/internal/telephony/test/CallInfo;->state:Lcom/android/internal/telephony/test/CallInfo$State;
 
     sget-object v1, Lcom/android/internal/telephony/test/CallInfo$State;->ACTIVE:Lcom/android/internal/telephony/test/CallInfo$State;
@@ -153,7 +141,6 @@
     .registers 3
 
     .prologue
-    .line 115
     iget-object v0, p0, Lcom/android/internal/telephony/test/CallInfo;->state:Lcom/android/internal/telephony/test/CallInfo$State;
 
     sget-object v1, Lcom/android/internal/telephony/test/CallInfo$State;->DIALING:Lcom/android/internal/telephony/test/CallInfo$State;
@@ -182,7 +169,6 @@
     .registers 3
 
     .prologue
-    .line 120
     iget-object v0, p0, Lcom/android/internal/telephony/test/CallInfo;->state:Lcom/android/internal/telephony/test/CallInfo$State;
 
     sget-object v1, Lcom/android/internal/telephony/test/CallInfo$State;->INCOMING:Lcom/android/internal/telephony/test/CallInfo$State;
@@ -212,7 +198,6 @@
     .parameter "index"
 
     .prologue
-    .line 76
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -323,21 +308,17 @@
     .parameter "index"
 
     .prologue
-    .line 87
     new-instance v1, Lcom/android/internal/telephony/DriverCall;
 
     invoke-direct {v1}, Lcom/android/internal/telephony/DriverCall;-><init>()V
 
-    .line 89
     .local v1, ret:Lcom/android/internal/telephony/DriverCall;
     iput p1, v1, Lcom/android/internal/telephony/DriverCall;->index:I
 
-    .line 90
     iget-boolean v2, p0, Lcom/android/internal/telephony/test/CallInfo;->isMT:Z
 
     iput-boolean v2, v1, Lcom/android/internal/telephony/DriverCall;->isMT:Z
 
-    .line 93
     :try_start_b
     iget-object v2, p0, Lcom/android/internal/telephony/test/CallInfo;->state:Lcom/android/internal/telephony/test/CallInfo$State;
 
@@ -353,39 +334,31 @@
     :try_end_17
     .catch Lcom/android/internal/telephony/ATParseEx; {:try_start_b .. :try_end_17} :catch_2a
 
-    .line 98
     iget-boolean v2, p0, Lcom/android/internal/telephony/test/CallInfo;->isMpty:Z
 
     iput-boolean v2, v1, Lcom/android/internal/telephony/DriverCall;->isMpty:Z
 
-    .line 99
     iget-object v2, p0, Lcom/android/internal/telephony/test/CallInfo;->number:Ljava/lang/String;
 
     iput-object v2, v1, Lcom/android/internal/telephony/DriverCall;->number:Ljava/lang/String;
 
-    .line 100
     iget v2, p0, Lcom/android/internal/telephony/test/CallInfo;->TOA:I
 
     iput v2, v1, Lcom/android/internal/telephony/DriverCall;->TOA:I
 
-    .line 101
     const/4 v2, 0x1
 
     iput-boolean v2, v1, Lcom/android/internal/telephony/DriverCall;->isVoice:Z
 
-    .line 102
     const/4 v2, 0x0
 
     iput v2, v1, Lcom/android/internal/telephony/DriverCall;->als:I
 
-    .line 104
     return-object v1
 
-    .line 94
     :catch_2a
     move-exception v0
 
-    .line 95
     .local v0, ex:Lcom/android/internal/telephony/ATParseEx;
     new-instance v2, Ljava/lang/RuntimeException;
 

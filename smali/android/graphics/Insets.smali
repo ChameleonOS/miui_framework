@@ -24,7 +24,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 29
     new-instance v0, Landroid/graphics/Insets;
 
     invoke-direct {v0, v1, v1, v1, v1}, Landroid/graphics/Insets;-><init>(IIII)V
@@ -42,22 +41,16 @@
     .parameter "bottom"
 
     .prologue
-    .line 36
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     iput p1, p0, Landroid/graphics/Insets;->left:I
 
-    .line 38
     iput p2, p0, Landroid/graphics/Insets;->top:I
 
-    .line 39
     iput p3, p0, Landroid/graphics/Insets;->right:I
 
-    .line 40
     iput p4, p0, Landroid/graphics/Insets;->bottom:I
 
-    .line 41
     return-void
 .end method
 
@@ -69,7 +62,6 @@
     .parameter "bottom"
 
     .prologue
-    .line 56
     if-nez p0, :cond_b
 
     if-nez p1, :cond_b
@@ -78,10 +70,8 @@
 
     if-nez p3, :cond_b
 
-    .line 57
     sget-object v0, Landroid/graphics/Insets;->NONE:Landroid/graphics/Insets;
 
-    .line 59
     :goto_a
     return-object v0
 
@@ -98,7 +88,6 @@
     .parameter "r"
 
     .prologue
-    .line 70
     if-nez p0, :cond_5
 
     sget-object v0, Landroid/graphics/Insets;->NONE:Landroid/graphics/Insets;
@@ -133,15 +122,12 @@
 
     const/4 v2, 0x0
 
-    .line 83
     if-ne p0, p1, :cond_5
 
-    .line 93
     :cond_4
     :goto_4
     return v1
 
-    .line 84
     :cond_5
     if-eqz p1, :cond_11
 
@@ -163,10 +149,8 @@
     :cond_13
     move-object v0, p1
 
-    .line 86
     check-cast v0, Landroid/graphics/Insets;
 
-    .line 88
     .local v0, insets:Landroid/graphics/Insets;
     iget v3, p0, Landroid/graphics/Insets;->bottom:I
 
@@ -178,7 +162,6 @@
 
     goto :goto_4
 
-    .line 89
     :cond_1e
     iget v3, p0, Landroid/graphics/Insets;->left:I
 
@@ -190,7 +173,6 @@
 
     goto :goto_4
 
-    .line 90
     :cond_26
     iget v3, p0, Landroid/graphics/Insets;->right:I
 
@@ -202,7 +184,6 @@
 
     goto :goto_4
 
-    .line 91
     :cond_2e
     iget v3, p0, Landroid/graphics/Insets;->top:I
 
@@ -219,10 +200,8 @@
     .registers 4
 
     .prologue
-    .line 98
     iget v0, p0, Landroid/graphics/Insets;->left:I
 
-    .line 99
     .local v0, result:I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -230,21 +209,18 @@
 
     add-int v0, v1, v2
 
-    .line 100
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroid/graphics/Insets;->right:I
 
     add-int v0, v1, v2
 
-    .line 101
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroid/graphics/Insets;->bottom:I
 
     add-int v0, v1, v2
 
-    .line 102
     return v0
 .end method
 
@@ -252,7 +228,6 @@
     .registers 3
 
     .prologue
-    .line 107
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

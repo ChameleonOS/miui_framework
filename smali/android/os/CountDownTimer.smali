@@ -24,23 +24,18 @@
     .parameter "countDownInterval"
 
     .prologue
-    .line 67
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
     new-instance v0, Landroid/os/CountDownTimer$1;
 
     invoke-direct {v0, p0}, Landroid/os/CountDownTimer$1;-><init>(Landroid/os/CountDownTimer;)V
 
     iput-object v0, p0, Landroid/os/CountDownTimer;->mHandler:Landroid/os/Handler;
 
-    .line 68
     iput-wide p1, p0, Landroid/os/CountDownTimer;->mMillisInFuture:J
 
-    .line 69
     iput-wide p3, p0, Landroid/os/CountDownTimer;->mCountdownInterval:J
 
-    .line 70
     return-void
 .end method
 
@@ -49,7 +44,6 @@
     .parameter "x0"
 
     .prologue
-    .line 46
     iget-wide v0, p0, Landroid/os/CountDownTimer;->mStopTimeInFuture:J
 
     return-wide v0
@@ -60,7 +54,6 @@
     .parameter "x0"
 
     .prologue
-    .line 46
     iget-wide v0, p0, Landroid/os/CountDownTimer;->mCountdownInterval:J
 
     return-wide v0
@@ -72,14 +65,12 @@
     .registers 3
 
     .prologue
-    .line 76
     iget-object v0, p0, Landroid/os/CountDownTimer;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 77
     return-void
 .end method
 
@@ -93,7 +84,6 @@
     .registers 6
 
     .prologue
-    .line 83
     monitor-enter p0
 
     :try_start_1
@@ -105,14 +95,12 @@
 
     if-gtz v1, :cond_f
 
-    .line 84
     invoke-virtual {p0}, Landroid/os/CountDownTimer;->onFinish()V
     :try_end_c
     .catchall {:try_start_1 .. :try_end_c} :catchall_26
 
     move-object v0, p0
 
-    .line 89
     .end local p0
     .local v0, this:Landroid/os/CountDownTimer;
     :goto_d
@@ -120,7 +108,6 @@
 
     return-object v0
 
-    .line 87
     .end local v0           #this:Landroid/os/CountDownTimer;
     .restart local p0
     :cond_f
@@ -135,7 +122,6 @@
 
     iput-wide v1, p0, Landroid/os/CountDownTimer;->mStopTimeInFuture:J
 
-    .line 88
     iget-object v1, p0, Landroid/os/CountDownTimer;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Landroid/os/CountDownTimer;->mHandler:Landroid/os/Handler;
@@ -152,12 +138,10 @@
 
     move-object v0, p0
 
-    .line 89
     .end local p0
     .restart local v0       #this:Landroid/os/CountDownTimer;
     goto :goto_d
 
-    .line 83
     .end local v0           #this:Landroid/os/CountDownTimer;
     .restart local p0
     :catchall_26

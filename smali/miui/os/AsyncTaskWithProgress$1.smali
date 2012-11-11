@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 39
     .local p0, this:Lmiui/os/AsyncTaskWithProgress$1;,"Lmiui/os/AsyncTaskWithProgress.1;"
     iput-object p1, p0, Lmiui/os/AsyncTaskWithProgress$1;->this$0:Lmiui/os/AsyncTaskWithProgress;
 
@@ -43,7 +42,6 @@
     .parameter "dialog"
 
     .prologue
-    .line 42
     .local p0, this:Lmiui/os/AsyncTaskWithProgress$1;,"Lmiui/os/AsyncTaskWithProgress.1;"
     iget-object v0, p0, Lmiui/os/AsyncTaskWithProgress$1;->this$0:Lmiui/os/AsyncTaskWithProgress;
 
@@ -51,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Lmiui/os/AsyncTaskWithProgress;->cancel(Z)Z
 
-    .line 43
     return-void
 .end method

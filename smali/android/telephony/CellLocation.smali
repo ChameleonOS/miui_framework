@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 34
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,7 +17,6 @@
     .registers 1
 
     .prologue
-    .line 94
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -29,13 +27,11 @@
 
     packed-switch v0, :pswitch_data_1a
 
-    .line 100
     const/4 v0, 0x0
 
     :goto_c
     return-object v0
 
-    .line 96
     :pswitch_d
     new-instance v0, Landroid/telephony/cdma/CdmaCellLocation;
 
@@ -43,7 +39,6 @@
 
     goto :goto_c
 
-    .line 98
     :pswitch_13
     new-instance v0, Landroid/telephony/gsm/GsmCellLocation;
 
@@ -51,7 +46,6 @@
 
     goto :goto_c
 
-    .line 94
     nop
 
     :pswitch_data_1a
@@ -66,7 +60,6 @@
     .parameter "bundle"
 
     .prologue
-    .line 66
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v0
@@ -77,13 +70,11 @@
 
     packed-switch v0, :pswitch_data_1a
 
-    .line 72
     const/4 v0, 0x0
 
     :goto_c
     return-object v0
 
-    .line 68
     :pswitch_d
     new-instance v0, Landroid/telephony/cdma/CdmaCellLocation;
 
@@ -91,7 +82,6 @@
 
     goto :goto_c
 
-    .line 70
     :pswitch_13
     new-instance v0, Landroid/telephony/gsm/GsmCellLocation;
 
@@ -99,7 +89,6 @@
 
     goto :goto_c
 
-    .line 66
     nop
 
     :pswitch_data_1a
@@ -113,7 +102,6 @@
     .registers 2
 
     .prologue
-    .line 43
     :try_start_0
     const-string/jumbo v1, "phone"
 
@@ -125,21 +113,17 @@
 
     move-result-object v0
 
-    .line 44
     .local v0, phone:Lcom/android/internal/telephony/ITelephony;
     if-eqz v0, :cond_10
 
-    .line 45
     invoke-interface {v0}, Lcom/android/internal/telephony/ITelephony;->updateServiceLocation()V
     :try_end_10
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_10} :catch_11
 
-    .line 50
     :cond_10
     :goto_10
     return-void
 
-    .line 47
     :catch_11
     move-exception v1
 

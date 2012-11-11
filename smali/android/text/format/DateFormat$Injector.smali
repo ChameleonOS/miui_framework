@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 81
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,10 +34,8 @@
     .parameter "value"
 
     .prologue
-    .line 83
     if-nez p1, :cond_16
 
-    .line 84
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -49,7 +46,6 @@
 
     iget-object v0, v1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    .line 85
     .local v0, locale:Ljava/util/Locale;
     sget-object v1, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
 
@@ -59,10 +55,8 @@
 
     if-eqz v1, :cond_16
 
-    .line 86
     const-string p1, "24"
 
-    .line 89
     .end local v0           #locale:Ljava/util/Locale;
     .end local p1
     :cond_16

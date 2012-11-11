@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 19
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +43,6 @@
     .registers 3
 
     .prologue
-    .line 62
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -70,7 +68,6 @@
     .registers 2
 
     .prologue
-    .line 38
     iget-object v0, p0, Lcom/android/internal/telephony/SmsAddress;->address:Ljava/lang/String;
 
     return-object v0
@@ -80,7 +77,6 @@
     .registers 3
 
     .prologue
-    .line 45
     iget v0, p0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     const/4 v1, 0x5
@@ -102,7 +98,6 @@
     .registers 3
 
     .prologue
-    .line 52
     iget v0, p0, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     const/4 v1, 0x3

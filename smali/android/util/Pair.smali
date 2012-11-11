@@ -46,19 +46,15 @@
     .end annotation
 
     .prologue
-    .line 34
     .local p0, this:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
     .local p1, first:Ljava/lang/Object;,"TF;"
     .local p2, second:Ljava/lang/Object;,"TS;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
     iput-object p1, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    .line 36
     iput-object p2, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    .line 37
     return-void
 .end method
 
@@ -79,7 +75,6 @@
     .end annotation
 
     .prologue
-    .line 74
     .local p0, a:Ljava/lang/Object;,"TA;"
     .local p1, b:Ljava/lang/Object;,"TB;"
     new-instance v0, Landroid/util/Pair;
@@ -101,15 +96,12 @@
 
     const/4 v4, 0x0
 
-    .line 45
     if-ne p1, p0, :cond_5
 
-    .line 53
     :cond_4
     :goto_4
     return v3
 
-    .line 46
     :cond_5
     instance-of v5, p1, Landroid/util/Pair;
 
@@ -119,7 +111,6 @@
 
     goto :goto_4
 
-    .line 49
     :cond_b
     :try_start_b
     move-object v0, p1
@@ -130,7 +121,6 @@
     :try_end_f
     .catch Ljava/lang/ClassCastException; {:try_start_b .. :try_end_f} :catch_25
 
-    .line 53
     .local v2, other:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
     iget-object v5, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -157,7 +147,6 @@
 
     goto :goto_4
 
-    .line 50
     .end local v2           #other:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
     :catch_25
     move-exception v1
@@ -165,7 +154,6 @@
     .local v1, e:Ljava/lang/ClassCastException;
     move v3, v4
 
-    .line 51
     goto :goto_4
 .end method
 
@@ -173,11 +161,9 @@
     .registers 4
 
     .prologue
-    .line 61
     .local p0, this:Landroid/util/Pair;,"Landroid/util/Pair<TF;TS;>;"
     const/16 v0, 0x11
 
-    .line 62
     .local v0, result:I
     iget-object v1, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -187,7 +173,6 @@
 
     add-int/lit16 v0, v1, 0x20f
 
-    .line 63
     mul-int/lit8 v1, v0, 0x1f
 
     iget-object v2, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -198,6 +183,5 @@
 
     add-int v0, v1, v2
 
-    .line 64
     return v0
 .end method

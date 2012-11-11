@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 104
     iput-object p1, p0, Lcom/android/internal/telephony/cat/RilMessageDecoder$StateStart;->this$0:Lcom/android/internal/telephony/cat/RilMessageDecoder;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 104
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cat/RilMessageDecoder$StateStart;-><init>(Lcom/android/internal/telephony/cat/RilMessageDecoder;)V
 
     return-void
@@ -53,12 +51,10 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 107
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-ne v0, v2, :cond_1d
 
-    .line 108
     iget-object v1, p0, Lcom/android/internal/telephony/cat/RilMessageDecoder$StateStart;->this$0:Lcom/android/internal/telephony/cat/RilMessageDecoder;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -72,7 +68,6 @@
 
     if-eqz v0, :cond_1c
 
-    .line 109
     iget-object v0, p0, Lcom/android/internal/telephony/cat/RilMessageDecoder$StateStart;->this$0:Lcom/android/internal/telephony/cat/RilMessageDecoder;
 
     iget-object v1, p0, Lcom/android/internal/telephony/cat/RilMessageDecoder$StateStart;->this$0:Lcom/android/internal/telephony/cat/RilMessageDecoder;
@@ -85,12 +80,10 @@
     #calls: Lcom/android/internal/telephony/cat/RilMessageDecoder;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v0, v1}, Lcom/android/internal/telephony/cat/RilMessageDecoder;->access$400(Lcom/android/internal/telephony/cat/RilMessageDecoder;Lcom/android/internal/util/IState;)V
 
-    .line 115
     :cond_1c
     :goto_1c
     return v2
 
-    .line 112
     :cond_1d
     new-instance v0, Ljava/lang/StringBuilder;
 

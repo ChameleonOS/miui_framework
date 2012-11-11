@@ -26,10 +26,8 @@
     .registers 1
 
     .prologue
-    .line 352
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 353
     return-void
 .end method
 
@@ -39,16 +37,13 @@
     .registers 3
 
     .prologue
-    .line 355
     iget-object v0, p0, Landroid/net/http/RequestQueue$SyncFeeder;->mRequest:Landroid/net/http/Request;
 
-    .line 356
     .local v0, r:Landroid/net/http/Request;
     const/4 v1, 0x0
 
     iput-object v1, p0, Landroid/net/http/RequestQueue$SyncFeeder;->mRequest:Landroid/net/http/Request;
 
-    .line 357
     return-object v0
 .end method
 
@@ -57,7 +52,6 @@
     .parameter "host"
 
     .prologue
-    .line 360
     invoke-virtual {p0}, Landroid/net/http/RequestQueue$SyncFeeder;->getRequest()Landroid/net/http/Request;
 
     move-result-object v0
@@ -70,7 +64,6 @@
     .parameter "host"
 
     .prologue
-    .line 363
     iget-object v0, p0, Landroid/net/http/RequestQueue$SyncFeeder;->mRequest:Landroid/net/http/Request;
 
     if-eqz v0, :cond_6
@@ -91,9 +84,7 @@
     .parameter "r"
 
     .prologue
-    .line 366
     iput-object p1, p0, Landroid/net/http/RequestQueue$SyncFeeder;->mRequest:Landroid/net/http/Request;
 
-    .line 367
     return-void
 .end method

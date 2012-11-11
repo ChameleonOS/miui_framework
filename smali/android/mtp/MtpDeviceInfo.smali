@@ -18,10 +18,8 @@
     .registers 1
 
     .prologue
-    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     return-void
 .end method
 
@@ -31,7 +29,6 @@
     .registers 2
 
     .prologue
-    .line 41
     iget-object v0, p0, Landroid/mtp/MtpDeviceInfo;->mManufacturer:Ljava/lang/String;
 
     return-object v0
@@ -41,7 +38,6 @@
     .registers 2
 
     .prologue
-    .line 50
     iget-object v0, p0, Landroid/mtp/MtpDeviceInfo;->mModel:Ljava/lang/String;
 
     return-object v0
@@ -51,7 +47,6 @@
     .registers 2
 
     .prologue
-    .line 68
     iget-object v0, p0, Landroid/mtp/MtpDeviceInfo;->mSerialNumber:Ljava/lang/String;
 
     return-object v0
@@ -61,7 +56,6 @@
     .registers 2
 
     .prologue
-    .line 59
     iget-object v0, p0, Landroid/mtp/MtpDeviceInfo;->mVersion:Ljava/lang/String;
 
     return-object v0

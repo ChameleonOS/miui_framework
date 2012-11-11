@@ -46,7 +46,6 @@
     .registers 1
 
     .prologue
-    .line 2003
     const-string v0, "internal"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Video$Thumbnails;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
@@ -55,7 +54,6 @@
 
     sput-object v0, Landroid/provider/MediaStore$Video$Thumbnails;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 2010
     const-string v0, "external"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Video$Thumbnails;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
@@ -71,7 +69,6 @@
     .registers 1
 
     .prologue
-    .line 1925
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -83,7 +80,6 @@
     .parameter "origId"
 
     .prologue
-    .line 1935
     sget-object v3, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     const-wide/16 v4, 0x0
@@ -94,7 +90,6 @@
 
     invoke-static/range {v0 .. v5}, Landroid/provider/MediaStore$InternalThumbnails;->cancelThumbnailRequest(Landroid/content/ContentResolver;JLandroid/net/Uri;J)V
 
-    .line 1937
     return-void
 .end method
 
@@ -105,7 +100,6 @@
     .parameter "groupId"
 
     .prologue
-    .line 1985
     sget-object v3, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     move-object v0, p0
@@ -116,7 +110,6 @@
 
     invoke-static/range {v0 .. v5}, Landroid/provider/MediaStore$InternalThumbnails;->cancelThumbnailRequest(Landroid/content/ContentResolver;JLandroid/net/Uri;J)V
 
-    .line 1986
     return-void
 .end method
 
@@ -125,7 +118,6 @@
     .parameter "volumeName"
 
     .prologue
-    .line 1996
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -165,7 +157,6 @@
     .parameter "options"
 
     .prologue
-    .line 1952
     const-wide/16 v3, 0x0
 
     sget-object v7, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
@@ -196,7 +187,6 @@
     .parameter "options"
 
     .prologue
-    .line 1971
     sget-object v7, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     const/4 v8, 0x1

@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 80
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .parameter "operator"
 
     .prologue
-    .line 82
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
@@ -54,7 +52,6 @@
 
     move-result-object v0
 
-    .line 83
     .local v0, plmn:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -62,7 +59,6 @@
 
     if-eqz v1, :cond_19
 
-    .line 86
     .end local p1
     :goto_18
     return-object p1
@@ -80,7 +76,6 @@
     .parameter "serviceProviderName"
 
     .prologue
-    .line 90
     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
 
     iget-object v1, v1, Lcom/android/internal/telephony/PhoneBase;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
@@ -101,7 +96,6 @@
 
     move-result-object v0
 
-    .line 91
     .local v0, spn:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -109,7 +103,6 @@
 
     if-eqz v1, :cond_1b
 
-    .line 94
     .end local p1
     :goto_1a
     return-object p1

@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 434
     iput-object p1, p0, Landroid/widget/SpellChecker$1;->this$0:Landroid/widget/SpellChecker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .registers 5
 
     .prologue
-    .line 437
     iget-object v3, p0, Landroid/widget/SpellChecker$1;->this$0:Landroid/widget/SpellChecker;
 
     #getter for: Landroid/widget/SpellChecker;->mSpellParsers:[Landroid/widget/SpellChecker$SpellParser;
@@ -51,7 +49,6 @@
 
     array-length v1, v3
 
-    .line 438
     .local v1, length:I
     const/4 v0, 0x0
 
@@ -59,7 +56,6 @@
     :goto_8
     if-ge v0, v1, :cond_1b
 
-    .line 439
     iget-object v3, p0, Landroid/widget/SpellChecker$1;->this$0:Landroid/widget/SpellChecker;
 
     #getter for: Landroid/widget/SpellChecker;->mSpellParsers:[Landroid/widget/SpellChecker$SpellParser;
@@ -69,7 +65,6 @@
 
     aget-object v2, v3, v0
 
-    .line 440
     .local v2, spellParser:Landroid/widget/SpellChecker$SpellParser;
     invoke-virtual {v2}, Landroid/widget/SpellChecker$SpellParser;->isFinished()Z
 
@@ -77,15 +72,12 @@
 
     if-nez v3, :cond_1c
 
-    .line 441
     invoke-virtual {v2}, Landroid/widget/SpellChecker$SpellParser;->parse()V
 
-    .line 445
     .end local v2           #spellParser:Landroid/widget/SpellChecker$SpellParser;
     :cond_1b
     return-void
 
-    .line 438
     .restart local v2       #spellParser:Landroid/widget/SpellChecker$SpellParser;
     :cond_1c
     add-int/lit8 v0, v0, 0x1

@@ -36,7 +36,6 @@
     .registers 1
 
     .prologue
-    .line 43
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,12 +53,10 @@
     .end annotation
 
     .prologue
-    .line 260
     const/16 v4, 0x1000
 
     new-array v0, v4, [B
 
-    .line 264
     .local v0, buffer:[B
     invoke-virtual {p0}, Ljava/util/zip/ZipEntry;->getMethod()I
 
@@ -67,22 +64,18 @@
 
     if-nez v4, :cond_26
 
-    .line 266
     new-instance v2, Ljava/util/zip/ZipEntry;
 
     invoke-direct {v2, p0}, Ljava/util/zip/ZipEntry;-><init>(Ljava/util/zip/ZipEntry;)V
 
-    .line 271
     .local v2, newEntry:Ljava/util/zip/ZipEntry;
     :goto_f
     invoke-virtual {p2, v2}, Ljava/util/zip/ZipOutputStream;->putNextEntry(Ljava/util/zip/ZipEntry;)V
 
-    .line 273
     invoke-virtual {p1, p0}, Ljava/util/zip/ZipFile;->getInputStream(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
 
     move-result-object v1
 
-    .line 275
     .local v1, data:Ljava/io/InputStream;
     :goto_16
     :try_start_16
@@ -93,7 +86,6 @@
     .local v3, num:I
     if-lez v3, :cond_30
 
-    .line 276
     const/4 v4, 0x0
 
     invoke-virtual {p2, v0, v4, v3}, Ljava/util/zip/ZipOutputStream;->write([BII)V
@@ -102,7 +94,6 @@
 
     goto :goto_16
 
-    .line 280
     .end local v3           #num:I
     :catchall_21
     move-exception v4
@@ -111,7 +102,6 @@
 
     throw v4
 
-    .line 269
     .end local v1           #data:Ljava/io/InputStream;
     .end local v2           #newEntry:Ljava/util/zip/ZipEntry;
     :cond_26
@@ -126,7 +116,6 @@
     .restart local v2       #newEntry:Ljava/util/zip/ZipEntry;
     goto :goto_f
 
-    .line 278
     .restart local v1       #data:Ljava/io/InputStream;
     .restart local v3       #num:I
     :cond_30
@@ -135,10 +124,8 @@
     :try_end_33
     .catchall {:try_start_30 .. :try_end_33} :catchall_21
 
-    .line 280
     invoke-static {v1}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 282
     return-void
 .end method
 
@@ -153,13 +140,11 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 74
     :try_start_1
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
     move-result-object v0
 
-    .line 77
     .local v0, mountService:Landroid/os/storage/IMountService;
     const-string v1, "PackageHelper"
 
@@ -189,7 +174,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
     const-string v3, "ext4"
 
     move-object v1, p1
@@ -206,11 +190,9 @@
 
     move-result v9
 
-    .line 81
     .local v9, rc:I
     if-eqz v9, :cond_4a
 
-    .line 82
     const-string v1, "PackageHelper"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -235,13 +217,11 @@
 
     move-object v7, v10
 
-    .line 92
     .end local v0           #mountService:Landroid/os/storage/IMountService;
     .end local v9           #rc:I
     :goto_49
     return-object v7
 
-    .line 85
     .restart local v0       #mountService:Landroid/os/storage/IMountService;
     .restart local v9       #rc:I
     :cond_4a
@@ -249,7 +229,6 @@
 
     move-result-object v7
 
-    .line 86
     .local v7, cachePath:Ljava/lang/String;
     const-string v1, "PackageHelper"
 
@@ -287,14 +266,12 @@
 
     goto :goto_49
 
-    .line 89
     .end local v0           #mountService:Landroid/os/storage/IMountService;
     .end local v7           #cachePath:Ljava/lang/String;
     .end local v9           #rc:I
     :catch_71
     move-exception v8
 
-    .line 90
     .local v8, e:Landroid/os/RemoteException;
     const-string v1, "PackageHelper"
 
@@ -304,7 +281,6 @@
 
     move-object v7, v10
 
-    .line 92
     goto :goto_49
 .end method
 
@@ -317,7 +293,6 @@
 
     const/4 v2, 0x0
 
-    .line 176
     :try_start_2
     const-string v4, "PackageHelper"
 
@@ -341,7 +316,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 177
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
     move-result-object v4
@@ -352,11 +326,9 @@
 
     move-result v1
 
-    .line 178
     .local v1, rc:I
     if-eqz v1, :cond_3e
 
-    .line 179
     const-string v3, "PackageHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -381,7 +353,6 @@
     :try_end_3d
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_3d} :catch_40
 
-    .line 187
     .end local v1           #rc:I
     :goto_3d
     return v2
@@ -390,15 +361,12 @@
     :cond_3e
     move v2, v3
 
-    .line 182
     goto :goto_3d
 
-    .line 183
     .end local v1           #rc:I
     :catch_40
     move-exception v0
 
-    .line 184
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "PackageHelper"
 
@@ -446,22 +414,17 @@
     .end annotation
 
     .prologue
-    .line 214
     if-nez p1, :cond_57
 
-    .line 215
     const/4 v0, 0x0
 
-    .line 216
     .local v0, fstr:Ljava/io/FileOutputStream;
     const/4 v3, 0x0
 
-    .line 222
     .local v3, publicZipOutStream:Ljava/util/zip/ZipOutputStream;
     :goto_4
     const/4 v4, 0x0
 
-    .line 225
     .local v4, size:I
     :try_start_5
     new-instance v2, Ljava/util/zip/ZipFile;
@@ -470,7 +433,6 @@
     :try_end_a
     .catchall {:try_start_5 .. :try_end_a} :catchall_52
 
-    .line 228
     .local v2, privateZip:Ljava/util/zip/ZipFile;
     :try_start_a
     invoke-virtual {v2}, Ljava/util/zip/ZipFile;->entries()Ljava/util/Enumeration;
@@ -500,13 +462,11 @@
 
     check-cast v5, Ljava/util/zip/ZipEntry;
 
-    .line 229
     .local v5, zipEntry:Ljava/util/zip/ZipEntry;
     invoke-virtual {v5}, Ljava/util/zip/ZipEntry;->getName()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 230
     .local v6, zipEntryName:Ljava/lang/String;
     const-string v7, "AndroidManifest.xml"
 
@@ -532,7 +492,6 @@
 
     if-eqz v7, :cond_16
 
-    .line 233
     :cond_40
     int-to-long v7, v4
 
@@ -544,17 +503,14 @@
 
     long-to-int v4, v7
 
-    .line 234
     if-eqz p1, :cond_16
 
-    .line 235
     invoke-static {v5, v2, v3}, Lcom/android/internal/content/PackageHelper;->copyZipEntry(Ljava/util/zip/ZipEntry;Ljava/util/zip/ZipFile;Ljava/util/zip/ZipOutputStream;)V
     :try_end_4c
     .catchall {:try_start_a .. :try_end_4c} :catchall_4d
 
     goto :goto_16
 
-    .line 240
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v5           #zipEntry:Ljava/util/zip/ZipEntry;
     .end local v6           #zipEntryName:Ljava/lang/String;
@@ -573,7 +529,6 @@
     :try_end_52
     .catchall {:try_start_51 .. :try_end_52} :catchall_52
 
-    .line 252
     .end local v2           #privateZip:Ljava/util/zip/ZipFile;
     :catchall_52
     move-exception v7
@@ -582,7 +537,6 @@
 
     throw v7
 
-    .line 218
     .end local v0           #fstr:Ljava/io/FileOutputStream;
     .end local v3           #publicZipOutStream:Ljava/util/zip/ZipOutputStream;
     .end local v4           #size:I
@@ -591,7 +545,6 @@
 
     invoke-direct {v0, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 219
     .restart local v0       #fstr:Ljava/io/FileOutputStream;
     new-instance v3, Ljava/util/zip/ZipOutputStream;
 
@@ -600,7 +553,6 @@
     .restart local v3       #publicZipOutStream:Ljava/util/zip/ZipOutputStream;
     goto :goto_4
 
-    .line 240
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v2       #privateZip:Ljava/util/zip/ZipFile;
     .restart local v4       #size:I
@@ -611,24 +563,18 @@
     .catchall {:try_start_62 .. :try_end_65} :catchall_52
     .catch Ljava/io/IOException; {:try_start_62 .. :try_end_65} :catch_82
 
-    .line 243
     :goto_65
     if-eqz p1, :cond_7e
 
-    .line 244
     :try_start_67
     invoke-virtual {v3}, Ljava/util/zip/ZipOutputStream;->finish()V
 
-    .line 245
     invoke-virtual {v3}, Ljava/util/zip/ZipOutputStream;->flush()V
 
-    .line 246
     invoke-static {v0}, Landroid/os/FileUtils;->sync(Ljava/io/FileOutputStream;)Z
 
-    .line 247
     invoke-virtual {v3}, Ljava/util/zip/ZipOutputStream;->close()V
 
-    .line 248
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v7
@@ -643,14 +589,11 @@
     :try_end_7e
     .catchall {:try_start_67 .. :try_end_7e} :catchall_52
 
-    .line 252
     :cond_7e
     invoke-static {v3}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 255
     return v4
 
-    .line 240
     :catch_82
     move-exception v7
 
@@ -670,7 +613,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 161
     :try_start_1
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -680,11 +622,9 @@
 
     move-result v1
 
-    .line 162
     .local v1, rc:I
     if-eqz v1, :cond_24
 
-    .line 163
     const-string v3, "PackageHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -709,24 +649,20 @@
     :try_end_23
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_23} :catch_26
 
-    .line 171
     .end local v1           #rc:I
     :goto_23
     return v2
 
-    .line 166
     .restart local v1       #rc:I
     :cond_24
     const/4 v2, 0x1
 
     goto :goto_23
 
-    .line 167
     .end local v1           #rc:I
     :catch_26
     move-exception v0
 
-    .line 168
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "PackageHelper"
 
@@ -772,7 +708,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 286
     :try_start_1
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -782,11 +717,9 @@
 
     move-result v1
 
-    .line 287
     .local v1, rc:I
     if-eqz v1, :cond_24
 
-    .line 288
     const-string v3, "PackageHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -811,24 +744,20 @@
     :try_end_23
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_23} :catch_26
 
-    .line 295
     .end local v1           #rc:I
     :goto_23
     return v2
 
-    .line 291
     .restart local v1       #rc:I
     :cond_24
     const/4 v2, 0x1
 
     goto :goto_23
 
-    .line 292
     .end local v1           #rc:I
     :catch_26
     move-exception v0
 
-    .line 293
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "PackageHelper"
 
@@ -874,25 +803,21 @@
     .end annotation
 
     .prologue
-    .line 61
     const-string/jumbo v1, "mount"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 62
     .local v0, service:Landroid/os/IBinder;
     if-eqz v0, :cond_e
 
-    .line 63
     invoke-static {v0}, Landroid/os/storage/IMountService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/storage/IMountService;
 
     move-result-object v1
 
     return-object v1
 
-    .line 65
     :cond_e
     const-string v1, "PackageHelper"
 
@@ -900,7 +825,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 66
     new-instance v1, Landroid/os/RemoteException;
 
     const-string v2, "Could not contact mount service"
@@ -915,7 +839,6 @@
     .parameter "cid"
 
     .prologue
-    .line 141
     :try_start_0
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -927,15 +850,12 @@
 
     move-result-object v1
 
-    .line 146
     :goto_8
     return-object v1
 
-    .line 142
     :catch_9
     move-exception v0
 
-    .line 143
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "PackageHelper"
 
@@ -969,7 +889,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 146
     const/4 v1, 0x0
 
     goto :goto_8
@@ -980,7 +899,6 @@
     .parameter "cid"
 
     .prologue
-    .line 151
     :try_start_0
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -992,15 +910,12 @@
 
     move-result-object v1
 
-    .line 156
     :goto_8
     return-object v1
 
-    .line 152
     :catch_9
     move-exception v0
 
-    .line 153
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "PackageHelper"
 
@@ -1034,7 +949,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 156
     const/4 v1, 0x0
 
     goto :goto_8
@@ -1044,7 +958,6 @@
     .registers 4
 
     .prologue
-    .line 192
     :try_start_0
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -1056,17 +969,14 @@
 
     move-result-object v1
 
-    .line 197
     .local v0, e:Landroid/os/RemoteException;
     :goto_8
     return-object v1
 
-    .line 193
     .end local v0           #e:Landroid/os/RemoteException;
     :catch_9
     move-exception v0
 
-    .line 194
     .restart local v0       #e:Landroid/os/RemoteException;
     const-string v1, "PackageHelper"
 
@@ -1090,7 +1000,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 197
     const/4 v1, 0x0
 
     goto :goto_8
@@ -1101,7 +1010,6 @@
     .parameter "cid"
 
     .prologue
-    .line 202
     :try_start_0
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -1113,15 +1021,12 @@
 
     move-result v1
 
-    .line 206
     :goto_8
     return v1
 
-    .line 203
     :catch_9
     move-exception v0
 
-    .line 204
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "PackageHelper"
 
@@ -1151,7 +1056,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 206
     const/4 v1, 0x0
 
     goto :goto_8
@@ -1166,7 +1070,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 97
     :try_start_1
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -1176,11 +1079,9 @@
 
     move-result v1
 
-    .line 98
     .local v1, rc:I
     if-eqz v1, :cond_2e
 
-    .line 99
     const-string v3, "PackageHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1213,12 +1114,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 106
     .end local v1           #rc:I
     :goto_2d
     return-object v2
 
-    .line 102
     .restart local v1       #rc:I
     :cond_2e
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
@@ -1233,12 +1132,10 @@
 
     goto :goto_2d
 
-    .line 103
     .end local v1           #rc:I
     :catch_37
     move-exception v0
 
-    .line 104
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "PackageHelper"
 
@@ -1257,7 +1154,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 125
     :try_start_1
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -1267,11 +1163,9 @@
 
     move-result v1
 
-    .line 126
     .local v1, rc:I
     if-eqz v1, :cond_39
 
-    .line 127
     const-string v3, "PackageHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1316,24 +1210,20 @@
     :try_end_38
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_38} :catch_3b
 
-    .line 136
     .end local v1           #rc:I
     :goto_38
     return v2
 
-    .line 131
     .restart local v1       #rc:I
     :cond_39
     const/4 v2, 0x1
 
     goto :goto_38
 
-    .line 132
     .end local v1           #rc:I
     :catch_3b
     move-exception v0
 
-    .line 133
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "PackageHelper"
 
@@ -1389,7 +1279,6 @@
 
     const/4 v2, 0x0
 
-    .line 111
     :try_start_2
     invoke-static {}, Lcom/android/internal/content/PackageHelper;->getMountService()Landroid/os/storage/IMountService;
 
@@ -1401,11 +1290,9 @@
 
     move-result v1
 
-    .line 112
     .local v1, rc:I
     if-eqz v1, :cond_30
 
-    .line 113
     const-string v3, "PackageHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1440,7 +1327,6 @@
     :try_end_2f
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2f} :catch_32
 
-    .line 120
     .end local v1           #rc:I
     :goto_2f
     return v2
@@ -1449,15 +1335,12 @@
     :cond_30
     move v2, v3
 
-    .line 116
     goto :goto_2f
 
-    .line 117
     .end local v1           #rc:I
     :catch_32
     move-exception v0
 
-    .line 118
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "PackageHelper"
 

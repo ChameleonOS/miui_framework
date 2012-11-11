@@ -20,12 +20,10 @@
     .parameter "value"
 
     .prologue
-    .line 2078
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p1, v0}, Landroid/net/Uri$Part;-><init>(Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri$1;)V
 
-    .line 2079
     return-void
 .end method
 
@@ -35,7 +33,6 @@
     .registers 2
 
     .prologue
-    .line 2083
     const/4 v0, 0x1
 
     return v0

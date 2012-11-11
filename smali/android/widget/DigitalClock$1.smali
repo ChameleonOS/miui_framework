@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 86
     iput-object p1, p0, Landroid/widget/DigitalClock$1;->this$0:Landroid/widget/DigitalClock;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .prologue
     const-wide/16 v7, 0x3e8
 
-    .line 88
     iget-object v4, p0, Landroid/widget/DigitalClock$1;->this$0:Landroid/widget/DigitalClock;
 
     #getter for: Landroid/widget/DigitalClock;->mTickerStopped:Z
@@ -53,11 +51,9 @@
 
     if-eqz v4, :cond_b
 
-    .line 95
     :goto_a
     return-void
 
-    .line 89
     :cond_b
     iget-object v4, p0, Landroid/widget/DigitalClock$1;->this$0:Landroid/widget/DigitalClock;
 
@@ -69,7 +65,6 @@
 
     invoke-virtual {v4, v5, v6}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 90
     iget-object v4, p0, Landroid/widget/DigitalClock$1;->this$0:Landroid/widget/DigitalClock;
 
     iget-object v5, p0, Landroid/widget/DigitalClock$1;->this$0:Landroid/widget/DigitalClock;
@@ -86,17 +81,14 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/DigitalClock;->setText(Ljava/lang/CharSequence;)V
 
-    .line 91
     iget-object v4, p0, Landroid/widget/DigitalClock$1;->this$0:Landroid/widget/DigitalClock;
 
     invoke-virtual {v4}, Landroid/widget/DigitalClock;->invalidate()V
 
-    .line 92
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 93
     .local v2, now:J
     rem-long v4, v2, v7
 
@@ -104,7 +96,6 @@
 
     add-long v0, v2, v4
 
-    .line 94
     .local v0, next:J
     iget-object v4, p0, Landroid/widget/DigitalClock$1;->this$0:Landroid/widget/DigitalClock;
 

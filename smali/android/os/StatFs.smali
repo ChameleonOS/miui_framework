@@ -13,7 +13,6 @@
     .parameter "path"
 
     .prologue
-    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     invoke-direct {p0, p1}, Landroid/os/StatFs;->native_setup(Ljava/lang/String;)V
@@ -36,7 +35,6 @@
     .registers 1
 
     .prologue
-    .line 42
     invoke-direct {p0}, Landroid/os/StatFs;->native_finalize()V
 
     return-void
@@ -59,7 +57,6 @@
     .parameter "path"
 
     .prologue
-    .line 39
     invoke-direct {p0, p1}, Landroid/os/StatFs;->native_restat(Ljava/lang/String;)V
 
     return-void

@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 65
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords$EfPlLoaded;->this$0:Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 65
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords$EfPlLoaded;-><init>(Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords;)V
 
     return-void
@@ -53,7 +51,6 @@
     .registers 2
 
     .prologue
-    .line 67
     const-string v0, "EF_PL"
 
     return-object v0
@@ -64,7 +61,6 @@
     .parameter "ar"
 
     .prologue
-    .line 71
     iget-object v1, p0, Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords$EfPlLoaded;->this$0:Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords;
 
     iget-object v0, p1, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -76,7 +72,6 @@
     #setter for: Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords;->mEFpl:[B
     invoke-static {v1, v0}, Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords;->access$002(Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords;[B)[B
 
-    .line 72
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords$EfPlLoaded;->this$0:Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -110,6 +105,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaLteUiccRecords;->log(Ljava/lang/String;)V
 
-    .line 73
     return-void
 .end method

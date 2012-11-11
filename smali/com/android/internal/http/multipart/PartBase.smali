@@ -22,13 +22,10 @@
     .parameter "transferEncoding"
 
     .prologue
-    .line 61
     invoke-direct {p0}, Lcom/android/internal/http/multipart/Part;-><init>()V
 
-    .line 63
     if-nez p1, :cond_d
 
-    .line 64
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Name must not be null"
@@ -37,20 +34,15 @@
 
     throw v0
 
-    .line 66
     :cond_d
     iput-object p1, p0, Lcom/android/internal/http/multipart/PartBase;->name:Ljava/lang/String;
 
-    .line 67
     iput-object p2, p0, Lcom/android/internal/http/multipart/PartBase;->contentType:Ljava/lang/String;
 
-    .line 68
     iput-object p3, p0, Lcom/android/internal/http/multipart/PartBase;->charSet:Ljava/lang/String;
 
-    .line 69
     iput-object p4, p0, Lcom/android/internal/http/multipart/PartBase;->transferEncoding:Ljava/lang/String;
 
-    .line 70
     return-void
 .end method
 
@@ -60,7 +52,6 @@
     .registers 2
 
     .prologue
-    .line 97
     iget-object v0, p0, Lcom/android/internal/http/multipart/PartBase;->charSet:Ljava/lang/String;
 
     return-object v0
@@ -70,7 +61,6 @@
     .registers 2
 
     .prologue
-    .line 88
     iget-object v0, p0, Lcom/android/internal/http/multipart/PartBase;->contentType:Ljava/lang/String;
 
     return-object v0
@@ -80,7 +70,6 @@
     .registers 2
 
     .prologue
-    .line 79
     iget-object v0, p0, Lcom/android/internal/http/multipart/PartBase;->name:Ljava/lang/String;
 
     return-object v0
@@ -90,7 +79,6 @@
     .registers 2
 
     .prologue
-    .line 106
     iget-object v0, p0, Lcom/android/internal/http/multipart/PartBase;->transferEncoding:Ljava/lang/String;
 
     return-object v0
@@ -101,10 +89,8 @@
     .parameter "charSet"
 
     .prologue
-    .line 116
     iput-object p1, p0, Lcom/android/internal/http/multipart/PartBase;->charSet:Ljava/lang/String;
 
-    .line 117
     return-void
 .end method
 
@@ -113,10 +99,8 @@
     .parameter "contentType"
 
     .prologue
-    .line 125
     iput-object p1, p0, Lcom/android/internal/http/multipart/PartBase;->contentType:Ljava/lang/String;
 
-    .line 126
     return-void
 .end method
 
@@ -125,10 +109,8 @@
     .parameter "name"
 
     .prologue
-    .line 134
     if-nez p1, :cond_a
 
-    .line 135
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Name must not be null"
@@ -137,11 +119,9 @@
 
     throw v0
 
-    .line 137
     :cond_a
     iput-object p1, p0, Lcom/android/internal/http/multipart/PartBase;->name:Ljava/lang/String;
 
-    .line 138
     return-void
 .end method
 
@@ -150,9 +130,7 @@
     .parameter "transferEncoding"
 
     .prologue
-    .line 147
     iput-object p1, p0, Lcom/android/internal/http/multipart/PartBase;->transferEncoding:Ljava/lang/String;
 
-    .line 148
     return-void
 .end method

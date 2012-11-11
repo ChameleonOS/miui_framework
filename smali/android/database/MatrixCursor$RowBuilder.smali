@@ -30,18 +30,14 @@
     .parameter "endIndex"
 
     .prologue
-    .line 192
     iput-object p1, p0, Landroid/database/MatrixCursor$RowBuilder;->this$0:Landroid/database/MatrixCursor;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 193
     iput p2, p0, Landroid/database/MatrixCursor$RowBuilder;->index:I
 
-    .line 194
     iput p3, p0, Landroid/database/MatrixCursor$RowBuilder;->endIndex:I
 
-    .line 195
     return-void
 .end method
 
@@ -52,14 +48,12 @@
     .parameter "columnValue"
 
     .prologue
-    .line 205
     iget v0, p0, Landroid/database/MatrixCursor$RowBuilder;->index:I
 
     iget v1, p0, Landroid/database/MatrixCursor$RowBuilder;->endIndex:I
 
     if-ne v0, v1, :cond_e
 
-    .line 206
     new-instance v0, Landroid/database/CursorIndexOutOfBoundsException;
 
     const-string v1, "No more columns left."
@@ -68,7 +62,6 @@
 
     throw v0
 
-    .line 210
     :cond_e
     iget-object v0, p0, Landroid/database/MatrixCursor$RowBuilder;->this$0:Landroid/database/MatrixCursor;
 
@@ -85,6 +78,5 @@
 
     aput-object p1, v0, v1
 
-    .line 211
     return-object p0
 .end method

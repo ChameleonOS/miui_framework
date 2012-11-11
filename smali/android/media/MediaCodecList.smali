@@ -8,15 +8,12 @@
     .registers 1
 
     .prologue
-    .line 54
     const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 55
     invoke-static {}, Landroid/media/MediaCodecList;->native_init()V
 
-    .line 56
     return-void
 .end method
 
@@ -24,7 +21,6 @@
     .registers 1
 
     .prologue
-    .line 51
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +37,6 @@
     .parameter "index"
 
     .prologue
-    .line 33
     if-ltz p0, :cond_8
 
     invoke-static {}, Landroid/media/MediaCodecList;->getCodecCount()I
@@ -50,7 +45,6 @@
 
     if-le p0, v0, :cond_e
 
-    .line 34
     :cond_8
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -58,7 +52,6 @@
 
     throw v0
 
-    .line 37
     :cond_e
     new-instance v0, Landroid/media/MediaCodecInfo;
 

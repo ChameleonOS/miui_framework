@@ -30,7 +30,6 @@
     .registers 1
 
     .prologue
-    .line 83
     const-class v0, Landroid/webkit/DeviceOrientationService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -57,7 +56,6 @@
     .parameter
 
     .prologue
-    .line 83
     iput-object p1, p0, Landroid/webkit/DeviceOrientationService$1;->this$0:Landroid/webkit/DeviceOrientationService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +71,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 86
     sget-boolean v0, Landroid/webkit/DeviceOrientationService$1;->$assertionsDisabled:Z
 
     if-nez v0, :cond_1b
@@ -100,7 +97,6 @@
 
     throw v0
 
-    .line 87
     :cond_1b
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService$1;->this$0:Landroid/webkit/DeviceOrientationService;
 
@@ -111,7 +107,6 @@
 
     if-eqz v0, :cond_2c
 
-    .line 89
     iget-object v0, p0, Landroid/webkit/DeviceOrientationService$1;->this$0:Landroid/webkit/DeviceOrientationService;
 
     #getter for: Landroid/webkit/DeviceOrientationService;->mManager:Landroid/webkit/DeviceMotionAndOrientationManager;
@@ -121,7 +116,6 @@
 
     invoke-virtual {v0, v2, v2, v2}, Landroid/webkit/DeviceMotionAndOrientationManager;->onOrientationChange(Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;)V
 
-    .line 91
     :cond_2c
     return-void
 .end method

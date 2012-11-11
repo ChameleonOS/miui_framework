@@ -36,7 +36,6 @@
     .parameter
 
     .prologue
-    .line 414
     iput-object p1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;->this$1:Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter;
 
     iput-object p2, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;->val$list:Landroid/widget/ListView;
@@ -57,7 +56,6 @@
     .parameter "v"
 
     .prologue
-    .line 416
     iget-object v0, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;->val$list:Landroid/widget/ListView;
 
     iget-object v1, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment$RouteAdapter$1;->val$fview:Landroid/view/View;
@@ -70,6 +68,5 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/ListView;->performItemClick(Landroid/view/View;IJ)Z
 
-    .line 417
     return-void
 .end method

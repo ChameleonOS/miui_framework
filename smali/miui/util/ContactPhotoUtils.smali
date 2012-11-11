@@ -34,23 +34,18 @@
 
     const/16 v1, 0x60
 
-    .line 21
     sput-object v2, Lmiui/util/ContactPhotoUtils;->sPt:Landroid/graphics/Paint;
 
-    .line 22
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0, v3, v3, v1, v1}, Landroid/graphics/Rect;-><init>(IIII)V
 
     sput-object v0, Lmiui/util/ContactPhotoUtils;->sRect:Landroid/graphics/Rect;
 
-    .line 23
     sput-object v2, Lmiui/util/ContactPhotoUtils;->sBitmap:Landroid/graphics/Bitmap;
 
-    .line 24
     sput-object v2, Lmiui/util/ContactPhotoUtils;->sCanvas:Landroid/graphics/Canvas;
 
-    .line 27
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v1, v1, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -59,7 +54,6 @@
 
     sput-object v0, Lmiui/util/ContactPhotoUtils;->sBitmap:Landroid/graphics/Bitmap;
 
-    .line 28
     new-instance v0, Landroid/graphics/Canvas;
 
     sget-object v1, Lmiui/util/ContactPhotoUtils;->sBitmap:Landroid/graphics/Bitmap;
@@ -68,19 +62,16 @@
 
     sput-object v0, Lmiui/util/ContactPhotoUtils;->sCanvas:Landroid/graphics/Canvas;
 
-    .line 29
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     sput-object v0, Lmiui/util/ContactPhotoUtils;->sPt:Landroid/graphics/Paint;
 
-    .line 30
     sget-object v0, Lmiui/util/ContactPhotoUtils;->sPt:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 31
     sget-object v0, Lmiui/util/ContactPhotoUtils;->sPt:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
@@ -91,7 +82,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 73
     const/16 v0, 0x28
 
     new-array v0, v0, [Ljava/lang/String;
@@ -334,7 +324,6 @@
 
     sput-object v0, Lmiui/util/ContactPhotoUtils;->suffix:[Ljava/lang/String;
 
-    .line 83
     const-string v0, "[\u4e00-\u9fa5]"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -350,7 +339,6 @@
     .registers 1
 
     .prologue
-    .line 19
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -364,25 +352,20 @@
     .parameter "color"
 
     .prologue
-    .line 119
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
 
     if-eqz v9, :cond_8
 
-    .line 120
     const/4 v0, 0x0
 
-    .line 175
     :goto_7
     return-object v0
 
-    .line 121
     :cond_8
     const/4 v8, 0x0
 
-    .line 122
     .local v8, word:Ljava/lang/String;
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -392,7 +375,6 @@
 
     if-le v9, v10, :cond_1c
 
-    .line 123
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v9
@@ -401,40 +383,33 @@
 
     move-result-object v8
 
-    .line 127
     :goto_18
     if-nez v8, :cond_1e
 
-    .line 128
     const/4 v0, 0x0
 
     goto :goto_7
 
-    .line 125
     :cond_1c
     move-object v8, p1
 
     goto :goto_18
 
-    .line 129
     :cond_1e
     invoke-virtual {v8}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 130
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
 
     if-eqz v9, :cond_2a
 
-    .line 131
     const/4 v0, 0x0
 
     goto :goto_7
 
-    .line 133
     :cond_2a
     const/16 v9, 0x60
 
@@ -446,13 +421,11 @@
 
     move-result-object v0
 
-    .line 134
     .local v0, bmp:Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 135
     .local v1, canvas:Landroid/graphics/Canvas;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -462,42 +435,34 @@
 
     move-result-object v2
 
-    .line 136
     .local v2, drawable:Landroid/graphics/drawable/Drawable;
     sget-object v9, Lmiui/util/ContactPhotoUtils;->sRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v9}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 137
     invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 138
     new-instance v6, Landroid/graphics/Paint;
 
     invoke-direct {v6}, Landroid/graphics/Paint;-><init>()V
 
-    .line 139
     .local v6, paint:Landroid/graphics/Paint;
     const/4 v9, 0x1
 
     invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 140
     invoke-virtual {v6, p3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 141
     invoke-static {p1}, Lmiui/util/ContactPhotoUtils;->isChinese(Ljava/lang/String;)Z
 
     move-result v9
 
     if-eqz v9, :cond_69
 
-    .line 142
     const v9, 0x42accccc
 
     invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 143
     const/high16 v9, 0x4080
 
     const/high16 v10, 0x4298
@@ -506,7 +471,6 @@
 
     goto :goto_7
 
-    .line 145
     :cond_69
     const-string v9, " |\\.|-|,|\\(|\\)|\uff08|\uff09|\u2014"
 
@@ -514,27 +478,21 @@
 
     move-result-object v5
 
-    .line 146
     .local v5, nameStrs:[Ljava/lang/String;
     if-nez v5, :cond_76
 
-    .line 147
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 148
     const/4 v0, 0x0
 
     goto :goto_7
 
-    .line 150
     :cond_76
     const/4 v3, 0x0
 
-    .line 151
     .local v3, first:Ljava/lang/String;
     const/4 v7, 0x0
 
-    .line 152
     .local v7, second:Ljava/lang/String;
     const/4 v4, 0x0
 
@@ -544,7 +502,6 @@
 
     if-ge v4, v9, :cond_9c
 
-    .line 153
     aget-object v9, v5, v4
 
     invoke-virtual {v9}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -557,28 +514,23 @@
 
     if-nez v9, :cond_90
 
-    .line 154
     if-nez v3, :cond_93
 
-    .line 155
     aget-object v9, v5, v4
 
     invoke-virtual {v9}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 152
     :cond_90
     :goto_90
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_79
 
-    .line 156
     :cond_93
     if-nez v7, :cond_9c
 
-    .line 157
     aget-object v9, v5, v4
 
     invoke-virtual {v9}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -587,23 +539,18 @@
 
     goto :goto_90
 
-    .line 163
     :cond_9c
     if-nez v3, :cond_a4
 
-    .line 164
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 165
     const/4 v0, 0x0
 
     goto/16 :goto_7
 
-    .line 166
     :cond_a4
     if-nez v7, :cond_be
 
-    .line 167
     const/16 v9, 0x60
 
     const/16 v10, 0x60
@@ -618,7 +565,6 @@
 
     invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 168
     const/high16 v9, 0x4080
 
     const/high16 v10, 0x4298
@@ -627,7 +573,6 @@
 
     goto/16 :goto_7
 
-    .line 170
     :cond_be
     const/16 v9, 0x60
 
@@ -643,14 +588,12 @@
 
     invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 171
     const/high16 v9, 0x4080
 
     const/high16 v10, 0x422c
 
     invoke-virtual {v1, v3, v9, v10, v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 172
     const/high16 v9, 0x41e0
 
     const/high16 v10, 0x42ac
@@ -671,12 +614,10 @@
     .parameter "fgDrawableId"
 
     .prologue
-    .line 98
     invoke-static {p0, p1, p2, p3}, Lmiui/util/ContactPhotoUtils;->createNameBitmap(Landroid/content/Context;Ljava/lang/String;II)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 99
     .local v0, bitmap:Landroid/graphics/Bitmap;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -700,20 +641,17 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 36
     const-class v5, Lmiui/util/ContactPhotoUtils;
 
     monitor-enter v5
 
     if-nez p1, :cond_8
 
-    .line 52
     :goto_6
     monitor-exit v5
 
     return-object v3
 
-    .line 40
     :cond_8
     const/16 v4, 0x60
 
@@ -726,42 +664,34 @@
 
     move-result-object v3
 
-    .line 41
     .local v3, photo:Landroid/graphics/Bitmap;
     invoke-virtual {p0, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 42
     .local v0, bgDrawable:Landroid/graphics/drawable/Drawable;
     sget-object v4, Lmiui/util/ContactPhotoUtils;->sRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 43
     invoke-virtual {p0, p4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 44
     .local v2, fgDrawable:Landroid/graphics/drawable/Drawable;
     sget-object v4, Lmiui/util/ContactPhotoUtils;->sRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 45
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 46
     .local v1, canvas:Landroid/graphics/Canvas;
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 47
     invoke-static {p0, p1, p3}, Lmiui/util/ContactPhotoUtils;->cutBitmap(Landroid/content/res/Resources;Landroid/graphics/Bitmap;I)V
 
-    .line 48
     sget-object v4, Lmiui/util/ContactPhotoUtils;->sBitmap:Landroid/graphics/Bitmap;
 
     sget-object v6, Lmiui/util/ContactPhotoUtils;->sRect:Landroid/graphics/Rect;
@@ -772,17 +702,14 @@
 
     invoke-virtual {v1, v4, v6, v7, v8}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 49
     invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 51
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_3f
     .catchall {:try_start_c .. :try_end_3f} :catchall_40
 
     goto :goto_6
 
-    .line 36
     .end local v0           #bgDrawable:Landroid/graphics/drawable/Drawable;
     .end local v1           #canvas:Landroid/graphics/Canvas;
     .end local v2           #fgDrawable:Landroid/graphics/drawable/Drawable;
@@ -802,7 +729,6 @@
     .parameter "maskDrawableId"
 
     .prologue
-    .line 56
     sget-object v5, Lmiui/util/ContactPhotoUtils;->sCanvas:Landroid/graphics/Canvas;
 
     const/4 v6, 0x0
@@ -811,53 +737,43 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 57
     invoke-virtual {p0, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 58
     .local v0, dst:Landroid/graphics/drawable/Drawable;
     sget-object v5, Lmiui/util/ContactPhotoUtils;->sRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v5}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 59
     sget-object v5, Lmiui/util/ContactPhotoUtils;->sCanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {v0, v5}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 60
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
 
-    .line 61
     .local v4, width:I
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
 
-    .line 62
     .local v1, height:I
     const/4 v2, 0x0
 
     .local v2, left:I
     const/4 v3, 0x0
 
-    .line 63
     .local v3, top:I
     if-le v4, v1, :cond_3a
 
-    .line 64
     sub-int v5, v4, v1
 
     div-int/lit8 v2, v5, 0x2
 
-    .line 65
     move v4, v1
 
-    .line 70
     :cond_27
     :goto_27
     sget-object v5, Lmiui/util/ContactPhotoUtils;->sCanvas:Landroid/graphics/Canvas;
@@ -876,19 +792,15 @@
 
     invoke-virtual {v5, p1, v6, v7, v8}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 71
     return-void
 
-    .line 66
     :cond_3a
     if-ge v4, v1, :cond_27
 
-    .line 67
     sub-int v5, v1, v4
 
     div-int/lit8 v3, v5, 0x2
 
-    .line 68
     move v1, v4
 
     goto :goto_27
@@ -899,19 +811,16 @@
     .parameter "name"
 
     .prologue
-    .line 183
     invoke-static {p0}, Lmiui/util/ContactPhotoUtils;->isChinese(Ljava/lang/String;)Z
 
     move-result v2
 
     if-eqz v2, :cond_11
 
-    .line 184
     invoke-static {p0}, Lmiui/util/ContactPhotoUtils;->removeSuffix(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 185
     .local v1, word:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -919,17 +828,14 @@
 
     if-eqz v2, :cond_12
 
-    .line 186
     const/4 p0, 0x0
 
-    .line 190
     .end local p0
     .local v0, length:I
     :cond_11
     :goto_11
     return-object p0
 
-    .line 187
     .end local v0           #length:I
     .restart local p0
     :cond_12
@@ -937,7 +843,6 @@
 
     move-result v0
 
-    .line 188
     .restart local v0       #length:I
     add-int/lit8 v2, v0, -0x1
 
@@ -953,7 +858,6 @@
     .parameter "name"
 
     .prologue
-    .line 179
     sget-object v0, Lmiui/util/ContactPhotoUtils;->sAsiaLangPattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -974,10 +878,8 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 195
     move-object v3, p0
 
-    .line 196
     .local v3, result:Ljava/lang/String;
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -985,23 +887,18 @@
 
     if-eqz v4, :cond_a
 
-    .line 197
     const/4 v4, 0x0
 
-    .line 226
     :goto_9
     return-object v4
 
-    .line 198
     :cond_a
     const/4 v1, 0x0
 
-    .line 200
     .local v1, found:Z
     :cond_b
     const/4 v1, 0x0
 
-    .line 201
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -1012,7 +909,6 @@
 
     if-ge v2, v4, :cond_34
 
-    .line 202
     sget-object v4, Lmiui/util/ContactPhotoUtils;->suffix:[Ljava/lang/String;
 
     aget-object v4, v4, v2
@@ -1023,10 +919,8 @@
 
     if-eqz v4, :cond_54
 
-    .line 203
     const/4 v1, 0x1
 
-    .line 204
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -1045,7 +939,6 @@
 
     move-result-object v3
 
-    .line 215
     :cond_2e
     :goto_2e
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1054,7 +947,6 @@
 
     if-eqz v4, :cond_9c
 
-    .line 218
     :cond_34
     if-eqz v1, :cond_3c
 
@@ -1064,16 +956,13 @@
 
     if-eqz v4, :cond_b
 
-    .line 219
     :cond_3c
     if-eqz v3, :cond_42
 
-    .line 220
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 223
     :cond_42
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1081,7 +970,6 @@
 
     if-eqz v4, :cond_52
 
-    .line 224
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -1095,10 +983,8 @@
     :cond_52
     move-object v4, v3
 
-    .line 226
     goto :goto_9
 
-    .line 206
     :cond_54
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
@@ -1110,7 +996,6 @@
 
     move-result v0
 
-    .line 208
     .local v0, c:C
     const/16 v4, 0x41
 
@@ -1162,11 +1047,9 @@
 
     if-ne v0, v4, :cond_2e
 
-    .line 211
     :cond_90
     const/4 v1, 0x1
 
-    .line 212
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -1179,7 +1062,6 @@
 
     goto :goto_2e
 
-    .line 201
     .end local v0           #c:C
     :cond_9c
     add-int/lit8 v2, v2, 0x1
@@ -1193,7 +1075,6 @@
     .parameter "useWordPhoto"
 
     .prologue
-    .line 232
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -1207,10 +1088,8 @@
     :goto_a
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 233
     return-void
 
-    .line 232
     :cond_e
     const/4 v0, 0x0
 
@@ -1226,7 +1105,6 @@
 
     const/4 v1, 0x0
 
-    .line 236
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2

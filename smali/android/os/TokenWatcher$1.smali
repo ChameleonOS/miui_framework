@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 147
     iput-object p1, p0, Landroid/os/TokenWatcher$1;->this$0:Landroid/os/TokenWatcher;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .registers 5
 
     .prologue
-    .line 151
     iget-object v1, p0, Landroid/os/TokenWatcher$1;->this$0:Landroid/os/TokenWatcher;
 
     #getter for: Landroid/os/TokenWatcher;->mTokens:Ljava/util/WeakHashMap;
@@ -51,7 +49,6 @@
 
     monitor-enter v2
 
-    .line 152
     :try_start_7
     iget-object v1, p0, Landroid/os/TokenWatcher$1;->this$0:Landroid/os/TokenWatcher;
 
@@ -60,7 +57,6 @@
 
     move-result v0
 
-    .line 153
     .local v0, value:I
     iget-object v1, p0, Landroid/os/TokenWatcher$1;->this$0:Landroid/os/TokenWatcher;
 
@@ -69,27 +65,22 @@
     #setter for: Landroid/os/TokenWatcher;->mNotificationQueue:I
     invoke-static {v1, v3}, Landroid/os/TokenWatcher;->access$102(Landroid/os/TokenWatcher;I)I
 
-    .line 154
     monitor-exit v2
     :try_end_14
     .catchall {:try_start_7 .. :try_end_14} :catchall_1d
 
-    .line 155
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_20
 
-    .line 156
     iget-object v1, p0, Landroid/os/TokenWatcher$1;->this$0:Landroid/os/TokenWatcher;
 
     invoke-virtual {v1}, Landroid/os/TokenWatcher;->acquired()V
 
-    .line 161
     :cond_1c
     :goto_1c
     return-void
 
-    .line 154
     .end local v0           #value:I
     :catchall_1d
     move-exception v1
@@ -101,12 +92,10 @@
 
     throw v1
 
-    .line 158
     .restart local v0       #value:I
     :cond_20
     if-nez v0, :cond_1c
 
-    .line 159
     iget-object v1, p0, Landroid/os/TokenWatcher$1;->this$0:Landroid/os/TokenWatcher;
 
     invoke-virtual {v1}, Landroid/os/TokenWatcher;->released()V

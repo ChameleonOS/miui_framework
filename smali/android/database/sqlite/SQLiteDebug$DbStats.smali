@@ -40,28 +40,22 @@
     .prologue
     const-wide/16 v2, 0x400
 
-    .line 137
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 138
     iput-object p1, p0, Landroid/database/sqlite/SQLiteDebug$DbStats;->dbName:Ljava/lang/String;
 
-    .line 139
     div-long v0, p4, v2
 
     iput-wide v0, p0, Landroid/database/sqlite/SQLiteDebug$DbStats;->pageSize:J
 
-    .line 140
     mul-long v0, p2, p4
 
     div-long/2addr v0, v2
 
     iput-wide v0, p0, Landroid/database/sqlite/SQLiteDebug$DbStats;->dbSize:J
 
-    .line 141
     iput p6, p0, Landroid/database/sqlite/SQLiteDebug$DbStats;->lookaside:I
 
-    .line 142
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -96,6 +90,5 @@
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDebug$DbStats;->cache:Ljava/lang/String;
 
-    .line 143
     return-void
 .end method

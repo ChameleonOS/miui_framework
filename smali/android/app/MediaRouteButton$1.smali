@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 334
     iput-object p1, p0, Landroid/app/MediaRouteButton$1;->this$0:Landroid/app/MediaRouteButton;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "detachedFragment"
 
     .prologue
-    .line 337
     iget-object v0, p0, Landroid/app/MediaRouteButton$1;->this$0:Landroid/app/MediaRouteButton;
 
     const/4 v1, 0x0
@@ -50,6 +48,5 @@
     #setter for: Landroid/app/MediaRouteButton;->mDialogFragment:Lcom/android/internal/app/MediaRouteChooserDialogFragment;
     invoke-static {v0, v1}, Landroid/app/MediaRouteButton;->access$102(Landroid/app/MediaRouteButton;Lcom/android/internal/app/MediaRouteChooserDialogFragment;)Lcom/android/internal/app/MediaRouteChooserDialogFragment;
 
-    .line 338
     return-void
 .end method

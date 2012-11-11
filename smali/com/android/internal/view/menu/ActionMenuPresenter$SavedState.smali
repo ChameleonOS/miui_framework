@@ -39,7 +39,6 @@
     .registers 1
 
     .prologue
-    .line 547
     new-instance v0, Lcom/android/internal/view/menu/ActionMenuPresenter$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/internal/view/menu/ActionMenuPresenter$SavedState$1;-><init>()V
@@ -53,10 +52,8 @@
     .registers 1
 
     .prologue
-    .line 530
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 531
     return-void
 .end method
 
@@ -65,17 +62,14 @@
     .parameter "in"
 
     .prologue
-    .line 533
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 534
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$SavedState;->openSubMenuId:I
 
-    .line 535
     return-void
 .end method
 
@@ -85,7 +79,6 @@
     .registers 2
 
     .prologue
-    .line 539
     const/4 v0, 0x0
 
     return v0
@@ -97,11 +90,9 @@
     .parameter "flags"
 
     .prologue
-    .line 544
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$SavedState;->openSubMenuId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 545
     return-void
 .end method

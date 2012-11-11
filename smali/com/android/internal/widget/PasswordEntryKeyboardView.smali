@@ -22,10 +22,8 @@
     .parameter "attrs"
 
     .prologue
-    .line 32
     invoke-direct {p0, p1, p2}, Landroid/inputmethodservice/KeyboardView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 33
     return-void
 .end method
 
@@ -36,10 +34,8 @@
     .parameter "defStyle"
 
     .prologue
-    .line 36
     invoke-direct {p0, p1, p2, p3}, Landroid/inputmethodservice/KeyboardView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 37
     return-void
 .end method
 
@@ -50,12 +46,10 @@
     .parameter "shifted"
 
     .prologue
-    .line 41
     invoke-super {p0, p1}, Landroid/inputmethodservice/KeyboardView;->setShifted(Z)Z
 
     move-result v5
 
-    .line 43
     .local v5, result:Z
     invoke-virtual {p0}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->getKeyboard()Landroid/inputmethodservice/Keyboard;
 
@@ -65,7 +59,6 @@
 
     move-result-object v3
 
-    .line 44
     .local v3, indices:[I
     move-object v0, v3
 
@@ -81,16 +74,13 @@
 
     aget v2, v0, v1
 
-    .line 45
     .local v2, index:I
     invoke-virtual {p0, v2}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->invalidateKey(I)V
 
-    .line 44
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_f
 
-    .line 47
     .end local v2           #index:I
     :cond_19
     return v5

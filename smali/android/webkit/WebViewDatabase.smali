@@ -12,10 +12,8 @@
     .registers 1
 
     .prologue
-    .line 38
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     return-void
 .end method
 
@@ -24,7 +22,6 @@
     .parameter "context"
 
     .prologue
-    .line 42
     const-class v1, Landroid/webkit/WebViewDatabase;
 
     monitor-enter v1
@@ -58,7 +55,6 @@
     .registers 2
 
     .prologue
-    .line 92
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -70,7 +66,6 @@
     .registers 2
 
     .prologue
-    .line 76
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -82,7 +77,6 @@
     .registers 2
 
     .prologue
-    .line 60
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -94,7 +88,6 @@
     .registers 2
 
     .prologue
-    .line 85
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -106,7 +99,6 @@
     .registers 2
 
     .prologue
-    .line 69
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V
@@ -118,7 +110,6 @@
     .registers 2
 
     .prologue
-    .line 53
     new-instance v0, Landroid/webkit/MustOverrideException;
 
     invoke-direct {v0}, Landroid/webkit/MustOverrideException;-><init>()V

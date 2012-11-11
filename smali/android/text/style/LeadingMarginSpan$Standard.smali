@@ -30,10 +30,8 @@
     .parameter "every"
 
     .prologue
-    .line 112
     invoke-direct {p0, p1, p1}, Landroid/text/style/LeadingMarginSpan$Standard;-><init>(II)V
 
-    .line 113
     return-void
 .end method
 
@@ -43,16 +41,12 @@
     .parameter "rest"
 
     .prologue
-    .line 102
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 103
     iput p1, p0, Landroid/text/style/LeadingMarginSpan$Standard;->mFirst:I
 
-    .line 104
     iput p2, p0, Landroid/text/style/LeadingMarginSpan$Standard;->mRest:I
 
-    .line 105
     return-void
 .end method
 
@@ -61,24 +55,20 @@
     .parameter "src"
 
     .prologue
-    .line 115
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 116
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/text/style/LeadingMarginSpan$Standard;->mFirst:I
 
-    .line 117
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/text/style/LeadingMarginSpan$Standard;->mRest:I
 
-    .line 118
     return-void
 .end method
 
@@ -88,7 +78,6 @@
     .registers 2
 
     .prologue
-    .line 125
     const/4 v0, 0x0
 
     return v0
@@ -110,7 +99,6 @@
     .parameter "layout"
 
     .prologue
-    .line 143
     return-void
 .end method
 
@@ -119,7 +107,6 @@
     .parameter "first"
 
     .prologue
-    .line 134
     if-eqz p1, :cond_5
 
     iget v0, p0, Landroid/text/style/LeadingMarginSpan$Standard;->mFirst:I
@@ -137,7 +124,6 @@
     .registers 2
 
     .prologue
-    .line 121
     const/16 v0, 0xa
 
     return v0
@@ -149,16 +135,13 @@
     .parameter "flags"
 
     .prologue
-    .line 129
     iget v0, p0, Landroid/text/style/LeadingMarginSpan$Standard;->mFirst:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 130
     iget v0, p0, Landroid/text/style/LeadingMarginSpan$Standard;->mRest:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 131
     return-void
 .end method

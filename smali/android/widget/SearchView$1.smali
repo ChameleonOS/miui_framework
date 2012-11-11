@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 139
     iput-object p1, p0, Landroid/widget/SearchView$1;->this$0:Landroid/widget/SearchView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .registers 4
 
     .prologue
-    .line 141
     iget-object v1, p0, Landroid/widget/SearchView$1;->this$0:Landroid/widget/SearchView;
 
     invoke-virtual {v1}, Landroid/widget/SearchView;->getContext()Landroid/content/Context;
@@ -56,18 +54,15 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 144
     .local v0, imm:Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_15
 
-    .line 145
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->showSoftInputUnchecked(ILandroid/os/ResultReceiver;)V
 
-    .line 147
     :cond_15
     return-void
 .end method

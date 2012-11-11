@@ -37,7 +37,6 @@
     .parameter
 
     .prologue
-    .line 514
     iput-object p1, p0, Landroid/view/ViewDebug$4;->val$view:Landroid/view/View;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -56,12 +55,10 @@
 
     const/4 v2, 0x0
 
-    .line 535
     aget-object v0, p1, v1
 
     if-eqz v0, :cond_e
 
-    .line 536
     aget-object v0, p1, v1
 
     check-cast v0, Landroid/graphics/Canvas;
@@ -70,20 +67,17 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 538
     :cond_e
     aget-object v0, p1, v2
 
     if-eqz v0, :cond_19
 
-    .line 539
     aget-object v0, p1, v2
 
     check-cast v0, Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 541
     :cond_19
     return-void
 .end method
@@ -94,7 +88,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 516
     iget-object v3, p0, Landroid/view/ViewDebug$4;->val$view:Landroid/view/View;
 
     if-eqz v3, :cond_34
@@ -117,7 +110,6 @@
 
     move-result-object v2
 
-    .line 519
     .local v2, metrics:Landroid/util/DisplayMetrics;
     :goto_17
     if-eqz v2, :cond_36
@@ -132,7 +124,6 @@
 
     move-result-object v0
 
-    .line 522
     .local v0, bitmap:Landroid/graphics/Bitmap;
     :goto_23
     if-eqz v0, :cond_2a
@@ -141,7 +132,6 @@
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 523
     .local v1, canvas:Landroid/graphics/Canvas;
     :cond_2a
     const/4 v3, 0x2
@@ -164,14 +154,12 @@
     :cond_34
     move-object v2, v1
 
-    .line 516
     goto :goto_17
 
     .restart local v2       #metrics:Landroid/util/DisplayMetrics;
     :cond_36
     move-object v0, v1
 
-    .line 519
     goto :goto_23
 .end method
 
@@ -182,12 +170,10 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 529
     aget-object v0, p1, v2
 
     if-eqz v0, :cond_e
 
-    .line 530
     iget-object v1, p0, Landroid/view/ViewDebug$4;->val$view:Landroid/view/View;
 
     aget-object v0, p1, v2
@@ -196,7 +182,6 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 532
     :cond_e
     return-void
 .end method

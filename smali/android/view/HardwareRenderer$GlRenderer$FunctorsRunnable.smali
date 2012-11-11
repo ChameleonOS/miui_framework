@@ -29,7 +29,6 @@
     .parameter
 
     .prologue
-    .line 1064
     iput-object p1, p0, Landroid/view/HardwareRenderer$GlRenderer$FunctorsRunnable;->this$0:Landroid/view/HardwareRenderer$GlRenderer;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +42,10 @@
     .registers 6
 
     .prologue
-    .line 1069
     iget-object v3, p0, Landroid/view/HardwareRenderer$GlRenderer$FunctorsRunnable;->attachInfo:Landroid/view/View$AttachInfo;
 
     iget-object v0, v3, Landroid/view/View$AttachInfo;->mHardwareRenderer:Landroid/view/HardwareRenderer;
 
-    .line 1070
     .local v0, renderer:Landroid/view/HardwareRenderer;
     if-eqz v0, :cond_10
 
@@ -62,12 +59,10 @@
 
     if-eq v0, v3, :cond_11
 
-    .line 1079
     :cond_10
     :goto_10
     return-void
 
-    .line 1074
     :cond_11
     iget-object v3, p0, Landroid/view/HardwareRenderer$GlRenderer$FunctorsRunnable;->this$0:Landroid/view/HardwareRenderer$GlRenderer;
 
@@ -75,11 +70,9 @@
 
     move-result v2
 
-    .line 1075
     .local v2, surfaceState:I
     if-eqz v2, :cond_10
 
-    .line 1076
     iget-object v3, p0, Landroid/view/HardwareRenderer$GlRenderer$FunctorsRunnable;->this$0:Landroid/view/HardwareRenderer$GlRenderer;
 
     iget-object v3, v3, Landroid/view/HardwareRenderer$GlRenderer;->mCanvas:Landroid/view/HardwareCanvas;
@@ -95,7 +88,6 @@
 
     move-result v1
 
-    .line 1077
     .local v1, status:I
     iget-object v3, p0, Landroid/view/HardwareRenderer$GlRenderer$FunctorsRunnable;->this$0:Landroid/view/HardwareRenderer$GlRenderer;
 

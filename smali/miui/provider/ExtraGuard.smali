@@ -24,7 +24,6 @@
     .registers 1
 
     .prologue
-    .line 13
     const-string v0, "content://com.ijinshan.mguard.provider.MoSecurityProvider/Native_Scan"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -33,7 +32,6 @@
 
     sput-object v0, Lmiui/provider/ExtraGuard;->NATIVE_SCAN_URI:Landroid/net/Uri;
 
-    .line 15
     const-string v0, "content://com.ijinshan.mguard.provider.MoSecurityProvider/SmsCheck"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -49,7 +47,6 @@
     .registers 1
 
     .prologue
-    .line 11
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -67,31 +64,25 @@
 
     const/4 v2, 0x0
 
-    .line 28
     if-nez p1, :cond_6
 
-    .line 59
     :cond_5
     :goto_5
     return v12
 
-    .line 32
     :cond_6
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 33
     .local v0, resolver:Landroid/content/ContentResolver;
     const/4 v8, 0x0
 
-    .line 34
     .local v8, path:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v10
 
-    .line 35
     .local v10, scheme:Ljava/lang/String;
     const-string v1, "content"
 
@@ -109,41 +100,34 @@
 
     move-object v5, v2
 
-    .line 36
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v6
 
-    .line 37
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_34
 
-    .line 38
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
     if-eqz v1, :cond_31
 
-    .line 39
     const-string v1, "_data"
 
     invoke-interface {v6, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 40
     .local v7, index:I
     invoke-interface {v6, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 42
     .end local v7           #index:I
     :cond_31
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 47
     .end local v6           #cursor:Landroid/database/Cursor;
     :cond_34
     :goto_34
@@ -153,7 +137,6 @@
 
     if-nez v1, :cond_5
 
-    .line 51
     :try_start_3a
     sget-object v1, Lmiui/provider/ExtraGuard;->NATIVE_SCAN_URI:Landroid/net/Uri;
 
@@ -177,7 +160,6 @@
 
     move-result v9
 
-    .line 55
     .local v9, result:I
     const/4 v1, 0x2
 
@@ -190,7 +172,6 @@
 
     goto :goto_5
 
-    .line 44
     .end local v9           #result:I
     :cond_52
     if-eqz v10, :cond_5c
@@ -203,7 +184,6 @@
 
     if-eqz v1, :cond_34
 
-    .line 45
     :cond_5c
     invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
@@ -215,17 +195,14 @@
     :cond_61
     move v1, v12
 
-    .line 55
     goto :goto_50
 
-    .line 56
     .end local v9           #result:I
     :catch_63
     move-exception v1
 
     move v12, v11
 
-    .line 59
     goto :goto_5
 .end method
 
@@ -242,13 +219,11 @@
 
     const/4 v3, 0x0
 
-    .line 68
     :try_start_3
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 69
     .local v0, resolver:Landroid/content/ContentResolver;
     sget-object v4, Lmiui/provider/ExtraGuard;->SMS_CHECK_URI:Landroid/net/Uri;
 
@@ -276,11 +251,9 @@
 
     move-result v1
 
-    .line 73
     .local v1, result:I
     if-ne v1, v9, :cond_1f
 
-    .line 77
     .end local v0           #resolver:Landroid/content/ContentResolver;
     .end local v1           #result:I
     :goto_1e
@@ -291,10 +264,8 @@
     :cond_1f
     move v2, v3
 
-    .line 73
     goto :goto_1e
 
-    .line 74
     .end local v0           #resolver:Landroid/content/ContentResolver;
     .end local v1           #result:I
     :catch_21
@@ -302,6 +273,5 @@
 
     move v2, v3
 
-    .line 77
     goto :goto_1e
 .end method

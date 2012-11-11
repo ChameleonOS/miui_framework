@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 1394
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
     .parameter "x0"
 
     .prologue
-    .line 1394
     invoke-direct {p0}, Landroid/os/StrictMode$AndroidCloseGuardReporter;-><init>()V
 
     return-void
@@ -47,9 +45,7 @@
     .parameter "allocationSite"
 
     .prologue
-    .line 1396
     invoke-static {p1, p2}, Landroid/os/StrictMode;->onVmPolicyViolation(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 1397
     return-void
 .end method

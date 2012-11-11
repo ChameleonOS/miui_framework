@@ -33,18 +33,14 @@
     .parameter "resultData"
 
     .prologue
-    .line 37
     iput-object p1, p0, Landroid/os/ResultReceiver$MyRunnable;->this$0:Landroid/os/ResultReceiver;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     iput p2, p0, Landroid/os/ResultReceiver$MyRunnable;->mResultCode:I
 
-    .line 39
     iput-object p3, p0, Landroid/os/ResultReceiver$MyRunnable;->mResultData:Landroid/os/Bundle;
 
-    .line 40
     return-void
 .end method
 
@@ -54,7 +50,6 @@
     .registers 4
 
     .prologue
-    .line 43
     iget-object v0, p0, Landroid/os/ResultReceiver$MyRunnable;->this$0:Landroid/os/ResultReceiver;
 
     iget v1, p0, Landroid/os/ResultReceiver$MyRunnable;->mResultCode:I
@@ -63,6 +58,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/ResultReceiver;->onReceiveResult(ILandroid/os/Bundle;)V
 
-    .line 44
     return-void
 .end method

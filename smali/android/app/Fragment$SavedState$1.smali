@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 502
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "in"
 
     .prologue
-    .line 504
     new-instance v0, Landroid/app/Fragment$SavedState;
 
     const/4 v1, 0x0
@@ -61,7 +59,6 @@
     .parameter "loader"
 
     .prologue
-    .line 508
     new-instance v0, Landroid/app/Fragment$SavedState;
 
     invoke-direct {v0, p1, p2}, Landroid/app/Fragment$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
@@ -74,7 +71,6 @@
     .parameter "x0"
 
     .prologue
-    .line 502
     invoke-virtual {p0, p1}, Landroid/app/Fragment$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/app/Fragment$SavedState;
 
     move-result-object v0
@@ -88,7 +84,6 @@
     .parameter "x1"
 
     .prologue
-    .line 502
     invoke-virtual {p0, p1, p2}, Landroid/app/Fragment$SavedState$1;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/app/Fragment$SavedState;
 
     move-result-object v0
@@ -101,7 +96,6 @@
     .parameter "size"
 
     .prologue
-    .line 512
     new-array v0, p1, [Landroid/app/Fragment$SavedState;
 
     return-object v0
@@ -112,7 +106,6 @@
     .parameter "x0"
 
     .prologue
-    .line 502
     invoke-virtual {p0, p1}, Landroid/app/Fragment$SavedState$1;->newArray(I)[Landroid/app/Fragment$SavedState;
 
     move-result-object v0

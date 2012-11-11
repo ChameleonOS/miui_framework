@@ -12,7 +12,6 @@
     .registers 1
 
     .prologue
-    .line 25
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .end annotation
 
     .prologue
-    .line 32
     :try_start_0
     iget v0, p0, Landroid/graphics/DrawFilter;->mNativeInt:I
 
@@ -40,13 +38,10 @@
     :try_end_5
     .catchall {:try_start_0 .. :try_end_5} :catchall_9
 
-    .line 34
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 36
     return-void
 
-    .line 34
     :catchall_9
     move-exception v0
 

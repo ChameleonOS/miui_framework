@@ -19,10 +19,8 @@
     .registers 1
 
     .prologue
-    .line 2491
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2492
     return-void
 .end method
 
@@ -35,7 +33,6 @@
     .registers 3
 
     .prologue
-    .line 2526
     new-instance v0, Landroid/widget/GridLayout$Bounds;
 
     const/4 v1, 0x0
@@ -55,6 +52,5 @@
     .parameter "cellSize"
 
     .prologue
-    .line 2522
     return p2
 .end method

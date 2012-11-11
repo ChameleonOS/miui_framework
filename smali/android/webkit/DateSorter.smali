@@ -33,39 +33,32 @@
 
     const/4 v8, 0x0
 
-    .line 49
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
     const/4 v4, 0x4
 
     new-array v4, v4, [J
 
     iput-object v4, p0, Landroid/webkit/DateSorter;->mBins:[J
 
-    .line 42
     const/4 v4, 0x5
 
     new-array v4, v4, [Ljava/lang/String;
 
     iput-object v4, p0, Landroid/webkit/DateSorter;->mLabels:[Ljava/lang/String;
 
-    .line 50
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 52
     .local v3, resources:Landroid/content/res/Resources;
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 53
     .local v0, c:Ljava/util/Calendar;
     invoke-direct {p0, v0}, Landroid/webkit/DateSorter;->beginningOfDay(Ljava/util/Calendar;)V
 
-    .line 56
     iget-object v4, p0, Landroid/webkit/DateSorter;->mBins:[J
 
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
@@ -74,12 +67,10 @@
 
     aput-wide v5, v4, v8
 
-    .line 57
     const/4 v4, -0x1
 
     invoke-virtual {v0, v7, v4}, Ljava/util/Calendar;->add(II)V
 
-    .line 58
     iget-object v4, p0, Landroid/webkit/DateSorter;->mBins:[J
 
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
@@ -88,12 +79,10 @@
 
     aput-wide v5, v4, v9
 
-    .line 59
     const/4 v4, -0x6
 
     invoke-virtual {v0, v7, v4}, Ljava/util/Calendar;->add(II)V
 
-    .line 60
     iget-object v4, p0, Landroid/webkit/DateSorter;->mBins:[J
 
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
@@ -102,15 +91,12 @@
 
     aput-wide v5, v4, v10
 
-    .line 61
     invoke-virtual {v0, v7, v11}, Ljava/util/Calendar;->add(II)V
 
-    .line 62
     const/4 v4, -0x1
 
     invoke-virtual {v0, v10, v4}, Ljava/util/Calendar;->add(II)V
 
-    .line 63
     iget-object v4, p0, Landroid/webkit/DateSorter;->mBins:[J
 
     const/4 v5, 0x3
@@ -121,7 +107,6 @@
 
     aput-wide v6, v4, v5
 
-    .line 66
     iget-object v4, p0, Landroid/webkit/DateSorter;->mLabels:[Ljava/lang/String;
 
     const v5, 0x104007c
@@ -136,7 +121,6 @@
 
     aput-object v5, v4, v8
 
-    .line 67
     iget-object v4, p0, Landroid/webkit/DateSorter;->mLabels:[Ljava/lang/String;
 
     const v5, 0x104007b
@@ -151,16 +135,13 @@
 
     aput-object v5, v4, v9
 
-    .line 69
     const v2, 0x1130003
 
-    .line 70
     .local v2, resId:I
     invoke-virtual {v3, v2, v11}, Landroid/content/res/Resources;->getQuantityString(II)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 71
     .local v1, format:Ljava/lang/String;
     iget-object v4, p0, Landroid/webkit/DateSorter;->mLabels:[Ljava/lang/String;
 
@@ -178,7 +159,6 @@
 
     aput-object v5, v4, v10
 
-    .line 73
     iget-object v4, p0, Landroid/webkit/DateSorter;->mLabels:[Ljava/lang/String;
 
     const/4 v5, 0x3
@@ -191,7 +171,6 @@
 
     aput-object v6, v4, v5
 
-    .line 74
     iget-object v4, p0, Landroid/webkit/DateSorter;->mLabels:[Ljava/lang/String;
 
     const/4 v5, 0x4
@@ -204,7 +183,6 @@
 
     aput-object v6, v4, v5
 
-    .line 75
     return-void
 .end method
 
@@ -215,27 +193,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 119
     const/16 v0, 0xb
 
     invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    .line 120
     const/16 v0, 0xc
 
     invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    .line 121
     const/16 v0, 0xd
 
     invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    .line 122
     const/16 v0, 0xe
 
     invoke-virtual {p1, v0, v1}, Ljava/util/Calendar;->set(II)V
 
-    .line 123
     return-void
 .end method
 
@@ -246,10 +219,8 @@
     .parameter "index"
 
     .prologue
-    .line 106
     const/4 v0, 0x4
 
-    .line 108
     .local v0, lastDay:I
     if-ltz p1, :cond_5
 
@@ -258,13 +229,11 @@
     :cond_5
     const/4 p1, 0x0
 
-    .line 111
     :cond_6
     if-ne p1, v0, :cond_b
 
     const-wide/high16 v1, -0x8000
 
-    .line 112
     :goto_a
     return-wide v1
 
@@ -281,10 +250,8 @@
     .parameter "time"
 
     .prologue
-    .line 84
     const/4 v1, 0x4
 
-    .line 85
     .local v1, lastDay:I
     const/4 v0, 0x0
 
@@ -292,7 +259,6 @@
     :goto_2
     if-ge v0, v1, :cond_10
 
-    .line 86
     iget-object v2, p0, Landroid/webkit/DateSorter;->mBins:[J
 
     aget-wide v2, v2, v0
@@ -301,12 +267,10 @@
 
     if-lez v2, :cond_d
 
-    .line 88
     .end local v0           #i:I
     :goto_c
     return v0
 
-    .line 85
     .restart local v0       #i:I
     :cond_d
     add-int/lit8 v0, v0, 0x1
@@ -316,7 +280,6 @@
     :cond_10
     move v0, v1
 
-    .line 88
     goto :goto_c
 .end method
 
@@ -325,7 +288,6 @@
     .parameter "index"
 
     .prologue
-    .line 96
     if-ltz p1, :cond_5
 
     const/4 v0, 0x5
@@ -335,7 +297,6 @@
     :cond_5
     const-string v0, ""
 
-    .line 97
     :goto_7
     return-object v0
 

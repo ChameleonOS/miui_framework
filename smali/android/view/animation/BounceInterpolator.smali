@@ -11,10 +11,8 @@
     .registers 1
 
     .prologue
-    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     return-void
 .end method
 
@@ -24,10 +22,8 @@
     .parameter "attrs"
 
     .prologue
-    .line 31
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
     return-void
 .end method
 
@@ -36,7 +32,6 @@
     .parameter "t"
 
     .prologue
-    .line 35
     mul-float v0, p0, p0
 
     const/high16 v1, 0x4100
@@ -53,12 +48,10 @@
     .parameter "t"
 
     .prologue
-    .line 45
     const v0, 0x3f8fb15b
 
     mul-float/2addr p1, v0
 
-    .line 46
     const v0, 0x3eb4fdf4
 
     cmpg-float v0, p1, v0
@@ -69,11 +62,9 @@
 
     move-result v0
 
-    .line 49
     :goto_f
     return v0
 
-    .line 47
     :cond_10
     const v0, 0x3f3da512
 
@@ -95,7 +86,6 @@
 
     goto :goto_f
 
-    .line 48
     :cond_25
     const v0, 0x3f76e2eb
 
@@ -117,7 +107,6 @@
 
     goto :goto_f
 
-    .line 49
     :cond_3a
     const v0, 0x3f859168
 

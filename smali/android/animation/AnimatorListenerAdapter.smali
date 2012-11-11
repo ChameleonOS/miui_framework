@@ -11,7 +11,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,7 +23,6 @@
     .parameter "animation"
 
     .prologue
-    .line 31
     return-void
 .end method
 
@@ -33,7 +31,6 @@
     .parameter "animation"
 
     .prologue
-    .line 38
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .parameter "animation"
 
     .prologue
-    .line 45
     return-void
 .end method
 
@@ -51,6 +47,5 @@
     .parameter "animation"
 
     .prologue
-    .line 52
     return-void
 .end method

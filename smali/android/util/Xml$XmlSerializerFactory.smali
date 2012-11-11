@@ -25,7 +25,6 @@
     .registers 3
 
     .prologue
-    .line 119
     :try_start_0
     const-string/jumbo v1, "org.kxml2.io.KXmlParser,org.kxml2.io.KXmlSerializer"
 
@@ -39,14 +38,11 @@
     :try_end_a
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_a} :catch_b
 
-    .line 123
     return-void
 
-    .line 120
     :catch_b
     move-exception v0
 
-    .line 121
     .local v0, e:Lorg/xmlpull/v1/XmlPullParserException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -59,7 +55,6 @@
     .registers 1
 
     .prologue
-    .line 113
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

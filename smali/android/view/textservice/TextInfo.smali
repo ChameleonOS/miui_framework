@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 97
     new-instance v0, Landroid/view/textservice/TextInfo$1;
 
     invoke-direct {v0}, Landroid/view/textservice/TextInfo$1;-><init>()V
@@ -47,31 +46,26 @@
     .parameter "source"
 
     .prologue
-    .line 54
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/view/textservice/TextInfo;->mText:Ljava/lang/String;
 
-    .line 56
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textservice/TextInfo;->mCookie:I
 
-    .line 57
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/view/textservice/TextInfo;->mSequence:I
 
-    .line 58
     return-void
 .end method
 
@@ -82,10 +76,8 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 36
     invoke-direct {p0, p1, v0, v0}, Landroid/view/textservice/TextInfo;-><init>(Ljava/lang/String;II)V
 
-    .line 37
     return-void
 .end method
 
@@ -96,34 +88,27 @@
     .parameter "sequence"
 
     .prologue
-    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 47
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 49
     :cond_f
     iput-object p1, p0, Landroid/view/textservice/TextInfo;->mText:Ljava/lang/String;
 
-    .line 50
     iput p2, p0, Landroid/view/textservice/TextInfo;->mCookie:I
 
-    .line 51
     iput p3, p0, Landroid/view/textservice/TextInfo;->mSequence:I
 
-    .line 52
     return-void
 .end method
 
@@ -133,7 +118,6 @@
     .registers 2
 
     .prologue
-    .line 115
     const/4 v0, 0x0
 
     return v0
@@ -143,7 +127,6 @@
     .registers 2
 
     .prologue
-    .line 84
     iget v0, p0, Landroid/view/textservice/TextInfo;->mCookie:I
 
     return v0
@@ -153,7 +136,6 @@
     .registers 2
 
     .prologue
-    .line 91
     iget v0, p0, Landroid/view/textservice/TextInfo;->mSequence:I
 
     return v0
@@ -163,7 +145,6 @@
     .registers 2
 
     .prologue
-    .line 77
     iget-object v0, p0, Landroid/view/textservice/TextInfo;->mText:Ljava/lang/String;
 
     return-object v0
@@ -175,21 +156,17 @@
     .parameter "flags"
 
     .prologue
-    .line 68
     iget-object v0, p0, Landroid/view/textservice/TextInfo;->mText:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 69
     iget v0, p0, Landroid/view/textservice/TextInfo;->mCookie:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 70
     iget v0, p0, Landroid/view/textservice/TextInfo;->mSequence:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 71
     return-void
 .end method

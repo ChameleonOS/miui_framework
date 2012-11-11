@@ -22,14 +22,12 @@
     .prologue
     const/4 v3, 0x4
 
-    .line 8
     new-array v0, v3, [B
 
     fill-array-data v0, :array_21a2
 
     sput-object v0, Lmiui/util/AllPinyinConstants;->FILE_TAG:[B
 
-    .line 14
     const/16 v0, 0x51e
 
     new-array v0, v0, [Ljava/lang/String;
@@ -7896,7 +7894,6 @@
 
     return-void
 
-    .line 8
     :array_21a2
     .array-data 0x1
         0x50t
@@ -7910,7 +7907,6 @@
     .registers 1
 
     .prologue
-    .line 7
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

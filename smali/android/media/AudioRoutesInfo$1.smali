@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 62
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "in"
 
     .prologue
-    .line 64
     new-instance v0, Landroid/media/AudioRoutesInfo;
 
     invoke-direct {v0, p1}, Landroid/media/AudioRoutesInfo;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +56,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     invoke-virtual {p0, p1}, Landroid/media/AudioRoutesInfo$1;->createFromParcel(Landroid/os/Parcel;)Landroid/media/AudioRoutesInfo;
 
     move-result-object v0
@@ -71,7 +68,6 @@
     .parameter "size"
 
     .prologue
-    .line 68
     new-array v0, p1, [Landroid/media/AudioRoutesInfo;
 
     return-object v0
@@ -82,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 62
     invoke-virtual {p0, p1}, Landroid/media/AudioRoutesInfo$1;->newArray(I)[Landroid/media/AudioRoutesInfo;
 
     move-result-object v0

@@ -20,7 +20,6 @@
     .end annotation
 
     .prologue
-    .line 95
     sget-object v0, Landroid/media/audiofx/AutomaticGainControl;->EFFECT_TYPE_AGC:Ljava/util/UUID;
 
     sget-object v1, Landroid/media/audiofx/AutomaticGainControl;->EFFECT_TYPE_NULL:Ljava/util/UUID;
@@ -29,7 +28,6 @@
 
     invoke-direct {p0, v0, v1, v2, p1}, Landroid/media/audiofx/AudioEffect;-><init>(Ljava/util/UUID;Ljava/util/UUID;II)V
 
-    .line 96
     return-void
 .end method
 
@@ -38,10 +36,8 @@
     .parameter "audioSession"
 
     .prologue
-    .line 62
     const/4 v0, 0x0
 
-    .line 64
     .local v0, agc:Landroid/media/audiofx/AutomaticGainControl;
     :try_start_1
     new-instance v1, Landroid/media/audiofx/AutomaticGainControl;
@@ -57,17 +53,14 @@
     .local v1, agc:Landroid/media/audiofx/AutomaticGainControl;
     move-object v0, v1
 
-    .line 72
     .end local v1           #agc:Landroid/media/audiofx/AutomaticGainControl;
     :goto_7
     return-object v1
 
-    .line 65
     .restart local v0       #agc:Landroid/media/audiofx/AutomaticGainControl;
     :catch_8
     move-exception v2
 
-    .line 66
     .local v2, e:Ljava/lang/IllegalArgumentException;
     :try_start_9
     const-string v3, "AutomaticGainControl"
@@ -96,18 +89,15 @@
     :goto_22
     move-object v1, v0
 
-    .line 72
     .end local v0           #agc:Landroid/media/audiofx/AutomaticGainControl;
     .restart local v1       #agc:Landroid/media/audiofx/AutomaticGainControl;
     goto :goto_7
 
-    .line 67
     .end local v1           #agc:Landroid/media/audiofx/AutomaticGainControl;
     .restart local v0       #agc:Landroid/media/audiofx/AutomaticGainControl;
     :catch_24
     move-exception v2
 
-    .line 68
     .local v2, e:Ljava/lang/UnsupportedOperationException;
     const-string v3, "AutomaticGainControl"
 
@@ -117,18 +107,15 @@
 
     goto :goto_22
 
-    .line 72
     .end local v2           #e:Ljava/lang/UnsupportedOperationException;
     :catchall_2e
     move-exception v3
 
     goto :goto_22
 
-    .line 69
     :catch_30
     move-exception v2
 
-    .line 70
     .local v2, e:Ljava/lang/RuntimeException;
     const-string v3, "AutomaticGainControl"
 
@@ -145,7 +132,6 @@
     .registers 1
 
     .prologue
-    .line 51
     sget-object v0, Landroid/media/audiofx/AudioEffect;->EFFECT_TYPE_AGC:Ljava/util/UUID;
 
     invoke-static {v0}, Landroid/media/audiofx/AudioEffect;->isEffectTypeAvailable(Ljava/util/UUID;)Z

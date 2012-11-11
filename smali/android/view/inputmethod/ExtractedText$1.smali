@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 102
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,12 +44,10 @@
     .parameter "source"
 
     .prologue
-    .line 104
     new-instance v0, Landroid/view/inputmethod/ExtractedText;
 
     invoke-direct {v0}, Landroid/view/inputmethod/ExtractedText;-><init>()V
 
-    .line 105
     .local v0, res:Landroid/view/inputmethod/ExtractedText;
     sget-object v1, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -62,49 +59,42 @@
 
     iput-object v1, v0, Landroid/view/inputmethod/ExtractedText;->text:Ljava/lang/CharSequence;
 
-    .line 106
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedText;->startOffset:I
 
-    .line 107
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedText;->partialStartOffset:I
 
-    .line 108
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedText;->partialEndOffset:I
 
-    .line 109
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedText;->selectionStart:I
 
-    .line 110
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedText;->selectionEnd:I
 
-    .line 111
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, v0, Landroid/view/inputmethod/ExtractedText;->flags:I
 
-    .line 112
     return-object v0
 .end method
 
@@ -113,7 +103,6 @@
     .parameter "x0"
 
     .prologue
-    .line 102
     invoke-virtual {p0, p1}, Landroid/view/inputmethod/ExtractedText$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/inputmethod/ExtractedText;
 
     move-result-object v0
@@ -126,7 +115,6 @@
     .parameter "size"
 
     .prologue
-    .line 116
     new-array v0, p1, [Landroid/view/inputmethod/ExtractedText;
 
     return-object v0
@@ -137,7 +125,6 @@
     .parameter "x0"
 
     .prologue
-    .line 102
     invoke-virtual {p0, p1}, Landroid/view/inputmethod/ExtractedText$1;->newArray(I)[Landroid/view/inputmethod/ExtractedText;
 
     move-result-object v0

@@ -33,7 +33,6 @@
     .parameter
 
     .prologue
-    .line 190
     iput-object p1, p0, Lcom/android/internal/util/FileRotator$1;->this$0:Lcom/android/internal/util/FileRotator;
 
     iput-object p2, p0, Lcom/android/internal/util/FileRotator$1;->val$reader:Lcom/android/internal/util/FileRotator$Reader;
@@ -57,12 +56,10 @@
     .end annotation
 
     .prologue
-    .line 198
     iget-object v0, p0, Lcom/android/internal/util/FileRotator$1;->val$reader:Lcom/android/internal/util/FileRotator$Reader;
 
     invoke-interface {v0, p1}, Lcom/android/internal/util/FileRotator$Reader;->read(Ljava/io/InputStream;)V
 
-    .line 199
     return-void
 .end method
 
@@ -70,7 +67,6 @@
     .registers 1
 
     .prologue
-    .line 194
     return-void
 .end method
 
@@ -78,7 +74,6 @@
     .registers 2
 
     .prologue
-    .line 203
     const/4 v0, 0x1
 
     return v0
@@ -94,11 +89,9 @@
     .end annotation
 
     .prologue
-    .line 208
     iget-object v0, p0, Lcom/android/internal/util/FileRotator$1;->val$writer:Lcom/android/internal/util/FileRotator$Writer;
 
     invoke-interface {v0, p1}, Lcom/android/internal/util/FileRotator$Writer;->write(Ljava/io/OutputStream;)V
 
-    .line 209
     return-void
 .end method

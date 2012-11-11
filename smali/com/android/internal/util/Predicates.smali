@@ -19,10 +19,8 @@
     .registers 1
 
     .prologue
-    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     return-void
 .end method
 
@@ -44,7 +42,6 @@
     .end annotation
 
     .prologue
-    .line 48
     .local p0, components:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/android/internal/util/Predicate<-TT;>;>;"
     new-instance v0, Lcom/android/internal/util/Predicates$AndPredicate;
 
@@ -71,7 +68,6 @@
     .end annotation
 
     .prologue
-    .line 36
     .local p0, components:[Lcom/android/internal/util/Predicate;,"[Lcom/android/internal/util/Predicate<-TT;>;"
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -100,7 +96,6 @@
     .end annotation
 
     .prologue
-    .line 77
     .local p0, predicate:Lcom/android/internal/util/Predicate;,"Lcom/android/internal/util/Predicate<-TT;>;"
     new-instance v0, Lcom/android/internal/util/Predicates$NotPredicate;
 
@@ -129,7 +124,6 @@
     .end annotation
 
     .prologue
-    .line 69
     .local p0, components:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/android/internal/util/Predicate<-TT;>;>;"
     new-instance v0, Lcom/android/internal/util/Predicates$OrPredicate;
 
@@ -156,7 +150,6 @@
     .end annotation
 
     .prologue
-    .line 57
     .local p0, components:[Lcom/android/internal/util/Predicate;,"[Lcom/android/internal/util/Predicate<-TT;>;"
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 

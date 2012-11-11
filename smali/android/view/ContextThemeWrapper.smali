@@ -18,12 +18,10 @@
     .registers 2
 
     .prologue
-    .line 35
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    .line 36
     return-void
 .end method
 
@@ -33,16 +31,12 @@
     .parameter "themeres"
 
     .prologue
-    .line 39
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    .line 40
     iput-object p1, p0, Landroid/view/ContextThemeWrapper;->mBase:Landroid/content/Context;
 
-    .line 41
     iput p2, p0, Landroid/view/ContextThemeWrapper;->mThemeResource:I
 
-    .line 42
     return-void
 .end method
 
@@ -50,19 +44,16 @@
     .registers 5
 
     .prologue
-    .line 98
     iget-object v2, p0, Landroid/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     if-nez v2, :cond_26
 
     const/4 v0, 0x1
 
-    .line 99
     .local v0, first:Z
     :goto_5
     if-eqz v0, :cond_1e
 
-    .line 100
     invoke-virtual {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -73,23 +64,19 @@
 
     iput-object v2, p0, Landroid/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    .line 101
     iget-object v2, p0, Landroid/view/ContextThemeWrapper;->mBase:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
 
-    .line 102
     .local v1, theme:Landroid/content/res/Resources$Theme;
     if-eqz v1, :cond_1e
 
-    .line 103
     iget-object v2, p0, Landroid/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     invoke-virtual {v2, v1}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
 
-    .line 106
     .end local v1           #theme:Landroid/content/res/Resources$Theme;
     :cond_1e
     iget-object v2, p0, Landroid/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
@@ -98,10 +85,8 @@
 
     invoke-virtual {p0, v2, v3, v0}, Landroid/view/ContextThemeWrapper;->onApplyThemeResource(Landroid/content/res/Resources$Theme;IZ)V
 
-    .line 107
     return-void
 
-    .line 98
     .end local v0           #first:Z
     :cond_26
     const/4 v0, 0x0
@@ -116,13 +101,10 @@
     .parameter "newBase"
 
     .prologue
-    .line 45
     invoke-super {p0, p1}, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V
 
-    .line 46
     iput-object p1, p0, Landroid/view/ContextThemeWrapper;->mBase:Landroid/content/Context;
 
-    .line 47
     return-void
 .end method
 
@@ -131,7 +113,6 @@
     .parameter "name"
 
     .prologue
-    .line 73
     const-string v0, "layout_inflater"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -140,12 +121,10 @@
 
     if-eqz v0, :cond_1b
 
-    .line 74
     iget-object v0, p0, Landroid/view/ContextThemeWrapper;->mInflater:Landroid/view/LayoutInflater;
 
     if-nez v0, :cond_18
 
-    .line 75
     iget-object v0, p0, Landroid/view/ContextThemeWrapper;->mBase:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -158,11 +137,9 @@
 
     iput-object v0, p0, Landroid/view/ContextThemeWrapper;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 77
     :cond_18
     iget-object v0, p0, Landroid/view/ContextThemeWrapper;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 79
     :goto_1a
     return-object v0
 
@@ -180,19 +157,15 @@
     .registers 3
 
     .prologue
-    .line 61
     iget-object v0, p0, Landroid/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     if-eqz v0, :cond_7
 
-    .line 62
     iget-object v0, p0, Landroid/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    .line 69
     :goto_6
     return-object v0
 
-    .line 65
     :cond_7
     iget v0, p0, Landroid/view/ContextThemeWrapper;->mThemeResource:I
 
@@ -208,10 +181,8 @@
 
     iput v0, p0, Landroid/view/ContextThemeWrapper;->mThemeResource:I
 
-    .line 67
     invoke-direct {p0}, Landroid/view/ContextThemeWrapper;->initializeTheme()V
 
-    .line 69
     iget-object v0, p0, Landroid/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     goto :goto_6
@@ -221,7 +192,6 @@
     .registers 2
 
     .prologue
-    .line 57
     iget v0, p0, Landroid/view/ContextThemeWrapper;->mThemeResource:I
 
     return v0
@@ -234,12 +204,10 @@
     .parameter "first"
 
     .prologue
-    .line 94
     const/4 v0, 0x1
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/Resources$Theme;->applyStyle(IZ)V
 
-    .line 95
     return-void
 .end method
 
@@ -248,12 +216,9 @@
     .parameter "resid"
 
     .prologue
-    .line 50
     iput p1, p0, Landroid/view/ContextThemeWrapper;->mThemeResource:I
 
-    .line 51
     invoke-direct {p0}, Landroid/view/ContextThemeWrapper;->initializeTheme()V
 
-    .line 52
     return-void
 .end method

@@ -28,15 +28,12 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 64
     invoke-direct {p0, p1, v1}, Landroid/nfc/tech/BasicTagTechnology;-><init>(Landroid/nfc/Tag;I)V
 
-    .line 65
     invoke-virtual {p1, v1}, Landroid/nfc/Tag;->getTechExtras(I)Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 66
     .local v0, extras:Landroid/os/Bundle;
     const-string v1, "appdata"
 
@@ -46,7 +43,6 @@
 
     iput-object v1, p0, Landroid/nfc/tech/NfcB;->mAppData:[B
 
-    .line 67
     const-string/jumbo v1, "protinfo"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getByteArray(Ljava/lang/String;)[B
@@ -55,7 +51,6 @@
 
     iput-object v1, p0, Landroid/nfc/tech/NfcB;->mProtInfo:[B
 
-    .line 68
     return-void
 .end method
 
@@ -66,7 +61,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 54
     const/4 v2, 0x2
 
     invoke-virtual {p0, v2}, Landroid/nfc/Tag;->hasTech(I)Z
@@ -75,11 +69,9 @@
 
     if-nez v2, :cond_9
 
-    .line 58
     :goto_8
     return-object v1
 
-    .line 56
     :cond_9
     :try_start_9
     new-instance v2, Landroid/nfc/tech/NfcB;
@@ -92,11 +84,9 @@
 
     goto :goto_8
 
-    .line 57
     :catch_10
     move-exception v0
 
-    .line 58
     .local v0, e:Landroid/os/RemoteException;
     goto :goto_8
 .end method
@@ -112,7 +102,6 @@
     .end annotation
 
     .prologue
-    .line 35
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->close()V
 
     return-void
@@ -127,7 +116,6 @@
     .end annotation
 
     .prologue
-    .line 35
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->connect()V
 
     return-void
@@ -137,7 +125,6 @@
     .registers 2
 
     .prologue
-    .line 78
     iget-object v0, p0, Landroid/nfc/tech/NfcB;->mAppData:[B
 
     return-object v0
@@ -147,7 +134,6 @@
     .registers 2
 
     .prologue
-    .line 123
     invoke-virtual {p0}, Landroid/nfc/tech/NfcB;->getMaxTransceiveLengthInternal()I
 
     move-result v0
@@ -159,7 +145,6 @@
     .registers 2
 
     .prologue
-    .line 89
     iget-object v0, p0, Landroid/nfc/tech/NfcB;->mProtInfo:[B
 
     return-object v0
@@ -169,7 +154,6 @@
     .registers 2
 
     .prologue
-    .line 35
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->getTag()Landroid/nfc/Tag;
 
     move-result-object v0
@@ -181,7 +165,6 @@
     .registers 2
 
     .prologue
-    .line 35
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->isConnected()Z
 
     move-result v0
@@ -198,7 +181,6 @@
     .end annotation
 
     .prologue
-    .line 35
     invoke-super {p0}, Landroid/nfc/tech/BasicTagTechnology;->reconnect()V
 
     return-void
@@ -214,7 +196,6 @@
     .end annotation
 
     .prologue
-    .line 115
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/nfc/tech/NfcB;->transceive([BZ)[B

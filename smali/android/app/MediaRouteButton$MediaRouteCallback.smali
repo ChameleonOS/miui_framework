@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 357
     iput-object p1, p0, Landroid/app/MediaRouteButton$MediaRouteCallback;->this$0:Landroid/app/MediaRouteButton;
 
     invoke-direct {p0}, Landroid/media/MediaRouter$SimpleCallback;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 357
     invoke-direct {p0, p1}, Landroid/app/MediaRouteButton$MediaRouteCallback;-><init>(Landroid/app/MediaRouteButton;)V
 
     return-void
@@ -52,12 +50,10 @@
     .parameter "info"
 
     .prologue
-    .line 370
     iget-object v0, p0, Landroid/app/MediaRouteButton$MediaRouteCallback;->this$0:Landroid/app/MediaRouteButton;
 
     invoke-virtual {v0}, Landroid/app/MediaRouteButton;->updateRouteCount()V
 
-    .line 371
     return-void
 .end method
 
@@ -69,12 +65,10 @@
     .parameter "index"
 
     .prologue
-    .line 381
     iget-object v0, p0, Landroid/app/MediaRouteButton$MediaRouteCallback;->this$0:Landroid/app/MediaRouteButton;
 
     invoke-virtual {v0}, Landroid/app/MediaRouteButton;->updateRouteCount()V
 
-    .line 382
     return-void
 .end method
 
@@ -84,12 +78,10 @@
     .parameter "info"
 
     .prologue
-    .line 375
     iget-object v0, p0, Landroid/app/MediaRouteButton$MediaRouteCallback;->this$0:Landroid/app/MediaRouteButton;
 
     invoke-virtual {v0}, Landroid/app/MediaRouteButton;->updateRouteCount()V
 
-    .line 376
     return-void
 .end method
 
@@ -100,12 +92,10 @@
     .parameter "info"
 
     .prologue
-    .line 360
     iget-object v0, p0, Landroid/app/MediaRouteButton$MediaRouteCallback;->this$0:Landroid/app/MediaRouteButton;
 
     invoke-virtual {v0}, Landroid/app/MediaRouteButton;->updateRemoteIndicator()V
 
-    .line 361
     return-void
 .end method
 
@@ -116,12 +106,10 @@
     .parameter "group"
 
     .prologue
-    .line 386
     iget-object v0, p0, Landroid/app/MediaRouteButton$MediaRouteCallback;->this$0:Landroid/app/MediaRouteButton;
 
     invoke-virtual {v0}, Landroid/app/MediaRouteButton;->updateRouteCount()V
 
-    .line 387
     return-void
 .end method
 
@@ -132,11 +120,9 @@
     .parameter "info"
 
     .prologue
-    .line 365
     iget-object v0, p0, Landroid/app/MediaRouteButton$MediaRouteCallback;->this$0:Landroid/app/MediaRouteButton;
 
     invoke-virtual {v0}, Landroid/app/MediaRouteButton;->updateRemoteIndicator()V
 
-    .line 366
     return-void
 .end method

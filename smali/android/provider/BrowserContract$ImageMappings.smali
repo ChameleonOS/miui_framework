@@ -30,7 +30,6 @@
     .registers 2
 
     .prologue
-    .line 649
     sget-object v0, Landroid/provider/BrowserContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "image_mappings"
@@ -48,7 +47,6 @@
     .registers 1
 
     .prologue
-    .line 644
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

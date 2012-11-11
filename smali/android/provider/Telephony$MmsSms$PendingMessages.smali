@@ -42,7 +42,6 @@
     .registers 2
 
     .prologue
-    .line 1686
     sget-object v0, Landroid/provider/Telephony$MmsSms;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "pending"
@@ -60,7 +59,6 @@
     .registers 1
 
     .prologue
-    .line 1685
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

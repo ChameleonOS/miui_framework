@@ -8,9 +8,7 @@
     .registers 1
 
     .prologue
-    .line 29
     invoke-direct {p0}, Landroid/util/AndroidException;-><init>()V
 
-    .line 30
     return-void
 .end method

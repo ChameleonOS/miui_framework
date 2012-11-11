@@ -30,19 +30,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 746
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 747
     iput-object p1, p0, Landroid/app/Activity$ManagedCursor;->mCursor:Landroid/database/Cursor;
 
-    .line 748
     iput-boolean v0, p0, Landroid/app/Activity$ManagedCursor;->mReleased:Z
 
-    .line 749
     iput-boolean v0, p0, Landroid/app/Activity$ManagedCursor;->mUpdated:Z
 
-    .line 750
     return-void
 .end method
 
@@ -51,7 +46,6 @@
     .parameter "x0"
 
     .prologue
-    .line 745
     iget-object v0, p0, Landroid/app/Activity$ManagedCursor;->mCursor:Landroid/database/Cursor;
 
     return-object v0
@@ -62,7 +56,6 @@
     .parameter "x0"
 
     .prologue
-    .line 745
     iget-boolean v0, p0, Landroid/app/Activity$ManagedCursor;->mReleased:Z
 
     return v0
@@ -74,7 +67,6 @@
     .parameter "x1"
 
     .prologue
-    .line 745
     iput-boolean p1, p0, Landroid/app/Activity$ManagedCursor;->mReleased:Z
 
     return p1
@@ -85,7 +77,6 @@
     .parameter "x0"
 
     .prologue
-    .line 745
     iget-boolean v0, p0, Landroid/app/Activity$ManagedCursor;->mUpdated:Z
 
     return v0
@@ -97,7 +88,6 @@
     .parameter "x1"
 
     .prologue
-    .line 745
     iput-boolean p1, p0, Landroid/app/Activity$ManagedCursor;->mUpdated:Z
 
     return p1

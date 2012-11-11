@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 1154
     iput-object p1, p0, Landroid/animation/LayoutTransition$5;->this$0:Landroid/animation/LayoutTransition;
 
     iput-object p2, p0, Landroid/animation/LayoutTransition$5;->val$child:Landroid/view/View;
@@ -49,7 +48,6 @@
     .parameter "anim"
 
     .prologue
-    .line 1157
     iget-object v3, p0, Landroid/animation/LayoutTransition$5;->this$0:Landroid/animation/LayoutTransition;
 
     #getter for: Landroid/animation/LayoutTransition;->currentAppearingAnimations:Ljava/util/LinkedHashMap;
@@ -61,7 +59,6 @@
 
     invoke-virtual {v3, v4}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1158
     iget-object v3, p0, Landroid/animation/LayoutTransition$5;->this$0:Landroid/animation/LayoutTransition;
 
     #calls: Landroid/animation/LayoutTransition;->hasListeners()Z
@@ -71,7 +68,6 @@
 
     if-eqz v3, :cond_3a
 
-    .line 1159
     iget-object v3, p0, Landroid/animation/LayoutTransition$5;->this$0:Landroid/animation/LayoutTransition;
 
     #getter for: Landroid/animation/LayoutTransition;->mListeners:Ljava/util/ArrayList;
@@ -85,7 +81,6 @@
 
     check-cast v2, Ljava/util/ArrayList;
 
-    .line 1161
     .local v2, listeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -105,7 +100,6 @@
 
     check-cast v1, Landroid/animation/LayoutTransition$TransitionListener;
 
-    .line 1162
     .local v1, listener:Landroid/animation/LayoutTransition$TransitionListener;
     iget-object v3, p0, Landroid/animation/LayoutTransition$5;->this$0:Landroid/animation/LayoutTransition;
 
@@ -119,7 +113,6 @@
 
     goto :goto_23
 
-    .line 1165
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Landroid/animation/LayoutTransition$TransitionListener;
     .end local v2           #listeners:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/LayoutTransition$TransitionListener;>;"

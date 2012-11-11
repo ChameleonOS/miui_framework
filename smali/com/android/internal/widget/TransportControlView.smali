@@ -78,29 +78,24 @@
     .parameter "attrs"
 
     .prologue
-    .line 195
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 75
     new-instance v0, Lcom/android/internal/widget/TransportControlView$Metadata;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/TransportControlView$Metadata;-><init>(Lcom/android/internal/widget/TransportControlView;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
-    .line 87
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
-    .line 91
     new-instance v0, Lcom/android/internal/widget/TransportControlView$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/TransportControlView$1;-><init>(Lcom/android/internal/widget/TransportControlView;)V
 
     iput-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mHandler:Landroid/os/Handler;
 
-    .line 196
     const-string v0, "TransportControlView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -123,7 +118,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 197
     new-instance v0, Landroid/media/AudioManager;
 
     iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
@@ -132,12 +126,10 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 198
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/widget/TransportControlView;->mCurrentPlayState:I
 
-    .line 199
     new-instance v0, Lcom/android/internal/widget/TransportControlView$IRemoteControlDisplayWeak;
 
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mHandler:Landroid/os/Handler;
@@ -146,7 +138,6 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mIRCD:Lcom/android/internal/widget/TransportControlView$IRemoteControlDisplayWeak;
 
-    .line 200
     return-void
 .end method
 
@@ -155,7 +146,6 @@
     .parameter "x0"
 
     .prologue
-    .line 56
     iget v0, p0, Lcom/android/internal/widget/TransportControlView;->mClientGeneration:I
 
     return v0
@@ -167,7 +157,6 @@
     .parameter "x1"
 
     .prologue
-    .line 56
     iput p1, p0, Lcom/android/internal/widget/TransportControlView;->mClientGeneration:I
 
     return p1
@@ -179,7 +168,6 @@
     .parameter "x1"
 
     .prologue
-    .line 56
     invoke-direct {p0, p1}, Lcom/android/internal/widget/TransportControlView;->updatePlayPauseState(I)V
 
     return-void
@@ -191,7 +179,6 @@
     .parameter "x1"
 
     .prologue
-    .line 56
     invoke-direct {p0, p1}, Lcom/android/internal/widget/TransportControlView;->updateMetadata(Landroid/os/Bundle;)V
 
     return-void
@@ -203,7 +190,6 @@
     .parameter "x1"
 
     .prologue
-    .line 56
     invoke-direct {p0, p1}, Lcom/android/internal/widget/TransportControlView;->updateTransportControls(I)V
 
     return-void
@@ -214,7 +200,6 @@
     .parameter "x0"
 
     .prologue
-    .line 56
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
     return-object v0
@@ -225,7 +210,6 @@
     .parameter "x0"
 
     .prologue
-    .line 56
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mAlbumArt:Landroid/widget/ImageView;
 
     return-object v0
@@ -236,7 +220,6 @@
     .parameter "x0"
 
     .prologue
-    .line 56
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
 
     return-object v0
@@ -248,7 +231,6 @@
     .parameter "x1"
 
     .prologue
-    .line 56
     iput-object p1, p0, Lcom/android/internal/widget/TransportControlView;->mClientIntent:Landroid/app/PendingIntent;
 
     return-object p1
@@ -260,7 +242,6 @@
     .parameter "id"
 
     .prologue
-    .line 265
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -278,16 +259,13 @@
     .prologue
     const/16 v7, 0x21
 
-    .line 283
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 284
     .local v1, sb:Ljava/lang/StringBuilder;
     const/4 v3, 0x0
 
-    .line 285
     .local v3, trackTitleLength:I
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
@@ -302,7 +280,6 @@
 
     if-nez v4, :cond_27
 
-    .line 286
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
     #getter for: Lcom/android/internal/widget/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
@@ -312,7 +289,6 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 287
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
     #getter for: Lcom/android/internal/widget/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
@@ -324,7 +300,6 @@
 
     move-result v3
 
-    .line 289
     :cond_27
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
@@ -339,19 +314,16 @@
 
     if-nez v4, :cond_47
 
-    .line 290
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-eqz v4, :cond_3e
 
-    .line 291
     const-string v4, " - "
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 293
     :cond_3e
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
@@ -362,7 +334,6 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 295
     :cond_47
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
@@ -377,19 +348,16 @@
 
     if-nez v4, :cond_67
 
-    .line 296
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-eqz v4, :cond_5e
 
-    .line 297
     const-string v4, " - "
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 299
     :cond_5e
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
@@ -400,7 +368,6 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 301
     :cond_67
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mTrackTitle:Landroid/widget/TextView;
 
@@ -412,7 +379,6 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
-    .line 302
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mTrackTitle:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -421,11 +387,9 @@
 
     check-cast v2, Landroid/text/Spannable;
 
-    .line 303
     .local v2, str:Landroid/text/Spannable;
     if-eqz v3, :cond_88
 
-    .line 304
     new-instance v4, Landroid/text/style/ForegroundColorSpan;
 
     const/4 v5, -0x1
@@ -436,10 +400,8 @@
 
     invoke-interface {v2, v4, v5, v3, v7}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    .line 306
     add-int/lit8 v3, v3, 0x1
 
-    .line 308
     :cond_88
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
@@ -447,7 +409,6 @@
 
     if-le v4, v3, :cond_9d
 
-    .line 309
     new-instance v4, Landroid/text/style/ForegroundColorSpan;
 
     const v5, 0x7fffffff
@@ -460,7 +421,6 @@
 
     invoke-interface {v2, v4, v3, v5, v7}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    .line 313
     :cond_9d
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mAlbumArt:Landroid/widget/ImageView;
 
@@ -473,10 +433,8 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 314
     iget v0, p0, Lcom/android/internal/widget/TransportControlView;->mTransportControlFlags:I
 
-    .line 315
     .local v0, flags:I
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPrev:Landroid/widget/ImageView;
 
@@ -484,26 +442,22 @@
 
     invoke-static {v4, v0, v5}, Lcom/android/internal/widget/TransportControlView;->setVisibilityBasedOnFlag(Landroid/view/View;II)V
 
-    .line 316
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mBtnNext:Landroid/widget/ImageView;
 
     const/16 v5, 0x80
 
     invoke-static {v4, v0, v5}, Lcom/android/internal/widget/TransportControlView;->setVisibilityBasedOnFlag(Landroid/view/View;II)V
 
-    .line 317
     iget-object v4, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     const/16 v5, 0x3c
 
     invoke-static {v4, v0, v5}, Lcom/android/internal/widget/TransportControlView;->setVisibilityBasedOnFlag(Landroid/view/View;II)V
 
-    .line 323
     iget v4, p0, Lcom/android/internal/widget/TransportControlView;->mCurrentPlayState:I
 
     invoke-direct {p0, v4}, Lcom/android/internal/widget/TransportControlView;->updatePlayPauseState(I)V
 
-    .line 324
     return-void
 .end method
 
@@ -514,29 +468,24 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 450
     iget-object v3, p0, Lcom/android/internal/widget/TransportControlView;->mClientIntent:Landroid/app/PendingIntent;
 
     if-nez v3, :cond_e
 
-    .line 452
     const-string v3, "TransportControlView"
 
     const-string/jumbo v4, "sendMediaButtonClick(): No client is currently registered"
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 476
     :goto_d
     return-void
 
-    .line 457
     :cond_e
     new-instance v2, Landroid/view/KeyEvent;
 
     invoke-direct {v2, v4, p1}, Landroid/view/KeyEvent;-><init>(II)V
 
-    .line 458
     .local v2, keyEvent:Landroid/view/KeyEvent;
     new-instance v1, Landroid/content/Intent;
 
@@ -544,13 +493,11 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 459
     .local v1, intent:Landroid/content/Intent;
     const-string v3, "android.intent.extra.KEY_EVENT"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 461
     :try_start_1f
     iget-object v3, p0, Lcom/android/internal/widget/TransportControlView;->mClientIntent:Landroid/app/PendingIntent;
 
@@ -564,7 +511,6 @@
     :try_end_29
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_1f .. :try_end_29} :catch_63
 
-    .line 467
     :goto_29
     new-instance v2, Landroid/view/KeyEvent;
 
@@ -573,7 +519,6 @@
 
     invoke-direct {v2, v3, p1}, Landroid/view/KeyEvent;-><init>(II)V
 
-    .line 468
     .restart local v2       #keyEvent:Landroid/view/KeyEvent;
     new-instance v1, Landroid/content/Intent;
 
@@ -582,13 +527,11 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 469
     .restart local v1       #intent:Landroid/content/Intent;
     const-string v3, "android.intent.extra.KEY_EVENT"
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 471
     :try_start_3b
     iget-object v3, p0, Lcom/android/internal/widget/TransportControlView;->mClientIntent:Landroid/app/PendingIntent;
 
@@ -604,11 +547,9 @@
 
     goto :goto_d
 
-    .line 472
     :catch_46
     move-exception v0
 
-    .line 473
     .local v0, e:Landroid/app/PendingIntent$CanceledException;
     const-string v3, "TransportControlView"
 
@@ -632,17 +573,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 474
     invoke-virtual {v0}, Landroid/app/PendingIntent$CanceledException;->printStackTrace()V
 
     goto :goto_d
 
-    .line 462
     .end local v0           #e:Landroid/app/PendingIntent$CanceledException;
     :catch_63
     move-exception v0
 
-    .line 463
     .restart local v0       #e:Landroid/app/PendingIntent$CanceledException;
     const-string v3, "TransportControlView"
 
@@ -666,7 +604,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 464
     invoke-virtual {v0}, Landroid/app/PendingIntent$CanceledException;->printStackTrace()V
 
     goto :goto_29
@@ -679,21 +616,17 @@
     .parameter "flag"
 
     .prologue
-    .line 327
     and-int v0, p1, p2
 
     if-eqz v0, :cond_9
 
-    .line 328
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 332
     :goto_8
     return-void
 
-    .line 330
     :cond_9
     const/16 v0, 0x8
 
@@ -707,12 +640,10 @@
     .parameter "data"
 
     .prologue
-    .line 269
     iget-boolean v0, p0, Lcom/android/internal/widget/TransportControlView;->mAttached:Z
 
     if-eqz v0, :cond_27
 
-    .line 270
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
     const/16 v1, 0xd
@@ -724,7 +655,6 @@
     #setter for: Lcom/android/internal/widget/TransportControlView$Metadata;->artist:Ljava/lang/String;
     invoke-static {v0, v1}, Lcom/android/internal/widget/TransportControlView$Metadata;->access$902(Lcom/android/internal/widget/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 271
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
     const/4 v1, 0x7
@@ -736,7 +666,6 @@
     #setter for: Lcom/android/internal/widget/TransportControlView$Metadata;->trackTitle:Ljava/lang/String;
     invoke-static {v0, v1}, Lcom/android/internal/widget/TransportControlView$Metadata;->access$1002(Lcom/android/internal/widget/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 272
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
 
     const/4 v1, 0x1
@@ -748,14 +677,11 @@
     #setter for: Lcom/android/internal/widget/TransportControlView$Metadata;->albumTitle:Ljava/lang/String;
     invoke-static {v0, v1}, Lcom/android/internal/widget/TransportControlView$Metadata;->access$1102(Lcom/android/internal/widget/TransportControlView$Metadata;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 273
     invoke-direct {p0}, Lcom/android/internal/widget/TransportControlView;->populateMetadata()V
 
-    .line 277
     :goto_26
     return-void
 
-    .line 275
     :cond_27
     iput-object p1, p0, Lcom/android/internal/widget/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
@@ -767,41 +693,32 @@
     .parameter "state"
 
     .prologue
-    .line 337
     iget v3, p0, Lcom/android/internal/widget/TransportControlView;->mCurrentPlayState:I
 
     if-ne p1, v3, :cond_5
 
-    .line 376
     :goto_4
     return-void
 
-    .line 342
     :cond_5
     const/4 v2, 0x0
 
-    .line 343
     .local v2, showIfHidden:Z
     sparse-switch p1, :sswitch_data_50
 
-    .line 365
     const v1, 0x1080024
 
-    .line 366
     .local v1, imageResId:I
     const v0, 0x104030e
 
-    .line 367
     .local v0, imageDescId:I
     const/4 v2, 0x0
 
-    .line 370
     :goto_10
     iget-object v3, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 371
     iget-object v3, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Lcom/android/internal/widget/TransportControlView;->getResources()Landroid/content/res/Resources;
@@ -814,7 +731,6 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 372
     if-eqz v2, :cond_35
 
     iget-object v3, p0, Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
@@ -829,66 +745,52 @@
 
     if-nez v3, :cond_35
 
-    .line 373
     iget-object v3, p0, Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
 
     invoke-interface {v3, p0}, Lcom/android/internal/widget/LockScreenWidgetCallback;->requestShow(Landroid/view/View;)V
 
-    .line 375
     :cond_35
     iput p1, p0, Lcom/android/internal/widget/TransportControlView;->mCurrentPlayState:I
 
     goto :goto_4
 
-    .line 345
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :sswitch_38
     const v1, 0x108008a
 
-    .line 348
     .restart local v1       #imageResId:I
     const v0, 0x104030e
 
-    .line 349
     .restart local v0       #imageDescId:I
     goto :goto_10
 
-    .line 352
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :sswitch_3f
     const v1, 0x1080023
 
-    .line 353
     .restart local v1       #imageResId:I
     const v0, 0x104030d
 
-    .line 354
     .restart local v0       #imageDescId:I
     const/4 v2, 0x1
 
-    .line 355
     goto :goto_10
 
-    .line 358
     .end local v0           #imageDescId:I
     .end local v1           #imageResId:I
     :sswitch_47
     const v1, 0x1080317
 
-    .line 359
     .restart local v1       #imageResId:I
     const v0, 0x104030f
 
-    .line 360
     .restart local v0       #imageDescId:I
     const/4 v2, 0x1
 
-    .line 361
     goto :goto_10
 
-    .line 343
     nop
 
     :sswitch_data_50
@@ -904,10 +806,8 @@
     .parameter "transportControlFlags"
 
     .prologue
-    .line 203
     iput p1, p0, Lcom/android/internal/widget/TransportControlView;->mTransportControlFlags:I
 
-    .line 204
     return-void
 .end method
 
@@ -921,10 +821,8 @@
 
     const/4 v1, 0x0
 
-    .line 487
     packed-switch p1, :pswitch_data_34
 
-    .line 511
     const-string v0, "TransportControlView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -955,7 +853,6 @@
 
     move v0, v1
 
-    .line 512
     :cond_24
     :goto_24
     :pswitch_24
@@ -964,10 +861,8 @@
     :pswitch_25
     move v0, v1
 
-    .line 497
     goto :goto_24
 
-    .line 509
     :pswitch_27
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -985,7 +880,6 @@
 
     goto :goto_24
 
-    .line 487
     :pswitch_data_34
     .packed-switch 0x0
         :pswitch_25
@@ -1007,44 +901,36 @@
     .registers 3
 
     .prologue
-    .line 223
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 224
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
     if-eqz v0, :cond_f
 
-    .line 225
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
     invoke-direct {p0, v0}, Lcom/android/internal/widget/TransportControlView;->updateMetadata(Landroid/os/Bundle;)V
 
-    .line 226
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mPopulateMetadataWhenAttached:Landroid/os/Bundle;
 
-    .line 228
     :cond_f
     iget-boolean v0, p0, Lcom/android/internal/widget/TransportControlView;->mAttached:Z
 
     if-nez v0, :cond_1a
 
-    .line 230
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mAudioManager:Landroid/media/AudioManager;
 
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mIRCD:Lcom/android/internal/widget/TransportControlView$IRemoteControlDisplayWeak;
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->registerRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;)V
 
-    .line 232
     :cond_1a
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/widget/TransportControlView;->mAttached:Z
 
-    .line 233
     return-void
 .end method
 
@@ -1053,60 +939,48 @@
     .parameter "v"
 
     .prologue
-    .line 432
     const/4 v0, -0x1
 
-    .line 433
     .local v0, keyCode:I
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPrev:Landroid/widget/ImageView;
 
     if-ne p1, v1, :cond_17
 
-    .line 434
     const/16 v0, 0x58
 
-    .line 441
     :cond_7
     :goto_7
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_16
 
-    .line 442
     invoke-direct {p0, v0}, Lcom/android/internal/widget/TransportControlView;->sendMediaButtonClick(I)V
 
-    .line 443
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
 
     if-eqz v1, :cond_16
 
-    .line 444
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
 
     invoke-interface {v1, p0}, Lcom/android/internal/widget/LockScreenWidgetCallback;->userActivity(Landroid/view/View;)V
 
-    .line 447
     :cond_16
     return-void
 
-    .line 435
     :cond_17
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mBtnNext:Landroid/widget/ImageView;
 
     if-ne p1, v1, :cond_1e
 
-    .line 436
     const/16 v0, 0x57
 
     goto :goto_7
 
-    .line 437
     :cond_1e
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     if-ne p1, v1, :cond_7
 
-    .line 438
     const/16 v0, 0x55
 
     goto :goto_7
@@ -1116,28 +990,23 @@
     .registers 3
 
     .prologue
-    .line 237
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 238
     iget-boolean v0, p0, Lcom/android/internal/widget/TransportControlView;->mAttached:Z
 
     if-eqz v0, :cond_e
 
-    .line 240
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView;->mAudioManager:Landroid/media/AudioManager;
 
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mIRCD:Lcom/android/internal/widget/TransportControlView$IRemoteControlDisplayWeak;
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->unregisterRemoteControlDisplay(Landroid/media/IRemoteControlDisplay;)V
 
-    .line 242
     :cond_e
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/widget/TransportControlView;->mAttached:Z
 
-    .line 243
     return-void
 .end method
 
@@ -1147,10 +1016,8 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 208
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    .line 209
     const v5, 0x1020016
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
@@ -1161,12 +1028,10 @@
 
     iput-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mTrackTitle:Landroid/widget/TextView;
 
-    .line 210
     iget-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mTrackTitle:Landroid/widget/TextView;
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 211
     const v5, 0x10202c7
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
@@ -1177,7 +1042,6 @@
 
     iput-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mAlbumArt:Landroid/widget/ImageView;
 
-    .line 212
     const v5, 0x10202c8
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
@@ -1188,7 +1052,6 @@
 
     iput-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPrev:Landroid/widget/ImageView;
 
-    .line 213
     const v5, 0x10202c9
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
@@ -1199,7 +1062,6 @@
 
     iput-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
-    .line 214
     const v5, 0x10202ca
 
     invoke-virtual {p0, v5}, Lcom/android/internal/widget/TransportControlView;->findViewById(I)Landroid/view/View;
@@ -1210,7 +1072,6 @@
 
     iput-object v5, p0, Lcom/android/internal/widget/TransportControlView;->mBtnNext:Landroid/widget/ImageView;
 
-    .line 215
     const/4 v5, 0x3
 
     new-array v1, v5, [Landroid/view/View;
@@ -1231,7 +1092,6 @@
 
     aput-object v6, v1, v5
 
-    .line 216
     .local v1, buttons:[Landroid/view/View;
     move-object v0, v1
 
@@ -1247,16 +1107,13 @@
 
     aget-object v4, v0, v2
 
-    .line 217
     .local v4, view:Landroid/view/View;
     invoke-virtual {v4, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 216
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_54
 
-    .line 219
     .end local v4           #view:Landroid/view/View;
     :cond_5e
     return-void
@@ -1268,10 +1125,8 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 247
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 248
     const/16 v1, 0x200
 
     invoke-virtual {p0}, Lcom/android/internal/widget/TransportControlView;->getWidth()I
@@ -1290,7 +1145,6 @@
 
     move-result v0
 
-    .line 251
     .local v0, dim:I
     return-void
 .end method
@@ -1300,15 +1154,12 @@
     .parameter "state"
 
     .prologue
-    .line 420
     instance-of v1, p1, Lcom/android/internal/widget/TransportControlView$SavedState;
 
     if-nez v1, :cond_8
 
-    .line 421
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 429
     :cond_7
     :goto_7
     return-void
@@ -1316,10 +1167,8 @@
     :cond_8
     move-object v0, p1
 
-    .line 424
     check-cast v0, Lcom/android/internal/widget/TransportControlView$SavedState;
 
-    .line 425
     .local v0, ss:Lcom/android/internal/widget/TransportControlView$SavedState;
     invoke-virtual {v0}, Lcom/android/internal/widget/TransportControlView$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -1327,7 +1176,6 @@
 
     invoke-super {p0, v1}, Landroid/widget/FrameLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 426
     iget-boolean v1, v0, Lcom/android/internal/widget/TransportControlView$SavedState;->wasShowing:Z
 
     if-eqz v1, :cond_7
@@ -1336,7 +1184,6 @@
 
     if-eqz v1, :cond_7
 
-    .line 427
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
 
     invoke-interface {v1, p0}, Lcom/android/internal/widget/LockScreenWidgetCallback;->requestShow(Landroid/view/View;)V
@@ -1348,18 +1195,15 @@
     .registers 4
 
     .prologue
-    .line 411
     invoke-super {p0}, Landroid/widget/FrameLayout;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    .line 412
     .local v1, superState:Landroid/os/Parcelable;
     new-instance v0, Lcom/android/internal/widget/TransportControlView$SavedState;
 
     invoke-direct {v0, v1}, Lcom/android/internal/widget/TransportControlView$SavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 413
     .local v0, ss:Lcom/android/internal/widget/TransportControlView$SavedState;
     iget-object v2, p0, Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
 
@@ -1378,10 +1222,8 @@
     :goto_16
     iput-boolean v2, v0, Lcom/android/internal/widget/TransportControlView$SavedState;->wasShowing:Z
 
-    .line 414
     return-object v0
 
-    .line 413
     :cond_19
     const/4 v2, 0x0
 
@@ -1392,7 +1234,6 @@
     .registers 2
 
     .prologue
-    .line 483
     const/4 v0, 0x0
 
     return v0
@@ -1403,9 +1244,7 @@
     .parameter "callback"
 
     .prologue
-    .line 479
     iput-object p1, p0, Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
 
-    .line 480
     return-void
 .end method

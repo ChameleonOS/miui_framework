@@ -27,12 +27,10 @@
     .parameter
 
     .prologue
-    .line 174
     iput-object p1, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 176
     return-void
 .end method
 
@@ -42,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 173
     invoke-direct {p0, p1}, Landroid/media/audiofx/BassBoost$BaseParameterListener;-><init>(Landroid/media/audiofx/BassBoost;)V
 
     return-void
@@ -62,10 +59,8 @@
 
     const/4 v5, -0x1
 
-    .line 178
     const/4 v0, 0x0
 
-    .line 180
     .local v0, l:Landroid/media/audiofx/BassBoost$OnParameterChangeListener;
     iget-object v3, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
@@ -76,7 +71,6 @@
 
     monitor-enter v4
 
-    .line 181
     :try_start_a
     iget-object v3, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
@@ -87,7 +81,6 @@
 
     if-eqz v3, :cond_18
 
-    .line 182
     iget-object v3, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
     #getter for: Landroid/media/audiofx/BassBoost;->mParamListener:Landroid/media/audiofx/BassBoost$OnParameterChangeListener;
@@ -95,23 +88,18 @@
 
     move-result-object v0
 
-    .line 184
     :cond_18
     monitor-exit v4
     :try_end_19
     .catchall {:try_start_a .. :try_end_19} :catchall_3b
 
-    .line 185
     if-eqz v0, :cond_3a
 
-    .line 186
     const/4 v1, -0x1
 
-    .line 187
     .local v1, p:I
     const/4 v2, -0x1
 
-    .line 189
     .local v2, v:S
     array-length v3, p3
 
@@ -119,14 +107,12 @@
 
     if-ne v3, v4, :cond_27
 
-    .line 190
     iget-object v3, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
     invoke-virtual {v3, p3, v6}, Landroid/media/audiofx/BassBoost;->byteArrayToInt([BI)I
 
     move-result v1
 
-    .line 192
     :cond_27
     array-length v3, p4
 
@@ -134,31 +120,26 @@
 
     if-ne v3, v4, :cond_31
 
-    .line 193
     iget-object v3, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
     invoke-virtual {v3, p4, v6}, Landroid/media/audiofx/BassBoost;->byteArrayToShort([BI)S
 
     move-result v2
 
-    .line 195
     :cond_31
     if-eq v1, v5, :cond_3a
 
     if-eq v2, v5, :cond_3a
 
-    .line 196
     iget-object v3, p0, Landroid/media/audiofx/BassBoost$BaseParameterListener;->this$0:Landroid/media/audiofx/BassBoost;
 
     invoke-interface {v0, v3, p2, v1, v2}, Landroid/media/audiofx/BassBoost$OnParameterChangeListener;->onParameterChange(Landroid/media/audiofx/BassBoost;IIS)V
 
-    .line 199
     .end local v1           #p:I
     .end local v2           #v:S
     :cond_3a
     return-void
 
-    .line 184
     :catchall_3b
     move-exception v3
 

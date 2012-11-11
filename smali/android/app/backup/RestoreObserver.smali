@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 26
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,7 +21,6 @@
     .parameter "currentPackage"
 
     .prologue
-    .line 65
     return-void
 .end method
 
@@ -31,7 +29,6 @@
     .parameter "error"
 
     .prologue
-    .line 75
     return-void
 .end method
 
@@ -40,7 +37,6 @@
     .parameter "result"
 
     .prologue
-    .line 40
     return-void
 .end method
 
@@ -49,6 +45,5 @@
     .parameter "numPackages"
 
     .prologue
-    .line 49
     return-void
 .end method

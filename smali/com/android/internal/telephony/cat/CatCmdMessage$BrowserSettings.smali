@@ -28,7 +28,6 @@
     .parameter
 
     .prologue
-    .line 40
     iput-object p1, p0, Lcom/android/internal/telephony/cat/CatCmdMessage$BrowserSettings;->this$0:Lcom/android/internal/telephony/cat/CatCmdMessage;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

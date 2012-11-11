@@ -33,9 +33,7 @@
     .parameter "v"
 
     .prologue
-    .line 261
     invoke-direct {p0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    .line 262
     return-void
 .end method

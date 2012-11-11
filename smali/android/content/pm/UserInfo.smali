@@ -38,7 +38,6 @@
     .registers 1
 
     .prologue
-    .line 90
     new-instance v0, Landroid/content/pm/UserInfo$1;
 
     invoke-direct {v0}, Landroid/content/pm/UserInfo$1;-><init>()V
@@ -52,10 +51,8 @@
     .registers 1
 
     .prologue
-    .line 66
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
     return-void
 .end method
 
@@ -66,19 +63,14 @@
     .parameter "flags"
 
     .prologue
-    .line 48
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
     iput p1, p0, Landroid/content/pm/UserInfo;->id:I
 
-    .line 50
     iput-object p2, p0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
-    .line 51
     iput p3, p0, Landroid/content/pm/UserInfo;->flags:I
 
-    .line 52
     return-void
 .end method
 
@@ -87,25 +79,20 @@
     .parameter "orig"
 
     .prologue
-    .line 69
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
     iget-object v0, p1, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
-    .line 71
     iget v0, p1, Landroid/content/pm/UserInfo;->id:I
 
     iput v0, p0, Landroid/content/pm/UserInfo;->id:I
 
-    .line 72
     iget v0, p1, Landroid/content/pm/UserInfo;->flags:I
 
     iput v0, p0, Landroid/content/pm/UserInfo;->flags:I
 
-    .line 73
     return-void
 .end method
 
@@ -114,31 +101,26 @@
     .parameter "source"
 
     .prologue
-    .line 100
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/UserInfo;->id:I
 
-    .line 102
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
-    .line 103
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/content/pm/UserInfo;->flags:I
 
-    .line 104
     return-void
 .end method
 
@@ -148,7 +130,6 @@
     .parameter "x1"
 
     .prologue
-    .line 26
     invoke-direct {p0, p1}, Landroid/content/pm/UserInfo;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -160,7 +141,6 @@
     .registers 2
 
     .prologue
-    .line 81
     const/4 v0, 0x0
 
     return v0
@@ -170,7 +150,6 @@
     .registers 3
 
     .prologue
-    .line 59
     iget v0, p0, Landroid/content/pm/UserInfo;->flags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -194,7 +173,6 @@
     .registers 3
 
     .prologue
-    .line 63
     iget v0, p0, Landroid/content/pm/UserInfo;->flags:I
 
     and-int/lit8 v0, v0, 0x4
@@ -220,7 +198,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 55
     iget v1, p0, Landroid/content/pm/UserInfo;->flags:I
 
     and-int/lit8 v1, v1, 0x1
@@ -240,7 +217,6 @@
     .registers 3
 
     .prologue
-    .line 77
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -304,21 +280,17 @@
     .parameter "parcelableFlags"
 
     .prologue
-    .line 85
     iget v0, p0, Landroid/content/pm/UserInfo;->id:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 86
     iget-object v0, p0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 87
     iget v0, p0, Landroid/content/pm/UserInfo;->flags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 88
     return-void
 .end method

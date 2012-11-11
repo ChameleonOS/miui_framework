@@ -36,7 +36,6 @@
     .registers 3
 
     .prologue
-    .line 678
     const-string v0, "content://com.android.calendar/calendars"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +44,6 @@
 
     sput-object v0, Landroid/provider/CalendarContract$Calendars;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 705
     const/16 v0, 0x18
 
     new-array v0, v0, [Ljava/lang/String;
@@ -203,7 +201,6 @@
     .registers 1
 
     .prologue
-    .line 672
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

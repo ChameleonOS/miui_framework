@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 27
     new-instance v0, Lcom/android/internal/widget/multiwaveview/Ease$Linear$1;
 
     invoke-direct {v0}, Lcom/android/internal/widget/multiwaveview/Ease$Linear$1;-><init>()V
@@ -37,7 +36,6 @@
     .registers 1
 
     .prologue
-    .line 26
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

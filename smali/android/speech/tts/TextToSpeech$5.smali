@@ -42,7 +42,6 @@
     .parameter
 
     .prologue
-    .line 904
     iput-object p1, p0, Landroid/speech/tts/TextToSpeech$5;->this$0:Landroid/speech/tts/TextToSpeech;
 
     iput-object p2, p0, Landroid/speech/tts/TextToSpeech$5;->val$locale:Ljava/util/Locale;
@@ -64,7 +63,6 @@
     .end annotation
 
     .prologue
-    .line 904
     invoke-virtual {p0, p1}, Landroid/speech/tts/TextToSpeech$5;->run(Landroid/speech/tts/ITextToSpeechService;)Ljava/util/Set;
 
     move-result-object v0
@@ -94,7 +92,6 @@
     .end annotation
 
     .prologue
-    .line 907
     iget-object v2, p0, Landroid/speech/tts/TextToSpeech$5;->val$locale:Ljava/util/Locale;
 
     invoke-virtual {v2}, Ljava/util/Locale;->getISO3Language()Ljava/lang/String;
@@ -117,20 +114,16 @@
 
     move-result-object v1
 
-    .line 909
     .local v1, features:[Ljava/lang/String;
     if-eqz v1, :cond_21
 
-    .line 910
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 911
     .local v0, featureSet:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     invoke-static {v0, v1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    .line 914
     .end local v0           #featureSet:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     :goto_20
     return-object v0

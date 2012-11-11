@@ -16,10 +16,8 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 16
     sput v0, Landroid/webkit/SelectionFloatPanel;->sHeight:I
 
-    .line 17
     sput v0, Landroid/webkit/SelectionFloatPanel;->sWidth:I
 
     return-void
@@ -30,10 +28,8 @@
     .parameter "context"
 
     .prologue
-    .line 20
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 21
     return-void
 .end method
 
@@ -43,10 +39,8 @@
     .parameter "attrs"
 
     .prologue
-    .line 24
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 25
     return-void
 .end method
 
@@ -58,7 +52,6 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 28
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v9
@@ -71,13 +64,11 @@
 
     check-cast v0, Landroid/webkit/SelectionFloatPanel;
 
-    .line 29
     .local v0, instance:Landroid/webkit/SelectionFloatPanel;
     new-instance v1, Landroid/webkit/SelectionFloatPanel$1;
 
     invoke-direct {v1, p1, v0}, Landroid/webkit/SelectionFloatPanel$1;-><init>(Landroid/webkit/WebViewClassic;Landroid/webkit/SelectionFloatPanel;)V
 
-    .line 38
     .local v1, l:Landroid/view/View$OnClickListener;
     const v9, 0x60b0015
 
@@ -85,19 +76,15 @@
 
     move-result-object v4
 
-    .line 39
     .local v4, vCopy:Landroid/view/View;
     if-eqz v4, :cond_52
 
-    .line 40
     invoke-virtual {v4, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 46
     new-instance v3, Landroid/webkit/SelectionFloatPanel$2;
 
     invoke-direct {v3, p1, v0}, Landroid/webkit/SelectionFloatPanel$2;-><init>(Landroid/webkit/WebViewClassic;Landroid/webkit/SelectionFloatPanel;)V
 
-    .line 54
     .local v3, selectAllListener:Landroid/view/View$OnClickListener;
     const v9, 0x60b001a
 
@@ -105,19 +92,15 @@
 
     move-result-object v5
 
-    .line 55
     .local v5, vSelectAll:Landroid/view/View;
     if-eqz v5, :cond_5d
 
-    .line 56
     invoke-virtual {v5, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 62
     new-instance v7, Landroid/webkit/SelectionFloatPanel$3;
 
     invoke-direct {v7, p1, v0}, Landroid/webkit/SelectionFloatPanel$3;-><init>(Landroid/webkit/WebViewClassic;Landroid/webkit/SelectionFloatPanel;)V
 
-    .line 70
     .local v7, webSearchListener:Landroid/view/View$OnClickListener;
     const v9, 0x60b008a
 
@@ -125,14 +108,11 @@
 
     move-result-object v6
 
-    .line 71
     .local v6, vWebSearch:Landroid/view/View;
     if-eqz v6, :cond_68
 
-    .line 72
     invoke-virtual {v6, v7}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 78
     invoke-virtual {p1}, Landroid/webkit/WebViewClassic;->getWebView()Landroid/webkit/WebView;
 
     move-result-object v8
@@ -147,11 +127,9 @@
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 79
     .local v2, rootView:Landroid/view/ViewGroup;
     invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 81
     .end local v0           #instance:Landroid/webkit/SelectionFloatPanel;
     .end local v2           #rootView:Landroid/view/ViewGroup;
     .end local v3           #selectAllListener:Landroid/view/View$OnClickListener;
@@ -161,7 +139,6 @@
     :goto_51
     return-object v0
 
-    .line 42
     .restart local v0       #instance:Landroid/webkit/SelectionFloatPanel;
     :cond_52
     const-string/jumbo v9, "showFloat"
@@ -172,10 +149,8 @@
 
     move-object v0, v8
 
-    .line 43
     goto :goto_51
 
-    .line 58
     .restart local v3       #selectAllListener:Landroid/view/View$OnClickListener;
     .restart local v5       #vSelectAll:Landroid/view/View;
     :cond_5d
@@ -187,10 +162,8 @@
 
     move-object v0, v8
 
-    .line 59
     goto :goto_51
 
-    .line 74
     .restart local v6       #vWebSearch:Landroid/view/View;
     .restart local v7       #webSearchListener:Landroid/view/View$OnClickListener;
     :cond_68
@@ -202,7 +175,6 @@
 
     move-object v0, v8
 
-    .line 75
     goto :goto_51
 .end method
 
@@ -214,24 +186,20 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 86
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 87
     invoke-virtual {p0}, Landroid/webkit/SelectionFloatPanel;->getMeasuredHeight()I
 
     move-result v0
 
     sput v0, Landroid/webkit/SelectionFloatPanel;->sHeight:I
 
-    .line 88
     invoke-virtual {p0}, Landroid/webkit/SelectionFloatPanel;->getMeasuredWidth()I
 
     move-result v0
 
     sput v0, Landroid/webkit/SelectionFloatPanel;->sWidth:I
 
-    .line 89
     return-void
 .end method
 
@@ -241,25 +209,20 @@
     .parameter "y"
 
     .prologue
-    .line 100
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/webkit/SelectionFloatPanel;->setVisibility(I)V
 
-    .line 101
     int-to-float v0, p1
 
     invoke-virtual {p0, v0}, Landroid/webkit/SelectionFloatPanel;->setX(F)V
 
-    .line 102
     int-to-float v0, p2
 
     invoke-virtual {p0, v0}, Landroid/webkit/SelectionFloatPanel;->setY(F)V
 
-    .line 103
     invoke-virtual {p0}, Landroid/webkit/SelectionFloatPanel;->requestLayout()V
 
-    .line 104
     return-void
 .end method
 
@@ -267,7 +230,6 @@
     .registers 2
 
     .prologue
-    .line 92
     sget v0, Landroid/webkit/SelectionFloatPanel;->sHeight:I
 
     return v0
@@ -277,7 +239,6 @@
     .registers 2
 
     .prologue
-    .line 96
     sget v0, Landroid/webkit/SelectionFloatPanel;->sWidth:I
 
     return v0

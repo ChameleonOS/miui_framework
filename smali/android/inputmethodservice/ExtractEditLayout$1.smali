@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 87
     iput-object p1, p0, Landroid/inputmethodservice/ExtractEditLayout$1;->this$0:Landroid/inputmethodservice/ExtractEditLayout;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +41,12 @@
     .parameter "clicked"
 
     .prologue
-    .line 89
     iget-object v0, p0, Landroid/inputmethodservice/ExtractEditLayout$1;->this$0:Landroid/inputmethodservice/ExtractEditLayout;
 
     iget-object v0, v0, Landroid/inputmethodservice/ExtractEditLayout;->mActionMode:Landroid/inputmethodservice/ExtractEditLayout$ExtractActionMode;
 
     if-eqz v0, :cond_1a
 
-    .line 90
     new-instance v0, Lcom/android/internal/view/menu/MenuPopupHelper;
 
     iget-object v1, p0, Landroid/inputmethodservice/ExtractEditLayout$1;->this$0:Landroid/inputmethodservice/ExtractEditLayout;
@@ -68,7 +65,6 @@
 
     invoke-virtual {v0}, Lcom/android/internal/view/menu/MenuPopupHelper;->show()V
 
-    .line 92
     :cond_1a
     return-void
 .end method

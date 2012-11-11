@@ -11,10 +11,8 @@
     .registers 1
 
     .prologue
-    .line 25
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
-    .line 26
     return-void
 .end method
 
@@ -23,10 +21,8 @@
     .parameter "src"
 
     .prologue
-    .line 28
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
-    .line 29
     return-void
 .end method
 
@@ -36,7 +32,6 @@
     .registers 2
 
     .prologue
-    .line 36
     const/4 v0, 0x0
 
     return v0
@@ -46,7 +41,6 @@
     .registers 2
 
     .prologue
-    .line 32
     const/16 v0, 0xe
 
     return v0
@@ -57,7 +51,6 @@
     .parameter "tp"
 
     .prologue
-    .line 44
     iget v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
     invoke-virtual {p1}, Landroid/text/TextPaint;->ascent()F
@@ -74,7 +67,6 @@
 
     iput v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
-    .line 45
     return-void
 .end method
 
@@ -83,7 +75,6 @@
     .parameter "tp"
 
     .prologue
-    .line 49
     iget v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
     invoke-virtual {p1}, Landroid/text/TextPaint;->ascent()F
@@ -100,7 +91,6 @@
 
     iput v0, p1, Landroid/text/TextPaint;->baselineShift:I
 
-    .line 50
     return-void
 .end method
 
@@ -110,6 +100,5 @@
     .parameter "flags"
 
     .prologue
-    .line 40
     return-void
 .end method

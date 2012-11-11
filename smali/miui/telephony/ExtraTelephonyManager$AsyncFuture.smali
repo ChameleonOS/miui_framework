@@ -29,7 +29,6 @@
     .registers 2
 
     .prologue
-    .line 341
     .local p0, this:Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;,"Lmiui/telephony/ExtraTelephonyManager$AsyncFuture<TV;>;"
     new-instance v0, Lmiui/telephony/ExtraTelephonyManager$AsyncFuture$1;
 
@@ -37,7 +36,6 @@
 
     invoke-direct {p0, v0}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
-    .line 348
     return-void
 .end method
 
@@ -53,11 +51,9 @@
     .end annotation
 
     .prologue
-    .line 351
     .local p0, this:Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;,"Lmiui/telephony/ExtraTelephonyManager$AsyncFuture<TV;>;"
     .local p1, v:Ljava/lang/Object;,"TV;"
     invoke-virtual {p0, p1}, Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;->set(Ljava/lang/Object;)V
 
-    .line 352
     return-void
 .end method

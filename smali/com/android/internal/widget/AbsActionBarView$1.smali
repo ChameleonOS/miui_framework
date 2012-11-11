@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 180
     iput-object p1, p0, Lcom/android/internal/widget/AbsActionBarView$1;->this$0:Lcom/android/internal/widget/AbsActionBarView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +40,9 @@
     .registers 2
 
     .prologue
-    .line 182
     iget-object v0, p0, Lcom/android/internal/widget/AbsActionBarView$1;->this$0:Lcom/android/internal/widget/AbsActionBarView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/AbsActionBarView;->showOverflowMenu()Z
 
-    .line 183
     return-void
 .end method

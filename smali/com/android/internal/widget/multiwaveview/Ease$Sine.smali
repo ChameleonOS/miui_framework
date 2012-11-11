@@ -27,21 +27,18 @@
     .registers 1
 
     .prologue
-    .line 115
     new-instance v0, Lcom/android/internal/widget/multiwaveview/Ease$Sine$1;
 
     invoke-direct {v0}, Lcom/android/internal/widget/multiwaveview/Ease$Sine$1;-><init>()V
 
     sput-object v0, Lcom/android/internal/widget/multiwaveview/Ease$Sine;->easeIn:Landroid/animation/TimeInterpolator;
 
-    .line 120
     new-instance v0, Lcom/android/internal/widget/multiwaveview/Ease$Sine$2;
 
     invoke-direct {v0}, Lcom/android/internal/widget/multiwaveview/Ease$Sine$2;-><init>()V
 
     sput-object v0, Lcom/android/internal/widget/multiwaveview/Ease$Sine;->easeOut:Landroid/animation/TimeInterpolator;
 
-    .line 125
     new-instance v0, Lcom/android/internal/widget/multiwaveview/Ease$Sine$3;
 
     invoke-direct {v0}, Lcom/android/internal/widget/multiwaveview/Ease$Sine$3;-><init>()V
@@ -55,7 +52,6 @@
     .registers 1
 
     .prologue
-    .line 114
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -26,20 +26,16 @@
     .parameter "length"
 
     .prologue
-    .line 135
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 136
     new-array v0, p1, [B
 
     iput-object v0, p0, Landroid/webkit/ByteArrayBuilder$Chunk;->mArray:[B
 
-    .line 137
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
 
-    .line 138
     return-void
 .end method
 
@@ -49,19 +45,16 @@
     .registers 5
 
     .prologue
-    .line 144
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/ByteArrayBuilder$Chunk;->mLength:I
 
-    .line 145
     invoke-static {}, Landroid/webkit/ByteArrayBuilder;->access$000()Ljava/util/LinkedList;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 148
     :try_start_8
     invoke-static {}, Landroid/webkit/ByteArrayBuilder;->access$000()Ljava/util/LinkedList;
 
@@ -77,20 +70,16 @@
 
     invoke-virtual {v0, v2}, Ljava/util/LinkedList;->offer(Ljava/lang/Object;)Z
 
-    .line 149
     invoke-static {}, Landroid/webkit/ByteArrayBuilder;->access$000()Ljava/util/LinkedList;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 150
     monitor-exit v1
 
-    .line 151
     return-void
 
-    .line 150
     :catchall_21
     move-exception v0
 

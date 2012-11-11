@@ -32,13 +32,10 @@
     .parameter "context"
 
     .prologue
-    .line 61
     invoke-direct {p0}, Landroid/app/ISearchManager$Stub;-><init>()V
 
-    .line 62
     iput-object p1, p0, Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
 
-    .line 63
     iget-object v0, p0, Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
 
     new-instance v1, Landroid/server/search/SearchManagerService$BootCompletedReceiver;
@@ -55,7 +52,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 65
     new-instance v0, Landroid/server/search/SearchManagerService$GlobalSearchProviderObserver;
 
     iget-object v1, p0, Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
@@ -68,7 +64,6 @@
 
     iput-object v0, p0, Landroid/server/search/SearchManagerService;->mGlobalSearchObserver:Landroid/database/ContentObserver;
 
-    .line 67
     return-void
 .end method
 
@@ -77,7 +72,6 @@
     .parameter "x0"
 
     .prologue
-    .line 42
     iget-object v0, p0, Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -88,7 +82,6 @@
     .parameter "x0"
 
     .prologue
-    .line 42
     invoke-direct {p0}, Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
 
     move-result-object v0
@@ -100,7 +93,6 @@
     .registers 5
 
     .prologue
-    .line 70
     monitor-enter p0
 
     :try_start_1
@@ -108,14 +100,12 @@
 
     if-nez v0, :cond_26
 
-    .line 71
     const-string v0, "SearchManagerService"
 
     const-string v1, "Building list of searchable activities"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
     new-instance v0, Landroid/server/search/SearchManagerService$MyPackageMonitor;
 
     invoke-direct {v0, p0}, Landroid/server/search/SearchManagerService$MyPackageMonitor;-><init>(Landroid/server/search/SearchManagerService;)V
@@ -128,7 +118,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/server/search/SearchManagerService$MyPackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Z)V
 
-    .line 73
     new-instance v0, Landroid/server/search/Searchables;
 
     iget-object v1, p0, Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
@@ -137,12 +126,10 @@
 
     iput-object v0, p0, Landroid/server/search/SearchManagerService;->mSearchables:Landroid/server/search/Searchables;
 
-    .line 74
     iget-object v0, p0, Landroid/server/search/SearchManagerService;->mSearchables:Landroid/server/search/Searchables;
 
     invoke-virtual {v0}, Landroid/server/search/Searchables;->buildSearchableList()V
 
-    .line 76
     :cond_26
     iget-object v0, p0, Landroid/server/search/SearchManagerService;->mSearchables:Landroid/server/search/Searchables;
     :try_end_28
@@ -152,7 +139,6 @@
 
     return-object v0
 
-    .line 70
     :catchall_2a
     move-exception v0
 
@@ -176,7 +162,6 @@
     .end annotation
 
     .prologue
-    .line 170
     invoke-direct {p0}, Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
 
     move-result-object v0
@@ -192,7 +177,6 @@
     .registers 2
 
     .prologue
-    .line 177
     invoke-direct {p0}, Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
 
     move-result-object v0
@@ -209,20 +193,16 @@
     .parameter "launchActivity"
 
     .prologue
-    .line 155
     if-nez p1, :cond_b
 
-    .line 156
     const-string v0, "SearchManagerService"
 
     const-string v1, "getSearchableInfo(), activity == null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 157
     const/4 v0, 0x0
 
-    .line 159
     :goto_a
     return-object v0
 
@@ -251,7 +231,6 @@
     .end annotation
 
     .prologue
-    .line 166
     invoke-direct {p0}, Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
 
     move-result-object v0
@@ -267,7 +246,6 @@
     .registers 2
 
     .prologue
-    .line 184
     invoke-direct {p0}, Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
 
     move-result-object v0

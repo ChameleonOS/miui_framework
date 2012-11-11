@@ -19,7 +19,6 @@
     .registers 1
 
     .prologue
-    .line 111
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
     .parameter "session"
 
     .prologue
-    .line 163
     return-void
 .end method
 
@@ -43,7 +41,6 @@
     .parameter "errorMessage"
 
     .prologue
-    .line 197
     return-void
 .end method
 
@@ -52,7 +49,6 @@
     .parameter "session"
 
     .prologue
-    .line 155
     return-void
 .end method
 
@@ -62,7 +58,6 @@
     .parameter "sessionDescription"
 
     .prologue
-    .line 147
     return-void
 .end method
 
@@ -72,7 +67,6 @@
     .parameter "sessionDescription"
 
     .prologue
-    .line 174
     return-void
 .end method
 
@@ -81,7 +75,6 @@
     .parameter "session"
 
     .prologue
-    .line 118
     return-void
 .end method
 
@@ -92,7 +85,6 @@
     .parameter "errorMessage"
 
     .prologue
-    .line 186
     return-void
 .end method
 
@@ -101,7 +93,6 @@
     .parameter "session"
 
     .prologue
-    .line 205
     return-void
 .end method
 
@@ -111,7 +102,6 @@
     .parameter "duration"
 
     .prologue
-    .line 214
     return-void
 .end method
 
@@ -122,7 +112,6 @@
     .parameter "errorMessage"
 
     .prologue
-    .line 225
     return-void
 .end method
 
@@ -131,7 +120,6 @@
     .parameter "session"
 
     .prologue
-    .line 233
     return-void
 .end method
 
@@ -142,7 +130,6 @@
     .parameter "sessionDescription"
 
     .prologue
-    .line 129
     return-void
 .end method
 
@@ -151,6 +138,5 @@
     .parameter "session"
 
     .prologue
-    .line 137
     return-void
 .end method

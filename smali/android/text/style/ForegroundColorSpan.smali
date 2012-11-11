@@ -17,13 +17,10 @@
     .parameter "color"
 
     .prologue
-    .line 29
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
-    .line 30
     iput p1, p0, Landroid/text/style/ForegroundColorSpan;->mColor:I
 
-    .line 31
     return-void
 .end method
 
@@ -32,17 +29,14 @@
     .parameter "src"
 
     .prologue
-    .line 33
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
-    .line 34
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/text/style/ForegroundColorSpan;->mColor:I
 
-    .line 35
     return-void
 .end method
 
@@ -52,7 +46,6 @@
     .registers 2
 
     .prologue
-    .line 42
     const/4 v0, 0x0
 
     return v0
@@ -62,7 +55,6 @@
     .registers 2
 
     .prologue
-    .line 50
     iget v0, p0, Landroid/text/style/ForegroundColorSpan;->mColor:I
 
     return v0
@@ -72,7 +64,6 @@
     .registers 2
 
     .prologue
-    .line 38
     const/4 v0, 0x2
 
     return v0
@@ -83,12 +74,10 @@
     .parameter "ds"
 
     .prologue
-    .line 55
     iget v0, p0, Landroid/text/style/ForegroundColorSpan;->mColor:I
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 56
     return-void
 .end method
 
@@ -98,11 +87,9 @@
     .parameter "flags"
 
     .prologue
-    .line 46
     iget v0, p0, Landroid/text/style/ForegroundColorSpan;->mColor:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 47
     return-void
 .end method

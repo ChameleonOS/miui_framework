@@ -132,12 +132,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 42
     const/4 v0, 0x4
 
     sput v0, Landroid/widget/FastScroller;->MIN_PAGES:I
 
-    .line 54
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -148,12 +146,10 @@
 
     sput-object v0, Landroid/widget/FastScroller;->PRESSED_STATES:[I
 
-    .line 58
     new-array v0, v2, [I
 
     sput-object v0, Landroid/widget/FastScroller;->DEFAULT_STATES:[I
 
-    .line 60
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -183,42 +179,34 @@
     .parameter "listView"
 
     .prologue
-    .line 153
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/widget/FastScroller;->mItemCount:I
 
-    .line 108
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Landroid/widget/FastScroller;->mHandler:Landroid/os/Handler;
 
-    .line 130
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/widget/FastScroller;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 132
     new-instance v0, Landroid/widget/FastScroller$1;
 
     invoke-direct {v0, p0}, Landroid/widget/FastScroller$1;-><init>(Landroid/widget/FastScroller;)V
 
     iput-object v0, p0, Landroid/widget/FastScroller;->mDeferStartDrag:Ljava/lang/Runnable;
 
-    .line 154
     iput-object p2, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
-    .line 155
     invoke-direct {p0, p1}, Landroid/widget/FastScroller;->init(Landroid/content/Context;)V
 
-    .line 156
     return-void
 .end method
 
@@ -230,7 +218,6 @@
 
     const/4 v5, 0x0
 
-    .line 675
     const/4 v4, 0x3
 
     const/4 v7, 0x0
@@ -243,16 +230,13 @@
 
     move-result-object v8
 
-    .line 676
     .local v8, cancelFling:Landroid/view/MotionEvent;
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, v8}, Landroid/widget/AbsListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 677
     invoke-virtual {v8}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 678
     return-void
 .end method
 
@@ -263,7 +247,6 @@
     .parameter "totalItemCount"
 
     .prologue
-    .line 632
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
@@ -276,11 +259,9 @@
 
     if-nez v13, :cond_f
 
-    .line 633
     :cond_c
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FastScroller;->getSectionsFromIndexer()V
 
-    .line 635
     :cond_f
     move-object/from16 v0, p0
 
@@ -294,7 +275,6 @@
 
     if-nez v13, :cond_2f
 
-    .line 636
     :cond_1b
     move-object/from16 v0, p0
 
@@ -316,12 +296,10 @@
 
     div-int v8, v13, v14
 
-    .line 670
     :cond_2e
     :goto_2e
     return v8
 
-    .line 640
     :cond_2f
     move-object/from16 v0, p0
 
@@ -329,15 +307,12 @@
 
     sub-int p1, p1, v13
 
-    .line 641
     if-gez p1, :cond_39
 
-    .line 642
     const/4 v8, 0x0
 
     goto :goto_2e
 
-    .line 644
     :cond_39
     move-object/from16 v0, p0
 
@@ -345,7 +320,6 @@
 
     sub-int p3, p3, v13
 
-    .line 646
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
@@ -360,7 +334,6 @@
 
     sub-int v12, v13, v14
 
-    .line 648
     .local v12, trackHeight:I
     move-object/from16 v0, p0
 
@@ -372,7 +345,6 @@
 
     move-result v9
 
-    .line 649
     .local v9, section:I
     move-object/from16 v0, p0
 
@@ -382,7 +354,6 @@
 
     move-result v11
 
-    .line 650
     .local v11, sectionPos:I
     move-object/from16 v0, p0
 
@@ -394,7 +365,6 @@
 
     move-result v5
 
-    .line 651
     .local v5, nextSectionPos:I
     move-object/from16 v0, p0
 
@@ -402,11 +372,9 @@
 
     array-length v10, v13
 
-    .line 652
     .local v10, sectionCount:I
     sub-int v7, v5, v11
 
-    .line 654
     .local v7, positionsInSection:I
     move-object/from16 v0, p0
 
@@ -418,13 +386,11 @@
 
     move-result-object v1
 
-    .line 655
     .local v1, child:Landroid/view/View;
     if-nez v1, :cond_c2
 
     const/4 v2, 0x0
 
-    .line 657
     .local v2, incrementalPos:F
     :goto_7c
     int-to-float v13, v11
@@ -435,7 +401,6 @@
 
     div-float v6, v13, v14
 
-    .line 658
     .local v6, posWithinSection:F
     int-to-float v13, v9
 
@@ -451,7 +416,6 @@
 
     float-to-int v8, v13
 
-    .line 663
     .local v8, result:I
     if-lez p1, :cond_2e
 
@@ -461,7 +425,6 @@
 
     if-ne v13, v0, :cond_2e
 
-    .line 664
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
@@ -472,7 +435,6 @@
 
     move-result-object v3
 
-    .line 665
     .local v3, lastChild:Landroid/view/View;
     move-object/from16 v0, p0
 
@@ -508,7 +470,6 @@
 
     div-float v4, v13, v14
 
-    .line 667
     .local v4, lastItemVisible:F
     int-to-float v13, v8
 
@@ -524,7 +485,6 @@
 
     goto/16 :goto_2e
 
-    .line 655
     .end local v2           #incrementalPos:F
     .end local v3           #lastChild:Landroid/view/View;
     .end local v4           #lastItemVisible:F
@@ -573,7 +533,6 @@
 
     const/4 v4, 0x0
 
-    .line 259
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v5
@@ -584,7 +543,6 @@
 
     move-result-object v0
 
-    .line 260
     .local v0, ta:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -592,7 +550,6 @@
 
     invoke-direct {p0, p1, v5}, Landroid/widget/FastScroller;->useThumbDrawable(Landroid/content/Context;Landroid/graphics/drawable/Drawable;)V
 
-    .line 261
     const/4 v5, 0x2
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -601,7 +558,6 @@
 
     iput-object v5, p0, Landroid/widget/FastScroller;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 263
     const/4 v5, 0x3
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -610,7 +566,6 @@
 
     iput-object v5, p0, Landroid/widget/FastScroller;->mOverlayDrawableLeft:Landroid/graphics/drawable/Drawable;
 
-    .line 264
     const/4 v5, 0x4
 
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -619,7 +574,6 @@
 
     iput-object v5, p0, Landroid/widget/FastScroller;->mOverlayDrawableRight:Landroid/graphics/drawable/Drawable;
 
-    .line 265
     const/4 v5, 0x5
 
     invoke-virtual {v0, v5, v4}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -628,13 +582,10 @@
 
     iput v5, p0, Landroid/widget/FastScroller;->mOverlayPosition:I
 
-    .line 267
     iput-boolean v3, p0, Landroid/widget/FastScroller;->mScrollCompleted:Z
 
-    .line 269
     invoke-virtual {p0}, Landroid/widget/FastScroller;->getSectionsFromIndexer()V
 
-    .line 271
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -647,40 +598,34 @@
 
     iput v5, p0, Landroid/widget/FastScroller;->mOverlaySize:I
 
-    .line 273
     new-instance v5, Landroid/graphics/RectF;
 
     invoke-direct {v5}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v5, p0, Landroid/widget/FastScroller;->mOverlayPos:Landroid/graphics/RectF;
 
-    .line 274
     new-instance v5, Landroid/widget/FastScroller$ScrollFade;
 
     invoke-direct {v5, p0}, Landroid/widget/FastScroller$ScrollFade;-><init>(Landroid/widget/FastScroller;)V
 
     iput-object v5, p0, Landroid/widget/FastScroller;->mScrollFade:Landroid/widget/FastScroller$ScrollFade;
 
-    .line 275
     new-instance v5, Landroid/graphics/Paint;
 
     invoke-direct {v5}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v5, p0, Landroid/widget/FastScroller;->mPaint:Landroid/graphics/Paint;
 
-    .line 276
     iget-object v5, p0, Landroid/widget/FastScroller;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v5, v3}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 277
     iget-object v5, p0, Landroid/widget/FastScroller;->mPaint:Landroid/graphics/Paint;
 
     sget-object v6, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
-    .line 278
     iget-object v5, p0, Landroid/widget/FastScroller;->mPaint:Landroid/graphics/Paint;
 
     iget v6, p0, Landroid/widget/FastScroller;->mOverlaySize:I
@@ -691,31 +636,26 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 280
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
-    .line 281
     .local v1, textColor:Landroid/content/res/ColorStateList;
     invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 
     move-result v2
 
-    .line 282
     .local v2, textColorNormal:I
     iget-object v5, p0, Landroid/widget/FastScroller;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v5, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 283
     iget-object v5, p0, Landroid/widget/FastScroller;->mPaint:Landroid/graphics/Paint;
 
     sget-object v6, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 286
     iget-object v5, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v5}, Landroid/widget/AbsListView;->getWidth()I
@@ -732,7 +672,6 @@
 
     if-lez v5, :cond_9f
 
-    .line 287
     iget-object v5, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v5}, Landroid/widget/AbsListView;->getWidth()I
@@ -747,17 +686,13 @@
 
     invoke-virtual {p0, v5, v6, v4, v4}, Landroid/widget/FastScroller;->onSizeChanged(IIII)V
 
-    .line 290
     :cond_9f
     iput v4, p0, Landroid/widget/FastScroller;->mState:I
 
-    .line 291
     invoke-direct {p0}, Landroid/widget/FastScroller;->refreshDrawableState()V
 
-    .line 293
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 295
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v5
@@ -768,7 +703,6 @@
 
     iput v5, p0, Landroid/widget/FastScroller;->mScaledTouchSlop:I
 
-    .line 297
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v5
@@ -782,7 +716,6 @@
     :goto_bb
     iput-boolean v3, p0, Landroid/widget/FastScroller;->mMatchDragPosition:Z
 
-    .line 300
     iget-object v3, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v3}, Landroid/widget/AbsListView;->getVerticalScrollbarPosition()I
@@ -791,13 +724,11 @@
 
     invoke-virtual {p0, v3}, Landroid/widget/FastScroller;->setScrollbarPosition(I)V
 
-    .line 301
     return-void
 
     :cond_c7
     move v3, v4
 
-    .line 297
     goto :goto_bb
 .end method
 
@@ -805,7 +736,6 @@
     .registers 4
 
     .prologue
-    .line 173
     iget v1, p0, Landroid/widget/FastScroller;->mState:I
 
     const/4 v2, 0x3
@@ -814,7 +744,6 @@
 
     sget-object v0, Landroid/widget/FastScroller;->PRESSED_STATES:[I
 
-    .line 175
     .local v0, state:[I
     :goto_7
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
@@ -829,12 +758,10 @@
 
     if-eqz v1, :cond_18
 
-    .line 176
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 178
     :cond_18
     iget-object v1, p0, Landroid/widget/FastScroller;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -848,16 +775,13 @@
 
     if-eqz v1, :cond_29
 
-    .line 179
     iget-object v1, p0, Landroid/widget/FastScroller;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 181
     :cond_29
     return-void
 
-    .line 173
     .end local v0           #state:[I
     :cond_2a
     sget-object v0, Landroid/widget/FastScroller;->DEFAULT_STATES:[I
@@ -871,20 +795,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 229
     iget-object v1, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v1}, Landroid/widget/AbsListView;->getWidth()I
 
     move-result v0
 
-    .line 231
     .local v0, viewWidth:I
     iget v1, p0, Landroid/widget/FastScroller;->mPosition:I
 
     packed-switch v1, :pswitch_data_2a
 
-    .line 240
     :goto_c
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -892,10 +813,8 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 241
     return-void
 
-    .line 234
     :pswitch_14
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -909,7 +828,6 @@
 
     goto :goto_c
 
-    .line 237
     :pswitch_20
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -921,7 +839,6 @@
 
     goto :goto_c
 
-    .line 231
     :pswitch_data_2a
     .packed-switch 0x0
         :pswitch_14
@@ -936,15 +853,12 @@
     .parameter "drawable"
 
     .prologue
-    .line 244
     iput-object p2, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 245
     instance-of v0, p2, Landroid/graphics/drawable/NinePatchDrawable;
 
     if-eqz v0, :cond_24
 
-    .line 246
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -957,7 +871,6 @@
 
     iput v0, p0, Landroid/widget/FastScroller;->mThumbW:I
 
-    .line 248
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -970,16 +883,13 @@
 
     iput v0, p0, Landroid/widget/FastScroller;->mThumbH:I
 
-    .line 254
     :goto_20
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/FastScroller;->mChangedBounds:Z
 
-    .line 255
     return-void
 
-    .line 251
     :cond_24
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -987,7 +897,6 @@
 
     iput v0, p0, Landroid/widget/FastScroller;->mThumbW:I
 
-    .line 252
     invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v0
@@ -1005,12 +914,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 691
     const/4 v0, 0x3
 
     invoke-virtual {p0, v0}, Landroid/widget/FastScroller;->setState(I)V
 
-    .line 692
     iget-object v0, p0, Landroid/widget/FastScroller;->mListAdapter:Landroid/widget/BaseAdapter;
 
     if-nez v0, :cond_10
@@ -1019,30 +926,24 @@
 
     if-eqz v0, :cond_10
 
-    .line 693
     invoke-virtual {p0}, Landroid/widget/FastScroller;->getSectionsFromIndexer()V
 
-    .line 695
     :cond_10
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     if-eqz v0, :cond_1e
 
-    .line 696
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 697
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->reportScrollStateChange(I)V
 
-    .line 700
     :cond_1e
     invoke-direct {p0}, Landroid/widget/FastScroller;->cancelFling()V
 
-    .line 701
     return-void
 .end method
 
@@ -1050,19 +951,16 @@
     .registers 3
 
     .prologue
-    .line 681
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mDeferStartDrag:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 682
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/FastScroller;->mPendingDrag:Z
 
-    .line 683
     return-void
 .end method
 
@@ -1071,7 +969,6 @@
     .parameter "canvas"
 
     .prologue
-    .line 313
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/FastScroller;->mState:I
@@ -1080,12 +977,10 @@
 
     if-nez v22, :cond_9
 
-    .line 407
     :cond_8
     :goto_8
     return-void
 
-    .line 318
     :cond_9
     move-object/from16 v0, p0
 
@@ -1093,7 +988,6 @@
 
     move/from16 v21, v0
 
-    .line 319
     .local v21, y:I
     move-object/from16 v0, p0
 
@@ -1105,17 +999,14 @@
 
     move-result v20
 
-    .line 320
     .local v20, viewWidth:I
     move-object/from16 v0, p0
 
     iget-object v13, v0, Landroid/widget/FastScroller;->mScrollFade:Landroid/widget/FastScroller$ScrollFade;
 
-    .line 322
     .local v13, scrollFade:Landroid/widget/FastScroller$ScrollFade;
     const/4 v5, -0x1
 
-    .line 323
     .local v5, alpha:I
     move-object/from16 v0, p0
 
@@ -1131,19 +1022,16 @@
 
     if-ne v0, v1, :cond_74
 
-    .line 324
     invoke-virtual {v13}, Landroid/widget/FastScroller$ScrollFade;->getAlpha()I
 
     move-result v5
 
-    .line 325
     const/16 v22, 0x68
 
     move/from16 v0, v22
 
     if-ge v5, v0, :cond_41
 
-    .line 326
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
@@ -1154,11 +1042,9 @@
 
     invoke-virtual/range {v22 .. v23}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 328
     :cond_41
     const/4 v9, 0x0
 
-    .line 329
     .local v9, left:I
     move-object/from16 v0, p0
 
@@ -1168,7 +1054,6 @@
 
     packed-switch v22, :pswitch_data_364
 
-    .line 338
     :goto_4b
     move-object/from16 v0, p0
 
@@ -1202,7 +1087,6 @@
 
     invoke-virtual {v0, v9, v1, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 339
     const/16 v22, 0x1
 
     move/from16 v0, v22
@@ -1211,7 +1095,6 @@
 
     iput-boolean v0, v1, Landroid/widget/FastScroller;->mChangedBounds:Z
 
-    .line 342
     .end local v9           #left:I
     :cond_74
     move-object/from16 v0, p0
@@ -1222,7 +1105,6 @@
 
     if-eqz v22, :cond_d8
 
-    .line 343
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
@@ -1233,11 +1115,9 @@
 
     move-result-object v14
 
-    .line 344
     .local v14, thumbBounds:Landroid/graphics/Rect;
     iget v9, v14, Landroid/graphics/Rect;->left:I
 
-    .line 345
     .restart local v9       #left:I
     iget v0, v14, Landroid/graphics/Rect;->bottom:I
 
@@ -1251,7 +1131,6 @@
 
     div-int/lit8 v8, v22, 0x2
 
-    .line 346
     .local v8, halfThumbHeight:I
     move-object/from16 v0, p0
 
@@ -1263,7 +1142,6 @@
 
     move-result v18
 
-    .line 347
     .local v18, trackWidth:I
     move-object/from16 v0, p0
 
@@ -1279,7 +1157,6 @@
 
     sub-int v17, v22, v23
 
-    .line 348
     .local v17, trackLeft:I
     move-object/from16 v0, p0
 
@@ -1311,7 +1188,6 @@
 
     invoke-virtual {v0, v1, v8, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 350
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mTrackDrawable:Landroid/graphics/drawable/Drawable;
@@ -1324,7 +1200,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 353
     .end local v8           #halfThumbHeight:I
     .end local v9           #left:I
     .end local v14           #thumbBounds:Landroid/graphics/Rect;
@@ -1347,7 +1222,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 354
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
@@ -1360,7 +1234,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 355
     const/16 v22, 0x0
 
     move/from16 v0, v21
@@ -1383,7 +1256,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 358
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/FastScroller;->mState:I
@@ -1406,7 +1278,6 @@
 
     if-eqz v22, :cond_2f2
 
-    .line 359
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/widget/FastScroller;->mOverlayPosition:I
@@ -1421,10 +1292,8 @@
 
     if-ne v0, v1, :cond_1ff
 
-    .line 360
     const/4 v9, 0x0
 
-    .line 361
     .restart local v9       #left:I
     move-object/from16 v0, p0
 
@@ -1434,7 +1303,6 @@
 
     packed-switch v22, :pswitch_data_36e
 
-    .line 365
     const/16 v22, 0x0
 
     move-object/from16 v0, p0
@@ -1473,7 +1341,6 @@
 
     move-result v9
 
-    .line 374
     :goto_15e
     const/16 v22, 0x0
 
@@ -1521,13 +1388,11 @@
 
     move-result v16
 
-    .line 377
     .local v16, top:I
     move-object/from16 v0, p0
 
     iget-object v11, v0, Landroid/widget/FastScroller;->mOverlayPos:Landroid/graphics/RectF;
 
-    .line 378
     .local v11, pos:Landroid/graphics/RectF;
     int-to-float v0, v9
 
@@ -1537,7 +1402,6 @@
 
     iput v0, v11, Landroid/graphics/RectF;->left:F
 
-    .line 379
     iget v0, v11, Landroid/graphics/RectF;->left:F
 
     move/from16 v22, v0
@@ -1560,7 +1424,6 @@
 
     iput v0, v11, Landroid/graphics/RectF;->right:F
 
-    .line 380
     move/from16 v0, v16
 
     int-to-float v0, v0
@@ -1571,7 +1434,6 @@
 
     iput v0, v11, Landroid/graphics/RectF;->top:F
 
-    .line 381
     iget v0, v11, Landroid/graphics/RectF;->top:F
 
     move/from16 v22, v0
@@ -1594,7 +1456,6 @@
 
     iput v0, v11, Landroid/graphics/RectF;->bottom:F
 
-    .line 382
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mOverlayDrawable:Landroid/graphics/drawable/Drawable;
@@ -1603,7 +1464,6 @@
 
     if-eqz v22, :cond_1ff
 
-    .line 383
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mOverlayDrawable:Landroid/graphics/drawable/Drawable;
@@ -1652,7 +1512,6 @@
 
     invoke-virtual/range {v22 .. v26}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 387
     .end local v9           #left:I
     .end local v11           #pos:Landroid/graphics/RectF;
     .end local v16           #top:I
@@ -1669,30 +1528,25 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 388
     move-object/from16 v0, p0
 
     iget-object v10, v0, Landroid/widget/FastScroller;->mPaint:Landroid/graphics/Paint;
 
-    .line 389
     .local v10, paint:Landroid/graphics/Paint;
     invoke-virtual {v10}, Landroid/graphics/Paint;->descent()F
 
     move-result v6
 
-    .line 390
     .local v6, descent:F
     move-object/from16 v0, p0
 
     iget-object v12, v0, Landroid/widget/FastScroller;->mOverlayPos:Landroid/graphics/RectF;
 
-    .line 391
     .local v12, rectF:Landroid/graphics/RectF;
     move-object/from16 v0, p0
 
     iget-object v15, v0, Landroid/widget/FastScroller;->mTmpRect:Landroid/graphics/Rect;
 
-    .line 392
     .local v15, tmpRect:Landroid/graphics/Rect;
     move-object/from16 v0, p0
 
@@ -1704,7 +1558,6 @@
 
     invoke-virtual {v0, v15}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 393
     iget v0, v15, Landroid/graphics/Rect;->right:I
 
     move/from16 v22, v0
@@ -1717,7 +1570,6 @@
 
     div-int/lit8 v7, v22, 0x2
 
-    .line 394
     .local v7, hOff:I
     iget v0, v15, Landroid/graphics/Rect;->bottom:I
 
@@ -1731,7 +1583,6 @@
 
     div-int/lit8 v19, v22, 0x2
 
-    .line 395
     .local v19, vOff:I
     move-object/from16 v0, p0
 
@@ -1821,7 +1672,6 @@
 
     goto/16 :goto_8
 
-    .line 332
     .end local v6           #descent:F
     .end local v7           #hOff:I
     .end local v10           #paint:Landroid/graphics/Paint;
@@ -1846,10 +1696,8 @@
 
     sub-int v9, v20, v22
 
-    .line 333
     goto/16 :goto_4b
 
-    .line 335
     :pswitch_2a5
     move-object/from16 v0, p0
 
@@ -1881,7 +1729,6 @@
 
     goto/16 :goto_4b
 
-    .line 369
     :pswitch_2c2
     move-object/from16 v0, p0
 
@@ -1931,7 +1778,6 @@
 
     goto/16 :goto_15e
 
-    .line 398
     .end local v9           #left:I
     :cond_2f2
     move-object/from16 v0, p0
@@ -1948,10 +1794,8 @@
 
     if-ne v0, v1, :cond_8
 
-    .line 399
     if-nez v5, :cond_30d
 
-    .line 400
     const/16 v22, 0x0
 
     move-object/from16 v0, p0
@@ -1962,7 +1806,6 @@
 
     goto/16 :goto_8
 
-    .line 401
     :cond_30d
     move-object/from16 v0, p0
 
@@ -1972,7 +1815,6 @@
 
     if-eqz v22, :cond_33e
 
-    .line 402
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
@@ -2013,7 +1855,6 @@
 
     goto/16 :goto_8
 
-    .line 404
     :cond_33e
     move-object/from16 v0, p0
 
@@ -2051,7 +1892,6 @@
 
     goto/16 :goto_8
 
-    .line 329
     nop
 
     :pswitch_data_364
@@ -2061,7 +1901,6 @@
         :pswitch_293
     .end packed-switch
 
-    .line 361
     :pswitch_data_36e
     .packed-switch 0x1
         :pswitch_2c2
@@ -2072,7 +1911,6 @@
     .registers 2
 
     .prologue
-    .line 479
     iget-object v0, p0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
 
     return-object v0
@@ -2082,7 +1920,6 @@
     .registers 2
 
     .prologue
-    .line 483
     iget-object v0, p0, Landroid/widget/FastScroller;->mListAdapter:Landroid/widget/BaseAdapter;
 
     if-nez v0, :cond_b
@@ -2091,10 +1928,8 @@
 
     if-eqz v0, :cond_b
 
-    .line 484
     invoke-virtual {p0}, Landroid/widget/FastScroller;->getSectionsFromIndexer()V
 
-    .line 486
     :cond_b
     iget-object v0, p0, Landroid/widget/FastScroller;->mSections:[Ljava/lang/Object;
 
@@ -2109,27 +1944,23 @@
 
     const/4 v4, 0x0
 
-    .line 490
     iget-object v2, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v2}, Landroid/widget/AbsListView;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
 
-    .line 491
     .local v0, adapter:Landroid/widget/Adapter;
     const/4 v2, 0x0
 
     iput-object v2, p0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
 
-    .line 492
     instance-of v2, v0, Landroid/widget/HeaderViewListAdapter;
 
     if-eqz v2, :cond_1e
 
     move-object v2, v0
 
-    .line 493
     check-cast v2, Landroid/widget/HeaderViewListAdapter;
 
     invoke-virtual {v2}, Landroid/widget/HeaderViewListAdapter;->getHeadersCount()I
@@ -2138,7 +1969,6 @@
 
     iput v2, p0, Landroid/widget/FastScroller;->mListOffset:I
 
-    .line 494
     check-cast v0, Landroid/widget/HeaderViewListAdapter;
 
     .end local v0           #adapter:Landroid/widget/Adapter;
@@ -2146,7 +1976,6 @@
 
     move-result-object v0
 
-    .line 496
     .restart local v0       #adapter:Landroid/widget/Adapter;
     :cond_1e
     instance-of v2, v0, Landroid/widget/ExpandableListConnector;
@@ -2155,32 +1984,27 @@
 
     move-object v2, v0
 
-    .line 497
     check-cast v2, Landroid/widget/ExpandableListConnector;
 
     invoke-virtual {v2}, Landroid/widget/ExpandableListConnector;->getAdapter()Landroid/widget/ExpandableListAdapter;
 
     move-result-object v1
 
-    .line 498
     .local v1, expAdapter:Landroid/widget/ExpandableListAdapter;
     instance-of v2, v1, Landroid/widget/SectionIndexer;
 
     if-eqz v2, :cond_3d
 
-    .line 499
     check-cast v1, Landroid/widget/SectionIndexer;
 
     .end local v1           #expAdapter:Landroid/widget/ExpandableListAdapter;
     iput-object v1, p0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
 
-    .line 500
     check-cast v0, Landroid/widget/BaseAdapter;
 
     .end local v0           #adapter:Landroid/widget/Adapter;
     iput-object v0, p0, Landroid/widget/FastScroller;->mListAdapter:Landroid/widget/BaseAdapter;
 
-    .line 501
     iget-object v2, p0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
 
     invoke-interface {v2}, Landroid/widget/SectionIndexer;->getSections()[Ljava/lang/Object;
@@ -2189,12 +2013,10 @@
 
     iput-object v2, p0, Landroid/widget/FastScroller;->mSections:[Ljava/lang/Object;
 
-    .line 516
     :cond_3d
     :goto_3d
     return-void
 
-    .line 504
     .restart local v0       #adapter:Landroid/widget/Adapter;
     :cond_3e
     instance-of v2, v0, Landroid/widget/SectionIndexer;
@@ -2203,18 +2025,15 @@
 
     move-object v2, v0
 
-    .line 505
     check-cast v2, Landroid/widget/BaseAdapter;
 
     iput-object v2, p0, Landroid/widget/FastScroller;->mListAdapter:Landroid/widget/BaseAdapter;
 
-    .line 506
     check-cast v0, Landroid/widget/SectionIndexer;
 
     .end local v0           #adapter:Landroid/widget/Adapter;
     iput-object v0, p0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
 
-    .line 507
     iget-object v2, p0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
 
     invoke-interface {v2}, Landroid/widget/SectionIndexer;->getSections()[Ljava/lang/Object;
@@ -2223,12 +2042,10 @@
 
     iput-object v2, p0, Landroid/widget/FastScroller;->mSections:[Ljava/lang/Object;
 
-    .line 508
     iget-object v2, p0, Landroid/widget/FastScroller;->mSections:[Ljava/lang/Object;
 
     if-nez v2, :cond_3d
 
-    .line 509
     new-array v2, v3, [Ljava/lang/String;
 
     const-string v3, " "
@@ -2239,7 +2056,6 @@
 
     goto :goto_3d
 
-    .line 512
     .restart local v0       #adapter:Landroid/widget/Adapter;
     :cond_60
     check-cast v0, Landroid/widget/BaseAdapter;
@@ -2247,7 +2063,6 @@
     .end local v0           #adapter:Landroid/widget/Adapter;
     iput-object v0, p0, Landroid/widget/FastScroller;->mListAdapter:Landroid/widget/BaseAdapter;
 
-    .line 513
     new-array v2, v3, [Ljava/lang/String;
 
     const-string v3, " "
@@ -2263,7 +2078,6 @@
     .registers 2
 
     .prologue
-    .line 225
     iget v0, p0, Landroid/widget/FastScroller;->mState:I
 
     return v0
@@ -2273,7 +2087,6 @@
     .registers 2
 
     .prologue
-    .line 198
     iget v0, p0, Landroid/widget/FastScroller;->mThumbW:I
 
     return v0
@@ -2283,7 +2096,6 @@
     .registers 2
 
     .prologue
-    .line 169
     iget-boolean v0, p0, Landroid/widget/FastScroller;->mAlwaysShow:Z
 
     return v0
@@ -2299,16 +2111,13 @@
 
     const/4 v2, 0x0
 
-    .line 820
     const/4 v0, 0x0
 
-    .line 821
     .local v0, inTrack:Z
     iget v3, p0, Landroid/widget/FastScroller;->mPosition:I
 
     packed-switch v3, :pswitch_data_3e
 
-    .line 825
     iget-object v3, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v3}, Landroid/widget/AbsListView;->getWidth()I
@@ -2327,7 +2136,6 @@
 
     move v0, v1
 
-    .line 833
     :goto_17
     if-eqz v0, :cond_3c
 
@@ -2362,10 +2170,8 @@
     :cond_2f
     move v0, v2
 
-    .line 825
     goto :goto_17
 
-    .line 828
     :pswitch_31
     iget v3, p0, Landroid/widget/FastScroller;->mThumbW:I
 
@@ -2388,10 +2194,8 @@
     :cond_3c
     move v1, v2
 
-    .line 833
     goto :goto_2e
 
-    .line 821
     :pswitch_data_3e
     .packed-switch 0x1
         :pswitch_31
@@ -2402,7 +2206,6 @@
     .registers 2
 
     .prologue
-    .line 308
     iget v0, p0, Landroid/widget/FastScroller;->mState:I
 
     if-eqz v0, :cond_6
@@ -2423,14 +2226,12 @@
     .parameter "ev"
 
     .prologue
-    .line 704
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_36
 
-    .line 720
     :cond_7
     :goto_7
     :pswitch_7
@@ -2439,7 +2240,6 @@
     :goto_8
     return v0
 
-    .line 706
     :pswitch_9
     iget v0, p0, Landroid/widget/FastScroller;->mState:I
 
@@ -2459,7 +2259,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 707
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->isInScrollingContainer()Z
@@ -2468,15 +2267,12 @@
 
     if-nez v0, :cond_28
 
-    .line 708
     invoke-virtual {p0}, Landroid/widget/FastScroller;->beginDrag()V
 
-    .line 709
     const/4 v0, 0x1
 
     goto :goto_8
 
-    .line 711
     :cond_28
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -2484,18 +2280,15 @@
 
     iput v0, p0, Landroid/widget/FastScroller;->mInitialTouchY:F
 
-    .line 712
     invoke-virtual {p0}, Landroid/widget/FastScroller;->startPendingDrag()V
 
     goto :goto_7
 
-    .line 717
     :pswitch_32
     invoke-virtual {p0}, Landroid/widget/FastScroller;->cancelPendingDrag()V
 
     goto :goto_7
 
-    .line 704
     :pswitch_data_36
     .packed-switch 0x0
         :pswitch_9
@@ -2511,17 +2304,14 @@
     .parameter "newCount"
 
     .prologue
-    .line 436
     iget-boolean v0, p0, Landroid/widget/FastScroller;->mAlwaysShow:Z
 
     if-eqz v0, :cond_7
 
-    .line 437
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/FastScroller;->mLongList:Z
 
-    .line 439
     :cond_7
     return-void
 .end method
@@ -2540,17 +2330,14 @@
 
     const/4 v2, 0x0
 
-    .line 444
     iget v0, p0, Landroid/widget/FastScroller;->mItemCount:I
 
     if-eq v0, p4, :cond_15
 
     if-lez p3, :cond_15
 
-    .line 445
     iput p4, p0, Landroid/widget/FastScroller;->mItemCount:I
 
-    .line 446
     iget v0, p0, Landroid/widget/FastScroller;->mItemCount:I
 
     div-int/2addr v0, p3
@@ -2564,30 +2351,24 @@
     :goto_13
     iput-boolean v0, p0, Landroid/widget/FastScroller;->mLongList:Z
 
-    .line 448
     :cond_15
     iget-boolean v0, p0, Landroid/widget/FastScroller;->mAlwaysShow:Z
 
     if-eqz v0, :cond_1b
 
-    .line 449
     iput-boolean v1, p0, Landroid/widget/FastScroller;->mLongList:Z
 
-    .line 451
     :cond_1b
     iget-boolean v0, p0, Landroid/widget/FastScroller;->mLongList:Z
 
     if-nez v0, :cond_29
 
-    .line 452
     iget v0, p0, Landroid/widget/FastScroller;->mState:I
 
     if-eqz v0, :cond_26
 
-    .line 453
     invoke-virtual {p0, v2}, Landroid/widget/FastScroller;->setState(I)V
 
-    .line 476
     :cond_26
     :goto_26
     return-void
@@ -2595,10 +2376,8 @@
     :cond_27
     move v0, v2
 
-    .line 446
     goto :goto_13
 
-    .line 457
     :cond_29
     sub-int v0, p4, p3
 
@@ -2608,52 +2387,41 @@
 
     if-eq v0, v4, :cond_40
 
-    .line 458
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/FastScroller;->getThumbPositionForListPosition(III)I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/FastScroller;->mThumbY:I
 
-    .line 460
     iget-boolean v0, p0, Landroid/widget/FastScroller;->mChangedBounds:Z
 
     if-eqz v0, :cond_40
 
-    .line 461
     invoke-direct {p0}, Landroid/widget/FastScroller;->resetThumbPos()V
 
-    .line 462
     iput-boolean v2, p0, Landroid/widget/FastScroller;->mChangedBounds:Z
 
-    .line 465
     :cond_40
     iput-boolean v1, p0, Landroid/widget/FastScroller;->mScrollCompleted:Z
 
-    .line 466
     iget v0, p0, Landroid/widget/FastScroller;->mVisibleItem:I
 
     if-eq p2, v0, :cond_26
 
-    .line 469
     iput p2, p0, Landroid/widget/FastScroller;->mVisibleItem:I
 
-    .line 470
     iget v0, p0, Landroid/widget/FastScroller;->mState:I
 
     if-eq v0, v4, :cond_26
 
-    .line 471
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Landroid/widget/FastScroller;->setState(I)V
 
-    .line 472
     iget-boolean v0, p0, Landroid/widget/FastScroller;->mAlwaysShow:Z
 
     if-nez v0, :cond_26
 
-    .line 473
     iget-object v0, p0, Landroid/widget/FastScroller;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mScrollFade:Landroid/widget/FastScroller$ScrollFade;
@@ -2669,12 +2437,10 @@
     .registers 2
 
     .prologue
-    .line 519
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/widget/FastScroller;->mListAdapter:Landroid/widget/BaseAdapter;
 
-    .line 520
     return-void
 .end method
 
@@ -2688,17 +2454,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 410
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_15
 
-    .line 411
     iget v1, p0, Landroid/widget/FastScroller;->mPosition:I
 
     packed-switch v1, :pswitch_data_5a
 
-    .line 415
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v2, p0, Landroid/widget/FastScroller;->mThumbW:I
@@ -2709,17 +2472,14 @@
 
     invoke-virtual {v1, v2, v4, p1, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 422
     :cond_15
     :goto_15
     iget v1, p0, Landroid/widget/FastScroller;->mOverlayPosition:I
 
     if-nez v1, :cond_4e
 
-    .line 423
     iget-object v0, p0, Landroid/widget/FastScroller;->mOverlayPos:Landroid/graphics/RectF;
 
-    .line 424
     .local v0, pos:Landroid/graphics/RectF;
     iget v1, p0, Landroid/widget/FastScroller;->mOverlaySize:I
 
@@ -2731,7 +2491,6 @@
 
     iput v1, v0, Landroid/graphics/RectF;->left:F
 
-    .line 425
     iget v1, v0, Landroid/graphics/RectF;->left:F
 
     iget v2, p0, Landroid/widget/FastScroller;->mOverlaySize:I
@@ -2742,14 +2501,12 @@
 
     iput v1, v0, Landroid/graphics/RectF;->right:F
 
-    .line 426
     div-int/lit8 v1, p2, 0xa
 
     int-to-float v1, v1
 
     iput v1, v0, Landroid/graphics/RectF;->top:F
 
-    .line 427
     iget v1, v0, Landroid/graphics/RectF;->top:F
 
     iget v2, p0, Landroid/widget/FastScroller;->mOverlaySize:I
@@ -2760,12 +2517,10 @@
 
     iput v1, v0, Landroid/graphics/RectF;->bottom:F
 
-    .line 428
     iget-object v1, p0, Landroid/widget/FastScroller;->mOverlayDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_4e
 
-    .line 429
     iget-object v1, p0, Landroid/widget/FastScroller;->mOverlayDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v2, v0, Landroid/graphics/RectF;->left:F
@@ -2786,12 +2541,10 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 433
     .end local v0           #pos:Landroid/graphics/RectF;
     :cond_4e
     return-void
 
-    .line 418
     :pswitch_4f
     iget-object v1, p0, Landroid/widget/FastScroller;->mThumbDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -2803,7 +2556,6 @@
 
     goto :goto_15
 
-    .line 411
     nop
 
     :pswitch_data_5a
@@ -2825,27 +2577,22 @@
 
     const/4 v6, 0x1
 
-    .line 724
     iget v7, p0, Landroid/widget/FastScroller;->mState:I
 
     if-nez v7, :cond_9
 
-    .line 816
     :cond_8
     :goto_8
     return v5
 
-    .line 728
     :cond_9
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 730
     .local v0, action:I
     if-nez v0, :cond_34
 
-    .line 731
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v7
@@ -2860,7 +2607,6 @@
 
     if-eqz v7, :cond_8
 
-    .line 732
     iget-object v7, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v7}, Landroid/widget/AbsListView;->isInScrollingContainer()Z
@@ -2869,15 +2615,12 @@
 
     if-nez v7, :cond_2a
 
-    .line 733
     invoke-virtual {p0}, Landroid/widget/FastScroller;->beginDrag()V
 
     move v5, v6
 
-    .line 734
     goto :goto_8
 
-    .line 736
     :cond_2a
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -2885,31 +2628,25 @@
 
     iput v6, p0, Landroid/widget/FastScroller;->mInitialTouchY:F
 
-    .line 737
     invoke-virtual {p0}, Landroid/widget/FastScroller;->startPendingDrag()V
 
     goto :goto_8
 
-    .line 739
     :cond_34
     if-ne v0, v6, :cond_9a
 
-    .line 740
     iget-boolean v7, p0, Landroid/widget/FastScroller;->mPendingDrag:Z
 
     if-eqz v7, :cond_61
 
-    .line 742
     invoke-virtual {p0}, Landroid/widget/FastScroller;->beginDrag()V
 
-    .line 744
     iget-object v7, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v7}, Landroid/widget/AbsListView;->getHeight()I
 
     move-result v3
 
-    .line 746
     .local v3, viewHeight:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -2923,19 +2660,15 @@
 
     add-int/lit8 v2, v7, 0xa
 
-    .line 747
     .local v2, newThumbY:I
     if-gez v2, :cond_90
 
-    .line 748
     const/4 v2, 0x0
 
-    .line 752
     :cond_50
     :goto_50
     iput v2, p0, Landroid/widget/FastScroller;->mThumbY:I
 
-    .line 753
     iget v7, p0, Landroid/widget/FastScroller;->mThumbY:I
 
     int-to-float v7, v7
@@ -2950,10 +2683,8 @@
 
     invoke-virtual {p0, v7}, Landroid/widget/FastScroller;->scrollTo(F)V
 
-    .line 755
     invoke-virtual {p0}, Landroid/widget/FastScroller;->cancelPendingDrag()V
 
-    .line 758
     .end local v2           #newThumbY:I
     .end local v3           #viewHeight:I
     :cond_61
@@ -2961,47 +2692,38 @@
 
     if-ne v7, v9, :cond_8
 
-    .line 759
     iget-object v7, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     if-eqz v7, :cond_73
 
-    .line 763
     iget-object v7, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v7, v5}, Landroid/widget/AbsListView;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 764
     iget-object v7, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v7, v5}, Landroid/widget/AbsListView;->reportScrollStateChange(I)V
 
-    .line 766
     :cond_73
     invoke-virtual {p0, v10}, Landroid/widget/FastScroller;->setState(I)V
 
-    .line 767
     iget-object v1, p0, Landroid/widget/FastScroller;->mHandler:Landroid/os/Handler;
 
-    .line 768
     .local v1, handler:Landroid/os/Handler;
     iget-object v5, p0, Landroid/widget/FastScroller;->mScrollFade:Landroid/widget/FastScroller$ScrollFade;
 
     invoke-virtual {v1, v5}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 769
     iget-boolean v5, p0, Landroid/widget/FastScroller;->mAlwaysShow:Z
 
     if-nez v5, :cond_88
 
-    .line 770
     iget-object v5, p0, Landroid/widget/FastScroller;->mScrollFade:Landroid/widget/FastScroller$ScrollFade;
 
     const-wide/16 v7, 0x3e8
 
     invoke-virtual {v1, v5, v7, v8}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 773
     :cond_88
     iget-object v5, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
@@ -3009,10 +2731,8 @@
 
     move v5, v6
 
-    .line 774
     goto/16 :goto_8
 
-    .line 749
     .end local v1           #handler:Landroid/os/Handler;
     .restart local v2       #newThumbY:I
     .restart local v3       #viewHeight:I
@@ -3023,30 +2743,25 @@
 
     if-le v7, v3, :cond_50
 
-    .line 750
     iget v7, p0, Landroid/widget/FastScroller;->mThumbH:I
 
     sub-int v2, v3, v7
 
     goto :goto_50
 
-    .line 776
     .end local v2           #newThumbY:I
     .end local v3           #viewHeight:I
     :cond_9a
     if-ne v0, v10, :cond_117
 
-    .line 777
     iget-boolean v7, p0, Landroid/widget/FastScroller;->mPendingDrag:Z
 
     if-eqz v7, :cond_d5
 
-    .line 778
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
 
-    .line 779
     .local v4, y:F
     iget v7, p0, Landroid/widget/FastScroller;->mInitialTouchY:F
 
@@ -3064,10 +2779,8 @@
 
     if-lez v7, :cond_d5
 
-    .line 780
     invoke-virtual {p0, v9}, Landroid/widget/FastScroller;->setState(I)V
 
-    .line 781
     iget-object v7, p0, Landroid/widget/FastScroller;->mListAdapter:Landroid/widget/BaseAdapter;
 
     if-nez v7, :cond_c1
@@ -3076,47 +2789,38 @@
 
     if-eqz v7, :cond_c1
 
-    .line 782
     invoke-virtual {p0}, Landroid/widget/FastScroller;->getSectionsFromIndexer()V
 
-    .line 784
     :cond_c1
     iget-object v7, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     if-eqz v7, :cond_cf
 
-    .line 785
     iget-object v7, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v7, v6}, Landroid/widget/AbsListView;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 786
     iget-object v7, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v7, v6}, Landroid/widget/AbsListView;->reportScrollStateChange(I)V
 
-    .line 789
     :cond_cf
     invoke-direct {p0}, Landroid/widget/FastScroller;->cancelFling()V
 
-    .line 790
     invoke-virtual {p0}, Landroid/widget/FastScroller;->cancelPendingDrag()V
 
-    .line 794
     .end local v4           #y:F
     :cond_d5
     iget v7, p0, Landroid/widget/FastScroller;->mState:I
 
     if-ne v7, v9, :cond_8
 
-    .line 795
     iget-object v5, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v5}, Landroid/widget/AbsListView;->getHeight()I
 
     move-result v3
 
-    .line 797
     .restart local v3       #viewHeight:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -3130,14 +2834,11 @@
 
     add-int/lit8 v2, v5, 0xa
 
-    .line 798
     .restart local v2       #newThumbY:I
     if-gez v2, :cond_f8
 
-    .line 799
     const/4 v2, 0x0
 
-    .line 803
     :cond_ec
     :goto_ec
     iget v5, p0, Landroid/widget/FastScroller;->mThumbY:I
@@ -3152,10 +2853,8 @@
 
     move v5, v6
 
-    .line 804
     goto/16 :goto_8
 
-    .line 800
     :cond_f8
     iget v5, p0, Landroid/widget/FastScroller;->mThumbH:I
 
@@ -3163,23 +2862,19 @@
 
     if-le v5, v3, :cond_ec
 
-    .line 801
     iget v5, p0, Landroid/widget/FastScroller;->mThumbH:I
 
     sub-int v2, v3, v5
 
     goto :goto_ec
 
-    .line 806
     :cond_102
     iput v2, p0, Landroid/widget/FastScroller;->mThumbY:I
 
-    .line 808
     iget-boolean v5, p0, Landroid/widget/FastScroller;->mScrollCompleted:Z
 
     if-eqz v5, :cond_114
 
-    .line 809
     iget v5, p0, Landroid/widget/FastScroller;->mThumbY:I
 
     int-to-float v5, v5
@@ -3197,16 +2892,13 @@
     :cond_114
     move v5, v6
 
-    .line 811
     goto/16 :goto_8
 
-    .line 813
     .end local v2           #newThumbY:I
     .end local v3           #viewHeight:I
     :cond_117
     if-ne v0, v9, :cond_8
 
-    .line 814
     invoke-virtual {p0}, Landroid/widget/FastScroller;->cancelPendingDrag()V
 
     goto/16 :goto_8
@@ -3217,7 +2909,6 @@
     .parameter "position"
 
     .prologue
-    .line 523
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
@@ -3228,7 +2919,6 @@
 
     move-result v2
 
-    .line 524
     .local v2, count:I
     const/16 v19, 0x0
 
@@ -3238,7 +2928,6 @@
 
     iput-boolean v0, v1, Landroid/widget/FastScroller;->mScrollCompleted:Z
 
-    .line 525
     const/high16 v19, 0x3f80
 
     int-to-float v0, v2
@@ -3251,7 +2940,6 @@
 
     div-float v7, v19, v20
 
-    .line 526
     .local v7, fThreshold:F
     move-object/from16 v0, p0
 
@@ -3259,7 +2947,6 @@
 
     move-object/from16 v17, v0
 
-    .line 528
     .local v17, sections:[Ljava/lang/Object;
     if-eqz v17, :cond_177
 
@@ -3277,12 +2964,10 @@
 
     if-le v0, v1, :cond_177
 
-    .line 529
     move-object/from16 v0, v17
 
     array-length v9, v0
 
-    .line 530
     .local v9, nSections:I
     int-to-float v0, v9
 
@@ -3294,22 +2979,17 @@
 
     float-to-int v15, v0
 
-    .line 531
     .local v15, section:I
     if-lt v15, v9, :cond_41
 
-    .line 532
     add-int/lit8 v15, v9, -0x1
 
-    .line 534
     :cond_41
     move v3, v15
 
-    .line 535
     .local v3, exactSection:I
     move/from16 v16, v15
 
-    .line 536
     .local v16, sectionIndex:I
     move-object/from16 v0, p0
 
@@ -3323,23 +3003,18 @@
 
     move-result v8
 
-    .line 543
     .local v8, index:I
     move v10, v2
 
-    .line 544
     .local v10, nextIndex:I
     move v13, v8
 
-    .line 545
     .local v13, prevIndex:I
     move v14, v15
 
-    .line 546
     .local v14, prevSection:I
     add-int/lit8 v12, v15, 0x1
 
-    .line 548
     .local v12, nextSection:I
     add-int/lit8 v19, v9, -0x1
 
@@ -3347,7 +3022,6 @@
 
     if-ge v15, v0, :cond_67
 
-    .line 549
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
@@ -3360,18 +3034,14 @@
 
     move-result v10
 
-    .line 553
     :cond_67
     if-ne v10, v8, :cond_7e
 
-    .line 555
     :cond_69
     if-lez v15, :cond_7e
 
-    .line 556
     add-int/lit8 v15, v15, -0x1
 
-    .line 557
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mSectionIndexer:Landroid/widget/SectionIndexer;
@@ -3384,21 +3054,16 @@
 
     move-result v13
 
-    .line 558
     if-eq v13, v8, :cond_97
 
-    .line 559
     move v14, v15
 
-    .line 560
     move/from16 v16, v15
 
-    .line 575
     :cond_7e
     :goto_7e
     add-int/lit8 v11, v12, 0x1
 
-    .line 577
     .local v11, nextNextSection:I
     :goto_80
     if-ge v11, v9, :cond_9c
@@ -3419,26 +3084,20 @@
 
     if-ne v0, v10, :cond_9c
 
-    .line 578
     add-int/lit8 v11, v11, 0x1
 
-    .line 579
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_80
 
-    .line 562
     .end local v11           #nextNextSection:I
     :cond_97
     if-nez v15, :cond_69
 
-    .line 565
     const/16 v16, 0x0
 
-    .line 566
     goto :goto_7e
 
-    .line 584
     .restart local v11       #nextNextSection:I
     :cond_9c
     int-to-float v0, v14
@@ -3451,7 +3110,6 @@
 
     div-float v6, v19, v20
 
-    .line 585
     .local v6, fPrev:F
     int-to-float v0, v12
 
@@ -3463,7 +3121,6 @@
 
     div-float v5, v19, v20
 
-    .line 586
     .local v5, fNext:F
     if-ne v14, v3, :cond_128
 
@@ -3473,10 +3130,8 @@
 
     if-gez v19, :cond_128
 
-    .line 587
     move v8, v13
 
-    .line 593
     :goto_b5
     add-int/lit8 v19, v2, -0x1
 
@@ -3486,7 +3141,6 @@
 
     add-int/lit8 v8, v2, -0x1
 
-    .line 595
     :cond_bd
     move-object/from16 v0, p0
 
@@ -3502,14 +3156,12 @@
 
     if-eqz v19, :cond_140
 
-    .line 596
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     check-cast v4, Landroid/widget/ExpandableListView;
 
-    .line 597
     .local v4, expList:Landroid/widget/ExpandableListView;
     move-object/from16 v0, p0
 
@@ -3537,7 +3189,6 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/widget/ExpandableListView;->setSelectionFromTop(II)V
 
-    .line 621
     .end local v3           #exactSection:I
     .end local v4           #expList:Landroid/widget/ExpandableListView;
     .end local v5           #fNext:F
@@ -3552,7 +3203,6 @@
     :goto_ec
     if-ltz v16, :cond_1f4
 
-    .line 622
     aget-object v19, v17, v16
 
     invoke-virtual/range {v19 .. v19}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -3565,7 +3215,6 @@
 
     iput-object v0, v1, Landroid/widget/FastScroller;->mSectionText:Ljava/lang/String;
 
-    .line 623
     .local v18, text:Ljava/lang/String;
     invoke-virtual/range {v18 .. v18}, Ljava/lang/String;->length()I
 
@@ -3615,12 +3264,10 @@
 
     iput-boolean v0, v1, Landroid/widget/FastScroller;->mDrawOverlay:Z
 
-    .line 628
     .end local v18           #text:Ljava/lang/String;
     :goto_127
     return-void
 
-    .line 589
     .restart local v3       #exactSection:I
     .restart local v5       #fNext:F
     .restart local v6       #fPrev:F
@@ -3658,7 +3305,6 @@
 
     goto/16 :goto_b5
 
-    .line 599
     :cond_140
     move-object/from16 v0, p0
 
@@ -3674,7 +3320,6 @@
 
     if-eqz v19, :cond_164
 
-    .line 600
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
@@ -3697,7 +3342,6 @@
 
     goto :goto_ec
 
-    .line 602
     :cond_164
     move-object/from16 v0, p0
 
@@ -3717,7 +3361,6 @@
 
     goto/16 :goto_ec
 
-    .line 605
     .end local v3           #exactSection:I
     .end local v5           #fNext:F
     .end local v6           #fPrev:F
@@ -3741,7 +3384,6 @@
 
     float-to-int v8, v0
 
-    .line 607
     .restart local v8       #index:I
     add-int/lit8 v19, v2, -0x1
 
@@ -3751,7 +3393,6 @@
 
     add-int/lit8 v8, v2, -0x1
 
-    .line 609
     :cond_187
     move-object/from16 v0, p0
 
@@ -3767,14 +3408,12 @@
 
     if-eqz v19, :cond_1ba
 
-    .line 610
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     check-cast v4, Landroid/widget/ExpandableListView;
 
-    .line 611
     .restart local v4       #expList:Landroid/widget/ExpandableListView;
     move-object/from16 v0, p0
 
@@ -3802,7 +3441,6 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/widget/ExpandableListView;->setSelectionFromTop(II)V
 
-    .line 618
     .end local v4           #expList:Landroid/widget/ExpandableListView;
     :goto_1b6
     const/16 v16, -0x1
@@ -3810,7 +3448,6 @@
     .restart local v16       #sectionIndex:I
     goto/16 :goto_ec
 
-    .line 613
     .end local v16           #sectionIndex:I
     :cond_1ba
     move-object/from16 v0, p0
@@ -3827,7 +3464,6 @@
 
     if-eqz v19, :cond_1de
 
-    .line 614
     move-object/from16 v0, p0
 
     iget-object v0, v0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
@@ -3850,7 +3486,6 @@
 
     goto :goto_1b6
 
-    .line 616
     :cond_1de
     move-object/from16 v0, p0
 
@@ -3870,7 +3505,6 @@
 
     goto :goto_1b6
 
-    .line 623
     .restart local v16       #sectionIndex:I
     .restart local v18       #text:Ljava/lang/String;
     :cond_1f0
@@ -3878,7 +3512,6 @@
 
     goto/16 :goto_121
 
-    .line 626
     .end local v18           #text:Ljava/lang/String;
     :cond_1f4
     const/16 v19, 0x0
@@ -3899,34 +3532,27 @@
     .prologue
     const/4 v2, 0x2
 
-    .line 159
     iput-boolean p1, p0, Landroid/widget/FastScroller;->mAlwaysShow:Z
 
-    .line 160
     if-eqz p1, :cond_10
 
-    .line 161
     iget-object v0, p0, Landroid/widget/FastScroller;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mScrollFade:Landroid/widget/FastScroller$ScrollFade;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 162
     invoke-virtual {p0, v2}, Landroid/widget/FastScroller;->setState(I)V
 
-    .line 166
     :cond_f
     :goto_f
     return-void
 
-    .line 163
     :cond_10
     iget v0, p0, Landroid/widget/FastScroller;->mState:I
 
     if-ne v0, v2, :cond_f
 
-    .line 164
     iget-object v0, p0, Landroid/widget/FastScroller;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mScrollFade:Landroid/widget/FastScroller$ScrollFade;
@@ -3943,22 +3569,17 @@
     .parameter "position"
 
     .prologue
-    .line 184
     iput p1, p0, Landroid/widget/FastScroller;->mPosition:I
 
-    .line 185
     packed-switch p1, :pswitch_data_10
 
-    .line 189
     iget-object v0, p0, Landroid/widget/FastScroller;->mOverlayDrawableRight:Landroid/graphics/drawable/Drawable;
 
     iput-object v0, p0, Landroid/widget/FastScroller;->mOverlayDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 195
     :goto_9
     return-void
 
-    .line 192
     :pswitch_a
     iget-object v0, p0, Landroid/widget/FastScroller;->mOverlayDrawableLeft:Landroid/graphics/drawable/Drawable;
 
@@ -3966,7 +3587,6 @@
 
     goto :goto_9
 
-    .line 185
     nop
 
     :pswitch_data_10
@@ -3980,21 +3600,16 @@
     .parameter "state"
 
     .prologue
-    .line 202
     packed-switch p1, :pswitch_data_3e
 
-    .line 220
     :goto_3
     :pswitch_3
     iput p1, p0, Landroid/widget/FastScroller;->mState:I
 
-    .line 221
     invoke-direct {p0}, Landroid/widget/FastScroller;->refreshDrawableState()V
 
-    .line 222
     return-void
 
-    .line 204
     :pswitch_9
     iget-object v1, p0, Landroid/widget/FastScroller;->mHandler:Landroid/os/Handler;
 
@@ -4002,14 +3617,12 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 205
     iget-object v1, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     invoke-virtual {v1}, Landroid/widget/AbsListView;->invalidate()V
 
     goto :goto_3
 
-    .line 208
     :pswitch_16
     iget v1, p0, Landroid/widget/FastScroller;->mState:I
 
@@ -4017,10 +3630,8 @@
 
     if-eq v1, v2, :cond_1e
 
-    .line 209
     invoke-direct {p0}, Landroid/widget/FastScroller;->resetThumbPos()V
 
-    .line 213
     :cond_1e
     :pswitch_1e
     iget-object v1, p0, Landroid/widget/FastScroller;->mHandler:Landroid/os/Handler;
@@ -4031,7 +3642,6 @@
 
     goto :goto_3
 
-    .line 216
     :pswitch_26
     iget-object v1, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
@@ -4039,7 +3649,6 @@
 
     move-result v0
 
-    .line 217
     .local v0, viewWidth:I
     iget-object v1, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
@@ -4059,7 +3668,6 @@
 
     goto :goto_3
 
-    .line 202
     nop
 
     :pswitch_data_3e
@@ -4076,12 +3684,10 @@
     .registers 5
 
     .prologue
-    .line 686
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/FastScroller;->mPendingDrag:Z
 
-    .line 687
     iget-object v0, p0, Landroid/widget/FastScroller;->mList:Landroid/widget/AbsListView;
 
     iget-object v1, p0, Landroid/widget/FastScroller;->mDeferStartDrag:Ljava/lang/Runnable;
@@ -4090,7 +3696,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/AbsListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 688
     return-void
 .end method
 
@@ -4098,11 +3703,9 @@
     .registers 2
 
     .prologue
-    .line 304
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/FastScroller;->setState(I)V
 
-    .line 305
     return-void
 .end method

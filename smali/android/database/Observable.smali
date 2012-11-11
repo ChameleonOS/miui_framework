@@ -30,11 +30,9 @@
     .registers 2
 
     .prologue
-    .line 29
     .local p0, this:Landroid/database/Observable;,"Landroid/database/Observable<TT;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -56,12 +54,10 @@
     .end annotation
 
     .prologue
-    .line 44
     .local p0, this:Landroid/database/Observable;,"Landroid/database/Observable<TT;>;"
     .local p1, observer:Ljava/lang/Object;,"TT;"
     if-nez p1, :cond_a
 
-    .line 45
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "The observer is null."
@@ -70,13 +66,11 @@
 
     throw v0
 
-    .line 47
     :cond_a
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 48
     :try_start_d
     iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -86,7 +80,6 @@
 
     if-eqz v0, :cond_37
 
-    .line 49
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -117,7 +110,6 @@
 
     throw v0
 
-    .line 52
     :catchall_34
     move-exception v0
 
@@ -127,19 +119,16 @@
 
     throw v0
 
-    .line 51
     :cond_37
     :try_start_37
     iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 52
     monitor-exit v1
     :try_end_3d
     .catchall {:try_start_37 .. :try_end_3d} :catchall_34
 
-    .line 53
     return-void
 .end method
 
@@ -147,25 +136,20 @@
     .registers 3
 
     .prologue
-    .line 79
     .local p0, this:Landroid/database/Observable;,"Landroid/database/Observable<TT;>;"
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 80
     :try_start_3
     iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 81
     monitor-exit v1
 
-    .line 82
     return-void
 
-    .line 81
     :catchall_a
     move-exception v0
 
@@ -186,12 +170,10 @@
     .end annotation
 
     .prologue
-    .line 63
     .local p0, this:Landroid/database/Observable;,"Landroid/database/Observable<TT;>;"
     .local p1, observer:Ljava/lang/Object;,"TT;"
     if-nez p1, :cond_a
 
-    .line 64
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "The observer is null."
@@ -200,13 +182,11 @@
 
     throw v1
 
-    .line 66
     :cond_a
     iget-object v2, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
     monitor-enter v2
 
-    .line 67
     :try_start_d
     iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
@@ -214,13 +194,11 @@
 
     move-result v0
 
-    .line 68
     .local v0, index:I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_38
 
-    .line 69
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -251,7 +229,6 @@
 
     throw v1
 
-    .line 72
     .end local v0           #index:I
     :catchall_35
     move-exception v1
@@ -262,7 +239,6 @@
 
     throw v1
 
-    .line 71
     .restart local v0       #index:I
     :cond_38
     :try_start_38
@@ -270,11 +246,9 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 72
     monitor-exit v2
     :try_end_3e
     .catchall {:try_start_38 .. :try_end_3e} :catchall_35
 
-    .line 73
     return-void
 .end method

@@ -28,10 +28,8 @@
     .parameter "context"
 
     .prologue
-    .line 69
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
     return-void
 .end method
 
@@ -41,7 +39,6 @@
     .registers 2
 
     .prologue
-    .line 189
     const/4 v0, 0x0
 
     return v0
@@ -51,7 +48,6 @@
     .registers 2
 
     .prologue
-    .line 124
     const/4 v0, 0x1
 
     return v0
@@ -65,7 +61,6 @@
     .parameter "forItem"
 
     .prologue
-    .line 98
     invoke-virtual {p0}, Landroid/view/ActionProvider;->onCreateActionView()Landroid/view/View;
 
     move-result-object v0
@@ -77,7 +72,6 @@
     .registers 2
 
     .prologue
-    .line 175
     const/4 v0, 0x0
 
     return v0
@@ -88,7 +82,6 @@
     .parameter "subMenu"
 
     .prologue
-    .line 202
     return-void
 .end method
 
@@ -96,7 +89,6 @@
     .registers 2
 
     .prologue
-    .line 110
     const/4 v0, 0x0
 
     return v0
@@ -106,7 +98,6 @@
     .registers 3
 
     .prologue
-    .line 134
     iget-object v0, p0, Landroid/view/ActionProvider;->mVisibilityListener:Landroid/view/ActionProvider$VisibilityListener;
 
     if-eqz v0, :cond_13
@@ -117,7 +108,6 @@
 
     if-eqz v0, :cond_13
 
-    .line 135
     iget-object v0, p0, Landroid/view/ActionProvider;->mVisibilityListener:Landroid/view/ActionProvider$VisibilityListener;
 
     invoke-virtual {p0}, Landroid/view/ActionProvider;->isVisible()Z
@@ -126,7 +116,6 @@
 
     invoke-interface {v0, v1}, Landroid/view/ActionProvider$VisibilityListener;->onActionProviderVisibilityChanged(Z)V
 
-    .line 137
     :cond_13
     return-void
 .end method
@@ -136,10 +125,8 @@
     .parameter "listener"
 
     .prologue
-    .line 221
     iput-object p1, p0, Landroid/view/ActionProvider;->mSubUiVisibilityListener:Landroid/view/ActionProvider$SubUiVisibilityListener;
 
-    .line 222
     return-void
 .end method
 
@@ -148,12 +135,10 @@
     .parameter "listener"
 
     .prologue
-    .line 231
     iget-object v0, p0, Landroid/view/ActionProvider;->mVisibilityListener:Landroid/view/ActionProvider$VisibilityListener;
 
     if-eqz v0, :cond_2b
 
-    .line 232
     const-string v0, "ActionProvider"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -190,11 +175,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 236
     :cond_2b
     iput-object p1, p0, Landroid/view/ActionProvider;->mVisibilityListener:Landroid/view/ActionProvider$VisibilityListener;
 
-    .line 237
     return-void
 .end method
 
@@ -203,17 +186,14 @@
     .parameter "isVisible"
 
     .prologue
-    .line 212
     iget-object v0, p0, Landroid/view/ActionProvider;->mSubUiVisibilityListener:Landroid/view/ActionProvider$SubUiVisibilityListener;
 
     if-eqz v0, :cond_9
 
-    .line 213
     iget-object v0, p0, Landroid/view/ActionProvider;->mSubUiVisibilityListener:Landroid/view/ActionProvider$SubUiVisibilityListener;
 
     invoke-interface {v0, p1}, Landroid/view/ActionProvider$SubUiVisibilityListener;->onSubUiVisibilityChanged(Z)V
 
-    .line 215
     :cond_9
     return-void
 .end method

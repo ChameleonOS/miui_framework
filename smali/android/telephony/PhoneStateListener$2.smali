@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 355
     iput-object p1, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,16 +42,13 @@
 
     const/4 v1, 0x0
 
-    .line 358
     iget v2, p1, Landroid/os/Message;->what:I
 
     sparse-switch v2, :sswitch_data_7e
 
-    .line 393
     :goto_7
     return-void
 
-    .line 360
     :sswitch_8
     iget-object v1, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -64,7 +60,6 @@
 
     goto :goto_7
 
-    .line 363
     :sswitch_12
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -74,7 +69,6 @@
 
     goto :goto_7
 
-    .line 366
     :sswitch_1a
     iget-object v2, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -92,7 +86,6 @@
 
     goto :goto_20
 
-    .line 369
     :sswitch_26
     iget-object v2, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -110,7 +103,6 @@
 
     goto :goto_2c
 
-    .line 372
     :sswitch_32
     iget-object v1, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -122,7 +114,6 @@
 
     goto :goto_7
 
-    .line 375
     :sswitch_3c
     iget-object v1, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -136,7 +127,6 @@
 
     goto :goto_7
 
-    .line 378
     :sswitch_48
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -146,7 +136,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/telephony/PhoneStateListener;->onDataConnectionStateChanged(II)V
 
-    .line 379
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
     iget v1, p1, Landroid/os/Message;->arg1:I
@@ -155,7 +144,6 @@
 
     goto :goto_7
 
-    .line 382
     :sswitch_59
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -165,7 +153,6 @@
 
     goto :goto_7
 
-    .line 385
     :sswitch_61
     iget-object v1, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -177,7 +164,6 @@
 
     goto :goto_7
 
-    .line 388
     :sswitch_6b
     iget-object v0, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -187,7 +173,6 @@
 
     goto :goto_7
 
-    .line 391
     :sswitch_73
     iget-object v1, p0, Landroid/telephony/PhoneStateListener$2;->this$0:Landroid/telephony/PhoneStateListener;
 
@@ -199,7 +184,6 @@
 
     goto :goto_7
 
-    .line 358
     nop
 
     :sswitch_data_7e

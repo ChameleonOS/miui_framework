@@ -40,28 +40,22 @@
     .parameter "name"
 
     .prologue
-    .line 71
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     const/16 v0, 0x64
 
     iput v0, p0, Landroid/emoji/EmojiFactory;->sCacheSize:I
 
-    .line 72
     iput p1, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
-    .line 73
     iput-object p2, p0, Landroid/emoji/EmojiFactory;->mName:Ljava/lang/String;
 
-    .line 74
     new-instance v0, Landroid/emoji/EmojiFactory$CustomLinkedHashMap;
 
     invoke-direct {v0, p0}, Landroid/emoji/EmojiFactory$CustomLinkedHashMap;-><init>(Landroid/emoji/EmojiFactory;)V
 
     iput-object v0, p0, Landroid/emoji/EmojiFactory;->mCache:Ljava/util/Map;
 
-    .line 75
     return-void
 .end method
 
@@ -70,7 +64,6 @@
     .parameter "x0"
 
     .prologue
-    .line 31
     iget v0, p0, Landroid/emoji/EmojiFactory;->sCacheSize:I
 
     return v0
@@ -123,7 +116,6 @@
     .end annotation
 
     .prologue
-    .line 80
     :try_start_0
     iget v0, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
@@ -131,13 +123,10 @@
     :try_end_5
     .catchall {:try_start_0 .. :try_end_5} :catchall_9
 
-    .line 82
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 84
     return-void
 
-    .line 82
     :catchall_9
     move-exception v0
 
@@ -151,7 +140,6 @@
     .parameter "vsp"
 
     .prologue
-    .line 178
     iget v0, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
     invoke-direct {p0, v0, p1}, Landroid/emoji/EmojiFactory;->nativeGetAndroidPuaFromVendorSpecificPua(II)I
@@ -168,17 +156,13 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 182
     if-nez p1, :cond_5
 
-    .line 183
     const/4 v8, 0x0
 
-    .line 202
     :goto_4
     return-object v8
 
-    .line 185
     :cond_5
     iget v8, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
@@ -186,7 +170,6 @@
 
     move-result v5
 
-    .line 186
     .local v5, minVsp:I
     iget v8, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
@@ -194,13 +177,11 @@
 
     move-result v4
 
-    .line 187
     .local v4, maxVsp:I
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 188
     .local v3, len:I
     invoke-virtual {p1, v9, v3}, Ljava/lang/String;->codePointCount(II)I
 
@@ -208,11 +189,9 @@
 
     new-array v1, v8, [I
 
-    .line 190
     .local v1, codePoints:[I
     const/4 v7, 0x0
 
-    .line 191
     .local v7, new_len:I
     const/4 v2, 0x0
 
@@ -220,30 +199,24 @@
     :goto_1d
     if-ge v2, v3, :cond_3a
 
-    .line 192
     invoke-virtual {p1, v2}, Ljava/lang/String;->codePointAt(I)I
 
     move-result v0
 
-    .line 193
     .local v0, codePoint:I
     if-gt v5, v0, :cond_37
 
     if-gt v0, v4, :cond_37
 
-    .line 194
     invoke-virtual {p0, v0}, Landroid/emoji/EmojiFactory;->getAndroidPuaFromVendorSpecificPua(I)I
 
     move-result v6
 
-    .line 195
     .local v6, newCodePoint:I
     if-lez v6, :cond_37
 
-    .line 196
     aput v6, v1, v7
 
-    .line 191
     .end local v6           #newCodePoint:I
     :goto_2f
     const/4 v8, 0x1
@@ -256,13 +229,11 @@
 
     goto :goto_1d
 
-    .line 200
     :cond_37
     aput v0, v1, v7
 
     goto :goto_2f
 
-    .line 202
     .end local v0           #codePoint:I
     :cond_3a
     new-instance v8, Ljava/lang/String;
@@ -277,7 +248,6 @@
     .parameter "sjis"
 
     .prologue
-    .line 157
     iget v0, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
     invoke-direct {p0, v0, p1}, Landroid/emoji/EmojiFactory;->nativeGetAndroidPuaFromVendorSpecificSjis(IC)I
@@ -292,7 +262,6 @@
     .parameter "pua"
 
     .prologue
-    .line 102
     monitor-enter p0
 
     :try_start_1
@@ -308,22 +277,18 @@
 
     check-cast v0, Ljava/lang/ref/WeakReference;
 
-    .line 103
     .local v0, cache:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/graphics/Bitmap;>;"
     if-nez v0, :cond_27
 
-    .line 104
     iget v3, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
     invoke-direct {p0, v3, p1}, Landroid/emoji/EmojiFactory;->nativeGetBitmapFromAndroidPua(II)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 108
     .local v1, ret:Landroid/graphics/Bitmap;
     if-eqz v1, :cond_25
 
-    .line 109
     iget-object v3, p0, Landroid/emoji/EmojiFactory;->mCache:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -338,7 +303,6 @@
     :try_end_25
     .catchall {:try_start_1 .. :try_end_25} :catchall_44
 
-    .line 119
     .end local v1           #ret:Landroid/graphics/Bitmap;
     :cond_25
     :goto_25
@@ -346,7 +310,6 @@
 
     return-object v1
 
-    .line 113
     :cond_27
     :try_start_27
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -355,18 +318,15 @@
 
     check-cast v2, Landroid/graphics/Bitmap;
 
-    .line 114
     .local v2, tmp:Landroid/graphics/Bitmap;
     if-nez v2, :cond_47
 
-    .line 115
     iget v3, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
     invoke-direct {p0, v3, p1}, Landroid/emoji/EmojiFactory;->nativeGetBitmapFromAndroidPua(II)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 116
     .restart local v1       #ret:Landroid/graphics/Bitmap;
     iget-object v3, p0, Landroid/emoji/EmojiFactory;->mCache:Ljava/util/Map;
 
@@ -384,7 +344,6 @@
 
     goto :goto_25
 
-    .line 102
     .end local v0           #cache:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/graphics/Bitmap;>;"
     .end local v1           #ret:Landroid/graphics/Bitmap;
     .end local v2           #tmp:Landroid/graphics/Bitmap;
@@ -400,7 +359,6 @@
     :cond_47
     move-object v1, v2
 
-    .line 119
     goto :goto_25
 .end method
 
@@ -409,7 +367,6 @@
     .parameter "vsp"
 
     .prologue
-    .line 147
     monitor-enter p0
 
     :try_start_1
@@ -440,7 +397,6 @@
     .parameter "sjis"
 
     .prologue
-    .line 134
     monitor-enter p0
 
     :try_start_1
@@ -470,7 +426,6 @@
     .registers 2
 
     .prologue
-    .line 270
     iget v0, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
     invoke-direct {p0, v0}, Landroid/emoji/EmojiFactory;->nativeGetMaximumAndroidPua(I)I
@@ -484,7 +439,6 @@
     .registers 2
 
     .prologue
-    .line 262
     iget v0, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
     invoke-direct {p0, v0}, Landroid/emoji/EmojiFactory;->nativeGetMinimumAndroidPua(I)I
@@ -499,7 +453,6 @@
     .parameter "pua"
 
     .prologue
-    .line 212
     iget v0, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
     invoke-direct {p0, v0, p1}, Landroid/emoji/EmojiFactory;->nativeGetVendorSpecificPuaFromAndroidPua(II)I
@@ -516,17 +469,13 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 216
     if-nez p1, :cond_5
 
-    .line 217
     const/4 v8, 0x0
 
-    .line 236
     :goto_4
     return-object v8
 
-    .line 219
     :cond_5
     iget v8, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
@@ -534,7 +483,6 @@
 
     move-result v5
 
-    .line 220
     .local v5, minVsp:I
     iget v8, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
@@ -542,13 +490,11 @@
 
     move-result v4
 
-    .line 221
     .local v4, maxVsp:I
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 222
     .local v3, len:I
     invoke-virtual {p1, v9, v3}, Ljava/lang/String;->codePointCount(II)I
 
@@ -556,11 +502,9 @@
 
     new-array v1, v8, [I
 
-    .line 224
     .local v1, codePoints:[I
     const/4 v7, 0x0
 
-    .line 225
     .local v7, new_len:I
     const/4 v2, 0x0
 
@@ -568,30 +512,24 @@
     :goto_1d
     if-ge v2, v3, :cond_3a
 
-    .line 226
     invoke-virtual {p1, v2}, Ljava/lang/String;->codePointAt(I)I
 
     move-result v0
 
-    .line 227
     .local v0, codePoint:I
     if-gt v5, v0, :cond_37
 
     if-gt v0, v4, :cond_37
 
-    .line 228
     invoke-virtual {p0, v0}, Landroid/emoji/EmojiFactory;->getVendorSpecificPuaFromAndroidPua(I)I
 
     move-result v6
 
-    .line 229
     .local v6, newCodePoint:I
     if-lez v6, :cond_37
 
-    .line 230
     aput v6, v1, v7
 
-    .line 225
     .end local v6           #newCodePoint:I
     :goto_2f
     const/4 v8, 0x1
@@ -604,13 +542,11 @@
 
     goto :goto_1d
 
-    .line 234
     :cond_37
     aput v0, v1, v7
 
     goto :goto_2f
 
-    .line 236
     .end local v0           #codePoint:I
     :cond_3a
     new-instance v8, Ljava/lang/String;
@@ -625,7 +561,6 @@
     .parameter "pua"
 
     .prologue
-    .line 167
     iget v0, p0, Landroid/emoji/EmojiFactory;->mNativeEmojiFactory:I
 
     invoke-direct {p0, v0, p1}, Landroid/emoji/EmojiFactory;->nativeGetVendorSpecificSjisFromAndroidPua(II)I
@@ -639,7 +574,6 @@
     .registers 2
 
     .prologue
-    .line 87
     iget-object v0, p0, Landroid/emoji/EmojiFactory;->mName:Ljava/lang/String;
 
     return-object v0

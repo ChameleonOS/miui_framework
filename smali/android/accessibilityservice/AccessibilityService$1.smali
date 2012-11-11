@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 505
     iput-object p1, p0, Landroid/accessibilityservice/AccessibilityService$1;->this$0:Landroid/accessibilityservice/AccessibilityService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +41,10 @@
     .parameter "event"
 
     .prologue
-    .line 518
     iget-object v0, p0, Landroid/accessibilityservice/AccessibilityService$1;->this$0:Landroid/accessibilityservice/AccessibilityService;
 
     invoke-virtual {v0, p1}, Landroid/accessibilityservice/AccessibilityService;->onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 519
     return-void
 .end method
 
@@ -56,7 +53,6 @@
     .parameter "gestureId"
 
     .prologue
-    .line 528
     iget-object v0, p0, Landroid/accessibilityservice/AccessibilityService$1;->this$0:Landroid/accessibilityservice/AccessibilityService;
 
     invoke-virtual {v0, p1}, Landroid/accessibilityservice/AccessibilityService;->onGesture(I)Z
@@ -70,12 +66,10 @@
     .registers 2
 
     .prologue
-    .line 513
     iget-object v0, p0, Landroid/accessibilityservice/AccessibilityService$1;->this$0:Landroid/accessibilityservice/AccessibilityService;
 
     invoke-virtual {v0}, Landroid/accessibilityservice/AccessibilityService;->onInterrupt()V
 
-    .line 514
     return-void
 .end method
 
@@ -83,12 +77,10 @@
     .registers 2
 
     .prologue
-    .line 508
     iget-object v0, p0, Landroid/accessibilityservice/AccessibilityService$1;->this$0:Landroid/accessibilityservice/AccessibilityService;
 
     invoke-virtual {v0}, Landroid/accessibilityservice/AccessibilityService;->onServiceConnected()V
 
-    .line 509
     return-void
 .end method
 
@@ -97,12 +89,10 @@
     .parameter "connectionId"
 
     .prologue
-    .line 523
     iget-object v0, p0, Landroid/accessibilityservice/AccessibilityService$1;->this$0:Landroid/accessibilityservice/AccessibilityService;
 
     #setter for: Landroid/accessibilityservice/AccessibilityService;->mConnectionId:I
     invoke-static {v0, p1}, Landroid/accessibilityservice/AccessibilityService;->access$002(Landroid/accessibilityservice/AccessibilityService;I)I
 
-    .line 524
     return-void
 .end method

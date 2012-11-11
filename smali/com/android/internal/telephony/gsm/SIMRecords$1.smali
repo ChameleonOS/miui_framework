@@ -23,7 +23,6 @@
     .registers 3
 
     .prologue
-    .line 1519
     invoke-static {}, Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;->values()[Lcom/android/internal/telephony/gsm/SIMRecords$Get_Spn_Fsm_State;
 
     move-result-object v0

@@ -28,10 +28,8 @@
     .parameter "src"
 
     .prologue
-    .line 33
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
@@ -42,7 +40,6 @@
 
     iput-object v0, p0, Landroid/text/style/AlignmentSpan$Standard;->mAlignment:Landroid/text/Layout$Alignment;
 
-    .line 35
     return-void
 .end method
 
@@ -51,13 +48,10 @@
     .parameter "align"
 
     .prologue
-    .line 29
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     iput-object p1, p0, Landroid/text/style/AlignmentSpan$Standard;->mAlignment:Landroid/text/Layout$Alignment;
 
-    .line 31
     return-void
 .end method
 
@@ -67,7 +61,6 @@
     .registers 2
 
     .prologue
-    .line 42
     const/4 v0, 0x0
 
     return v0
@@ -77,7 +70,6 @@
     .registers 2
 
     .prologue
-    .line 50
     iget-object v0, p0, Landroid/text/style/AlignmentSpan$Standard;->mAlignment:Landroid/text/Layout$Alignment;
 
     return-object v0
@@ -87,7 +79,6 @@
     .registers 2
 
     .prologue
-    .line 38
     const/4 v0, 0x1
 
     return v0
@@ -99,7 +90,6 @@
     .parameter "flags"
 
     .prologue
-    .line 46
     iget-object v0, p0, Landroid/text/style/AlignmentSpan$Standard;->mAlignment:Landroid/text/Layout$Alignment;
 
     invoke-virtual {v0}, Landroid/text/Layout$Alignment;->name()Ljava/lang/String;
@@ -108,6 +98,5 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 47
     return-void
 .end method

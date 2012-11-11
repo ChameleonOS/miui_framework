@@ -28,7 +28,6 @@
     .parameter
 
     .prologue
-    .line 771
     iput-object p1, p0, Landroid/content/ContentResolver$OpenResourceIdResult;->this$0:Landroid/content/ContentResolver;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

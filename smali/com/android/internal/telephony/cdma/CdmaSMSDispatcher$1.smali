@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 437
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher$1;->this$0:Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,10 @@
     .parameter "intent"
 
     .prologue
-    .line 440
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher$1;->getResultCode()I
 
     move-result v7
 
-    .line 441
     .local v7, rc:I
     const/4 v11, -0x1
 
@@ -58,12 +55,10 @@
     :cond_a
     const/4 v10, 0x1
 
-    .line 442
     .local v10, success:Z
     :goto_b
     if-nez v10, :cond_28
 
-    .line 443
     const-string v11, "CDMA"
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -86,18 +81,15 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 499
     :goto_25
     return-void
 
-    .line 441
     .end local v10           #success:Z
     :cond_26
     const/4 v10, 0x0
 
     goto :goto_b
 
-    .line 446
     .restart local v10       #success:Z
     :cond_28
     const/4 v11, 0x0
@@ -106,11 +98,9 @@
 
     move-result-object v6
 
-    .line 447
     .local v6, extras:Landroid/os/Bundle;
     if-nez v6, :cond_37
 
-    .line 448
     const-string v11, "CDMA"
 
     const-string v12, "SCP results error: missing extras"
@@ -119,7 +109,6 @@
 
     goto :goto_25
 
-    .line 451
     :cond_37
     const-string/jumbo v11, "sender"
 
@@ -127,11 +116,9 @@
 
     move-result-object v9
 
-    .line 452
     .local v9, sender:Ljava/lang/String;
     if-nez v9, :cond_48
 
-    .line 453
     const-string v11, "CDMA"
 
     const-string v12, "SCP results error: missing sender extra."
@@ -140,7 +127,6 @@
 
     goto :goto_25
 
-    .line 456
     :cond_48
     const-string/jumbo v11, "results"
 
@@ -148,11 +134,9 @@
 
     move-result-object v8
 
-    .line 458
     .local v8, results:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/telephony/cdma/CdmaSmsCbProgramResults;>;"
     if-nez v8, :cond_59
 
-    .line 459
     const-string v11, "CDMA"
 
     const-string v12, "SCP results error: missing results extra."
@@ -161,34 +145,28 @@
 
     goto :goto_25
 
-    .line 463
     :cond_59
     new-instance v0, Lcom/android/internal/telephony/cdma/sms/BearerData;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cdma/sms/BearerData;-><init>()V
 
-    .line 464
     .local v0, bData:Lcom/android/internal/telephony/cdma/sms/BearerData;
     const/4 v11, 0x2
 
     iput v11, v0, Lcom/android/internal/telephony/cdma/sms/BearerData;->messageType:I
 
-    .line 465
     invoke-static {}, Lcom/android/internal/telephony/cdma/SmsMessage;->getNextMessageId()I
 
     move-result v11
 
     iput v11, v0, Lcom/android/internal/telephony/cdma/sms/BearerData;->messageId:I
 
-    .line 466
     iput-object v8, v0, Lcom/android/internal/telephony/cdma/sms/BearerData;->serviceCategoryProgramResults:Ljava/util/ArrayList;
 
-    .line 467
     invoke-static {v0}, Lcom/android/internal/telephony/cdma/sms/BearerData;->encode(Lcom/android/internal/telephony/cdma/sms/BearerData;)[B
 
     move-result-object v5
 
-    .line 469
     .local v5, encodedBearerData:[B
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
@@ -196,30 +174,25 @@
 
     invoke-direct {v1, v11}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
-    .line 470
     .local v1, baos:Ljava/io/ByteArrayOutputStream;
     new-instance v3, Ljava/io/DataOutputStream;
 
     invoke-direct {v3, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 472
     .local v3, dos:Ljava/io/DataOutputStream;
     const/16 v11, 0x1006
 
     :try_start_7b
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 473
     const/4 v11, 0x0
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 474
     const/4 v11, 0x0
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 475
     invoke-static {v9}, Landroid/telephony/PhoneNumberUtils;->cdmaCheckAndProcessPlusCode(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
@@ -228,33 +201,27 @@
 
     move-result-object v2
 
-    .line 477
     .local v2, destAddr:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
     iget v11, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->digitMode:I
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 478
     iget v11, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberMode:I
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 479
     iget v11, v2, Lcom/android/internal/telephony/SmsAddress;->ton:I
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 480
     iget v11, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberPlan:I
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 481
     iget v11, v2, Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;->numberOfDigits:I
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 482
     iget-object v11, v2, Lcom/android/internal/telephony/SmsAddress;->origBytes:[B
 
     const/4 v12, 0x0
@@ -265,34 +232,28 @@
 
     invoke-virtual {v3, v11, v12, v13}, Ljava/io/DataOutputStream;->write([BII)V
 
-    .line 484
     const/4 v11, 0x0
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 485
     const/4 v11, 0x0
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 486
     const/4 v11, 0x0
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 487
     array-length v11, v5
 
     invoke-virtual {v3, v11}, Ljava/io/DataOutputStream;->write(I)V
 
-    .line 488
     const/4 v11, 0x0
 
     array-length v12, v5
 
     invoke-virtual {v3, v5, v11, v12}, Ljava/io/DataOutputStream;->write([BII)V
 
-    .line 490
     iget-object v11, p0, Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher$1;->this$0:Lcom/android/internal/telephony/cdma/CdmaSMSDispatcher;
 
     #getter for: Lcom/android/internal/telephony/SMSDispatcher;->mCm:Lcom/android/internal/telephony/CommandsInterface;
@@ -311,7 +272,6 @@
     .catchall {:try_start_7b .. :try_end_d3} :catchall_e8
     .catch Ljava/io/IOException; {:try_start_7b .. :try_end_d3} :catch_db
 
-    .line 495
     :try_start_d3
     invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
     :try_end_d6
@@ -319,18 +279,15 @@
 
     goto/16 :goto_25
 
-    .line 496
     .end local v2           #destAddr:Lcom/android/internal/telephony/cdma/sms/CdmaSmsAddress;
     :catch_d8
     move-exception v11
 
     goto/16 :goto_25
 
-    .line 491
     :catch_db
     move-exception v4
 
-    .line 492
     .local v4, e:Ljava/io/IOException;
     :try_start_dc
     const-string v11, "CDMA"
@@ -341,7 +298,6 @@
     :try_end_e3
     .catchall {:try_start_dc .. :try_end_e3} :catchall_e8
 
-    .line 495
     :try_start_e3
     invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
     :try_end_e6
@@ -349,22 +305,18 @@
 
     goto/16 :goto_25
 
-    .line 494
     .end local v4           #e:Ljava/io/IOException;
     :catchall_e8
     move-exception v11
 
-    .line 495
     :try_start_e9
     invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
     :try_end_ec
     .catch Ljava/io/IOException; {:try_start_e9 .. :try_end_ec} :catch_ed
 
-    .line 494
     :goto_ec
     throw v11
 
-    .line 496
     :catch_ed
     move-exception v12
 

@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 70
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "source"
 
     .prologue
-    .line 72
     new-instance v0, Landroid/accounts/AccountManagerResponse;
 
     invoke-direct {v0, p1}, Landroid/accounts/AccountManagerResponse;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +56,6 @@
     .parameter "x0"
 
     .prologue
-    .line 70
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManagerResponse$1;->createFromParcel(Landroid/os/Parcel;)Landroid/accounts/AccountManagerResponse;
 
     move-result-object v0
@@ -71,7 +68,6 @@
     .parameter "size"
 
     .prologue
-    .line 76
     new-array v0, p1, [Landroid/accounts/AccountManagerResponse;
 
     return-object v0
@@ -82,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 70
     invoke-virtual {p0, p1}, Landroid/accounts/AccountManagerResponse$1;->newArray(I)[Landroid/accounts/AccountManagerResponse;
 
     move-result-object v0

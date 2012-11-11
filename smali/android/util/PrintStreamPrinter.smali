@@ -16,13 +16,10 @@
     .parameter "pw"
 
     .prologue
-    .line 33
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     iput-object p1, p0, Landroid/util/PrintStreamPrinter;->mPS:Ljava/io/PrintStream;
 
-    .line 35
     return-void
 .end method
 
@@ -33,11 +30,9 @@
     .parameter "x"
 
     .prologue
-    .line 38
     iget-object v0, p0, Landroid/util/PrintStreamPrinter;->mPS:Ljava/io/PrintStream;
 
     invoke-virtual {v0, p1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 39
     return-void
 .end method

@@ -18,23 +18,18 @@
     .parameter "cursor"
 
     .prologue
-    .line 36
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/CursorEntityIterator;->mIsClosed:Z
 
-    .line 38
     iput-object p1, p0, Landroid/content/CursorEntityIterator;->mCursor:Landroid/database/Cursor;
 
-    .line 39
     iget-object v0, p0, Landroid/content/CursorEntityIterator;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 40
     return-void
 .end method
 
@@ -44,12 +39,10 @@
     .registers 3
 
     .prologue
-    .line 106
     iget-boolean v0, p0, Landroid/content/CursorEntityIterator;->mIsClosed:Z
 
     if-eqz v0, :cond_c
 
-    .line 107
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "closing when already closed"
@@ -58,18 +51,15 @@
 
     throw v0
 
-    .line 109
     :cond_c
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/content/CursorEntityIterator;->mIsClosed:Z
 
-    .line 110
     iget-object v0, p0, Landroid/content/CursorEntityIterator;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 111
     return-void
 .end method
 
@@ -85,12 +75,10 @@
     .registers 3
 
     .prologue
-    .line 59
     iget-boolean v0, p0, Landroid/content/CursorEntityIterator;->mIsClosed:Z
 
     if-eqz v0, :cond_c
 
-    .line 60
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "calling hasNext() when the iterator is closed"
@@ -99,7 +87,6 @@
 
     throw v0
 
-    .line 63
     :cond_c
     iget-object v0, p0, Landroid/content/CursorEntityIterator;->mCursor:Landroid/database/Cursor;
 
@@ -124,12 +111,10 @@
     .registers 4
 
     .prologue
-    .line 76
     iget-boolean v1, p0, Landroid/content/CursorEntityIterator;->mIsClosed:Z
 
     if-eqz v1, :cond_c
 
-    .line 77
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "calling next() when the iterator is closed"
@@ -138,7 +123,6 @@
 
     throw v1
 
-    .line 79
     :cond_c
     invoke-virtual {p0}, Landroid/content/CursorEntityIterator;->hasNext()Z
 
@@ -146,7 +130,6 @@
 
     if-nez v1, :cond_1b
 
-    .line 80
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v2, "you may only call next() if hasNext() is true"
@@ -155,7 +138,6 @@
 
     throw v1
 
-    .line 84
     :cond_1b
     :try_start_1b
     iget-object v1, p0, Landroid/content/CursorEntityIterator;->mCursor:Landroid/database/Cursor;
@@ -168,11 +150,9 @@
 
     return-object v1
 
-    .line 85
     :catch_22
     move-exception v0
 
-    .line 86
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -187,7 +167,6 @@
     .registers 2
 
     .prologue
-    .line 27
     invoke-virtual {p0}, Landroid/content/CursorEntityIterator;->next()Landroid/content/Entity;
 
     move-result-object v0
@@ -199,7 +178,6 @@
     .registers 3
 
     .prologue
-    .line 91
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "remove not supported by EntityIterators"
@@ -213,12 +191,10 @@
     .registers 3
 
     .prologue
-    .line 95
     iget-boolean v0, p0, Landroid/content/CursorEntityIterator;->mIsClosed:Z
 
     if-eqz v0, :cond_c
 
-    .line 96
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "calling reset() when the iterator is closed"
@@ -227,12 +203,10 @@
 
     throw v0
 
-    .line 98
     :cond_c
     iget-object v0, p0, Landroid/content/CursorEntityIterator;->mCursor:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 99
     return-void
 .end method

@@ -41,7 +41,6 @@
     .registers 1
 
     .prologue
-    .line 1613
     const-string v0, "internal"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Audio$Artists;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
@@ -50,7 +49,6 @@
 
     sput-object v0, Landroid/provider/MediaStore$Audio$Artists;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 1620
     const-string v0, "external"
 
     invoke-static {v0}, Landroid/provider/MediaStore$Audio$Artists;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
@@ -66,10 +64,8 @@
     .registers 1
 
     .prologue
-    .line 1597
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1642
     return-void
 .end method
 
@@ -78,7 +74,6 @@
     .parameter "volumeName"
 
     .prologue
-    .line 1606
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 52
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,12 +37,10 @@
     .parameter "bottom"
 
     .prologue
-    .line 54
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getActionBarBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 55
     .local v0, background:Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_18
 
@@ -57,19 +54,15 @@
 
     if-nez v1, :cond_18
 
-    .line 56
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 57
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/android/internal/widget/ActionBarContainer;->setIsStacked(Z)V
 
-    .line 61
     :goto_17
     return-void
 
-    .line 59
     :cond_18
     invoke-virtual {p0}, Lcom/android/internal/widget/ActionBarContainer;->getStackedBackground()Landroid/graphics/drawable/Drawable;
 

@@ -14,7 +14,6 @@
     .registers 1
 
     .prologue
-    .line 11
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,7 +30,6 @@
     .parameter "pitch"
 
     .prologue
-    .line 24
     const v0, 0x128e2
 
     const/4 v1, 0x7
@@ -88,7 +86,6 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 25
     return-void
 .end method
 
@@ -106,7 +103,6 @@
     .parameter "audioLatency"
 
     .prologue
-    .line 20
     const v0, 0x128e1
 
     const/16 v1, 0xa
@@ -187,6 +183,5 @@
 
     invoke-static {v0, v1}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 21
     return-void
 .end method

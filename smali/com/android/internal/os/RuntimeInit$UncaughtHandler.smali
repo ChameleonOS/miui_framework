@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 82
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
     .parameter "x0"
 
     .prologue
-    .line 82
     invoke-direct {p0}, Lcom/android/internal/os/RuntimeInit$UncaughtHandler;-><init>()V
 
     return-void
@@ -49,7 +47,6 @@
     .prologue
     const/16 v4, 0xa
 
-    .line 86
     :try_start_2
     invoke-static {}, Lcom/android/internal/os/RuntimeInit;->access$000()Z
     :try_end_5
@@ -60,35 +57,29 @@
 
     if-eqz v1, :cond_13
 
-    .line 106
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v1
 
     invoke-static {v1}, Landroid/os/Process;->killProcess(I)V
 
-    .line 107
     invoke-static {v4}, Ljava/lang/System;->exit(I)V
 
-    .line 109
     :goto_12
     return-void
 
-    .line 87
     :cond_13
     const/4 v1, 0x1
 
     :try_start_14
     invoke-static {v1}, Lcom/android/internal/os/RuntimeInit;->access$002(Z)Z
 
-    .line 89
     invoke-static {}, Lcom/android/internal/os/RuntimeInit;->access$100()Landroid/os/IBinder;
 
     move-result-object v1
 
     if-nez v1, :cond_54
 
-    .line 90
     const-string v1, "AndroidRuntime"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -115,7 +106,6 @@
 
     invoke-static {v1, v2, p2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 96
     :goto_39
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -134,19 +124,16 @@
     .catchall {:try_start_14 .. :try_end_49} :catchall_84
     .catch Ljava/lang/Throwable; {:try_start_14 .. :try_end_49} :catch_71
 
-    .line 106
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v1
 
     invoke-static {v1}, Landroid/os/Process;->killProcess(I)V
 
-    .line 107
     invoke-static {v4}, Ljava/lang/System;->exit(I)V
 
     goto :goto_12
 
-    .line 92
     :cond_54
     :try_start_54
     const-string v1, "AndroidRuntime"
@@ -180,11 +167,9 @@
 
     goto :goto_39
 
-    .line 98
     :catch_71
     move-exception v0
 
-    .line 100
     .local v0, t2:Ljava/lang/Throwable;
     :try_start_72
     const-string v1, "AndroidRuntime"
@@ -196,7 +181,6 @@
     .catchall {:try_start_72 .. :try_end_79} :catchall_84
     .catch Ljava/lang/Throwable; {:try_start_72 .. :try_end_79} :catch_90
 
-    .line 106
     :goto_79
     invoke-static {}, Landroid/os/Process;->myPid()I
 
@@ -204,12 +188,10 @@
 
     invoke-static {v1}, Landroid/os/Process;->killProcess(I)V
 
-    .line 107
     invoke-static {v4}, Ljava/lang/System;->exit(I)V
 
     goto :goto_12
 
-    .line 106
     .end local v0           #t2:Ljava/lang/Throwable;
     :catchall_84
     move-exception v1
@@ -220,12 +202,10 @@
 
     invoke-static {v2}, Landroid/os/Process;->killProcess(I)V
 
-    .line 107
     invoke-static {v4}, Ljava/lang/System;->exit(I)V
 
     throw v1
 
-    .line 101
     .restart local v0       #t2:Ljava/lang/Throwable;
     :catch_90
     move-exception v1

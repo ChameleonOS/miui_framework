@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 339
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,12 +44,10 @@
     .parameter "in"
 
     .prologue
-    .line 341
     new-instance v0, Landroid/net/LinkCapabilities;
 
     invoke-direct {v0}, Landroid/net/LinkCapabilities;-><init>()V
 
-    .line 342
     .local v0, capabilities:Landroid/net/LinkCapabilities;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -59,7 +56,6 @@
     .local v2, size:I
     move v3, v2
 
-    .line 343
     .end local v2           #size:I
     .local v3, size:I
     :goto_a
@@ -69,18 +65,15 @@
     .restart local v2       #size:I
     if-eqz v3, :cond_23
 
-    .line 344
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 345
     .local v1, key:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 346
     .local v4, value:Ljava/lang/String;
     #getter for: Landroid/net/LinkCapabilities;->mCapabilities:Ljava/util/HashMap;
     invoke-static {v0}, Landroid/net/LinkCapabilities;->access$000(Landroid/net/LinkCapabilities;)Ljava/util/HashMap;
@@ -95,12 +88,10 @@
 
     move v3, v2
 
-    .line 347
     .end local v2           #size:I
     .restart local v3       #size:I
     goto :goto_a
 
-    .line 348
     .end local v1           #key:I
     .end local v3           #size:I
     .end local v4           #value:Ljava/lang/String;
@@ -114,7 +105,6 @@
     .parameter "x0"
 
     .prologue
-    .line 339
     invoke-virtual {p0, p1}, Landroid/net/LinkCapabilities$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/LinkCapabilities;
 
     move-result-object v0
@@ -127,7 +117,6 @@
     .parameter "size"
 
     .prologue
-    .line 352
     new-array v0, p1, [Landroid/net/LinkCapabilities;
 
     return-object v0
@@ -138,7 +127,6 @@
     .parameter "x0"
 
     .prologue
-    .line 339
     invoke-virtual {p0, p1}, Landroid/net/LinkCapabilities$1;->newArray(I)[Landroid/net/LinkCapabilities;
 
     move-result-object v0

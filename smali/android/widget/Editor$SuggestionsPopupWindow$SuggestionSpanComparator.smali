@@ -37,7 +37,6 @@
     .parameter
 
     .prologue
-    .line 2290
     iput-object p1, p0, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionSpanComparator;->this$1:Landroid/widget/Editor$SuggestionsPopupWindow;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +50,6 @@
     .parameter "x1"
 
     .prologue
-    .line 2290
     invoke-direct {p0, p1}, Landroid/widget/Editor$SuggestionsPopupWindow$SuggestionSpanComparator;-><init>(Landroid/widget/Editor$SuggestionsPopupWindow;)V
 
     return-void
@@ -71,29 +69,24 @@
 
     const/4 v7, 0x1
 
-    .line 2292
     invoke-virtual {p1}, Landroid/text/style/SuggestionSpan;->getFlags()I
 
     move-result v2
 
-    .line 2293
     .local v2, flag1:I
     invoke-virtual {p2}, Landroid/text/style/SuggestionSpan;->getFlags()I
 
     move-result v3
 
-    .line 2294
     .local v3, flag2:I
     if-eq v2, v3, :cond_38
 
-    .line 2296
     and-int/lit8 v8, v2, 0x1
 
     if-eqz v8, :cond_26
 
     move v0, v7
 
-    .line 2297
     .local v0, easy1:Z
     :goto_12
     and-int/lit8 v8, v3, 0x1
@@ -102,7 +95,6 @@
 
     move v1, v7
 
-    .line 2298
     .local v1, easy2:Z
     :goto_17
     and-int/lit8 v8, v2, 0x2
@@ -111,7 +103,6 @@
 
     move v4, v7
 
-    .line 2299
     .local v4, misspelled1:Z
     :goto_1c
     and-int/lit8 v8, v3, 0x2
@@ -120,14 +111,12 @@
 
     move v5, v7
 
-    .line 2300
     .local v5, misspelled2:Z
     :cond_21
     if-eqz v0, :cond_2c
 
     if-nez v4, :cond_2c
 
-    .line 2306
     .end local v0           #easy1:Z
     .end local v1           #easy2:Z
     .end local v4           #misspelled1:Z
@@ -139,24 +128,20 @@
     :cond_26
     move v0, v5
 
-    .line 2296
     goto :goto_12
 
     .restart local v0       #easy1:Z
     :cond_28
     move v1, v5
 
-    .line 2297
     goto :goto_17
 
     .restart local v1       #easy2:Z
     :cond_2a
     move v4, v5
 
-    .line 2298
     goto :goto_1c
 
-    .line 2301
     .restart local v4       #misspelled1:Z
     .restart local v5       #misspelled2:Z
     :cond_2c
@@ -168,18 +153,15 @@
 
     goto :goto_25
 
-    .line 2302
     :cond_32
     if-nez v4, :cond_25
 
-    .line 2303
     if-eqz v5, :cond_38
 
     move v6, v7
 
     goto :goto_25
 
-    .line 2306
     .end local v0           #easy1:Z
     .end local v1           #easy2:Z
     .end local v4           #misspelled1:Z
@@ -230,7 +212,6 @@
     .parameter "x1"
 
     .prologue
-    .line 2290
     check-cast p1, Landroid/text/style/SuggestionSpan;
 
     .end local p1

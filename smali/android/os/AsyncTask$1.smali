@@ -26,10 +26,8 @@
     .registers 3
 
     .prologue
-    .line 184
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 185
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x1
@@ -48,7 +46,6 @@
     .parameter "r"
 
     .prologue
-    .line 188
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Ljava/lang/StringBuilder;

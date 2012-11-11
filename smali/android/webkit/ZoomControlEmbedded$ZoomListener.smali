@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 99
     iput-object p1, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 99
     invoke-direct {p0, p1}, Landroid/webkit/ZoomControlEmbedded$ZoomListener;-><init>(Landroid/webkit/ZoomControlEmbedded;)V
 
     return-void
@@ -54,10 +52,8 @@
     .parameter "visible"
 
     .prologue
-    .line 102
     if-eqz p1, :cond_1e
 
-    .line 103
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
     #getter for: Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
@@ -67,7 +63,6 @@
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->switchOutDrawHistory()V
 
-    .line 105
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
     #getter for: Landroid/webkit/ZoomControlEmbedded;->mZoomButtonsController:Landroid/widget/ZoomButtonsController;
@@ -83,12 +78,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 106
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
     invoke-virtual {v0}, Landroid/webkit/ZoomControlEmbedded;->update()V
 
-    .line 108
     :cond_1e
     return-void
 .end method
@@ -98,10 +91,8 @@
     .parameter "zoomIn"
 
     .prologue
-    .line 111
     if-eqz p1, :cond_11
 
-    .line 112
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
     #getter for: Landroid/webkit/ZoomControlEmbedded;->mWebView:Landroid/webkit/WebViewClassic;
@@ -111,16 +102,13 @@
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->zoomIn()Z
 
-    .line 116
     :goto_b
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 
     invoke-virtual {v0}, Landroid/webkit/ZoomControlEmbedded;->update()V
 
-    .line 117
     return-void
 
-    .line 114
     :cond_11
     iget-object v0, p0, Landroid/webkit/ZoomControlEmbedded$ZoomListener;->this$0:Landroid/webkit/ZoomControlEmbedded;
 

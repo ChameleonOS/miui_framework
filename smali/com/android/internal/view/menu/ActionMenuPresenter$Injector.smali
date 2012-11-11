@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 46
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .parameter "abp"
 
     .prologue
-    .line 47
     const/4 v0, 0x0
 
     return v0

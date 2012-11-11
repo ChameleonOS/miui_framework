@@ -12,10 +12,8 @@
     .registers 1
 
     .prologue
-    .line 26
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
-    .line 27
     return-void
 .end method
 
@@ -24,10 +22,8 @@
     .parameter "src"
 
     .prologue
-    .line 29
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
-    .line 30
     return-void
 .end method
 
@@ -37,7 +33,6 @@
     .registers 2
 
     .prologue
-    .line 37
     const/4 v0, 0x0
 
     return v0
@@ -47,7 +42,6 @@
     .registers 2
 
     .prologue
-    .line 33
     const/4 v0, 0x6
 
     return v0
@@ -58,12 +52,10 @@
     .parameter "ds"
 
     .prologue
-    .line 45
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
-    .line 46
     return-void
 .end method
 
@@ -73,6 +65,5 @@
     .parameter "flags"
 
     .prologue
-    .line 41
     return-void
 .end method

@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 398
     iput-object p1, p0, Landroid/net/http/AndroidHttpClient$CurlLogger;->this$0:Landroid/net/http/AndroidHttpClient;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 398
     invoke-direct {p0, p1}, Landroid/net/http/AndroidHttpClient$CurlLogger;-><init>(Landroid/net/http/AndroidHttpClient;)V
 
     return-void
@@ -61,7 +59,6 @@
     .end annotation
 
     .prologue
-    .line 401
     iget-object v1, p0, Landroid/net/http/AndroidHttpClient$CurlLogger;->this$0:Landroid/net/http/AndroidHttpClient;
 
     #getter for: Landroid/net/http/AndroidHttpClient;->curlConfiguration:Landroid/net/http/AndroidHttpClient$LoggingConfiguration;
@@ -69,7 +66,6 @@
 
     move-result-object v0
 
-    .line 402
     .local v0, configuration:Landroid/net/http/AndroidHttpClient$LoggingConfiguration;
     if-eqz v0, :cond_1c
 
@@ -84,7 +80,6 @@
 
     if-eqz v1, :cond_1c
 
-    .line 407
     check-cast p1, Lorg/apache/http/client/methods/HttpUriRequest;
 
     .end local p1
@@ -98,7 +93,6 @@
     #calls: Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->println(Ljava/lang/String;)V
     invoke-static {v0, v1}, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->access$600(Landroid/net/http/AndroidHttpClient$LoggingConfiguration;Ljava/lang/String;)V
 
-    .line 409
     :cond_1c
     return-void
 .end method

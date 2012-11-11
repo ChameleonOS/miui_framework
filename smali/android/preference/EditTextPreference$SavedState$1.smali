@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 223
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "in"
 
     .prologue
-    .line 225
     new-instance v0, Landroid/preference/EditTextPreference$SavedState;
 
     invoke-direct {v0, p1}, Landroid/preference/EditTextPreference$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +56,6 @@
     .parameter "x0"
 
     .prologue
-    .line 223
     invoke-virtual {p0, p1}, Landroid/preference/EditTextPreference$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/preference/EditTextPreference$SavedState;
 
     move-result-object v0
@@ -71,7 +68,6 @@
     .parameter "size"
 
     .prologue
-    .line 229
     new-array v0, p1, [Landroid/preference/EditTextPreference$SavedState;
 
     return-object v0
@@ -82,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 223
     invoke-virtual {p0, p1}, Landroid/preference/EditTextPreference$SavedState$1;->newArray(I)[Landroid/preference/EditTextPreference$SavedState;
 
     move-result-object v0

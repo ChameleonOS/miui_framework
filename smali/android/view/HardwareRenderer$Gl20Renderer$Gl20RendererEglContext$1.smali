@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 1328
     iput-object p1, p0, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext$1;->this$0:Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
 
     iput-object p2, p0, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext$1;->val$eglContext:Ljavax/microedition/khronos/egl/EGLContext;
@@ -46,13 +45,11 @@
     .registers 3
 
     .prologue
-    .line 1331
     iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext$1;->this$0:Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;
 
     iget-object v1, p0, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext$1;->val$eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     invoke-virtual {v0, v1}, Landroid/view/HardwareRenderer$Gl20Renderer$Gl20RendererEglContext;->onTerminate(Ljavax/microedition/khronos/egl/EGLContext;)V
 
-    .line 1332
     return-void
 .end method

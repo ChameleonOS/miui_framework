@@ -57,7 +57,6 @@
     .registers 1
 
     .prologue
-    .line 113
     const-string v0, "content://com.android.voicemail/voicemail"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -66,17 +65,14 @@
 
     sput-object v0, Landroid/provider/VoicemailContract$Voicemails;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 154
     const/4 v0, 0x0
 
     sput v0, Landroid/provider/VoicemailContract$Voicemails;->STATE_INBOX:I
 
-    .line 159
     const/4 v0, 0x1
 
     sput v0, Landroid/provider/VoicemailContract$Voicemails;->STATE_DELETED:I
 
-    .line 164
     const/4 v0, 0x2
 
     sput v0, Landroid/provider/VoicemailContract$Voicemails;->STATE_UNDELETED:I
@@ -88,10 +84,8 @@
     .registers 1
 
     .prologue
-    .line 109
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 110
     return-void
 .end method
 
@@ -100,7 +94,6 @@
     .parameter "packageName"
 
     .prologue
-    .line 201
     sget-object v0, Landroid/provider/VoicemailContract$Voicemails;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;

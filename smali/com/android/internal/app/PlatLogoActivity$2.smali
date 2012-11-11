@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 109
     iput-object p1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "v"
 
     .prologue
-    .line 113
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
@@ -68,22 +66,18 @@
     :try_end_19
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_19} :catch_20
 
-    .line 122
     :goto_19
     iget-object v1, p0, Lcom/android/internal/app/PlatLogoActivity$2;->this$0:Lcom/android/internal/app/PlatLogoActivity;
 
     invoke-virtual {v1}, Lcom/android/internal/app/PlatLogoActivity;->finish()V
 
-    .line 123
     const/4 v1, 0x1
 
     return v1
 
-    .line 119
     :catch_20
     move-exception v0
 
-    .line 120
     .local v0, ex:Landroid/content/ActivityNotFoundException;
     const-string v1, "PlatLogoActivity"
 

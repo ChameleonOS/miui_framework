@@ -21,13 +21,10 @@
     .parameter "name"
 
     .prologue
-    .line 47
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     iput-object p1, p0, Landroid/hardware/SerialPort;->mName:Ljava/lang/String;
 
-    .line 49
     return-void
 .end method
 
@@ -88,26 +85,21 @@
     .end annotation
 
     .prologue
-    .line 68
     iget-object v0, p0, Landroid/hardware/SerialPort;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
     if-eqz v0, :cond_c
 
-    .line 69
     iget-object v0, p0, Landroid/hardware/SerialPort;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    .line 70
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/hardware/SerialPort;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
-    .line 72
     :cond_c
     invoke-direct {p0}, Landroid/hardware/SerialPort;->native_close()V
 
-    .line 73
     return-void
 .end method
 
@@ -115,7 +107,6 @@
     .registers 2
 
     .prologue
-    .line 81
     iget-object v0, p0, Landroid/hardware/SerialPort;->mName:Ljava/lang/String;
 
     return-object v0
@@ -132,17 +123,14 @@
     .end annotation
 
     .prologue
-    .line 60
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p2}, Landroid/hardware/SerialPort;->native_open(Ljava/io/FileDescriptor;I)V
 
-    .line 61
     iput-object p1, p0, Landroid/hardware/SerialPort;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
-    .line 62
     return-void
 .end method
 
@@ -156,14 +144,12 @@
     .end annotation
 
     .prologue
-    .line 91
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 92
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v0
@@ -172,11 +158,9 @@
 
     move-result v0
 
-    .line 94
     :goto_e
     return v0
 
-    .line 93
     :cond_f
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
 
@@ -184,7 +168,6 @@
 
     if-eqz v0, :cond_22
 
-    .line 94
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
@@ -199,7 +182,6 @@
 
     goto :goto_e
 
-    .line 96
     :cond_22
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -214,10 +196,8 @@
     .registers 1
 
     .prologue
-    .line 120
     invoke-direct {p0}, Landroid/hardware/SerialPort;->native_send_break()V
 
-    .line 121
     return-void
 .end method
 
@@ -232,21 +212,17 @@
     .end annotation
 
     .prologue
-    .line 107
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 108
     invoke-direct {p0, p1, p2}, Landroid/hardware/SerialPort;->native_write_direct(Ljava/nio/ByteBuffer;I)V
 
-    .line 114
     :goto_9
     return-void
 
-    .line 109
     :cond_a
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
 
@@ -254,7 +230,6 @@
 
     if-eqz v0, :cond_18
 
-    .line 110
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
@@ -263,7 +238,6 @@
 
     goto :goto_9
 
-    .line 112
     :cond_18
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

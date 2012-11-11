@@ -33,21 +33,15 @@
     .parameter "supportFile"
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
     iput-object p1, p0, Lmiui/content/res/ThemeResources$MetaData;->themePath:Ljava/lang/String;
 
-    .line 26
     iput-boolean p2, p0, Lmiui/content/res/ThemeResources$MetaData;->supportInt:Z
 
-    .line 27
     iput-boolean p3, p0, Lmiui/content/res/ThemeResources$MetaData;->supportCharSequence:Z
 
-    .line 28
     iput-boolean p4, p0, Lmiui/content/res/ThemeResources$MetaData;->supportFile:Z
 
-    .line 29
     return-void
 .end method

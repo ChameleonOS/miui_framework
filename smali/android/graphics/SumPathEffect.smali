@@ -10,10 +10,8 @@
     .parameter "second"
 
     .prologue
-    .line 25
     invoke-direct {p0}, Landroid/graphics/PathEffect;-><init>()V
 
-    .line 26
     iget v0, p1, Landroid/graphics/PathEffect;->native_instance:I
 
     iget v1, p2, Landroid/graphics/PathEffect;->native_instance:I
@@ -24,7 +22,6 @@
 
     iput v0, p0, Landroid/graphics/PathEffect;->native_instance:I
 
-    .line 28
     return-void
 .end method
 

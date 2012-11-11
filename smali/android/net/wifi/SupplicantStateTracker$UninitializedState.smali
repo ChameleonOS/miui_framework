@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 197
     iput-object p1, p0, Landroid/net/wifi/SupplicantStateTracker$UninitializedState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,6 +37,5 @@
     .registers 1
 
     .prologue
-    .line 201
     return-void
 .end method

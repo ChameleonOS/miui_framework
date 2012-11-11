@@ -26,13 +26,10 @@
     .parameter "looper"
 
     .prologue
-    .line 920
     iput-object p1, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
-    .line 921
     invoke-direct {p0, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 922
     return-void
 .end method
 
@@ -43,12 +40,10 @@
     .parameter "msg"
 
     .prologue
-    .line 926
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_94
 
-    .line 960
     const-string v0, "RemoteControlClient"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -79,11 +74,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 962
     :goto_25
     return-void
 
-    .line 928
     :pswitch_26
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -94,14 +87,12 @@
 
     monitor-enter v1
 
-    .line 929
     :try_start_2d
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
     #calls: Landroid/media/RemoteControlClient;->sendPlaybackState_syncCacheLock()V
     invoke-static {v0}, Landroid/media/RemoteControlClient;->access$1400(Landroid/media/RemoteControlClient;)V
 
-    .line 930
     monitor-exit v1
 
     goto :goto_25
@@ -115,7 +106,6 @@
 
     throw v0
 
-    .line 933
     :pswitch_37
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -126,14 +116,12 @@
 
     monitor-enter v1
 
-    .line 934
     :try_start_3e
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
     #calls: Landroid/media/RemoteControlClient;->sendMetadata_syncCacheLock()V
     invoke-static {v0}, Landroid/media/RemoteControlClient;->access$1000(Landroid/media/RemoteControlClient;)V
 
-    .line 935
     monitor-exit v1
 
     goto :goto_25
@@ -147,7 +135,6 @@
 
     throw v0
 
-    .line 938
     :pswitch_48
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -158,14 +145,12 @@
 
     monitor-enter v1
 
-    .line 939
     :try_start_4f
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
     #calls: Landroid/media/RemoteControlClient;->sendTransportControlFlags_syncCacheLock()V
     invoke-static {v0}, Landroid/media/RemoteControlClient;->access$1500(Landroid/media/RemoteControlClient;)V
 
-    .line 940
     monitor-exit v1
 
     goto :goto_25
@@ -179,7 +164,6 @@
 
     throw v0
 
-    .line 943
     :pswitch_59
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -190,14 +174,12 @@
 
     monitor-enter v1
 
-    .line 944
     :try_start_60
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
     #calls: Landroid/media/RemoteControlClient;->sendArtwork_syncCacheLock()V
     invoke-static {v0}, Landroid/media/RemoteControlClient;->access$1100(Landroid/media/RemoteControlClient;)V
 
-    .line 945
     monitor-exit v1
 
     goto :goto_25
@@ -211,7 +193,6 @@
 
     throw v0
 
-    .line 948
     :pswitch_6a
     iget-object v1, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -228,7 +209,6 @@
 
     goto :goto_25
 
-    .line 951
     :pswitch_78
     iget-object v0, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -239,7 +219,6 @@
 
     goto :goto_25
 
-    .line 954
     :pswitch_80
     iget-object v1, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -252,7 +231,6 @@
 
     goto :goto_25
 
-    .line 957
     :pswitch_8a
     iget-object v1, p0, Landroid/media/RemoteControlClient$EventHandler;->this$0:Landroid/media/RemoteControlClient;
 
@@ -265,7 +243,6 @@
 
     goto :goto_25
 
-    .line 926
     :pswitch_data_94
     .packed-switch 0x1
         :pswitch_26

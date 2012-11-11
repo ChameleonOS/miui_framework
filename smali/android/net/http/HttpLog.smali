@@ -16,7 +16,6 @@
     .registers 1
 
     .prologue
-    .line 30
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,12 +26,10 @@
     .parameter "logMe"
 
     .prologue
-    .line 41
     const-string v0, "http"
 
     invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 42
     return-void
 .end method
 
@@ -41,7 +38,6 @@
     .parameter "logMe"
 
     .prologue
-    .line 37
     const-string v0, "http"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -90,6 +86,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 38
     return-void
 .end method

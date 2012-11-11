@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 106
     iput-object p1, p0, Landroid/server/BluetoothPanProfileHandler$1;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "intent"
 
     .prologue
-    .line 109
     const-string v0, "android.bluetooth.adapter.extra.STATE"
 
     const/16 v1, 0xa
@@ -53,7 +51,6 @@
 
     if-ne v0, v1, :cond_21
 
-    .line 111
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$1;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     const/4 v1, 0x1
@@ -61,7 +58,6 @@
     #setter for: Landroid/server/BluetoothPanProfileHandler;->mTetheringOn:Z
     invoke-static {v0, v1}, Landroid/server/BluetoothPanProfileHandler;->access$002(Landroid/server/BluetoothPanProfileHandler;Z)Z
 
-    .line 112
     iget-object v0, p0, Landroid/server/BluetoothPanProfileHandler$1;->this$0:Landroid/server/BluetoothPanProfileHandler;
 
     #getter for: Landroid/server/BluetoothPanProfileHandler;->mContext:Landroid/content/Context;
@@ -78,7 +74,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 114
     :cond_21
     return-void
 .end method

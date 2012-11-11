@@ -33,7 +33,6 @@
     .parameter
 
     .prologue
-    .line 1027
     iput-object p1, p0, Landroid/webkit/BrowserFrame$1;->this$0:Landroid/webkit/BrowserFrame;
 
     iput-boolean p2, p0, Landroid/webkit/BrowserFrame$1;->val$useCachedCredentials:Z
@@ -53,7 +52,6 @@
     .registers 3
 
     .prologue
-    .line 1041
     iget-object v0, p0, Landroid/webkit/BrowserFrame$1;->this$0:Landroid/webkit/BrowserFrame;
 
     iget v1, p0, Landroid/webkit/BrowserFrame$1;->val$handle:I
@@ -61,7 +59,6 @@
     #calls: Landroid/webkit/BrowserFrame;->nativeAuthenticationCancel(I)V
     invoke-static {v0, v1}, Landroid/webkit/BrowserFrame;->access$100(Landroid/webkit/BrowserFrame;I)V
 
-    .line 1042
     return-void
 .end method
 
@@ -71,7 +68,6 @@
     .parameter "password"
 
     .prologue
-    .line 1036
     iget-object v0, p0, Landroid/webkit/BrowserFrame$1;->this$0:Landroid/webkit/BrowserFrame;
 
     iget v1, p0, Landroid/webkit/BrowserFrame$1;->val$handle:I
@@ -79,7 +75,6 @@
     #calls: Landroid/webkit/BrowserFrame;->nativeAuthenticationProceed(ILjava/lang/String;Ljava/lang/String;)V
     invoke-static {v0, v1, p1, p2}, Landroid/webkit/BrowserFrame;->access$000(Landroid/webkit/BrowserFrame;ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 1037
     return-void
 .end method
 
@@ -87,7 +82,6 @@
     .registers 2
 
     .prologue
-    .line 1046
     iget-boolean v0, p0, Landroid/webkit/BrowserFrame$1;->val$suppressDialog:Z
 
     return v0
@@ -97,7 +91,6 @@
     .registers 2
 
     .prologue
-    .line 1031
     iget-boolean v0, p0, Landroid/webkit/BrowserFrame$1;->val$useCachedCredentials:Z
 
     return v0

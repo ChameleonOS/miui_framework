@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 101
     iput-object p1, p0, Landroid/widget/MiuiMovieController$1;->this$0:Landroid/widget/MiuiMovieController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .registers 2
 
     .prologue
-    .line 103
     iget-object v0, p0, Landroid/widget/MiuiMovieController$1;->this$0:Landroid/widget/MiuiMovieController;
 
     #calls: Landroid/widget/MiuiMovieController;->startHiding()V
     invoke-static {v0}, Landroid/widget/MiuiMovieController;->access$000(Landroid/widget/MiuiMovieController;)V
 
-    .line 104
     return-void
 .end method

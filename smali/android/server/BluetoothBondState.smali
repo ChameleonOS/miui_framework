@@ -128,51 +128,42 @@
     .parameter "service"
 
     .prologue
-    .line 84
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Landroid/server/BluetoothBondState;->mState:Ljava/util/HashMap;
 
-    .line 59
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     iput-object v1, p0, Landroid/server/BluetoothBondState;->mPinAttempt:Ljava/util/HashMap;
 
-    .line 82
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Landroid/server/BluetoothBondState;->mPairingRequestRcvd:Ljava/util/ArrayList;
 
-    .line 324
     new-instance v1, Landroid/server/BluetoothBondState$1;
 
     invoke-direct {v1, p0}, Landroid/server/BluetoothBondState$1;-><init>(Landroid/server/BluetoothBondState;)V
 
     iput-object v1, p0, Landroid/server/BluetoothBondState;->mProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    .line 484
     new-instance v1, Landroid/server/BluetoothBondState$2;
 
     invoke-direct {v1, p0}, Landroid/server/BluetoothBondState$2;-><init>(Landroid/server/BluetoothBondState;)V
 
     iput-object v1, p0, Landroid/server/BluetoothBondState;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 85
     iput-object p1, p0, Landroid/server/BluetoothBondState;->mContext:Landroid/content/Context;
 
-    .line 86
     iput-object p2, p0, Landroid/server/BluetoothBondState;->mService:Landroid/server/BluetoothService;
 
-    .line 87
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mService:Landroid/server/BluetoothService;
@@ -183,28 +174,23 @@
 
     iput-object v1, p0, Landroid/server/BluetoothBondState;->mBluetoothInputProfileHandler:Landroid/server/BluetoothInputProfileHandler;
 
-    .line 90
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 91
     .local v0, filter:Landroid/content/IntentFilter;
     const-string v1, "android.bluetooth.device.action.PAIRING_REQUEST"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 92
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 93
     invoke-virtual {p0}, Landroid/server/BluetoothBondState;->readAutoPairingData()V
 
-    .line 94
     return-void
 .end method
 
@@ -214,7 +200,6 @@
     .parameter "x1"
 
     .prologue
-    .line 54
     iput-object p1, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
     return-object p1
@@ -226,7 +211,6 @@
     .parameter "x1"
 
     .prologue
-    .line 54
     iput-object p1, p0, Landroid/server/BluetoothBondState;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
 
     return-object p1
@@ -237,7 +221,6 @@
     .parameter "x0"
 
     .prologue
-    .line 54
     iget-object v0, p0, Landroid/server/BluetoothBondState;->mPairingRequestRcvd:Ljava/util/ArrayList;
 
     return-object v0
@@ -247,38 +230,32 @@
     .registers 4
 
     .prologue
-    .line 313
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
-    .line 315
     .local v0, bluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
     if-eqz v1, :cond_e
 
-    .line 316
     const/4 v1, 0x2
 
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-virtual {v0, v1, v2}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
 
-    .line 319
     :cond_e
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
 
     if-eqz v1, :cond_18
 
-    .line 320
     const/4 v1, 0x1
 
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v0, v1, v2}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
 
-    .line 322
     :cond_18
     return-void
 .end method
@@ -287,14 +264,11 @@
     .registers 12
 
     .prologue
-    .line 345
     const/4 v3, 0x0
 
-    .line 346
     .local v3, in:Ljava/io/FileInputStream;
     const/4 v6, 0x0
 
-    .line 348
     .local v6, out:Ljava/io/FileOutputStream;
     :try_start_2
     new-instance v2, Ljava/io/File;
@@ -303,7 +277,6 @@
 
     invoke-direct {v2, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 349
     .local v2, file:Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
     :try_end_c
@@ -315,13 +288,11 @@
 
     if-eqz v8, :cond_16
 
-    .line 365
     if-eqz v3, :cond_12
 
     :try_start_11
     throw v3
 
-    .line 366
     :cond_12
     if-eqz v6, :cond_15
 
@@ -329,13 +300,11 @@
     :try_end_15
     .catch Ljava/io/IOException; {:try_start_11 .. :try_end_15} :catch_b3
 
-    .line 369
     .end local v2           #file:Ljava/io/File;
     :cond_15
     :goto_15
     return-void
 
-    .line 351
     .restart local v2       #file:Ljava/io/File;
     :cond_16
     :try_start_16
@@ -349,7 +318,6 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_16 .. :try_end_1d} :catch_ae
     .catch Ljava/io/IOException; {:try_start_16 .. :try_end_1d} :catch_6c
 
-    .line 352
     .end local v3           #in:Ljava/io/FileInputStream;
     .local v4, in:Ljava/io/FileInputStream;
     :try_start_1d
@@ -363,7 +331,6 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_1d .. :try_end_24} :catch_b0
     .catch Ljava/io/IOException; {:try_start_1d .. :try_end_24} :catch_a7
 
-    .line 354
     .end local v6           #out:Ljava/io/FileOutputStream;
     .local v7, out:Ljava/io/FileOutputStream;
     const/16 v8, 0x400
@@ -371,7 +338,6 @@
     :try_start_26
     new-array v0, v8, [B
 
-    .line 356
     .local v0, buf:[B
     :goto_28
     invoke-virtual {v4, v0}, Ljava/io/FileInputStream;->read([B)I
@@ -381,7 +347,6 @@
     .local v5, len:I
     if-lez v5, :cond_5b
 
-    .line 357
     const/4 v8, 0x0
 
     invoke-virtual {v7, v0, v8, v5}, Ljava/io/FileOutputStream;->write([BII)V
@@ -392,7 +357,6 @@
 
     goto :goto_28
 
-    .line 359
     .end local v0           #buf:[B
     .end local v5           #len:I
     :catch_33
@@ -404,7 +368,6 @@
     .restart local v6       #out:Ljava/io/FileOutputStream;
     move-object v3, v4
 
-    .line 360
     .end local v2           #file:Ljava/io/File;
     .end local v4           #in:Ljava/io/FileInputStream;
     .local v1, e:Ljava/io/FileNotFoundException;
@@ -435,13 +398,11 @@
     :try_end_4e
     .catchall {:try_start_36 .. :try_end_4e} :catchall_92
 
-    .line 365
     if-eqz v3, :cond_53
 
     :try_start_50
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
 
-    .line 366
     :cond_53
     if-eqz v6, :cond_15
 
@@ -451,13 +412,11 @@
 
     goto :goto_15
 
-    .line 367
     :catch_59
     move-exception v8
 
     goto :goto_15
 
-    .line 365
     .end local v1           #e:Ljava/io/FileNotFoundException;
     .end local v3           #in:Ljava/io/FileInputStream;
     .end local v6           #out:Ljava/io/FileOutputStream;
@@ -472,7 +431,6 @@
     :try_start_5d
     invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
 
-    .line 366
     :cond_60
     if-eqz v7, :cond_65
 
@@ -487,7 +445,6 @@
     .restart local v6       #out:Ljava/io/FileOutputStream;
     move-object v3, v4
 
-    .line 367
     .end local v4           #in:Ljava/io/FileInputStream;
     .restart local v3       #in:Ljava/io/FileInputStream;
     goto :goto_15
@@ -505,19 +462,16 @@
     .restart local v6       #out:Ljava/io/FileOutputStream;
     move-object v3, v4
 
-    .line 368
     .end local v4           #in:Ljava/io/FileInputStream;
     .restart local v3       #in:Ljava/io/FileInputStream;
     goto :goto_15
 
-    .line 361
     .end local v0           #buf:[B
     .end local v2           #file:Ljava/io/File;
     .end local v5           #len:I
     :catch_6c
     move-exception v1
 
-    .line 362
     .local v1, e:Ljava/io/IOException;
     :goto_6d
     :try_start_6d
@@ -545,13 +499,11 @@
     :try_end_85
     .catchall {:try_start_6d .. :try_end_85} :catchall_92
 
-    .line 365
     if-eqz v3, :cond_8a
 
     :try_start_87
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
 
-    .line 366
     :cond_8a
     if-eqz v6, :cond_15
 
@@ -561,25 +513,21 @@
 
     goto :goto_15
 
-    .line 367
     :catch_90
     move-exception v8
 
     goto :goto_15
 
-    .line 364
     .end local v1           #e:Ljava/io/IOException;
     :catchall_92
     move-exception v8
 
-    .line 365
     :goto_93
     if-eqz v3, :cond_98
 
     :try_start_95
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
 
-    .line 366
     :cond_98
     if-eqz v6, :cond_9d
 
@@ -587,7 +535,6 @@
     :try_end_9d
     .catch Ljava/io/IOException; {:try_start_95 .. :try_end_9d} :catch_9e
 
-    .line 367
     :cond_9d
     :goto_9d
     throw v8
@@ -597,7 +544,6 @@
 
     goto :goto_9d
 
-    .line 364
     .end local v3           #in:Ljava/io/FileInputStream;
     .restart local v2       #file:Ljava/io/File;
     .restart local v4       #in:Ljava/io/FileInputStream;
@@ -627,7 +573,6 @@
     .restart local v3       #in:Ljava/io/FileInputStream;
     goto :goto_93
 
-    .line 361
     .end local v3           #in:Ljava/io/FileInputStream;
     .restart local v4       #in:Ljava/io/FileInputStream;
     :catch_a7
@@ -656,7 +601,6 @@
     .restart local v3       #in:Ljava/io/FileInputStream;
     goto :goto_6d
 
-    .line 359
     .end local v2           #file:Ljava/io/File;
     :catch_ae
     move-exception v1
@@ -675,7 +619,6 @@
     .restart local v3       #in:Ljava/io/FileInputStream;
     goto :goto_36
 
-    .line 367
     :catch_b3
     move-exception v8
 
@@ -686,18 +629,15 @@
     .registers 5
 
     .prologue
-    .line 299
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
-    .line 301
     .local v0, bluetoothAdapter:Landroid/bluetooth/BluetoothAdapter;
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
     if-nez v1, :cond_10
 
-    .line 302
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -706,13 +646,11 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
 
-    .line 306
     :cond_10
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
 
     if-nez v1, :cond_1c
 
-    .line 307
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mProfileServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
@@ -721,7 +659,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
 
-    .line 310
     :cond_1c
     return-void
 .end method
@@ -730,7 +667,6 @@
     .registers 10
 
     .prologue
-    .line 110
     iget-object v6, p0, Landroid/server/BluetoothBondState;->mService:Landroid/server/BluetoothService;
 
     invoke-virtual {v6}, Landroid/server/BluetoothService;->getBluetoothStateInternal()I
@@ -741,11 +677,9 @@
 
     if-eq v6, v7, :cond_b
 
-    .line 128
     :cond_a
     return-void
 
-    .line 114
     :cond_b
     iget-object v6, p0, Landroid/server/BluetoothBondState;->mService:Landroid/server/BluetoothService;
 
@@ -759,27 +693,22 @@
 
     move-result-object v5
 
-    .line 115
     .local v5, val:Ljava/lang/String;
     if-eqz v5, :cond_a
 
-    .line 118
     const-string v6, ","
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 119
     .local v1, bonds:[Ljava/lang/String;
     if-eqz v1, :cond_a
 
-    .line 122
     iget-object v6, p0, Landroid/server/BluetoothBondState;->mState:Ljava/util/HashMap;
 
     invoke-virtual {v6}, Ljava/util/HashMap;->clear()V
 
-    .line 123
     const-string v6, "BluetoothBondState"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -810,7 +739,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 124
     move-object v0, v1
 
     .local v0, arr$:[Ljava/lang/String;
@@ -825,7 +753,6 @@
 
     aget-object v2, v0, v3
 
-    .line 125
     .local v2, device:Ljava/lang/String;
     iget-object v6, p0, Landroid/server/BluetoothBondState;->mState:Ljava/util/HashMap;
 
@@ -847,7 +774,6 @@
 
     invoke-virtual {v6, v7, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 124
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_48
@@ -863,25 +789,21 @@
 
     const/4 v2, -0x1
 
-    .line 452
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mService:Landroid/server/BluetoothService;
 
     invoke-virtual {v1, p1}, Landroid/server/BluetoothService;->getRemoteDevice(Ljava/lang/String;)Landroid/bluetooth/BluetoothDevice;
 
     move-result-object v0
 
-    .line 454
     .local v0, remoteDevice:Landroid/bluetooth/BluetoothDevice;
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mBluetoothInputProfileHandler:Landroid/server/BluetoothInputProfileHandler;
 
     invoke-virtual {v1, v0, p2}, Landroid/server/BluetoothInputProfileHandler;->setInitialInputDevicePriority(Landroid/bluetooth/BluetoothDevice;I)V
 
-    .line 460
     const/16 v1, 0xc
 
     if-ne p2, v1, :cond_63
 
-    .line 461
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
     if-eqz v1, :cond_23
@@ -894,12 +816,10 @@
 
     if-ne v1, v2, :cond_23
 
-    .line 463
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-virtual {v1, v0, v3}, Landroid/bluetooth/BluetoothA2dp;->setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
 
-    .line 466
     :cond_23
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
 
@@ -913,12 +833,10 @@
 
     if-ne v1, v2, :cond_34
 
-    .line 468
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v1, v0, v3}, Landroid/bluetooth/BluetoothHeadset;->setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
 
-    .line 479
     :cond_34
     :goto_34
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
@@ -929,7 +847,6 @@
 
     if-nez v1, :cond_62
 
-    .line 480
     :cond_3c
     const-string v1, "BluetoothBondState"
 
@@ -967,33 +884,27 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 482
     :cond_62
     return-void
 
-    .line 470
     :cond_63
     const/16 v1, 0xa
 
     if-ne p2, v1, :cond_34
 
-    .line 471
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
     if-eqz v1, :cond_70
 
-    .line 472
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
     invoke-virtual {v1, v0, v2}, Landroid/bluetooth/BluetoothA2dp;->setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
 
-    .line 474
     :cond_70
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
 
     if-eqz v1, :cond_34
 
-    .line 475
     iget-object v1, p0, Landroid/server/BluetoothBondState;->mHeadsetProxy:Landroid/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v1, v0, v2}, Landroid/bluetooth/BluetoothHeadset;->setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
@@ -1006,10 +917,8 @@
     .parameter "address"
 
     .prologue
-    .line 424
     const/4 v1, 0x0
 
-    .line 426
     .local v1, out:Ljava/io/BufferedWriter;
     :try_start_1
     new-instance v2, Ljava/io/BufferedWriter;
@@ -1028,7 +937,6 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_e} :catch_39
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_e} :catch_5a
 
-    .line 427
     .end local v1           #out:Ljava/io/BufferedWriter;
     .local v2, out:Ljava/io/BufferedWriter;
     :try_start_e
@@ -1036,7 +944,6 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 428
     .local v3, str:Ljava/lang/StringBuilder;
     iget-object v4, p0, Landroid/server/BluetoothBondState;->mAutoPairingDynamicAddressBlacklist:Ljava/util/ArrayList;
 
@@ -1046,21 +953,17 @@
 
     if-nez v4, :cond_20
 
-    .line 429
     const-string v4, "DynamicAddressBlacklist="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 431
     :cond_20
     invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 432
     const-string v4, ","
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 433
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -1071,10 +974,8 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_e .. :try_end_2f} :catch_8a
     .catch Ljava/io/IOException; {:try_start_e .. :try_end_2f} :catch_87
 
-    .line 439
     if-eqz v2, :cond_8d
 
-    .line 441
     :try_start_31
     invoke-virtual {v2}, Ljava/io/BufferedWriter;->close()V
     :try_end_34
@@ -1082,7 +983,6 @@
 
     move-object v1, v2
 
-    .line 447
     .end local v2           #out:Ljava/io/BufferedWriter;
     .end local v3           #str:Ljava/lang/StringBuilder;
     .restart local v1       #out:Ljava/io/BufferedWriter;
@@ -1090,7 +990,6 @@
     :goto_35
     return-void
 
-    .line 442
     .end local v1           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
     .restart local v3       #str:Ljava/lang/StringBuilder;
@@ -1099,17 +998,14 @@
 
     move-object v1, v2
 
-    .line 444
     .end local v2           #out:Ljava/io/BufferedWriter;
     .restart local v1       #out:Ljava/io/BufferedWriter;
     goto :goto_35
 
-    .line 434
     .end local v3           #str:Ljava/lang/StringBuilder;
     :catch_39
     move-exception v0
 
-    .line 435
     .local v0, e:Ljava/io/FileNotFoundException;
     :goto_3a
     :try_start_3a
@@ -1137,10 +1033,8 @@
     :try_end_52
     .catchall {:try_start_3a .. :try_end_52} :catchall_7b
 
-    .line 439
     if-eqz v1, :cond_35
 
-    .line 441
     :try_start_54
     invoke-virtual {v1}, Ljava/io/BufferedWriter;->close()V
     :try_end_57
@@ -1148,18 +1042,15 @@
 
     goto :goto_35
 
-    .line 442
     :catch_58
     move-exception v4
 
     goto :goto_35
 
-    .line 436
     .end local v0           #e:Ljava/io/FileNotFoundException;
     :catch_5a
     move-exception v0
 
-    .line 437
     .local v0, e:Ljava/io/IOException;
     :goto_5b
     :try_start_5b
@@ -1187,10 +1078,8 @@
     :try_end_73
     .catchall {:try_start_5b .. :try_end_73} :catchall_7b
 
-    .line 439
     if-eqz v1, :cond_35
 
-    .line 441
     :try_start_75
     invoke-virtual {v1}, Ljava/io/BufferedWriter;->close()V
     :try_end_78
@@ -1198,13 +1087,11 @@
 
     goto :goto_35
 
-    .line 442
     :catch_79
     move-exception v4
 
     goto :goto_35
 
-    .line 439
     .end local v0           #e:Ljava/io/IOException;
     :catchall_7b
     move-exception v4
@@ -1212,24 +1099,20 @@
     :goto_7c
     if-eqz v1, :cond_81
 
-    .line 441
     :try_start_7e
     invoke-virtual {v1}, Ljava/io/BufferedWriter;->close()V
     :try_end_81
     .catch Ljava/io/IOException; {:try_start_7e .. :try_end_81} :catch_82
 
-    .line 444
     :cond_81
     :goto_81
     throw v4
 
-    .line 442
     :catch_82
     move-exception v5
 
     goto :goto_81
 
-    .line 439
     .end local v1           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
     :catchall_84
@@ -1241,7 +1124,6 @@
     .restart local v1       #out:Ljava/io/BufferedWriter;
     goto :goto_7c
 
-    .line 436
     .end local v1           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
     :catch_87
@@ -1253,7 +1135,6 @@
     .restart local v1       #out:Ljava/io/BufferedWriter;
     goto :goto_5b
 
-    .line 434
     .end local v1           #out:Ljava/io/BufferedWriter;
     .restart local v2       #out:Ljava/io/BufferedWriter;
     :catch_8a
@@ -1283,7 +1164,6 @@
     .parameter "address"
 
     .prologue
-    .line 253
     monitor-enter p0
 
     :try_start_1
@@ -1291,30 +1171,25 @@
 
     if-nez v0, :cond_c
 
-    .line 254
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/server/BluetoothBondState;->mAutoPairingDynamicAddressBlacklist:Ljava/util/ArrayList;
 
-    .line 257
     :cond_c
     invoke-direct {p0, p1}, Landroid/server/BluetoothBondState;->updateAutoPairingData(Ljava/lang/String;)V
 
-    .line 258
     iget-object v0, p0, Landroid/server/BluetoothBondState;->mAutoPairingDynamicAddressBlacklist:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_14
     .catchall {:try_start_1 .. :try_end_14} :catchall_16
 
-    .line 259
     monitor-exit p0
 
     return-void
 
-    .line 253
     :catchall_16
     move-exception v0
 
@@ -1328,7 +1203,6 @@
     .parameter "address"
 
     .prologue
-    .line 286
     monitor-enter p0
 
     :try_start_1
@@ -1340,14 +1214,11 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 288
     .local v0, attempt:Ljava/lang/Integer;
     if-nez v0, :cond_30
 
-    .line 289
     const/4 v1, 0x1
 
-    .line 293
     .local v1, newAttempt:I
     :goto_c
     const-string v2, "BluetoothBondState"
@@ -1372,7 +1243,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 295
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mPinAttempt:Ljava/util/HashMap;
 
     new-instance v3, Ljava/lang/Integer;
@@ -1383,12 +1253,10 @@
     :try_end_2e
     .catchall {:try_start_1 .. :try_end_2e} :catchall_37
 
-    .line 296
     monitor-exit p0
 
     return-void
 
-    .line 291
     .end local v1           #newAttempt:I
     :cond_30
     :try_start_30
@@ -1403,7 +1271,6 @@
     .restart local v1       #newAttempt:I
     goto :goto_c
 
-    .line 286
     .end local v0           #attempt:Ljava/lang/Integer;
     .end local v1           #newAttempt:I
     :catchall_37
@@ -1419,7 +1286,6 @@
     .parameter "address"
 
     .prologue
-    .line 266
     monitor-enter p0
 
     :try_start_1
@@ -1445,19 +1311,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 268
     iget-object v0, p0, Landroid/server/BluetoothBondState;->mPinAttempt:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1e
     .catchall {:try_start_1 .. :try_end_1e} :catchall_20
 
-    .line 269
     monitor-exit p0
 
     return-void
 
-    .line 266
     :catchall_20
     move-exception v0
 
@@ -1471,7 +1334,6 @@
     .parameter "address"
 
     .prologue
-    .line 278
     monitor-enter p0
 
     :try_start_1
@@ -1485,14 +1347,11 @@
     :try_end_9
     .catchall {:try_start_1 .. :try_end_9} :catchall_13
 
-    .line 279
     .local v0, attempt:Ljava/lang/Integer;
     if-nez v0, :cond_e
 
-    .line 280
     const/4 v1, 0x0
 
-    .line 282
     :goto_c
     monitor-exit p0
 
@@ -1508,7 +1367,6 @@
 
     goto :goto_c
 
-    .line 278
     .end local v0           #attempt:Ljava/lang/Integer;
     :catchall_13
     move-exception v1
@@ -1523,7 +1381,6 @@
     .parameter "address"
 
     .prologue
-    .line 235
     monitor-enter p0
 
     :try_start_1
@@ -1537,14 +1394,11 @@
     :try_end_9
     .catchall {:try_start_1 .. :try_end_9} :catchall_14
 
-    .line 236
     .local v0, state:Ljava/lang/Integer;
     if-nez v0, :cond_f
 
-    .line 237
     const/16 v1, 0xa
 
-    .line 239
     :goto_d
     monitor-exit p0
 
@@ -1560,7 +1414,6 @@
 
     goto :goto_d
 
-    .line 235
     .end local v0           #state:Ljava/lang/Integer;
     :catchall_14
     move-exception v1
@@ -1574,7 +1427,6 @@
     .registers 2
 
     .prologue
-    .line 101
     monitor-enter p0
 
     :try_start_1
@@ -1599,7 +1451,6 @@
     .parameter "address"
 
     .prologue
-    .line 272
     monitor-enter p0
 
     :try_start_1
@@ -1611,7 +1462,6 @@
 
     const/4 v0, 0x0
 
-    .line 274
     :goto_6
     monitor-exit p0
 
@@ -1629,7 +1479,6 @@
 
     goto :goto_6
 
-    .line 272
     :catchall_f
     move-exception v0
 
@@ -1642,23 +1491,19 @@
     .registers 2
 
     .prologue
-    .line 105
     monitor-enter p0
 
     :try_start_1
     invoke-direct {p0}, Landroid/server/BluetoothBondState;->getProfileProxy()V
 
-    .line 106
     invoke-direct {p0}, Landroid/server/BluetoothBondState;->loadBondState()V
     :try_end_7
     .catchall {:try_start_1 .. :try_end_7} :catchall_9
 
-    .line 107
     monitor-exit p0
 
     return-void
 
-    .line 105
     :catchall_9
     move-exception v0
 
@@ -1672,7 +1517,6 @@
     .parameter "address"
 
     .prologue
-    .line 262
     monitor-enter p0
 
     :try_start_1
@@ -1711,12 +1555,10 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 192
     iget-object v5, p0, Landroid/server/BluetoothBondState;->mAutoPairingAddressBlacklist:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_1e
 
-    .line 193
     iget-object v5, p0, Landroid/server/BluetoothBondState;->mAutoPairingAddressBlacklist:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1737,7 +1579,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 194
     .local v0, blacklistAddress:Ljava/lang/String;
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -1745,19 +1586,16 @@
 
     if-eqz v5, :cond_b
 
-    .line 218
     .end local v0           #blacklistAddress:Ljava/lang/String;
     .end local v2           #i$:Ljava/util/Iterator;
     :goto_1d
     return v4
 
-    .line 198
     :cond_1e
     iget-object v5, p0, Landroid/server/BluetoothBondState;->mAutoPairingDynamicAddressBlacklist:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_3b
 
-    .line 199
     iget-object v5, p0, Landroid/server/BluetoothBondState;->mAutoPairingDynamicAddressBlacklist:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1778,7 +1616,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 200
     .restart local v0       #blacklistAddress:Ljava/lang/String;
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1788,7 +1625,6 @@
 
     goto :goto_1d
 
-    .line 204
     .end local v0           #blacklistAddress:Ljava/lang/String;
     .end local v2           #i$:Ljava/util/Iterator;
     :cond_3b
@@ -1798,16 +1634,13 @@
 
     move-result-object v3
 
-    .line 205
     .local v3, name:Ljava/lang/String;
     if-eqz v3, :cond_7d
 
-    .line 206
     iget-object v5, p0, Landroid/server/BluetoothBondState;->mAutoPairingExactNameBlacklist:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_60
 
-    .line 207
     iget-object v5, p0, Landroid/server/BluetoothBondState;->mAutoPairingExactNameBlacklist:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1828,7 +1661,6 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 208
     .local v1, blacklistName:Ljava/lang/String;
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1838,7 +1670,6 @@
 
     goto :goto_1d
 
-    .line 212
     .end local v1           #blacklistName:Ljava/lang/String;
     .end local v2           #i$:Ljava/util/Iterator;
     :cond_60
@@ -1846,7 +1677,6 @@
 
     if-eqz v5, :cond_7d
 
-    .line 213
     iget-object v5, p0, Landroid/server/BluetoothBondState;->mAutoPairingPartialNameBlacklist:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1867,7 +1697,6 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 214
     .restart local v1       #blacklistName:Ljava/lang/String;
     invoke-virtual {v3, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -1877,7 +1706,6 @@
 
     goto :goto_1d
 
-    .line 218
     .end local v1           #blacklistName:Ljava/lang/String;
     .end local v2           #i$:Ljava/util/Iterator;
     :cond_7d
@@ -1891,12 +1719,10 @@
     .parameter "address"
 
     .prologue
-    .line 226
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mAutoPairingFixedPinZerosKeyboardList:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_1e
 
-    .line 227
     iget-object v2, p0, Landroid/server/BluetoothBondState;->mAutoPairingFixedPinZerosKeyboardList:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1917,7 +1743,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 228
     .local v0, blacklistAddress:Ljava/lang/String;
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -1927,7 +1752,6 @@
 
     const/4 v2, 0x1
 
-    .line 231
     .end local v0           #blacklistAddress:Ljava/lang/String;
     .end local v1           #i$:Ljava/util/Iterator;
     :goto_1d
@@ -1944,7 +1768,6 @@
     .parameter "state"
 
     .prologue
-    .line 243
     monitor-enter p0
 
     :try_start_1
@@ -1958,7 +1781,6 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 244
     .local v2, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mState:Ljava/util/HashMap;
 
@@ -1985,7 +1807,6 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 245
     .local v0, e:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Integer;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -1999,7 +1820,6 @@
 
     if-ne v3, p1, :cond_16
 
-    .line 246
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -2010,7 +1830,6 @@
 
     goto :goto_16
 
-    .line 243
     .end local v0           #e:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Integer;>;"
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
@@ -2021,7 +1840,6 @@
 
     throw v3
 
-    .line 249
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v2       #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_39
@@ -2049,7 +1867,6 @@
     .registers 12
 
     .prologue
-    .line 372
     monitor-enter p0
 
     :try_start_1
@@ -2059,24 +1876,20 @@
 
     if-eqz v8, :cond_7
 
-    .line 419
     :cond_5
     :goto_5
     monitor-exit p0
 
     return-void
 
-    .line 373
     :cond_7
     :try_start_7
     invoke-direct {p0}, Landroid/server/BluetoothBondState;->copyAutoPairingData()V
     :try_end_a
     .catchall {:try_start_7 .. :try_end_a} :catchall_e3
 
-    .line 374
     const/4 v2, 0x0
 
-    .line 376
     .local v2, fstream:Ljava/io/FileInputStream;
     :try_start_b
     new-instance v3, Ljava/io/FileInputStream;
@@ -2089,7 +1902,6 @@
     .catch Ljava/io/FileNotFoundException; {:try_start_b .. :try_end_12} :catch_132
     .catch Ljava/io/IOException; {:try_start_b .. :try_end_12} :catch_12f
 
-    .line 377
     .end local v2           #fstream:Ljava/io/FileInputStream;
     .local v3, fstream:Ljava/io/FileInputStream;
     :try_start_12
@@ -2097,7 +1909,6 @@
 
     invoke-direct {v4, v3}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 378
     .local v4, in:Ljava/io/DataInputStream;
     new-instance v1, Ljava/io/BufferedReader;
 
@@ -2107,7 +1918,6 @@
 
     invoke-direct {v1, v8}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    .line 380
     .local v1, file:Ljava/io/BufferedReader;
     :cond_21
     :goto_21
@@ -2118,12 +1928,10 @@
     .local v5, line:Ljava/lang/String;
     if-eqz v5, :cond_11f
 
-    .line 381
     invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 382
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v8
@@ -2138,14 +1946,12 @@
 
     if-nez v8, :cond_21
 
-    .line 383
     const-string v8, "="
 
     invoke-virtual {v5, v8}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
-    .line 384
     .local v7, value:[Ljava/lang/String;
     if-eqz v7, :cond_21
 
@@ -2155,7 +1961,6 @@
 
     if-ne v8, v9, :cond_21
 
-    .line 385
     const/4 v8, 0x1
 
     aget-object v8, v7, v8
@@ -2166,7 +1971,6 @@
 
     move-result-object v6
 
-    .line 386
     .local v6, val:[Ljava/lang/String;
     const/4 v8, 0x0
 
@@ -2180,7 +1984,6 @@
 
     if-eqz v8, :cond_88
 
-    .line 387
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-static {v6}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -2197,7 +2000,6 @@
 
     goto :goto_21
 
-    .line 406
     .end local v1           #file:Ljava/io/BufferedReader;
     .end local v4           #in:Ljava/io/DataInputStream;
     .end local v5           #line:Ljava/lang/String;
@@ -2208,7 +2010,6 @@
 
     move-object v2, v3
 
-    .line 407
     .end local v3           #fstream:Ljava/io/FileInputStream;
     .local v0, e:Ljava/io/FileNotFoundException;
     .restart local v2       #fstream:Ljava/io/FileInputStream;
@@ -2238,10 +2039,8 @@
     :try_end_7f
     .catchall {:try_start_67 .. :try_end_7f} :catchall_12d
 
-    .line 411
     if-eqz v2, :cond_5
 
-    .line 413
     :try_start_81
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_84
@@ -2250,13 +2049,11 @@
 
     goto :goto_5
 
-    .line 414
     :catch_85
     move-exception v8
 
     goto/16 :goto_5
 
-    .line 389
     .end local v0           #e:Ljava/io/FileNotFoundException;
     .end local v2           #fstream:Ljava/io/FileInputStream;
     .restart local v1       #file:Ljava/io/BufferedReader;
@@ -2279,7 +2076,6 @@
 
     if-eqz v8, :cond_c3
 
-    .line 390
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-static {v6}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -2296,7 +2092,6 @@
 
     goto :goto_21
 
-    .line 408
     .end local v1           #file:Ljava/io/BufferedReader;
     .end local v4           #in:Ljava/io/DataInputStream;
     .end local v5           #line:Ljava/lang/String;
@@ -2307,7 +2102,6 @@
 
     move-object v2, v3
 
-    .line 409
     .end local v3           #fstream:Ljava/io/FileInputStream;
     .local v0, e:Ljava/io/IOException;
     .restart local v2       #fstream:Ljava/io/FileInputStream;
@@ -2337,10 +2131,8 @@
     :try_end_b9
     .catchall {:try_start_a1 .. :try_end_b9} :catchall_12d
 
-    .line 411
     if-eqz v2, :cond_5
 
-    .line 413
     :try_start_bb
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_be
@@ -2349,13 +2141,11 @@
 
     goto/16 :goto_5
 
-    .line 414
     :catch_c0
     move-exception v8
 
     goto/16 :goto_5
 
-    .line 392
     .end local v0           #e:Ljava/io/IOException;
     .end local v2           #fstream:Ljava/io/FileInputStream;
     .restart local v1       #file:Ljava/io/BufferedReader;
@@ -2378,7 +2168,6 @@
 
     if-eqz v8, :cond_e6
 
-    .line 393
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-static {v6}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -2395,7 +2184,6 @@
 
     goto/16 :goto_21
 
-    .line 411
     .end local v1           #file:Ljava/io/BufferedReader;
     .end local v4           #in:Ljava/io/DataInputStream;
     .end local v5           #line:Ljava/lang/String;
@@ -2411,14 +2199,12 @@
     :goto_dd
     if-eqz v2, :cond_e2
 
-    .line 413
     :try_start_df
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_e2
     .catchall {:try_start_df .. :try_end_e2} :catchall_e3
     .catch Ljava/io/IOException; {:try_start_df .. :try_end_e2} :catch_12b
 
-    .line 416
     :cond_e2
     :goto_e2
     :try_start_e2
@@ -2426,7 +2212,6 @@
     :try_end_e3
     .catchall {:try_start_e2 .. :try_end_e3} :catchall_e3
 
-    .line 372
     .end local v2           #fstream:Ljava/io/FileInputStream;
     :catchall_e3
     move-exception v8
@@ -2435,7 +2220,6 @@
 
     throw v8
 
-    .line 395
     .restart local v1       #file:Ljava/io/BufferedReader;
     .restart local v3       #fstream:Ljava/io/FileInputStream;
     .restart local v4       #in:Ljava/io/DataInputStream;
@@ -2456,7 +2240,6 @@
 
     if-eqz v8, :cond_fe
 
-    .line 396
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-static {v6}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -2469,7 +2252,6 @@
 
     goto/16 :goto_21
 
-    .line 398
     :cond_fe
     const/4 v8, 0x0
 
@@ -2483,7 +2265,6 @@
 
     if-eqz v8, :cond_116
 
-    .line 399
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-static {v6}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -2496,7 +2277,6 @@
 
     goto/16 :goto_21
 
-    .line 402
     :cond_116
     const-string v8, "BluetoothBondState"
 
@@ -2510,13 +2290,11 @@
 
     goto/16 :goto_21
 
-    .line 411
     .end local v6           #val:[Ljava/lang/String;
     .end local v7           #value:[Ljava/lang/String;
     :cond_11f
     if-eqz v3, :cond_135
 
-    .line 413
     :try_start_121
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_124
@@ -2525,12 +2303,10 @@
 
     move-object v2, v3
 
-    .line 416
     .end local v3           #fstream:Ljava/io/FileInputStream;
     .restart local v2       #fstream:Ljava/io/FileInputStream;
     goto/16 :goto_5
 
-    .line 414
     .end local v2           #fstream:Ljava/io/FileInputStream;
     .restart local v3       #fstream:Ljava/io/FileInputStream;
     :catch_127
@@ -2538,12 +2314,10 @@
 
     move-object v2, v3
 
-    .line 416
     .end local v3           #fstream:Ljava/io/FileInputStream;
     .restart local v2       #fstream:Ljava/io/FileInputStream;
     goto/16 :goto_5
 
-    .line 414
     .end local v1           #file:Ljava/io/BufferedReader;
     .end local v4           #in:Ljava/io/DataInputStream;
     .end local v5           #line:Ljava/lang/String;
@@ -2552,19 +2326,16 @@
 
     goto :goto_e2
 
-    .line 411
     :catchall_12d
     move-exception v8
 
     goto :goto_dd
 
-    .line 408
     :catch_12f
     move-exception v0
 
     goto/16 :goto_a1
 
-    .line 406
     :catch_132
     move-exception v0
 
@@ -2589,7 +2360,6 @@
     .parameter "state"
 
     .prologue
-    .line 131
     monitor-enter p0
 
     const/4 v0, 0x0
@@ -2599,12 +2369,10 @@
     :try_end_5
     .catchall {:try_start_2 .. :try_end_5} :catchall_7
 
-    .line 132
     monitor-exit p0
 
     return-void
 
-    .line 131
     :catchall_7
     move-exception v0
 
@@ -2624,7 +2392,6 @@
 
     const/16 v6, 0xa
 
-    .line 136
     monitor-enter p0
 
     :try_start_5
@@ -2660,28 +2427,23 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 138
     invoke-virtual {p0, p1}, Landroid/server/BluetoothBondState;->getBondState(Ljava/lang/String;)I
     :try_end_2c
     .catchall {:try_start_5 .. :try_end_2c} :catchall_cc
 
     move-result v1
 
-    .line 139
     .local v1, oldState:I
     if-ne v1, p2, :cond_31
 
-    .line 189
     :goto_2f
     monitor-exit p0
 
     return-void
 
-    .line 145
     :cond_31
     if-ne v1, v7, :cond_3e
 
-    .line 146
     :try_start_33
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mPendingOutgoingBonding:Ljava/lang/String;
 
@@ -2691,21 +2453,17 @@
 
     if-eqz v3, :cond_3e
 
-    .line 147
     const/4 v3, 0x0
 
     iput-object v3, p0, Landroid/server/BluetoothBondState;->mPendingOutgoingBonding:Ljava/lang/String;
 
-    .line 151
     :cond_3e
     const/16 v3, 0xc
 
     if-ne p2, v3, :cond_cf
 
-    .line 152
     const/4 v2, 0x0
 
-    .line 153
     .local v2, setTrust:Z
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mPairingRequestRcvd:Ljava/util/ArrayList;
 
@@ -2717,24 +2475,20 @@
 
     const/4 v2, 0x1
 
-    .line 155
     :cond_4c
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mService:Landroid/server/BluetoothService;
 
     invoke-virtual {v3, p1, v2}, Landroid/server/BluetoothService;->addProfileState(Ljava/lang/String;Z)Landroid/bluetooth/BluetoothDeviceProfileState;
 
-    .line 156
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mPairingRequestRcvd:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 166
     .end local v2           #setTrust:Z
     :cond_56
     :goto_56
     invoke-direct {p0, p1, p2}, Landroid/server/BluetoothBondState;->setProfilePriorities(Ljava/lang/String;I)V
 
-    .line 169
     const-string v3, "BluetoothBondState"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2787,14 +2541,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
     new-instance v0, Landroid/content/Intent;
 
     const-string v3, "android.bluetooth.device.action.BOND_STATE_CHANGED"
 
     invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 173
     .local v0, intent:Landroid/content/Intent;
     const-string v3, "android.bluetooth.device.extra.DEVICE"
 
@@ -2806,44 +2558,35 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 174
     const-string v3, "android.bluetooth.device.extra.BOND_STATE"
 
     invoke-virtual {v0, v3, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 175
     const-string v3, "android.bluetooth.device.extra.PREVIOUS_BOND_STATE"
 
     invoke-virtual {v0, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 176
     if-ne p2, v6, :cond_e7
 
-    .line 177
     if-gtz p3, :cond_b9
 
-    .line 178
     const-string v3, "BluetoothBondState"
 
     const-string/jumbo v4, "setBondState() called to unbond device, but reason code is invalid. Overriding reason code with BOND_RESULT_REMOVED"
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
     const/16 p3, 0x9
 
-    .line 182
     :cond_b9
     const-string v3, "android.bluetooth.device.extra.REASON"
 
     invoke-virtual {v0, v3, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 183
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mState:Ljava/util/HashMap;
 
     invoke-virtual {v3, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 188
     :goto_c3
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mContext:Landroid/content/Context;
 
@@ -2855,7 +2598,6 @@
 
     goto/16 :goto_2f
 
-    .line 136
     .end local v0           #intent:Landroid/content/Intent;
     .end local v1           #oldState:I
     :catchall_cc
@@ -2865,12 +2607,10 @@
 
     throw v3
 
-    .line 158
     .restart local v1       #oldState:I
     :cond_cf
     if-ne p2, v7, :cond_de
 
-    .line 159
     :try_start_d1
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mA2dpProxy:Landroid/bluetooth/BluetoothA2dp;
 
@@ -2880,24 +2620,20 @@
 
     if-nez v3, :cond_56
 
-    .line 160
     :cond_d9
     invoke-direct {p0}, Landroid/server/BluetoothBondState;->getProfileProxy()V
 
     goto/16 :goto_56
 
-    .line 162
     :cond_de
     if-ne p2, v6, :cond_56
 
-    .line 163
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mPairingRequestRcvd:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto/16 :goto_56
 
-    .line 185
     .restart local v0       #intent:Landroid/content/Intent;
     :cond_e7
     iget-object v3, p0, Landroid/server/BluetoothBondState;->mState:Ljava/util/HashMap;
@@ -2918,7 +2654,6 @@
     .parameter "address"
 
     .prologue
-    .line 97
     monitor-enter p0
 
     :try_start_1
@@ -2926,12 +2661,10 @@
     :try_end_3
     .catchall {:try_start_1 .. :try_end_3} :catchall_5
 
-    .line 98
     monitor-exit p0
 
     return-void
 
-    .line 97
     :catchall_5
     move-exception v0
 

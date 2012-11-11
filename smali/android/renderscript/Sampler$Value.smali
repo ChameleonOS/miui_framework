@@ -58,7 +58,6 @@
 
     const/4 v3, 0x0
 
-    .line 37
     new-instance v0, Landroid/renderscript/Sampler$Value;
 
     const-string v1, "NEAREST"
@@ -67,7 +66,6 @@
 
     sput-object v0, Landroid/renderscript/Sampler$Value;->NEAREST:Landroid/renderscript/Sampler$Value;
 
-    .line 38
     new-instance v0, Landroid/renderscript/Sampler$Value;
 
     const-string v1, "LINEAR"
@@ -76,7 +74,6 @@
 
     sput-object v0, Landroid/renderscript/Sampler$Value;->LINEAR:Landroid/renderscript/Sampler$Value;
 
-    .line 39
     new-instance v0, Landroid/renderscript/Sampler$Value;
 
     const-string v1, "LINEAR_MIP_LINEAR"
@@ -85,7 +82,6 @@
 
     sput-object v0, Landroid/renderscript/Sampler$Value;->LINEAR_MIP_LINEAR:Landroid/renderscript/Sampler$Value;
 
-    .line 40
     new-instance v0, Landroid/renderscript/Sampler$Value;
 
     const-string v1, "LINEAR_MIP_NEAREST"
@@ -96,7 +92,6 @@
 
     sput-object v0, Landroid/renderscript/Sampler$Value;->LINEAR_MIP_NEAREST:Landroid/renderscript/Sampler$Value;
 
-    .line 41
     new-instance v0, Landroid/renderscript/Sampler$Value;
 
     const-string v1, "WRAP"
@@ -105,7 +100,6 @@
 
     sput-object v0, Landroid/renderscript/Sampler$Value;->WRAP:Landroid/renderscript/Sampler$Value;
 
-    .line 42
     new-instance v0, Landroid/renderscript/Sampler$Value;
 
     const-string v1, "CLAMP"
@@ -116,7 +110,6 @@
 
     sput-object v0, Landroid/renderscript/Sampler$Value;->CLAMP:Landroid/renderscript/Sampler$Value;
 
-    .line 36
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/renderscript/Sampler$Value;
@@ -164,13 +157,10 @@
     .end annotation
 
     .prologue
-    .line 45
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 46
     iput p3, p0, Landroid/renderscript/Sampler$Value;->mID:I
 
-    .line 47
     return-void
 .end method
 
@@ -179,7 +169,6 @@
     .parameter "name"
 
     .prologue
-    .line 36
     const-class v0, Landroid/renderscript/Sampler$Value;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -195,7 +184,6 @@
     .registers 1
 
     .prologue
-    .line 36
     sget-object v0, Landroid/renderscript/Sampler$Value;->$VALUES:[Landroid/renderscript/Sampler$Value;
 
     invoke-virtual {v0}, [Landroid/renderscript/Sampler$Value;->clone()Ljava/lang/Object;

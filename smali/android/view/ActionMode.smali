@@ -22,10 +22,8 @@
     .registers 1
 
     .prologue
-    .line 31
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 229
     return-void
 .end method
 
@@ -50,7 +48,6 @@
     .registers 2
 
     .prologue
-    .line 60
     iget-object v0, p0, Landroid/view/ActionMode;->mTag:Ljava/lang/Object;
 
     return-object v0
@@ -63,7 +60,6 @@
     .registers 2
 
     .prologue
-    .line 134
     iget-boolean v0, p0, Landroid/view/ActionMode;->mTitleOptionalHint:Z
 
     return v0
@@ -76,7 +72,6 @@
     .registers 2
 
     .prologue
-    .line 142
     const/4 v0, 0x0
 
     return v0
@@ -86,7 +81,6 @@
     .registers 2
 
     .prologue
-    .line 209
     const/4 v0, 0x1
 
     return v0
@@ -106,10 +100,8 @@
     .parameter "tag"
 
     .prologue
-    .line 46
     iput-object p1, p0, Landroid/view/ActionMode;->mTag:Ljava/lang/Object;
 
-    .line 47
     return-void
 .end method
 
@@ -124,9 +116,7 @@
     .parameter "titleOptional"
 
     .prologue
-    .line 123
     iput-boolean p1, p0, Landroid/view/ActionMode;->mTitleOptionalHint:Z
 
-    .line 124
     return-void
 .end method

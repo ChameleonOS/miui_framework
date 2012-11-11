@@ -38,37 +38,30 @@
     .registers 1
 
     .prologue
-    .line 22
     const-string v0, "http://www.miui.com/res/doc/copyright.html"
 
     sput-object v0, Lcom/miui/internal/app/MiuiLicenseActivity;->URL_MIUI_COPYRIGHT:Ljava/lang/String;
 
-    .line 23
     const-string v0, "http://product.xiaomi.com/policy/privacy.html"
 
     sput-object v0, Lcom/miui/internal/app/MiuiLicenseActivity;->URL_MIUI_PRIVACY_POLICY:Ljava/lang/String;
 
-    .line 24
     const-string v0, "http://product.xiaomi.com/policy/eula.html"
 
     sput-object v0, Lcom/miui/internal/app/MiuiLicenseActivity;->URL_MIUI_USER_AGREEMENT:Ljava/lang/String;
 
-    .line 26
     const-string v0, "file:///system/etc/license/copyright.html"
 
     sput-object v0, Lcom/miui/internal/app/MiuiLicenseActivity;->CACHE_URL_MIUI_COPYRIGHT:Ljava/lang/String;
 
-    .line 27
     const-string v0, "file:///system/etc/license/privacy.html"
 
     sput-object v0, Lcom/miui/internal/app/MiuiLicenseActivity;->CACHE_URL_MIUI_PRIVACY_POLICY:Ljava/lang/String;
 
-    .line 28
     const-string v0, "file:///system/etc/license/eula.html"
 
     sput-object v0, Lcom/miui/internal/app/MiuiLicenseActivity;->CACHE_URL_MIUI_USER_AGREEMENT:Ljava/lang/String;
 
-    .line 30
     const-string/jumbo v0, "url"
 
     sput-object v0, Lcom/miui/internal/app/MiuiLicenseActivity;->EXTRA_MIUI_DOC_URL:Ljava/lang/String;
@@ -80,7 +73,6 @@
     .registers 1
 
     .prologue
-    .line 20
     invoke-direct {p0}, Lcom/android/internal/app/AlertActivity;-><init>()V
 
     return-void
@@ -91,7 +83,6 @@
     .parameter "x0"
 
     .prologue
-    .line 20
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mTitle:Ljava/lang/String;
 
     return-object v0
@@ -102,7 +93,6 @@
     .parameter "x0"
 
     .prologue
-    .line 20
     iget-object v0, p0, Lcom/android/internal/app/AlertActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     return-object v0
@@ -113,7 +103,6 @@
     .parameter "x0"
 
     .prologue
-    .line 20
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mCachePath:Ljava/lang/String;
 
     return-object v0
@@ -125,7 +114,6 @@
     .parameter "x1"
 
     .prologue
-    .line 20
     invoke-direct {p0, p1}, Lcom/miui/internal/app/MiuiLicenseActivity;->showErrorAndFinish(Ljava/lang/String;)V
 
     return-void
@@ -136,7 +124,6 @@
     .parameter "x0"
 
     .prologue
-    .line 20
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
     return-object v0
@@ -149,14 +136,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 95
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setVisibility(I)V
 
-    .line 96
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -199,7 +184,6 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 103
     return-void
 .end method
 
@@ -209,7 +193,6 @@
     .registers 3
 
     .prologue
-    .line 90
     const-string v1, "connectivity"
 
     invoke-virtual {p0, v1}, Lcom/miui/internal/app/MiuiLicenseActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -218,7 +201,6 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 91
     .local v0, cm:Landroid/net/ConnectivityManager;
     if-eqz v0, :cond_12
 
@@ -243,7 +225,6 @@
     .registers 2
 
     .prologue
-    .line 107
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->canGoBack()Z
@@ -252,16 +233,13 @@
 
     if-eqz v0, :cond_e
 
-    .line 108
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->goBack()V
 
-    .line 112
     :goto_d
     return-void
 
-    .line 111
     :cond_e
     invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->onBackPressed()V
 
@@ -273,10 +251,8 @@
     .parameter "dialog"
 
     .prologue
-    .line 119
     invoke-virtual {p0}, Lcom/miui/internal/app/MiuiLicenseActivity;->finish()V
 
-    .line 120
     return-void
 .end method
 
@@ -286,10 +262,8 @@
     .parameter "whichButton"
 
     .prologue
-    .line 115
     invoke-virtual {p0}, Lcom/miui/internal/app/MiuiLicenseActivity;->finish()V
 
-    .line 116
     return-void
 .end method
 
@@ -300,10 +274,8 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 39
     invoke-super {p0, p1}, Lcom/android/internal/app/AlertActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 40
     invoke-virtual {p0}, Lcom/miui/internal/app/MiuiLicenseActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -312,7 +284,6 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 
-    .line 41
     invoke-virtual {p0}, Lcom/miui/internal/app/MiuiLicenseActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -325,7 +296,6 @@
 
     iput-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mUrl:Ljava/lang/String;
 
-    .line 42
     sget-object v1, Lcom/miui/internal/app/MiuiLicenseActivity;->URL_MIUI_COPYRIGHT:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mUrl:Ljava/lang/String;
@@ -336,7 +306,6 @@
 
     if-eqz v1, :cond_68
 
-    .line 43
     const v1, 0x60c0030
 
     invoke-virtual {p0, v1}, Lcom/miui/internal/app/MiuiLicenseActivity;->getString(I)Ljava/lang/String;
@@ -345,12 +314,10 @@
 
     iput-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mTitle:Ljava/lang/String;
 
-    .line 44
     sget-object v1, Lcom/miui/internal/app/MiuiLicenseActivity;->CACHE_URL_MIUI_COPYRIGHT:Ljava/lang/String;
 
     iput-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mCachePath:Ljava/lang/String;
 
-    .line 52
     :cond_31
     :goto_31
     new-instance v1, Landroid/webkit/WebView;
@@ -359,7 +326,6 @@
 
     iput-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
-    .line 55
     iget-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
     invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -368,7 +334,6 @@
 
     invoke-virtual {v1, v3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    .line 56
     iget-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
     new-instance v2, Lcom/miui/internal/app/MiuiLicenseActivity$1;
@@ -377,45 +342,36 @@
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 73
     invoke-virtual {p0}, Lcom/miui/internal/app/MiuiLicenseActivity;->isConnectivityActive()Z
 
     move-result v1
 
     if-eqz v1, :cond_98
 
-    .line 74
     iget-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
     iget-object v2, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mUrl:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 82
     :goto_58
     iget-object v0, p0, Lcom/android/internal/app/AlertActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    .line 83
     .local v0, p:Lcom/android/internal/app/AlertController$AlertParams;
     iget-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mTitle:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
-    .line 84
     iget-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    .line 85
     iput-boolean v3, v0, Lcom/android/internal/app/AlertController$AlertParams;->mForceInverseBackground:Z
 
-    .line 86
     invoke-virtual {p0}, Lcom/miui/internal/app/MiuiLicenseActivity;->setupAlert()V
 
-    .line 87
     return-void
 
-    .line 45
     .end local v0           #p:Lcom/android/internal/app/AlertController$AlertParams;
     :cond_68
     sget-object v1, Lcom/miui/internal/app/MiuiLicenseActivity;->URL_MIUI_PRIVACY_POLICY:Ljava/lang/String;
@@ -428,7 +384,6 @@
 
     if-eqz v1, :cond_80
 
-    .line 46
     const v1, 0x60c0032
 
     invoke-virtual {p0, v1}, Lcom/miui/internal/app/MiuiLicenseActivity;->getString(I)Ljava/lang/String;
@@ -437,14 +392,12 @@
 
     iput-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mTitle:Ljava/lang/String;
 
-    .line 47
     sget-object v1, Lcom/miui/internal/app/MiuiLicenseActivity;->CACHE_URL_MIUI_PRIVACY_POLICY:Ljava/lang/String;
 
     iput-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mCachePath:Ljava/lang/String;
 
     goto :goto_31
 
-    .line 48
     :cond_80
     sget-object v1, Lcom/miui/internal/app/MiuiLicenseActivity;->URL_MIUI_USER_AGREEMENT:Ljava/lang/String;
 
@@ -456,7 +409,6 @@
 
     if-eqz v1, :cond_31
 
-    .line 49
     const v1, 0x60c0031
 
     invoke-virtual {p0, v1}, Lcom/miui/internal/app/MiuiLicenseActivity;->getString(I)Ljava/lang/String;
@@ -465,14 +417,12 @@
 
     iput-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mTitle:Ljava/lang/String;
 
-    .line 50
     sget-object v1, Lcom/miui/internal/app/MiuiLicenseActivity;->CACHE_URL_MIUI_USER_AGREEMENT:Ljava/lang/String;
 
     iput-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mCachePath:Ljava/lang/String;
 
     goto :goto_31
 
-    .line 76
     :cond_98
     iget-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mCachePath:Ljava/lang/String;
 
@@ -482,14 +432,12 @@
 
     if-eqz v1, :cond_a6
 
-    .line 77
     iget-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mUrl:Ljava/lang/String;
 
     invoke-direct {p0, v1}, Lcom/miui/internal/app/MiuiLicenseActivity;->showErrorAndFinish(Ljava/lang/String;)V
 
     goto :goto_58
 
-    .line 79
     :cond_a6
     iget-object v1, p0, Lcom/miui/internal/app/MiuiLicenseActivity;->mWebView:Landroid/webkit/WebView;
 

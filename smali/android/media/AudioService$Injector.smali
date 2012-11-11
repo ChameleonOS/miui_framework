@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,22 +35,18 @@
     .parameter "direction"
 
     .prologue
-    .line 106
     and-int/lit8 v0, p1, 0x1
 
     if-eqz v0, :cond_b
 
-    .line 107
     invoke-virtual {p0}, Lmiui/view/VolumePanel;->isVisible()Z
 
     move-result v0
 
     if-nez v0, :cond_b
 
-    .line 108
     const/4 p2, 0x0
 
-    .line 111
     :cond_b
     return p2
 .end method

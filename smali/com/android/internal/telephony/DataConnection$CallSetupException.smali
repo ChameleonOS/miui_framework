@@ -24,18 +24,14 @@
     .parameter "retryOverride"
 
     .prologue
-    .line 194
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 192
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/telephony/DataConnection$CallSetupException;->mRetryOverride:I
 
-    .line 195
     iput p1, p0, Lcom/android/internal/telephony/DataConnection$CallSetupException;->mRetryOverride:I
 
-    .line 196
     return-void
 .end method
 
@@ -45,7 +41,6 @@
     .registers 2
 
     .prologue
-    .line 199
     iget v0, p0, Lcom/android/internal/telephony/DataConnection$CallSetupException;->mRetryOverride:I
 
     return v0

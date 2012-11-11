@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,7 +22,6 @@
     .parameter "newState"
 
     .prologue
-    .line 39
     return-void
 .end method
 
@@ -32,6 +30,5 @@
     .parameter "connected"
 
     .prologue
-    .line 30
     return-void
 .end method

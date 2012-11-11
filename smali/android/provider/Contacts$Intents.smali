@@ -73,9 +73,7 @@
     .end annotation
 
     .prologue
-    .line 1980
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1981
     return-void
 .end method

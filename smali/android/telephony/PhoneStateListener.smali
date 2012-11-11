@@ -43,24 +43,20 @@
     .registers 2
 
     .prologue
-    .line 168
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 305
     new-instance v0, Landroid/telephony/PhoneStateListener$1;
 
     invoke-direct {v0, p0}, Landroid/telephony/PhoneStateListener$1;-><init>(Landroid/telephony/PhoneStateListener;)V
 
     iput-object v0, p0, Landroid/telephony/PhoneStateListener;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
 
-    .line 355
     new-instance v0, Landroid/telephony/PhoneStateListener$2;
 
     invoke-direct {v0, p0}, Landroid/telephony/PhoneStateListener$2;-><init>(Landroid/telephony/PhoneStateListener;)V
 
     iput-object v0, p0, Landroid/telephony/PhoneStateListener;->mHandler:Landroid/os/Handler;
 
-    .line 169
     return-void
 .end method
 
@@ -71,7 +67,6 @@
     .parameter "cfi"
 
     .prologue
-    .line 209
     return-void
 .end method
 
@@ -81,7 +76,6 @@
     .parameter "incomingNumber"
 
     .prologue
-    .line 227
     return-void
 .end method
 
@@ -90,7 +84,6 @@
     .parameter "cellInfo"
 
     .prologue
-    .line 299
     return-void
 .end method
 
@@ -99,7 +92,6 @@
     .parameter "location"
 
     .prologue
-    .line 216
     return-void
 .end method
 
@@ -108,7 +100,6 @@
     .parameter "direction"
 
     .prologue
-    .line 258
     return-void
 .end method
 
@@ -117,7 +108,6 @@
     .parameter "state"
 
     .prologue
-    .line 239
     return-void
 .end method
 
@@ -127,7 +117,6 @@
     .parameter "networkType"
 
     .prologue
-    .line 245
     return-void
 .end method
 
@@ -136,7 +125,6 @@
     .parameter "mwi"
 
     .prologue
-    .line 202
     return-void
 .end method
 
@@ -145,7 +133,6 @@
     .parameter "otaspMode"
 
     .prologue
-    .line 285
     return-void
 .end method
 
@@ -154,7 +141,6 @@
     .parameter "serviceState"
 
     .prologue
-    .line 181
     return-void
 .end method
 
@@ -165,7 +151,6 @@
     .end annotation
 
     .prologue
-    .line 195
     return-void
 .end method
 
@@ -174,6 +159,5 @@
     .parameter "signalStrength"
 
     .prologue
-    .line 270
     return-void
 .end method

@@ -12,11 +12,9 @@
     .registers 2
 
     .prologue
-    .line 29
     const-string v0, "Application did not close the cursor or database object that was opened here"
 
     invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 30
     return-void
 .end method

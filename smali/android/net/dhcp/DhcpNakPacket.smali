@@ -14,7 +14,6 @@
     .parameter "clientMac"
 
     .prologue
-    .line 33
     sget-object v2, Ljava/net/Inet4Address;->ANY:Ljava/net/InetAddress;
 
     sget-object v3, Ljava/net/Inet4Address;->ANY:Ljava/net/InetAddress;
@@ -33,7 +32,6 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/net/dhcp/DhcpPacket;-><init>(ILjava/net/InetAddress;Ljava/net/InetAddress;Ljava/net/InetAddress;Ljava/net/InetAddress;[BZ)V
 
-    .line 35
     return-void
 .end method
 
@@ -46,22 +44,18 @@
     .parameter "srcUdp"
 
     .prologue
-    .line 46
     const/16 v0, 0x5dc
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v6
 
-    .line 47
     .local v6, result:Ljava/nio/ByteBuffer;
     iget-object v2, p0, Landroid/net/dhcp/DhcpPacket;->mClientIp:Ljava/net/InetAddress;
 
-    .line 48
     .local v2, destIp:Ljava/net/InetAddress;
     iget-object v3, p0, Landroid/net/dhcp/DhcpPacket;->mYourIp:Ljava/net/InetAddress;
 
-    .line 50
     .local v3, srcIp:Ljava/net/InetAddress;
     const/4 v7, 0x2
 
@@ -77,10 +71,8 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/net/dhcp/DhcpNakPacket;->fillInPacket(ILjava/net/InetAddress;Ljava/net/InetAddress;SSLjava/nio/ByteBuffer;BZ)V
 
-    .line 52
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
-    .line 53
     return-object v6
 .end method
 
@@ -89,10 +81,8 @@
     .parameter "machine"
 
     .prologue
-    .line 70
     invoke-interface {p1}, Landroid/net/dhcp/DhcpStateMachine;->onNakReceived()V
 
-    .line 71
     return-void
 .end method
 
@@ -101,31 +91,26 @@
     .parameter "buffer"
 
     .prologue
-    .line 60
     const/16 v0, 0x35
 
     const/4 v1, 0x6
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpNakPacket;->addTlv(Ljava/nio/ByteBuffer;BB)V
 
-    .line 61
     const/16 v0, 0x36
 
     iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mServerIdentifier:Ljava/net/InetAddress;
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpNakPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/net/InetAddress;)V
 
-    .line 62
     const/16 v0, 0x38
 
     iget-object v1, p0, Landroid/net/dhcp/DhcpPacket;->mMessage:Ljava/lang/String;
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/net/dhcp/DhcpNakPacket;->addTlv(Ljava/nio/ByteBuffer;BLjava/lang/String;)V
 
-    .line 63
     invoke-virtual {p0, p1}, Landroid/net/dhcp/DhcpNakPacket;->addTlvEnd(Ljava/nio/ByteBuffer;)V
 
-    .line 64
     return-void
 .end method
 
@@ -133,12 +118,10 @@
     .registers 4
 
     .prologue
-    .line 38
     invoke-super {p0}, Landroid/net/dhcp/DhcpPacket;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 39
     .local v0, s:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 

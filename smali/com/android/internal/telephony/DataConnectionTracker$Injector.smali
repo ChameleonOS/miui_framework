@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 70
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .parameter "result"
 
     .prologue
-    .line 72
     invoke-virtual {p0}, Lcom/android/internal/telephony/DataConnectionTracker;->isMmsDataEnabled()Z
 
     move-result v0

@@ -58,40 +58,32 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 45
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/util/TimeUtils;->sLastLockObj:Ljava/lang/Object;
 
-    .line 46
     sput-object v1, Landroid/util/TimeUtils;->sLastZones:Ljava/util/ArrayList;
 
-    .line 47
     sput-object v1, Landroid/util/TimeUtils;->sLastCountry:Ljava/lang/String;
 
-    .line 50
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/util/TimeUtils;->sLastUniqueLockObj:Ljava/lang/Object;
 
-    .line 51
     sput-object v1, Landroid/util/TimeUtils;->sLastUniqueZoneOffsets:Ljava/util/ArrayList;
 
-    .line 52
     sput-object v1, Landroid/util/TimeUtils;->sLastUniqueCountry:Ljava/lang/String;
 
-    .line 245
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
 
-    .line 246
     const/16 v0, 0x18
 
     new-array v0, v0, [C
@@ -105,7 +97,6 @@
     .registers 1
 
     .prologue
-    .line 40
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -119,7 +110,6 @@
     .parameter "zeropad"
 
     .prologue
-    .line 249
     const/16 v0, 0x63
 
     if-gt p0, v0, :cond_9
@@ -130,15 +120,12 @@
 
     if-lt p3, v0, :cond_c
 
-    .line 250
     :cond_9
     add-int/lit8 v0, p1, 0x3
 
-    .line 258
     :goto_b
     return v0
 
-    .line 252
     :cond_c
     const/16 v0, 0x9
 
@@ -150,25 +137,21 @@
 
     if-lt p3, v0, :cond_18
 
-    .line 253
     :cond_15
     add-int/lit8 v0, p1, 0x2
 
     goto :goto_b
 
-    .line 255
     :cond_18
     if-nez p2, :cond_1c
 
     if-lez p0, :cond_1f
 
-    .line 256
     :cond_1c
     add-int/lit8 v0, p1, 0x1
 
     goto :goto_b
 
-    .line 258
     :cond_1f
     const/4 v0, 0x0
 
@@ -182,23 +165,19 @@
     .parameter "pw"
 
     .prologue
-    .line 379
     const-wide/16 v0, 0x0
 
     cmp-long v0, p0, v0
 
     if-nez v0, :cond_c
 
-    .line 380
     const-string v0, "--"
 
     invoke-virtual {p4, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 384
     :goto_b
     return-void
 
-    .line 383
     :cond_c
     sub-long v0, p0, p2
 
@@ -215,12 +194,10 @@
     .parameter "pw"
 
     .prologue
-    .line 374
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/io/PrintWriter;I)V
 
-    .line 375
     return-void
 .end method
 
@@ -231,18 +208,15 @@
     .parameter "fieldLen"
 
     .prologue
-    .line 366
     sget-object v2, Landroid/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 367
     :try_start_3
     invoke-static {p0, p1, p3}, Landroid/util/TimeUtils;->formatDurationLocked(JI)I
 
     move-result v0
 
-    .line 368
     .local v0, len:I
     new-instance v1, Ljava/lang/String;
 
@@ -254,13 +228,10 @@
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 369
     monitor-exit v2
 
-    .line 370
     return-void
 
-    .line 369
     .end local v0           #len:I
     :catchall_14
     move-exception v1
@@ -278,12 +249,10 @@
     .parameter "builder"
 
     .prologue
-    .line 358
     sget-object v2, Landroid/util/TimeUtils;->sFormatSync:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 359
     const/4 v1, 0x0
 
     :try_start_4
@@ -291,7 +260,6 @@
 
     move-result v0
 
-    .line 360
     .local v0, len:I
     sget-object v1, Landroid/util/TimeUtils;->sFormatStr:[C
 
@@ -299,13 +267,10 @@
 
     invoke-virtual {p2, v1, v3, v0}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
-    .line 361
     monitor-exit v2
 
-    .line 362
     return-void
 
-    .line 361
     .end local v0           #len:I
     :catchall_10
     move-exception v1
@@ -323,7 +288,6 @@
     .parameter "fieldLen"
 
     .prologue
-    .line 286
     sget-object v4, Landroid/util/TimeUtils;->sFormatStr:[C
 
     array-length v4, v4
@@ -332,18 +296,15 @@
 
     if-ge v4, v0, :cond_d
 
-    .line 287
     move/from16 v0, p2
 
     new-array v4, v0, [C
 
     sput-object v4, Landroid/util/TimeUtils;->sFormatStr:[C
 
-    .line 290
     :cond_d
     sget-object v2, Landroid/util/TimeUtils;->sFormatStr:[C
 
-    .line 292
     .local v2, formatStr:[C
     const-wide/16 v6, 0x0
 
@@ -351,16 +312,13 @@
 
     if-nez v4, :cond_30
 
-    .line 293
     const/4 v5, 0x0
 
-    .line 294
     .local v5, pos:I
     add-int/lit8 p2, p2, -0x1
 
     move/from16 v16, v5
 
-    .line 295
     .end local v5           #pos:I
     .local v16, pos:I
     :goto_1a
@@ -370,7 +328,6 @@
 
     if-ge v0, v1, :cond_29
 
-    .line 296
     add-int/lit8 v5, v16, 0x1
 
     .end local v16           #pos:I
@@ -385,21 +342,17 @@
     .restart local v16       #pos:I
     goto :goto_1a
 
-    .line 298
     :cond_29
     const/16 v4, 0x30
 
     aput-char v4, v2, v16
 
-    .line 299
     add-int/lit8 v4, v16, 0x1
 
-    .line 353
     .end local v16           #pos:I
     :goto_2f
     return v4
 
-    .line 303
     :cond_30
     const-wide/16 v6, 0x0
 
@@ -407,10 +360,8 @@
 
     if-lez v4, :cond_bb
 
-    .line 304
     const/16 v17, 0x2b
 
-    .line 310
     .local v17, prefix:C
     :goto_38
     const-wide/16 v6, 0x3e8
@@ -419,7 +370,6 @@
 
     long-to-int v13, v6
 
-    .line 311
     .local v13, millis:I
     const-wide/16 v6, 0x3e8
 
@@ -435,7 +385,6 @@
 
     move/from16 v18, v0
 
-    .line 312
     .local v18, seconds:I
     const/4 v3, 0x0
 
@@ -445,7 +394,6 @@
     .local v12, hours:I
     const/4 v14, 0x0
 
-    .line 314
     .local v14, minutes:I
     const v4, 0x15180
 
@@ -453,19 +401,16 @@
 
     if-le v0, v4, :cond_5e
 
-    .line 315
     const v4, 0x15180
 
     div-int v3, v18, v4
 
-    .line 316
     const v4, 0x15180
 
     mul-int/2addr v4, v3
 
     sub-int v18, v18, v4
 
-    .line 318
     :cond_5e
     const/16 v4, 0xe10
 
@@ -473,17 +418,14 @@
 
     if-le v0, v4, :cond_6c
 
-    .line 319
     move/from16 v0, v18
 
     div-int/lit16 v12, v0, 0xe10
 
-    .line 320
     mul-int/lit16 v4, v12, 0xe10
 
     sub-int v18, v18, v4
 
-    .line 322
     :cond_6c
     const/16 v4, 0x3c
 
@@ -491,23 +433,18 @@
 
     if-le v0, v4, :cond_78
 
-    .line 323
     div-int/lit8 v14, v18, 0x3c
 
-    .line 324
     mul-int/lit8 v4, v14, 0x3c
 
     sub-int v18, v18, v4
 
-    .line 327
     :cond_78
     const/4 v5, 0x0
 
-    .line 329
     .restart local v5       #pos:I
     if-eqz p2, :cond_cc
 
-    .line 330
     const/4 v4, 0x1
 
     const/4 v6, 0x0
@@ -518,7 +455,6 @@
 
     move-result v15
 
-    .line 331
     .local v15, myLen:I
     const/4 v6, 0x1
 
@@ -535,7 +471,6 @@
 
     add-int/2addr v15, v4
 
-    .line 332
     const/4 v6, 0x1
 
     if-lez v15, :cond_c6
@@ -551,7 +486,6 @@
 
     add-int/2addr v15, v4
 
-    .line 333
     const/4 v6, 0x1
 
     if-lez v15, :cond_c8
@@ -569,7 +503,6 @@
 
     add-int/2addr v15, v4
 
-    .line 334
     const/4 v6, 0x2
 
     const/4 v7, 0x1
@@ -587,26 +520,21 @@
 
     add-int/2addr v15, v4
 
-    .line 335
     :goto_ae
     move/from16 v0, p2
 
     if-ge v15, v0, :cond_cc
 
-    .line 336
     const/16 v4, 0x20
 
     aput-char v4, v2, v5
 
-    .line 337
     add-int/lit8 v5, v5, 0x1
 
-    .line 338
     add-int/lit8 v15, v15, 0x1
 
     goto :goto_ae
 
-    .line 306
     .end local v3           #days:I
     .end local v5           #pos:I
     .end local v12           #hours:I
@@ -618,7 +546,6 @@
     :cond_bb
     const/16 v17, 0x2d
 
-    .line 307
     .restart local v17       #prefix:C
     move-wide/from16 v0, p0
 
@@ -628,7 +555,6 @@
 
     goto/16 :goto_38
 
-    .line 331
     .restart local v3       #days:I
     .restart local v5       #pos:I
     .restart local v12       #hours:I
@@ -641,42 +567,34 @@
 
     goto :goto_86
 
-    .line 332
     :cond_c6
     const/4 v4, 0x0
 
     goto :goto_90
 
-    .line 333
     :cond_c8
     const/4 v4, 0x0
 
     goto :goto_9a
 
-    .line 334
     :cond_ca
     const/4 v4, 0x0
 
     goto :goto_a7
 
-    .line 342
     .end local v15           #myLen:I
     :cond_cc
     aput-char v17, v2, v5
 
-    .line 343
     add-int/lit8 v5, v5, 0x1
 
-    .line 345
     move/from16 v19, v5
 
-    .line 346
     .local v19, start:I
     if-eqz p2, :cond_12b
 
     const/16 v20, 0x1
 
-    .line 347
     .local v20, zeropad:Z
     :goto_d6
     const/16 v4, 0x64
@@ -689,7 +607,6 @@
 
     move-result v5
 
-    .line 348
     const/16 v8, 0x68
 
     move/from16 v0, v19
@@ -714,7 +631,6 @@
 
     move-result v5
 
-    .line 349
     const/16 v8, 0x6d
 
     move/from16 v0, v19
@@ -739,7 +655,6 @@
 
     move-result v5
 
-    .line 350
     const/16 v8, 0x73
 
     move/from16 v0, v19
@@ -764,7 +679,6 @@
 
     move-result v5
 
-    .line 351
     const/16 v8, 0x6d
 
     const/4 v10, 0x1
@@ -788,24 +702,20 @@
 
     move-result v5
 
-    .line 352
     const/16 v4, 0x73
 
     aput-char v4, v2, v5
 
-    .line 353
     add-int/lit8 v4, v5, 0x1
 
     goto/16 :goto_2f
 
-    .line 346
     .end local v20           #zeropad:Z
     :cond_12b
     const/16 v20, 0x0
 
     goto :goto_d6
 
-    .line 348
     .restart local v20       #zeropad:Z
     :cond_12e
     const/4 v10, 0x0
@@ -817,7 +727,6 @@
 
     goto :goto_e8
 
-    .line 349
     :cond_132
     const/4 v10, 0x0
 
@@ -828,7 +737,6 @@
 
     goto :goto_f9
 
-    .line 350
     :cond_136
     const/4 v10, 0x0
 
@@ -839,7 +747,6 @@
 
     goto :goto_10a
 
-    .line 351
     :cond_13a
     const/4 v11, 0x0
 
@@ -854,16 +761,13 @@
     .parameter "country"
 
     .prologue
-    .line 61
     const/4 v0, 0x0
 
-    .line 63
     .local v0, best:Ljava/util/TimeZone;
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v8
 
-    .line 64
     .local v8, r:Landroid/content/res/Resources;
     const v10, 0x10f000d
 
@@ -871,37 +775,31 @@
 
     move-result-object v7
 
-    .line 65
     .local v7, parser:Landroid/content/res/XmlResourceParser;
     new-instance v5, Ljava/util/Date;
 
     invoke-direct {v5, p2, p3}, Ljava/util/Date;-><init>(J)V
 
-    .line 67
     .local v5, d:Ljava/util/Date;
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
     move-result-object v1
 
-    .line 68
     .local v1, current:Ljava/util/TimeZone;
     invoke-virtual {v1}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 69
     .local v3, currentName:Ljava/lang/String;
     invoke-virtual {v1, p2, p3}, Ljava/util/TimeZone;->getOffset(J)I
 
     move-result v4
 
-    .line 70
     .local v4, currentOffset:I
     invoke-virtual {v1, v5}, Ljava/util/TimeZone;->inDaylightTime(Ljava/util/Date;)Z
 
     move-result v2
 
-    .line 72
     .local v2, currentDst:Z
     invoke-static {p4}, Landroid/util/TimeUtils;->getTimeZones(Ljava/lang/String;)Ljava/util/ArrayList;
 
@@ -926,7 +824,6 @@
 
     check-cast v9, Ljava/util/TimeZone;
 
-    .line 77
     .local v9, tz:Ljava/util/TimeZone;
     invoke-virtual {v9}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
@@ -938,24 +835,20 @@
 
     if-eqz v10, :cond_44
 
-    .line 78
     if-ne v4, p0, :cond_44
 
     if-ne v2, p1, :cond_44
 
-    .line 96
     .end local v1           #current:Ljava/util/TimeZone;
     .end local v9           #tz:Ljava/util/TimeZone;
     :goto_43
     return-object v1
 
-    .line 88
     .restart local v1       #current:Ljava/util/TimeZone;
     .restart local v9       #tz:Ljava/util/TimeZone;
     :cond_44
     if-nez v0, :cond_29
 
-    .line 89
     invoke-virtual {v9, p2, p3}, Ljava/util/TimeZone;->getOffset(J)I
 
     move-result v10
@@ -968,7 +861,6 @@
 
     if-ne v10, p1, :cond_29
 
-    .line 91
     move-object v0, v9
 
     goto :goto_29
@@ -977,7 +869,6 @@
     :cond_54
     move-object v1, v0
 
-    .line 96
     goto :goto_43
 .end method
 
@@ -985,7 +876,6 @@
     .registers 1
 
     .prologue
-    .line 235
     invoke-static {}, Llibcore/util/ZoneInfoDB;->getVersion()Ljava/lang/String;
 
     move-result-object v0
@@ -1009,12 +899,10 @@
     .end annotation
 
     .prologue
-    .line 156
     sget-object v9, Landroid/util/TimeUtils;->sLastLockObj:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 157
     if-eqz p0, :cond_11
 
     :try_start_5
@@ -1026,37 +914,30 @@
 
     if-eqz v8, :cond_11
 
-    .line 159
     sget-object v6, Landroid/util/TimeUtils;->sLastZones:Ljava/util/ArrayList;
 
     monitor-exit v9
 
-    .line 213
     :cond_10
     :goto_10
     return-object v6
 
-    .line 161
     :cond_11
     monitor-exit v9
     :try_end_12
     .catchall {:try_start_5 .. :try_end_12} :catchall_4d
 
-    .line 163
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 165
     .local v6, tzs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/util/TimeZone;>;"
     if-eqz p0, :cond_10
 
-    .line 170
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    .line 171
     .local v4, r:Landroid/content/res/Resources;
     const v8, 0x10f000d
 
@@ -1064,24 +945,20 @@
 
     move-result-object v3
 
-    .line 174
     .local v3, parser:Landroid/content/res/XmlResourceParser;
     :try_start_24
     const-string/jumbo v8, "timezones"
 
     invoke-static {v3, v8}, Lcom/android/internal/util/XmlUtils;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
-    .line 177
     :cond_2a
     :goto_2a
     invoke-static {v3}, Lcom/android/internal/util/XmlUtils;->nextElement(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 179
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 180
     .local v2, element:Ljava/lang/String;
     if-eqz v2, :cond_3c
 
@@ -1097,25 +974,20 @@
 
     if-nez v8, :cond_50
 
-    .line 206
     :cond_3c
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 209
     .end local v2           #element:Ljava/lang/String;
     :goto_3f
     sget-object v9, Landroid/util/TimeUtils;->sLastLockObj:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 211
     :try_start_42
     sput-object v6, Landroid/util/TimeUtils;->sLastZones:Ljava/util/ArrayList;
 
-    .line 212
     sput-object p0, Landroid/util/TimeUtils;->sLastCountry:Ljava/lang/String;
 
-    .line 213
     sget-object v6, Landroid/util/TimeUtils;->sLastZones:Ljava/util/ArrayList;
 
     .end local v6           #tzs:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/util/TimeZone;>;"
@@ -1123,7 +995,6 @@
 
     goto :goto_10
 
-    .line 214
     :catchall_4a
     move-exception v8
 
@@ -1133,7 +1004,6 @@
 
     throw v8
 
-    .line 161
     .end local v3           #parser:Landroid/content/res/XmlResourceParser;
     .end local v4           #r:Landroid/content/res/Resources;
     :catchall_4d
@@ -1146,7 +1016,6 @@
 
     throw v8
 
-    .line 184
     .restart local v2       #element:Ljava/lang/String;
     .restart local v3       #parser:Landroid/content/res/XmlResourceParser;
     .restart local v4       #r:Landroid/content/res/Resources;
@@ -1161,7 +1030,6 @@
 
     move-result-object v0
 
-    .line 186
     .local v0, code:Ljava/lang/String;
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1169,7 +1037,6 @@
 
     if-eqz v8, :cond_2a
 
-    .line 187
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->next()I
 
     move-result v8
@@ -1178,18 +1045,15 @@
 
     if-ne v8, v9, :cond_2a
 
-    .line 188
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->getText()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 189
     .local v7, zoneIdString:Ljava/lang/String;
     invoke-static {v7}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
     move-result-object v5
 
-    .line 190
     .local v5, tz:Ljava/util/TimeZone;
     invoke-virtual {v5}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
@@ -1203,7 +1067,6 @@
 
     if-nez v8, :cond_2a
 
-    .line 192
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_7b
     .catchall {:try_start_51 .. :try_end_7b} :catchall_c3
@@ -1212,7 +1075,6 @@
 
     goto :goto_2a
 
-    .line 201
     .end local v0           #code:Ljava/lang/String;
     .end local v2           #element:Ljava/lang/String;
     .end local v5           #tz:Ljava/util/TimeZone;
@@ -1220,7 +1082,6 @@
     :catch_7c
     move-exception v1
 
-    .line 202
     .local v1, e:Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_7d
     const-string v8, "TimeUtils"
@@ -1253,17 +1114,14 @@
     :try_end_9b
     .catchall {:try_start_7d .. :try_end_9b} :catchall_c3
 
-    .line 206
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto :goto_3f
 
-    .line 203
     .end local v1           #e:Lorg/xmlpull/v1/XmlPullParserException;
     :catch_9f
     move-exception v1
 
-    .line 204
     .local v1, e:Ljava/io/IOException;
     :try_start_a0
     const-string v8, "TimeUtils"
@@ -1296,7 +1154,6 @@
     :try_end_be
     .catchall {:try_start_a0 .. :try_end_be} :catchall_c3
 
-    .line 206
     invoke-interface {v3}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto/16 :goto_3f
@@ -1326,12 +1183,10 @@
     .end annotation
 
     .prologue
-    .line 107
     sget-object v7, Landroid/util/TimeUtils;->sLastUniqueLockObj:Ljava/lang/Object;
 
     monitor-enter v7
 
-    .line 108
     if-eqz p0, :cond_11
 
     :try_start_5
@@ -1343,33 +1198,27 @@
 
     if-eqz v6, :cond_11
 
-    .line 113
     sget-object v6, Landroid/util/TimeUtils;->sLastUniqueZoneOffsets:Ljava/util/ArrayList;
 
     monitor-exit v7
 
-    .line 143
     :goto_10
     return-object v6
 
-    .line 115
     :cond_11
     monitor-exit v7
     :try_end_12
     .catchall {:try_start_5 .. :try_end_12} :catchall_4a
 
-    .line 117
     invoke-static {p0}, Landroid/util/TimeUtils;->getTimeZones(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v5
 
-    .line 118
     .local v5, zones:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/TimeZone;>;"
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 119
     .local v3, uniqueTimeZones:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/util/TimeZone;>;"
     invoke-interface {v5}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -1390,11 +1239,9 @@
 
     check-cast v4, Ljava/util/TimeZone;
 
-    .line 122
     .local v4, zone:Ljava/util/TimeZone;
     const/4 v0, 0x0
 
-    .line 123
     .local v0, found:Z
     const/4 v1, 0x0
 
@@ -1406,7 +1253,6 @@
 
     if-ge v1, v6, :cond_44
 
-    .line 124
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1423,19 +1269,15 @@
 
     if-ne v6, v7, :cond_4d
 
-    .line 125
     const/4 v0, 0x1
 
-    .line 129
     :cond_44
     if-nez v0, :cond_1f
 
-    .line 134
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1f
 
-    .line 115
     .end local v0           #found:Z
     .end local v1           #i:I
     .end local v2           #i$:Ljava/util/Iterator;
@@ -1452,7 +1294,6 @@
 
     throw v6
 
-    .line 123
     .restart local v0       #found:Z
     .restart local v1       #i:I
     .restart local v2       #i$:Ljava/util/Iterator;
@@ -1464,7 +1305,6 @@
 
     goto :goto_2d
 
-    .line 138
     .end local v0           #found:Z
     .end local v1           #i:I
     .end local v4           #zone:Ljava/util/TimeZone;
@@ -1473,21 +1313,17 @@
 
     monitor-enter v7
 
-    .line 140
     :try_start_53
     sput-object v3, Landroid/util/TimeUtils;->sLastUniqueZoneOffsets:Ljava/util/ArrayList;
 
-    .line 141
     sput-object p0, Landroid/util/TimeUtils;->sLastUniqueCountry:Ljava/lang/String;
 
-    .line 143
     sget-object v6, Landroid/util/TimeUtils;->sLastUniqueZoneOffsets:Ljava/util/ArrayList;
 
     monitor-exit v7
 
     goto :goto_10
 
-    .line 144
     :catchall_5b
     move-exception v6
 
@@ -1503,12 +1339,10 @@
     .parameter "millis"
 
     .prologue
-    .line 395
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 396
     .local v0, c:Ljava/util/Calendar;
     const-wide/16 v1, 0x0
 
@@ -1516,10 +1350,8 @@
 
     if-ltz v1, :cond_29
 
-    .line 397
     invoke-virtual {v0, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 398
     const-string v1, "%tm-%td %tH:%tM:%tS.%tL"
 
     const/4 v2, 0x6
@@ -1554,7 +1386,6 @@
 
     move-result-object v1
 
-    .line 400
     :goto_28
     return-object v1
 
@@ -1576,16 +1407,13 @@
     .parameter "zeropad"
 
     .prologue
-    .line 263
     if-nez p4, :cond_4
 
     if-lez p1, :cond_3c
 
-    .line 264
     :cond_4
     move v1, p3
 
-    .line 265
     .local v1, startPos:I
     if-eqz p4, :cond_a
 
@@ -1598,11 +1426,9 @@
 
     if-le p1, v2, :cond_1a
 
-    .line 266
     :cond_e
     div-int/lit8 v0, p1, 0x64
 
-    .line 267
     .local v0, dig:I
     add-int/lit8 v2, v0, 0x30
 
@@ -1610,15 +1436,12 @@
 
     aput-char v2, p0, p3
 
-    .line 268
     add-int/lit8 p3, p3, 0x1
 
-    .line 269
     mul-int/lit8 v2, v0, 0x64
 
     sub-int/2addr p1, v2
 
-    .line 271
     .end local v0           #dig:I
     :cond_1a
     if-eqz p4, :cond_1f
@@ -1634,11 +1457,9 @@
 
     if-eq v1, p3, :cond_31
 
-    .line 272
     :cond_25
     div-int/lit8 v0, p1, 0xa
 
-    .line 273
     .restart local v0       #dig:I
     add-int/lit8 v2, v0, 0x30
 
@@ -1646,15 +1467,12 @@
 
     aput-char v2, p0, p3
 
-    .line 274
     add-int/lit8 p3, p3, 0x1
 
-    .line 275
     mul-int/lit8 v2, v0, 0xa
 
     sub-int/2addr p1, v2
 
-    .line 277
     .end local v0           #dig:I
     :cond_31
     add-int/lit8 v2, p1, 0x30
@@ -1663,16 +1481,12 @@
 
     aput-char v2, p0, p3
 
-    .line 278
     add-int/lit8 p3, p3, 0x1
 
-    .line 279
     aput-char p2, p0, p3
 
-    .line 280
     add-int/lit8 p3, p3, 0x1
 
-    .line 282
     .end local v1           #startPos:I
     :cond_3c
     return p3

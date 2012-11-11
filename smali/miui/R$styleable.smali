@@ -291,7 +291,6 @@
 
     const/4 v3, 0x2
 
-    .line 3329
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -300,7 +299,6 @@
 
     sput-object v0, Lmiui/R$styleable;->AlphabetFastIndexer:[I
 
-    .line 3487
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -313,14 +311,12 @@
 
     sput-object v0, Lmiui/R$styleable;->FixedListView:[I
 
-    .line 3520
     new-array v0, v3, [I
 
     fill-array-data v0, :array_74
 
     sput-object v0, Lmiui/R$styleable;->GradientTextView:[I
 
-    .line 3587
     const/16 v0, 0xc
 
     new-array v0, v0, [I
@@ -329,7 +325,6 @@
 
     sput-object v0, Lmiui/R$styleable;->LockPatternView:[I
 
-    .line 3750
     const/4 v0, 0x4
 
     new-array v0, v0, [I
@@ -338,21 +333,18 @@
 
     sput-object v0, Lmiui/R$styleable;->MicloudPush:[I
 
-    .line 3825
     new-array v0, v3, [I
 
     fill-array-data v0, :array_a4
 
     sput-object v0, Lmiui/R$styleable;->MiuiInCallAnswerWidgetHorizontal:[I
 
-    .line 3866
     new-array v0, v3, [I
 
     fill-array-data v0, :array_ac
 
     sput-object v0, Lmiui/R$styleable;->NumberProgressView:[I
 
-    .line 3911
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -361,21 +353,18 @@
 
     sput-object v0, Lmiui/R$styleable;->PhotoFrameView:[I
 
-    .line 4022
     new-array v0, v4, [I
 
     fill-array-data v0, :array_c2
 
     sput-object v0, Lmiui/R$styleable;->SlidingButton:[I
 
-    .line 4120
     new-array v0, v4, [I
 
     fill-array-data v0, :array_d4
 
     sput-object v0, Lmiui/R$styleable;->SpectrumVisualizer:[I
 
-    .line 4372
     const/16 v0, 0x46
 
     new-array v0, v0, [I
@@ -386,7 +375,6 @@
 
     return-void
 
-    .line 3329
     :array_5c
     .array-data 0x4
         0x12t 0x0t 0x1t 0x6t
@@ -401,14 +389,12 @@
         0x1bt 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 3520
     :array_74
     .array-data 0x4
         0x10t 0x0t 0x1t 0x6t
         0x11t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 3587
     :array_7c
     .array-data 0x4
         0x21t 0x0t 0x1t 0x6t
@@ -425,7 +411,6 @@
         0x2ct 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 3750
     :array_98
     .array-data 0x4
         0x2dt 0x0t 0x1t 0x6t
@@ -434,21 +419,18 @@
         0x30t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 3825
     :array_a4
     .array-data 0x4
         0x7t 0x0t 0x1t 0x6t
         0xft 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 3866
     :array_ac
     .array-data 0x4
         0x78t 0x0t 0x1t 0x6t
         0x79t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 3911
     :array_b4
     .array-data 0x4
         0x1ct 0x0t 0x1t 0x6t
@@ -458,7 +440,6 @@
         0x20t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 4022
     :array_c2
     .array-data 0x4
         0x8t 0x0t 0x1t 0x6t
@@ -470,7 +451,6 @@
         0xet 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 4120
     :array_d4
     .array-data 0x4
         0x0t 0x0t 0x1t 0x6t
@@ -482,7 +462,6 @@
         0x6t 0x0t 0x1t 0x6t
     .end array-data
 
-    .line 4372
     :array_e6
     .array-data 0x4
         0x32t 0x0t 0x1t 0x6t
@@ -562,7 +541,6 @@
     .registers 1
 
     .prologue
-    .line 3298
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

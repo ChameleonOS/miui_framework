@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 28
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,10 +18,8 @@
     .parameter "sa"
 
     .prologue
-    .line 43
     const/4 v0, 0x0
 
-    .line 44
     .local v0, hostStr:Ljava/lang/String;
     invoke-virtual {p0}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
 
@@ -30,7 +27,6 @@
 
     if-eqz v1, :cond_f
 
-    .line 45
     invoke-virtual {p0}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
 
     move-result-object v1
@@ -39,7 +35,6 @@
 
     move-result-object v0
 
-    .line 47
     :cond_f
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -47,12 +42,10 @@
 
     if-eqz v1, :cond_19
 
-    .line 48
     invoke-virtual {p0}, Ljava/net/InetSocketAddress;->getHostName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 51
     :cond_19
     new-instance v1, Lorg/apache/http/HttpHost;
 

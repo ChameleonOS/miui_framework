@@ -24,7 +24,6 @@
 
     const/4 v3, 0x0
 
-    .line 17
     new-array v0, v4, [Landroid/content/pm/Signature;
 
     new-instance v1, Landroid/content/pm/Signature;
@@ -37,7 +36,6 @@
 
     sput-object v0, Lmiui/content/pm/ExtraPackageManager;->GOOGLE_SIGNATURES:[Landroid/content/pm/Signature;
 
-    .line 22
     new-array v0, v4, [Landroid/content/pm/Signature;
 
     new-instance v1, Landroid/content/pm/Signature;
@@ -50,7 +48,6 @@
 
     sput-object v0, Lmiui/content/pm/ExtraPackageManager;->MITALK_SIGNATURES:[Landroid/content/pm/Signature;
 
-    .line 85
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/String;
@@ -96,7 +93,6 @@
     .registers 1
 
     .prologue
-    .line 16
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -108,40 +104,32 @@
     .parameter "s2"
 
     .prologue
-    .line 62
     if-nez p0, :cond_8
 
-    .line 63
     if-nez p1, :cond_6
 
     const/4 v6, 0x1
 
-    .line 82
     :goto_5
     return v6
 
-    .line 63
     :cond_6
     const/4 v6, -0x1
 
     goto :goto_5
 
-    .line 67
     :cond_8
     if-nez p1, :cond_c
 
-    .line 68
     const/4 v6, -0x2
 
     goto :goto_5
 
-    .line 70
     :cond_c
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 71
     .local v3, set1:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/content/pm/Signature;>;"
     move-object v0, p0
 
@@ -157,23 +145,19 @@
 
     aget-object v5, v0, v1
 
-    .line 72
     .local v5, sig:Landroid/content/pm/Signature;
     invoke-virtual {v3, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 71
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_14
 
-    .line 74
     .end local v5           #sig:Landroid/content/pm/Signature;
     :cond_1e
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
-    .line 75
     .local v4, set2:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/content/pm/Signature;>;"
     move-object v0, p1
 
@@ -186,16 +170,13 @@
 
     aget-object v5, v0, v1
 
-    .line 76
     .restart local v5       #sig:Landroid/content/pm/Signature;
     invoke-virtual {v4, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 75
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_26
 
-    .line 79
     .end local v5           #sig:Landroid/content/pm/Signature;
     :cond_30
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->equals(Ljava/lang/Object;)Z
@@ -204,12 +185,10 @@
 
     if-eqz v6, :cond_38
 
-    .line 80
     const/4 v6, 0x0
 
     goto :goto_5
 
-    .line 82
     :cond_38
     const/4 v6, -0x3
 
@@ -228,17 +207,14 @@
 
     const/4 v1, 0x1
 
-    .line 44
     const/16 v3, 0x3e9
 
     if-ne p3, v3, :cond_7
 
-    .line 58
     :cond_6
     :goto_6
     return v1
 
-    .line 49
     :cond_7
     const-string v3, "com.xiaomi"
 
@@ -260,7 +236,6 @@
 
     if-eqz v3, :cond_30
 
-    .line 52
     :try_start_1b
     const-string v3, "com.xiaomi.channel"
 
@@ -270,7 +245,6 @@
 
     move-result-object v0
 
-    .line 53
     .local v0, info:Landroid/content/pm/PackageInfo;
     sget-object v3, Lmiui/content/pm/ExtraPackageManager;->MITALK_SIGNATURES:[Landroid/content/pm/Signature;
 
@@ -288,12 +262,10 @@
 
     goto :goto_6
 
-    .line 54
     .end local v0           #info:Landroid/content/pm/PackageInfo;
     :catch_2f
     move-exception v3
 
-    .line 58
     :cond_30
     invoke-virtual {p0, p2, p3}, Landroid/content/pm/PackageManager;->checkSignatures(II)I
 
@@ -312,7 +284,6 @@
     .parameter "pkgName"
 
     .prologue
-    .line 95
     const-string v0, "classes.dex"
 
     invoke-virtual {p0}, Ljava/util/jar/JarEntry;->getName()Ljava/lang/String;
@@ -349,7 +320,6 @@
     .parameter "signature"
 
     .prologue
-    .line 37
     sget-object v0, Lmiui/content/pm/ExtraPackageManager;->GOOGLE_SIGNATURES:[Landroid/content/pm/Signature;
 
     invoke-static {v0, p0}, Lmiui/content/pm/ExtraPackageManager;->compareSignatures([Landroid/content/pm/Signature;[Landroid/content/pm/Signature;)I

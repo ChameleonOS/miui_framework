@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 140
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "in"
 
     .prologue
-    .line 142
     new-instance v0, Lcom/android/internal/preference/YesNoPreference$SavedState;
 
     invoke-direct {v0, p1}, Lcom/android/internal/preference/YesNoPreference$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +56,6 @@
     .parameter "x0"
 
     .prologue
-    .line 140
     invoke-virtual {p0, p1}, Lcom/android/internal/preference/YesNoPreference$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/preference/YesNoPreference$SavedState;
 
     move-result-object v0
@@ -71,7 +68,6 @@
     .parameter "size"
 
     .prologue
-    .line 146
     new-array v0, p1, [Lcom/android/internal/preference/YesNoPreference$SavedState;
 
     return-object v0
@@ -82,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 140
     invoke-virtual {p0, p1}, Lcom/android/internal/preference/YesNoPreference$SavedState$1;->newArray(I)[Lcom/android/internal/preference/YesNoPreference$SavedState;
 
     move-result-object v0

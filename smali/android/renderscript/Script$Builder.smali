@@ -24,12 +24,9 @@
     .parameter "rs"
 
     .prologue
-    .line 189
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 190
     iput-object p1, p0, Landroid/renderscript/Script$Builder;->mRS:Landroid/renderscript/RenderScript;
 
-    .line 191
     return-void
 .end method

@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 385
     iput-object p1, p0, Landroid/widget/EditableListView$DropDownMenu$1;->this$0:Landroid/widget/EditableListView$DropDownMenu;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "v"
 
     .prologue
-    .line 387
     iget-object v0, p0, Landroid/widget/EditableListView$DropDownMenu$1;->this$0:Landroid/widget/EditableListView$DropDownMenu;
 
     #getter for: Landroid/widget/EditableListView$DropDownMenu;->mPopupMenu:Landroid/widget/PopupMenu;
@@ -52,6 +50,5 @@
 
     invoke-virtual {v0}, Landroid/widget/PopupMenu;->show()V
 
-    .line 388
     return-void
 .end method

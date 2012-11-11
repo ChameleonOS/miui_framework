@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 178
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$1;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,19 +39,16 @@
     .parameter "selfChange"
 
     .prologue
-    .line 181
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$1;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
     const-string v1, "Auto time state changed"
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->log(Ljava/lang/String;)V
 
-    .line 182
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker$1;->this$0:Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;
 
     #calls: Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->revertToNitzTime()V
     invoke-static {v0}, Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;->access$000(Lcom/android/internal/telephony/cdma/CdmaServiceStateTracker;)V
 
-    .line 183
     return-void
 .end method

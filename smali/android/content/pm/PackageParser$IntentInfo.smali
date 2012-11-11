@@ -31,7 +31,6 @@
     .registers 1
 
     .prologue
-    .line 3691
     invoke-direct {p0}, Landroid/content/IntentFilter;-><init>()V
 
     return-void

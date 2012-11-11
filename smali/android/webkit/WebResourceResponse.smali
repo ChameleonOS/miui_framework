@@ -19,19 +19,14 @@
     .parameter "data"
 
     .prologue
-    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     iput-object p1, p0, Landroid/webkit/WebResourceResponse;->mMimeType:Ljava/lang/String;
 
-    .line 47
     iput-object p2, p0, Landroid/webkit/WebResourceResponse;->mEncoding:Ljava/lang/String;
 
-    .line 48
     iput-object p3, p0, Landroid/webkit/WebResourceResponse;->mInputStream:Ljava/io/InputStream;
 
-    .line 49
     return-void
 .end method
 
@@ -41,7 +36,6 @@
     .registers 2
 
     .prologue
-    .line 104
     iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mInputStream:Ljava/io/InputStream;
 
     return-object v0
@@ -51,7 +45,6 @@
     .registers 2
 
     .prologue
-    .line 85
     iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mEncoding:Ljava/lang/String;
 
     return-object v0
@@ -61,7 +54,6 @@
     .registers 2
 
     .prologue
-    .line 66
     iget-object v0, p0, Landroid/webkit/WebResourceResponse;->mMimeType:Ljava/lang/String;
 
     return-object v0
@@ -72,10 +64,8 @@
     .parameter "data"
 
     .prologue
-    .line 95
     iput-object p1, p0, Landroid/webkit/WebResourceResponse;->mInputStream:Ljava/io/InputStream;
 
-    .line 96
     return-void
 .end method
 
@@ -84,10 +74,8 @@
     .parameter "encoding"
 
     .prologue
-    .line 76
     iput-object p1, p0, Landroid/webkit/WebResourceResponse;->mEncoding:Ljava/lang/String;
 
-    .line 77
     return-void
 .end method
 
@@ -96,9 +84,7 @@
     .parameter "mimeType"
 
     .prologue
-    .line 57
     iput-object p1, p0, Landroid/webkit/WebResourceResponse;->mMimeType:Ljava/lang/String;
 
-    .line 58
     return-void
 .end method

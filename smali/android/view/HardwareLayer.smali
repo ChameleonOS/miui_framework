@@ -24,12 +24,10 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 47
     const/4 v0, 0x0
 
     invoke-direct {p0, v1, v1, v0}, Landroid/view/HardwareLayer;-><init>(IIZ)V
 
-    .line 48
     return-void
 .end method
 
@@ -40,19 +38,14 @@
     .parameter "isOpaque"
 
     .prologue
-    .line 58
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     iput p1, p0, Landroid/view/HardwareLayer;->mWidth:I
 
-    .line 60
     iput p2, p0, Landroid/view/HardwareLayer;->mHeight:I
 
-    .line 61
     iput-boolean p3, p0, Landroid/view/HardwareLayer;->mOpaque:Z
 
-    .line 62
     return-void
 .end method
 
@@ -77,7 +70,6 @@
     .registers 2
 
     .prologue
-    .line 88
     iget-object v0, p0, Landroid/view/HardwareLayer;->mDisplayList:Landroid/view/DisplayList;
 
     return-object v0
@@ -87,7 +79,6 @@
     .registers 2
 
     .prologue
-    .line 79
     iget v0, p0, Landroid/view/HardwareLayer;->mHeight:I
 
     return v0
@@ -97,7 +88,6 @@
     .registers 2
 
     .prologue
-    .line 70
     iget v0, p0, Landroid/view/HardwareLayer;->mWidth:I
 
     return v0
@@ -107,7 +97,6 @@
     .registers 2
 
     .prologue
-    .line 106
     iget-boolean v0, p0, Landroid/view/HardwareLayer;->mOpaque:Z
 
     return v0
@@ -127,10 +116,8 @@
     .parameter "displayList"
 
     .prologue
-    .line 97
     iput-object p1, p0, Landroid/view/HardwareLayer;->mDisplayList:Landroid/view/DisplayList;
 
-    .line 98
     return-void
 .end method
 
@@ -147,15 +134,11 @@
     .parameter "isOpaque"
 
     .prologue
-    .line 175
     iput p1, p0, Landroid/view/HardwareLayer;->mWidth:I
 
-    .line 176
     iput p2, p0, Landroid/view/HardwareLayer;->mHeight:I
 
-    .line 177
     iput-boolean p3, p0, Landroid/view/HardwareLayer;->mOpaque:Z
 
-    .line 178
     return-void
 .end method

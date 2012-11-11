@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 215
     iput-object p1, p0, Landroid/widget/ViewFlipper$2;->this$0:Landroid/widget/ViewFlipper;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -41,12 +40,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 218
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-ne v0, v1, :cond_20
 
-    .line 219
     iget-object v0, p0, Landroid/widget/ViewFlipper$2;->this$0:Landroid/widget/ViewFlipper;
 
     #getter for: Landroid/widget/ViewFlipper;->mRunning:Z
@@ -56,17 +53,14 @@
 
     if-eqz v0, :cond_20
 
-    .line 220
     iget-object v0, p0, Landroid/widget/ViewFlipper$2;->this$0:Landroid/widget/ViewFlipper;
 
     invoke-virtual {v0}, Landroid/widget/ViewFlipper;->showNext()V
 
-    .line 221
     invoke-virtual {p0, v1}, Landroid/widget/ViewFlipper$2;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p1
 
-    .line 222
     iget-object v0, p0, Landroid/widget/ViewFlipper$2;->this$0:Landroid/widget/ViewFlipper;
 
     #getter for: Landroid/widget/ViewFlipper;->mFlipInterval:I
@@ -78,7 +72,6 @@
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/widget/ViewFlipper$2;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 225
     :cond_20
     return-void
 .end method

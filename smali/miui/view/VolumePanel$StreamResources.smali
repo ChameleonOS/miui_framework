@@ -70,7 +70,6 @@
 
     const/4 v2, 0x0
 
-    .line 135
     new-instance v0, Lmiui/view/VolumePanel$StreamResources;
 
     const-string v1, "BluetoothSCOStream"
@@ -89,7 +88,6 @@
 
     sput-object v0, Lmiui/view/VolumePanel$StreamResources;->BluetoothSCOStream:Lmiui/view/VolumePanel$StreamResources;
 
-    .line 140
     new-instance v3, Lmiui/view/VolumePanel$StreamResources;
 
     const-string v4, "RingerStream"
@@ -110,7 +108,6 @@
 
     sput-object v3, Lmiui/view/VolumePanel$StreamResources;->RingerStream:Lmiui/view/VolumePanel$StreamResources;
 
-    .line 145
     new-instance v3, Lmiui/view/VolumePanel$StreamResources;
 
     const-string v4, "VoiceStream"
@@ -131,7 +128,6 @@
 
     sput-object v3, Lmiui/view/VolumePanel$StreamResources;->VoiceStream:Lmiui/view/VolumePanel$StreamResources;
 
-    .line 150
     new-instance v3, Lmiui/view/VolumePanel$StreamResources;
 
     const-string v4, "AlarmStream"
@@ -152,7 +148,6 @@
 
     sput-object v3, Lmiui/view/VolumePanel$StreamResources;->AlarmStream:Lmiui/view/VolumePanel$StreamResources;
 
-    .line 155
     new-instance v3, Lmiui/view/VolumePanel$StreamResources;
 
     const-string v4, "MediaStream"
@@ -173,7 +168,6 @@
 
     sput-object v3, Lmiui/view/VolumePanel$StreamResources;->MediaStream:Lmiui/view/VolumePanel$StreamResources;
 
-    .line 160
     new-instance v3, Lmiui/view/VolumePanel$StreamResources;
 
     const-string v4, "NotificationStream"
@@ -194,7 +188,6 @@
 
     sput-object v3, Lmiui/view/VolumePanel$StreamResources;->NotificationStream:Lmiui/view/VolumePanel$StreamResources;
 
-    .line 166
     new-instance v3, Lmiui/view/VolumePanel$StreamResources;
 
     const-string v4, "MasterStream"
@@ -215,7 +208,6 @@
 
     sput-object v3, Lmiui/view/VolumePanel$StreamResources;->MasterStream:Lmiui/view/VolumePanel$StreamResources;
 
-    .line 171
     new-instance v3, Lmiui/view/VolumePanel$StreamResources;
 
     const-string v4, "RemoteStream"
@@ -236,7 +228,6 @@
 
     sput-object v3, Lmiui/view/VolumePanel$StreamResources;->RemoteStream:Lmiui/view/VolumePanel$StreamResources;
 
-    .line 134
     const/16 v0, 0x8
 
     new-array v0, v0, [Lmiui/view/VolumePanel$StreamResources;
@@ -302,25 +293,18 @@
     .end annotation
 
     .prologue
-    .line 184
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 185
     iput p3, p0, Lmiui/view/VolumePanel$StreamResources;->streamType:I
 
-    .line 186
     iput p4, p0, Lmiui/view/VolumePanel$StreamResources;->descRes:I
 
-    .line 187
     iput p5, p0, Lmiui/view/VolumePanel$StreamResources;->iconRes:I
 
-    .line 188
     iput p6, p0, Lmiui/view/VolumePanel$StreamResources;->iconMuteRes:I
 
-    .line 189
     iput-boolean p7, p0, Lmiui/view/VolumePanel$StreamResources;->show:Z
 
-    .line 190
     return-void
 .end method
 
@@ -329,7 +313,6 @@
     .parameter "name"
 
     .prologue
-    .line 134
     const-class v0, Lmiui/view/VolumePanel$StreamResources;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -345,7 +328,6 @@
     .registers 1
 
     .prologue
-    .line 134
     sget-object v0, Lmiui/view/VolumePanel$StreamResources;->$VALUES:[Lmiui/view/VolumePanel$StreamResources;
 
     invoke-virtual {v0}, [Lmiui/view/VolumePanel$StreamResources;->clone()Ljava/lang/Object;

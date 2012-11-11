@@ -9,10 +9,8 @@
     .parameter "base"
 
     .prologue
-    .line 25
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    .line 26
     return-void
 .end method
 
@@ -23,9 +21,7 @@
     .parameter "base"
 
     .prologue
-    .line 36
     iput-object p1, p0, Landroid/content/ContextWrapper;->mBase:Landroid/content/Context;
 
-    .line 37
     return-void
 .end method

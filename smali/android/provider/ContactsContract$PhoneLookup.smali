@@ -33,7 +33,6 @@
     .registers 2
 
     .prologue
-    .line 4700
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "phone_lookup"
@@ -51,7 +50,6 @@
     .registers 1
 
     .prologue
-    .line 4691
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

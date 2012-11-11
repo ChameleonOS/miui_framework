@@ -38,7 +38,6 @@
     .registers 1
 
     .prologue
-    .line 399
     new-instance v0, Landroid/widget/AbsSpinner$SavedState$1;
 
     invoke-direct {v0}, Landroid/widget/AbsSpinner$SavedState$1;-><init>()V
@@ -53,24 +52,20 @@
     .parameter "in"
 
     .prologue
-    .line 379
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 380
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/widget/AbsSpinner$SavedState;->selectedId:J
 
-    .line 381
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/widget/AbsSpinner$SavedState;->position:I
 
-    .line 382
     return-void
 .end method
 
@@ -80,7 +75,6 @@
     .parameter "x1"
 
     .prologue
-    .line 364
     invoke-direct {p0, p1}, Landroid/widget/AbsSpinner$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -91,10 +85,8 @@
     .parameter "superState"
 
     .prologue
-    .line 372
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 373
     return-void
 .end method
 
@@ -104,7 +96,6 @@
     .registers 4
 
     .prologue
-    .line 393
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -170,19 +161,15 @@
     .parameter "flags"
 
     .prologue
-    .line 386
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 387
     iget-wide v0, p0, Landroid/widget/AbsSpinner$SavedState;->selectedId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 388
     iget v0, p0, Landroid/widget/AbsSpinner$SavedState;->position:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 389
     return-void
 .end method

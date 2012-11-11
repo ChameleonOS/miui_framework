@@ -31,7 +31,6 @@
     .registers 1
 
     .prologue
-    .line 70
     const-class v0, Landroid/service/textservice/SpellCheckerService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -47,17 +46,14 @@
     .registers 2
 
     .prologue
-    .line 69
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 75
     new-instance v0, Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;
 
     invoke-direct {v0, p0}, Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;-><init>(Landroid/service/textservice/SpellCheckerService;)V
 
     iput-object v0, p0, Landroid/service/textservice/SpellCheckerService;->mBinder:Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;
 
-    .line 333
     return-void
 .end method
 
@@ -71,7 +67,6 @@
     .parameter "intent"
 
     .prologue
-    .line 87
     iget-object v0, p0, Landroid/service/textservice/SpellCheckerService;->mBinder:Landroid/service/textservice/SpellCheckerService$SpellCheckerServiceBinder;
 
     return-object v0

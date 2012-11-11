@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 258
     iput-object p1, p0, Lmiui/widget/SpectrumVisualizer$1;->this$0:Lmiui/widget/SpectrumVisualizer;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +43,10 @@
     .parameter "samplingRate"
 
     .prologue
-    .line 263
     iget-object v0, p0, Lmiui/widget/SpectrumVisualizer$1;->this$0:Lmiui/widget/SpectrumVisualizer;
 
     invoke-virtual {v0, p2}, Lmiui/widget/SpectrumVisualizer;->update([B)V
 
-    .line 264
     return-void
 .end method
 
@@ -60,6 +57,5 @@
     .parameter "samplingRate"
 
     .prologue
-    .line 261
     return-void
 .end method

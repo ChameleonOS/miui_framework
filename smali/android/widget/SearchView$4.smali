@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 275
     iput-object p1, p0, Landroid/widget/SearchView$4;->this$0:Landroid/widget/SearchView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +42,6 @@
     .parameter "hasFocus"
 
     .prologue
-    .line 278
     iget-object v0, p0, Landroid/widget/SearchView$4;->this$0:Landroid/widget/SearchView;
 
     #getter for: Landroid/widget/SearchView;->mOnQueryTextFocusChangeListener:Landroid/view/View$OnFocusChangeListener;
@@ -53,7 +51,6 @@
 
     if-eqz v0, :cond_13
 
-    .line 279
     iget-object v0, p0, Landroid/widget/SearchView$4;->this$0:Landroid/widget/SearchView;
 
     #getter for: Landroid/widget/SearchView;->mOnQueryTextFocusChangeListener:Landroid/view/View$OnFocusChangeListener;
@@ -65,7 +62,6 @@
 
     invoke-interface {v0, v1, p2}, Landroid/view/View$OnFocusChangeListener;->onFocusChange(Landroid/view/View;Z)V
 
-    .line 281
     :cond_13
     return-void
 .end method

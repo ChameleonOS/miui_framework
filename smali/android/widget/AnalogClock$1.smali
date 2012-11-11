@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 236
     iput-object p1, p0, Landroid/widget/AnalogClock$1;->this$0:Landroid/widget/AnalogClock;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "intent"
 
     .prologue
-    .line 239
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -53,14 +51,12 @@
 
     if-eqz v1, :cond_25
 
-    .line 240
     const-string/jumbo v1, "time-zone"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 241
     .local v0, tz:Ljava/lang/String;
     iget-object v1, p0, Landroid/widget/AnalogClock$1;->this$0:Landroid/widget/AnalogClock;
 
@@ -79,7 +75,6 @@
     #setter for: Landroid/widget/AnalogClock;->mCalendar:Landroid/text/format/Time;
     invoke-static {v1, v2}, Landroid/widget/AnalogClock;->access$002(Landroid/widget/AnalogClock;Landroid/text/format/Time;)Landroid/text/format/Time;
 
-    .line 244
     .end local v0           #tz:Ljava/lang/String;
     :cond_25
     iget-object v1, p0, Landroid/widget/AnalogClock$1;->this$0:Landroid/widget/AnalogClock;
@@ -87,11 +82,9 @@
     #calls: Landroid/widget/AnalogClock;->onTimeChanged()V
     invoke-static {v1}, Landroid/widget/AnalogClock;->access$100(Landroid/widget/AnalogClock;)V
 
-    .line 246
     iget-object v1, p0, Landroid/widget/AnalogClock$1;->this$0:Landroid/widget/AnalogClock;
 
     invoke-virtual {v1}, Landroid/widget/AnalogClock;->invalidate()V
 
-    .line 247
     return-void
 .end method

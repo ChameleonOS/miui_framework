@@ -28,13 +28,10 @@
     .parameter "name"
 
     .prologue
-    .line 1512
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1513
     iput-object p1, p0, Landroid/content/SyncManager$AccountSyncStats;->name:Ljava/lang/String;
 
-    .line 1514
     return-void
 .end method
 
@@ -44,7 +41,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1507
     invoke-direct {p0, p1}, Landroid/content/SyncManager$AccountSyncStats;-><init>(Ljava/lang/String;)V
 
     return-void

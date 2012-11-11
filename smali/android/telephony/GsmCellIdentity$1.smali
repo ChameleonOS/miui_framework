@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 137
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "in"
 
     .prologue
-    .line 140
     new-instance v0, Landroid/telephony/GsmCellIdentity;
 
     const/4 v1, 0x0
@@ -60,7 +58,6 @@
     .parameter "x0"
 
     .prologue
-    .line 137
     invoke-virtual {p0, p1}, Landroid/telephony/GsmCellIdentity$1;->createFromParcel(Landroid/os/Parcel;)Landroid/telephony/GsmCellIdentity;
 
     move-result-object v0
@@ -73,7 +70,6 @@
     .parameter "size"
 
     .prologue
-    .line 145
     new-array v0, p1, [Landroid/telephony/GsmCellIdentity;
 
     return-object v0
@@ -84,7 +80,6 @@
     .parameter "x0"
 
     .prologue
-    .line 137
     invoke-virtual {p0, p1}, Landroid/telephony/GsmCellIdentity$1;->newArray(I)[Landroid/telephony/GsmCellIdentity;
 
     move-result-object v0

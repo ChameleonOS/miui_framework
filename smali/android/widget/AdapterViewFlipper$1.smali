@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 77
     iput-object p1, p0, Landroid/widget/AdapterViewFlipper$1;->this$0:Landroid/widget/AdapterViewFlipper;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -42,12 +41,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 80
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 81
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.SCREEN_OFF"
 
@@ -57,24 +54,20 @@
 
     if-eqz v1, :cond_18
 
-    .line 82
     iget-object v1, p0, Landroid/widget/AdapterViewFlipper$1;->this$0:Landroid/widget/AdapterViewFlipper;
 
     #setter for: Landroid/widget/AdapterViewFlipper;->mUserPresent:Z
     invoke-static {v1, v3}, Landroid/widget/AdapterViewFlipper;->access$002(Landroid/widget/AdapterViewFlipper;Z)Z
 
-    .line 83
     iget-object v1, p0, Landroid/widget/AdapterViewFlipper$1;->this$0:Landroid/widget/AdapterViewFlipper;
 
     #calls: Landroid/widget/AdapterViewFlipper;->updateRunning()V
     invoke-static {v1}, Landroid/widget/AdapterViewFlipper;->access$100(Landroid/widget/AdapterViewFlipper;)V
 
-    .line 88
     :cond_17
     :goto_17
     return-void
 
-    .line 84
     :cond_18
     const-string v1, "android.intent.action.USER_PRESENT"
 
@@ -84,7 +77,6 @@
 
     if-eqz v1, :cond_17
 
-    .line 85
     iget-object v1, p0, Landroid/widget/AdapterViewFlipper$1;->this$0:Landroid/widget/AdapterViewFlipper;
 
     const/4 v2, 0x1
@@ -92,7 +84,6 @@
     #setter for: Landroid/widget/AdapterViewFlipper;->mUserPresent:Z
     invoke-static {v1, v2}, Landroid/widget/AdapterViewFlipper;->access$002(Landroid/widget/AdapterViewFlipper;Z)Z
 
-    .line 86
     iget-object v1, p0, Landroid/widget/AdapterViewFlipper$1;->this$0:Landroid/widget/AdapterViewFlipper;
 
     #calls: Landroid/widget/AdapterViewFlipper;->updateRunning(Z)V

@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 994
     iput-object p1, p0, Landroid/widget/ListPopupWindow$2;->this$0:Landroid/widget/ListPopupWindow;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -54,13 +53,11 @@
     .end annotation
 
     .prologue
-    .line 998
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     const/4 v1, -0x1
 
     if-eq p3, v1, :cond_f
 
-    .line 999
     iget-object v1, p0, Landroid/widget/ListPopupWindow$2;->this$0:Landroid/widget/ListPopupWindow;
 
     #getter for: Landroid/widget/ListPopupWindow;->mDropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
@@ -68,17 +65,14 @@
 
     move-result-object v0
 
-    .line 1001
     .local v0, dropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
     if-eqz v0, :cond_f
 
-    .line 1002
     const/4 v1, 0x0
 
     #setter for: Landroid/widget/ListPopupWindow$DropDownListView;->mListSelectionHidden:Z
     invoke-static {v0, v1}, Landroid/widget/ListPopupWindow$DropDownListView;->access$502(Landroid/widget/ListPopupWindow$DropDownListView;Z)Z
 
-    .line 1005
     .end local v0           #dropDownList:Landroid/widget/ListPopupWindow$DropDownListView;
     :cond_f
     return-void
@@ -96,7 +90,6 @@
     .end annotation
 
     .prologue
-    .line 1008
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     return-void
 .end method

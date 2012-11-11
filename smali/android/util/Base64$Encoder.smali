@@ -48,7 +48,6 @@
     .prologue
     const/16 v1, 0x40
 
-    .line 542
     const-class v0, Landroid/util/Base64;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -62,14 +61,12 @@
     :goto_b
     sput-boolean v0, Landroid/util/Base64$Encoder;->$assertionsDisabled:Z
 
-    .line 554
     new-array v0, v1, [B
 
     fill-array-data v0, :array_1e
 
     sput-object v0, Landroid/util/Base64$Encoder;->ENCODE:[B
 
-    .line 565
     new-array v0, v1, [B
 
     fill-array-data v0, :array_42
@@ -78,13 +75,11 @@
 
     return-void
 
-    .line 542
     :cond_1c
     const/4 v0, 0x0
 
     goto :goto_b
 
-    .line 554
     :array_1e
     .array-data 0x1
         0x41t
@@ -153,7 +148,6 @@
         0x2ft
     .end array-data
 
-    .line 565
     :array_42
     .array-data 0x1
         0x41t
@@ -233,13 +227,10 @@
 
     const/4 v2, 0x0
 
-    .line 581
     invoke-direct {p0}, Landroid/util/Base64$Coder;-><init>()V
 
-    .line 582
     iput-object p2, p0, Landroid/util/Base64$Coder;->output:[B
 
-    .line 584
     and-int/lit8 v0, p1, 0x1
 
     if-nez v0, :cond_33
@@ -249,7 +240,6 @@
     :goto_c
     iput-boolean v0, p0, Landroid/util/Base64$Encoder;->do_padding:Z
 
-    .line 585
     and-int/lit8 v0, p1, 0x2
 
     if-nez v0, :cond_35
@@ -259,7 +249,6 @@
     :goto_13
     iput-boolean v0, p0, Landroid/util/Base64$Encoder;->do_newline:Z
 
-    .line 586
     and-int/lit8 v0, p1, 0x4
 
     if-eqz v0, :cond_37
@@ -267,7 +256,6 @@
     :goto_19
     iput-boolean v1, p0, Landroid/util/Base64$Encoder;->do_cr:Z
 
-    .line 587
     and-int/lit8 v0, p1, 0x8
 
     if-nez v0, :cond_39
@@ -277,17 +265,14 @@
     :goto_21
     iput-object v0, p0, Landroid/util/Base64$Encoder;->alphabet:[B
 
-    .line 589
     const/4 v0, 0x2
 
     new-array v0, v0, [B
 
     iput-object v0, p0, Landroid/util/Base64$Encoder;->tail:[B
 
-    .line 590
     iput v2, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
-    .line 592
     iget-boolean v0, p0, Landroid/util/Base64$Encoder;->do_newline:Z
 
     if-eqz v0, :cond_3c
@@ -297,34 +282,28 @@
     :goto_30
     iput v0, p0, Landroid/util/Base64$Encoder;->count:I
 
-    .line 593
     return-void
 
     :cond_33
     move v0, v2
 
-    .line 584
     goto :goto_c
 
     :cond_35
     move v0, v2
 
-    .line 585
     goto :goto_13
 
     :cond_37
     move v1, v2
 
-    .line 586
     goto :goto_19
 
-    .line 587
     :cond_39
     sget-object v0, Landroid/util/Base64$Encoder;->ENCODE_WEBSAFE:[B
 
     goto :goto_21
 
-    .line 592
     :cond_3c
     const/4 v0, -0x1
 
@@ -338,7 +317,6 @@
     .parameter "len"
 
     .prologue
-    .line 600
     mul-int/lit8 v0, p1, 0x8
 
     div-int/lit8 v0, v0, 0x5
@@ -356,39 +334,30 @@
     .parameter "finish"
 
     .prologue
-    .line 605
     iget-object v1, p0, Landroid/util/Base64$Encoder;->alphabet:[B
 
-    .line 606
     .local v1, alphabet:[B
     iget-object v5, p0, Landroid/util/Base64$Coder;->output:[B
 
-    .line 607
     .local v5, output:[B
     const/4 v3, 0x0
 
-    .line 608
     .local v3, op:I
     iget v2, p0, Landroid/util/Base64$Encoder;->count:I
 
-    .line 610
     .local v2, count:I
     move/from16 v6, p2
 
-    .line 611
     .local v6, p:I
     add-int p3, p3, p2
 
-    .line 612
     const/4 v10, -0x1
 
-    .line 618
     .local v10, v:I
     iget v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
     packed-switch v11, :pswitch_data_24c
 
-    .line 645
     :cond_11
     :goto_11
     :pswitch_11
@@ -396,7 +365,6 @@
 
     if-eq v10, v11, :cond_247
 
-    .line 646
     add-int/lit8 v4, v3, 0x1
 
     .end local v3           #op:I
@@ -409,7 +377,6 @@
 
     aput-byte v11, v5, v3
 
-    .line 647
     add-int/lit8 v3, v4, 0x1
 
     .end local v4           #op:I
@@ -422,7 +389,6 @@
 
     aput-byte v11, v5, v4
 
-    .line 648
     add-int/lit8 v4, v3, 0x1
 
     .end local v3           #op:I
@@ -435,7 +401,6 @@
 
     aput-byte v11, v5, v3
 
-    .line 649
     add-int/lit8 v3, v4, 0x1
 
     .end local v4           #op:I
@@ -446,12 +411,10 @@
 
     aput-byte v11, v5, v4
 
-    .line 650
     add-int/lit8 v2, v2, -0x1
 
     if-nez v2, :cond_247
 
-    .line 651
     iget-boolean v11, p0, Landroid/util/Base64$Encoder;->do_cr:Z
 
     if-eqz v11, :cond_49
@@ -466,7 +429,6 @@
 
     move v3, v4
 
-    .line 652
     .end local v4           #op:I
     .restart local v3       #op:I
     :cond_49
@@ -478,12 +440,10 @@
 
     aput-byte v11, v5, v3
 
-    .line 653
     const/16 v2, 0x13
 
     move v7, v6
 
-    .line 662
     .end local v6           #p:I
     .local v7, p:I
     :goto_52
@@ -493,7 +453,6 @@
 
     if-gt v11, v0, :cond_fc
 
-    .line 663
     aget-byte v11, p1, v7
 
     and-int/lit16 v11, v11, 0xff
@@ -518,7 +477,6 @@
 
     or-int v10, v11, v12
 
-    .line 666
     shr-int/lit8 v11, v10, 0x12
 
     and-int/lit8 v11, v11, 0x3f
@@ -527,7 +485,6 @@
 
     aput-byte v11, v5, v4
 
-    .line 667
     add-int/lit8 v11, v4, 0x1
 
     shr-int/lit8 v12, v10, 0xc
@@ -538,7 +495,6 @@
 
     aput-byte v12, v5, v11
 
-    .line 668
     add-int/lit8 v11, v4, 0x2
 
     shr-int/lit8 v12, v10, 0x6
@@ -549,7 +505,6 @@
 
     aput-byte v12, v5, v11
 
-    .line 669
     add-int/lit8 v11, v4, 0x3
 
     and-int/lit8 v12, v10, 0x3f
@@ -558,22 +513,18 @@
 
     aput-byte v12, v5, v11
 
-    .line 670
     add-int/lit8 v6, v7, 0x3
 
-    .line 671
     .end local v7           #p:I
     .restart local v6       #p:I
     add-int/lit8 v3, v4, 0x4
 
-    .line 672
     .end local v4           #op:I
     .restart local v3       #op:I
     add-int/lit8 v2, v2, -0x1
 
     if-nez v2, :cond_247
 
-    .line 673
     iget-boolean v11, p0, Landroid/util/Base64$Encoder;->do_cr:Z
 
     if-eqz v11, :cond_a6
@@ -588,7 +539,6 @@
 
     move v3, v4
 
-    .line 674
     .end local v4           #op:I
     .restart local v3       #op:I
     :cond_a6
@@ -600,7 +550,6 @@
 
     aput-byte v11, v5, v3
 
-    .line 675
     const/16 v2, 0x13
 
     move v7, v6
@@ -609,7 +558,6 @@
     .restart local v7       #p:I
     goto :goto_52
 
-    .line 624
     .end local v4           #op:I
     .end local v7           #p:I
     .restart local v3       #op:I
@@ -621,7 +569,6 @@
 
     if-gt v11, v0, :cond_11
 
-    .line 627
     iget-object v11, p0, Landroid/util/Base64$Encoder;->tail:[B
 
     const/4 v12, 0x0
@@ -654,14 +601,12 @@
 
     or-int v10, v11, v12
 
-    .line 630
     const/4 v11, 0x0
 
     iput v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
     goto/16 :goto_11
 
-    .line 635
     :pswitch_d5
     add-int/lit8 v11, v6, 0x1
 
@@ -669,7 +614,6 @@
 
     if-gt v11, v0, :cond_11
 
-    .line 637
     iget-object v11, p0, Landroid/util/Base64$Encoder;->tail:[B
 
     const/4 v12, 0x0
@@ -702,7 +646,6 @@
 
     or-int v10, v11, v12
 
-    .line 640
     const/4 v11, 0x0
 
     iput v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
@@ -713,7 +656,6 @@
     .restart local v6       #p:I
     goto/16 :goto_11
 
-    .line 679
     .end local v3           #op:I
     .end local v6           #p:I
     .restart local v4       #op:I
@@ -721,7 +663,6 @@
     :cond_fc
     if-eqz p4, :cond_20c
 
-    .line 685
     iget v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
     sub-int v11, v7, v11
@@ -730,10 +671,8 @@
 
     if-ne v11, v12, :cond_168
 
-    .line 686
     const/4 v8, 0x0
 
-    .line 687
     .local v8, t:I
     iget v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
@@ -760,14 +699,12 @@
 
     shl-int/lit8 v10, v11, 0x4
 
-    .line 688
     iget v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
     sub-int/2addr v11, v8
 
     iput v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
-    .line 689
     add-int/lit8 v3, v4, 0x1
 
     .end local v4           #op:I
@@ -780,7 +717,6 @@
 
     aput-byte v11, v5, v4
 
-    .line 690
     add-int/lit8 v4, v3, 0x1
 
     .end local v3           #op:I
@@ -791,12 +727,10 @@
 
     aput-byte v11, v5, v3
 
-    .line 691
     iget-boolean v11, p0, Landroid/util/Base64$Encoder;->do_padding:Z
 
     if-eqz v11, :cond_13e
 
-    .line 692
     add-int/lit8 v3, v4, 0x1
 
     .end local v4           #op:I
@@ -805,7 +739,6 @@
 
     aput-byte v11, v5, v4
 
-    .line 693
     add-int/lit8 v4, v3, 0x1
 
     .end local v3           #op:I
@@ -817,14 +750,12 @@
     :cond_13e
     move v3, v4
 
-    .line 695
     .end local v4           #op:I
     .restart local v3       #op:I
     iget-boolean v11, p0, Landroid/util/Base64$Encoder;->do_newline:Z
 
     if-eqz v11, :cond_155
 
-    .line 696
     iget-boolean v11, p0, Landroid/util/Base64$Encoder;->do_cr:Z
 
     if-eqz v11, :cond_14e
@@ -839,7 +770,6 @@
 
     move v3, v4
 
-    .line 697
     .end local v4           #op:I
     .restart local v3       #op:I
     :cond_14e
@@ -854,7 +784,6 @@
     :goto_154
     move v3, v4
 
-    .line 719
     .end local v4           #op:I
     .end local v8           #t:I
     .restart local v3       #op:I
@@ -874,7 +803,6 @@
 
     throw v11
 
-    .line 687
     .end local v3           #op:I
     .end local v6           #p:I
     .restart local v4       #op:I
@@ -889,7 +817,6 @@
 
     goto :goto_113
 
-    .line 699
     .end local v6           #p:I
     .end local v8           #t:I
     .restart local v7       #p:I
@@ -902,10 +829,8 @@
 
     if-ne v11, v12, :cond_1e0
 
-    .line 700
     const/4 v8, 0x0
 
-    .line 701
     .restart local v8       #t:I
     iget v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
@@ -957,14 +882,12 @@
 
     or-int v10, v12, v11
 
-    .line 703
     iget v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
     sub-int/2addr v11, v8
 
     iput v11, p0, Landroid/util/Base64$Encoder;->tailLen:I
 
-    .line 704
     add-int/lit8 v3, v4, 0x1
 
     .end local v4           #op:I
@@ -977,7 +900,6 @@
 
     aput-byte v11, v5, v4
 
-    .line 705
     add-int/lit8 v4, v3, 0x1
 
     .end local v3           #op:I
@@ -990,7 +912,6 @@
 
     aput-byte v11, v5, v3
 
-    .line 706
     add-int/lit8 v3, v4, 0x1
 
     .end local v4           #op:I
@@ -1001,12 +922,10 @@
 
     aput-byte v11, v5, v4
 
-    .line 707
     iget-boolean v11, p0, Landroid/util/Base64$Encoder;->do_padding:Z
 
     if-eqz v11, :cond_1bf
 
-    .line 708
     add-int/lit8 v4, v3, 0x1
 
     .end local v3           #op:I
@@ -1017,7 +936,6 @@
 
     move v3, v4
 
-    .line 710
     .end local v4           #op:I
     .restart local v3       #op:I
     :cond_1bf
@@ -1025,7 +943,6 @@
 
     if-eqz v11, :cond_155
 
-    .line 711
     iget-boolean v11, p0, Landroid/util/Base64$Encoder;->do_cr:Z
 
     if-eqz v11, :cond_1ce
@@ -1040,7 +957,6 @@
 
     move v3, v4
 
-    .line 712
     .end local v4           #op:I
     .restart local v3       #op:I
     :cond_1ce
@@ -1054,7 +970,6 @@
 
     goto :goto_154
 
-    .line 701
     .end local v6           #p:I
     .restart local v7       #p:I
     :cond_1d5
@@ -1079,7 +994,6 @@
     .restart local v6       #p:I
     goto :goto_18d
 
-    .line 714
     .end local v6           #p:I
     .end local v8           #t:I
     .restart local v7       #p:I
@@ -1094,7 +1008,6 @@
 
     if-eq v2, v11, :cond_1fa
 
-    .line 715
     iget-boolean v11, p0, Landroid/util/Base64$Encoder;->do_cr:Z
 
     if-eqz v11, :cond_245
@@ -1107,7 +1020,6 @@
 
     aput-byte v11, v5, v4
 
-    .line 716
     :goto_1f4
     add-int/lit8 v4, v3, 0x1
 
@@ -1128,7 +1040,6 @@
     .restart local v3       #op:I
     goto/16 :goto_155
 
-    .line 720
     :cond_1fe
     sget-boolean v11, Landroid/util/Base64$Encoder;->$assertionsDisabled:Z
 
@@ -1144,7 +1055,6 @@
 
     throw v11
 
-    .line 725
     .end local v3           #op:I
     .end local v6           #p:I
     .restart local v4       #op:I
@@ -1154,7 +1064,6 @@
 
     if-ne v7, v11, :cond_224
 
-    .line 726
     iget-object v11, p0, Landroid/util/Base64$Encoder;->tail:[B
 
     iget v12, p0, Landroid/util/Base64$Encoder;->tailLen:I
@@ -1173,22 +1082,18 @@
     .restart local v6       #p:I
     move v3, v4
 
-    .line 733
     .end local v4           #op:I
     .restart local v3       #op:I
     :cond_21e
     :goto_21e
     iput v3, p0, Landroid/util/Base64$Coder;->op:I
 
-    .line 734
     iput v2, p0, Landroid/util/Base64$Encoder;->count:I
 
-    .line 736
     const/4 v11, 0x1
 
     return v11
 
-    .line 727
     .end local v3           #op:I
     .end local v6           #p:I
     .restart local v4       #op:I
@@ -1198,7 +1103,6 @@
 
     if-ne v7, v11, :cond_242
 
-    .line 728
     iget-object v11, p0, Landroid/util/Base64$Encoder;->tail:[B
 
     iget v12, p0, Landroid/util/Base64$Encoder;->tailLen:I
@@ -1211,7 +1115,6 @@
 
     aput-byte v13, v11, v12
 
-    .line 729
     iget-object v11, p0, Landroid/util/Base64$Encoder;->tail:[B
 
     iget v12, p0, Landroid/util/Base64$Encoder;->tailLen:I
@@ -1261,7 +1164,6 @@
     .restart local v4       #op:I
     goto/16 :goto_52
 
-    .line 618
     nop
 
     :pswitch_data_24c

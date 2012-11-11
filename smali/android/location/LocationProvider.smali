@@ -28,10 +28,8 @@
     .parameter "service"
 
     .prologue
-    .line 57
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
     const-string v0, "[^a-zA-Z0-9]"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
@@ -40,7 +38,6 @@
 
     if-eqz v0, :cond_2b
 
-    .line 59
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -71,14 +68,11 @@
 
     throw v0
 
-    .line 62
     :cond_2b
     iput-object p1, p0, Landroid/location/LocationProvider;->mName:Ljava/lang/String;
 
-    .line 63
     iput-object p2, p0, Landroid/location/LocationProvider;->mService:Landroid/location/ILocationManager;
 
-    .line 64
     return-void
 .end method
 
@@ -91,7 +85,6 @@
     .registers 2
 
     .prologue
-    .line 70
     iget-object v0, p0, Landroid/location/LocationProvider;->mName:Ljava/lang/String;
 
     return-object v0
@@ -108,7 +101,6 @@
     .parameter "criteria"
 
     .prologue
-    .line 79
     :try_start_0
     iget-object v1, p0, Landroid/location/LocationProvider;->mService:Landroid/location/ILocationManager;
 
@@ -120,15 +112,12 @@
 
     move-result v1
 
-    .line 82
     :goto_8
     return v1
 
-    .line 80
     :catch_9
     move-exception v0
 
-    .line 81
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "LocationProvider"
 
@@ -136,7 +125,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 82
     const/4 v1, 0x0
 
     goto :goto_8

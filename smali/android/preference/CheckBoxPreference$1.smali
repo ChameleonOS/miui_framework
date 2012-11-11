@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 80
     iput-object p1, p0, Landroid/preference/CheckBoxPreference$1;->this$0:Landroid/preference/CheckBoxPreference;
 
     iput-object p2, p0, Landroid/preference/CheckBoxPreference$1;->val$slidingButton:Lmiui/widget/SlidingButton;
@@ -47,7 +46,6 @@
     .parameter "isChecked"
 
     .prologue
-    .line 83
     iget-object v0, p0, Landroid/preference/CheckBoxPreference$1;->this$0:Landroid/preference/CheckBoxPreference;
 
     iget-object v1, p0, Landroid/preference/CheckBoxPreference$1;->this$0:Landroid/preference/CheckBoxPreference;
@@ -62,7 +60,6 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/CheckBoxPreference;->performClick(Landroid/preference/PreferenceScreen;)V
 
-    .line 84
     iget-object v0, p0, Landroid/preference/CheckBoxPreference$1;->this$0:Landroid/preference/CheckBoxPreference;
 
     invoke-virtual {v0}, Landroid/preference/CheckBoxPreference;->isChecked()Z
@@ -71,14 +68,12 @@
 
     if-eq p1, v0, :cond_2a
 
-    .line 85
     iget-object v0, p0, Landroid/preference/CheckBoxPreference$1;->val$slidingButton:Lmiui/widget/SlidingButton;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lmiui/widget/SlidingButton;->setOnCheckedChangedListener(Lmiui/widget/SlidingButton$OnCheckedChangedListener;)V
 
-    .line 86
     iget-object v1, p0, Landroid/preference/CheckBoxPreference$1;->val$slidingButton:Lmiui/widget/SlidingButton;
 
     if-nez p1, :cond_2b
@@ -88,16 +83,13 @@
     :goto_22
     invoke-virtual {v1, v0}, Lmiui/widget/SlidingButton;->setChecked(Z)V
 
-    .line 87
     iget-object v0, p0, Landroid/preference/CheckBoxPreference$1;->val$slidingButton:Lmiui/widget/SlidingButton;
 
     invoke-virtual {v0, p0}, Lmiui/widget/SlidingButton;->setOnCheckedChangedListener(Lmiui/widget/SlidingButton$OnCheckedChangedListener;)V
 
-    .line 89
     :cond_2a
     return-void
 
-    .line 86
     :cond_2b
     const/4 v0, 0x0
 

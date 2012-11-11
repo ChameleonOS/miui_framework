@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 1112
     iput-object p1, p0, Landroid/widget/ActivityChooserModel$DataModelPackageMonitor;->this$0:Landroid/widget/ActivityChooserModel;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1112
     invoke-direct {p0, p1}, Landroid/widget/ActivityChooserModel$DataModelPackageMonitor;-><init>(Landroid/widget/ActivityChooserModel;)V
 
     return-void
@@ -50,7 +48,6 @@
     .registers 3
 
     .prologue
-    .line 1116
     iget-object v0, p0, Landroid/widget/ActivityChooserModel$DataModelPackageMonitor;->this$0:Landroid/widget/ActivityChooserModel;
 
     const/4 v1, 0x1
@@ -58,6 +55,5 @@
     #setter for: Landroid/widget/ActivityChooserModel;->mReloadActivities:Z
     invoke-static {v0, v1}, Landroid/widget/ActivityChooserModel;->access$702(Landroid/widget/ActivityChooserModel;Z)Z
 
-    .line 1117
     return-void
 .end method

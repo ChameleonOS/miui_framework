@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 61
     const-string v0, "content://call_log"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -39,9 +38,7 @@
     .registers 1
 
     .prologue
-    .line 38
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
     return-void
 .end method

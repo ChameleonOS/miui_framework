@@ -16,10 +16,8 @@
     .registers 1
 
     .prologue
-    .line 26
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     return-void
 .end method
 
@@ -28,12 +26,10 @@
     .parameter "cs"
 
     .prologue
-    .line 37
     instance-of v0, p0, Landroid/text/style/MetricAffectingSpan;
 
     if-eqz v0, :cond_c
 
-    .line 38
     new-instance v0, Landroid/text/style/MetricAffectingSpan$Passthrough;
 
     check-cast p0, Landroid/text/style/MetricAffectingSpan;
@@ -41,7 +37,6 @@
     .end local p0
     invoke-direct {v0, p0}, Landroid/text/style/MetricAffectingSpan$Passthrough;-><init>(Landroid/text/style/MetricAffectingSpan;)V
 
-    .line 40
     .restart local p0
     :goto_b
     return-object v0
@@ -60,7 +55,6 @@
     .registers 1
 
     .prologue
-    .line 50
     return-object p0
 .end method
 

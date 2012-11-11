@@ -16,7 +16,6 @@
     .registers 1
 
     .prologue
-    .line 26
     const-class v0, Landroid/webkit/DeviceMotionAndOrientationManager;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -43,13 +42,10 @@
     .parameter "webViewCore"
 
     .prologue
-    .line 29
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     iput-object p1, p0, Landroid/webkit/DeviceMotionAndOrientationManager;->mWebViewCore:Landroid/webkit/WebViewCore;
 
-    .line 31
     return-void
 .end method
 
@@ -75,7 +71,6 @@
     .parameter "interval"
 
     .prologue
-    .line 54
     iget-object v0, p0, Landroid/webkit/DeviceMotionAndOrientationManager;->mWebViewCore:Landroid/webkit/WebViewCore;
 
     if-eqz p1, :cond_23
@@ -118,10 +113,8 @@
 
     invoke-static/range {v0 .. v11}, Landroid/webkit/DeviceMotionAndOrientationManager;->nativeOnMotionChange(Landroid/webkit/WebViewCore;ZDZDZDD)V
 
-    .line 59
     return-void
 
-    .line 54
     :cond_23
     const/4 v1, 0x0
 
@@ -166,7 +159,6 @@
 
     const-wide/16 v8, 0x0
 
-    .line 61
     iget-object v0, p0, Landroid/webkit/DeviceMotionAndOrientationManager;->mWebViewCore:Landroid/webkit/WebViewCore;
 
     if-eqz p1, :cond_24
@@ -205,13 +197,11 @@
     :cond_20
     invoke-static/range {v0 .. v9}, Landroid/webkit/DeviceMotionAndOrientationManager;->nativeOnOrientationChange(Landroid/webkit/WebViewCore;ZDZDZD)V
 
-    .line 65
     return-void
 
     :cond_24
     move v1, v10
 
-    .line 61
     goto :goto_9
 
     :cond_26
@@ -245,7 +235,6 @@
     .parameter "gamma"
 
     .prologue
-    .line 47
     sget-boolean v0, Landroid/webkit/DeviceMotionAndOrientationManager;->$assertionsDisabled:Z
 
     if-nez v0, :cond_1a
@@ -272,7 +261,6 @@
 
     throw v0
 
-    .line 48
     :cond_1a
     iget-object v0, p0, Landroid/webkit/DeviceMotionAndOrientationManager;->mWebViewCore:Landroid/webkit/WebViewCore;
 
@@ -290,7 +278,6 @@
 
     invoke-static/range {v0 .. v9}, Landroid/webkit/DeviceMotionAndOrientationManager;->nativeSetMockOrientation(Landroid/webkit/WebViewCore;ZDZDZD)V
 
-    .line 50
     return-void
 .end method
 
@@ -298,7 +285,6 @@
     .registers 3
 
     .prologue
-    .line 38
     sget-boolean v0, Landroid/webkit/DeviceMotionAndOrientationManager;->$assertionsDisabled:Z
 
     if-nez v0, :cond_1a
@@ -325,12 +311,10 @@
 
     throw v0
 
-    .line 39
     :cond_1a
     iget-object v0, p0, Landroid/webkit/DeviceMotionAndOrientationManager;->mWebViewCore:Landroid/webkit/WebViewCore;
 
     invoke-static {v0}, Landroid/webkit/DeviceMotionAndOrientationManager;->nativeSetUseMock(Landroid/webkit/WebViewCore;)V
 
-    .line 40
     return-void
 .end method

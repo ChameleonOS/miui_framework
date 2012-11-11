@@ -36,7 +36,6 @@
     .parameter
 
     .prologue
-    .line 1179
     .local p4, x2:Landroid/accounts/AccountManagerCallback;,"Landroid/accounts/AccountManagerCallback<Landroid/os/Bundle;>;"
     iput-object p1, p0, Landroid/accounts/AccountManager$8;->this$0:Landroid/accounts/AccountManager;
 
@@ -62,7 +61,6 @@
     .end annotation
 
     .prologue
-    .line 1181
     iget-object v0, p0, Landroid/accounts/AccountManager$8;->this$0:Landroid/accounts/AccountManager;
 
     #getter for: Landroid/accounts/AccountManager;->mService:Landroid/accounts/IAccountManager;
@@ -85,10 +83,8 @@
     :goto_11
     invoke-interface {v1, v2, v3, v4, v0}, Landroid/accounts/IAccountManager;->confirmCredentials(Landroid/accounts/IAccountManagerResponse;Landroid/accounts/Account;Landroid/os/Bundle;Z)V
 
-    .line 1182
     return-void
 
-    .line 1181
     :cond_15
     const/4 v0, 0x0
 

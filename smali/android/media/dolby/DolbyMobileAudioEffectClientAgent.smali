@@ -8,10 +8,8 @@
     .registers 1
 
     .prologue
-    .line 11
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
     return-void
 .end method
 
@@ -22,7 +20,6 @@
     .parameter "activity"
 
     .prologue
-    .line 15
     return-void
 .end method
 
@@ -30,7 +27,6 @@
     .registers 2
 
     .prologue
-    .line 24
     const/4 v0, -0x1
 
     return v0
@@ -41,7 +37,6 @@
     .parameter "cb"
 
     .prologue
-    .line 21
     return-void
 .end method
 
@@ -50,7 +45,6 @@
     .parameter "presetCategory"
 
     .prologue
-    .line 28
     const/4 v0, -0x1
 
     return v0
@@ -61,6 +55,5 @@
     .parameter "activity"
 
     .prologue
-    .line 18
     return-void
 .end method

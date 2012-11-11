@@ -36,24 +36,20 @@
 
     const/4 v3, 0x0
 
-    .line 32
     invoke-direct {p0, p1, p2}, Landroid/preference/ListPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 24
     new-instance v2, Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     invoke-direct {v2, v3}, Lmiui/preference/WeekdayPreference$DaysOfWeek;-><init>(I)V
 
     iput-object v2, p0, Lmiui/preference/WeekdayPreference;->mDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
-    .line 27
     new-instance v2, Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     invoke-direct {v2, v3}, Lmiui/preference/WeekdayPreference$DaysOfWeek;-><init>(I)V
 
     iput-object v2, p0, Lmiui/preference/WeekdayPreference;->mNewDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
-    .line 34
     new-instance v2, Ljava/text/DateFormatSymbols;
 
     invoke-direct {v2}, Ljava/text/DateFormatSymbols;-><init>()V
@@ -62,7 +58,6 @@
 
     move-result-object v1
 
-    .line 35
     .local v1, weekdays:[Ljava/lang/String;
     const/4 v2, 0x7
 
@@ -106,14 +101,11 @@
 
     aput-object v3, v0, v2
 
-    .line 44
     .local v0, values:[Ljava/lang/String;
     invoke-virtual {p0, v0}, Lmiui/preference/WeekdayPreference;->setEntries([Ljava/lang/CharSequence;)V
 
-    .line 45
     invoke-virtual {p0, v0}, Lmiui/preference/WeekdayPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
-    .line 46
     return-void
 .end method
 
@@ -122,7 +114,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget-object v0, p0, Lmiui/preference/WeekdayPreference;->mNewDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     return-object v0
@@ -134,7 +125,6 @@
     .registers 2
 
     .prologue
-    .line 88
     iget-object v0, p0, Lmiui/preference/WeekdayPreference;->mDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     return-object v0
@@ -145,17 +135,14 @@
     .parameter "positiveResult"
 
     .prologue
-    .line 50
     if-eqz p1, :cond_1d
 
-    .line 51
     iget-object v0, p0, Lmiui/preference/WeekdayPreference;->mDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     iget-object v1, p0, Lmiui/preference/WeekdayPreference;->mNewDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     invoke-virtual {v0, v1}, Lmiui/preference/WeekdayPreference$DaysOfWeek;->set(Lmiui/preference/WeekdayPreference$DaysOfWeek;)V
 
-    .line 52
     iget-object v0, p0, Lmiui/preference/WeekdayPreference;->mDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     invoke-virtual {p0}, Lmiui/preference/WeekdayPreference;->getContext()Landroid/content/Context;
@@ -170,16 +157,13 @@
 
     invoke-virtual {p0, v0}, Lmiui/preference/WeekdayPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 53
     iget-object v0, p0, Lmiui/preference/WeekdayPreference;->mDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     invoke-virtual {p0, v0}, Lmiui/preference/WeekdayPreference;->callChangeListener(Ljava/lang/Object;)Z
 
-    .line 57
     :goto_1c
     return-void
 
-    .line 55
     :cond_1d
     iget-object v0, p0, Lmiui/preference/WeekdayPreference;->mNewDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
@@ -195,25 +179,20 @@
     .parameter "builder"
 
     .prologue
-    .line 65
     iget-boolean v1, p0, Lmiui/preference/WeekdayPreference;->mIsSingleChoice:Z
 
     if-eqz v1, :cond_8
 
-    .line 66
     invoke-super {p0, p1}, Landroid/preference/ListPreference;->onPrepareDialogBuilder(Landroid/app/AlertDialog$Builder;)V
 
-    .line 79
     :goto_7
     return-void
 
-    .line 69
     :cond_8
     invoke-virtual {p0}, Lmiui/preference/WeekdayPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 71
     .local v0, entries:[Ljava/lang/CharSequence;
     iget-object v1, p0, Lmiui/preference/WeekdayPreference;->mDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
@@ -235,17 +214,14 @@
     .parameter "dow"
 
     .prologue
-    .line 82
     iget-object v0, p0, Lmiui/preference/WeekdayPreference;->mDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     invoke-virtual {v0, p1}, Lmiui/preference/WeekdayPreference$DaysOfWeek;->set(Lmiui/preference/WeekdayPreference$DaysOfWeek;)V
 
-    .line 83
     iget-object v0, p0, Lmiui/preference/WeekdayPreference;->mNewDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
 
     invoke-virtual {v0, p1}, Lmiui/preference/WeekdayPreference$DaysOfWeek;->set(Lmiui/preference/WeekdayPreference$DaysOfWeek;)V
 
-    .line 84
     invoke-virtual {p0}, Lmiui/preference/WeekdayPreference;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -258,7 +234,6 @@
 
     invoke-virtual {p0, v0}, Lmiui/preference/WeekdayPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 85
     return-void
 .end method
 
@@ -267,9 +242,7 @@
     .parameter "isSingleChoice"
 
     .prologue
-    .line 60
     iput-boolean p1, p0, Lmiui/preference/WeekdayPreference;->mIsSingleChoice:Z
 
-    .line 61
     return-void
 .end method

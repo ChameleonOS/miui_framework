@@ -69,12 +69,10 @@
     .parameter "context"
 
     .prologue
-    .line 56
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroid/widget/SortableListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 57
     return-void
 .end method
 
@@ -84,12 +82,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 60
     const v0, 0x1010074
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/SortableListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 61
     return-void
 .end method
 
@@ -102,26 +98,20 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 64
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 35
     iput v1, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
-    .line 36
     iput v1, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
-    .line 52
     iput v1, p0, Landroid/widget/SortableListView;->mItemUpperBound:I
 
-    .line 273
     const/4 v1, 0x2
 
     new-array v1, v1, [I
 
     iput-object v1, p0, Landroid/widget/SortableListView;->mTmpLocation:[I
 
-    .line 66
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -134,42 +124,35 @@
 
     iput-object v1, p0, Landroid/widget/SortableListView;->mSnapshotShadow:Landroid/graphics/drawable/Drawable;
 
-    .line 68
     iget-object v1, p0, Landroid/widget/SortableListView;->mSnapshotShadow:Landroid/graphics/drawable/Drawable;
 
     const/16 v2, 0x99
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 70
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 71
     .local v0, padding:Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/widget/SortableListView;->mSnapshotShadow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 72
     iget v1, v0, Landroid/graphics/Rect;->top:I
 
     iput v1, p0, Landroid/widget/SortableListView;->mSnapshotShadowPaddingTop:I
 
-    .line 73
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
 
     iput v1, p0, Landroid/widget/SortableListView;->mSnapshotShadowPaddingBottom:I
 
-    .line 76
     new-instance v1, Landroid/widget/SortableListView$1;
 
     invoke-direct {v1, p0}, Landroid/widget/SortableListView$1;-><init>(Landroid/widget/SortableListView;)V
 
     iput-object v1, p0, Landroid/widget/SortableListView;->mOnTouchListener:Landroid/view/View$OnTouchListener;
 
-    .line 136
     return-void
 .end method
 
@@ -178,7 +161,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget-object v0, p0, Landroid/widget/SortableListView;->mOnOrderChangedListener:Landroid/widget/SortableListView$OnOrderChangedListener;
 
     return-object v0
@@ -190,7 +172,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     invoke-direct {p0, p1}, Landroid/widget/SortableListView;->getHittenItemPosition(Landroid/view/MotionEvent;)I
 
     move-result v0
@@ -203,7 +184,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget-object v0, p0, Landroid/widget/SortableListView;->mSnapshot:Landroid/graphics/drawable/BitmapDrawable;
 
     return-object v0
@@ -215,7 +195,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     iput-object p1, p0, Landroid/widget/SortableListView;->mSnapshot:Landroid/graphics/drawable/BitmapDrawable;
 
     return-object p1
@@ -226,7 +205,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget-object v0, p0, Landroid/widget/SortableListView;->mSnapshotBackgroundForOverUpperBound:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -237,7 +215,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget v0, p0, Landroid/widget/SortableListView;->mSnapshotShadowPaddingTop:I
 
     return v0
@@ -248,7 +225,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget v0, p0, Landroid/widget/SortableListView;->mSnapshotShadowPaddingBottom:I
 
     return v0
@@ -259,7 +235,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget-object v0, p0, Landroid/widget/SortableListView;->mSnapshotShadow:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -274,7 +249,6 @@
     .parameter "x4"
 
     .prologue
-    .line 21
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/SortableListView;->createAnimation(IIII)Landroid/view/animation/Animation;
 
     move-result-object v0
@@ -288,7 +262,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     iput p1, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
     return p1
@@ -300,7 +273,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     iput p1, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
     return p1
@@ -311,7 +283,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget-boolean v0, p0, Landroid/widget/SortableListView;->mInterceptTouchForSorting:Z
 
     return v0
@@ -323,7 +294,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     iput-boolean p1, p0, Landroid/widget/SortableListView;->mInterceptTouchForSorting:Z
 
     return p1
@@ -334,7 +304,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingItemWidth:I
 
     return v0
@@ -346,7 +315,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     iput p1, p0, Landroid/widget/SortableListView;->mDraggingItemWidth:I
 
     return p1
@@ -357,7 +325,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingItemHeight:I
 
     return v0
@@ -369,7 +336,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     iput p1, p0, Landroid/widget/SortableListView;->mDraggingItemHeight:I
 
     return p1
@@ -380,7 +346,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget-object v0, p0, Landroid/widget/SortableListView;->mTmpLocation:[I
 
     return-object v0
@@ -391,7 +356,6 @@
     .parameter "x0"
 
     .prologue
-    .line 21
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingY:I
 
     return v0
@@ -403,7 +367,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     iput p1, p0, Landroid/widget/SortableListView;->mDraggingY:I
 
     return p1
@@ -415,7 +378,6 @@
     .parameter "x1"
 
     .prologue
-    .line 21
     iput p1, p0, Landroid/widget/SortableListView;->mOffsetYInDraggingItem:I
 
     return p1
@@ -429,7 +391,6 @@
     .parameter "toY"
 
     .prologue
-    .line 139
     new-instance v0, Landroid/view/animation/TranslateAnimation;
 
     int-to-float v1, p1
@@ -442,18 +403,15 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/view/animation/TranslateAnimation;-><init>(FFFF)V
 
-    .line 140
     .local v0, result:Landroid/view/animation/Animation;
     const-wide/16 v1, 0xc8
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/TranslateAnimation;->setDuration(J)V
 
-    .line 141
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/animation/TranslateAnimation;->setFillAfter(Z)V
 
-    .line 142
     return-object v0
 .end method
 
@@ -466,24 +424,20 @@
 
     const/4 v7, 0x0
 
-    .line 275
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v3
 
-    .line 276
     .local v3, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v4
 
-    .line 277
     .local v4, y:F
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getFirstVisiblePosition()I
 
     move-result v0
 
-    .line 279
     .local v0, firstPosition:I
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getLastVisiblePosition()I
 
@@ -493,23 +447,19 @@
     :goto_12
     if-lt v1, v0, :cond_53
 
-    .line 280
     sub-int v5, v1, v0
 
     invoke-virtual {p0, v5}, Landroid/widget/SortableListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 281
     .local v2, view:Landroid/view/View;
     if-eqz v2, :cond_50
 
-    .line 282
     iget-object v5, p0, Landroid/widget/SortableListView;->mTmpLocation:[I
 
     invoke-virtual {v2, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 283
     iget-object v5, p0, Landroid/widget/SortableListView;->mTmpLocation:[I
 
     aget v5, v5, v7
@@ -562,13 +512,11 @@
 
     if-ltz v5, :cond_50
 
-    .line 289
     .end local v1           #i:I
     .end local v2           #view:Landroid/view/View;
     :goto_4f
     return v1
 
-    .line 279
     .restart local v1       #i:I
     .restart local v2       #view:Landroid/view/View;
     :cond_50
@@ -576,7 +524,6 @@
 
     goto :goto_12
 
-    .line 289
     .end local v2           #view:Landroid/view/View;
     :cond_53
     const/4 v1, -0x1
@@ -590,23 +537,18 @@
     .parameter "animation"
 
     .prologue
-    .line 337
     if-nez p1, :cond_3
 
-    .line 345
     :goto_2
     return-void
 
-    .line 339
     :cond_3
     if-eqz p2, :cond_9
 
-    .line 340
     invoke-virtual {p1, p2}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     goto :goto_2
 
-    .line 343
     :cond_9
     invoke-virtual {p1}, Landroid/view/View;->clearAnimation()V
 
@@ -619,7 +561,6 @@
     .parameter "animation"
 
     .prologue
-    .line 333
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getFirstVisiblePosition()I
 
     move-result v0
@@ -632,7 +573,6 @@
 
     invoke-direct {p0, v0, p2}, Landroid/widget/SortableListView;->setViewAnimation(Landroid/view/View;Landroid/view/animation/Animation;)V
 
-    .line 334
     return-void
 .end method
 
@@ -643,18 +583,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 293
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
     if-eq p1, v0, :cond_7
 
     if-gez p1, :cond_8
 
-    .line 330
     :cond_7
     return-void
 
-    .line 295
     :cond_8
     const-string v0, "SortableListView"
 
@@ -690,7 +627,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 299
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
     iget v1, p0, Landroid/widget/SortableListView;->mDraggingTo:I
@@ -701,7 +637,6 @@
 
     if-ge v0, v1, :cond_72
 
-    .line 300
     :goto_37
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
@@ -713,7 +648,6 @@
 
     if-le v0, v1, :cond_72
 
-    .line 301
     const-string v0, "SortableListView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -744,7 +678,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 302
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
     add-int/lit8 v1, v0, -0x1
@@ -763,7 +696,6 @@
 
     goto :goto_37
 
-    .line 307
     :cond_72
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
@@ -775,7 +707,6 @@
 
     if-le v0, v1, :cond_b6
 
-    .line 308
     :goto_7c
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
@@ -787,7 +718,6 @@
 
     if-ge v0, v1, :cond_b6
 
-    .line 309
     const-string v0, "SortableListView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -818,7 +748,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 310
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
     add-int/lit8 v1, v0, 0x1
@@ -835,7 +764,6 @@
 
     goto :goto_7c
 
-    .line 316
     :cond_b6
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
@@ -847,13 +775,11 @@
 
     if-ge v0, v1, :cond_f5
 
-    .line 317
     :goto_c0
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
     if-ge v0, p1, :cond_f5
 
-    .line 318
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
     add-int/lit8 v0, v0, 0x1
@@ -870,7 +796,6 @@
 
     invoke-direct {p0, v0, v1}, Landroid/widget/SortableListView;->setViewAnimationByPisition(ILandroid/view/animation/Animation;)V
 
-    .line 319
     const-string v0, "SortableListView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -903,7 +828,6 @@
 
     goto :goto_c0
 
-    .line 324
     :cond_f5
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
@@ -915,13 +839,11 @@
 
     if-le v0, v1, :cond_7
 
-    .line 325
     :goto_ff
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
     if-le v0, p1, :cond_7
 
-    .line 326
     iget v0, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
     add-int/lit8 v0, v0, -0x1
@@ -936,7 +858,6 @@
 
     invoke-direct {p0, v0, v1}, Landroid/widget/SortableListView;->setViewAnimationByPisition(ILandroid/view/animation/Animation;)V
 
-    .line 327
     const-string v0, "SortableListView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -979,28 +900,23 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 168
     invoke-super {p0, p1}, Landroid/widget/ListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 170
     iget v2, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
     if-ltz v2, :cond_85
 
-    .line 171
     iget v2, p0, Landroid/widget/SortableListView;->mDraggingY:I
 
     iget v3, p0, Landroid/widget/SortableListView;->mOffsetYInDraggingItem:I
 
     sub-int v1, v2, v3
 
-    .line 174
     .local v1, offset:I
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getHeaderViewsCount()I
 
     move-result v0
 
-    .line 175
     .local v0, index:I
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getFirstVisiblePosition()I
 
@@ -1014,13 +930,11 @@
 
     if-le v0, v2, :cond_22
 
-    .line 176
     :cond_1e
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getFirstVisiblePosition()I
 
     move-result v0
 
-    .line 178
     :cond_22
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getFirstVisiblePosition()I
 
@@ -1028,7 +942,6 @@
 
     sub-int/2addr v0, v2
 
-    .line 179
     invoke-virtual {p0, v0}, Landroid/widget/SortableListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -1041,7 +954,6 @@
 
     move-result v1
 
-    .line 182
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getCount()I
 
     move-result v2
@@ -1054,7 +966,6 @@
 
     sub-int v0, v2, v3
 
-    .line 183
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getFirstVisiblePosition()I
 
     move-result v2
@@ -1067,13 +978,11 @@
 
     if-le v0, v2, :cond_4f
 
-    .line 184
     :cond_4b
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getLastVisiblePosition()I
 
     move-result v0
 
-    .line 186
     :cond_4f
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getFirstVisiblePosition()I
 
@@ -1081,7 +990,6 @@
 
     sub-int/2addr v0, v2
 
-    .line 187
     invoke-virtual {p0, v0}, Landroid/widget/SortableListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -1098,22 +1006,18 @@
 
     move-result v1
 
-    .line 189
     int-to-float v2, v1
 
     invoke-virtual {p1, v4, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 190
     iget-object v2, p0, Landroid/widget/SortableListView;->mSnapshotShadow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 191
     iget-object v2, p0, Landroid/widget/SortableListView;->mSnapshot:Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/BitmapDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 192
     iget-object v2, p0, Landroid/widget/SortableListView;->mSnapshotBackgroundForOverUpperBound:Landroid/graphics/drawable/Drawable;
 
     if-eqz v2, :cond_80
@@ -1124,12 +1028,10 @@
 
     if-ge v2, v3, :cond_80
 
-    .line 193
     iget-object v2, p0, Landroid/widget/SortableListView;->mSnapshotBackgroundForOverUpperBound:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 195
     :cond_80
     neg-int v2, v1
 
@@ -1137,7 +1039,6 @@
 
     invoke-virtual {p1, v4, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 197
     .end local v0           #index:I
     .end local v1           #offset:I
     :cond_85
@@ -1148,7 +1049,6 @@
     .registers 2
 
     .prologue
-    .line 155
     iget-object v0, p0, Landroid/widget/SortableListView;->mOnTouchListener:Landroid/view/View$OnTouchListener;
 
     return-object v0
@@ -1162,22 +1062,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 349
     invoke-super {p0, p1, p2}, Landroid/widget/ListView;->obtainView(I[Z)Landroid/view/View;
 
     move-result-object v1
 
-    .line 350
     .local v1, view:Landroid/view/View;
     const/4 v0, 0x0
 
-    .line 351
     .local v0, animation:Landroid/view/animation/Animation;
     iget v2, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
     if-ne v2, p1, :cond_34
 
-    .line 352
     iget v2, p0, Landroid/widget/SortableListView;->mDraggingItemWidth:I
 
     iget v3, p0, Landroid/widget/SortableListView;->mDraggingItemWidth:I
@@ -1186,7 +1082,6 @@
 
     move-result-object v0
 
-    .line 353
     const-string v2, "SortableListView"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1215,15 +1110,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 364
     :cond_30
     :goto_30
     invoke-direct {p0, v1, v0}, Landroid/widget/SortableListView;->setViewAnimation(Landroid/view/View;Landroid/view/animation/Animation;)V
 
-    .line 365
     return-object v1
 
-    .line 355
     :cond_34
     iget v2, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
@@ -1233,7 +1125,6 @@
 
     if-gt p1, v2, :cond_62
 
-    .line 356
     iget v2, p0, Landroid/widget/SortableListView;->mDraggingItemHeight:I
 
     neg-int v2, v2
@@ -1242,7 +1133,6 @@
 
     move-result-object v0
 
-    .line 357
     const-string v2, "SortableListView"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1273,7 +1163,6 @@
 
     goto :goto_30
 
-    .line 359
     :cond_62
     iget v2, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
@@ -1283,14 +1172,12 @@
 
     if-lt p1, v2, :cond_30
 
-    .line 360
     iget v2, p0, Landroid/widget/SortableListView;->mDraggingItemHeight:I
 
     invoke-direct {p0, v4, v4, v4, v2}, Landroid/widget/SortableListView;->createAnimation(IIII)Landroid/view/animation/Animation;
 
     move-result-object v0
 
-    .line 361
     const-string v2, "SortableListView"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1329,18 +1216,14 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 201
     iget-boolean v1, p0, Landroid/widget/SortableListView;->mInterceptTouchForSorting:Z
 
     if-eqz v1, :cond_c
 
-    .line 202
     invoke-virtual {p0, v0}, Landroid/widget/SortableListView;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 203
     invoke-virtual {p0, p1}, Landroid/widget/SortableListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 207
     :goto_b
     return v0
 
@@ -1360,10 +1243,8 @@
     .parameter "oldh"
 
     .prologue
-    .line 160
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ListView;->onSizeChanged(IIII)V
 
-    .line 161
     const/4 v0, 0x1
 
     int-to-float v1, p2
@@ -1380,19 +1261,16 @@
 
     iput v0, p0, Landroid/widget/SortableListView;->mScrollBound:I
 
-    .line 162
     iget v0, p0, Landroid/widget/SortableListView;->mScrollBound:I
 
     iput v0, p0, Landroid/widget/SortableListView;->mScrollUpperBound:I
 
-    .line 163
     iget v0, p0, Landroid/widget/SortableListView;->mScrollBound:I
 
     sub-int v0, p2, v0
 
     iput v0, p0, Landroid/widget/SortableListView;->mScrollLowerBound:I
 
-    .line 164
     return-void
 .end method
 
@@ -1403,21 +1281,17 @@
     .prologue
     const/4 v8, -0x1
 
-    .line 212
     iget-boolean v4, p0, Landroid/widget/SortableListView;->mInterceptTouchForSorting:Z
 
     if-nez v4, :cond_a
 
-    .line 213
     invoke-super {p0, p1}, Landroid/widget/ListView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v4
 
-    .line 270
     :goto_9
     return v4
 
-    .line 216
     :cond_a
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1427,7 +1301,6 @@
 
     packed-switch v4, :pswitch_data_ac
 
-    .line 270
     :cond_13
     :goto_13
     :pswitch_13
@@ -1435,7 +1308,6 @@
 
     goto :goto_9
 
-    .line 218
     :pswitch_15
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -1443,7 +1315,6 @@
 
     float-to-int v3, v4
 
-    .line 219
     .local v3, y:I
     iget-boolean v4, p0, Landroid/widget/SortableListView;->mInterceptTouchForSorting:Z
 
@@ -1453,13 +1324,11 @@
 
     if-eq v3, v4, :cond_13
 
-    .line 221
     :cond_22
     invoke-direct {p0, p1}, Landroid/widget/SortableListView;->getHittenItemPosition(Landroid/view/MotionEvent;)I
 
     move-result v1
 
-    .line 222
     .local v1, position:I
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getHeaderViewsCount()I
 
@@ -1479,30 +1348,23 @@
 
     if-le v1, v4, :cond_39
 
-    .line 223
     :cond_37
     iget v1, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
-    .line 225
     :cond_39
     invoke-direct {p0, v1}, Landroid/widget/SortableListView;->updateDraggingToPisition(I)V
 
-    .line 228
     iput v3, p0, Landroid/widget/SortableListView;->mDraggingY:I
 
-    .line 229
     invoke-virtual {p0}, Landroid/widget/SortableListView;->invalidate()V
 
-    .line 232
     const/4 v0, 0x0
 
-    .line 233
     .local v0, delta:I
     iget v4, p0, Landroid/widget/SortableListView;->mScrollLowerBound:I
 
     if-le v3, v4, :cond_66
 
-    .line 235
     iget v4, p0, Landroid/widget/SortableListView;->mScrollLowerBound:I
 
     sub-int/2addr v4, v3
@@ -1513,12 +1375,10 @@
 
     div-int v0, v4, v5
 
-    .line 240
     :cond_4f
     :goto_4f
     if-eqz v0, :cond_13
 
-    .line 241
     invoke-virtual {p0}, Landroid/widget/SortableListView;->getFirstVisiblePosition()I
 
     move-result v4
@@ -1529,11 +1389,9 @@
 
     move-result-object v2
 
-    .line 242
     .local v2, v:Landroid/view/View;
     if-eqz v2, :cond_13
 
-    .line 243
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v4
@@ -1544,14 +1402,12 @@
 
     goto :goto_13
 
-    .line 236
     .end local v2           #v:Landroid/view/View;
     :cond_66
     iget v4, p0, Landroid/widget/SortableListView;->mScrollUpperBound:I
 
     if-ge v3, v4, :cond_4f
 
-    .line 238
     iget v4, p0, Landroid/widget/SortableListView;->mScrollUpperBound:I
 
     sub-int/2addr v4, v3
@@ -1564,7 +1420,6 @@
 
     goto :goto_4f
 
-    .line 251
     .end local v0           #delta:I
     .end local v1           #position:I
     .end local v3           #y:I
@@ -1573,7 +1428,6 @@
 
     if-ltz v4, :cond_99
 
-    .line 252
     iget-object v4, p0, Landroid/widget/SortableListView;->mOnOrderChangedListener:Landroid/widget/SortableListView$OnOrderChangedListener;
 
     if-eqz v4, :cond_a5
@@ -1588,7 +1442,6 @@
 
     if-ltz v4, :cond_a5
 
-    .line 254
     iget-object v4, p0, Landroid/widget/SortableListView;->mOnOrderChangedListener:Landroid/widget/SortableListView$OnOrderChangedListener;
 
     iget v5, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
@@ -1609,25 +1462,20 @@
 
     invoke-interface {v4, v5, v6}, Landroid/widget/SortableListView$OnOrderChangedListener;->OnOrderChanged(II)V
 
-    .line 263
     :cond_99
     :goto_99
     const/4 v4, 0x0
 
     iput-boolean v4, p0, Landroid/widget/SortableListView;->mInterceptTouchForSorting:Z
 
-    .line 264
     iput v8, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
-    .line 265
     iput v8, p0, Landroid/widget/SortableListView;->mDraggingTo:I
 
-    .line 266
     invoke-virtual {p0}, Landroid/widget/SortableListView;->invalidate()V
 
     goto/16 :goto_13
 
-    .line 259
     :cond_a5
     iget v4, p0, Landroid/widget/SortableListView;->mDraggingFrom:I
 
@@ -1637,7 +1485,6 @@
 
     goto :goto_99
 
-    .line 216
     :pswitch_data_ac
     .packed-switch 0x1
         :pswitch_74
@@ -1654,13 +1501,10 @@
     .parameter "snapshotShadow"
 
     .prologue
-    .line 146
     iput p1, p0, Landroid/widget/SortableListView;->mItemUpperBound:I
 
-    .line 147
     iput-object p2, p0, Landroid/widget/SortableListView;->mSnapshotBackgroundForOverUpperBound:Landroid/graphics/drawable/Drawable;
 
-    .line 148
     return-void
 .end method
 
@@ -1669,9 +1513,7 @@
     .parameter "l"
 
     .prologue
-    .line 151
     iput-object p1, p0, Landroid/widget/SortableListView;->mOnOrderChangedListener:Landroid/widget/SortableListView$OnOrderChangedListener;
 
-    .line 152
     return-void
 .end method

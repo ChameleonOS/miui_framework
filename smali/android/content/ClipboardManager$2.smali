@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 70
     iput-object p1, p0, Landroid/content/ClipboardManager$2;->this$0:Landroid/content/ClipboardManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +38,13 @@
     .parameter "msg"
 
     .prologue
-    .line 73
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_c
 
-    .line 77
     :goto_5
     return-void
 
-    .line 75
     :pswitch_6
     iget-object v0, p0, Landroid/content/ClipboardManager$2;->this$0:Landroid/content/ClipboardManager;
 
@@ -56,7 +52,6 @@
 
     goto :goto_5
 
-    .line 73
     :pswitch_data_c
     .packed-switch 0x1
         :pswitch_6

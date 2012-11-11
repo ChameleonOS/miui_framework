@@ -40,14 +40,12 @@
     .registers 1
 
     .prologue
-    .line 34
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
     sput-object v0, Landroid/view/InputEvent;->mNextSeq:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 206
     new-instance v0, Landroid/view/InputEvent$1;
 
     invoke-direct {v0}, Landroid/view/InputEvent$1;-><init>()V
@@ -61,10 +59,8 @@
     .registers 2
 
     .prologue
-    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     sget-object v0, Landroid/view/InputEvent;->mNextSeq:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -73,7 +69,6 @@
 
     iput v0, p0, Landroid/view/InputEvent;->mSeq:I
 
-    .line 47
     return-void
 .end method
 
@@ -86,7 +81,6 @@
     .registers 2
 
     .prologue
-    .line 203
     const/4 v0, 0x0
 
     return v0
@@ -96,7 +90,6 @@
     .registers 2
 
     .prologue
-    .line 66
     invoke-virtual {p0}, Landroid/view/InputEvent;->getDeviceId()I
 
     move-result v0
@@ -121,7 +114,6 @@
     .registers 2
 
     .prologue
-    .line 199
     iget v0, p0, Landroid/view/InputEvent;->mSeq:I
 
     return v0
@@ -137,17 +129,14 @@
     .registers 2
 
     .prologue
-    .line 134
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/view/InputEvent;->mRecycled:Z
 
-    .line 135
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/view/InputEvent;->mRecycledLocation:Ljava/lang/RuntimeException;
 
-    .line 136
     sget-object v0, Landroid/view/InputEvent;->mNextSeq:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -156,7 +145,6 @@
 
     iput v0, p0, Landroid/view/InputEvent;->mSeq:I
 
-    .line 137
     return-void
 .end method
 
@@ -164,12 +152,10 @@
     .registers 4
 
     .prologue
-    .line 107
     iget-boolean v0, p0, Landroid/view/InputEvent;->mRecycled:Z
 
     if-eqz v0, :cond_21
 
-    .line 108
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -198,13 +184,11 @@
 
     throw v0
 
-    .line 110
     :cond_21
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/view/InputEvent;->mRecycled:Z
 
-    .line 112
     return-void
 .end method
 
@@ -212,10 +196,8 @@
     .registers 1
 
     .prologue
-    .line 126
     invoke-virtual {p0}, Landroid/view/InputEvent;->recycle()V
 
-    .line 127
     return-void
 .end method
 

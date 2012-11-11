@@ -12,10 +12,8 @@
     .registers 1
 
     .prologue
-    .line 30
     invoke-direct {p0}, Lcom/google/android/mms/MmsException;-><init>()V
 
-    .line 31
     return-void
 .end method
 
@@ -24,9 +22,7 @@
     .parameter "message"
 
     .prologue
-    .line 39
     invoke-direct {p0, p1}, Lcom/google/android/mms/MmsException;-><init>(Ljava/lang/String;)V
 
-    .line 40
     return-void
 .end method

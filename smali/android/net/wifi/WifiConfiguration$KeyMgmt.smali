@@ -35,7 +35,6 @@
     .registers 3
 
     .prologue
-    .line 159
     const/4 v0, 0x5
 
     new-array v0, v0, [Ljava/lang/String;
@@ -79,7 +78,6 @@
     .registers 1
 
     .prologue
-    .line 139
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

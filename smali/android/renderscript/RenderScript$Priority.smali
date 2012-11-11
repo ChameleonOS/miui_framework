@@ -44,7 +44,6 @@
 
     const/4 v3, 0x0
 
-    .line 812
     new-instance v0, Landroid/renderscript/RenderScript$Priority;
 
     const-string v1, "LOW"
@@ -55,7 +54,6 @@
 
     sput-object v0, Landroid/renderscript/RenderScript$Priority;->LOW:Landroid/renderscript/RenderScript$Priority;
 
-    .line 813
     new-instance v0, Landroid/renderscript/RenderScript$Priority;
 
     const-string v1, "NORMAL"
@@ -66,7 +64,6 @@
 
     sput-object v0, Landroid/renderscript/RenderScript$Priority;->NORMAL:Landroid/renderscript/RenderScript$Priority;
 
-    .line 811
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/renderscript/RenderScript$Priority;
@@ -96,13 +93,10 @@
     .end annotation
 
     .prologue
-    .line 816
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 817
     iput p3, p0, Landroid/renderscript/RenderScript$Priority;->mID:I
 
-    .line 818
     return-void
 .end method
 
@@ -111,7 +105,6 @@
     .parameter "name"
 
     .prologue
-    .line 811
     const-class v0, Landroid/renderscript/RenderScript$Priority;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -127,7 +120,6 @@
     .registers 1
 
     .prologue
-    .line 811
     sget-object v0, Landroid/renderscript/RenderScript$Priority;->$VALUES:[Landroid/renderscript/RenderScript$Priority;
 
     invoke-virtual {v0}, [Landroid/renderscript/RenderScript$Priority;->clone()Ljava/lang/Object;

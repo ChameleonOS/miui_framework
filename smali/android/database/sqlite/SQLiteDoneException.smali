@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 26
     invoke-direct {p0}, Landroid/database/sqlite/SQLiteException;-><init>()V
 
     return-void
@@ -19,9 +18,7 @@
     .parameter "error"
 
     .prologue
-    .line 29
     invoke-direct {p0, p1}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
 
-    .line 30
     return-void
 .end method

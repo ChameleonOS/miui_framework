@@ -53,15 +53,12 @@
     .registers 2
 
     .prologue
-    .line 402
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 403
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
-    .line 404
     return-void
 .end method
 
@@ -71,7 +68,6 @@
     .registers 2
 
     .prologue
-    .line 438
     iget-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
 
     return-object v0
@@ -81,7 +77,6 @@
     .registers 2
 
     .prologue
-    .line 427
     iget v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
     return v0
@@ -92,10 +87,8 @@
     .parameter "extra"
 
     .prologue
-    .line 417
     iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
 
-    .line 418
     return-void
 .end method
 
@@ -104,9 +97,7 @@
     .parameter "type"
 
     .prologue
-    .line 410
     iput p1, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
-    .line 411
     return-void
 .end method

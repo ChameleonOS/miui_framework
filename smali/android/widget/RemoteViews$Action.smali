@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 196
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
     .parameter "x0"
 
     .prologue
-    .line 196
     invoke-direct {p0}, Landroid/widget/RemoteViews$Action;-><init>()V
 
     return-void
@@ -53,7 +51,6 @@
     .registers 2
 
     .prologue
-    .line 201
     const/4 v0, 0x0
 
     return v0
@@ -64,7 +61,6 @@
     .parameter "bitmapCache"
 
     .prologue
-    .line 215
     return-void
 .end method
 
@@ -73,6 +69,5 @@
     .parameter "counter"
 
     .prologue
-    .line 210
     return-void
 .end method

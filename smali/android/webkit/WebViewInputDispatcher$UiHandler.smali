@@ -39,13 +39,10 @@
     .parameter "looper"
 
     .prologue
-    .line 1110
     iput-object p1, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
-    .line 1111
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1112
     return-void
 .end method
 
@@ -58,12 +55,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1116
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_46
 
-    .line 1136
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -90,18 +85,15 @@
 
     throw v0
 
-    .line 1118
     :pswitch_21
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
     #calls: Landroid/webkit/WebViewInputDispatcher;->dispatchUiEvents(Z)V
     invoke-static {v0, v1}, Landroid/webkit/WebViewInputDispatcher;->access$300(Landroid/webkit/WebViewInputDispatcher;Z)V
 
-    .line 1138
     :goto_26
     return-void
 
-    .line 1121
     :pswitch_27
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
@@ -110,7 +102,6 @@
 
     goto :goto_26
 
-    .line 1124
     :pswitch_2d
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
@@ -119,7 +110,6 @@
 
     goto :goto_26
 
-    .line 1127
     :pswitch_33
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
@@ -128,7 +118,6 @@
 
     goto :goto_26
 
-    .line 1130
     :pswitch_39
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
@@ -137,7 +126,6 @@
 
     goto :goto_26
 
-    .line 1133
     :pswitch_3f
     iget-object v0, p0, Landroid/webkit/WebViewInputDispatcher$UiHandler;->this$0:Landroid/webkit/WebViewInputDispatcher;
 
@@ -148,7 +136,6 @@
 
     goto :goto_26
 
-    .line 1116
     :pswitch_data_46
     .packed-switch 0x1
         :pswitch_21

@@ -22,10 +22,8 @@
     .parameter "context"
 
     .prologue
-    .line 36
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -38,7 +36,6 @@
 
     iput-object v0, p0, Landroid/text/method/AllCapsTransformationMethod;->mLocale:Ljava/util/Locale;
 
-    .line 38
     return-void
 .end method
 
@@ -50,12 +47,10 @@
     .parameter "view"
 
     .prologue
-    .line 42
     iget-boolean v0, p0, Landroid/text/method/AllCapsTransformationMethod;->mEnabled:Z
 
     if-eqz v0, :cond_13
 
-    .line 43
     if-eqz p1, :cond_11
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -68,17 +63,14 @@
 
     move-result-object v0
 
-    .line 46
     :goto_10
     return-object v0
 
-    .line 43
     :cond_11
     const/4 v0, 0x0
 
     goto :goto_10
 
-    .line 45
     :cond_13
     const-string v0, "AllCapsTransformationMethod"
 
@@ -88,7 +80,6 @@
 
     move-object v0, p1
 
-    .line 46
     goto :goto_10
 .end method
 
@@ -101,7 +92,6 @@
     .parameter "previouslyFocusedRect"
 
     .prologue
-    .line 52
     return-void
 .end method
 
@@ -110,9 +100,7 @@
     .parameter "allowLengthChanges"
 
     .prologue
-    .line 56
     iput-boolean p1, p0, Landroid/text/method/AllCapsTransformationMethod;->mEnabled:Z
 
-    .line 57
     return-void
 .end method

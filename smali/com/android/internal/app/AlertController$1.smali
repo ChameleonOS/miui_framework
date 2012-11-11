@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 129
     iput-object p1, p0, Lcom/android/internal/app/AlertController$1;->this$0:Lcom/android/internal/app/AlertController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,10 +41,8 @@
     .parameter "v"
 
     .prologue
-    .line 131
     const/4 v0, 0x0
 
-    .line 132
     .local v0, m:Landroid/os/Message;
     iget-object v1, p0, Lcom/android/internal/app/AlertController$1;->this$0:Lcom/android/internal/app/AlertController;
 
@@ -65,7 +62,6 @@
 
     if-eqz v1, :cond_35
 
-    .line 133
     iget-object v1, p0, Lcom/android/internal/app/AlertController$1;->this$0:Lcom/android/internal/app/AlertController;
 
     #getter for: Lcom/android/internal/app/AlertController;->mButtonPositiveMessage:Landroid/os/Message;
@@ -77,15 +73,12 @@
 
     move-result-object v0
 
-    .line 139
     :cond_1b
     :goto_1b
     if-eqz v0, :cond_20
 
-    .line 140
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 144
     :cond_20
     iget-object v1, p0, Lcom/android/internal/app/AlertController$1;->this$0:Lcom/android/internal/app/AlertController;
 
@@ -109,10 +102,8 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 146
     return-void
 
-    .line 134
     :cond_35
     iget-object v1, p0, Lcom/android/internal/app/AlertController$1;->this$0:Lcom/android/internal/app/AlertController;
 
@@ -132,7 +123,6 @@
 
     if-eqz v1, :cond_50
 
-    .line 135
     iget-object v1, p0, Lcom/android/internal/app/AlertController$1;->this$0:Lcom/android/internal/app/AlertController;
 
     #getter for: Lcom/android/internal/app/AlertController;->mButtonNegativeMessage:Landroid/os/Message;
@@ -146,7 +136,6 @@
 
     goto :goto_1b
 
-    .line 136
     :cond_50
     iget-object v1, p0, Lcom/android/internal/app/AlertController$1;->this$0:Lcom/android/internal/app/AlertController;
 
@@ -166,7 +155,6 @@
 
     if-eqz v1, :cond_1b
 
-    .line 137
     iget-object v1, p0, Lcom/android/internal/app/AlertController$1;->this$0:Lcom/android/internal/app/AlertController;
 
     #getter for: Lcom/android/internal/app/AlertController;->mButtonNeutralMessage:Landroid/os/Message;

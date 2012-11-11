@@ -40,7 +40,6 @@
     .registers 1
 
     .prologue
-    .line 95
     new-instance v0, Landroid/os/RemoteCallback$1;
 
     invoke-direct {v0}, Landroid/os/RemoteCallback$1;-><init>()V
@@ -55,20 +54,16 @@
     .parameter "handler"
 
     .prologue
-    .line 55
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
     iput-object p1, p0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
 
-    .line 57
     new-instance v0, Landroid/os/RemoteCallback$LocalCallback;
 
     invoke-direct {v0, p0}, Landroid/os/RemoteCallback$LocalCallback;-><init>(Landroid/os/RemoteCallback;)V
 
     iput-object v0, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
 
-    .line 58
     return-void
 .end method
 
@@ -77,18 +72,14 @@
     .parameter "target"
 
     .prologue
-    .line 60
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/os/RemoteCallback;->mHandler:Landroid/os/Handler;
 
-    .line 62
     iput-object p1, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
 
-    .line 63
     return-void
 .end method
 
@@ -98,7 +89,6 @@
     .registers 2
 
     .prologue
-    .line 88
     const/4 v0, 0x0
 
     return v0
@@ -111,15 +101,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 72
     if-nez p1, :cond_4
 
-    .line 80
     .end local p1
     :goto_3
     return v0
 
-    .line 76
     .restart local p1
     :cond_4
     :try_start_4
@@ -146,7 +133,6 @@
 
     goto :goto_3
 
-    .line 78
     :catch_17
     move-exception v1
 
@@ -157,7 +143,6 @@
     .registers 2
 
     .prologue
-    .line 84
     iget-object v0, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
 
     invoke-interface {v0}, Landroid/os/IRemoteCallback;->asBinder()Landroid/os/IBinder;
@@ -184,12 +169,10 @@
     .end annotation
 
     .prologue
-    .line 66
     iget-object v0, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
 
     invoke-interface {v0, p1}, Landroid/os/IRemoteCallback;->sendResult(Landroid/os/Bundle;)V
 
-    .line 67
     return-void
 .end method
 
@@ -199,7 +182,6 @@
     .parameter "flags"
 
     .prologue
-    .line 92
     iget-object v0, p0, Landroid/os/RemoteCallback;->mTarget:Landroid/os/IRemoteCallback;
 
     invoke-interface {v0}, Landroid/os/IRemoteCallback;->asBinder()Landroid/os/IBinder;
@@ -208,6 +190,5 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 93
     return-void
 .end method

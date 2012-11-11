@@ -26,7 +26,6 @@
     .registers 1
 
     .prologue
-    .line 19
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,10 +40,8 @@
 
     const/16 v0, 0x10
 
-    .line 121
     sparse-switch p0, :sswitch_data_e
 
-    .line 135
     const/4 v0, -0x1
 
     :goto_8
@@ -54,16 +51,13 @@
     :sswitch_9
     move v0, v1
 
-    .line 129
     goto :goto_8
 
     :sswitch_b
     move v0, v1
 
-    .line 131
     goto :goto_8
 
-    .line 121
     nop
 
     :sswitch_data_e

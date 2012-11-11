@@ -19,18 +19,14 @@
     .parameter "syncContextInterface"
 
     .prologue
-    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     iput-object p1, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
-    .line 34
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroid/content/SyncContext;->mLastHeartbeatSendTime:J
 
-    .line 35
     return-void
 .end method
 
@@ -38,12 +34,10 @@
     .registers 7
 
     .prologue
-    .line 55
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 56
     .local v0, now:J
     iget-wide v2, p0, Landroid/content/SyncContext;->mLastHeartbeatSendTime:J
 
@@ -55,22 +49,18 @@
 
     if-gez v2, :cond_e
 
-    .line 65
     :cond_d
     :goto_d
     return-void
 
-    .line 58
     :cond_e
     :try_start_e
     iput-wide v0, p0, Landroid/content/SyncContext;->mLastHeartbeatSendTime:J
 
-    .line 59
     iget-object v2, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     if-eqz v2, :cond_d
 
-    .line 60
     iget-object v2, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     invoke-interface {v2}, Landroid/content/ISyncContext;->sendHeartbeat()V
@@ -79,7 +69,6 @@
 
     goto :goto_d
 
-    .line 62
     :catch_1a
     move-exception v2
 
@@ -92,7 +81,6 @@
     .registers 2
 
     .prologue
-    .line 78
     iget-object v0, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     if-nez v0, :cond_6
@@ -117,25 +105,21 @@
     .parameter "result"
 
     .prologue
-    .line 69
     :try_start_0
     iget-object v0, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     if-eqz v0, :cond_9
 
-    .line 70
     iget-object v0, p0, Landroid/content/SyncContext;->mSyncContext:Landroid/content/ISyncContext;
 
     invoke-interface {v0, p1}, Landroid/content/ISyncContext;->onFinished(Landroid/content/SyncResult;)V
     :try_end_9
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_9} :catch_a
 
-    .line 75
     :cond_9
     :goto_9
     return-void
 
-    .line 72
     :catch_a
     move-exception v0
 
@@ -147,9 +131,7 @@
     .parameter "message"
 
     .prologue
-    .line 46
     invoke-direct {p0}, Landroid/content/SyncContext;->updateHeartbeat()V
 
-    .line 47
     return-void
 .end method

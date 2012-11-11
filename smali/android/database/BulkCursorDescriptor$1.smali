@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 30
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,16 +44,13 @@
     .parameter "in"
 
     .prologue
-    .line 33
     new-instance v0, Landroid/database/BulkCursorDescriptor;
 
     invoke-direct {v0}, Landroid/database/BulkCursorDescriptor;-><init>()V
 
-    .line 34
     .local v0, d:Landroid/database/BulkCursorDescriptor;
     invoke-virtual {v0, p1}, Landroid/database/BulkCursorDescriptor;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 35
     return-object v0
 .end method
 
@@ -63,7 +59,6 @@
     .parameter "x0"
 
     .prologue
-    .line 30
     invoke-virtual {p0, p1}, Landroid/database/BulkCursorDescriptor$1;->createFromParcel(Landroid/os/Parcel;)Landroid/database/BulkCursorDescriptor;
 
     move-result-object v0
@@ -76,7 +71,6 @@
     .parameter "size"
 
     .prologue
-    .line 40
     new-array v0, p1, [Landroid/database/BulkCursorDescriptor;
 
     return-object v0
@@ -87,7 +81,6 @@
     .parameter "x0"
 
     .prologue
-    .line 30
     invoke-virtual {p0, p1}, Landroid/database/BulkCursorDescriptor$1;->newArray(I)[Landroid/database/BulkCursorDescriptor;
 
     move-result-object v0

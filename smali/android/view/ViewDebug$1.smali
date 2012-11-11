@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 429
     iput-object p1, p0, Landroid/view/ViewDebug$1;->val$view:Landroid/view/View;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +40,9 @@
     .registers 2
 
     .prologue
-    .line 431
     iget-object v0, p0, Landroid/view/ViewDebug$1;->val$view:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 432
     return-void
 .end method

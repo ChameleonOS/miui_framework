@@ -31,22 +31,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 153
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 151
     iput v0, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mCount:I
 
-    .line 154
     iput-object p1, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mInputStream:Ljava/io/InputStream;
 
-    .line 155
     iput-object p2, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mExtraHeaderData:[B
 
-    .line 156
     iput v0, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mCount:I
 
-    .line 157
     return-void
 .end method
 
@@ -61,17 +55,14 @@
     .end annotation
 
     .prologue
-    .line 182
     iget-object v0, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mInputStream:Ljava/io/InputStream;
 
     if-eqz v0, :cond_9
 
-    .line 183
     iget-object v0, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mInputStream:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    .line 185
     :cond_9
     return-void
 .end method
@@ -85,7 +76,6 @@
     .end annotation
 
     .prologue
-    .line 161
     iget v0, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mCount:I
 
     iget-object v1, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mExtraHeaderData:[B
@@ -94,7 +84,6 @@
 
     if-ge v0, v1, :cond_12
 
-    .line 162
     iget-object v0, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mExtraHeaderData:[B
 
     iget v1, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mCount:I
@@ -105,7 +94,6 @@
 
     aget-byte v0, v0, v1
 
-    .line 164
     :goto_11
     return v0
 
@@ -131,15 +119,12 @@
     .end annotation
 
     .prologue
-    .line 169
     array-length v2, p1
 
     invoke-static {v2, p2, p3}, Ljava/util/Arrays;->checkOffsetAndCount(III)V
 
-    .line 170
     const/4 v0, 0x0
 
-    .line 171
     .local v0, readCnt:I
     :goto_5
     iget v2, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mCount:I
@@ -152,7 +137,6 @@
 
     if-ge v0, p3, :cond_20
 
-    .line 172
     add-int/lit8 v1, v0, 0x1
 
     .end local v0           #readCnt:I
@@ -177,11 +161,9 @@
     .restart local v0       #readCnt:I
     goto :goto_5
 
-    .line 174
     :cond_20
     if-ge v0, p3, :cond_2d
 
-    .line 175
     iget-object v2, p0, Landroid/content/res/SimulateNinePngUtil$NinePathInputStream;->mInputStream:Ljava/io/InputStream;
 
     add-int v3, p2, v0
@@ -194,7 +176,6 @@
 
     add-int/2addr v0, v2
 
-    .line 177
     :cond_2d
     return v0
 .end method

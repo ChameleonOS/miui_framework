@@ -27,7 +27,6 @@
     .registers 1
 
     .prologue
-    .line 76
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,23 +41,19 @@
     .parameter "opts"
 
     .prologue
-    .line 81
     sget v1, Landroid/content/res/Resources$Injector;->mId:I
 
     invoke-virtual {p0, p1, v1}, Landroid/content/res/Resources;->loadOverlayDrawable(Landroid/util/TypedValue;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 82
     .local v0, dr:Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_c
 
-    .line 83
     invoke-static {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 85
     :cond_c
     return-object v0
 .end method
@@ -68,7 +63,6 @@
     .parameter "id"
 
     .prologue
-    .line 78
     sput p0, Landroid/content/res/Resources$Injector;->mId:I
 
     return-void

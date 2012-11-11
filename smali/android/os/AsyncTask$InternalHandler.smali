@@ -19,7 +19,6 @@
     .registers 1
 
     .prologue
-    .line 636
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
@@ -30,7 +29,6 @@
     .parameter "x0"
 
     .prologue
-    .line 636
     invoke-direct {p0}, Landroid/os/AsyncTask$InternalHandler;-><init>()V
 
     return-void
@@ -43,22 +41,18 @@
     .parameter "msg"
 
     .prologue
-    .line 640
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncTask$AsyncTaskResult;
 
-    .line 641
     .local v0, result:Landroid/os/AsyncTask$AsyncTaskResult;
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_1e
 
-    .line 650
     :goto_9
     return-void
 
-    .line 644
     :pswitch_a
     iget-object v1, v0, Landroid/os/AsyncTask$AsyncTaskResult;->mTask:Landroid/os/AsyncTask;
 
@@ -73,7 +67,6 @@
 
     goto :goto_9
 
-    .line 647
     :pswitch_15
     iget-object v1, v0, Landroid/os/AsyncTask$AsyncTaskResult;->mTask:Landroid/os/AsyncTask;
 
@@ -83,7 +76,6 @@
 
     goto :goto_9
 
-    .line 641
     nop
 
     :pswitch_data_1e

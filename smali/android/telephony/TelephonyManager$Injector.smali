@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +33,6 @@
     .parameter "op"
 
     .prologue
-    .line 63
     invoke-static {}, Landroid/telephony/TelephonyManager;->getContext()Landroid/content/Context;
 
     move-result-object v0

@@ -39,7 +39,6 @@
     .registers 1
 
     .prologue
-    .line 501
     new-instance v0, Landroid/app/Fragment$SavedState$1;
 
     invoke-direct {v0}, Landroid/app/Fragment$SavedState$1;-><init>()V
@@ -54,13 +53,10 @@
     .parameter "state"
 
     .prologue
-    .line 480
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 481
     iput-object p1, p0, Landroid/app/Fragment$SavedState;->mState:Landroid/os/Bundle;
 
-    .line 482
     return-void
 .end method
 
@@ -70,29 +66,24 @@
     .parameter "loader"
 
     .prologue
-    .line 484
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 485
     invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/app/Fragment$SavedState;->mState:Landroid/os/Bundle;
 
-    .line 486
     if-eqz p2, :cond_14
 
     iget-object v0, p0, Landroid/app/Fragment$SavedState;->mState:Landroid/os/Bundle;
 
     if-eqz v0, :cond_14
 
-    .line 487
     iget-object v0, p0, Landroid/app/Fragment$SavedState;->mState:Landroid/os/Bundle;
 
     invoke-virtual {v0, p2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
 
-    .line 489
     :cond_14
     return-void
 .end method
@@ -103,7 +94,6 @@
     .registers 2
 
     .prologue
-    .line 493
     const/4 v0, 0x0
 
     return v0
@@ -115,11 +105,9 @@
     .parameter "flags"
 
     .prologue
-    .line 498
     iget-object v0, p0, Landroid/app/Fragment$SavedState;->mState:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 499
     return-void
 .end method

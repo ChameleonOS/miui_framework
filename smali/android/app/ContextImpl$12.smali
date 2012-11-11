@@ -19,7 +19,6 @@
     .registers 1
 
     .prologue
-    .line 340
     invoke-direct {p0}, Landroid/app/ContextImpl$ServiceFetcher;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .end annotation
 
     .prologue
-    .line 343
     new-instance v0, Landroid/app/MiuiDownloadManager;
 
     invoke-virtual {p1}, Landroid/app/ContextImpl;->getContentResolver()Landroid/content/ContentResolver;

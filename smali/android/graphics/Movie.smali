@@ -13,13 +13,10 @@
     .parameter "nativeMovie"
 
     .prologue
-    .line 25
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 26
     if-nez p1, :cond_e
 
-    .line 27
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "native movie creation failed"
@@ -28,11 +25,9 @@
 
     throw v0
 
-    .line 29
     :cond_e
     iput p1, p0, Landroid/graphics/Movie;->mNativeMovie:I
 
-    .line 30
     return-void
 .end method
 
@@ -44,7 +39,6 @@
     .parameter "pathName"
 
     .prologue
-    .line 54
     :try_start_0
     new-instance v1, Ljava/io/FileInputStream;
 
@@ -52,7 +46,6 @@
     :try_end_5
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_5} :catch_a
 
-    .line 59
     .local v1, is:Ljava/io/InputStream;
     invoke-static {v1}, Landroid/graphics/Movie;->decodeTempStream(Ljava/io/InputStream;)Landroid/graphics/Movie;
 
@@ -62,11 +55,9 @@
     :goto_9
     return-object v2
 
-    .line 56
     :catch_a
     move-exception v0
 
-    .line 57
     .local v0, e:Ljava/io/FileNotFoundException;
     const/4 v2, 0x0
 
@@ -81,26 +72,21 @@
     .parameter "is"
 
     .prologue
-    .line 72
     const/4 v0, 0x0
 
-    .line 74
     .local v0, moov:Landroid/graphics/Movie;
     :try_start_1
     invoke-static {p0}, Landroid/graphics/Movie;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Movie;
 
     move-result-object v0
 
-    .line 75
     invoke-virtual {p0}, Ljava/io/InputStream;->close()V
     :try_end_8
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_8} :catch_9
 
-    .line 83
     :goto_8
     return-object v0
 
-    .line 77
     :catch_9
     move-exception v1
 
@@ -119,12 +105,10 @@
     .parameter "y"
 
     .prologue
-    .line 42
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/graphics/Movie;->draw(Landroid/graphics/Canvas;FFLandroid/graphics/Paint;)V
 
-    .line 43
     return-void
 .end method
 
@@ -143,7 +127,6 @@
     .end annotation
 
     .prologue
-    .line 65
     :try_start_0
     iget v0, p0, Landroid/graphics/Movie;->mNativeMovie:I
 
@@ -151,13 +134,10 @@
     :try_end_5
     .catchall {:try_start_0 .. :try_end_5} :catchall_9
 
-    .line 67
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 69
     return-void
 
-    .line 67
     :catchall_9
     move-exception v0
 

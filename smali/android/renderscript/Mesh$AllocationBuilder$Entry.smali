@@ -28,7 +28,6 @@
     .parameter
 
     .prologue
-    .line 408
     iput-object p1, p0, Landroid/renderscript/Mesh$AllocationBuilder$Entry;->this$0:Landroid/renderscript/Mesh$AllocationBuilder;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V

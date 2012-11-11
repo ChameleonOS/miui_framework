@@ -27,7 +27,6 @@
     .registers 1
 
     .prologue
-    .line 52
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -42,30 +41,23 @@
     .parameter "context"
 
     .prologue
-    .line 59
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     iput-object p1, p0, Landroid/opengl/ManagedEGLContext;->mContext:Ljavax/microedition/khronos/egl/EGLContext;
 
-    .line 61
     sget-object v1, Landroid/opengl/ManagedEGLContext;->sActive:Ljava/util/ArrayList;
 
     monitor-enter v1
 
-    .line 62
     :try_start_8
     sget-object v0, Landroid/opengl/ManagedEGLContext;->sActive:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 63
     monitor-exit v1
 
-    .line 64
     return-void
 
-    .line 63
     :catchall_f
     move-exception v0
 
@@ -82,7 +74,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 100
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v5
@@ -93,7 +84,6 @@
 
     if-eq v5, v6, :cond_13
 
-    .line 101
     new-instance v4, Ljava/lang/IllegalStateException;
 
     const-string v5, "Called on wrong thread"
@@ -102,13 +92,11 @@
 
     throw v4
 
-    .line 104
     :cond_13
     sget-object v5, Landroid/opengl/ManagedEGLContext;->sActive:Ljava/util/ArrayList;
 
     monitor-enter v5
 
-    .line 107
     :try_start_16
     sget-object v6, Landroid/opengl/ManagedEGLContext;->sActive:Ljava/util/ArrayList;
 
@@ -118,16 +106,13 @@
 
     if-gtz v6, :cond_20
 
-    .line 108
     monitor-exit v5
 
-    .line 135
     .local v1, display:Ljavax/microedition/khronos/egl/EGLDisplay;
     .local v2, egl:Ljavax/microedition/khronos/egl/EGL10;
     :goto_1f
     return v4
 
-    .line 113
     .end local v1           #display:Ljavax/microedition/khronos/egl/EGLDisplay;
     .end local v2           #egl:Ljavax/microedition/khronos/egl/EGL10;
     :cond_20
@@ -137,7 +122,6 @@
 
     check-cast v2, Ljavax/microedition/khronos/egl/EGL10;
 
-    .line 114
     .restart local v2       #egl:Ljavax/microedition/khronos/egl/EGL10;
     sget-object v6, Ljavax/microedition/khronos/egl/EGL10;->EGL_DEFAULT_DISPLAY:Ljava/lang/Object;
 
@@ -145,25 +129,21 @@
 
     move-result-object v1
 
-    .line 116
     .restart local v1       #display:Ljavax/microedition/khronos/egl/EGLDisplay;
     sget-object v6, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_DISPLAY:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     if-ne v1, v6, :cond_3c
 
-    .line 117
     const-string v6, "ManagedEGLContext"
 
     const-string v7, "doTerminate failed: no display"
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     monitor-exit v5
 
     goto :goto_1f
 
-    .line 129
     .end local v1           #display:Ljavax/microedition/khronos/egl/EGLDisplay;
     :catchall_39
     move-exception v4
@@ -174,7 +154,6 @@
 
     throw v4
 
-    .line 121
     .restart local v1       #display:Ljavax/microedition/khronos/egl/EGLDisplay;
     :cond_3c
     :try_start_3c
@@ -190,7 +169,6 @@
 
     if-eq v6, v7, :cond_76
 
-    .line 122
     const-string v6, "ManagedEGLContext"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -233,12 +211,10 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 124
     monitor-exit v5
 
     goto :goto_1f
 
-    .line 127
     :cond_76
     new-instance v0, Ljava/util/ArrayList;
 
@@ -246,18 +222,15 @@
 
     invoke-direct {v0, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 128
     .local v0, active:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/opengl/ManagedEGLContext;>;"
     sget-object v4, Landroid/opengl/ManagedEGLContext;->sActive:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 129
     monitor-exit v5
     :try_end_83
     .catchall {:try_start_3c .. :try_end_83} :catchall_39
 
-    .line 131
     const/4 v3, 0x0
 
     .local v3, i:I
@@ -268,7 +241,6 @@
 
     if-ge v3, v4, :cond_96
 
-    .line 132
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -277,12 +249,10 @@
 
     invoke-virtual {v4}, Landroid/opengl/ManagedEGLContext;->execTerminate()V
 
-    .line 131
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_84
 
-    .line 135
     :cond_96
     const/4 v4, 0x1
 
@@ -295,12 +265,10 @@
     .registers 2
 
     .prologue
-    .line 84
     iget-object v0, p0, Landroid/opengl/ManagedEGLContext;->mContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     invoke-virtual {p0, v0}, Landroid/opengl/ManagedEGLContext;->onTerminate(Ljavax/microedition/khronos/egl/EGLContext;)V
 
-    .line 85
     return-void
 .end method
 
@@ -308,7 +276,6 @@
     .registers 2
 
     .prologue
-    .line 70
     iget-object v0, p0, Landroid/opengl/ManagedEGLContext;->mContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     return-object v0
@@ -321,9 +288,7 @@
     .registers 1
 
     .prologue
-    .line 80
     invoke-virtual {p0}, Landroid/opengl/ManagedEGLContext;->execTerminate()V
 
-    .line 81
     return-void
 .end method

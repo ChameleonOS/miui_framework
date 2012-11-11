@@ -23,7 +23,6 @@
     .registers 3
 
     .prologue
-    .line 176
     invoke-static {}, Landroid/net/wifi/SupplicantState;->values()[Landroid/net/wifi/SupplicantState;
 
     move-result-object v0

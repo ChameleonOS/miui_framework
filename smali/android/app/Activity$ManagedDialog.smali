@@ -25,7 +25,6 @@
     .registers 1
 
     .prologue
-    .line 686
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
     .parameter "x0"
 
     .prologue
-    .line 686
     invoke-direct {p0}, Landroid/app/Activity$ManagedDialog;-><init>()V
 
     return-void

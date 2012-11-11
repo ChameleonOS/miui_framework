@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 57
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "source"
 
     .prologue
-    .line 59
     new-instance v0, Landroid/content/PeriodicSync;
 
     sget-object v1, Landroid/accounts/Account;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -78,7 +76,6 @@
     .parameter "x0"
 
     .prologue
-    .line 57
     invoke-virtual {p0, p1}, Landroid/content/PeriodicSync$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/PeriodicSync;
 
     move-result-object v0
@@ -91,7 +88,6 @@
     .parameter "size"
 
     .prologue
-    .line 64
     new-array v0, p1, [Landroid/content/PeriodicSync;
 
     return-object v0
@@ -102,7 +98,6 @@
     .parameter "x0"
 
     .prologue
-    .line 57
     invoke-virtual {p0, p1}, Landroid/content/PeriodicSync$1;->newArray(I)[Landroid/content/PeriodicSync;
 
     move-result-object v0

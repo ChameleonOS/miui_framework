@@ -43,7 +43,6 @@
     .registers 1
 
     .prologue
-    .line 651
     const-string v0, "SIM"
 
     sput-object v0, Lmiui/provider/ExtraContacts$SimAccount;->NAME:Ljava/lang/String;
@@ -55,7 +54,6 @@
     .registers 1
 
     .prologue
-    .line 650
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

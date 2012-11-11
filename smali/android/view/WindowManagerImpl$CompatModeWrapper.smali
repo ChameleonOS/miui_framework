@@ -32,10 +32,8 @@
     .parameter "ci"
 
     .prologue
-    .line 128
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 129
     instance-of v0, p1, Landroid/view/WindowManagerImpl$CompatModeWrapper;
 
     if-eqz v0, :cond_1a
@@ -48,10 +46,8 @@
     :goto_b
     iput-object p1, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mWindowManager:Landroid/view/WindowManagerImpl;
 
-    .line 136
     if-nez p2, :cond_1d
 
-    .line 137
     iget-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mWindowManager:Landroid/view/WindowManagerImpl;
 
     invoke-virtual {v0}, Landroid/view/WindowManagerImpl;->getDefaultDisplay()Landroid/view/Display;
@@ -60,21 +56,17 @@
 
     iput-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mDefaultDisplay:Landroid/view/Display;
 
-    .line 144
     :goto_17
     iput-object p2, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
 
-    .line 145
     return-void
 
-    .line 129
     .restart local p1
     :cond_1a
     check-cast p1, Landroid/view/WindowManagerImpl;
 
     goto :goto_b
 
-    .line 140
     .end local p1
     :cond_1d
     iget-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mWindowManager:Landroid/view/WindowManagerImpl;
@@ -104,14 +96,12 @@
     .parameter "params"
 
     .prologue
-    .line 149
     iget-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mWindowManager:Landroid/view/WindowManagerImpl;
 
     iget-object v1, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mCompatibilityInfo:Landroid/view/CompatibilityInfoHolder;
 
     invoke-virtual {v0, p1, p2, v1}, Landroid/view/WindowManagerImpl;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;Landroid/view/CompatibilityInfoHolder;)V
 
-    .line 150
     return-void
 .end method
 
@@ -119,7 +109,6 @@
     .registers 2
 
     .prologue
-    .line 165
     iget-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mDefaultDisplay:Landroid/view/Display;
 
     return-object v0
@@ -129,7 +118,6 @@
     .registers 2
 
     .prologue
-    .line 175
     iget-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mWindowManager:Landroid/view/WindowManagerImpl;
 
     invoke-virtual {v0}, Landroid/view/WindowManagerImpl;->isHardwareAccelerated()Z
@@ -144,12 +132,10 @@
     .parameter "view"
 
     .prologue
-    .line 160
     iget-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mWindowManager:Landroid/view/WindowManagerImpl;
 
     invoke-virtual {v0, p1}, Landroid/view/WindowManagerImpl;->removeView(Landroid/view/View;)V
 
-    .line 161
     return-void
 .end method
 
@@ -158,12 +144,10 @@
     .parameter "view"
 
     .prologue
-    .line 170
     iget-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mWindowManager:Landroid/view/WindowManagerImpl;
 
     invoke-virtual {v0, p1}, Landroid/view/WindowManagerImpl;->removeViewImmediate(Landroid/view/View;)V
 
-    .line 171
     return-void
 .end method
 
@@ -173,11 +157,9 @@
     .parameter "params"
 
     .prologue
-    .line 154
     iget-object v0, p0, Landroid/view/WindowManagerImpl$CompatModeWrapper;->mWindowManager:Landroid/view/WindowManagerImpl;
 
     invoke-virtual {v0, p1, p2}, Landroid/view/WindowManagerImpl;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 156
     return-void
 .end method

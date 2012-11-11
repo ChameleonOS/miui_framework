@@ -28,7 +28,6 @@
     .registers 1
 
     .prologue
-    .line 42
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -40,7 +39,6 @@
     .registers 2
 
     .prologue
-    .line 45
     new-instance v0, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;
 
     invoke-direct {v0}, Lcom/android/server/NetworkManagementSocketTagger$SocketTags;-><init>()V
@@ -52,7 +50,6 @@
     .registers 2
 
     .prologue
-    .line 42
     invoke-virtual {p0}, Lcom/android/server/NetworkManagementSocketTagger$1;->initialValue()Lcom/android/server/NetworkManagementSocketTagger$SocketTags;
 
     move-result-object v0

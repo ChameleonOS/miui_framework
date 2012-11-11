@@ -24,13 +24,10 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 33
     invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 35
     if-nez p1, :cond_f
 
-    .line 36
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "in == null"
@@ -39,13 +36,11 @@
 
     throw v0
 
-    .line 39
     :cond_f
     cmp-long v0, p2, v1
 
     if-gez v0, :cond_1c
 
-    .line 40
     new-instance v0, Ljava/io/IOException;
 
     const-string/jumbo v1, "offset < 0"
@@ -54,13 +49,11 @@
 
     throw v0
 
-    .line 43
     :cond_1c
     cmp-long v0, p4, v1
 
     if-gez v0, :cond_28
 
-    .line 44
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "length < 0"
@@ -69,7 +62,6 @@
 
     throw v0
 
-    .line 47
     :cond_28
     const-wide v0, 0x7fffffffffffffffL
 
@@ -79,7 +71,6 @@
 
     if-lez v0, :cond_3b
 
-    .line 48
     new-instance v0, Ljava/io/IOException;
 
     const-string/jumbo v1, "offset + length > Long.MAX_VALUE"
@@ -88,19 +79,15 @@
 
     throw v0
 
-    .line 51
     :cond_3b
     add-long v0, p2, p4
 
     iput-wide v0, p0, Landroid/content/pm/LimitedLengthInputStream;->mEnd:J
 
-    .line 53
     invoke-virtual {p0, p2, p3}, Landroid/content/pm/LimitedLengthInputStream;->skip(J)J
 
-    .line 54
     iput-wide p2, p0, Landroid/content/pm/LimitedLengthInputStream;->mOffset:J
 
-    .line 55
     return-void
 .end method
 
@@ -115,7 +102,6 @@
     .end annotation
 
     .prologue
-    .line 59
     monitor-enter p0
 
     :try_start_1
@@ -129,16 +115,13 @@
 
     if-ltz v0, :cond_c
 
-    .line 60
     const/4 v0, -0x1
 
-    .line 64
     :goto_a
     monitor-exit p0
 
     return v0
 
-    .line 63
     :cond_c
     :try_start_c
     iget-wide v0, p0, Landroid/content/pm/LimitedLengthInputStream;->mOffset:J
@@ -149,7 +132,6 @@
 
     iput-wide v0, p0, Landroid/content/pm/LimitedLengthInputStream;->mOffset:J
 
-    .line 64
     invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
     :try_end_16
     .catchall {:try_start_c .. :try_end_16} :catchall_18
@@ -158,7 +140,6 @@
 
     goto :goto_a
 
-    .line 59
     :catchall_18
     move-exception v0
 
@@ -177,7 +158,6 @@
     .end annotation
 
     .prologue
-    .line 92
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -201,7 +181,6 @@
     .end annotation
 
     .prologue
-    .line 69
     iget-wide v2, p0, Landroid/content/pm/LimitedLengthInputStream;->mOffset:J
 
     iget-wide v4, p0, Landroid/content/pm/LimitedLengthInputStream;->mEnd:J
@@ -210,22 +189,17 @@
 
     if-ltz v2, :cond_a
 
-    .line 70
     const/4 v1, -0x1
 
-    .line 87
     :goto_9
     return v1
 
-    .line 73
     :cond_a
     array-length v0, p1
 
-    .line 74
     .local v0, arrayLength:I
     invoke-static {v0, p2, p3}, Ljava/util/Arrays;->checkOffsetAndCount(III)V
 
-    .line 76
     iget-wide v2, p0, Landroid/content/pm/LimitedLengthInputStream;->mOffset:J
 
     const-wide v4, 0x7fffffffffffffffL
@@ -238,7 +212,6 @@
 
     if-lez v2, :cond_41
 
-    .line 77
     new-instance v2, Ljava/io/IOException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -275,7 +248,6 @@
 
     throw v2
 
-    .line 80
     :cond_41
     iget-wide v2, p0, Landroid/content/pm/LimitedLengthInputStream;->mOffset:J
 
@@ -289,7 +261,6 @@
 
     if-lez v2, :cond_51
 
-    .line 81
     iget-wide v2, p0, Landroid/content/pm/LimitedLengthInputStream;->mEnd:J
 
     iget-wide v4, p0, Landroid/content/pm/LimitedLengthInputStream;->mOffset:J
@@ -298,13 +269,11 @@
 
     long-to-int p3, v2
 
-    .line 84
     :cond_51
     invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
 
     move-result v1
 
-    .line 85
     .local v1, numRead:I
     iget-wide v2, p0, Landroid/content/pm/LimitedLengthInputStream;->mOffset:J
 

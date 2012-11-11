@@ -17,20 +17,16 @@
     .registers 3
 
     .prologue
-    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     const/high16 v0, 0x3f80
 
     iput v0, p0, Landroid/view/animation/AccelerateInterpolator;->mFactor:F
 
-    .line 34
     const-wide/high16 v0, 0x4000
 
     iput-wide v0, p0, Landroid/view/animation/AccelerateInterpolator;->mDoubleFactor:D
 
-    .line 35
     return-void
 .end method
 
@@ -39,13 +35,10 @@
     .parameter "factor"
 
     .prologue
-    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     iput p1, p0, Landroid/view/animation/AccelerateInterpolator;->mFactor:F
 
-    .line 47
     const/high16 v0, 0x4000
 
     iget v1, p0, Landroid/view/animation/AccelerateInterpolator;->mFactor:F
@@ -56,7 +49,6 @@
 
     iput-wide v0, p0, Landroid/view/animation/AccelerateInterpolator;->mDoubleFactor:D
 
-    .line 48
     return-void
 .end method
 
@@ -66,17 +58,14 @@
     .parameter "attrs"
 
     .prologue
-    .line 50
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
     sget-object v1, Lcom/android/internal/R$styleable;->AccelerateInterpolator:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 54
     .local v0, a:Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
@@ -88,7 +77,6 @@
 
     iput v1, p0, Landroid/view/animation/AccelerateInterpolator;->mFactor:F
 
-    .line 55
     const/high16 v1, 0x4000
 
     iget v2, p0, Landroid/view/animation/AccelerateInterpolator;->mFactor:F
@@ -99,10 +87,8 @@
 
     iput-wide v1, p0, Landroid/view/animation/AccelerateInterpolator;->mDoubleFactor:D
 
-    .line 57
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 58
     return-void
 .end method
 
@@ -113,7 +99,6 @@
     .parameter "input"
 
     .prologue
-    .line 61
     iget v0, p0, Landroid/view/animation/AccelerateInterpolator;->mFactor:F
 
     const/high16 v1, 0x3f80
@@ -122,10 +107,8 @@
 
     if-nez v0, :cond_b
 
-    .line 62
     mul-float v0, p1, p1
 
-    .line 64
     :goto_a
     return v0
 

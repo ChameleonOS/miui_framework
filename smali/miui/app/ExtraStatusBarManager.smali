@@ -42,7 +42,6 @@
     .registers 1
 
     .prologue
-    .line 10
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,7 +53,6 @@
     .parameter "enable"
 
     .prologue
-    .line 66
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -68,10 +66,8 @@
     :goto_a
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 70
     return-void
 
-    .line 66
     :cond_e
     const/4 v0, 0x0
 
@@ -85,7 +81,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 101
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -114,7 +109,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 87
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -140,7 +134,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 73
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -169,7 +162,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 129
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -195,7 +187,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 115
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -220,7 +211,6 @@
     .parameter "enable"
 
     .prologue
-    .line 94
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -234,10 +224,8 @@
     :goto_a
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 98
     return-void
 
-    .line 94
     :cond_e
     const/4 v0, 0x0
 
@@ -250,7 +238,6 @@
     .parameter "enable"
 
     .prologue
-    .line 80
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -264,10 +251,8 @@
     :goto_a
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 84
     return-void
 
-    .line 80
     :cond_e
     const/4 v0, 0x0
 
@@ -280,7 +265,6 @@
     .parameter "enable"
 
     .prologue
-    .line 122
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -294,10 +278,8 @@
     :goto_a
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 126
     return-void
 
-    .line 122
     :cond_e
     const/4 v0, 0x0
 
@@ -310,7 +292,6 @@
     .parameter "enable"
 
     .prologue
-    .line 108
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -324,10 +305,8 @@
     :goto_a
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 112
     return-void
 
-    .line 108
     :cond_e
     const/4 v0, 0x0
 

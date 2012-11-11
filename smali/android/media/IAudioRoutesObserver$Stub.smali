@@ -34,15 +34,12 @@
     .registers 2
 
     .prologue
-    .line 18
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 19
     const-string v0, "android.media.IAudioRoutesObserver"
 
     invoke-virtual {p0, p0, v0}, Landroid/media/IAudioRoutesObserver$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 20
     return-void
 .end method
 
@@ -51,17 +48,13 @@
     .parameter "obj"
 
     .prologue
-    .line 27
     if-nez p0, :cond_4
 
-    .line 28
     const/4 v0, 0x0
 
-    .line 34
     :goto_3
     return-object v0
 
-    .line 30
     :cond_4
     const-string v1, "android.media.IAudioRoutesObserver"
 
@@ -69,7 +62,6 @@
 
     move-result-object v0
 
-    .line 31
     .local v0, iin:Landroid/os/IInterface;
     if-eqz v0, :cond_13
 
@@ -77,12 +69,10 @@
 
     if-eqz v1, :cond_13
 
-    .line 32
     check-cast v0, Landroid/media/IAudioRoutesObserver;
 
     goto :goto_3
 
-    .line 34
     :cond_13
     new-instance v0, Landroid/media/IAudioRoutesObserver$Stub$Proxy;
 
@@ -98,7 +88,6 @@
     .registers 1
 
     .prologue
-    .line 38
     return-object p0
 .end method
 
@@ -117,10 +106,8 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 42
     sparse-switch p1, :sswitch_data_28
 
-    .line 63
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -128,7 +115,6 @@
     :goto_8
     return v1
 
-    .line 46
     :sswitch_9
     const-string v2, "android.media.IAudioRoutesObserver"
 
@@ -136,20 +122,17 @@
 
     goto :goto_8
 
-    .line 51
     :sswitch_f
     const-string v2, "android.media.IAudioRoutesObserver"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 53
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     if-eqz v2, :cond_26
 
-    .line 54
     sget-object v2, Landroid/media/AudioRoutesInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v2, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -158,14 +141,12 @@
 
     check-cast v0, Landroid/media/AudioRoutesInfo;
 
-    .line 59
     .local v0, _arg0:Landroid/media/AudioRoutesInfo;
     :goto_22
     invoke-virtual {p0, v0}, Landroid/media/IAudioRoutesObserver$Stub;->dispatchAudioRoutesChanged(Landroid/media/AudioRoutesInfo;)V
 
     goto :goto_8
 
-    .line 57
     .end local v0           #_arg0:Landroid/media/AudioRoutesInfo;
     :cond_26
     const/4 v0, 0x0
@@ -173,7 +154,6 @@
     .restart local v0       #_arg0:Landroid/media/AudioRoutesInfo;
     goto :goto_22
 
-    .line 42
     :sswitch_data_28
     .sparse-switch
         0x1 -> :sswitch_f

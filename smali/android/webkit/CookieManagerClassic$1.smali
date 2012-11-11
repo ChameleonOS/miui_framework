@@ -35,7 +35,6 @@
     .parameter
 
     .prologue
-    .line 127
     iput-object p1, p0, Landroid/webkit/CookieManagerClassic$1;->this$0:Landroid/webkit/CookieManagerClassic;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -50,7 +49,6 @@
     .parameter "x0"
 
     .prologue
-    .line 127
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -66,17 +64,14 @@
     .parameter "none"
 
     .prologue
-    .line 130
     #calls: Landroid/webkit/CookieManagerClassic;->nativeRemoveSessionCookie()V
     invoke-static {}, Landroid/webkit/CookieManagerClassic;->access$000()V
 
-    .line 131
     iget-object v0, p0, Landroid/webkit/CookieManagerClassic$1;->this$0:Landroid/webkit/CookieManagerClassic;
 
     #calls: Landroid/webkit/CookieManagerClassic;->signalCookieOperationsComplete()V
     invoke-static {v0}, Landroid/webkit/CookieManagerClassic;->access$100(Landroid/webkit/CookieManagerClassic;)V
 
-    .line 132
     const/4 v0, 0x0
 
     return-object v0

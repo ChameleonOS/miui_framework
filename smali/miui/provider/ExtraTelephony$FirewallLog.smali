@@ -100,7 +100,6 @@
     .registers 1
 
     .prologue
-    .line 984
     const-string v0, "content://firewall/log"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -109,7 +108,6 @@
 
     sput-object v0, Lmiui/provider/ExtraTelephony$FirewallLog;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 986
     const-string v0, "content://firewall/logconversation"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -125,7 +123,6 @@
     .registers 1
 
     .prologue
-    .line 980
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -28,7 +28,6 @@
     .registers 1
 
     .prologue
-    .line 6
     .local p0, this:Lmiui/util/SimplePool$Manager;,"Lmiui/util/SimplePool$Manager<TT;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -55,7 +54,6 @@
     .end annotation
 
     .prologue
-    .line 9
     .local p0, this:Lmiui/util/SimplePool$Manager;,"Lmiui/util/SimplePool$Manager<TT;>;"
     .local p1, element:Ljava/lang/Object;,"TT;"
     return-void
@@ -71,7 +69,6 @@
     .end annotation
 
     .prologue
-    .line 11
     .local p0, this:Lmiui/util/SimplePool$Manager;,"Lmiui/util/SimplePool$Manager<TT;>;"
     .local p1, element:Ljava/lang/Object;,"TT;"
     return-void

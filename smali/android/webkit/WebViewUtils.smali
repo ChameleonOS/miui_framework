@@ -56,14 +56,12 @@
     .registers 3
 
     .prologue
-    .line 47
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
-    .line 50
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "baidu"
@@ -72,7 +70,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 51
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.baidu"
@@ -81,7 +78,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 53
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string/jumbo v1, "taobao"
@@ -90,7 +86,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 54
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.taobao"
@@ -99,7 +94,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string/jumbo v1, "tmall"
@@ -108,7 +102,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 57
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.tmall"
@@ -117,7 +110,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 59
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "360buy"
@@ -126,7 +118,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 60
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.360buy"
@@ -135,7 +126,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 62
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "amazon"
@@ -144,7 +134,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 64
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "dangdang"
@@ -153,7 +142,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 65
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.dangdang"
@@ -162,7 +150,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 67
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string/jumbo v1, "youyuan"
@@ -171,7 +158,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 69
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "ctrip"
@@ -180,7 +166,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 70
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string/jumbo v1, "me.ctrip"
@@ -189,7 +174,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 72
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "elong"
@@ -198,7 +182,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 73
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.elong"
@@ -207,7 +190,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 75
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "ifeng"
@@ -216,7 +198,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 76
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "i.ifeng"
@@ -225,7 +206,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 78
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "ganji"
@@ -234,7 +214,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 79
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "3g.ganji"
@@ -243,7 +222,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 81
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "lexun"
@@ -252,7 +230,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 83
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "ddmap"
@@ -261,7 +238,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 84
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string/jumbo v1, "wap.ddmap"
@@ -270,7 +246,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 86
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string/jumbo v1, "shupeng"
@@ -279,7 +254,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 87
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.shupeng"
@@ -288,7 +262,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 89
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string/jumbo v1, "tv.sohu"
@@ -297,7 +270,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 90
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.tv.sohu"
@@ -306,7 +278,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 92
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "500wan"
@@ -315,7 +286,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 93
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "3g.500wan"
@@ -324,7 +294,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 95
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "diyicai"
@@ -333,7 +302,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 96
     sget-object v0, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     const-string v1, "m.diyicai"
@@ -342,7 +310,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 97
     return-void
 .end method
 
@@ -350,7 +317,6 @@
     .registers 1
 
     .prologue
-    .line 11
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -361,18 +327,15 @@
     .parameter "url"
 
     .prologue
-    .line 100
     if-nez p0, :cond_4
 
     const/4 p0, 0x0
 
-    .line 119
     .end local p0
     :cond_3
     :goto_3
     return-object p0
 
-    .line 102
     .restart local p0
     :cond_4
     :try_start_4
@@ -380,7 +343,6 @@
 
     move-result-object v3
 
-    .line 103
     .local v3, uri:Landroid/net/Uri;
     if-eqz v3, :cond_3
 
@@ -409,29 +371,24 @@
 
     if-nez v4, :cond_3
 
-    .line 105
     invoke-virtual {v3}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 106
     .local v0, host:Ljava/lang/String;
     if-eqz v0, :cond_3
 
-    .line 107
     const/16 v4, 0x2e
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v2
 
-    .line 108
     .local v2, lastIndex:I
     const/4 v4, -0x1
 
     if-eq v2, v4, :cond_3
 
-    .line 109
     const-string/jumbo v4, "www."
 
     invoke-virtual {v0, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -447,7 +404,6 @@
 
     move-result-object v1
 
-    .line 110
     .local v1, key:Ljava/lang/String;
     sget-object v4, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
@@ -457,7 +413,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 111
     sget-object v4, Landroid/webkit/WebViewUtils;->UNION_SITES_MAP:Ljava/util/HashMap;
 
     invoke-virtual {v4, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -472,14 +427,12 @@
 
     goto :goto_3
 
-    .line 109
     .end local v1           #key:Ljava/lang/String;
     :cond_51
     const/4 v4, 0x0
 
     goto :goto_3b
 
-    .line 116
     .end local v0           #host:Ljava/lang/String;
     .end local v2           #lastIndex:I
     .end local v3           #uri:Landroid/net/Uri;

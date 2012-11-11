@@ -25,7 +25,6 @@
     .registers 3
 
     .prologue
-    .line 356
     invoke-static {}, Lcom/android/internal/telephony/DataConnectionTracker$Activity;->values()[Lcom/android/internal/telephony/DataConnectionTracker$Activity;
 
     move-result-object v0
@@ -83,7 +82,6 @@
     :try_end_2a
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_8f
 
-    .line 325
     :goto_2a
     invoke-static {}, Lcom/android/internal/telephony/DataConnectionTracker$State;->values()[Lcom/android/internal/telephony/DataConnectionTracker$State;
 
@@ -244,7 +242,6 @@
 
     goto :goto_3e
 
-    .line 356
     :catch_8f
     move-exception v0
 

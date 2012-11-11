@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 91
     iput-object p1, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +38,14 @@
     .parameter "msg"
 
     .prologue
-    .line 94
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_ac
 
-    .line 130
     :cond_5
     :goto_5
     return-void
 
-    .line 96
     :pswitch_6
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -71,7 +67,6 @@
 
     goto :goto_5
 
-    .line 100
     :pswitch_18
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -95,7 +90,6 @@
 
     goto :goto_5
 
-    .line 104
     :pswitch_2c
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -117,7 +111,6 @@
 
     goto :goto_5
 
-    .line 108
     :pswitch_3e
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -130,7 +123,6 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 109
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
@@ -145,7 +137,6 @@
 
     if-eqz v0, :cond_61
 
-    .line 110
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mMetadata:Lcom/android/internal/widget/TransportControlView$Metadata;
@@ -160,7 +151,6 @@
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 112
     :cond_61
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -176,7 +166,6 @@
     #setter for: Lcom/android/internal/widget/TransportControlView$Metadata;->bitmap:Landroid/graphics/Bitmap;
     invoke-static {v1, v0}, Lcom/android/internal/widget/TransportControlView$Metadata;->access$502(Lcom/android/internal/widget/TransportControlView$Metadata;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 113
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mAlbumArt:Landroid/widget/ImageView;
@@ -200,13 +189,11 @@
 
     goto :goto_5
 
-    .line 118
     :pswitch_82
     iget v0, p1, Landroid/os/Message;->arg2:I
 
     if-eqz v0, :cond_99
 
-    .line 120
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
@@ -216,7 +203,6 @@
 
     if-eqz v0, :cond_99
 
-    .line 121
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     #getter for: Lcom/android/internal/widget/TransportControlView;->mWidgetCallbacks:Lcom/android/internal/widget/LockScreenWidgetCallback;
@@ -228,7 +214,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/internal/widget/LockScreenWidgetCallback;->requestHide(Landroid/view/View;)V
 
-    .line 125
     :cond_99
     iget-object v0, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
@@ -237,7 +222,6 @@
     #setter for: Lcom/android/internal/widget/TransportControlView;->mClientGeneration:I
     invoke-static {v0, v1}, Lcom/android/internal/widget/TransportControlView;->access$002(Lcom/android/internal/widget/TransportControlView;I)I
 
-    .line 126
     iget-object v1, p0, Lcom/android/internal/widget/TransportControlView$1;->this$0:Lcom/android/internal/widget/TransportControlView;
 
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -249,7 +233,6 @@
 
     goto/16 :goto_5
 
-    .line 94
     nop
 
     :pswitch_data_ac

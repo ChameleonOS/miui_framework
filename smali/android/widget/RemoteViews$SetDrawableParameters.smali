@@ -46,32 +46,24 @@
     .parameter "level"
 
     .prologue
-    .line 572
     iput-object p1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->this$0:Landroid/widget/RemoteViews;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    .line 573
     iput p2, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
 
-    .line 574
     iput-boolean p3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->targetBackground:Z
 
-    .line 575
     iput p4, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->alpha:I
 
-    .line 576
     iput p5, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->colorFilter:I
 
-    .line 577
     iput-object p6, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 578
     iput p7, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->level:I
 
-    .line 579
     return-void
 .end method
 
@@ -87,19 +79,16 @@
 
     const/4 v3, 0x0
 
-    .line 581
     iput-object p1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->this$0:Landroid/widget/RemoteViews;
 
     invoke-direct {p0, v4}, Landroid/widget/RemoteViews$Action;-><init>(Landroid/widget/RemoteViews$1;)V
 
-    .line 582
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
 
-    .line 583
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -111,21 +100,18 @@
     :goto_15
     iput-boolean v1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->targetBackground:Z
 
-    .line 584
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->alpha:I
 
-    .line 585
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->colorFilter:I
 
-    .line 586
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -134,12 +120,10 @@
 
     move v0, v2
 
-    .line 587
     .local v0, hasMode:Z
     :goto_2a
     if-eqz v0, :cond_41
 
-    .line 588
     invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v1
@@ -150,7 +134,6 @@
 
     iput-object v1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
 
-    .line 592
     :goto_36
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
@@ -158,23 +141,19 @@
 
     iput v1, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->level:I
 
-    .line 593
     return-void
 
     .end local v0           #hasMode:Z
     :cond_3d
     move v1, v3
 
-    .line 583
     goto :goto_15
 
     :cond_3f
     move v0, v3
 
-    .line 586
     goto :goto_2a
 
-    .line 590
     .restart local v0       #hasMode:Z
     :cond_41
     iput-object v4, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
@@ -193,53 +172,43 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 612
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 613
     .local v1, target:Landroid/view/View;
     if-nez v1, :cond_a
 
-    .line 636
     :cond_9
     :goto_9
     return-void
 
-    .line 616
     :cond_a
     const/4 v2, 0x0
 
-    .line 617
     .local v2, targetDrawable:Landroid/graphics/drawable/Drawable;
     iget-boolean v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->targetBackground:Z
 
     if-eqz v3, :cond_37
 
-    .line 618
     invoke-virtual {v1}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 624
     :cond_13
     :goto_13
     if-eqz v2, :cond_9
 
-    .line 626
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->alpha:I
 
     if-eq v3, v5, :cond_1e
 
-    .line 627
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->alpha:I
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 629
     :cond_1e
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->colorFilter:I
 
@@ -249,27 +218,23 @@
 
     if-eqz v3, :cond_2d
 
-    .line 630
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->colorFilter:I
 
     iget-object v4, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 632
     :cond_2d
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->level:I
 
     if-eq v3, v5, :cond_9
 
-    .line 633
     iget v3, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->level:I
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
 
     goto :goto_9
 
-    .line 619
     :cond_37
     instance-of v3, v1, Landroid/widget/ImageView;
 
@@ -277,10 +242,8 @@
 
     move-object v0, v1
 
-    .line 620
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 621
     .local v0, imageView:Landroid/widget/ImageView;
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -299,17 +262,14 @@
 
     const/4 v2, 0x0
 
-    .line 596
     const/4 v0, 0x3
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 597
     iget v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->viewId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 598
     iget-boolean v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->targetBackground:Z
 
     if-eqz v0, :cond_33
@@ -319,25 +279,20 @@
     :goto_10
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 599
     iget v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->alpha:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 600
     iget v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->colorFilter:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 601
     iget-object v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
 
     if-eqz v0, :cond_35
 
-    .line 602
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 603
     iget-object v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->filterMode:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {v0}, Landroid/graphics/PorterDuff$Mode;->toString()Ljava/lang/String;
@@ -346,22 +301,18 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 607
     :goto_2d
     iget v0, p0, Landroid/widget/RemoteViews$SetDrawableParameters;->level:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 608
     return-void
 
     :cond_33
     move v0, v2
 
-    .line 598
     goto :goto_10
 
-    .line 605
     :cond_35
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 

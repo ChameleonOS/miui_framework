@@ -26,20 +26,16 @@
     .parameter "params"
 
     .prologue
-    .line 45
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     iput-object p1, p0, Landroid/speech/tts/SynthesisRequest;->mText:Ljava/lang/String;
 
-    .line 48
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0, p2}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
     iput-object v0, p0, Landroid/speech/tts/SynthesisRequest;->mParams:Landroid/os/Bundle;
 
-    .line 49
     return-void
 .end method
 
@@ -49,7 +45,6 @@
     .registers 2
 
     .prologue
-    .line 69
     iget-object v0, p0, Landroid/speech/tts/SynthesisRequest;->mCountry:Ljava/lang/String;
 
     return-object v0
@@ -59,7 +54,6 @@
     .registers 2
 
     .prologue
-    .line 62
     iget-object v0, p0, Landroid/speech/tts/SynthesisRequest;->mLanguage:Ljava/lang/String;
 
     return-object v0
@@ -69,7 +63,6 @@
     .registers 2
 
     .prologue
-    .line 97
     iget-object v0, p0, Landroid/speech/tts/SynthesisRequest;->mParams:Landroid/os/Bundle;
 
     return-object v0
@@ -79,7 +72,6 @@
     .registers 2
 
     .prologue
-    .line 90
     iget v0, p0, Landroid/speech/tts/SynthesisRequest;->mPitch:I
 
     return v0
@@ -89,7 +81,6 @@
     .registers 2
 
     .prologue
-    .line 83
     iget v0, p0, Landroid/speech/tts/SynthesisRequest;->mSpeechRate:I
 
     return v0
@@ -99,7 +90,6 @@
     .registers 2
 
     .prologue
-    .line 55
     iget-object v0, p0, Landroid/speech/tts/SynthesisRequest;->mText:Ljava/lang/String;
 
     return-object v0
@@ -109,7 +99,6 @@
     .registers 2
 
     .prologue
-    .line 76
     iget-object v0, p0, Landroid/speech/tts/SynthesisRequest;->mVariant:Ljava/lang/String;
 
     return-object v0
@@ -122,16 +111,12 @@
     .parameter "variant"
 
     .prologue
-    .line 104
     iput-object p1, p0, Landroid/speech/tts/SynthesisRequest;->mLanguage:Ljava/lang/String;
 
-    .line 105
     iput-object p2, p0, Landroid/speech/tts/SynthesisRequest;->mCountry:Ljava/lang/String;
 
-    .line 106
     iput-object p3, p0, Landroid/speech/tts/SynthesisRequest;->mVariant:Ljava/lang/String;
 
-    .line 107
     return-void
 .end method
 
@@ -140,10 +125,8 @@
     .parameter "pitch"
 
     .prologue
-    .line 120
     iput p1, p0, Landroid/speech/tts/SynthesisRequest;->mPitch:I
 
-    .line 121
     return-void
 .end method
 
@@ -152,9 +135,7 @@
     .parameter "speechRate"
 
     .prologue
-    .line 113
     iput p1, p0, Landroid/speech/tts/SynthesisRequest;->mSpeechRate:I
 
-    .line 114
     return-void
 .end method

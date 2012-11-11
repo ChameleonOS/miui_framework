@@ -74,10 +74,8 @@
 
     const/4 v3, 0x1
 
-    .line 19
     sput-boolean v4, Lmiui/content/res/ThemeResources;->DBG:Z
 
-    .line 42
     const/4 v0, 0x2
 
     new-array v0, v0, [Lmiui/content/res/ThemeResources$MetaData;
@@ -100,7 +98,6 @@
 
     sput-object v0, Lmiui/content/res/ThemeResources;->THEME_PATHS:[Lmiui/content/res/ThemeResources$MetaData;
 
-    .line 57
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -140,23 +137,18 @@
     .parameter "metaData"
 
     .prologue
-    .line 88
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
     iput-object p1, p0, Lmiui/content/res/ThemeResources;->mWrapped:Lmiui/content/res/ThemeResources;
 
-    .line 90
     iput-object p2, p0, Lmiui/content/res/ThemeResources;->mResources:Landroid/content/res/Resources;
 
-    .line 91
     invoke-static {p4, p3}, Lmiui/content/res/ThemeZipFile;->getThemeZipFile(Lmiui/content/res/ThemeResources$MetaData;Ljava/lang/String;)Lmiui/content/res/ThemeZipFile;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/content/res/ThemeResources;->mPackageZipFile:Lmiui/content/res/ThemeZipFile;
 
-    .line 92
     const-string v0, "icons"
 
     invoke-virtual {v0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -170,13 +162,10 @@
     :goto_16
     iput-boolean v0, p0, Lmiui/content/res/ThemeResources;->mSupportWrapper:Z
 
-    .line 93
     invoke-virtual {p0}, Lmiui/content/res/ThemeResources;->checkUpdate()Z
 
-    .line 94
     return-void
 
-    .line 92
     :cond_1c
     const/4 v0, 0x0
 
@@ -187,17 +176,14 @@
     .registers 2
 
     .prologue
-    .line 168
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lmiui/content/res/ThemeResources;->sLockWallpaperModifiedTime:J
 
-    .line 169
     const/4 v0, 0x0
 
     sput-object v0, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
 
-    .line 170
     return-void
 .end method
 
@@ -208,14 +194,12 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 173
     sget-object v7, Lmiui/content/res/ThemeResources;->sSystem:Lmiui/content/res/ThemeResourcesSystem;
 
     invoke-virtual {v7}, Lmiui/content/res/ThemeResourcesSystem;->getLockscreenWallpaper()Ljava/io/File;
 
     move-result-object v2
 
-    .line 175
     .local v2, file:Ljava/io/File;
     if-eqz v2, :cond_f
 
@@ -225,12 +209,10 @@
 
     if-nez v7, :cond_10
 
-    .line 204
     :cond_f
     :goto_f
     return-object v6
 
-    .line 180
     :cond_10
     sget-wide v7, Lmiui/content/res/ThemeResources;->sLockWallpaperModifiedTime:J
 
@@ -242,12 +224,10 @@
 
     if-nez v7, :cond_1d
 
-    .line 181
     sget-object v6, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
 
     goto :goto_f
 
-    .line 185
     :cond_1d
     invoke-virtual {v2}, Ljava/io/File;->lastModified()J
 
@@ -255,10 +235,8 @@
 
     sput-wide v7, Lmiui/content/res/ThemeResources;->sLockWallpaperModifiedTime:J
 
-    .line 186
     sput-object v6, Lmiui/content/res/ThemeResources;->sLockWallpaperCache:Landroid/graphics/drawable/Drawable;
 
-    .line 188
     :try_start_25
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
@@ -268,19 +246,15 @@
 
     move-result-object v1
 
-    .line 189
     .local v1, display:Landroid/util/DisplayMetrics;
     iget v5, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 190
     .local v5, width:I
     iget v3, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 191
     .local v3, height:I
     if-le v5, v3, :cond_58
 
-    .line 192
     const-string v6, "LockWallpaper"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -313,17 +287,13 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 193
     move v4, v5
 
-    .line 194
     .local v4, tmp:I
     move v5, v3
 
-    .line 195
     move v3, v4
 
-    .line 198
     .end local v4           #tmp:I
     :cond_58
     new-instance v6, Lmiui/util/InputStreamLoader;
@@ -338,7 +308,6 @@
 
     move-result-object v0
 
-    .line 199
     .local v0, bitmap:Landroid/graphics/Bitmap;
     new-instance v6, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -353,7 +322,6 @@
     .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_70} :catch_75
     .catch Ljava/lang/OutOfMemoryError; {:try_start_25 .. :try_end_70} :catch_73
 
-    .line 204
     .end local v0           #bitmap:Landroid/graphics/Bitmap;
     .end local v1           #display:Landroid/util/DisplayMetrics;
     .end local v3           #height:I
@@ -363,13 +331,11 @@
 
     goto :goto_f
 
-    .line 201
     :catch_73
     move-exception v6
 
     goto :goto_70
 
-    .line 200
     :catch_75
     move-exception v6
 
@@ -381,19 +347,16 @@
     .parameter "resources"
 
     .prologue
-    .line 67
     sget-object v0, Lmiui/content/res/ThemeResources;->sSystem:Lmiui/content/res/ThemeResourcesSystem;
 
     if-nez v0, :cond_a
 
-    .line 68
     invoke-static {p0}, Lmiui/content/res/ThemeResourcesSystem;->getTopLevelThemeResources(Landroid/content/res/Resources;)Lmiui/content/res/ThemeResourcesSystem;
 
     move-result-object v0
 
     sput-object v0, Lmiui/content/res/ThemeResources;->sSystem:Lmiui/content/res/ThemeResourcesSystem;
 
-    .line 70
     :cond_a
     sget-object v0, Lmiui/content/res/ThemeResources;->sSystem:Lmiui/content/res/ThemeResourcesSystem;
 
@@ -404,7 +367,6 @@
     .registers 1
 
     .prologue
-    .line 62
     sget-object v0, Lmiui/content/res/ThemeResources;->sSystem:Lmiui/content/res/ThemeResourcesSystem;
 
     return-object v0
@@ -416,10 +378,8 @@
     .parameter "componentName"
 
     .prologue
-    .line 74
     const/4 v1, 0x0
 
-    .line 75
     .local v1, themeResources:Lmiui/content/res/ThemeResources;
     const/4 v0, 0x0
 
@@ -431,7 +391,6 @@
 
     if-ge v0, v3, :cond_14
 
-    .line 76
     new-instance v2, Lmiui/content/res/ThemeResources;
 
     sget-object v3, Lmiui/content/res/ThemeResources;->THEME_PATHS:[Lmiui/content/res/ThemeResources$MetaData;
@@ -440,7 +399,6 @@
 
     invoke-direct {v2, v1, p0, p1, v3}, Lmiui/content/res/ThemeResources;-><init>(Lmiui/content/res/ThemeResources;Landroid/content/res/Resources;Ljava/lang/String;Lmiui/content/res/ThemeResources$MetaData;)V
 
-    .line 75
     .end local v1           #themeResources:Lmiui/content/res/ThemeResources;
     .local v2, themeResources:Lmiui/content/res/ThemeResources;
     add-int/lit8 v0, v0, 0x1
@@ -451,7 +409,6 @@
     .restart local v1       #themeResources:Lmiui/content/res/ThemeResources;
     goto :goto_2
 
-    .line 78
     :cond_14
     return-object v1
 .end method
@@ -466,7 +423,6 @@
 
     const/4 v3, 0x0
 
-    .line 97
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mPackageZipFile:Lmiui/content/res/ThemeZipFile;
 
     iget-object v4, p0, Lmiui/content/res/ThemeResources;->mResources:Landroid/content/res/Resources;
@@ -475,7 +431,6 @@
 
     move-result v0
 
-    .line 98
     .local v0, result:Z
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mWrapped:Lmiui/content/res/ThemeResources;
 
@@ -499,12 +454,10 @@
     :goto_1b
     iput-boolean v1, p0, Lmiui/content/res/ThemeResources;->mHasWrapped:Z
 
-    .line 99
     iget-boolean v1, p0, Lmiui/content/res/ThemeResources;->mHasWrapped:Z
 
     if-eqz v1, :cond_2c
 
-    .line 100
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mWrapped:Lmiui/content/res/ThemeResources;
 
     invoke-virtual {v1}, Lmiui/content/res/ThemeResources;->checkUpdate()Z
@@ -518,7 +471,6 @@
     :cond_2b
     move v0, v2
 
-    .line 102
     :cond_2c
     :goto_2c
     invoke-virtual {p0}, Lmiui/content/res/ThemeResources;->hasValuesInner()Z
@@ -527,19 +479,16 @@
 
     iput-boolean v1, p0, Lmiui/content/res/ThemeResources;->mHasValue:Z
 
-    .line 103
     return v0
 
     :cond_33
     move v1, v3
 
-    .line 98
     goto :goto_1b
 
     :cond_35
     move v0, v3
 
-    .line 100
     goto :goto_2c
 .end method
 
@@ -548,14 +497,12 @@
     .parameter "name"
 
     .prologue
-    .line 117
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mPackageZipFile:Lmiui/content/res/ThemeZipFile;
 
     invoke-virtual {v1, p1}, Lmiui/content/res/ThemeZipFile;->containsEntry(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 118
     .local v0, ret:Z
     if-nez v0, :cond_1a
 
@@ -571,14 +518,12 @@
 
     if-eqz v1, :cond_1a
 
-    .line 119
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mWrapped:Lmiui/content/res/ThemeResources;
 
     invoke-virtual {v1, p1}, Lmiui/content/res/ThemeResources;->containsEntry(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 121
     :cond_1a
     return v0
 .end method
@@ -588,7 +533,6 @@
     .parameter "id"
 
     .prologue
-    .line 145
     invoke-virtual {p0, p1}, Lmiui/content/res/ThemeResources;->getThemeCharSequenceInner(I)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -601,14 +545,12 @@
     .parameter "id"
 
     .prologue
-    .line 137
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mPackageZipFile:Lmiui/content/res/ThemeZipFile;
 
     invoke-virtual {v1, p1}, Lmiui/content/res/ThemeZipFile;->getThemeCharSequence(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 138
     .local v0, ret:Ljava/lang/CharSequence;
     if-nez v0, :cond_12
 
@@ -616,14 +558,12 @@
 
     if-eqz v1, :cond_12
 
-    .line 139
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mWrapped:Lmiui/content/res/ThemeResources;
 
     invoke-virtual {v1, p1}, Lmiui/content/res/ThemeResources;->getThemeCharSequenceInner(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 141
     :cond_12
     return-object v0
 .end method
@@ -634,7 +574,6 @@
     .parameter "fileName"
 
     .prologue
-    .line 161
     invoke-virtual {p0, p2}, Lmiui/content/res/ThemeResources;->getThemeFileStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
@@ -647,7 +586,6 @@
     .parameter "relativeFilePath"
 
     .prologue
-    .line 157
     invoke-virtual {p0, p1}, Lmiui/content/res/ThemeResources;->getThemeFileStreamInner(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
@@ -660,14 +598,12 @@
     .parameter "relativeFilePath"
 
     .prologue
-    .line 149
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mPackageZipFile:Lmiui/content/res/ThemeZipFile;
 
     invoke-virtual {v1, p1}, Lmiui/content/res/ThemeZipFile;->getInputStream(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
-    .line 150
     .local v0, ret:Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
     if-nez v0, :cond_12
 
@@ -675,14 +611,12 @@
 
     if-eqz v1, :cond_12
 
-    .line 151
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mWrapped:Lmiui/content/res/ThemeResources;
 
     invoke-virtual {v1, p1}, Lmiui/content/res/ThemeResources;->getThemeFileStreamInner(Ljava/lang/String;)Lmiui/content/res/ThemeZipFile$ThemeFileInfo;
 
     move-result-object v0
 
-    .line 153
     :cond_12
     return-object v0
 .end method
@@ -692,7 +626,6 @@
     .parameter "id"
 
     .prologue
-    .line 133
     invoke-virtual {p0, p1}, Lmiui/content/res/ThemeResources;->getThemeIntInner(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -705,14 +638,12 @@
     .parameter "id"
 
     .prologue
-    .line 125
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mPackageZipFile:Lmiui/content/res/ThemeZipFile;
 
     invoke-virtual {v1, p1}, Lmiui/content/res/ThemeZipFile;->getThemeInt(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 126
     .local v0, ret:Ljava/lang/Integer;
     if-nez v0, :cond_12
 
@@ -720,14 +651,12 @@
 
     if-eqz v1, :cond_12
 
-    .line 127
     iget-object v1, p0, Lmiui/content/res/ThemeResources;->mWrapped:Lmiui/content/res/ThemeResources;
 
     invoke-virtual {v1, p1}, Lmiui/content/res/ThemeResources;->getThemeIntInner(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 129
     :cond_12
     return-object v0
 .end method
@@ -736,7 +665,6 @@
     .registers 2
 
     .prologue
-    .line 111
     iget-boolean v0, p0, Lmiui/content/res/ThemeResources;->mHasValue:Z
 
     return v0
@@ -746,7 +674,6 @@
     .registers 2
 
     .prologue
-    .line 107
     iget-object v0, p0, Lmiui/content/res/ThemeResources;->mPackageZipFile:Lmiui/content/res/ThemeZipFile;
 
     invoke-virtual {v0}, Lmiui/content/res/ThemeZipFile;->hasValues()Z

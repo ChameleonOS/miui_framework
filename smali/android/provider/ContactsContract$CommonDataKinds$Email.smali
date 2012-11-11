@@ -47,7 +47,6 @@
     .registers 2
 
     .prologue
-    .line 5598
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "emails"
@@ -58,7 +57,6 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 5616
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "lookup"
@@ -69,7 +67,6 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_LOOKUP_URI:Landroid/net/Uri;
 
-    .line 5636
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter"
@@ -87,7 +84,6 @@
     .registers 1
 
     .prologue
-    .line 5583
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -100,7 +96,6 @@
     .parameter "label"
 
     .prologue
-    .line 5677
     if-nez p1, :cond_9
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -109,19 +104,16 @@
 
     if-nez v1, :cond_9
 
-    .line 5681
     .end local p2
     :goto_8
     return-object p2
 
-    .line 5680
     .restart local p2
     :cond_9
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Email;->getTypeLabelResource(I)I
 
     move-result v0
 
-    .line 5681
     .local v0, labelRes:I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -135,40 +127,33 @@
     .parameter "type"
 
     .prologue
-    .line 5661
     packed-switch p0, :pswitch_data_18
 
-    .line 5666
     const v0, 0x10402bf
 
     :goto_6
     return v0
 
-    .line 5662
     :pswitch_7
     const v0, 0x10402c0
 
     goto :goto_6
 
-    .line 5663
     :pswitch_b
     const v0, 0x10402c1
 
     goto :goto_6
 
-    .line 5664
     :pswitch_f
     const v0, 0x10402c2
 
     goto :goto_6
 
-    .line 5665
     :pswitch_13
     const v0, 0x10402c3
 
     goto :goto_6
 
-    .line 5661
     nop
 
     :pswitch_data_18

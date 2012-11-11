@@ -33,21 +33,15 @@
     .parameter "alt"
 
     .prologue
-    .line 345
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 346
     iput p1, p0, Landroid/media/TimedText$HyperText;->startChar:I
 
-    .line 347
     iput p2, p0, Landroid/media/TimedText$HyperText;->endChar:I
 
-    .line 348
     iput-object p3, p0, Landroid/media/TimedText$HyperText;->URL:Ljava/lang/String;
 
-    .line 349
     iput-object p4, p0, Landroid/media/TimedText$HyperText;->altString:Ljava/lang/String;
 
-    .line 350
     return-void
 .end method

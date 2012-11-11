@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 145
     iput-object p1, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,22 +38,18 @@
     .parameter "msg"
 
     .prologue
-    .line 148
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_9a
 
-    .line 203
     :goto_5
     return-void
 
-    .line 150
     :pswitch_6
     const-class v4, Landroid/webkit/WebCoreThreadWatchdog;
 
     monitor-enter v4
 
-    .line 151
     :try_start_9
     iget-object v3, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
@@ -65,12 +60,10 @@
 
     if-eqz v3, :cond_16
 
-    .line 152
     monitor-exit v4
 
     goto :goto_5
 
-    .line 162
     :catchall_13
     move-exception v3
 
@@ -80,14 +73,12 @@
 
     throw v3
 
-    .line 156
     :cond_16
     const/16 v3, 0x65
 
     :try_start_18
     invoke-virtual {p0, v3}, Landroid/webkit/WebCoreThreadWatchdog$1;->removeMessages(I)V
 
-    .line 157
     const/16 v3, 0x65
 
     invoke-virtual {p0, v3}, Landroid/webkit/WebCoreThreadWatchdog$1;->obtainMessage(I)Landroid/os/Message;
@@ -98,7 +89,6 @@
 
     invoke-virtual {p0, v3, v5, v6}, Landroid/webkit/WebCoreThreadWatchdog$1;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 158
     iget-object v3, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
     #getter for: Landroid/webkit/WebCoreThreadWatchdog;->mWebCoreThreadHandler:Landroid/os/Handler;
@@ -136,24 +126,20 @@
 
     invoke-virtual {v3, v5, v6, v7}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 162
     monitor-exit v4
     :try_end_4a
     .catchall {:try_start_18 .. :try_end_4a} :catchall_13
 
     goto :goto_5
 
-    .line 166
     :pswitch_4b
     const/4 v2, 0x0
 
-    .line 167
     .local v2, postedDialog:Z
     const-class v4, Landroid/webkit/WebCoreThreadWatchdog;
 
     monitor-enter v4
 
-    .line 168
     :try_start_4f
     iget-object v3, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
 
@@ -166,7 +152,6 @@
 
     move-result-object v1
 
-    .line 171
     .local v1, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/webkit/WebViewClassic;>;"
     :cond_59
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -175,7 +160,6 @@
 
     if-eqz v3, :cond_86
 
-    .line 172
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
@@ -186,7 +170,6 @@
 
     move-result-object v0
 
-    .line 174
     .local v0, activeView:Landroid/webkit/WebView;
     invoke-virtual {v0}, Landroid/webkit/WebView;->getWindowToken()Landroid/os/IBinder;
 
@@ -200,7 +183,6 @@
 
     if-eqz v3, :cond_59
 
-    .line 176
     new-instance v3, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;
 
     iget-object v5, p0, Landroid/webkit/WebCoreThreadWatchdog$1;->this$0:Landroid/webkit/WebCoreThreadWatchdog;
@@ -215,15 +197,12 @@
 
     move-result v2
 
-    .line 179
     if-eqz v2, :cond_59
 
-    .line 192
     .end local v0           #activeView:Landroid/webkit/WebView;
     :cond_86
     if-nez v2, :cond_93
 
-    .line 197
     const/16 v3, 0x65
 
     invoke-virtual {p0, v3}, Landroid/webkit/WebCoreThreadWatchdog$1;->obtainMessage(I)Landroid/os/Message;
@@ -234,7 +213,6 @@
 
     invoke-virtual {p0, v3, v5, v6}, Landroid/webkit/WebCoreThreadWatchdog$1;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 200
     :cond_93
     monitor-exit v4
 
@@ -250,7 +228,6 @@
 
     throw v3
 
-    .line 148
     nop
 
     :pswitch_data_9a

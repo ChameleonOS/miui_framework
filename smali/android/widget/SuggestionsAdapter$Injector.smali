@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 61
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
     .parameter "activityInfo"
 
     .prologue
-    .line 63
     invoke-virtual {p3, p0}, Landroid/content/pm/ActivityInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0

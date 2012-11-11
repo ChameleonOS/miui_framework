@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 362
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,24 +44,20 @@
     .parameter "in"
 
     .prologue
-    .line 365
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 366
     .local v1, type:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 367
     .local v2, status:I
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    .line 368
     .local v3, transId:I
     const/4 v0, 0x0
 
@@ -72,55 +67,44 @@
 
     check-cast v4, Landroid/net/wifi/p2p/WifiP2pDevice;
 
-    .line 369
     .local v4, dev:Landroid/net/wifi/p2p/WifiP2pDevice;
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 370
     .local v6, len:I
     const/4 v5, 0x0
 
-    .line 371
     .local v5, data:[B
     if-lez v6, :cond_1f
 
-    .line 372
     new-array v5, v6, [B
 
-    .line 373
     invoke-virtual {p1, v5}, Landroid/os/Parcel;->readByteArray([B)V
 
-    .line 375
     :cond_1f
     const/4 v0, 0x1
 
     if-ne v1, v0, :cond_27
 
-    .line 376
     invoke-static {v2, v3, v4, v5}, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->newInstance(IILandroid/net/wifi/p2p/WifiP2pDevice;[B)Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;
 
     move-result-object v0
 
-    .line 382
     :goto_26
     return-object v0
 
-    .line 378
     :cond_27
     const/4 v0, 0x2
 
     if-ne v1, v0, :cond_2f
 
-    .line 379
     invoke-static {v2, v3, v4, v5}, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->newInstance(IILandroid/net/wifi/p2p/WifiP2pDevice;[B)Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;
 
     move-result-object v0
 
     goto :goto_26
 
-    .line 382
     :cond_2f
     new-instance v0, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;
 
@@ -134,7 +118,6 @@
     .parameter "x0"
 
     .prologue
-    .line 362
     invoke-virtual {p0, p1}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;
 
     move-result-object v0
@@ -147,7 +130,6 @@
     .parameter "size"
 
     .prologue
-    .line 386
     new-array v0, p1, [Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;
 
     return-object v0
@@ -158,7 +140,6 @@
     .parameter "x0"
 
     .prologue
-    .line 362
     invoke-virtual {p0, p1}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse$1;->newArray(I)[Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;
 
     move-result-object v0

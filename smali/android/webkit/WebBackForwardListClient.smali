@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,7 +21,6 @@
     .parameter "index"
 
     .prologue
-    .line 39
     return-void
 .end method
 
@@ -31,6 +29,5 @@
     .parameter "item"
 
     .prologue
-    .line 31
     return-void
 .end method

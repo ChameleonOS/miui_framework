@@ -684,14 +684,12 @@
 
     const/4 v3, 0x4
 
-    .line 8
     new-array v0, v3, [B
 
     fill-array-data v0, :array_149c
 
     sput-object v0, Lmiui/telephony/phonenumber/TelocationConstants;->FILE_TAG:[B
 
-    .line 341
     const/16 v0, 0x196
 
     new-array v0, v0, [Ljava/lang/String;
@@ -3124,7 +3122,6 @@
 
     sput-object v0, Lmiui/telephony/phonenumber/TelocationConstants;->AREA_CODES:[Ljava/lang/String;
 
-    .line 378
     const/16 v0, 0x196
 
     new-array v0, v0, [Ljava/lang/String;
@@ -5559,7 +5556,6 @@
 
     return-void
 
-    .line 8
     :array_149c
     .array-data 0x1
         0x54t
@@ -5573,7 +5569,6 @@
     .registers 1
 
     .prologue
-    .line 7
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

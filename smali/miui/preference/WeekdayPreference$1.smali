@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 73
     iput-object p1, p0, Lmiui/preference/WeekdayPreference$1;->this$0:Lmiui/preference/WeekdayPreference;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +43,6 @@
     .parameter "isChecked"
 
     .prologue
-    .line 76
     iget-object v0, p0, Lmiui/preference/WeekdayPreference$1;->this$0:Lmiui/preference/WeekdayPreference;
 
     #getter for: Lmiui/preference/WeekdayPreference;->mNewDaysOfWeek:Lmiui/preference/WeekdayPreference$DaysOfWeek;
@@ -54,6 +52,5 @@
 
     invoke-virtual {v0, p2, p3}, Lmiui/preference/WeekdayPreference$DaysOfWeek;->set(IZ)V
 
-    .line 77
     return-void
 .end method

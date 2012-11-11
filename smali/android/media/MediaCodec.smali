@@ -46,15 +46,12 @@
     .registers 1
 
     .prologue
-    .line 512
     const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 513
     invoke-static {}, Landroid/media/MediaCodec;->native_init()V
 
-    .line 514
     return-void
 .end method
 
@@ -65,13 +62,10 @@
     .parameter "encoder"
 
     .prologue
-    .line 204
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 205
     invoke-direct {p0, p1, p2, p3}, Landroid/media/MediaCodec;->native_setup(Ljava/lang/String;ZZ)V
 
-    .line 206
     return-void
 .end method
 
@@ -82,7 +76,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 199
     new-instance v0, Landroid/media/MediaCodec;
 
     invoke-direct {v0, p0, v1, v1}, Landroid/media/MediaCodec;-><init>(Ljava/lang/String;ZZ)V
@@ -95,7 +88,6 @@
     .parameter "type"
 
     .prologue
-    .line 181
     new-instance v0, Landroid/media/MediaCodec;
 
     const/4 v1, 0x1
@@ -114,7 +106,6 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 189
     new-instance v0, Landroid/media/MediaCodec;
 
     invoke-direct {v0, p0, v1, v1}, Landroid/media/MediaCodec;-><init>(Ljava/lang/String;ZZ)V
@@ -160,41 +151,33 @@
     .parameter "flags"
 
     .prologue
-    .line 240
     invoke-virtual {p1}, Landroid/media/MediaFormat;->getMap()Ljava/util/Map;
 
     move-result-object v7
 
-    .line 242
     .local v7, formatMap:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     const/4 v1, 0x0
 
-    .line 243
     .local v1, keys:[Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 245
     .local v2, values:[Ljava/lang/Object;
     if-eqz p1, :cond_3a
 
-    .line 246
     invoke-interface {v7}, Ljava/util/Map;->size()I
 
     move-result v0
 
     new-array v1, v0, [Ljava/lang/String;
 
-    .line 247
     invoke-interface {v7}, Ljava/util/Map;->size()I
 
     move-result v0
 
     new-array v2, v0, [Ljava/lang/Object;
 
-    .line 249
     const/4 v8, 0x0
 
-    .line 250
     .local v8, i:I
     invoke-interface {v7}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -218,7 +201,6 @@
 
     check-cast v6, Ljava/util/Map$Entry;
 
-    .line 251
     .local v6, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-interface {v6}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -228,14 +210,12 @@
 
     aput-object v0, v1, v8
 
-    .line 252
     invoke-interface {v6}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
     aput-object v0, v2, v8
 
-    .line 253
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1d
@@ -252,10 +232,8 @@
 
     move v5, p4
 
-    .line 257
     invoke-direct/range {v0 .. v5}, Landroid/media/MediaCodec;->native_configure([Ljava/lang/String;[Ljava/lang/Object;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
-    .line 258
     return-void
 .end method
 
@@ -269,10 +247,8 @@
     .registers 1
 
     .prologue
-    .line 210
     invoke-direct {p0}, Landroid/media/MediaCodec;->native_finalize()V
 
-    .line 211
     return-void
 .end method
 
@@ -283,7 +259,6 @@
     .registers 2
 
     .prologue
-    .line 473
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->getBuffers(Z)[Ljava/nio/ByteBuffer;
@@ -297,7 +272,6 @@
     .registers 2
 
     .prologue
-    .line 482
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/media/MediaCodec;->getBuffers(Z)[Ljava/nio/ByteBuffer;
@@ -311,7 +285,6 @@
     .registers 3
 
     .prologue
-    .line 464
     new-instance v0, Landroid/media/MediaFormat;
 
     invoke-direct {p0}, Landroid/media/MediaCodec;->getOutputFormatNative()Ljava/util/Map;

@@ -256,10 +256,8 @@
     .registers 0
 
     .prologue
-    .line 150
     invoke-static {}, Landroid/opengl/GLES11;->_nativeClassInit()V
 
-    .line 151
     return-void
 .end method
 
@@ -267,7 +265,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct {p0}, Landroid/opengl/GLES10;-><init>()V
 
     return-void
@@ -451,14 +448,12 @@
     .parameter "pointer"
 
     .prologue
-    .line 612
     invoke-virtual {p2}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
     invoke-static {p0, p1, p2, v0}, Landroid/opengl/GLES11;->glPointSizePointerOESBounds(IILjava/nio/Buffer;I)V
 
-    .line 618
     const/16 v0, 0x1406
 
     if-eq p0, v0, :cond_f
@@ -470,10 +465,8 @@
     :cond_f
     if-ltz p1, :cond_13
 
-    .line 621
     sput-object p2, Landroid/opengl/GLES11;->_pointSizePointerOES:Ljava/nio/Buffer;
 
-    .line 623
     :cond_13
     return-void
 .end method

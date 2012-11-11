@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 96
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,12 +44,10 @@
     .parameter "in"
 
     .prologue
-    .line 98
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 99
     .local v0, target:Landroid/os/IBinder;
     if-eqz v0, :cond_10
 
@@ -76,7 +73,6 @@
     .parameter "x0"
 
     .prologue
-    .line 96
     invoke-virtual {p0, p1}, Landroid/os/RemoteCallback$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/RemoteCallback;
 
     move-result-object v0
@@ -89,7 +85,6 @@
     .parameter "size"
 
     .prologue
-    .line 104
     new-array v0, p1, [Landroid/os/RemoteCallback;
 
     return-object v0
@@ -100,7 +95,6 @@
     .parameter "x0"
 
     .prologue
-    .line 96
     invoke-virtual {p0, p1}, Landroid/os/RemoteCallback$1;->newArray(I)[Landroid/os/RemoteCallback;
 
     move-result-object v0

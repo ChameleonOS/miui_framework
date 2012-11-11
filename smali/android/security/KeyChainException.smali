@@ -8,10 +8,8 @@
     .registers 1
 
     .prologue
-    .line 28
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 29
     return-void
 .end method
 
@@ -20,10 +18,8 @@
     .parameter "detailMessage"
 
     .prologue
-    .line 39
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 40
     return-void
 .end method
 
@@ -33,10 +29,8 @@
     .parameter "cause"
 
     .prologue
-    .line 52
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 53
     return-void
 .end method
 
@@ -45,7 +39,6 @@
     .parameter "cause"
 
     .prologue
-    .line 63
     if-nez p1, :cond_7
 
     const/4 v0, 0x0
@@ -53,10 +46,8 @@
     :goto_3
     invoke-direct {p0, v0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 64
     return-void
 
-    .line 63
     :cond_7
     invoke-virtual {p1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 

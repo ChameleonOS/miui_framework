@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 384
     iput-object p1, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "velocityY"
 
     .prologue
-    .line 388
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     #getter for: Landroid/inputmethodservice/KeyboardView;->mPossiblePoly:Z
@@ -54,23 +52,19 @@
 
     const/4 v0, 0x0
 
-    .line 432
     :goto_9
     return v0
 
-    .line 389
     :cond_a
     invoke-static/range {p3 .. p3}, Ljava/lang/Math;->abs(F)F
 
     move-result v6
 
-    .line 390
     .local v6, absX:F
     invoke-static/range {p4 .. p4}, Ljava/lang/Math;->abs(F)F
 
     move-result v7
 
-    .line 391
     .local v7, absY:F
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getX()F
 
@@ -82,7 +76,6 @@
 
     sub-float v8, v0, v1
 
-    .line 392
     .local v8, deltaX:F
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getY()F
 
@@ -94,7 +87,6 @@
 
     sub-float v9, v0, v1
 
-    .line 393
     .local v9, deltaY:F
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
@@ -104,7 +96,6 @@
 
     div-int/lit8 v13, v0, 0x2
 
-    .line 394
     .local v13, travelX:I
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
@@ -114,7 +105,6 @@
 
     div-int/lit8 v14, v0, 0x2
 
-    .line 395
     .local v14, travelY:I
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
@@ -127,7 +117,6 @@
 
     invoke-virtual {v0, v1}, Landroid/inputmethodservice/KeyboardView$SwipeTracker;->computeCurrentVelocity(I)V
 
-    .line 396
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     #getter for: Landroid/inputmethodservice/KeyboardView;->mSwipeTracker:Landroid/inputmethodservice/KeyboardView$SwipeTracker;
@@ -139,7 +128,6 @@
 
     move-result v10
 
-    .line 397
     .local v10, endingVelocityX:F
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
@@ -152,11 +140,9 @@
 
     move-result v11
 
-    .line 398
     .local v11, endingVelocityY:F
     const/4 v12, 0x0
 
-    .line 399
     .local v12, sendDownKey:Z
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
@@ -181,7 +167,6 @@
 
     if-lez v0, :cond_a3
 
-    .line 400
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     #getter for: Landroid/inputmethodservice/KeyboardView;->mDisambiguateSwipe:Z
@@ -199,15 +184,12 @@
 
     if-gez v0, :cond_9b
 
-    .line 401
     const/4 v12, 0x1
 
-    .line 429
     :cond_7b
     :goto_7b
     if-eqz v12, :cond_98
 
-    .line 430
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     iget-object v1, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
@@ -238,24 +220,20 @@
     #calls: Landroid/inputmethodservice/KeyboardView;->detectAndSendKey(IIIJ)V
     invoke-static/range {v0 .. v5}, Landroid/inputmethodservice/KeyboardView;->access$1200(Landroid/inputmethodservice/KeyboardView;IIIJ)V
 
-    .line 432
     :cond_98
     const/4 v0, 0x0
 
     goto/16 :goto_9
 
-    .line 403
     :cond_9b
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->swipeRight()V
 
-    .line 404
     const/4 v0, 0x1
 
     goto/16 :goto_9
 
-    .line 406
     :cond_a3
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
@@ -284,7 +262,6 @@
 
     if-gez v0, :cond_d3
 
-    .line 407
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     #getter for: Landroid/inputmethodservice/KeyboardView;->mDisambiguateSwipe:Z
@@ -302,23 +279,19 @@
 
     if-lez v0, :cond_cb
 
-    .line 408
     const/4 v12, 0x1
 
     goto :goto_7b
 
-    .line 410
     :cond_cb
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->swipeLeft()V
 
-    .line 411
     const/4 v0, 0x1
 
     goto/16 :goto_9
 
-    .line 413
     :cond_d3
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
@@ -347,7 +320,6 @@
 
     if-gez v0, :cond_103
 
-    .line 414
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     #getter for: Landroid/inputmethodservice/KeyboardView;->mDisambiguateSwipe:Z
@@ -365,23 +337,19 @@
 
     if-lez v0, :cond_fb
 
-    .line 415
     const/4 v12, 0x1
 
     goto :goto_7b
 
-    .line 417
     :cond_fb
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->swipeUp()V
 
-    .line 418
     const/4 v0, 0x1
 
     goto/16 :goto_9
 
-    .line 420
     :cond_103
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
@@ -410,7 +378,6 @@
 
     if-lez v0, :cond_7b
 
-    .line 421
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     #getter for: Landroid/inputmethodservice/KeyboardView;->mDisambiguateSwipe:Z
@@ -428,18 +395,15 @@
 
     if-gez v0, :cond_12e
 
-    .line 422
     const/4 v12, 0x1
 
     goto/16 :goto_7b
 
-    .line 424
     :cond_12e
     iget-object v0, p0, Landroid/inputmethodservice/KeyboardView$2;->this$0:Landroid/inputmethodservice/KeyboardView;
 
     invoke-virtual {v0}, Landroid/inputmethodservice/KeyboardView;->swipeDown()V
 
-    .line 425
     const/4 v0, 0x1
 
     goto/16 :goto_9

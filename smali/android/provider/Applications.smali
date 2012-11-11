@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 41
     const-string v0, "content://applications"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -48,7 +47,6 @@
     .registers 1
 
     .prologue
-    .line 70
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +58,6 @@
     .parameter "className"
 
     .prologue
-    .line 111
     sget-object v0, Landroid/provider/Applications;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -96,7 +93,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 77
     sget-object v0, Landroid/provider/Applications;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -126,7 +122,6 @@
 
     move-object v5, v2
 
-    .line 78
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
@@ -141,15 +136,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 91
     if-nez p0, :cond_4
 
-    .line 99
     :cond_3
     :goto_3
     return-object v3
 
-    .line 92
     :cond_4
     const-string v4, "content"
 
@@ -163,7 +155,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 93
     const-string v4, "applications"
 
     invoke-virtual {p0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
@@ -176,12 +167,10 @@
 
     if-eqz v4, :cond_3
 
-    .line 94
     invoke-virtual {p0}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v2
 
-    .line 95
     .local v2, pathSegments:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -191,7 +180,6 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 96
     const-string v4, "applications"
 
     const/4 v5, 0x0
@@ -206,7 +194,6 @@
 
     if-eqz v4, :cond_3
 
-    .line 97
     const/4 v3, 0x1
 
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -215,7 +202,6 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 98
     .local v1, packageName:Ljava/lang/String;
     const/4 v3, 0x2
 
@@ -225,7 +211,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 99
     .local v0, name:Ljava/lang/String;
     new-instance v3, Landroid/content/ComponentName;
 

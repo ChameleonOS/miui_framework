@@ -13,13 +13,10 @@
     .parameter "table"
 
     .prologue
-    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     iput-object p1, p0, Lcom/android/internal/telephony/IccServiceTable;->mServiceTable:[B
 
-    .line 29
     return-void
 .end method
 
@@ -40,10 +37,8 @@
 
     const/4 v3, 0x0
 
-    .line 43
     div-int/lit8 v1, p1, 0x8
 
-    .line 44
     .local v1, offset:I
     iget-object v4, p0, Lcom/android/internal/telephony/IccServiceTable;->mServiceTable:[B
 
@@ -51,7 +46,6 @@
 
     if-lt v1, v4, :cond_35
 
-    .line 46
     invoke-virtual {p0}, Lcom/android/internal/telephony/IccServiceTable;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -94,15 +88,12 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 51
     :goto_34
     return v3
 
-    .line 50
     :cond_35
     rem-int/lit8 v0, p1, 0x8
 
-    .line 51
     .local v0, bit:I
     iget-object v4, p0, Lcom/android/internal/telephony/IccServiceTable;->mServiceTable:[B
 
@@ -129,18 +120,15 @@
     .registers 11
 
     .prologue
-    .line 55
     invoke-virtual {p0}, Lcom/android/internal/telephony/IccServiceTable;->getValues()[Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 56
     .local v7, values:[Ljava/lang/Object;
     iget-object v8, p0, Lcom/android/internal/telephony/IccServiceTable;->mServiceTable:[B
 
     array-length v5, v8
 
-    .line 57
     .local v5, numBytes:I
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -168,11 +156,9 @@
 
     move-result-object v2
 
-    .line 60
     .local v2, builder:Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
-    .line 61
     .local v0, addComma:Z
     const/4 v4, 0x0
 
@@ -180,12 +166,10 @@
     :goto_24
     if-ge v4, v5, :cond_5b
 
-    .line 62
     iget-object v8, p0, Lcom/android/internal/telephony/IccServiceTable;->mServiceTable:[B
 
     aget-byte v3, v8, v4
 
-    .line 63
     .local v3, currentByte:B
     const/4 v1, 0x0
 
@@ -195,7 +179,6 @@
 
     if-ge v1, v8, :cond_58
 
-    .line 64
     const/4 v8, 0x1
 
     shl-int/2addr v8, v1
@@ -204,32 +187,26 @@
 
     if-eqz v8, :cond_47
 
-    .line 65
     if-eqz v0, :cond_4a
 
-    .line 66
     const-string v8, ", "
 
     invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 70
     :goto_3b
     mul-int/lit8 v8, v4, 0x8
 
     add-int v6, v8, v1
 
-    .line 71
     .local v6, ordinal:I
     array-length v8, v7
 
     if-ge v6, v8, :cond_4c
 
-    .line 72
     aget-object v8, v7, v6
 
     invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 63
     .end local v6           #ordinal:I
     :cond_47
     :goto_47
@@ -237,13 +214,11 @@
 
     goto :goto_2b
 
-    .line 68
     :cond_4a
     const/4 v0, 0x1
 
     goto :goto_3b
 
-    .line 74
     .restart local v6       #ordinal:I
     :cond_4c
     const/16 v8, 0x23
@@ -258,14 +233,12 @@
 
     goto :goto_47
 
-    .line 61
     .end local v6           #ordinal:I
     :cond_58
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_24
 
-    .line 79
     .end local v1           #bit:I
     .end local v3           #currentByte:B
     :cond_5b

@@ -35,7 +35,6 @@
     .registers 2
 
     .prologue
-    .line 157
     sget-object v0, Landroid/provider/SocialContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "activities"
@@ -46,7 +45,6 @@
 
     sput-object v0, Landroid/provider/SocialContract$Activities;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 163
     sget-object v0, Landroid/provider/SocialContract$Activities;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "authored_by"
@@ -57,7 +55,6 @@
 
     sput-object v0, Landroid/provider/SocialContract$Activities;->CONTENT_AUTHORED_BY_URI:Landroid/net/Uri;
 
-    .line 171
     sget-object v0, Landroid/provider/SocialContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string v1, "contact_status"
@@ -75,9 +72,7 @@
     .registers 1
 
     .prologue
-    .line 151
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 152
     return-void
 .end method

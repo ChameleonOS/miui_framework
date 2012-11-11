@@ -24,10 +24,8 @@
     .parameter
 
     .prologue
-    .line 489
     iput-object p1, p0, Landroid/widget/CursorTreeAdapter$MyCursorHelper$MyContentObserver;->this$1:Landroid/widget/CursorTreeAdapter$MyCursorHelper;
 
-    .line 490
     iget-object v0, p1, Landroid/widget/CursorTreeAdapter$MyCursorHelper;->this$0:Landroid/widget/CursorTreeAdapter;
 
     #getter for: Landroid/widget/CursorTreeAdapter;->mHandler:Landroid/os/Handler;
@@ -37,7 +35,6 @@
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 491
     return-void
 .end method
 
@@ -47,7 +44,6 @@
     .registers 2
 
     .prologue
-    .line 495
     const/4 v0, 0x1
 
     return v0
@@ -58,7 +54,6 @@
     .parameter "selfChange"
 
     .prologue
-    .line 500
     iget-object v0, p0, Landroid/widget/CursorTreeAdapter$MyCursorHelper$MyContentObserver;->this$1:Landroid/widget/CursorTreeAdapter$MyCursorHelper;
 
     iget-object v0, v0, Landroid/widget/CursorTreeAdapter$MyCursorHelper;->this$0:Landroid/widget/CursorTreeAdapter;
@@ -79,7 +74,6 @@
 
     if-eqz v0, :cond_21
 
-    .line 503
     iget-object v0, p0, Landroid/widget/CursorTreeAdapter$MyCursorHelper$MyContentObserver;->this$1:Landroid/widget/CursorTreeAdapter$MyCursorHelper;
 
     iget-object v1, p0, Landroid/widget/CursorTreeAdapter$MyCursorHelper$MyContentObserver;->this$1:Landroid/widget/CursorTreeAdapter$MyCursorHelper;
@@ -96,7 +90,6 @@
     #setter for: Landroid/widget/CursorTreeAdapter$MyCursorHelper;->mDataValid:Z
     invoke-static {v0, v1}, Landroid/widget/CursorTreeAdapter$MyCursorHelper;->access$402(Landroid/widget/CursorTreeAdapter$MyCursorHelper;Z)Z
 
-    .line 505
     :cond_21
     return-void
 .end method

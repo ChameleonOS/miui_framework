@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 69
     new-instance v0, Landroid/text/TextDirectionHeuristics$TriState;
 
     const-string v1, "TRUE"
@@ -69,7 +68,6 @@
 
     sput-object v0, Landroid/text/TextDirectionHeuristics$TriState;->UNKNOWN:Landroid/text/TextDirectionHeuristics$TriState;
 
-    .line 68
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/text/TextDirectionHeuristics$TriState;
@@ -102,7 +100,6 @@
     .end annotation
 
     .prologue
-    .line 68
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -113,7 +110,6 @@
     .parameter "name"
 
     .prologue
-    .line 68
     const-class v0, Landroid/text/TextDirectionHeuristics$TriState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -129,7 +125,6 @@
     .registers 1
 
     .prologue
-    .line 68
     sget-object v0, Landroid/text/TextDirectionHeuristics$TriState;->$VALUES:[Landroid/text/TextDirectionHeuristics$TriState;
 
     invoke-virtual {v0}, [Landroid/text/TextDirectionHeuristics$TriState;->clone()Ljava/lang/Object;

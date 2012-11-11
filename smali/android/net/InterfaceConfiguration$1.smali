@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 140
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,12 +44,10 @@
     .parameter "in"
 
     .prologue
-    .line 142
     new-instance v1, Landroid/net/InterfaceConfiguration;
 
     invoke-direct {v1}, Landroid/net/InterfaceConfiguration;-><init>()V
 
-    .line 143
     .local v1, info:Landroid/net/InterfaceConfiguration;
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
@@ -59,7 +56,6 @@
     #setter for: Landroid/net/InterfaceConfiguration;->mHwAddr:Ljava/lang/String;
     invoke-static {v1, v3}, Landroid/net/InterfaceConfiguration;->access$002(Landroid/net/InterfaceConfiguration;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 144
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
     move-result v3
@@ -68,7 +64,6 @@
 
     if-ne v3, v4, :cond_1d
 
-    .line 145
     const/4 v3, 0x0
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
@@ -80,13 +75,11 @@
     #setter for: Landroid/net/InterfaceConfiguration;->mAddr:Landroid/net/LinkAddress;
     invoke-static {v1, v3}, Landroid/net/InterfaceConfiguration;->access$102(Landroid/net/InterfaceConfiguration;Landroid/net/LinkAddress;)Landroid/net/LinkAddress;
 
-    .line 147
     :cond_1d
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 148
     .local v2, size:I
     const/4 v0, 0x0
 
@@ -94,7 +87,6 @@
     :goto_22
     if-ge v0, v2, :cond_32
 
-    .line 149
     #getter for: Landroid/net/InterfaceConfiguration;->mFlags:Ljava/util/HashSet;
     invoke-static {v1}, Landroid/net/InterfaceConfiguration;->access$200(Landroid/net/InterfaceConfiguration;)Ljava/util/HashSet;
 
@@ -106,12 +98,10 @@
 
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 148
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_22
 
-    .line 151
     :cond_32
     return-object v1
 .end method
@@ -121,7 +111,6 @@
     .parameter "x0"
 
     .prologue
-    .line 140
     invoke-virtual {p0, p1}, Landroid/net/InterfaceConfiguration$1;->createFromParcel(Landroid/os/Parcel;)Landroid/net/InterfaceConfiguration;
 
     move-result-object v0
@@ -134,7 +123,6 @@
     .parameter "size"
 
     .prologue
-    .line 155
     new-array v0, p1, [Landroid/net/InterfaceConfiguration;
 
     return-object v0
@@ -145,7 +133,6 @@
     .parameter "x0"
 
     .prologue
-    .line 140
     invoke-virtual {p0, p1}, Landroid/net/InterfaceConfiguration$1;->newArray(I)[Landroid/net/InterfaceConfiguration;
 
     move-result-object v0

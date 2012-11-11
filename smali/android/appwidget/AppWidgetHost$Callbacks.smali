@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 53
     iput-object p1, p0, Landroid/appwidget/AppWidgetHost$Callbacks;->this$0:Landroid/appwidget/AppWidgetHost;
 
     invoke-direct {p0}, Lcom/android/internal/appwidget/IAppWidgetHost$Stub;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "info"
 
     .prologue
-    .line 62
     iget-object v1, p0, Landroid/appwidget/AppWidgetHost$Callbacks;->this$0:Landroid/appwidget/AppWidgetHost;
 
     iget-object v1, v1, Landroid/appwidget/AppWidgetHost;->mHandler:Landroid/os/Handler;
@@ -51,17 +49,13 @@
 
     move-result-object v0
 
-    .line 63
     .local v0, msg:Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 64
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 65
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 66
     return-void
 .end method
 
@@ -71,7 +65,6 @@
     .parameter "views"
 
     .prologue
-    .line 55
     iget-object v1, p0, Landroid/appwidget/AppWidgetHost$Callbacks;->this$0:Landroid/appwidget/AppWidgetHost;
 
     iget-object v1, v1, Landroid/appwidget/AppWidgetHost;->mHandler:Landroid/os/Handler;
@@ -82,17 +75,13 @@
 
     move-result-object v0
 
-    .line 56
     .local v0, msg:Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 57
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 58
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 59
     return-void
 .end method
 
@@ -102,7 +91,6 @@
     .parameter "viewId"
 
     .prologue
-    .line 69
     iget-object v1, p0, Landroid/appwidget/AppWidgetHost$Callbacks;->this$0:Landroid/appwidget/AppWidgetHost;
 
     iget-object v1, v1, Landroid/appwidget/AppWidgetHost;->mHandler:Landroid/os/Handler;
@@ -113,16 +101,12 @@
 
     move-result-object v0
 
-    .line 70
     .local v0, msg:Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 71
     iput p2, v0, Landroid/os/Message;->arg2:I
 
-    .line 72
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 73
     return-void
 .end method

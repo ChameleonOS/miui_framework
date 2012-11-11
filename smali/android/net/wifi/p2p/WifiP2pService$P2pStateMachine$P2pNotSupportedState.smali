@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 457
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -41,19 +40,15 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 460
     iget v1, p1, Landroid/os/Message;->what:I
 
     sparse-switch v1, :sswitch_data_90
 
-    .line 524
     const/4 v0, 0x0
 
-    .line 526
     :goto_7
     return v0
 
-    .line 462
     :sswitch_8
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -64,7 +59,6 @@
 
     goto :goto_7
 
-    .line 466
     :sswitch_11
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -75,7 +69,6 @@
 
     goto :goto_7
 
-    .line 470
     :sswitch_1a
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -86,7 +79,6 @@
 
     goto :goto_7
 
-    .line 474
     :sswitch_23
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -97,7 +89,6 @@
 
     goto :goto_7
 
-    .line 478
     :sswitch_2c
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -108,7 +99,6 @@
 
     goto :goto_7
 
-    .line 482
     :sswitch_35
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -119,7 +109,6 @@
 
     goto :goto_7
 
-    .line 486
     :sswitch_3e
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -130,7 +119,6 @@
 
     goto :goto_7
 
-    .line 490
     :sswitch_47
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -141,7 +129,6 @@
 
     goto :goto_7
 
-    .line 494
     :sswitch_50
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -152,7 +139,6 @@
 
     goto :goto_7
 
-    .line 498
     :sswitch_59
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -163,7 +149,6 @@
 
     goto :goto_7
 
-    .line 502
     :sswitch_62
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -174,7 +159,6 @@
 
     goto :goto_7
 
-    .line 506
     :sswitch_6b
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -185,7 +169,6 @@
 
     goto :goto_7
 
-    .line 510
     :sswitch_74
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -196,7 +179,6 @@
 
     goto :goto_7
 
-    .line 515
     :sswitch_7d
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -207,7 +189,6 @@
 
     goto :goto_7
 
-    .line 520
     :sswitch_86
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pNotSupportedState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -218,7 +199,6 @@
 
     goto/16 :goto_7
 
-    .line 460
     :sswitch_data_90
     .sparse-switch
         0x22001 -> :sswitch_8

@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +19,6 @@
     .parameter "b"
 
     .prologue
-    .line 40
     if-eq p0, p1, :cond_a
 
     if-eqz p0, :cond_c
@@ -48,7 +46,6 @@
     .parameter "objects"
 
     .prologue
-    .line 59
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0

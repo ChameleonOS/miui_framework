@@ -30,18 +30,13 @@
     .parameter "deltaValue"
 
     .prologue
-    .line 221
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 222
     iput p1, p0, Landroid/view/ViewPropertyAnimator$NameValuesHolder;->mNameConstant:I
 
-    .line 223
     iput p2, p0, Landroid/view/ViewPropertyAnimator$NameValuesHolder;->mFromValue:F
 
-    .line 224
     iput p3, p0, Landroid/view/ViewPropertyAnimator$NameValuesHolder;->mDeltaValue:F
 
-    .line 225
     return-void
 .end method

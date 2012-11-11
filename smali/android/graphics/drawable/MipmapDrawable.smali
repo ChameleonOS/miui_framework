@@ -25,10 +25,8 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 89
     invoke-direct {p0, v0, v0}, Landroid/graphics/drawable/MipmapDrawable;-><init>(Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;Landroid/content/res/Resources;)V
 
-    .line 90
     return-void
 .end method
 
@@ -38,25 +36,19 @@
     .parameter "res"
 
     .prologue
-    .line 306
     invoke-direct {p0}, Landroid/graphics/drawable/DrawableContainer;-><init>()V
 
-    .line 307
     new-instance v0, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;
 
     invoke-direct {v0, p1, p0, p2}, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;-><init>(Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;Landroid/graphics/drawable/MipmapDrawable;Landroid/content/res/Resources;)V
 
-    .line 308
     .local v0, as:Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;
     iput-object v0, p0, Landroid/graphics/drawable/MipmapDrawable;->mMipmapContainerState:Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;
 
-    .line 309
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/MipmapDrawable;->setConstantState(Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;)V
 
-    .line 310
     invoke-direct {p0}, Landroid/graphics/drawable/MipmapDrawable;->onDrawableAdded()V
 
-    .line 311
     return-void
 .end method
 
@@ -67,7 +59,6 @@
     .parameter "x2"
 
     .prologue
-    .line 84
     invoke-direct {p0, p1, p2}, Landroid/graphics/drawable/MipmapDrawable;-><init>(Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;Landroid/content/res/Resources;)V
 
     return-void
@@ -77,19 +68,16 @@
     .registers 2
 
     .prologue
-    .line 114
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/MipmapDrawable;->selectDrawable(I)Z
 
-    .line 115
     invoke-virtual {p0}, Landroid/graphics/drawable/MipmapDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/MipmapDrawable;->onBoundsChange(Landroid/graphics/Rect;)V
 
-    .line 116
     return-void
 .end method
 
@@ -100,18 +88,14 @@
     .parameter "drawable"
 
     .prologue
-    .line 102
     if-eqz p1, :cond_a
 
-    .line 103
     iget-object v0, p0, Landroid/graphics/drawable/MipmapDrawable;->mMipmapContainerState:Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->addDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 104
     invoke-direct {p0}, Landroid/graphics/drawable/MipmapDrawable;->onDrawableAdded()V
 
-    .line 106
     :cond_a
     return-void
 .end method
@@ -133,17 +117,14 @@
 
     const/4 v8, 0x0
 
-    .line 134
     invoke-super {p0, p1, p2, p3}, Landroid/graphics/drawable/DrawableContainer;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)V
 
-    .line 138
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v6
 
     add-int/lit8 v4, v6, 0x1
 
-    .line 141
     .local v4, innerDepth:I
     :cond_b
     :goto_b
@@ -167,11 +148,9 @@
 
     if-eq v5, v6, :cond_75
 
-    .line 143
     :cond_1b
     if-ne v5, v9, :cond_b
 
-    .line 147
     if-gt v1, v4, :cond_b
 
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -186,32 +165,26 @@
 
     if-eqz v6, :cond_b
 
-    .line 151
     sget-object v6, Lcom/android/internal/R$styleable;->MipmapDrawableItem:[I
 
     invoke-virtual {p1, p3, v6}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 154
     .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v8, v8}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v3
 
-    .line 157
     .local v3, drawableRes:I
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 160
     if-eqz v3, :cond_44
 
-    .line 161
     invoke-virtual {p1, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 174
     .local v2, dr:Landroid/graphics/drawable/Drawable;
     :goto_3e
     iget-object v6, p0, Landroid/graphics/drawable/MipmapDrawable;->mMipmapContainerState:Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;
@@ -220,7 +193,6 @@
 
     goto :goto_b
 
-    .line 163
     .end local v2           #dr:Landroid/graphics/drawable/Drawable;
     :cond_44
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -231,10 +203,8 @@
 
     if-eq v5, v6, :cond_44
 
-    .line 165
     if-eq v5, v9, :cond_70
 
-    .line 166
     new-instance v6, Lorg/xmlpull/v1/XmlPullParserException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -269,7 +239,6 @@
 
     throw v6
 
-    .line 171
     :cond_70
     invoke-static {p1, p2, p3}, Landroid/graphics/drawable/Drawable;->createFromXmlInner(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Landroid/graphics/drawable/Drawable;
 
@@ -278,7 +247,6 @@
     .restart local v2       #dr:Landroid/graphics/drawable/Drawable;
     goto :goto_3e
 
-    .line 177
     .end local v0           #a:Landroid/content/res/TypedArray;
     .end local v1           #depth:I
     .end local v2           #dr:Landroid/graphics/drawable/Drawable;
@@ -286,7 +254,6 @@
     :cond_75
     invoke-direct {p0}, Landroid/graphics/drawable/MipmapDrawable;->onDrawableAdded()V
 
-    .line 178
     return-void
 .end method
 
@@ -294,7 +261,6 @@
     .registers 3
 
     .prologue
-    .line 182
     iget-boolean v0, p0, Landroid/graphics/drawable/MipmapDrawable;->mMutated:Z
 
     if-nez v0, :cond_1e
@@ -305,7 +271,6 @@
 
     if-ne v0, p0, :cond_1e
 
-    .line 183
     iget-object v1, p0, Landroid/graphics/drawable/MipmapDrawable;->mMipmapContainerState:Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;
 
     iget-object v0, p0, Landroid/graphics/drawable/MipmapDrawable;->mMipmapContainerState:Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;
@@ -324,12 +289,10 @@
     #setter for: Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->mMipmapHeights:[I
     invoke-static {v1, v0}, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->access$002(Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;[I)[I
 
-    .line 184
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/graphics/drawable/MipmapDrawable;->mMutated:Z
 
-    .line 186
     :cond_1e
     return-object p0
 .end method
@@ -339,20 +302,16 @@
     .parameter "bounds"
 
     .prologue
-    .line 122
     iget-object v1, p0, Landroid/graphics/drawable/MipmapDrawable;->mMipmapContainerState:Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;
 
     invoke-virtual {v1, p1}, Landroid/graphics/drawable/MipmapDrawable$MipmapContainerState;->indexForBounds(Landroid/graphics/Rect;)I
 
     move-result v0
 
-    .line 125
     .local v0, index:I
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/MipmapDrawable;->selectDrawable(I)Z
 
-    .line 127
     invoke-super {p0, p1}, Landroid/graphics/drawable/DrawableContainer;->onBoundsChange(Landroid/graphics/Rect;)V
 
-    .line 128
     return-void
 .end method

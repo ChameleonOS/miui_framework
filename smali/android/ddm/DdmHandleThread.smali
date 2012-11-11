@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 31
     const-string v0, "THEN"
 
     invoke-static {v0}, Landroid/ddm/DdmHandleThread;->type(Ljava/lang/String;)I
@@ -31,7 +30,6 @@
 
     sput v0, Landroid/ddm/DdmHandleThread;->CHUNK_THEN:I
 
-    .line 32
     const-string v0, "THCR"
 
     invoke-static {v0}, Landroid/ddm/DdmHandleThread;->type(Ljava/lang/String;)I
@@ -40,7 +38,6 @@
 
     sput v0, Landroid/ddm/DdmHandleThread;->CHUNK_THCR:I
 
-    .line 33
     const-string v0, "THDE"
 
     invoke-static {v0}, Landroid/ddm/DdmHandleThread;->type(Ljava/lang/String;)I
@@ -49,7 +46,6 @@
 
     sput v0, Landroid/ddm/DdmHandleThread;->CHUNK_THDE:I
 
-    .line 34
     const-string v0, "THST"
 
     invoke-static {v0}, Landroid/ddm/DdmHandleThread;->type(Ljava/lang/String;)I
@@ -58,7 +54,6 @@
 
     sput v0, Landroid/ddm/DdmHandleThread;->CHUNK_THST:I
 
-    .line 35
     const-string v0, "STKL"
 
     invoke-static {v0}, Landroid/ddm/DdmHandleThread;->type(Ljava/lang/String;)I
@@ -67,7 +62,6 @@
 
     sput v0, Landroid/ddm/DdmHandleThread;->CHUNK_STKL:I
 
-    .line 37
     new-instance v0, Landroid/ddm/DdmHandleThread;
 
     invoke-direct {v0}, Landroid/ddm/DdmHandleThread;-><init>()V
@@ -81,7 +75,6 @@
     .registers 1
 
     .prologue
-    .line 41
     invoke-direct {p0}, Lorg/apache/harmony/dalvik/ddmc/ChunkHandler;-><init>()V
 
     return-void
@@ -95,20 +88,15 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 146
     const/4 v1, 0x0
 
-    .line 148
     .local v1, bufferSize:I
     add-int/lit8 v1, v1, 0x4
 
-    .line 149
     add-int/lit8 v1, v1, 0x4
 
-    .line 150
     add-int/lit8 v1, v1, 0x4
 
-    .line 151
     move-object v0, p1
 
     .local v0, arr$:[Ljava/lang/StackTraceElement;
@@ -123,7 +111,6 @@
 
     aget-object v2, v0, v3
 
-    .line 152
     .local v2, elem:Ljava/lang/StackTraceElement;
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;
 
@@ -139,7 +126,6 @@
 
     add-int/2addr v1, v6
 
-    .line 153
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getMethodName()Ljava/lang/String;
 
     move-result-object v6
@@ -154,17 +140,14 @@
 
     add-int/2addr v1, v6
 
-    .line 154
     add-int/lit8 v1, v1, 0x4
 
-    .line 155
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;
 
     move-result-object v6
 
     if-eqz v6, :cond_3c
 
-    .line 156
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;
 
     move-result-object v6
@@ -177,35 +160,28 @@
 
     add-int/2addr v1, v6
 
-    .line 157
     :cond_3c
     add-int/lit8 v1, v1, 0x4
 
-    .line 151
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_b
 
-    .line 160
     .end local v2           #elem:Ljava/lang/StackTraceElement;
     :cond_41
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v5
 
-    .line 161
     .local v5, out:Ljava/nio/ByteBuffer;
     invoke-virtual {v5, v7}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 162
     invoke-virtual {v5, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 163
     array-length v6, p1
 
     invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 164
     move-object v0, p1
 
     array-length v4, v0
@@ -217,7 +193,6 @@
 
     aget-object v2, v0, v3
 
-    .line 165
     .restart local v2       #elem:Ljava/lang/StackTraceElement;
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;
 
@@ -229,14 +204,12 @@
 
     invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 166
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-static {v5, v6}, Landroid/ddm/DdmHandleThread;->putString(Ljava/nio/ByteBuffer;Ljava/lang/String;)V
 
-    .line 167
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getMethodName()Ljava/lang/String;
 
     move-result-object v6
@@ -247,21 +220,18 @@
 
     invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 168
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getMethodName()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-static {v5, v6}, Landroid/ddm/DdmHandleThread;->putString(Ljava/nio/ByteBuffer;Ljava/lang/String;)V
 
-    .line 169
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;
 
     move-result-object v6
 
     if-eqz v6, :cond_9c
 
-    .line 170
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;
 
     move-result-object v6
@@ -272,14 +242,12 @@
 
     invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 171
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-static {v5, v6}, Landroid/ddm/DdmHandleThread;->putString(Ljava/nio/ByteBuffer;Ljava/lang/String;)V
 
-    .line 175
     :goto_92
     invoke-virtual {v2}, Ljava/lang/StackTraceElement;->getLineNumber()I
 
@@ -287,18 +255,15 @@
 
     invoke-virtual {v5, v6}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 164
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_52
 
-    .line 173
     :cond_9c
     invoke-virtual {v5, v7}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
     goto :goto_92
 
-    .line 178
     .end local v2           #elem:Ljava/lang/StackTraceElement;
     :cond_a0
     new-instance v6, Lorg/apache/harmony/dalvik/ddmc/Chunk;
@@ -315,28 +280,23 @@
     .parameter "request"
 
     .prologue
-    .line 124
     invoke-static {p1}, Landroid/ddm/DdmHandleThread;->wrapChunk(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 127
     .local v0, in:Ljava/nio/ByteBuffer;
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
 
     move-result v1
 
-    .line 131
     .local v1, threadId:I
     invoke-static {v1}, Lorg/apache/harmony/dalvik/ddmc/DdmVmInternal;->getStackTraceById(I)[Ljava/lang/StackTraceElement;
 
     move-result-object v2
 
-    .line 132
     .local v2, trace:[Ljava/lang/StackTraceElement;
     if-nez v2, :cond_16
 
-    .line 133
     const/4 v3, 0x1
 
     const-string v4, "Stack trace unavailable"
@@ -345,7 +305,6 @@
 
     move-result-object v3
 
-    .line 135
     :goto_15
     return-object v3
 
@@ -362,12 +321,10 @@
     .parameter "request"
 
     .prologue
-    .line 88
     invoke-static {p1}, Landroid/ddm/DdmHandleThread;->wrapChunk(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 90
     .local v1, in:Ljava/nio/ByteBuffer;
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->get()B
 
@@ -377,17 +334,14 @@
 
     const/4 v0, 0x1
 
-    .line 93
     .local v0, enable:Z
     :goto_b
     invoke-static {v0}, Lorg/apache/harmony/dalvik/ddmc/DdmVmInternal;->threadNotify(Z)V
 
-    .line 94
     const/4 v2, 0x0
 
     return-object v2
 
-    .line 90
     .end local v0           #enable:Z
     :cond_10
     const/4 v0, 0x0
@@ -400,22 +354,18 @@
     .parameter "request"
 
     .prologue
-    .line 101
     invoke-static {p1}, Landroid/ddm/DdmHandleThread;->wrapChunk(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 106
     .local v0, in:Ljava/nio/ByteBuffer;
     invoke-static {}, Lorg/apache/harmony/dalvik/ddmc/DdmVmInternal;->getThreadStats()[B
 
     move-result-object v1
 
-    .line 107
     .local v1, status:[B
     if-eqz v1, :cond_14
 
-    .line 108
     new-instance v2, Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     sget v3, Landroid/ddm/DdmHandleThread;->CHUNK_THST:I
@@ -426,7 +376,6 @@
 
     invoke-direct {v2, v3, v1, v4, v5}, Lorg/apache/harmony/dalvik/ddmc/Chunk;-><init>(I[BII)V
 
-    .line 110
     :goto_13
     return-object v2
 
@@ -446,28 +395,24 @@
     .registers 2
 
     .prologue
-    .line 47
     sget v0, Landroid/ddm/DdmHandleThread;->CHUNK_THEN:I
 
     sget-object v1, Landroid/ddm/DdmHandleThread;->mInstance:Landroid/ddm/DdmHandleThread;
 
     invoke-static {v0, v1}, Lorg/apache/harmony/dalvik/ddmc/DdmServer;->registerHandler(ILorg/apache/harmony/dalvik/ddmc/ChunkHandler;)V
 
-    .line 48
     sget v0, Landroid/ddm/DdmHandleThread;->CHUNK_THST:I
 
     sget-object v1, Landroid/ddm/DdmHandleThread;->mInstance:Landroid/ddm/DdmHandleThread;
 
     invoke-static {v0, v1}, Lorg/apache/harmony/dalvik/ddmc/DdmServer;->registerHandler(ILorg/apache/harmony/dalvik/ddmc/ChunkHandler;)V
 
-    .line 49
     sget v0, Landroid/ddm/DdmHandleThread;->CHUNK_STKL:I
 
     sget-object v1, Landroid/ddm/DdmHandleThread;->mInstance:Landroid/ddm/DdmHandleThread;
 
     invoke-static {v0, v1}, Lorg/apache/harmony/dalvik/ddmc/DdmServer;->registerHandler(ILorg/apache/harmony/dalvik/ddmc/ChunkHandler;)V
 
-    .line 50
     return-void
 .end method
 
@@ -477,7 +422,6 @@
     .registers 1
 
     .prologue
-    .line 56
     return-void
 .end method
 
@@ -485,7 +429,6 @@
     .registers 1
 
     .prologue
-    .line 62
     return-void
 .end method
 
@@ -494,51 +437,42 @@
     .parameter "request"
 
     .prologue
-    .line 70
     iget v0, p1, Lorg/apache/harmony/dalvik/ddmc/Chunk;->type:I
 
-    .line 72
     .local v0, type:I
     sget v1, Landroid/ddm/DdmHandleThread;->CHUNK_THEN:I
 
     if-ne v0, v1, :cond_b
 
-    .line 73
     invoke-direct {p0, p1}, Landroid/ddm/DdmHandleThread;->handleTHEN(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     move-result-object v1
 
-    .line 77
     :goto_a
     return-object v1
 
-    .line 74
     :cond_b
     sget v1, Landroid/ddm/DdmHandleThread;->CHUNK_THST:I
 
     if-ne v0, v1, :cond_14
 
-    .line 75
     invoke-direct {p0, p1}, Landroid/ddm/DdmHandleThread;->handleTHST(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     move-result-object v1
 
     goto :goto_a
 
-    .line 76
     :cond_14
     sget v1, Landroid/ddm/DdmHandleThread;->CHUNK_STKL:I
 
     if-ne v0, v1, :cond_1d
 
-    .line 77
     invoke-direct {p0, p1}, Landroid/ddm/DdmHandleThread;->handleSTKL(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     move-result-object v1
 
     goto :goto_a
 
-    .line 79
     :cond_1d
     new-instance v1, Ljava/lang/RuntimeException;
 

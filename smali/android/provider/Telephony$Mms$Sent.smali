@@ -28,7 +28,6 @@
     .registers 1
 
     .prologue
-    .line 1440
     const-string v0, "content://mms/sent"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -44,7 +43,6 @@
     .registers 1
 
     .prologue
-    .line 1435
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

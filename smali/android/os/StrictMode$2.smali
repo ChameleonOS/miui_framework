@@ -30,7 +30,6 @@
     .registers 1
 
     .prologue
-    .line 1038
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -42,7 +41,6 @@
     .registers 2
 
     .prologue
-    .line 1038
     invoke-virtual {p0}, Landroid/os/StrictMode$2;->initialValue()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -63,7 +61,6 @@
     .end annotation
 
     .prologue
-    .line 1040
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V

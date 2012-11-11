@@ -29,7 +29,6 @@
     .parameter
 
     .prologue
-    .line 1677
     iput-object p1, p0, Landroid/widget/Editor$Blink;->this$0:Landroid/widget/Editor;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,7 +42,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1677
     invoke-direct {p0, p1}, Landroid/widget/Editor$Blink;-><init>(Landroid/widget/Editor;)V
 
     return-void
@@ -55,20 +53,16 @@
     .registers 2
 
     .prologue
-    .line 1697
     iget-boolean v0, p0, Landroid/widget/Editor$Blink;->mCancelled:Z
 
     if-nez v0, :cond_a
 
-    .line 1698
     invoke-virtual {p0, p0}, Landroid/widget/Editor$Blink;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1699
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/widget/Editor$Blink;->mCancelled:Z
 
-    .line 1701
     :cond_a
     return-void
 .end method
@@ -77,21 +71,17 @@
     .registers 5
 
     .prologue
-    .line 1681
     iget-boolean v0, p0, Landroid/widget/Editor$Blink;->mCancelled:Z
 
     if-eqz v0, :cond_5
 
-    .line 1694
     :cond_4
     :goto_4
     return-void
 
-    .line 1685
     :cond_5
     invoke-virtual {p0, p0}, Landroid/widget/Editor$Blink;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1687
     iget-object v0, p0, Landroid/widget/Editor$Blink;->this$0:Landroid/widget/Editor;
 
     #calls: Landroid/widget/Editor;->shouldBlink()Z
@@ -101,7 +91,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 1688
     iget-object v0, p0, Landroid/widget/Editor$Blink;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -115,7 +104,6 @@
 
     if-eqz v0, :cond_25
 
-    .line 1689
     iget-object v0, p0, Landroid/widget/Editor$Blink;->this$0:Landroid/widget/Editor;
 
     #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
@@ -125,7 +113,6 @@
 
     invoke-virtual {v0}, Landroid/widget/TextView;->invalidateCursorPath()V
 
-    .line 1692
     :cond_25
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -144,11 +131,9 @@
     .registers 2
 
     .prologue
-    .line 1704
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/widget/Editor$Blink;->mCancelled:Z
 
-    .line 1705
     return-void
 .end method

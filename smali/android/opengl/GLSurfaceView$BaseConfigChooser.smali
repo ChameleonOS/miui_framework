@@ -30,19 +30,16 @@
     .parameter "configSpec"
 
     .prologue
-    .line 849
     iput-object p1, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->this$0:Landroid/opengl/GLSurfaceView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 850
     invoke-direct {p0, p2}, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->filterConfigSpec([I)[I
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->mConfigSpec:[I
 
-    .line 851
     return-void
 .end method
 
@@ -53,7 +50,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 885
     iget-object v2, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->this$0:Landroid/opengl/GLSurfaceView;
 
     #getter for: Landroid/opengl/GLSurfaceView;->mEGLContextClientVersion:I
@@ -65,41 +61,34 @@
 
     if-eq v2, v3, :cond_b
 
-    .line 897
     .end local p1
     :goto_a
     return-object p1
 
-    .line 891
     .restart local p1
     :cond_b
     array-length v0, p1
 
-    .line 892
     .local v0, len:I
     add-int/lit8 v2, v0, 0x2
 
     new-array v1, v2, [I
 
-    .line 893
     .local v1, newConfigSpec:[I
     add-int/lit8 v2, v0, -0x1
 
     invoke-static {p1, v4, v1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 894
     add-int/lit8 v2, v0, -0x1
 
     const/16 v3, 0x3040
 
     aput v3, v1, v2
 
-    .line 895
     const/4 v2, 0x4
 
     aput v2, v1, v0
 
-    .line 896
     add-int/lit8 v2, v0, 0x1
 
     const/16 v3, 0x3038
@@ -108,7 +97,6 @@
 
     move-object p1, v1
 
-    .line 897
     goto :goto_a
 .end method
 
@@ -122,12 +110,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 854
     const/4 v0, 0x1
 
     new-array v5, v0, [I
 
-    .line 855
     .local v5, num_config:[I
     iget-object v2, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->mConfigSpec:[I
 
@@ -143,7 +129,6 @@
 
     if-nez v0, :cond_17
 
-    .line 857
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "eglChooseConfig failed"
@@ -152,15 +137,12 @@
 
     throw v0
 
-    .line 860
     :cond_17
     aget v4, v5, v4
 
-    .line 862
     .local v4, numConfigs:I
     if-gtz v4, :cond_23
 
-    .line 863
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "No configs match configSpec"
@@ -169,11 +151,9 @@
 
     throw v0
 
-    .line 867
     :cond_23
     new-array v3, v4, [Ljavax/microedition/khronos/egl/EGLConfig;
 
-    .line 868
     .local v3, configs:[Ljavax/microedition/khronos/egl/EGLConfig;
     iget-object v2, p0, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->mConfigSpec:[I
 
@@ -187,7 +167,6 @@
 
     if-nez v0, :cond_37
 
-    .line 870
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "eglChooseConfig#2 failed"
@@ -196,17 +175,14 @@
 
     throw v0
 
-    .line 872
     :cond_37
     invoke-virtual {p0, p1, p2, v3}, Landroid/opengl/GLSurfaceView$BaseConfigChooser;->chooseConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;[Ljavax/microedition/khronos/egl/EGLConfig;)Ljavax/microedition/khronos/egl/EGLConfig;
 
     move-result-object v6
 
-    .line 873
     .local v6, config:Ljavax/microedition/khronos/egl/EGLConfig;
     if-nez v6, :cond_45
 
-    .line 874
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "No config chosen"
@@ -215,7 +191,6 @@
 
     throw v0
 
-    .line 876
     :cond_45
     return-object v6
 .end method

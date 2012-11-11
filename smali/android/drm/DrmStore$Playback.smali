@@ -29,7 +29,6 @@
     .registers 1
 
     .prologue
-    .line 157
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,24 +39,19 @@
     .parameter "playbackStatus"
 
     .prologue
-    .line 141
     const/4 v0, 0x0
 
-    .line 143
     .local v0, isValid:Z
     packed-switch p0, :pswitch_data_8
 
-    .line 150
     :goto_4
     return v0
 
-    .line 148
     :pswitch_5
     const/4 v0, 0x1
 
     goto :goto_4
 
-    .line 143
     nop
 
     :pswitch_data_8

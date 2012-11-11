@@ -20,10 +20,8 @@
     .registers 1
 
     .prologue
-    .line 33
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     return-void
 .end method
 
@@ -33,7 +31,6 @@
     .registers 2
 
     .prologue
-    .line 72
     iget-object v0, p0, Landroid/mtp/MtpStorageInfo;->mDescription:Ljava/lang/String;
 
     return-object v0
@@ -43,7 +40,6 @@
     .registers 3
 
     .prologue
-    .line 61
     iget-wide v0, p0, Landroid/mtp/MtpStorageInfo;->mFreeSpace:J
 
     return-wide v0
@@ -53,7 +49,6 @@
     .registers 3
 
     .prologue
-    .line 52
     iget-wide v0, p0, Landroid/mtp/MtpStorageInfo;->mMaxCapacity:J
 
     return-wide v0
@@ -63,7 +58,6 @@
     .registers 2
 
     .prologue
-    .line 43
     iget v0, p0, Landroid/mtp/MtpStorageInfo;->mStorageId:I
 
     return v0
@@ -73,7 +67,6 @@
     .registers 2
 
     .prologue
-    .line 81
     iget-object v0, p0, Landroid/mtp/MtpStorageInfo;->mVolumeIdentifier:Ljava/lang/String;
 
     return-object v0

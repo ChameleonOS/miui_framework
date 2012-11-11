@@ -37,7 +37,6 @@
     .registers 1
 
     .prologue
-    .line 1161
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,7 +47,6 @@
     .parameter "x0"
 
     .prologue
-    .line 1161
     invoke-direct {p0}, Landroid/webkit/WebViewInputDispatcher$DispatchEvent;-><init>()V
 
     return-void

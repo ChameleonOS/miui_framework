@@ -39,7 +39,6 @@
     .registers 1
 
     .prologue
-    .line 1623
     const-string v0, "content://contacts/presence"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -55,7 +54,6 @@
     .registers 1
 
     .prologue
-    .line 1616
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -68,40 +66,33 @@
     .end annotation
 
     .prologue
-    .line 1643
     packed-switch p0, :pswitch_data_18
 
-    .line 1659
     const v0, 0x108006a
 
     :goto_6
     return v0
 
-    .line 1645
     :pswitch_7
     const v0, 0x108006b
 
     goto :goto_6
 
-    .line 1649
     :pswitch_b
     const v0, 0x1080067
 
     goto :goto_6
 
-    .line 1652
     :pswitch_f
     const v0, 0x1080068
 
     goto :goto_6
 
-    .line 1655
     :pswitch_13
     const v0, 0x1080069
 
     goto :goto_6
 
-    .line 1643
     nop
 
     :pswitch_data_18
@@ -122,13 +113,11 @@
     .end annotation
 
     .prologue
-    .line 1672
     invoke-static {p1}, Landroid/provider/Contacts$Presence;->getPresenceIconResourceId(I)I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1673
     return-void
 .end method

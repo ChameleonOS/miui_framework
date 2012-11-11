@@ -28,7 +28,6 @@
     .registers 1
 
     .prologue
-    .line 50
     new-instance v0, Landroid/nfc/TechListParcel$1;
 
     invoke-direct {v0}, Landroid/nfc/TechListParcel$1;-><init>()V
@@ -43,13 +42,10 @@
     .parameter "strings"
 
     .prologue
-    .line 27
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     iput-object p1, p0, Landroid/nfc/TechListParcel;->mTechLists:[[Ljava/lang/String;
 
-    .line 29
     return-void
 .end method
 
@@ -59,7 +55,6 @@
     .registers 2
 
     .prologue
-    .line 37
     const/4 v0, 0x0
 
     return v0
@@ -69,7 +64,6 @@
     .registers 2
 
     .prologue
-    .line 32
     iget-object v0, p0, Landroid/nfc/TechListParcel;->mTechLists:[[Ljava/lang/String;
 
     return-object v0
@@ -81,37 +75,30 @@
     .parameter "flags"
 
     .prologue
-    .line 42
     iget-object v3, p0, Landroid/nfc/TechListParcel;->mTechLists:[[Ljava/lang/String;
 
     array-length v0, v3
 
-    .line 43
     .local v0, count:I
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 44
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_7
     if-ge v1, v0, :cond_13
 
-    .line 45
     iget-object v3, p0, Landroid/nfc/TechListParcel;->mTechLists:[[Ljava/lang/String;
 
     aget-object v2, v3, v1
 
-    .line 46
     .local v2, techList:[Ljava/lang/String;
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 44
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_7
 
-    .line 48
     .end local v2           #techList:[Ljava/lang/String;
     :cond_13
     return-void

@@ -67,7 +67,6 @@
     .registers 2
 
     .prologue
-    .line 371
     const-string v0, "content://com.android.contacts"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -82,7 +81,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 437
     sget-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "group_id"
@@ -93,7 +91,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_GROUP_ID_URI:Landroid/net/Uri;
 
-    .line 443
     sget-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "group_ids"
@@ -104,7 +101,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_GROUP_IDS_URI:Landroid/net/Uri;
 
-    .line 449
     sget-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "account_not_group"
@@ -115,7 +111,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_ACCOUNT_NOT_GROUP_URI:Landroid/net/Uri;
 
-    .line 455
     sget-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "account"
@@ -126,7 +121,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_ACCOUNT_URI:Landroid/net/Uri;
 
-    .line 461
     sget-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "recent_contacts"
@@ -137,7 +131,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_RECENT_CONTACTS_URI:Landroid/net/Uri;
 
-    .line 467
     sget-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "account_count"
@@ -148,7 +141,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_ACCOUNT_COUNT_URI:Landroid/net/Uri;
 
-    .line 473
     sget-object v0, Lmiui/provider/ExtraContacts$Contacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "migrate_contacts"

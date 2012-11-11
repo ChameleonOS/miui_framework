@@ -26,7 +26,6 @@
     .registers 1
 
     .prologue
-    .line 211
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,19 +35,15 @@
     .registers 1
 
     .prologue
-    .line 235
     sget-object v0, Landroid/text/method/TextKeyListener$NullKeyListener;->sInstance:Landroid/text/method/TextKeyListener$NullKeyListener;
 
     if-eqz v0, :cond_7
 
-    .line 236
     sget-object v0, Landroid/text/method/TextKeyListener$NullKeyListener;->sInstance:Landroid/text/method/TextKeyListener$NullKeyListener;
 
-    .line 239
     :goto_6
     return-object v0
 
-    .line 238
     :cond_7
     new-instance v0, Landroid/text/method/TextKeyListener$NullKeyListener;
 
@@ -56,7 +51,6 @@
 
     sput-object v0, Landroid/text/method/TextKeyListener$NullKeyListener;->sInstance:Landroid/text/method/TextKeyListener$NullKeyListener;
 
-    .line 239
     sget-object v0, Landroid/text/method/TextKeyListener$NullKeyListener;->sInstance:Landroid/text/method/TextKeyListener$NullKeyListener;
 
     goto :goto_6
@@ -71,7 +65,6 @@
     .parameter "states"
 
     .prologue
-    .line 232
     return-void
 .end method
 
@@ -79,7 +72,6 @@
     .registers 2
 
     .prologue
-    .line 214
     const/4 v0, 0x0
 
     return v0
@@ -93,7 +85,6 @@
     .parameter "event"
 
     .prologue
-    .line 219
     const/4 v0, 0x0
 
     return v0
@@ -106,7 +97,6 @@
     .parameter "event"
 
     .prologue
-    .line 228
     const/4 v0, 0x0
 
     return v0
@@ -120,7 +110,6 @@
     .parameter "event"
 
     .prologue
-    .line 224
     const/4 v0, 0x0
 
     return v0

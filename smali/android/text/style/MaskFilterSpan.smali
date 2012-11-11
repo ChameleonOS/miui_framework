@@ -16,13 +16,10 @@
     .parameter "filter"
 
     .prologue
-    .line 26
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
-    .line 27
     iput-object p1, p0, Landroid/text/style/MaskFilterSpan;->mFilter:Landroid/graphics/MaskFilter;
 
-    .line 28
     return-void
 .end method
 
@@ -32,7 +29,6 @@
     .registers 2
 
     .prologue
-    .line 31
     iget-object v0, p0, Landroid/text/style/MaskFilterSpan;->mFilter:Landroid/graphics/MaskFilter;
 
     return-object v0
@@ -43,11 +39,9 @@
     .parameter "ds"
 
     .prologue
-    .line 36
     iget-object v0, p0, Landroid/text/style/MaskFilterSpan;->mFilter:Landroid/graphics/MaskFilter;
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setMaskFilter(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;
 
-    .line 37
     return-void
 .end method

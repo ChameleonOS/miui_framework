@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 199
     iput-object p1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -54,13 +53,11 @@
 
     const/4 v4, 0x1
 
-    .line 201
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #calls: Landroid/widget/DatePicker;->updateInputState()V
     invoke-static {v1}, Landroid/widget/DatePicker;->access$000(Landroid/widget/DatePicker;)V
 
-    .line 202
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #getter for: Landroid/widget/DatePicker;->mTempDate:Ljava/util/Calendar;
@@ -81,7 +78,6 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 204
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #getter for: Landroid/widget/DatePicker;->mDaySpinner:Landroid/widget/NumberPicker;
@@ -91,7 +87,6 @@
 
     if-ne p1, v1, :cond_8a
 
-    .line 205
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #getter for: Landroid/widget/DatePicker;->mTempDate:Ljava/util/Calendar;
@@ -103,13 +98,11 @@
 
     move-result v0
 
-    .line 206
     .local v0, maxDayOfMonth:I
     if-ne p2, v0, :cond_70
 
     if-ne p3, v4, :cond_70
 
-    .line 207
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #getter for: Landroid/widget/DatePicker;->mTempDate:Ljava/util/Calendar;
@@ -119,7 +112,6 @@
 
     invoke-virtual {v1, v5, v4}, Ljava/util/Calendar;->add(II)V
 
-    .line 227
     .end local v0           #maxDayOfMonth:I
     :goto_3d
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
@@ -160,35 +152,29 @@
     #calls: Landroid/widget/DatePicker;->setDate(III)V
     invoke-static {v1, v2, v3, v4}, Landroid/widget/DatePicker;->access$600(Landroid/widget/DatePicker;III)V
 
-    .line 229
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #calls: Landroid/widget/DatePicker;->updateSpinners()V
     invoke-static {v1}, Landroid/widget/DatePicker;->access$700(Landroid/widget/DatePicker;)V
 
-    .line 230
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #calls: Landroid/widget/DatePicker;->updateCalendarView()V
     invoke-static {v1}, Landroid/widget/DatePicker;->access$800(Landroid/widget/DatePicker;)V
 
-    .line 231
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #calls: Landroid/widget/DatePicker;->notifyDateChanged()V
     invoke-static {v1}, Landroid/widget/DatePicker;->access$900(Landroid/widget/DatePicker;)V
 
-    .line 232
     return-void
 
-    .line 208
     .restart local v0       #maxDayOfMonth:I
     :cond_70
     if-ne p2, v4, :cond_7e
 
     if-ne p3, v0, :cond_7e
 
-    .line 209
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #getter for: Landroid/widget/DatePicker;->mTempDate:Ljava/util/Calendar;
@@ -200,7 +186,6 @@
 
     goto :goto_3d
 
-    .line 211
     :cond_7e
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
@@ -215,7 +200,6 @@
 
     goto :goto_3d
 
-    .line 213
     .end local v0           #maxDayOfMonth:I
     :cond_8a
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
@@ -227,12 +211,10 @@
 
     if-ne p1, v1, :cond_ba
 
-    .line 214
     if-ne p2, v8, :cond_a0
 
     if-nez p3, :cond_a0
 
-    .line 215
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #getter for: Landroid/widget/DatePicker;->mTempDate:Ljava/util/Calendar;
@@ -244,13 +226,11 @@
 
     goto :goto_3d
 
-    .line 216
     :cond_a0
     if-nez p2, :cond_ae
 
     if-ne p3, v8, :cond_ae
 
-    .line 217
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #getter for: Landroid/widget/DatePicker;->mTempDate:Ljava/util/Calendar;
@@ -262,7 +242,6 @@
 
     goto :goto_3d
 
-    .line 219
     :cond_ae
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
@@ -277,7 +256,6 @@
 
     goto :goto_3d
 
-    .line 221
     :cond_ba
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
@@ -288,7 +266,6 @@
 
     if-ne p1, v1, :cond_cd
 
-    .line 222
     iget-object v1, p0, Landroid/widget/DatePicker$1;->this$0:Landroid/widget/DatePicker;
 
     #getter for: Landroid/widget/DatePicker;->mTempDate:Ljava/util/Calendar;
@@ -300,7 +277,6 @@
 
     goto/16 :goto_3d
 
-    .line 224
     :cond_cd
     new-instance v1, Ljava/lang/IllegalArgumentException;
 

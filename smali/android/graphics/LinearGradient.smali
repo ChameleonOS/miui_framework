@@ -15,10 +15,8 @@
     .parameter "tile"
 
     .prologue
-    .line 54
     invoke-direct {p0}, Landroid/graphics/Shader;-><init>()V
 
-    .line 55
     move-object/from16 v0, p7
 
     iget v8, v0, Landroid/graphics/Shader$TileMode;->nativeInt:I
@@ -43,7 +41,6 @@
 
     iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
-    .line 56
     iget v2, p0, Landroid/graphics/Shader;->native_instance:I
 
     move-object/from16 v0, p7
@@ -70,7 +67,6 @@
 
     iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
-    .line 58
     return-void
 .end method
 
@@ -85,17 +81,14 @@
     .parameter "tile"
 
     .prologue
-    .line 32
     invoke-direct {p0}, Landroid/graphics/Shader;-><init>()V
 
-    .line 33
     array-length v1, p5
 
     const/4 v2, 0x2
 
     if-ge v1, v2, :cond_10
 
-    .line 34
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v2, "needs >= 2 number of colors"
@@ -104,7 +97,6 @@
 
     throw v1
 
-    .line 36
     :cond_10
     if-eqz p6, :cond_20
 
@@ -116,7 +108,6 @@
 
     if-eq v1, v2, :cond_20
 
-    .line 37
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "color and position arrays must be of equal length"
@@ -125,7 +116,6 @@
 
     throw v1
 
-    .line 39
     :cond_20
     move-object/from16 v0, p7
 
@@ -151,7 +141,6 @@
 
     iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
-    .line 40
     iget v2, p0, Landroid/graphics/Shader;->native_instance:I
 
     move-object/from16 v0, p7
@@ -178,7 +167,6 @@
 
     iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
-    .line 42
     return-void
 .end method
 

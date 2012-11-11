@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 550
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisabledState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +37,6 @@
     .registers 1
 
     .prologue
-    .line 554
     return-void
 .end method
 
@@ -47,19 +45,15 @@
     .parameter "message"
 
     .prologue
-    .line 559
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_62
 
-    .line 575
     const/4 v2, 0x0
 
-    .line 577
     :goto_6
     return v2
 
-    .line 562
     :pswitch_7
     :try_start_7
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisabledState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
@@ -82,7 +76,6 @@
     .catch Landroid/os/RemoteException; {:try_start_7 .. :try_end_18} :catch_2e
     .catch Ljava/lang/IllegalStateException; {:try_start_7 .. :try_end_18} :catch_48
 
-    .line 568
     :goto_18
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisabledState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -93,7 +86,6 @@
 
     invoke-virtual {v2}, Landroid/net/wifi/WifiMonitor;->startMonitoring()V
 
-    .line 569
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisabledState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
     iget-object v3, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisabledState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
@@ -106,17 +98,14 @@
     #calls: Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
     invoke-static {v2, v3}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->access$1700(Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;Lcom/android/internal/util/IState;)V
 
-    .line 577
     :pswitch_2c
     const/4 v2, 0x1
 
     goto :goto_6
 
-    .line 563
     :catch_2e
     move-exception v1
 
-    .line 564
     .local v1, re:Landroid/os/RemoteException;
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisabledState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -143,12 +132,10 @@
 
     goto :goto_18
 
-    .line 565
     .end local v1           #re:Landroid/os/RemoteException;
     :catch_48
     move-exception v0
 
-    .line 566
     .local v0, ie:Ljava/lang/IllegalStateException;
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine$P2pDisabledState;->this$1:Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;
 
@@ -175,7 +162,6 @@
 
     goto :goto_18
 
-    .line 559
     :pswitch_data_62
     .packed-switch 0x20083
         :pswitch_7

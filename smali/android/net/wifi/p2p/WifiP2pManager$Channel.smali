@@ -68,49 +68,40 @@
     .parameter "l"
 
     .prologue
-    .line 666
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 678
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerMap:Ljava/util/HashMap;
 
-    .line 679
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerMapLock:Ljava/lang/Object;
 
-    .line 680
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerKey:I
 
-    .line 667
     new-instance v0, Lcom/android/internal/util/AsyncChannel;
 
     invoke-direct {v0}, Lcom/android/internal/util/AsyncChannel;-><init>()V
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
 
-    .line 668
     new-instance v0, Landroid/net/wifi/p2p/WifiP2pManager$Channel$P2pHandler;
 
     invoke-direct {v0, p0, p2}, Landroid/net/wifi/p2p/WifiP2pManager$Channel$P2pHandler;-><init>(Landroid/net/wifi/p2p/WifiP2pManager$Channel;Landroid/os/Looper;)V
 
     iput-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mHandler:Landroid/net/wifi/p2p/WifiP2pManager$Channel$P2pHandler;
 
-    .line 669
     iput-object p3, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mChannelListener:Landroid/net/wifi/p2p/WifiP2pManager$ChannelListener;
 
-    .line 670
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mContext:Landroid/content/Context;
 
-    .line 671
     return-void
 .end method
 
@@ -120,7 +111,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     invoke-direct {p0, p1}, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->getListener(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -133,7 +123,6 @@
     .parameter "x0"
 
     .prologue
-    .line 665
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mChannelListener:Landroid/net/wifi/p2p/WifiP2pManager$ChannelListener;
 
     return-object v0
@@ -145,7 +134,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mUpnpServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$UpnpServiceResponseListener;
 
     return-object p1
@@ -157,7 +145,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mChannelListener:Landroid/net/wifi/p2p/WifiP2pManager$ChannelListener;
 
     return-object p1
@@ -169,7 +156,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     invoke-direct {p0, p1}, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->setDialogListener(Landroid/net/wifi/p2p/WifiP2pManager$DialogListener;)V
 
     return-void
@@ -181,7 +167,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     invoke-direct {p0, p1}, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->handleServiceResponse(Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;)V
 
     return-void
@@ -192,7 +177,6 @@
     .parameter "x0"
 
     .prologue
-    .line 665
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDialogListener:Landroid/net/wifi/p2p/WifiP2pManager$DialogListener;
 
     return-object v0
@@ -204,7 +188,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDialogListener:Landroid/net/wifi/p2p/WifiP2pManager$DialogListener;
 
     return-object p1
@@ -215,7 +198,6 @@
     .parameter "x0"
 
     .prologue
-    .line 665
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mHandler:Landroid/net/wifi/p2p/WifiP2pManager$Channel$P2pHandler;
 
     return-object v0
@@ -226,7 +208,6 @@
     .parameter "x0"
 
     .prologue
-    .line 665
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mAsyncChannel:Lcom/android/internal/util/AsyncChannel;
 
     return-object v0
@@ -238,7 +219,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     invoke-direct {p0, p1}, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->putListener(Ljava/lang/Object;)I
 
     move-result v0
@@ -252,7 +232,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$ServiceResponseListener;
 
     return-object p1
@@ -264,7 +243,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDnsSdServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$DnsSdServiceResponseListener;
 
     return-object p1
@@ -276,7 +254,6 @@
     .parameter "x1"
 
     .prologue
-    .line 665
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDnsSdTxtListener:Landroid/net/wifi/p2p/WifiP2pManager$DnsSdTxtRecordListener;
 
     return-object p1
@@ -287,22 +264,18 @@
     .parameter "key"
 
     .prologue
-    .line 849
     if-nez p1, :cond_4
 
     const/4 v0, 0x0
 
-    .line 851
     :goto_3
     return-object v0
 
-    .line 850
     :cond_4
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerMapLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 851
     :try_start_7
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerMap:Ljava/util/HashMap;
 
@@ -318,7 +291,6 @@
 
     goto :goto_3
 
-    .line 852
     :catchall_13
     move-exception v0
 
@@ -334,7 +306,6 @@
     .parameter "resp"
 
     .prologue
-    .line 817
     invoke-virtual {p1}, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->getDnsType()I
 
     move-result v0
@@ -343,12 +314,10 @@
 
     if-ne v0, v1, :cond_1e
 
-    .line 818
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDnsSdServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$DnsSdServiceResponseListener;
 
     if-eqz v0, :cond_1d
 
-    .line 819
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDnsSdServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$DnsSdServiceResponseListener;
 
     invoke-virtual {p1}, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->getInstanceName()Ljava/lang/String;
@@ -365,12 +334,10 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/net/wifi/p2p/WifiP2pManager$DnsSdServiceResponseListener;->onDnsSdServiceAvailable(Ljava/lang/String;Ljava/lang/String;Landroid/net/wifi/p2p/WifiP2pDevice;)V
 
-    .line 834
     :cond_1d
     :goto_1d
     return-void
 
-    .line 824
     :cond_1e
     invoke-virtual {p1}, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->getDnsType()I
 
@@ -380,12 +347,10 @@
 
     if-ne v0, v1, :cond_3c
 
-    .line 825
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDnsSdTxtListener:Landroid/net/wifi/p2p/WifiP2pManager$DnsSdTxtRecordListener;
 
     if-eqz v0, :cond_1d
 
-    .line 826
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDnsSdTxtListener:Landroid/net/wifi/p2p/WifiP2pManager$DnsSdTxtRecordListener;
 
     invoke-virtual {p1}, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;->getDnsQueryName()Ljava/lang/String;
@@ -404,7 +369,6 @@
 
     goto :goto_1d
 
-    .line 832
     :cond_3c
     const-string v0, "WifiP2pManager"
 
@@ -436,35 +400,29 @@
     .parameter "resp"
 
     .prologue
-    .line 797
     instance-of v0, p1, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;
 
     if-eqz v0, :cond_a
 
-    .line 798
     check-cast p1, Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;
 
     .end local p1
     invoke-direct {p0, p1}, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->handleDnsSdServiceResponse(Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceResponse;)V
 
-    .line 809
     :cond_9
     :goto_9
     return-void
 
-    .line 799
     .restart local p1
     :cond_a
     instance-of v0, p1, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;
 
     if-eqz v0, :cond_18
 
-    .line 800
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mUpnpServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$UpnpServiceResponseListener;
 
     if-eqz v0, :cond_9
 
-    .line 801
     check-cast p1, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;
 
     .end local p1
@@ -472,14 +430,12 @@
 
     goto :goto_9
 
-    .line 804
     .restart local p1
     :cond_18
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$ServiceResponseListener;
 
     if-eqz v0, :cond_9
 
-    .line 805
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$ServiceResponseListener;
 
     invoke-virtual {p1}, Landroid/net/wifi/p2p/nsd/WifiP2pServiceResponse;->getServiceType()I
@@ -504,7 +460,6 @@
     .parameter "resp"
 
     .prologue
-    .line 812
     iget-object v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mUpnpServRspListener:Landroid/net/wifi/p2p/WifiP2pManager$UpnpServiceResponseListener;
 
     invoke-virtual {p1}, Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceResponse;->getUniqueServiceNames()Ljava/util/List;
@@ -517,7 +472,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/net/wifi/p2p/WifiP2pManager$UpnpServiceResponseListener;->onUpnpServiceAvailable(Ljava/util/List;Landroid/net/wifi/p2p/WifiP2pDevice;)V
 
-    .line 814
     return-void
 .end method
 
@@ -526,22 +480,18 @@
     .parameter "listener"
 
     .prologue
-    .line 837
     if-nez p1, :cond_4
 
     const/4 v0, 0x0
 
-    .line 845
     :goto_3
     return v0
 
-    .line 839
     :cond_4
     iget-object v2, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerMapLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 841
     :cond_7
     :try_start_7
     iget v0, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerKey:I
@@ -550,11 +500,9 @@
 
     iput v1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerKey:I
 
-    .line 842
     .local v0, key:I
     if-eqz v0, :cond_7
 
-    .line 843
     iget-object v1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mListenerMap:Ljava/util/HashMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -563,7 +511,6 @@
 
     invoke-virtual {v1, v3, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 844
     monitor-exit v2
 
     goto :goto_3
@@ -584,9 +531,7 @@
     .parameter "listener"
 
     .prologue
-    .line 856
     iput-object p1, p0, Landroid/net/wifi/p2p/WifiP2pManager$Channel;->mDialogListener:Landroid/net/wifi/p2p/WifiP2pManager$DialogListener;
 
-    .line 857
     return-void
 .end method

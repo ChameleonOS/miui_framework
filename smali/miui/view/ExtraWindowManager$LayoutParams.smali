@@ -25,7 +25,6 @@
     .registers 1
 
     .prologue
-    .line 7
     invoke-direct {p0}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     return-void

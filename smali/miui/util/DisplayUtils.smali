@@ -14,7 +14,6 @@
     .registers 1
 
     .prologue
-    .line 11
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -42,10 +41,8 @@
     .registers 1
 
     .prologue
-    .line 20
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
     return-void
 .end method
 
@@ -54,10 +51,8 @@
     .parameter "currentDensity"
 
     .prologue
-    .line 64
     const/4 v4, 0x1
 
-    .line 65
     .local v4, newDensity:I
     const/4 v1, 0x0
 
@@ -69,17 +64,14 @@
 
     if-ge v1, v5, :cond_e
 
-    .line 66
     sget-object v5, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
     aget v5, v5, v1
 
     if-ne p0, v5, :cond_30
 
-    .line 67
     const/4 v4, 0x0
 
-    .line 71
     :cond_e
     sget-object v5, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
@@ -89,13 +81,11 @@
 
     new-array v0, v5, [I
 
-    .line 72
     .local v0, densities:[I
     const/4 v5, 0x0
 
     aput p0, v0, v5
 
-    .line 73
     move v1, v4
 
     const/4 v2, 0x1
@@ -108,14 +98,12 @@
 
     if-ge v1, v5, :cond_33
 
-    .line 74
     sget-object v5, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
     aget v5, v5, v1
 
     if-eq p0, v5, :cond_2d
 
-    .line 75
     add-int/lit8 v3, v2, 0x1
 
     .end local v2           #j:I
@@ -128,7 +116,6 @@
 
     move v2, v3
 
-    .line 73
     .end local v3           #j:I
     .restart local v2       #j:I
     :cond_2d
@@ -136,7 +123,6 @@
 
     goto :goto_19
 
-    .line 65
     .end local v0           #densities:[I
     .end local v2           #j:I
     :cond_30
@@ -144,7 +130,6 @@
 
     goto :goto_2
 
-    .line 78
     .restart local v0       #densities:[I
     .restart local v2       #j:I
     :cond_33
@@ -156,17 +141,14 @@
     .parameter "density"
 
     .prologue
-    .line 24
     sparse-switch p0, :sswitch_data_42
 
-    .line 38
     sget-object v2, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
     array-length v2, v2
 
     add-int/lit8 v1, v2, -0x1
 
-    .line 39
     .local v1, min:I
     add-int/lit8 v0, v1, -0x1
 
@@ -174,7 +156,6 @@
     :goto_a
     if-lez v0, :cond_39
 
-    .line 40
     sget-object v2, Lmiui/util/DisplayUtils;->DENSITIES:[I
 
     aget v2, v2, v0
@@ -197,56 +178,46 @@
 
     if-ge v2, v3, :cond_21
 
-    .line 41
     move v1, v0
 
-    .line 39
     :cond_21
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_a
 
-    .line 26
     .end local v0           #j:I
     .end local v1           #min:I
     :sswitch_24
     const-string v2, "ldpi"
 
-    .line 44
     :goto_26
     return-object v2
 
-    .line 28
     :sswitch_27
     const-string/jumbo v2, "mdpi"
 
     goto :goto_26
 
-    .line 30
     :sswitch_2b
     const-string v2, "hdpi"
 
     goto :goto_26
 
-    .line 32
     :sswitch_2e
     const-string/jumbo v2, "xhdpi"
 
     goto :goto_26
 
-    .line 34
     :sswitch_32
     const-string/jumbo v2, "nodpi"
 
     goto :goto_26
 
-    .line 36
     :sswitch_36
     const-string v2, ""
 
     goto :goto_26
 
-    .line 44
     .restart local v0       #j:I
     .restart local v1       #min:I
     :cond_39
@@ -260,7 +231,6 @@
 
     goto :goto_26
 
-    .line 24
     :sswitch_data_42
     .sparse-switch
         0x0 -> :sswitch_36
@@ -277,12 +247,10 @@
     .parameter "density"
 
     .prologue
-    .line 48
     invoke-static {p0}, Lmiui/util/DisplayUtils;->getDensityName(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 49
     .local v0, name:Ljava/lang/String;
     const-string v1, ""
 
@@ -292,7 +260,6 @@
 
     if-nez v1, :cond_1f
 
-    .line 50
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -311,7 +278,6 @@
 
     move-result-object v0
 
-    .line 52
     .end local v0           #name:Ljava/lang/String;
     :cond_1f
     return-object v0
@@ -322,7 +288,6 @@
     .parameter "density"
 
     .prologue
-    .line 60
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -359,7 +324,6 @@
     .parameter "density"
 
     .prologue
-    .line 56
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -43,7 +43,6 @@
     .registers 1
 
     .prologue
-    .line 1740
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,7 +52,6 @@
     .registers 1
 
     .prologue
-    .line 1846
     new-instance v0, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;
 
     invoke-direct {v0}, Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;-><init>()V

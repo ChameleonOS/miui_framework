@@ -36,7 +36,6 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 44
     new-instance v0, Lmiui/telephony/CarrierSelector$STATE;
 
     const-string v1, "TAIWAN"
@@ -45,7 +44,6 @@
 
     sput-object v0, Lmiui/telephony/CarrierSelector$STATE;->TAIWAN:Lmiui/telephony/CarrierSelector$STATE;
 
-    .line 43
     const/4 v0, 0x1
 
     new-array v0, v0, [Lmiui/telephony/CarrierSelector$STATE;
@@ -70,7 +68,6 @@
     .end annotation
 
     .prologue
-    .line 43
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -81,7 +78,6 @@
     .parameter "name"
 
     .prologue
-    .line 43
     const-class v0, Lmiui/telephony/CarrierSelector$STATE;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -97,7 +93,6 @@
     .registers 1
 
     .prologue
-    .line 43
     sget-object v0, Lmiui/telephony/CarrierSelector$STATE;->$VALUES:[Lmiui/telephony/CarrierSelector$STATE;
 
     invoke-virtual {v0}, [Lmiui/telephony/CarrierSelector$STATE;->clone()Ljava/lang/Object;

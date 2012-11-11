@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 200
     iput-object p1, p0, Lmiui/telephony/phonenumber/ChineseTelocation$1;->this$0:Lmiui/telephony/phonenumber/ChineseTelocation;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -40,22 +39,18 @@
     .parameter "selfChange"
 
     .prologue
-    .line 203
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 204
     const-string v0, "ChineseTelocation"
 
     const-string/jumbo v1, "telocation setting changed, reloading ..."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
     iget-object v0, p0, Lmiui/telephony/phonenumber/ChineseTelocation$1;->this$0:Lmiui/telephony/phonenumber/ChineseTelocation;
 
     #calls: Lmiui/telephony/phonenumber/ChineseTelocation;->updateTelocationSetting()V
     invoke-static {v0}, Lmiui/telephony/phonenumber/ChineseTelocation;->access$000(Lmiui/telephony/phonenumber/ChineseTelocation;)V
 
-    .line 206
     return-void
 .end method

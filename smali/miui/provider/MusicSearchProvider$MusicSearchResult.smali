@@ -45,7 +45,6 @@
     .registers 1
 
     .prologue
-    .line 228
     new-instance v0, Lmiui/provider/MusicSearchProvider$MusicSearchResult$1;
 
     invoke-direct {v0}, Lmiui/provider/MusicSearchProvider$MusicSearchResult$1;-><init>()V
@@ -60,10 +59,8 @@
     .parameter "source"
 
     .prologue
-    .line 221
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 222
     sget-object v0, Lmiui/provider/MusicSearchProvider$MusicMeta;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -74,7 +71,6 @@
 
     iput-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
-    .line 223
     sget-object v0, Lmiui/provider/MusicSearchProvider$MusicMeta;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArray(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object;
@@ -85,21 +81,18 @@
 
     iput-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
-    .line 224
     invoke-virtual {p1}, Landroid/os/Parcel;->readStringArray()[Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mKeys:[Ljava/lang/String;
 
-    .line 225
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mType:I
 
-    .line 226
     return-void
 .end method
 
@@ -111,22 +104,16 @@
     .parameter "type"
 
     .prologue
-    .line 113
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 114
     iput-object p1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
-    .line 115
     iput-object p2, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
-    .line 116
     iput-object p3, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mKeys:[Ljava/lang/String;
 
-    .line 117
     iput p4, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mType:I
 
-    .line 118
     return-void
 .end method
 
@@ -136,7 +123,6 @@
     .registers 2
 
     .prologue
-    .line 210
     const/4 v0, 0x0
 
     return v0
@@ -151,15 +137,12 @@
 
     const/4 v2, 0x0
 
-    .line 122
     if-ne p0, p1, :cond_5
 
-    .line 131
     :cond_4
     :goto_4
     return v1
 
-    .line 126
     :cond_5
     instance-of v3, p1, Lmiui/provider/MusicSearchProvider$MusicSearchResult;
 
@@ -167,16 +150,13 @@
 
     move v1, v2
 
-    .line 127
     goto :goto_4
 
     :cond_b
     move-object v0, p1
 
-    .line 130
     check-cast v0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;
 
-    .line 131
     .local v0, other:Lmiui/provider/MusicSearchProvider$MusicSearchResult;
     iget v3, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mType:I
 
@@ -224,7 +204,6 @@
     .registers 3
 
     .prologue
-    .line 152
     invoke-virtual {p0}, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->localCount()I
 
     move-result v0
@@ -244,20 +223,16 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 139
     iget-object v5, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mKeys:[Ljava/lang/String;
 
     if-nez v5, :cond_6
 
-    .line 148
     :goto_5
     return v6
 
-    .line 143
     :cond_6
     const/4 v3, 0x0
 
-    .line 144
     .local v3, result:I
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mKeys:[Ljava/lang/String;
 
@@ -273,7 +248,6 @@
 
     aget-object v4, v0, v1
 
-    .line 145
     .local v4, s:Ljava/lang/String;
     mul-int/lit8 v7, v3, 0x1f
 
@@ -284,12 +258,10 @@
     :goto_14
     add-int v3, v7, v5
 
-    .line 144
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_b
 
-    .line 145
     :cond_19
     invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
@@ -301,7 +273,6 @@
     :cond_1e
     move v6, v3
 
-    .line 148
     goto :goto_5
 .end method
 
@@ -309,7 +280,6 @@
     .registers 2
 
     .prologue
-    .line 156
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     if-eqz v0, :cond_8
@@ -332,7 +302,6 @@
     .parameter "i"
 
     .prologue
-    .line 164
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     aget-object v0, v0, p1
@@ -346,23 +315,19 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 199
     const/4 v0, 0x0
 
-    .line 200
     .local v0, ret:[Lmiui/provider/MusicSearchProvider$MusicMeta;
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     if-eqz v1, :cond_13
 
-    .line 201
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     array-length v1, v1
 
     new-array v0, v1, [Lmiui/provider/MusicSearchProvider$MusicMeta;
 
-    .line 202
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     iget-object v2, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
@@ -371,7 +336,6 @@
 
     invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 205
     :cond_13
     return-object v0
 .end method
@@ -380,7 +344,6 @@
     .registers 2
 
     .prologue
-    .line 160
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     if-eqz v0, :cond_8
@@ -403,7 +366,6 @@
     .parameter "i"
 
     .prologue
-    .line 168
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     aget-object v0, v0, p1
@@ -417,23 +379,19 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 189
     const/4 v0, 0x0
 
-    .line 190
     .local v0, ret:[Lmiui/provider/MusicSearchProvider$MusicMeta;
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     if-eqz v1, :cond_13
 
-    .line 191
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     array-length v1, v1
 
     new-array v0, v1, [Lmiui/provider/MusicSearchProvider$MusicMeta;
 
-    .line 192
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     iget-object v2, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
@@ -442,7 +400,6 @@
 
     invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 195
     :cond_13
     return-object v0
 .end method
@@ -453,7 +410,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 173
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     if-eqz v1, :cond_26
@@ -462,7 +418,6 @@
 
     if-eqz v1, :cond_26
 
-    .line 174
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     array-length v1, v1
@@ -475,7 +430,6 @@
 
     new-array v0, v1, [Lmiui/provider/MusicSearchProvider$MusicMeta;
 
-    .line 175
     .local v0, ret:[Lmiui/provider/MusicSearchProvider$MusicMeta;
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
@@ -485,7 +439,6 @@
 
     invoke-static {v1, v4, v0, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 176
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     iget-object v2, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
@@ -498,18 +451,15 @@
 
     invoke-static {v1, v4, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 185
     :goto_25
     return-object v0
 
-    .line 177
     .end local v0           #ret:[Lmiui/provider/MusicSearchProvider$MusicMeta;
     :cond_26
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     if-eqz v1, :cond_2f
 
-    .line 178
     invoke-virtual {p0}, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->onlineResult()[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     move-result-object v0
@@ -517,14 +467,12 @@
     .restart local v0       #ret:[Lmiui/provider/MusicSearchProvider$MusicMeta;
     goto :goto_25
 
-    .line 179
     .end local v0           #ret:[Lmiui/provider/MusicSearchProvider$MusicMeta;
     :cond_2f
     iget-object v1, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     if-eqz v1, :cond_38
 
-    .line 180
     invoke-virtual {p0}, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->localResult()[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     move-result-object v0
@@ -532,7 +480,6 @@
     .restart local v0       #ret:[Lmiui/provider/MusicSearchProvider$MusicMeta;
     goto :goto_25
 
-    .line 182
     .end local v0           #ret:[Lmiui/provider/MusicSearchProvider$MusicMeta;
     :cond_38
     const/4 v0, 0x0
@@ -547,26 +494,21 @@
     .parameter "flags"
 
     .prologue
-    .line 215
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mLocalResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 216
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mOnlineResult:[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
-    .line 217
     iget-object v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mKeys:[Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    .line 218
     iget v0, p0, Lmiui/provider/MusicSearchProvider$MusicSearchResult;->mType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 219
     return-void
 .end method

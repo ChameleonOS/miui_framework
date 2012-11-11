@@ -39,24 +39,18 @@
     .parameter "dstClassName"
 
     .prologue
-    .line 320
     iput-object p1, p0, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 321
     iput-object p2, p0, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;->mSrcCtx:Landroid/content/Context;
 
-    .line 322
     iput-object p3, p0, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;->mSrcHdlr:Landroid/os/Handler;
 
-    .line 323
     iput-object p4, p0, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;->mDstPackageName:Ljava/lang/String;
 
-    .line 324
     iput-object p5, p0, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;->mDstClassName:Ljava/lang/String;
 
-    .line 325
     return-void
 .end method
 
@@ -66,7 +60,6 @@
     .registers 7
 
     .prologue
-    .line 329
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     iget-object v2, p0, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;->mSrcCtx:Landroid/content/Context;
@@ -81,13 +74,11 @@
 
     move-result v0
 
-    .line 331
     .local v0, result:I
     iget-object v1, p0, Lcom/android/internal/util/AsyncChannel$1ConnectAsync;->this$0:Lcom/android/internal/util/AsyncChannel;
 
     #calls: Lcom/android/internal/util/AsyncChannel;->replyHalfConnected(I)V
     invoke-static {v1, v0}, Lcom/android/internal/util/AsyncChannel;->access$000(Lcom/android/internal/util/AsyncChannel;I)V
 
-    .line 332
     return-void
 .end method

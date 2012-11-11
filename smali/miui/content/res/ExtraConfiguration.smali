@@ -94,7 +94,6 @@
     .registers 1
 
     .prologue
-    .line 43
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -112,10 +111,8 @@
     .registers 1
 
     .prologue
-    .line 53
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
     return-void
 .end method
 
@@ -124,21 +121,18 @@
     .parameter "themeChangeFlags"
 
     .prologue
-    .line 129
     invoke-static {p0, p1}, Lmiui/content/res/ExtraConfiguration;->needRestartLauncher(J)Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 130
     sget-object v0, Lmiui/content/res/ExtraConfiguration;->needRestartActivitySet:Ljava/util/Set;
 
     const-string v1, "com.miui.home"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 132
     :cond_d
     invoke-static {p0, p1}, Lmiui/content/res/ExtraConfiguration;->needRestartSettings(J)Z
 
@@ -146,14 +140,12 @@
 
     if-eqz v0, :cond_1a
 
-    .line 133
     sget-object v0, Lmiui/content/res/ExtraConfiguration;->needRestartActivitySet:Ljava/util/Set;
 
     const-string v1, "com.android.settings"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 135
     :cond_1a
     invoke-static {p0, p1}, Lmiui/content/res/ExtraConfiguration;->needRestartMms(J)Z
 
@@ -161,14 +153,12 @@
 
     if-eqz v0, :cond_27
 
-    .line 136
     sget-object v0, Lmiui/content/res/ExtraConfiguration;->needRestartActivitySet:Ljava/util/Set;
 
     const-string v1, "com.android.mms"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 138
     :cond_27
     invoke-static {p0, p1}, Lmiui/content/res/ExtraConfiguration;->needRestartContacts(J)Z
 
@@ -176,14 +166,12 @@
 
     if-eqz v0, :cond_34
 
-    .line 139
     sget-object v0, Lmiui/content/res/ExtraConfiguration;->needRestartActivitySet:Ljava/util/Set;
 
     const-string v1, "com.android.contacts"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 141
     :cond_34
     return-void
 .end method
@@ -192,10 +180,8 @@
     .registers 3
 
     .prologue
-    .line 198
     const/4 v1, 0x1
 
-    .line 200
     .local v1, scale:I
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
@@ -206,18 +192,15 @@
 
     move-result-object v0
 
-    .line 201
     .local v0, config:Landroid/content/res/Configuration;
     if-eqz v0, :cond_20
 
-    .line 202
     iget v2, v0, Landroid/content/res/Configuration;->uiMode:I
     :try_end_d
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_d} :catch_21
 
     and-int/lit8 v1, v2, 0xf
 
-    .line 203
     const/16 v2, 0xc
 
     if-eq v1, v2, :cond_20
@@ -234,16 +217,13 @@
 
     if-eq v1, v2, :cond_20
 
-    .line 207
     const/4 v1, 0x1
 
-    .line 212
     .end local v0           #config:Landroid/content/res/Configuration;
     :cond_20
     :goto_20
     return v1
 
-    .line 210
     :catch_21
     move-exception v2
 
@@ -255,7 +235,6 @@
     .parameter "configChanges"
 
     .prologue
-    .line 95
     const/high16 v0, -0x8000
 
     and-int/2addr v0, p0
@@ -278,7 +257,6 @@
     .parameter "themeChangeFlags"
 
     .prologue
-    .line 182
     const-wide/32 v0, 0x10000011
 
     and-long/2addr v0, p0
@@ -306,10 +284,8 @@
     .parameter "themeChangeFlags"
 
     .prologue
-    .line 148
     if-eqz p0, :cond_36
 
-    .line 149
     const-string v0, "com.miui.home"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -318,16 +294,13 @@
 
     if-eqz v0, :cond_f
 
-    .line 150
     invoke-static {p1, p2}, Lmiui/content/res/ExtraConfiguration;->needRestartLauncher(J)Z
 
     move-result v0
 
-    .line 162
     :goto_e
     return v0
 
-    .line 152
     :cond_f
     const-string v0, "com.android.settings"
 
@@ -337,14 +310,12 @@
 
     if-eqz v0, :cond_1c
 
-    .line 153
     invoke-static {p1, p2}, Lmiui/content/res/ExtraConfiguration;->needRestartSettings(J)Z
 
     move-result v0
 
     goto :goto_e
 
-    .line 155
     :cond_1c
     const-string v0, "com.android.mms"
 
@@ -354,14 +325,12 @@
 
     if-eqz v0, :cond_29
 
-    .line 156
     invoke-static {p1, p2}, Lmiui/content/res/ExtraConfiguration;->needRestartMms(J)Z
 
     move-result v0
 
     goto :goto_e
 
-    .line 158
     :cond_29
     const-string v0, "com.android.contacts"
 
@@ -371,14 +340,12 @@
 
     if-eqz v0, :cond_36
 
-    .line 159
     invoke-static {p1, p2}, Lmiui/content/res/ExtraConfiguration;->needRestartContacts(J)Z
 
     move-result v0
 
     goto :goto_e
 
-    .line 162
     :cond_36
     invoke-static {p1, p2}, Lmiui/content/res/ExtraConfiguration;->needRestart3rdApp(J)Z
 
@@ -392,7 +359,6 @@
     .parameter "themeChangeFlags"
 
     .prologue
-    .line 178
     const-wide/16 v0, 0x811
 
     and-long/2addr v0, p0
@@ -419,7 +385,6 @@
     .parameter "themeChangeFlags"
 
     .prologue
-    .line 166
     const-wide/16 v0, 0x4019
 
     and-long/2addr v0, p0
@@ -446,7 +411,6 @@
     .parameter "themeChangeFlags"
 
     .prologue
-    .line 174
     const-wide/16 v0, 0x91
 
     and-long/2addr v0, p0
@@ -473,7 +437,6 @@
     .parameter "themeChangeFlags"
 
     .prologue
-    .line 170
     const-wide/16 v0, 0x19
 
     and-long/2addr v0, p0
@@ -500,7 +463,6 @@
     .parameter "themeChangeFlags"
 
     .prologue
-    .line 186
     const-wide/16 v0, 0x2019
 
     and-long/2addr v0, p0
@@ -527,7 +489,6 @@
     .parameter "pkgName"
 
     .prologue
-    .line 144
     sget-object v0, Lmiui/content/res/ExtraConfiguration;->needRestartActivitySet:Ljava/util/Set;
 
     invoke-interface {v0, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
@@ -544,7 +505,6 @@
     .parameter "x0"
 
     .prologue
-    .line 17
     check-cast p1, Lmiui/content/res/ExtraConfiguration;
 
     .end local p1
@@ -560,10 +520,8 @@
     .parameter "that"
 
     .prologue
-    .line 110
     const/4 v0, 0x0
 
-    .line 111
     .local v0, n:I
     iget v1, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
@@ -571,10 +529,8 @@
 
     sub-int v0, v1, v2
 
-    .line 112
     if-eqz v0, :cond_9
 
-    .line 115
     :cond_9
     return v0
 .end method
@@ -584,10 +540,8 @@
     .parameter "delta"
 
     .prologue
-    .line 87
     const/4 v0, 0x0
 
-    .line 88
     .local v0, changed:I
     iget v1, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
@@ -595,12 +549,10 @@
 
     if-ge v1, v2, :cond_a
 
-    .line 89
     const/high16 v1, -0x8000
 
     or-int/2addr v0, v1
 
-    .line 91
     :cond_a
     return v0
 .end method
@@ -609,7 +561,6 @@
     .registers 4
 
     .prologue
-    .line 120
     iget v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
     iget-wide v1, p0, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
@@ -626,21 +577,18 @@
     .parameter "source"
 
     .prologue
-    .line 104
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
-    .line 105
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
-    .line 106
     return-void
 .end method
 
@@ -649,17 +597,14 @@
     .parameter "o"
 
     .prologue
-    .line 57
     iget v0, p1, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
     iput v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
-    .line 58
     iget-wide v0, p1, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
     iput-wide v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
-    .line 59
     return-void
 .end method
 
@@ -667,17 +612,14 @@
     .registers 3
 
     .prologue
-    .line 72
     const/4 v0, 0x0
 
     iput v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
-    .line 73
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
-    .line 74
     return-void
 .end method
 
@@ -685,33 +627,27 @@
     .registers 4
 
     .prologue
-    .line 63
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 64
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, " themeChanged="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 65
     iget v1, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 66
     const-string v1, " themeChangedFlags="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 67
     iget-wide v1, p0, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 68
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -724,10 +660,8 @@
     .parameter "delta"
 
     .prologue
-    .line 77
     const/4 v0, 0x0
 
-    .line 78
     .local v0, changed:I
     iget v1, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
@@ -735,22 +669,18 @@
 
     if-ge v1, v2, :cond_12
 
-    .line 79
     const/high16 v1, -0x8000
 
     or-int/2addr v0, v1
 
-    .line 80
     iget v1, p1, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
     iput v1, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
-    .line 81
     iget-wide v1, p1, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
     iput-wide v1, p0, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
-    .line 83
     :cond_12
     return v0
 .end method
@@ -760,17 +690,14 @@
     .parameter "changedFlags"
 
     .prologue
-    .line 124
     iget v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
-    .line 125
     iput-wide p1, p0, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
-    .line 126
     return-void
 .end method
 
@@ -780,16 +707,13 @@
     .parameter "flags"
 
     .prologue
-    .line 99
     iget v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChanged:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 100
     iget-wide v0, p0, Lmiui/content/res/ExtraConfiguration;->themeChangedFlags:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 101
     return-void
 .end method

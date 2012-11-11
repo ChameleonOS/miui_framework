@@ -33,7 +33,6 @@
     .parameter
 
     .prologue
-    .line 645
     iput-object p1, p0, Landroid/database/sqlite/SQLiteConnectionPool$1;->this$0:Landroid/database/sqlite/SQLiteConnectionPool;
 
     iput-object p2, p0, Landroid/database/sqlite/SQLiteConnectionPool$1;->val$waiter:Landroid/database/sqlite/SQLiteConnectionPool$ConnectionWaiter;
@@ -51,7 +50,6 @@
     .registers 4
 
     .prologue
-    .line 648
     iget-object v0, p0, Landroid/database/sqlite/SQLiteConnectionPool$1;->this$0:Landroid/database/sqlite/SQLiteConnectionPool;
 
     #getter for: Landroid/database/sqlite/SQLiteConnectionPool;->mLock:Ljava/lang/Object;
@@ -61,7 +59,6 @@
 
     monitor-enter v1
 
-    .line 649
     :try_start_7
     iget-object v0, p0, Landroid/database/sqlite/SQLiteConnectionPool$1;->val$waiter:Landroid/database/sqlite/SQLiteConnectionPool$ConnectionWaiter;
 
@@ -71,7 +68,6 @@
 
     if-ne v0, v2, :cond_16
 
-    .line 650
     iget-object v0, p0, Landroid/database/sqlite/SQLiteConnectionPool$1;->this$0:Landroid/database/sqlite/SQLiteConnectionPool;
 
     iget-object v2, p0, Landroid/database/sqlite/SQLiteConnectionPool$1;->val$waiter:Landroid/database/sqlite/SQLiteConnectionPool$ConnectionWaiter;
@@ -79,14 +75,11 @@
     #calls: Landroid/database/sqlite/SQLiteConnectionPool;->cancelConnectionWaiterLocked(Landroid/database/sqlite/SQLiteConnectionPool$ConnectionWaiter;)V
     invoke-static {v0, v2}, Landroid/database/sqlite/SQLiteConnectionPool;->access$100(Landroid/database/sqlite/SQLiteConnectionPool;Landroid/database/sqlite/SQLiteConnectionPool$ConnectionWaiter;)V
 
-    .line 652
     :cond_16
     monitor-exit v1
 
-    .line 653
     return-void
 
-    .line 652
     :catchall_18
     move-exception v0
 

@@ -18,10 +18,8 @@
     .registers 1
 
     .prologue
-    .line 28
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     return-void
 .end method
 
@@ -33,21 +31,15 @@
     .parameter "initW"
 
     .prologue
-    .line 31
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
     iput-short p1, p0, Landroid/renderscript/Short4;->x:S
 
-    .line 33
     iput-short p2, p0, Landroid/renderscript/Short4;->y:S
 
-    .line 34
     iput-short p3, p0, Landroid/renderscript/Short4;->z:S
 
-    .line 35
     iput-short p4, p0, Landroid/renderscript/Short4;->w:S
 
-    .line 36
     return-void
 .end method

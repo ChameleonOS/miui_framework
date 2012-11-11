@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 28
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,10 +23,8 @@
     .end annotation
 
     .prologue
-    .line 39
     if-nez p0, :cond_a
 
-    .line 40
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "file path cannot be null"
@@ -36,13 +33,11 @@
 
     throw v3
 
-    .line 43
     :cond_a
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 44
     .local v1, obbFile:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -50,7 +45,6 @@
 
     if-nez v3, :cond_2e
 
-    .line 45
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -75,26 +69,21 @@
 
     throw v3
 
-    .line 52
     :cond_2e
     invoke-virtual {v1}, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 54
     .local v0, canonicalFilePath:Ljava/lang/String;
     new-instance v2, Landroid/content/res/ObbInfo;
 
     invoke-direct {v2}, Landroid/content/res/ObbInfo;-><init>()V
 
-    .line 55
     .local v2, obbInfo:Landroid/content/res/ObbInfo;
     iput-object v0, v2, Landroid/content/res/ObbInfo;->filename:Ljava/lang/String;
 
-    .line 56
     invoke-static {v0, v2}, Landroid/content/res/ObbScanner;->getObbInfo_native(Ljava/lang/String;Landroid/content/res/ObbInfo;)V
 
-    .line 58
     return-object v2
 .end method
 

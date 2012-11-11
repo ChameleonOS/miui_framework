@@ -14,7 +14,6 @@
     .registers 1
 
     .prologue
-    .line 30
     const-string v0, "NHGT"
 
     invoke-static {v0}, Landroid/ddm/DdmHandleNativeHeap;->type(Ljava/lang/String;)I
@@ -23,7 +22,6 @@
 
     sput v0, Landroid/ddm/DdmHandleNativeHeap;->CHUNK_NHGT:I
 
-    .line 32
     new-instance v0, Landroid/ddm/DdmHandleNativeHeap;
 
     invoke-direct {v0}, Landroid/ddm/DdmHandleNativeHeap;-><init>()V
@@ -37,7 +35,6 @@
     .registers 1
 
     .prologue
-    .line 36
     invoke-direct {p0}, Lorg/apache/harmony/dalvik/ddmc/ChunkHandler;-><init>()V
 
     return-void
@@ -51,16 +48,13 @@
     .parameter "request"
 
     .prologue
-    .line 78
     invoke-direct {p0}, Landroid/ddm/DdmHandleNativeHeap;->getLeakInfo()[B
 
     move-result-object v0
 
-    .line 80
     .local v0, data:[B
     if-eqz v0, :cond_33
 
-    .line 82
     const-string v1, "ddm-nativeheap"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -91,7 +85,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
     new-instance v1, Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     const-string v2, "NHGT"
@@ -106,7 +99,6 @@
 
     invoke-direct {v1, v2, v0, v3, v4}, Lorg/apache/harmony/dalvik/ddmc/Chunk;-><init>(I[BII)V
 
-    .line 86
     :goto_32
     return-object v1
 
@@ -126,14 +118,12 @@
     .registers 2
 
     .prologue
-    .line 42
     sget v0, Landroid/ddm/DdmHandleNativeHeap;->CHUNK_NHGT:I
 
     sget-object v1, Landroid/ddm/DdmHandleNativeHeap;->mInstance:Landroid/ddm/DdmHandleNativeHeap;
 
     invoke-static {v0, v1}, Lorg/apache/harmony/dalvik/ddmc/DdmServer;->registerHandler(ILorg/apache/harmony/dalvik/ddmc/ChunkHandler;)V
 
-    .line 43
     return-void
 .end method
 
@@ -143,7 +133,6 @@
     .registers 1
 
     .prologue
-    .line 49
     return-void
 .end method
 
@@ -151,7 +140,6 @@
     .registers 1
 
     .prologue
-    .line 55
     return-void
 .end method
 
@@ -160,7 +148,6 @@
     .parameter "request"
 
     .prologue
-    .line 61
     const-string v1, "ddm-nativeheap"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -195,23 +182,19 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 62
     iget v0, p1, Lorg/apache/harmony/dalvik/ddmc/Chunk;->type:I
 
-    .line 64
     .local v0, type:I
     sget v1, Landroid/ddm/DdmHandleNativeHeap;->CHUNK_NHGT:I
 
     if-ne v0, v1, :cond_2f
 
-    .line 65
     invoke-direct {p0, p1}, Landroid/ddm/DdmHandleNativeHeap;->handleNHGT(Lorg/apache/harmony/dalvik/ddmc/Chunk;)Lorg/apache/harmony/dalvik/ddmc/Chunk;
 
     move-result-object v1
 
     return-object v1
 
-    .line 67
     :cond_2f
     new-instance v1, Ljava/lang/RuntimeException;
 

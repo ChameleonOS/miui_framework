@@ -64,7 +64,6 @@
     .registers 1
 
     .prologue
-    .line 45
     const-string v0, "content://notes/note"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -73,7 +72,6 @@
 
     sput-object v0, Lmiui/provider/Notes;->CONTENT_NOTE_URI:Landroid/net/Uri;
 
-    .line 50
     const-string v0, "content://notes/data"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -82,7 +80,6 @@
 
     sput-object v0, Lmiui/provider/Notes;->CONTENT_DATA_URI:Landroid/net/Uri;
 
-    .line 55
     const-string v0, "content://notes/data/media"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -98,9 +95,7 @@
     .registers 1
 
     .prologue
-    .line 8
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 265
     return-void
 .end method

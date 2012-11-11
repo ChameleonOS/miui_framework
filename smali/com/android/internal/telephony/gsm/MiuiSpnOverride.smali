@@ -26,14 +26,12 @@
     .registers 1
 
     .prologue
-    .line 26
     new-instance v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;-><init>()V
 
     sput-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
-    .line 28
     new-instance v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;-><init>()V
@@ -47,7 +45,6 @@
     .registers 1
 
     .prologue
-    .line 9
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,7 +54,6 @@
     .registers 1
 
     .prologue
-    .line 31
     sget-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sInstance:Lcom/android/internal/telephony/gsm/MiuiSpnOverride;
 
     return-object v0
@@ -70,7 +66,6 @@
     .parameter "carrier"
 
     .prologue
-    .line 35
     sget-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->containsCarrier(Ljava/lang/String;)Z
@@ -85,7 +80,6 @@
     .parameter "carrier"
 
     .prologue
-    .line 43
     sget-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->getEquivalentOperatorNumeric(Ljava/lang/String;)Ljava/lang/String;
@@ -100,7 +94,6 @@
     .parameter "carrier"
 
     .prologue
-    .line 39
     sget-object v0, Lcom/android/internal/telephony/gsm/MiuiSpnOverride;->sImpl:Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/telephony/gsm/MiuiSpnOverrideImpl;->getSpn(Ljava/lang/String;)Ljava/lang/String;

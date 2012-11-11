@@ -108,7 +108,6 @@
 
     const/4 v4, 0x1
 
-    .line 34
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "DIAL"
@@ -119,7 +118,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->DIAL:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 39
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "BUSY"
@@ -128,7 +126,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->BUSY:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 44
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "CONGESTION"
@@ -137,7 +134,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->CONGESTION:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 49
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "RADIO_PATH_ACK"
@@ -146,7 +142,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->RADIO_PATH_ACK:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 54
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "RADIO_PATH_NOT_AVAILABLE"
@@ -155,7 +150,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->RADIO_PATH_NOT_AVAILABLE:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 59
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "ERROR_SPECIAL_INFO"
@@ -166,7 +160,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->ERROR_SPECIAL_INFO:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 64
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "CALL_WAITING"
@@ -179,7 +172,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->CALL_WAITING:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 69
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "RINGING"
@@ -192,7 +184,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->RINGING:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 76
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "GENERAL_BEEP"
@@ -205,7 +196,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->GENERAL_BEEP:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 81
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "POSITIVE_ACK"
@@ -218,7 +208,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->POSITIVE_ACK:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 86
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "NEGATIVE_ACK"
@@ -231,7 +220,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->NEGATIVE_ACK:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 91
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "INCOMING_SPEECH_CALL"
@@ -244,7 +232,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->INCOMING_SPEECH_CALL:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 96
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "INCOMING_SMS"
@@ -257,7 +244,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->INCOMING_SMS:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 104
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "CRITICAL_ALERT"
@@ -270,7 +256,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->CRITICAL_ALERT:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 109
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "VIBRATE_ONLY"
@@ -283,7 +268,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->VIBRATE_ONLY:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 116
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "HAPPY"
@@ -296,7 +280,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->HAPPY:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 121
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "SAD"
@@ -309,7 +292,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->SAD:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 126
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "URGENT"
@@ -322,7 +304,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->URGENT:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 131
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "QUESTION"
@@ -335,7 +316,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->QUESTION:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 136
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MESSAGE_RECEIVED"
@@ -348,7 +328,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MESSAGE_RECEIVED:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 139
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MELODY_1"
@@ -361,7 +340,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MELODY_1:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 140
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MELODY_2"
@@ -374,7 +352,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MELODY_2:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 141
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MELODY_3"
@@ -387,7 +364,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MELODY_3:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 142
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MELODY_4"
@@ -400,7 +376,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MELODY_4:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 143
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MELODY_5"
@@ -413,7 +388,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MELODY_5:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 144
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MELODY_6"
@@ -426,7 +400,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MELODY_6:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 145
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MELODY_7"
@@ -439,7 +412,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MELODY_7:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 146
     new-instance v0, Lcom/android/internal/telephony/cat/Tone;
 
     const-string v1, "MELODY_8"
@@ -452,7 +424,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->MELODY_8:Lcom/android/internal/telephony/cat/Tone;
 
-    .line 28
     const/16 v0, 0x1c
 
     new-array v0, v0, [Lcom/android/internal/telephony/cat/Tone;
@@ -617,7 +588,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/cat/Tone;->$VALUES:[Lcom/android/internal/telephony/cat/Tone;
 
-    .line 181
     new-instance v0, Lcom/android/internal/telephony/cat/Tone$1;
 
     invoke-direct {v0}, Lcom/android/internal/telephony/cat/Tone$1;-><init>()V
@@ -639,13 +609,10 @@
     .end annotation
 
     .prologue
-    .line 150
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 151
     iput p3, p0, Lcom/android/internal/telephony/cat/Tone;->mValue:I
 
-    .line 152
     return-void
 .end method
 
@@ -663,17 +630,14 @@
     .end annotation
 
     .prologue
-    .line 169
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 170
     invoke-virtual {p3}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/telephony/cat/Tone;->mValue:I
 
-    .line 171
     return-void
 .end method
 
@@ -682,7 +646,6 @@
     .parameter "value"
 
     .prologue
-    .line 161
     invoke-static {}, Lcom/android/internal/telephony/cat/Tone;->values()[Lcom/android/internal/telephony/cat/Tone;
 
     move-result-object v0
@@ -699,25 +662,21 @@
 
     aget-object v1, v0, v2
 
-    .line 162
     .local v1, e:Lcom/android/internal/telephony/cat/Tone;
     iget v4, v1, Lcom/android/internal/telephony/cat/Tone;->mValue:I
 
     if-ne v4, p0, :cond_f
 
-    .line 166
     .end local v1           #e:Lcom/android/internal/telephony/cat/Tone;
     :goto_e
     return-object v1
 
-    .line 161
     .restart local v1       #e:Lcom/android/internal/telephony/cat/Tone;
     :cond_f
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_6
 
-    .line 166
     .end local v1           #e:Lcom/android/internal/telephony/cat/Tone;
     :cond_12
     const/4 v1, 0x0
@@ -730,7 +689,6 @@
     .parameter "name"
 
     .prologue
-    .line 28
     const-class v0, Lcom/android/internal/telephony/cat/Tone;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -746,7 +704,6 @@
     .registers 1
 
     .prologue
-    .line 28
     sget-object v0, Lcom/android/internal/telephony/cat/Tone;->$VALUES:[Lcom/android/internal/telephony/cat/Tone;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/cat/Tone;->clone()Ljava/lang/Object;
@@ -764,7 +721,6 @@
     .registers 2
 
     .prologue
-    .line 178
     const/4 v0, 0x0
 
     return v0
@@ -776,13 +732,11 @@
     .parameter "flags"
 
     .prologue
-    .line 174
     invoke-virtual {p0}, Lcom/android/internal/telephony/cat/Tone;->ordinal()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 175
     return-void
 .end method

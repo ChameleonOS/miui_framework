@@ -29,7 +29,6 @@
     .registers 1
 
     .prologue
-    .line 26
     .local p0, this:Landroid/util/Singleton;,"Landroid/util/Singleton<TT;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -55,24 +54,20 @@
     .end annotation
 
     .prologue
-    .line 32
     .local p0, this:Landroid/util/Singleton;,"Landroid/util/Singleton<TT;>;"
     monitor-enter p0
 
-    .line 33
     :try_start_1
     iget-object v0, p0, Landroid/util/Singleton;->mInstance:Ljava/lang/Object;
 
     if-nez v0, :cond_b
 
-    .line 34
     invoke-virtual {p0}, Landroid/util/Singleton;->create()Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/util/Singleton;->mInstance:Ljava/lang/Object;
 
-    .line 36
     :cond_b
     iget-object v0, p0, Landroid/util/Singleton;->mInstance:Ljava/lang/Object;
 
@@ -80,7 +75,6 @@
 
     return-object v0
 
-    .line 37
     :catchall_f
     move-exception v0
 

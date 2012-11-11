@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 159
     iput-object p1, p0, Lmiui/animation/ViewPropertyAnimator$2;->this$0:Lmiui/animation/ViewPropertyAnimator;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "animation"
 
     .prologue
-    .line 162
     iget-object v0, p0, Lmiui/animation/ViewPropertyAnimator$2;->this$0:Lmiui/animation/ViewPropertyAnimator;
 
     iget-object v1, p0, Lmiui/animation/ViewPropertyAnimator$2;->this$0:Lmiui/animation/ViewPropertyAnimator;
@@ -79,6 +77,5 @@
     #calls: Lmiui/animation/ViewPropertyAnimator;->setValue(F)V
     invoke-static {v0, v1}, Lmiui/animation/ViewPropertyAnimator;->access$500(Lmiui/animation/ViewPropertyAnimator;F)V
 
-    .line 163
     return-void
 .end method

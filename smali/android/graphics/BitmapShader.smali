@@ -15,18 +15,14 @@
     .parameter "tileY"
 
     .prologue
-    .line 38
     invoke-direct {p0}, Landroid/graphics/Shader;-><init>()V
 
-    .line 39
     iput-object p1, p0, Landroid/graphics/BitmapShader;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 40
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->ni()I
 
     move-result v0
 
-    .line 41
     .local v0, b:I
     iget v1, p2, Landroid/graphics/Shader$TileMode;->nativeInt:I
 
@@ -38,7 +34,6 @@
 
     iput v1, p0, Landroid/graphics/Shader;->native_instance:I
 
-    .line 42
     iget v1, p0, Landroid/graphics/Shader;->native_instance:I
 
     iget v2, p2, Landroid/graphics/Shader$TileMode;->nativeInt:I
@@ -51,7 +46,6 @@
 
     iput v1, p0, Landroid/graphics/Shader;->native_shader:I
 
-    .line 43
     return-void
 .end method
 

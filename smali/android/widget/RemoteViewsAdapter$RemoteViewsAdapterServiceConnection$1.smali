@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 178
     iput-object p1, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->this$0:Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;
 
     iput-object p2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->val$adapter:Landroid/widget/RemoteViewsAdapter;
@@ -46,7 +45,6 @@
     .registers 6
 
     .prologue
-    .line 181
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->val$adapter:Landroid/widget/RemoteViewsAdapter;
 
     #getter for: Landroid/widget/RemoteViewsAdapter;->mNotifyDataSetChangedAfterOnServiceConnected:Z
@@ -56,20 +54,17 @@
 
     if-eqz v2, :cond_1f
 
-    .line 183
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->val$adapter:Landroid/widget/RemoteViewsAdapter;
 
     #calls: Landroid/widget/RemoteViewsAdapter;->onNotifyDataSetChanged()V
     invoke-static {v2}, Landroid/widget/RemoteViewsAdapter;->access$100(Landroid/widget/RemoteViewsAdapter;)V
 
-    .line 227
     :goto_d
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->val$adapter:Landroid/widget/RemoteViewsAdapter;
 
     #calls: Landroid/widget/RemoteViewsAdapter;->enqueueDeferredUnbindServiceMessage()V
     invoke-static {v2}, Landroid/widget/RemoteViewsAdapter;->access$700(Landroid/widget/RemoteViewsAdapter;)V
 
-    .line 228
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->this$0:Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;
 
     const/4 v3, 0x1
@@ -77,7 +72,6 @@
     #setter for: Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;->mIsConnected:Z
     invoke-static {v2, v3}, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;->access$802(Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;Z)Z
 
-    .line 229
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->this$0:Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;
 
     const/4 v3, 0x0
@@ -85,11 +79,9 @@
     #setter for: Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;->mIsConnecting:Z
     invoke-static {v2, v3}, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;->access$902(Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection;Z)Z
 
-    .line 230
     :goto_1e
     return-void
 
-    .line 185
     :cond_1f
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->val$adapter:Landroid/widget/RemoteViewsAdapter;
 
@@ -102,7 +94,6 @@
 
     move-result-object v1
 
-    .line 188
     .local v1, factory:Lcom/android/internal/widget/IRemoteViewsFactory;
     :try_start_29
     invoke-interface {v1}, Lcom/android/internal/widget/IRemoteViewsFactory;->isCreated()Z
@@ -111,13 +102,11 @@
 
     if-nez v2, :cond_32
 
-    .line 191
     invoke-interface {v1}, Lcom/android/internal/widget/IRemoteViewsFactory;->onDataSetChanged()V
     :try_end_32
     .catch Landroid/os/RemoteException; {:try_start_29 .. :try_end_32} :catch_46
     .catch Ljava/lang/RuntimeException; {:try_start_29 .. :try_end_32} :catch_64
 
-    .line 207
     :cond_32
     :goto_32
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->val$adapter:Landroid/widget/RemoteViewsAdapter;
@@ -125,7 +114,6 @@
     #calls: Landroid/widget/RemoteViewsAdapter;->updateTemporaryMetaData()V
     invoke-static {v2}, Landroid/widget/RemoteViewsAdapter;->access$300(Landroid/widget/RemoteViewsAdapter;)V
 
-    .line 210
     iget-object v2, p0, Landroid/widget/RemoteViewsAdapter$RemoteViewsAdapterServiceConnection$1;->val$adapter:Landroid/widget/RemoteViewsAdapter;
 
     #getter for: Landroid/widget/RemoteViewsAdapter;->mMainQueue:Landroid/os/Handler;
@@ -141,11 +129,9 @@
 
     goto :goto_d
 
-    .line 193
     :catch_46
     move-exception v0
 
-    .line 194
     .local v0, e:Landroid/os/RemoteException;
     const-string v2, "RemoteViewsAdapter"
 
@@ -175,12 +161,10 @@
 
     goto :goto_1e
 
-    .line 200
     .end local v0           #e:Landroid/os/RemoteException;
     :catch_64
     move-exception v0
 
-    .line 201
     .local v0, e:Ljava/lang/RuntimeException;
     const-string v2, "RemoteViewsAdapter"
 

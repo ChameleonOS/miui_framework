@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 207
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,40 +44,33 @@
     .parameter "in"
 
     .prologue
-    .line 209
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 210
     .local v0, token:I
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_c
 
-    .line 211
     invoke-static {p1}, Landroid/view/KeyEvent;->createFromParcelBody(Landroid/os/Parcel;)Landroid/view/KeyEvent;
 
     move-result-object v1
 
-    .line 213
     :goto_b
     return-object v1
 
-    .line 212
     :cond_c
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_14
 
-    .line 213
     invoke-static {p1}, Landroid/view/MotionEvent;->createFromParcelBody(Landroid/os/Parcel;)Landroid/view/MotionEvent;
 
     move-result-object v1
 
     goto :goto_b
 
-    .line 215
     :cond_14
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -94,7 +86,6 @@
     .parameter "x0"
 
     .prologue
-    .line 207
     invoke-virtual {p0, p1}, Landroid/view/InputEvent$1;->createFromParcel(Landroid/os/Parcel;)Landroid/view/InputEvent;
 
     move-result-object v0
@@ -107,7 +98,6 @@
     .parameter "size"
 
     .prologue
-    .line 220
     new-array v0, p1, [Landroid/view/InputEvent;
 
     return-object v0
@@ -118,7 +108,6 @@
     .parameter "x0"
 
     .prologue
-    .line 207
     invoke-virtual {p0, p1}, Landroid/view/InputEvent$1;->newArray(I)[Landroid/view/InputEvent;
 
     move-result-object v0

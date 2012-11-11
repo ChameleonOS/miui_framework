@@ -24,13 +24,10 @@
     .parameter "_service"
 
     .prologue
-    .line 3716
     invoke-direct {p0}, Landroid/content/pm/PackageParser$IntentInfo;-><init>()V
 
-    .line 3717
     iput-object p1, p0, Landroid/content/pm/PackageParser$ServiceIntentInfo;->service:Landroid/content/pm/PackageParser$Service;
 
-    .line 3718
     return-void
 .end method
 
@@ -40,7 +37,6 @@
     .registers 3
 
     .prologue
-    .line 3721
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

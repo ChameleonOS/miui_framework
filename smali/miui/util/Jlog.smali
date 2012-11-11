@@ -14,10 +14,8 @@
     .registers 1
 
     .prologue
-    .line 18
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
     return-void
 .end method
 
@@ -27,7 +25,6 @@
     .parameter "msg"
 
     .prologue
-    .line 22
     const/4 v0, 0x0
 
     return v0
@@ -40,7 +37,6 @@
     .parameter "tr"
 
     .prologue
-    .line 26
     const/4 v0, 0x0
 
     return v0
@@ -52,7 +48,6 @@
     .parameter "msg"
 
     .prologue
-    .line 50
     const/4 v0, 0x0
 
     return v0
@@ -65,7 +60,6 @@
     .parameter "tr"
 
     .prologue
-    .line 54
     const/4 v0, 0x0
 
     return v0
@@ -77,7 +71,6 @@
     .parameter "msg"
 
     .prologue
-    .line 30
     const/4 v0, 0x0
 
     return v0
@@ -90,7 +83,6 @@
     .parameter "tr"
 
     .prologue
-    .line 34
     const/4 v0, 0x0
 
     return v0
@@ -103,7 +95,6 @@
     .parameter "msg"
 
     .prologue
-    .line 58
     const/4 v0, 0x0
 
     return v0
@@ -115,12 +106,10 @@
     .parameter "msg"
 
     .prologue
-    .line 62
     sget-object v1, Lmiui/util/Jlog;->sUsageStatsService:Lcom/android/internal/app/IUsageStats;
 
     if-nez v1, :cond_11
 
-    .line 63
     const-string/jumbo v1, "usagestats"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -133,7 +122,6 @@
 
     sput-object v1, Lmiui/util/Jlog;->sUsageStatsService:Lcom/android/internal/app/IUsageStats;
 
-    .line 66
     :cond_11
     new-instance v0, Landroid/content/ComponentName;
 
@@ -175,7 +163,6 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 68
     .local v0, componentName:Landroid/content/ComponentName;
     :try_start_3b
     sget-object v1, Lmiui/util/Jlog;->sUsageStatsService:Lcom/android/internal/app/IUsageStats;
@@ -186,11 +173,9 @@
     :try_end_41
     .catch Landroid/os/RemoteException; {:try_start_3b .. :try_end_41} :catch_42
 
-    .line 71
     :goto_41
     return-void
 
-    .line 69
     :catch_42
     move-exception v1
 
@@ -203,7 +188,6 @@
     .parameter "msg"
 
     .prologue
-    .line 38
     const/4 v0, 0x0
 
     return v0
@@ -216,7 +200,6 @@
     .parameter "tr"
 
     .prologue
-    .line 42
     const/4 v0, 0x0
 
     return v0
@@ -228,7 +211,6 @@
     .parameter "tr"
 
     .prologue
-    .line 46
     const/4 v0, 0x0
 
     return v0

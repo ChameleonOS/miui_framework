@@ -19,13 +19,10 @@
     .parameter "callback"
 
     .prologue
-    .line 38
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     if-nez p1, :cond_e
 
-    .line 40
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "name must not be null."
@@ -34,17 +31,13 @@
 
     throw v0
 
-    .line 43
     :cond_e
     iput-object p1, p0, Landroid/database/sqlite/SQLiteCustomFunction;->name:Ljava/lang/String;
 
-    .line 44
     iput p2, p0, Landroid/database/sqlite/SQLiteCustomFunction;->numArgs:I
 
-    .line 45
     iput-object p3, p0, Landroid/database/sqlite/SQLiteCustomFunction;->callback:Landroid/database/sqlite/SQLiteDatabase$CustomFunction;
 
-    .line 46
     return-void
 .end method
 
@@ -53,11 +46,9 @@
     .parameter "args"
 
     .prologue
-    .line 51
     iget-object v0, p0, Landroid/database/sqlite/SQLiteCustomFunction;->callback:Landroid/database/sqlite/SQLiteDatabase$CustomFunction;
 
     invoke-interface {v0, p1}, Landroid/database/sqlite/SQLiteDatabase$CustomFunction;->callback([Ljava/lang/String;)V
 
-    .line 52
     return-void
 .end method

@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 1122
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "x0"
 
     .prologue
-    .line 1122
     invoke-virtual {p0, p1}, Lmiui/widget/LockPatternView$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lmiui/widget/LockPatternView$SavedState;
 
     move-result-object v0
@@ -58,7 +56,6 @@
     .parameter "in"
 
     .prologue
-    .line 1124
     new-instance v0, Lmiui/widget/LockPatternView$SavedState;
 
     const/4 v1, 0x0
@@ -73,7 +70,6 @@
     .parameter "x0"
 
     .prologue
-    .line 1122
     invoke-virtual {p0, p1}, Lmiui/widget/LockPatternView$SavedState$1;->newArray(I)[Lmiui/widget/LockPatternView$SavedState;
 
     move-result-object v0
@@ -86,7 +82,6 @@
     .parameter "size"
 
     .prologue
-    .line 1128
     new-array v0, p1, [Lmiui/widget/LockPatternView$SavedState;
 
     return-object v0

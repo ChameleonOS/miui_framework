@@ -27,7 +27,6 @@
     .registers 1
 
     .prologue
-    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +38,6 @@
     .parameter "defaultName"
 
     .prologue
-    .line 58
     sget-object v0, Lcom/android/internal/telephony/CallerInfo$Injector;->mContactRef:Landroid/net/Uri;
 
     invoke-static {v0, p1, p0}, Lmiui/telephony/CallerInfo;->getColumnIndex(Landroid/net/Uri;Ljava/lang/String;Landroid/database/Cursor;)I
@@ -54,7 +52,6 @@
     .parameter "contactRef"
 
     .prologue
-    .line 56
     sput-object p0, Lcom/android/internal/telephony/CallerInfo$Injector;->mContactRef:Landroid/net/Uri;
 
     return-void

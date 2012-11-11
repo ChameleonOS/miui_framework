@@ -27,15 +27,11 @@
     .parameter "randomizationTime"
 
     .prologue
-    .line 84
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 85
     iput p1, p0, Lcom/android/internal/telephony/RetryManager$RetryRec;->mDelayTime:I
 
-    .line 86
     iput p2, p0, Lcom/android/internal/telephony/RetryManager$RetryRec;->mRandomizationTime:I
 
-    .line 87
     return-void
 .end method

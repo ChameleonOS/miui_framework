@@ -25,7 +25,6 @@
     .registers 1
 
     .prologue
-    .line 1073
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,33 +41,25 @@
 
     const/4 v4, 0x0
 
-    .line 1098
     new-instance v0, Landroid/view/animation/Animation$Description;
 
     invoke-direct {v0}, Landroid/view/animation/Animation$Description;-><init>()V
 
-    .line 1099
     .local v0, d:Landroid/view/animation/Animation$Description;
     if-nez p0, :cond_13
 
-    .line 1100
     iput v4, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1101
     iput v5, v0, Landroid/view/animation/Animation$Description;->value:F
 
-    .line 1121
     :cond_e
     iput v4, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1122
     iput v5, v0, Landroid/view/animation/Animation$Description;->value:F
 
-    .line 1124
     :goto_12
     return-object v0
 
-    .line 1103
     :cond_13
     iget v2, p0, Landroid/util/TypedValue;->type:I
 
@@ -76,7 +67,6 @@
 
     if-ne v2, v3, :cond_2a
 
-    .line 1104
     iget v2, p0, Landroid/util/TypedValue;->data:I
 
     and-int/lit8 v2, v2, 0xf
@@ -88,7 +78,6 @@
     :cond_1f
     iput v1, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1107
     iget v1, p0, Landroid/util/TypedValue;->data:I
 
     invoke-static {v1}, Landroid/util/TypedValue;->complexToFloat(I)F
@@ -99,7 +88,6 @@
 
     goto :goto_12
 
-    .line 1109
     :cond_2a
     iget v1, p0, Landroid/util/TypedValue;->type:I
 
@@ -107,10 +95,8 @@
 
     if-ne v1, v2, :cond_38
 
-    .line 1110
     iput v4, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1111
     invoke-virtual {p0}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v1
@@ -119,7 +105,6 @@
 
     goto :goto_12
 
-    .line 1113
     :cond_38
     iget v1, p0, Landroid/util/TypedValue;->type:I
 
@@ -133,10 +118,8 @@
 
     if-gt v1, v2, :cond_e
 
-    .line 1115
     iput v4, v0, Landroid/view/animation/Animation$Description;->type:I
 
-    .line 1116
     iget v1, p0, Landroid/util/TypedValue;->data:I
 
     int-to-float v1, v1

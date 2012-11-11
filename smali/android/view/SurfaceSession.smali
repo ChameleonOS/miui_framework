@@ -12,13 +12,10 @@
     .registers 1
 
     .prologue
-    .line 28
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     invoke-direct {p0}, Landroid/view/SurfaceSession;->init()V
 
-    .line 30
     return-void
 .end method
 
@@ -39,10 +36,8 @@
     .end annotation
 
     .prologue
-    .line 41
     invoke-direct {p0}, Landroid/view/SurfaceSession;->destroy()V
 
-    .line 42
     return-void
 .end method
 

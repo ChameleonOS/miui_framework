@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 667
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
     .parameter "flags"
 
     .prologue
-    .line 679
     and-int/lit8 v0, p1, 0x4
 
     if-eqz v0, :cond_a
@@ -44,10 +42,8 @@
 
     if-nez v0, :cond_a
 
-    .line 681
     const/4 v0, 0x0
 
-    .line 683
     :goto_9
     return v0
 
@@ -62,14 +58,12 @@
     .parameter "view"
 
     .prologue
-    .line 674
     const/4 v0, 0x1
 
     const/4 v1, 0x4
 
     invoke-virtual {p0, v0, v1}, Landroid/view/View;->performHapticFeedback(II)Z
 
-    .line 676
     return-void
 .end method
 
@@ -78,13 +72,11 @@
     .parameter "view"
 
     .prologue
-    .line 669
     const/4 v0, 0x2
 
     const/4 v1, 0x4
 
     invoke-virtual {p0, v0, v1}, Landroid/view/View;->performHapticFeedback(II)Z
 
-    .line 671
     return-void
 .end method

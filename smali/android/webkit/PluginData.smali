@@ -54,23 +54,17 @@
     .end annotation
 
     .prologue
-    .line 76
     .local p4, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;[Ljava/lang/String;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 77
     iput-object p1, p0, Landroid/webkit/PluginData;->mStream:Ljava/io/InputStream;
 
-    .line 78
     iput-wide p2, p0, Landroid/webkit/PluginData;->mContentLength:J
 
-    .line 79
     iput-object p4, p0, Landroid/webkit/PluginData;->mHeaders:Ljava/util/Map;
 
-    .line 80
     iput p5, p0, Landroid/webkit/PluginData;->mStatusCode:I
 
-    .line 81
     return-void
 .end method
 
@@ -82,7 +76,6 @@
     .end annotation
 
     .prologue
-    .line 108
     iget-wide v0, p0, Landroid/webkit/PluginData;->mContentLength:J
 
     return-wide v0
@@ -106,7 +99,6 @@
     .end annotation
 
     .prologue
-    .line 125
     iget-object v0, p0, Landroid/webkit/PluginData;->mHeaders:Ljava/util/Map;
 
     return-object v0
@@ -118,7 +110,6 @@
     .end annotation
 
     .prologue
-    .line 94
     iget-object v0, p0, Landroid/webkit/PluginData;->mStream:Ljava/io/InputStream;
 
     return-object v0
@@ -130,7 +121,6 @@
     .end annotation
 
     .prologue
-    .line 139
     iget v0, p0, Landroid/webkit/PluginData;->mStatusCode:I
 
     return v0

@@ -29,22 +29,18 @@
     .parameter "tf"
 
     .prologue
-    .line 108
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 111
     iget-object v1, p0, Lmiui/widget/DigitalClock$AmPm;->mAmPmTextView:Landroid/widget/TextView;
 
     if-eqz v1, :cond_e
 
     if-eqz p2, :cond_e
 
-    .line 112
     iget-object v1, p0, Lmiui/widget/DigitalClock$AmPm;->mAmPmTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, p2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 115
     :cond_e
     new-instance v1, Ljava/text/DateFormatSymbols;
 
@@ -54,7 +50,6 @@
 
     move-result-object v0
 
-    .line 116
     .local v0, ampm:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -62,14 +57,12 @@
 
     iput-object v1, p0, Lmiui/widget/DigitalClock$AmPm;->mAmString:Ljava/lang/String;
 
-    .line 117
     const/4 v1, 0x1
 
     aget-object v1, v0, v1
 
     iput-object v1, p0, Lmiui/widget/DigitalClock$AmPm;->mPmString:Ljava/lang/String;
 
-    .line 118
     return-void
 .end method
 
@@ -80,12 +73,10 @@
     .parameter "isMorning"
 
     .prologue
-    .line 127
     iget-object v0, p0, Lmiui/widget/DigitalClock$AmPm;->mAmPmTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_d
 
-    .line 128
     iget-object v1, p0, Lmiui/widget/DigitalClock$AmPm;->mAmPmTextView:Landroid/widget/TextView;
 
     if-eqz p1, :cond_e
@@ -95,11 +86,9 @@
     :goto_a
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 130
     :cond_d
     return-void
 
-    .line 128
     :cond_e
     iget-object v0, p0, Lmiui/widget/DigitalClock$AmPm;->mPmString:Ljava/lang/String;
 
@@ -111,12 +100,10 @@
     .parameter "show"
 
     .prologue
-    .line 121
     iget-object v0, p0, Lmiui/widget/DigitalClock$AmPm;->mAmPmTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_c
 
-    .line 122
     iget-object v1, p0, Lmiui/widget/DigitalClock$AmPm;->mAmPmTextView:Landroid/widget/TextView;
 
     if-eqz p1, :cond_d
@@ -126,11 +113,9 @@
     :goto_9
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 124
     :cond_c
     return-void
 
-    .line 122
     :cond_d
     const/16 v0, 0x8
 

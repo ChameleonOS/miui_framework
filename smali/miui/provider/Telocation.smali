@@ -42,7 +42,6 @@
     .registers 1
 
     .prologue
-    .line 53
     const-string v0, "content://telocation/customlocations"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -58,7 +57,6 @@
     .registers 1
 
     .prologue
-    .line 10
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

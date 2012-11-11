@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 56
     iput-object p1, p0, Lcom/miui/internal/app/MiuiLicenseActivity$1;->this$0:Lcom/miui/internal/app/MiuiLicenseActivity;
 
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "url"
 
     .prologue
-    .line 59
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity$1;->this$0:Lcom/miui/internal/app/MiuiLicenseActivity;
 
     #getter for: Lcom/android/internal/app/AlertActivity;->mAlert:Lcom/android/internal/app/AlertController;
@@ -57,7 +55,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/AlertController;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 60
     return-void
 .end method
 
@@ -69,7 +66,6 @@
     .parameter "failingUrl"
 
     .prologue
-    .line 65
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity$1;->this$0:Lcom/miui/internal/app/MiuiLicenseActivity;
 
     #getter for: Lcom/miui/internal/app/MiuiLicenseActivity;->mCachePath:Ljava/lang/String;
@@ -83,17 +79,14 @@
 
     if-eqz v0, :cond_12
 
-    .line 66
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity$1;->this$0:Lcom/miui/internal/app/MiuiLicenseActivity;
 
     #calls: Lcom/miui/internal/app/MiuiLicenseActivity;->showErrorAndFinish(Ljava/lang/String;)V
     invoke-static {v0, p4}, Lcom/miui/internal/app/MiuiLicenseActivity;->access$300(Lcom/miui/internal/app/MiuiLicenseActivity;Ljava/lang/String;)V
 
-    .line 70
     :goto_11
     return-void
 
-    .line 68
     :cond_12
     iget-object v0, p0, Lcom/miui/internal/app/MiuiLicenseActivity$1;->this$0:Lcom/miui/internal/app/MiuiLicenseActivity;
 

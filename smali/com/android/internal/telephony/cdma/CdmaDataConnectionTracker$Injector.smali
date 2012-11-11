@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,16 +33,13 @@
     .parameter "tracker"
 
     .prologue
-    .line 72
     const/4 v1, 0x0
 
-    .line 73
     .local v1, current:Lcom/android/internal/telephony/DataConnectionAc;
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;->getActiveApn()Lcom/android/internal/telephony/ApnSetting;
 
     move-result-object v0
 
-    .line 74
     .local v0, apn:Lcom/android/internal/telephony/ApnSetting;
     invoke-virtual {p0}, Lcom/android/internal/telephony/cdma/CdmaDataConnectionTracker;->getDataConnectionAsyncChannels()Ljava/util/HashMap;
 
@@ -71,7 +67,6 @@
 
     check-cast v2, Lcom/android/internal/telephony/DataConnectionAc;
 
-    .line 75
     .local v2, dcac:Lcom/android/internal/telephony/DataConnectionAc;
     invoke-virtual {v2}, Lcom/android/internal/telephony/DataConnectionAc;->getApnSettingSync()Lcom/android/internal/telephony/ApnSetting;
 
@@ -83,17 +78,14 @@
 
     if-eqz v4, :cond_11
 
-    .line 76
     move-object v1, v2
 
-    .line 81
     .end local v2           #dcac:Lcom/android/internal/telephony/DataConnectionAc;
     :cond_28
     if-eqz v1, :cond_40
 
     if-eqz v0, :cond_40
 
-    .line 82
     invoke-static {}, Lmiui/net/FirewallManager;->getInstance()Lmiui/net/FirewallManager;
 
     move-result-object v4
@@ -114,7 +106,6 @@
 
     invoke-virtual {v4, v5, v6, v7}, Lmiui/net/FirewallManager;->onDataConnected(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 86
     :cond_40
     return-void
 .end method
@@ -124,7 +115,6 @@
     .parameter "tracker"
 
     .prologue
-    .line 89
     invoke-static {}, Lmiui/net/FirewallManager;->getInstance()Lmiui/net/FirewallManager;
 
     move-result-object v0
@@ -141,6 +131,5 @@
 
     invoke-virtual {v0, v1, v2}, Lmiui/net/FirewallManager;->onDataDisconnected(ILjava/lang/String;)V
 
-    .line 91
     return-void
 .end method

@@ -25,7 +25,6 @@
     .parameter "x0"
 
     .prologue
-    .line 259
     iput-object p1, p0, Lmiui/util/DecodeGifImageHelper$1;->this$0:Lmiui/util/DecodeGifImageHelper;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -40,17 +39,14 @@
     .parameter "msg"
 
     .prologue
-    .line 261
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_1e
 
-    .line 270
     :cond_5
     :goto_5
     return-void
 
-    .line 264
     :pswitch_6
     iget-object v0, p0, Lmiui/util/DecodeGifImageHelper$1;->this$0:Lmiui/util/DecodeGifImageHelper;
 
@@ -71,14 +67,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 266
     iget-object v0, p0, Lmiui/util/DecodeGifImageHelper$1;->this$0:Lmiui/util/DecodeGifImageHelper;
 
     invoke-virtual {v0}, Lmiui/util/DecodeGifImageHelper;->decodeNextFrames()V
 
     goto :goto_5
 
-    .line 261
     :pswitch_data_1e
     .packed-switch 0x1
         :pswitch_6

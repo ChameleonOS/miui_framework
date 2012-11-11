@@ -234,10 +234,8 @@
     .registers 0
 
     .prologue
-    .line 135
     invoke-static {}, Landroid/opengl/GLES11Ext;->_nativeClassInit()V
 
-    .line 136
     return-void
 .end method
 
@@ -245,7 +243,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -523,14 +520,12 @@
     .parameter "pointer"
 
     .prologue
-    .line 895
     invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
     invoke-static {p0, p1, p2, p3, v0}, Landroid/opengl/GLES11Ext;->glMatrixIndexPointerOESBounds(IIILjava/nio/Buffer;I)V
 
-    .line 902
     const/4 v0, 0x2
 
     if-eq p0, v0, :cond_10
@@ -563,10 +558,8 @@
     :cond_20
     if-ltz p2, :cond_24
 
-    .line 910
     sput-object p3, Landroid/opengl/GLES11Ext;->_matrixIndexPointerOES:Ljava/nio/Buffer;
 
-    .line 912
     :cond_24
     return-void
 .end method
@@ -675,14 +668,12 @@
     .parameter "pointer"
 
     .prologue
-    .line 930
     invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
     invoke-static {p0, p1, p2, p3, v0}, Landroid/opengl/GLES11Ext;->glWeightPointerOESBounds(IIILjava/nio/Buffer;I)V
 
-    .line 937
     return-void
 .end method
 

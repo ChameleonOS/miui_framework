@@ -25,13 +25,10 @@
     .parameter "looper"
 
     .prologue
-    .line 61
     iput-object p1, p0, Landroid/content/AsyncQueryHandler$WorkerHandler;->this$0:Landroid/content/AsyncQueryHandler;
 
-    .line 62
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 63
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .parameter "msg"
 
     .prologue
-    .line 67
     iget-object v1, p0, Landroid/content/AsyncQueryHandler$WorkerHandler;->this$0:Landroid/content/AsyncQueryHandler;
 
     iget-object v1, v1, Landroid/content/AsyncQueryHandler;->mResolver:Ljava/lang/ref/WeakReference;
@@ -53,33 +49,26 @@
 
     check-cast v0, Landroid/content/ContentResolver;
 
-    .line 68
     .local v0, resolver:Landroid/content/ContentResolver;
     if-nez v0, :cond_d
 
-    .line 121
     :goto_c
     return-void
 
-    .line 70
     :cond_d
     iget-object v6, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v6, Landroid/content/AsyncQueryHandler$WorkerArgs;
 
-    .line 72
     .local v6, args:Landroid/content/AsyncQueryHandler$WorkerArgs;
     iget v11, p1, Landroid/os/Message;->what:I
 
-    .line 73
     .local v11, token:I
     iget v9, p1, Landroid/os/Message;->arg1:I
 
-    .line 75
     .local v9, event:I
     packed-switch v9, :pswitch_data_78
 
-    .line 111
     :goto_18
     iget-object v1, v6, Landroid/content/AsyncQueryHandler$WorkerArgs;->handler:Landroid/os/Handler;
 
@@ -87,21 +76,17 @@
 
     move-result-object v10
 
-    .line 112
     .local v10, reply:Landroid/os/Message;
     iput-object v6, v10, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 113
     iget v1, p1, Landroid/os/Message;->arg1:I
 
     iput v1, v10, Landroid/os/Message;->arg1:I
 
-    .line 120
     invoke-virtual {v10}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_c
 
-    .line 79
     .end local v10           #reply:Landroid/os/Message;
     :pswitch_28
     :try_start_28
@@ -119,28 +104,23 @@
 
     move-result-object v7
 
-    .line 84
     .local v7, cursor:Landroid/database/Cursor;
     if-eqz v7, :cond_3b
 
-    .line 85
     invoke-interface {v7}, Landroid/database/Cursor;->getCount()I
     :try_end_3b
     .catch Ljava/lang/Exception; {:try_start_28 .. :try_end_3b} :catch_3e
 
-    .line 92
     :cond_3b
     :goto_3b
     iput-object v7, v6, Landroid/content/AsyncQueryHandler$WorkerArgs;->result:Ljava/lang/Object;
 
     goto :goto_18
 
-    .line 87
     .end local v7           #cursor:Landroid/database/Cursor;
     :catch_3e
     move-exception v8
 
-    .line 88
     .local v8, e:Ljava/lang/Exception;
     const-string v1, "AsyncQuery"
 
@@ -148,13 +128,11 @@
 
     invoke-static {v1, v2, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 89
     const/4 v7, 0x0
 
     .restart local v7       #cursor:Landroid/database/Cursor;
     goto :goto_3b
 
-    .line 96
     .end local v7           #cursor:Landroid/database/Cursor;
     .end local v8           #e:Ljava/lang/Exception;
     :pswitch_48
@@ -170,7 +148,6 @@
 
     goto :goto_18
 
-    .line 100
     :pswitch_53
     iget-object v1, v6, Landroid/content/AsyncQueryHandler$WorkerArgs;->uri:Landroid/net/Uri;
 
@@ -192,7 +169,6 @@
 
     goto :goto_18
 
-    .line 105
     :pswitch_66
     iget-object v1, v6, Landroid/content/AsyncQueryHandler$WorkerArgs;->uri:Landroid/net/Uri;
 
@@ -212,7 +188,6 @@
 
     goto :goto_18
 
-    .line 75
     nop
 
     :pswitch_data_78

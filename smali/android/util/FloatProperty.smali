@@ -23,13 +23,11 @@
     .parameter "name"
 
     .prologue
-    .line 34
     .local p0, this:Landroid/util/FloatProperty;,"Landroid/util/FloatProperty<TT;>;"
     const-class v0, Ljava/lang/Float;
 
     invoke-direct {p0, v0, p1}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    .line 35
     return-void
 .end method
 
@@ -48,7 +46,6 @@
     .end annotation
 
     .prologue
-    .line 45
     .local p0, this:Landroid/util/FloatProperty;,"Landroid/util/FloatProperty<TT;>;"
     .local p1, object:Ljava/lang/Object;,"TT;"
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
@@ -57,7 +54,6 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/util/FloatProperty;->setValue(Ljava/lang/Object;F)V
 
-    .line 46
     return-void
 .end method
 
@@ -67,7 +63,6 @@
     .parameter "x1"
 
     .prologue
-    .line 31
     .local p0, this:Landroid/util/FloatProperty;,"Landroid/util/FloatProperty<TT;>;"
     check-cast p2, Ljava/lang/Float;
 

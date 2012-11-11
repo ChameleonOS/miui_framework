@@ -20,16 +20,12 @@
     .parameter "service"
 
     .prologue
-    .line 43
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     iput-object p1, p0, Landroid/hardware/SerialManager;->mContext:Landroid/content/Context;
 
-    .line 45
     iput-object p2, p0, Landroid/hardware/SerialManager;->mService:Landroid/hardware/ISerialManager;
 
-    .line 46
     return-void
 .end method
 
@@ -39,7 +35,6 @@
     .registers 4
 
     .prologue
-    .line 55
     :try_start_0
     iget-object v1, p0, Landroid/hardware/SerialManager;->mService:Landroid/hardware/ISerialManager;
 
@@ -49,15 +44,12 @@
 
     move-result-object v1
 
-    .line 58
     :goto_6
     return-object v1
 
-    .line 56
     :catch_7
     move-exception v0
 
-    .line 57
     .local v0, e:Landroid/os/RemoteException;
     const-string v1, "SerialManager"
 
@@ -65,7 +57,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 58
     const/4 v1, 0x0
 
     goto :goto_6
@@ -82,7 +73,6 @@
     .end annotation
 
     .prologue
-    .line 75
     :try_start_0
     iget-object v3, p0, Landroid/hardware/SerialManager;->mService:Landroid/hardware/ISerialManager;
 
@@ -90,26 +80,21 @@
 
     move-result-object v1
 
-    .line 76
     .local v1, pfd:Landroid/os/ParcelFileDescriptor;
     if-eqz v1, :cond_11
 
-    .line 77
     new-instance v2, Landroid/hardware/SerialPort;
 
     invoke-direct {v2, p1}, Landroid/hardware/SerialPort;-><init>(Ljava/lang/String;)V
 
-    .line 78
     .local v2, port:Landroid/hardware/SerialPort;
     invoke-virtual {v2, v1, p2}, Landroid/hardware/SerialPort;->open(Landroid/os/ParcelFileDescriptor;I)V
 
-    .line 86
     .end local v1           #pfd:Landroid/os/ParcelFileDescriptor;
     .end local v2           #port:Landroid/hardware/SerialPort;
     :goto_10
     return-object v2
 
-    .line 81
     .restart local v1       #pfd:Landroid/os/ParcelFileDescriptor;
     :cond_11
     new-instance v3, Ljava/io/IOException;
@@ -138,12 +123,10 @@
     :try_end_2a
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_2a} :catch_2a
 
-    .line 83
     .end local v1           #pfd:Landroid/os/ParcelFileDescriptor;
     :catch_2a
     move-exception v0
 
-    .line 84
     .local v0, e:Landroid/os/RemoteException;
     const-string v3, "SerialManager"
 
@@ -151,7 +134,6 @@
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 86
     const/4 v2, 0x0
 
     goto :goto_10

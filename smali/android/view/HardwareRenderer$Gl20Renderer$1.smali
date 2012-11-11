@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 1506
     iput-object p1, p0, Landroid/view/HardwareRenderer$Gl20Renderer$1;->this$0:Landroid/view/HardwareRenderer$Gl20Renderer;
 
     iput-object p2, p0, Landroid/view/HardwareRenderer$Gl20Renderer$1;->val$view:Landroid/view/View;
@@ -46,17 +45,14 @@
     .registers 2
 
     .prologue
-    .line 1509
     iget-object v0, p0, Landroid/view/HardwareRenderer$Gl20Renderer$1;->val$view:Landroid/view/View;
 
     #calls: Landroid/view/HardwareRenderer$Gl20Renderer;->destroyResources(Landroid/view/View;)V
     invoke-static {v0}, Landroid/view/HardwareRenderer$Gl20Renderer;->access$500(Landroid/view/View;)V
 
-    .line 1510
     const/4 v0, 0x0
 
     invoke-static {v0}, Landroid/view/GLES20Canvas;->flushCaches(I)V
 
-    .line 1511
     return-void
 .end method

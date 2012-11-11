@@ -34,7 +34,6 @@
     .parameter
 
     .prologue
-    .line 189
     iput-object p1, p0, Landroid/webkit/WebSettingsClassic$EventHandler;->this$0:Landroid/webkit/WebSettingsClassic;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +47,6 @@
     .parameter "x1"
 
     .prologue
-    .line 189
     invoke-direct {p0, p1}, Landroid/webkit/WebSettingsClassic$EventHandler;-><init>(Landroid/webkit/WebSettingsClassic;)V
 
     return-void
@@ -59,7 +57,6 @@
     .parameter "x0"
 
     .prologue
-    .line 189
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic$EventHandler;->setRenderPriority()V
 
     return-void
@@ -71,7 +68,6 @@
     .parameter "x1"
 
     .prologue
-    .line 189
     invoke-direct {p0, p1}, Landroid/webkit/WebSettingsClassic$EventHandler;->sendMessage(Landroid/os/Message;)Z
 
     move-result v0
@@ -84,7 +80,6 @@
     .parameter "x0"
 
     .prologue
-    .line 189
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic$EventHandler;->createHandler()V
 
     return-void
@@ -94,13 +89,11 @@
     .registers 2
 
     .prologue
-    .line 201
     monitor-enter p0
 
     :try_start_1
     invoke-direct {p0}, Landroid/webkit/WebSettingsClassic$EventHandler;->setRenderPriority()V
 
-    .line 204
     new-instance v0, Landroid/webkit/WebSettingsClassic$EventHandler$1;
 
     invoke-direct {v0, p0}, Landroid/webkit/WebSettingsClassic$EventHandler$1;-><init>(Landroid/webkit/WebSettingsClassic$EventHandler;)V
@@ -109,12 +102,10 @@
     :try_end_b
     .catchall {:try_start_1 .. :try_end_b} :catchall_d
 
-    .line 234
     monitor-exit p0
 
     return-void
 
-    .line 201
     :catchall_d
     move-exception v0
 
@@ -128,7 +119,6 @@
     .parameter "msg"
 
     .prologue
-    .line 256
     monitor-enter p0
 
     :try_start_1
@@ -136,17 +126,14 @@
 
     if-eqz v0, :cond_d
 
-    .line 257
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic$EventHandler;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
     :try_end_a
     .catchall {:try_start_1 .. :try_end_a} :catchall_f
 
-    .line 258
     const/4 v0, 0x1
 
-    .line 260
     :goto_b
     monitor-exit p0
 
@@ -157,7 +144,6 @@
 
     goto :goto_b
 
-    .line 256
     :catchall_f
     move-exception v0
 
@@ -170,12 +156,10 @@
     .registers 4
 
     .prologue
-    .line 237
     iget-object v1, p0, Landroid/webkit/WebSettingsClassic$EventHandler;->this$0:Landroid/webkit/WebSettingsClassic;
 
     monitor-enter v1
 
-    .line 238
     :try_start_3
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic$EventHandler;->this$0:Landroid/webkit/WebSettingsClassic;
 
@@ -188,20 +172,16 @@
 
     if-ne v0, v2, :cond_13
 
-    .line 239
     const/4 v0, 0x0
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 249
     :cond_11
     :goto_11
     monitor-exit v1
 
-    .line 250
     return-void
 
-    .line 241
     :cond_13
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic$EventHandler;->this$0:Landroid/webkit/WebSettingsClassic;
 
@@ -214,14 +194,12 @@
 
     if-ne v0, v2, :cond_25
 
-    .line 242
     const/4 v0, -0x1
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
     goto :goto_11
 
-    .line 249
     :catchall_22
     move-exception v0
 
@@ -231,7 +209,6 @@
 
     throw v0
 
-    .line 245
     :cond_25
     :try_start_25
     iget-object v0, p0, Landroid/webkit/WebSettingsClassic$EventHandler;->this$0:Landroid/webkit/WebSettingsClassic;
@@ -245,7 +222,6 @@
 
     if-ne v0, v2, :cond_11
 
-    .line 246
     const/16 v0, 0xa
 
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V

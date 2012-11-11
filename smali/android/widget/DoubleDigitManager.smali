@@ -26,16 +26,12 @@
     .parameter "callBack"
 
     .prologue
-    .line 39
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
     iput-wide p1, p0, Landroid/widget/DoubleDigitManager;->timeoutInMillis:J
 
-    .line 41
     iput-object p3, p0, Landroid/widget/DoubleDigitManager;->mCallBack:Landroid/widget/DoubleDigitManager$CallBack;
 
-    .line 42
     return-void
 .end method
 
@@ -44,7 +40,6 @@
     .parameter "x0"
 
     .prologue
-    .line 27
     iget-object v0, p0, Landroid/widget/DoubleDigitManager;->intermediateDigit:Ljava/lang/Integer;
 
     return-object v0
@@ -56,7 +51,6 @@
     .parameter "x1"
 
     .prologue
-    .line 27
     iput-object p1, p0, Landroid/widget/DoubleDigitManager;->intermediateDigit:Ljava/lang/Integer;
 
     return-object p1
@@ -67,7 +61,6 @@
     .parameter "x0"
 
     .prologue
-    .line 27
     iget-object v0, p0, Landroid/widget/DoubleDigitManager;->mCallBack:Landroid/widget/DoubleDigitManager$CallBack;
 
     return-object v0
@@ -82,19 +75,16 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 49
     iget-object v0, p0, Landroid/widget/DoubleDigitManager;->intermediateDigit:Ljava/lang/Integer;
 
     if-nez v0, :cond_2a
 
-    .line 50
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/widget/DoubleDigitManager;->intermediateDigit:Ljava/lang/Integer;
 
-    .line 52
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -107,7 +97,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 61
     iget-object v0, p0, Landroid/widget/DoubleDigitManager;->mCallBack:Landroid/widget/DoubleDigitManager$CallBack;
 
     invoke-interface {v0, p1}, Landroid/widget/DoubleDigitManager$CallBack;->singleDigitIntermediate(I)Z
@@ -116,20 +105,16 @@
 
     if-nez v0, :cond_29
 
-    .line 66
     iput-object v4, p0, Landroid/widget/DoubleDigitManager;->intermediateDigit:Ljava/lang/Integer;
 
-    .line 67
     iget-object v0, p0, Landroid/widget/DoubleDigitManager;->mCallBack:Landroid/widget/DoubleDigitManager$CallBack;
 
     invoke-interface {v0, p1}, Landroid/widget/DoubleDigitManager$CallBack;->singleDigitFinal(I)V
 
-    .line 72
     :cond_29
     :goto_29
     return-void
 
-    .line 69
     :cond_2a
     iget-object v0, p0, Landroid/widget/DoubleDigitManager;->mCallBack:Landroid/widget/DoubleDigitManager$CallBack;
 
@@ -145,7 +130,6 @@
 
     if-eqz v0, :cond_29
 
-    .line 70
     iput-object v4, p0, Landroid/widget/DoubleDigitManager;->intermediateDigit:Ljava/lang/Integer;
 
     goto :goto_29

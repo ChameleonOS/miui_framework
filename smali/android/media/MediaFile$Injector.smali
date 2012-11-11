@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 41
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
     .registers 3
 
     .prologue
-    .line 43
     const-string v0, "APE"
 
     const/16 v1, 0x3e9
@@ -52,7 +50,6 @@
     .prologue
     const/16 v0, 0x3e9
 
-    .line 45
     if-lt p0, v0, :cond_8
 
     if-gt p0, v0, :cond_8
@@ -72,7 +69,6 @@
     .registers 1
 
     .prologue
-    .line 42
     const/4 v0, 0x1
 
     return v0

@@ -19,10 +19,8 @@
     .registers 1
 
     .prologue
-    .line 116
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 117
     return-void
 .end method
 
@@ -31,9 +29,7 @@
     .parameter "name"
 
     .prologue
-    .line 119
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 120
     return-void
 .end method

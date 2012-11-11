@@ -33,7 +33,6 @@
     .registers 1
 
     .prologue
-    .line 121
     new-instance v0, Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;
 
     invoke-direct {v0}, Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;-><init>()V
@@ -47,10 +46,8 @@
     .registers 1
 
     .prologue
-    .line 120
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 131
     return-void
 .end method
 
@@ -60,7 +57,6 @@
     .parameter "ev"
 
     .prologue
-    .line 124
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -91,11 +87,9 @@
 
     if-lez v0, :cond_1d
 
-    .line 126
     :cond_1b
     const/4 v0, 0x1
 
-    .line 128
     :goto_1c
     return v0
 
@@ -110,11 +104,9 @@
     .parameter "list"
 
     .prologue
-    .line 145
     sget-object v0, Landroid/widget/AbsListView$Injector;->mChildSequenceStateTaggingListener:Landroid/widget/AbsListView$Injector$ChildSequenceStateTaggingListener;
 
     invoke-virtual {p0, v0}, Landroid/widget/AbsListView;->setChildSequenceStateTaggingListener(Landroid/view/ViewGroup$ChildSequenceStateTaggingListener;)V
 
-    .line 146
     return-void
 .end method

@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 30
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,7 +26,6 @@
     .end annotation
 
     .prologue
-    .line 44
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -49,7 +47,6 @@
     .end annotation
 
     .prologue
-    .line 65
     .local p0, elements:[Ljava/lang/Object;,"[TE;"
     array-length v2, p0
 
@@ -59,17 +56,14 @@
 
     add-int/lit8 v0, v2, 0x1
 
-    .line 66
     .local v0, capacity:I
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1, v0}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 67
     .local v1, set:Ljava/util/HashSet;,"Ljava/util/HashSet<TE;>;"
     invoke-static {v1, p0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    .line 68
     return-object v1
 .end method
 
@@ -86,7 +80,6 @@
     .end annotation
 
     .prologue
-    .line 77
     new-instance v0, Ljava/util/TreeSet;
 
     invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
@@ -108,16 +101,13 @@
     .end annotation
 
     .prologue
-    .line 88
     .local p0, elements:[Ljava/lang/Object;,"[TE;"
     new-instance v0, Ljava/util/TreeSet;
 
     invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
 
-    .line 89
     .local v0, set:Ljava/util/SortedSet;,"Ljava/util/SortedSet<TE;>;"
     invoke-static {v0, p0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    .line 90
     return-object v0
 .end method

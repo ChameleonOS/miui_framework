@@ -64,19 +64,15 @@
     .end annotation
 
     .prologue
-    .line 87
     .local p0, this:Landroid/preference/GenericInflater$FactoryMerger;,"Landroid/preference/GenericInflater$FactoryMerger<TT;>;"
     .local p1, f1:Landroid/preference/GenericInflater$Factory;,"Landroid/preference/GenericInflater$Factory<TT;>;"
     .local p2, f2:Landroid/preference/GenericInflater$Factory;,"Landroid/preference/GenericInflater$Factory<TT;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
     iput-object p1, p0, Landroid/preference/GenericInflater$FactoryMerger;->mF1:Landroid/preference/GenericInflater$Factory;
 
-    .line 89
     iput-object p2, p0, Landroid/preference/GenericInflater$FactoryMerger;->mF2:Landroid/preference/GenericInflater$Factory;
 
-    .line 90
     return-void
 .end method
 
@@ -98,7 +94,6 @@
     .end annotation
 
     .prologue
-    .line 93
     .local p0, this:Landroid/preference/GenericInflater$FactoryMerger;,"Landroid/preference/GenericInflater$FactoryMerger<TT;>;"
     iget-object v1, p0, Landroid/preference/GenericInflater$FactoryMerger;->mF1:Landroid/preference/GenericInflater$Factory;
 
@@ -106,11 +101,9 @@
 
     move-result-object v0
 
-    .line 94
     .local v0, v:Ljava/lang/Object;,"TT;"
     if-eqz v0, :cond_9
 
-    .line 95
     .end local v0           #v:Ljava/lang/Object;,"TT;"
     :goto_8
     return-object v0

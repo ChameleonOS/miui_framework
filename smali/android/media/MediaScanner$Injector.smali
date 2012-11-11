@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 120
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,40 +37,33 @@
     .parameter "alarms"
 
     .prologue
-    .line 122
     if-eqz p3, :cond_1b
 
-    .line 123
     const-string/jumbo v0, "notification_sound"
 
     iget-object v1, p1, Landroid/media/MediaScanner$FileEntry;->mPath:Ljava/lang/String;
 
     invoke-static {p0, v0, v1}, Landroid/media/MediaScanner$Injector;->setSettingIfNotSet(Landroid/media/MediaScanner;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 124
     const-string/jumbo v0, "sms_delivered_sound"
 
     iget-object v1, p1, Landroid/media/MediaScanner$FileEntry;->mPath:Ljava/lang/String;
 
     invoke-static {p0, v0, v1}, Landroid/media/MediaScanner$Injector;->setSettingIfNotSet(Landroid/media/MediaScanner;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 125
     const-string/jumbo v0, "sms_received_sound"
 
     iget-object v1, p1, Landroid/media/MediaScanner$FileEntry;->mPath:Ljava/lang/String;
 
     invoke-static {p0, v0, v1}, Landroid/media/MediaScanner$Injector;->setSettingIfNotSet(Landroid/media/MediaScanner;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 131
     :cond_1a
     :goto_1a
     return-void
 
-    .line 126
     :cond_1b
     if-eqz p2, :cond_26
 
-    .line 127
     const-string/jumbo v0, "ringtone"
 
     iget-object v1, p1, Landroid/media/MediaScanner$FileEntry;->mPath:Ljava/lang/String;
@@ -80,11 +72,9 @@
 
     goto :goto_1a
 
-    .line 128
     :cond_26
     if-eqz p4, :cond_1a
 
-    .line 129
     const-string v0, "alarm_alert"
 
     iget-object v1, p1, Landroid/media/MediaScanner$FileEntry;->mPath:Ljava/lang/String;
@@ -101,12 +91,10 @@
     .parameter "path"
 
     .prologue
-    .line 134
     invoke-virtual {p0}, Landroid/media/MediaScanner;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 135
     .local v0, context:Landroid/content/Context;
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -116,7 +104,6 @@
 
     move-result-object v1
 
-    .line 138
     .local v1, existingSettingValue:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -124,7 +111,6 @@
 
     if-eqz v2, :cond_26
 
-    .line 140
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -143,7 +129,6 @@
 
     invoke-static {v2, p1, v3}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 143
     :cond_26
     return-void
 .end method

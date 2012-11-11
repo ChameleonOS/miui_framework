@@ -32,20 +32,16 @@
     .parameter "values"
 
     .prologue
-    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     iput-object p1, p0, Landroid/content/Entity;->mValues:Landroid/content/ContentValues;
 
-    .line 39
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/content/Entity;->mSubValues:Ljava/util/ArrayList;
 
-    .line 40
     return-void
 .end method
 
@@ -57,7 +53,6 @@
     .parameter "values"
 
     .prologue
-    .line 51
     iget-object v0, p0, Landroid/content/Entity;->mSubValues:Ljava/util/ArrayList;
 
     new-instance v1, Landroid/content/Entity$NamedContentValues;
@@ -66,7 +61,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 52
     return-void
 .end method
 
@@ -74,7 +68,6 @@
     .registers 2
 
     .prologue
-    .line 43
     iget-object v0, p0, Landroid/content/Entity;->mValues:Landroid/content/ContentValues;
 
     return-object v0
@@ -93,7 +86,6 @@
     .end annotation
 
     .prologue
-    .line 47
     iget-object v0, p0, Landroid/content/Entity;->mSubValues:Ljava/util/ArrayList;
 
     return-object v0
@@ -103,12 +95,10 @@
     .registers 6
 
     .prologue
-    .line 65
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 66
     .local v2, sb:Ljava/lang/StringBuilder;
     const-string v3, "Entity: "
 
@@ -122,7 +112,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 67
     invoke-virtual {p0}, Landroid/content/Entity;->getSubValues()Ljava/util/ArrayList;
 
     move-result-object v3
@@ -145,7 +134,6 @@
 
     check-cast v1, Landroid/content/Entity$NamedContentValues;
 
-    .line 68
     .local v1, namedValue:Landroid/content/Entity$NamedContentValues;
     const-string v3, "\n  "
 
@@ -157,7 +145,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 69
     const-string v3, "\n  -> "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -170,7 +157,6 @@
 
     goto :goto_1a
 
-    .line 71
     .end local v1           #namedValue:Landroid/content/Entity$NamedContentValues;
     :cond_3d
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

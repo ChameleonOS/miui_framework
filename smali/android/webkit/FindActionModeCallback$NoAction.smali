@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 276
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
     .parameter "item"
 
     .prologue
-    .line 289
     const/4 v0, 0x0
 
     return v0
@@ -48,7 +46,6 @@
     .parameter "menu"
 
     .prologue
-    .line 279
     const/4 v0, 0x0
 
     return v0
@@ -59,7 +56,6 @@
     .parameter "mode"
 
     .prologue
-    .line 294
     return-void
 .end method
 
@@ -69,7 +65,6 @@
     .parameter "menu"
 
     .prologue
-    .line 284
     const/4 v0, 0x0
 
     return v0

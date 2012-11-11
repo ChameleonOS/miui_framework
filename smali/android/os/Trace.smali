@@ -40,7 +40,6 @@
     .registers 3
 
     .prologue
-    .line 44
     const/16 v0, 0x9
 
     new-array v0, v0, [Ljava/lang/String;
@@ -101,21 +100,18 @@
 
     sput-object v0, Landroid/os/Trace;->TRACE_TAGS:[Ljava/lang/String;
 
-    .line 51
     invoke-static {}, Landroid/os/Trace;->nativeGetEnabledTags()J
 
     move-result-wide v0
 
     sput-wide v0, Landroid/os/Trace;->sEnabledTags:J
 
-    .line 59
     new-instance v0, Landroid/os/Trace$1;
 
     invoke-direct {v0}, Landroid/os/Trace$1;-><init>()V
 
     invoke-static {v0}, Landroid/os/SystemProperties;->addChangeCallback(Ljava/lang/Runnable;)V
 
-    .line 64
     return-void
 .end method
 
@@ -123,10 +119,8 @@
     .registers 1
 
     .prologue
-    .line 66
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
     return-void
 .end method
 
@@ -135,7 +129,6 @@
     .parameter "x0"
 
     .prologue
-    .line 29
     sput-wide p0, Landroid/os/Trace;->sEnabledTags:J
 
     return-wide p0
@@ -145,7 +138,6 @@
     .registers 2
 
     .prologue
-    .line 29
     invoke-static {}, Landroid/os/Trace;->nativeGetEnabledTags()J
 
     move-result-wide v0
@@ -158,7 +150,6 @@
     .parameter "traceTag"
 
     .prologue
-    .line 76
     sget-wide v0, Landroid/os/Trace;->sEnabledTags:J
 
     and-long/2addr v0, p0
@@ -198,7 +189,6 @@
     .parameter "methodName"
 
     .prologue
-    .line 100
     sget-wide v0, Landroid/os/Trace;->sEnabledTags:J
 
     and-long/2addr v0, p0
@@ -209,10 +199,8 @@
 
     if-eqz v0, :cond_c
 
-    .line 101
     invoke-static {p0, p1, p2}, Landroid/os/Trace;->nativeTraceBegin(JLjava/lang/String;)V
 
-    .line 103
     :cond_c
     return-void
 .end method
@@ -224,7 +212,6 @@
     .parameter "counterValue"
 
     .prologue
-    .line 87
     sget-wide v0, Landroid/os/Trace;->sEnabledTags:J
 
     and-long/2addr v0, p0
@@ -235,10 +222,8 @@
 
     if-eqz v0, :cond_c
 
-    .line 88
     invoke-static {p0, p1, p2, p3}, Landroid/os/Trace;->nativeTraceCounter(JLjava/lang/String;I)V
 
-    .line 90
     :cond_c
     return-void
 .end method
@@ -248,7 +233,6 @@
     .parameter "traceTag"
 
     .prologue
-    .line 112
     sget-wide v0, Landroid/os/Trace;->sEnabledTags:J
 
     and-long/2addr v0, p0
@@ -259,10 +243,8 @@
 
     if-eqz v0, :cond_c
 
-    .line 113
     invoke-static {p0, p1}, Landroid/os/Trace;->nativeTraceEnd(J)V
 
-    .line 115
     :cond_c
     return-void
 .end method

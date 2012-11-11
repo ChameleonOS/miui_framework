@@ -18,13 +18,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 23
     sput-object v0, Landroid/webkit/HTML5VideoInline;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 24
     sput-object v0, Landroid/webkit/HTML5VideoInline;->mTextureNames:[I
 
-    .line 27
     const/4 v0, -0x1
 
     sput v0, Landroid/webkit/HTML5VideoInline;->mVideoLayerUsingSurfaceTexture:I
@@ -38,15 +35,12 @@
     .parameter "position"
 
     .prologue
-    .line 37
     invoke-direct {p0}, Landroid/webkit/HTML5VideoView;-><init>()V
 
-    .line 38
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/webkit/HTML5VideoInline;->init(IIZ)V
 
-    .line 39
     return-void
 .end method
 
@@ -54,17 +48,14 @@
     .registers 1
 
     .prologue
-    .line 98
     const/4 v0, 0x0
 
     sput-object v0, Landroid/webkit/HTML5VideoInline;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 99
     const/4 v0, -0x1
 
     sput v0, Landroid/webkit/HTML5VideoInline;->mVideoLayerUsingSurfaceTexture:I
 
-    .line 100
     return-void
 .end method
 
@@ -77,7 +68,6 @@
 
     const/4 v2, 0x0
 
-    .line 73
     sget v0, Landroid/webkit/HTML5VideoInline;->mVideoLayerUsingSurfaceTexture:I
 
     if-ne p0, v0, :cond_e
@@ -90,18 +80,15 @@
 
     if-nez v0, :cond_22
 
-    .line 79
     :cond_e
     new-array v0, v1, [I
 
     sput-object v0, Landroid/webkit/HTML5VideoInline;->mTextureNames:[I
 
-    .line 80
     sget-object v0, Landroid/webkit/HTML5VideoInline;->mTextureNames:[I
 
     invoke-static {v1, v0, v2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    .line 81
     new-instance v0, Landroid/graphics/SurfaceTexture;
 
     sget-object v1, Landroid/webkit/HTML5VideoInline;->mTextureNames:[I
@@ -112,11 +99,9 @@
 
     sput-object v0, Landroid/webkit/HTML5VideoInline;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 83
     :cond_22
     sput p0, Landroid/webkit/HTML5VideoInline;->mVideoLayerUsingSurfaceTexture:I
 
-    .line 84
     sget-object v0, Landroid/webkit/HTML5VideoInline;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     return-object v0
@@ -127,12 +112,10 @@
     .parameter "l"
 
     .prologue
-    .line 113
     sget-object v0, Landroid/webkit/HTML5VideoInline;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0, p1}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 114
     return-void
 .end method
 
@@ -142,7 +125,6 @@
     .registers 4
 
     .prologue
-    .line 43
     invoke-virtual {p0}, Landroid/webkit/HTML5VideoInline;->getVideoLayerId()I
 
     move-result v2
@@ -151,22 +133,18 @@
 
     move-result-object v1
 
-    .line 44
     .local v1, surfaceTexture:Landroid/graphics/SurfaceTexture;
     new-instance v0, Landroid/view/Surface;
 
     invoke-direct {v0, v1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
 
-    .line 45
     .local v0, surface:Landroid/view/Surface;
     sget-object v2, Landroid/webkit/HTML5VideoInline;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v2, v0}, Landroid/media/MediaPlayer;->setSurface(Landroid/view/Surface;)V
 
-    .line 46
     invoke-virtual {v0}, Landroid/view/Surface;->release()V
 
-    .line 47
     return-void
 .end method
 
@@ -174,10 +152,8 @@
     .registers 1
 
     .prologue
-    .line 93
     invoke-static {}, Landroid/webkit/HTML5VideoInline;->cleanupSurfaceTexture()V
 
-    .line 94
     return-void
 .end method
 
@@ -187,17 +163,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 105
     sget-object v1, Landroid/webkit/HTML5VideoInline;->mTextureNames:[I
 
     if-eqz v1, :cond_9
 
-    .line 106
     sget-object v1, Landroid/webkit/HTML5VideoInline;->mTextureNames:[I
 
     aget v0, v1, v0
 
-    .line 108
     :cond_9
     return v0
 .end method
@@ -207,10 +180,8 @@
     .parameter "proxy"
 
     .prologue
-    .line 66
     invoke-super {p0, p1}, Landroid/webkit/HTML5VideoView;->pauseAndDispatch(Landroid/webkit/HTML5VideoViewProxy;)V
 
-    .line 67
     return-void
 .end method
 
@@ -219,13 +190,10 @@
     .parameter "proxy"
 
     .prologue
-    .line 53
     invoke-super {p0, p1}, Landroid/webkit/HTML5VideoView;->prepareDataAndDisplayMode(Landroid/webkit/HTML5VideoViewProxy;)V
 
-    .line 54
     invoke-direct {p0, p1}, Landroid/webkit/HTML5VideoInline;->setFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 57
     iget-object v0, p0, Landroid/webkit/HTML5VideoView;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
     invoke-virtual {v0}, Landroid/webkit/HTML5VideoViewProxy;->getContext()Landroid/content/Context;
@@ -240,7 +208,6 @@
 
     if-nez v0, :cond_1f
 
-    .line 59
     sget-object v0, Landroid/webkit/HTML5VideoInline;->mPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {p1}, Landroid/webkit/HTML5VideoViewProxy;->getContext()Landroid/content/Context;
@@ -251,7 +218,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/media/MediaPlayer;->setWakeMode(Landroid/content/Context;I)V
 
-    .line 61
     :cond_1f
     return-void
 .end method
@@ -260,17 +226,14 @@
     .registers 2
 
     .prologue
-    .line 32
     invoke-virtual {p0}, Landroid/webkit/HTML5VideoInline;->getPauseDuringPreparing()Z
 
     move-result v0
 
     if-nez v0, :cond_9
 
-    .line 33
     invoke-super {p0}, Landroid/webkit/HTML5VideoView;->start()V
 
-    .line 35
     :cond_9
     return-void
 .end method
@@ -279,7 +242,6 @@
     .registers 2
 
     .prologue
-    .line 88
     sget-object v0, Landroid/webkit/HTML5VideoInline;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-nez v0, :cond_6

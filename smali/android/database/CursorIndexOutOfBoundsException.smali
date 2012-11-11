@@ -10,7 +10,6 @@
     .parameter "size"
 
     .prologue
-    .line 25
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -41,7 +40,6 @@
 
     invoke-direct {p0, v0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
-    .line 26
     return-void
 .end method
 
@@ -50,9 +48,7 @@
     .parameter "message"
 
     .prologue
-    .line 29
     invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
-    .line 30
     return-void
 .end method

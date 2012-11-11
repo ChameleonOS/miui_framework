@@ -40,7 +40,6 @@
     .parameter
 
     .prologue
-    .line 6140
     iput-object p1, p0, Landroid/view/View$2;->this$0:Landroid/view/View;
 
     iput p2, p0, Landroid/view/View$2;->val$id:I
@@ -57,7 +56,6 @@
     .parameter "t"
 
     .prologue
-    .line 6143
     iget v0, p1, Landroid/view/View;->mNextFocusForwardId:I
 
     iget v1, p0, Landroid/view/View$2;->val$id:I
@@ -80,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 6140
     check-cast p1, Landroid/view/View;
 
     .end local p1

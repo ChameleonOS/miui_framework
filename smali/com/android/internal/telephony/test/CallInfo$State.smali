@@ -58,7 +58,6 @@
 
     const/4 v4, 0x0
 
-    .line 32
     new-instance v0, Lcom/android/internal/telephony/test/CallInfo$State;
 
     const-string v1, "ACTIVE"
@@ -67,7 +66,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/CallInfo$State;->ACTIVE:Lcom/android/internal/telephony/test/CallInfo$State;
 
-    .line 33
     new-instance v0, Lcom/android/internal/telephony/test/CallInfo$State;
 
     const-string v1, "HOLDING"
@@ -76,7 +74,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/CallInfo$State;->HOLDING:Lcom/android/internal/telephony/test/CallInfo$State;
 
-    .line 34
     new-instance v0, Lcom/android/internal/telephony/test/CallInfo$State;
 
     const-string v1, "DIALING"
@@ -85,7 +82,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/CallInfo$State;->DIALING:Lcom/android/internal/telephony/test/CallInfo$State;
 
-    .line 35
     new-instance v0, Lcom/android/internal/telephony/test/CallInfo$State;
 
     const-string v1, "ALERTING"
@@ -94,7 +90,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/CallInfo$State;->ALERTING:Lcom/android/internal/telephony/test/CallInfo$State;
 
-    .line 36
     new-instance v0, Lcom/android/internal/telephony/test/CallInfo$State;
 
     const-string v1, "INCOMING"
@@ -103,7 +98,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/CallInfo$State;->INCOMING:Lcom/android/internal/telephony/test/CallInfo$State;
 
-    .line 37
     new-instance v0, Lcom/android/internal/telephony/test/CallInfo$State;
 
     const-string v1, "WAITING"
@@ -116,7 +110,6 @@
 
     sput-object v0, Lcom/android/internal/telephony/test/CallInfo$State;->WAITING:Lcom/android/internal/telephony/test/CallInfo$State;
 
-    .line 31
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/android/internal/telephony/test/CallInfo$State;
@@ -164,7 +157,6 @@
     .end annotation
 
     .prologue
-    .line 39
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     iput p3, p0, Lcom/android/internal/telephony/test/CallInfo$State;->value:I
@@ -177,7 +169,6 @@
     .parameter "name"
 
     .prologue
-    .line 31
     const-class v0, Lcom/android/internal/telephony/test/CallInfo$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -193,7 +184,6 @@
     .registers 1
 
     .prologue
-    .line 31
     sget-object v0, Lcom/android/internal/telephony/test/CallInfo$State;->$VALUES:[Lcom/android/internal/telephony/test/CallInfo$State;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/test/CallInfo$State;->clone()Ljava/lang/Object;
@@ -211,7 +201,6 @@
     .registers 2
 
     .prologue
-    .line 42
     iget v0, p0, Lcom/android/internal/telephony/test/CallInfo$State;->value:I
 
     return v0

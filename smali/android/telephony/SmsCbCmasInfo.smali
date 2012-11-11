@@ -116,7 +116,6 @@
     .registers 1
 
     .prologue
-    .line 299
     new-instance v0, Landroid/telephony/SmsCbCmasInfo$1;
 
     invoke-direct {v0}, Landroid/telephony/SmsCbCmasInfo$1;-><init>()V
@@ -136,28 +135,20 @@
     .parameter "certainty"
 
     .prologue
-    .line 198
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 199
     iput p1, p0, Landroid/telephony/SmsCbCmasInfo;->mMessageClass:I
 
-    .line 200
     iput p2, p0, Landroid/telephony/SmsCbCmasInfo;->mCategory:I
 
-    .line 201
     iput p3, p0, Landroid/telephony/SmsCbCmasInfo;->mResponseType:I
 
-    .line 202
     iput p4, p0, Landroid/telephony/SmsCbCmasInfo;->mSeverity:I
 
-    .line 203
     iput p5, p0, Landroid/telephony/SmsCbCmasInfo;->mUrgency:I
 
-    .line 204
     iput p6, p0, Landroid/telephony/SmsCbCmasInfo;->mCertainty:I
 
-    .line 205
     return-void
 .end method
 
@@ -166,52 +157,44 @@
     .parameter "in"
 
     .prologue
-    .line 208
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 209
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbCmasInfo;->mMessageClass:I
 
-    .line 210
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbCmasInfo;->mCategory:I
 
-    .line 211
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbCmasInfo;->mResponseType:I
 
-    .line 212
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbCmasInfo;->mSeverity:I
 
-    .line 213
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbCmasInfo;->mUrgency:I
 
-    .line 214
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/telephony/SmsCbCmasInfo;->mCertainty:I
 
-    .line 215
     return-void
 .end method
 
@@ -221,7 +204,6 @@
     .registers 2
 
     .prologue
-    .line 294
     const/4 v0, 0x0
 
     return v0
@@ -231,7 +213,6 @@
     .registers 2
 
     .prologue
-    .line 246
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mCategory:I
 
     return v0
@@ -241,7 +222,6 @@
     .registers 2
 
     .prologue
-    .line 278
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mCertainty:I
 
     return v0
@@ -251,7 +231,6 @@
     .registers 2
 
     .prologue
-    .line 238
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mMessageClass:I
 
     return v0
@@ -261,7 +240,6 @@
     .registers 2
 
     .prologue
-    .line 254
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mResponseType:I
 
     return v0
@@ -271,7 +249,6 @@
     .registers 2
 
     .prologue
-    .line 262
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mSeverity:I
 
     return v0
@@ -281,7 +258,6 @@
     .registers 2
 
     .prologue
-    .line 270
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mUrgency:I
 
     return v0
@@ -291,7 +267,6 @@
     .registers 3
 
     .prologue
-    .line 283
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -387,36 +362,29 @@
     .parameter "flags"
 
     .prologue
-    .line 225
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mMessageClass:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 226
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mCategory:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 227
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mResponseType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 228
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mSeverity:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 229
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mUrgency:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 230
     iget v0, p0, Landroid/telephony/SmsCbCmasInfo;->mCertainty:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 231
     return-void
 .end method

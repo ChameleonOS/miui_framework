@@ -15,7 +15,6 @@
     .registers 1
 
     .prologue
-    .line 44
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
     .parameter "fileName"
 
     .prologue
-    .line 97
     const-string v1, ":memory:"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -45,12 +43,10 @@
 
     if-nez v1, :cond_13
 
-    .line 107
     :cond_12
     :goto_12
     return-void
 
-    .line 100
     :cond_13
     const-string v1, "DefaultDatabaseErrorHandler"
 
@@ -74,7 +70,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     :try_start_2b
     new-instance v1, Ljava/io/File;
 
@@ -86,11 +81,9 @@
 
     goto :goto_12
 
-    .line 103
     :catch_34
     move-exception v0
 
-    .line 105
     .local v0, e:Ljava/lang/Exception;
     const-string v1, "DefaultDatabaseErrorHandler"
 
@@ -128,7 +121,6 @@
     .parameter "dbObj"
 
     .prologue
-    .line 54
     const-string v3, "DefaultDatabaseErrorHandler"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -155,30 +147,25 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 57
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->isOpen()Z
 
     move-result v3
 
     if-nez v3, :cond_2a
 
-    .line 64
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {p0, v3}, Landroid/database/DefaultDatabaseErrorHandler;->deleteDatabaseFile(Ljava/lang/String;)V
 
-    .line 94
     :cond_29
     :goto_29
     return-void
 
-    .line 68
     :cond_2a
     const/4 v0, 0x0
 
-    .line 73
     .local v0, attachedDbs:Ljava/util/List;,"Ljava/util/List<Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;>;"
     :try_start_2b
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->getAttachedDbs()Ljava/util/List;
@@ -188,7 +175,6 @@
 
     move-result-object v0
 
-    .line 78
     :goto_2f
     :try_start_2f
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
@@ -196,11 +182,9 @@
     .catchall {:try_start_2f .. :try_end_32} :catchall_54
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_2f .. :try_end_32} :catch_7a
 
-    .line 84
     :goto_32
     if-eqz v0, :cond_4c
 
-    .line 85
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -219,7 +203,6 @@
 
     check-cast v2, Landroid/util/Pair;
 
-    .line 86
     .local v2, p:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v3, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -229,7 +212,6 @@
 
     goto :goto_38
 
-    .line 91
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #p:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_4c
@@ -241,7 +223,6 @@
 
     goto :goto_29
 
-    .line 84
     :catchall_54
     move-exception v3
 
@@ -249,7 +230,6 @@
 
     if-eqz v0, :cond_70
 
-    .line 85
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -268,7 +248,6 @@
 
     check-cast v2, Landroid/util/Pair;
 
-    .line 86
     .restart local v2       #p:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v3, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -278,7 +257,6 @@
 
     goto :goto_5c
 
-    .line 91
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #p:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_70
@@ -291,13 +269,11 @@
     :cond_77
     throw v4
 
-    .line 74
     :catch_78
     move-exception v3
 
     goto :goto_2f
 
-    .line 79
     :catch_7a
     move-exception v3
 

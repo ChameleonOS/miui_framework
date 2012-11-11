@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 113
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +40,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 116
     iget-object v0, p0, Landroid/view/ViewRootImpl;->mWinFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -84,13 +82,10 @@
 
     if-eqz v0, :cond_2f
 
-    .line 120
     iput-boolean v1, p0, Landroid/view/ViewRootImpl;->mSkipResizedMsg:Z
 
-    .line 121
     const/4 v0, 0x1
 
-    .line 123
     :goto_2e
     return v0
 

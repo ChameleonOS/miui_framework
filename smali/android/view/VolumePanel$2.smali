@@ -26,7 +26,6 @@
     .parameter "x1"
 
     .prologue
-    .line 240
     iput-object p1, p0, Landroid/view/VolumePanel$2;->this$0:Landroid/view/VolumePanel;
 
     invoke-direct {p0, p2, p3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
@@ -41,7 +40,6 @@
     .parameter "event"
 
     .prologue
-    .line 242
     invoke-virtual {p0}, Landroid/view/VolumePanel$2;->isShowing()Z
 
     move-result v0
@@ -56,16 +54,13 @@
 
     if-ne v0, v1, :cond_14
 
-    .line 243
     iget-object v0, p0, Landroid/view/VolumePanel$2;->this$0:Landroid/view/VolumePanel;
 
     #calls: Landroid/view/VolumePanel;->forceTimeout()V
     invoke-static {v0}, Landroid/view/VolumePanel;->access$100(Landroid/view/VolumePanel;)V
 
-    .line 244
     const/4 v0, 0x1
 
-    .line 246
     :goto_13
     return v0
 

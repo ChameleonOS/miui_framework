@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 238
     iput-object p1, p0, Landroid/widget/DateTimeView$1;->this$0:Landroid/widget/DateTimeView;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,10 @@
     .parameter "intent"
 
     .prologue
-    .line 241
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 242
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.TIME_TICK"
 
@@ -55,7 +52,6 @@
 
     if-eqz v1, :cond_1b
 
-    .line 243
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -71,11 +67,9 @@
 
     if-gez v1, :cond_1b
 
-    .line 253
     :goto_1a
     return-void
 
-    .line 251
     :cond_1b
     iget-object v1, p0, Landroid/widget/DateTimeView$1;->this$0:Landroid/widget/DateTimeView;
 
@@ -83,7 +77,6 @@
 
     iput-object v2, v1, Landroid/widget/DateTimeView;->mLastFormat:Ljava/text/DateFormat;
 
-    .line 252
     iget-object v1, p0, Landroid/widget/DateTimeView$1;->this$0:Landroid/widget/DateTimeView;
 
     invoke-virtual {v1}, Landroid/widget/DateTimeView;->update()V

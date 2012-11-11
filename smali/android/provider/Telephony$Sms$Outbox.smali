@@ -29,7 +29,6 @@
     .registers 1
 
     .prologue
-    .line 439
     const-string v0, "content://sms/outbox"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +44,6 @@
     .registers 1
 
     .prologue
-    .line 435
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,7 +60,6 @@
     .parameter "threadId"
 
     .prologue
-    .line 461
     sget-object v1, Landroid/provider/Telephony$Sms$Outbox;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v6, 0x1

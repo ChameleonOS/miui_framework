@@ -23,7 +23,6 @@
     .registers 3
 
     .prologue
-    .line 55
     invoke-static {}, Lcom/android/internal/telephony/cat/AppInterface$CommandType;->values()[Lcom/android/internal/telephony/cat/AppInterface$CommandType;
 
     move-result-object v0

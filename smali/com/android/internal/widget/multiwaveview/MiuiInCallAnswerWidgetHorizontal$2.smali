@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 422
     iput-object p1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$2;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 
     iput-object p2, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$2;->val$outerRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
@@ -47,7 +46,6 @@
     .parameter "animation"
 
     .prologue
-    .line 425
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$2;->val$outerRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->getAlpha()F
@@ -60,19 +58,16 @@
 
     if-gez v0, :cond_14
 
-    .line 427
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$2;->val$outerRing:Lcom/android/internal/widget/multiwaveview/TargetDrawable;
 
     const/high16 v1, 0x3f80
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/multiwaveview/TargetDrawable;->setAlpha(F)V
 
-    .line 429
     :cond_14
     iget-object v0, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$2;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->invalidate()V
 
-    .line 430
     return-void
 .end method

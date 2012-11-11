@@ -38,15 +38,12 @@
     .registers 2
 
     .prologue
-    .line 15
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 16
     const-string v0, "android.net.INetworkPolicyListener"
 
     invoke-virtual {p0, p0, v0}, Landroid/net/INetworkPolicyListener$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 17
     return-void
 .end method
 
@@ -55,17 +52,13 @@
     .parameter "obj"
 
     .prologue
-    .line 24
     if-nez p0, :cond_4
 
-    .line 25
     const/4 v0, 0x0
 
-    .line 31
     :goto_3
     return-object v0
 
-    .line 27
     :cond_4
     const-string v1, "android.net.INetworkPolicyListener"
 
@@ -73,7 +66,6 @@
 
     move-result-object v0
 
-    .line 28
     .local v0, iin:Landroid/os/IInterface;
     if-eqz v0, :cond_13
 
@@ -81,12 +73,10 @@
 
     if-eqz v1, :cond_13
 
-    .line 29
     check-cast v0, Landroid/net/INetworkPolicyListener;
 
     goto :goto_3
 
-    .line 31
     :cond_13
     new-instance v0, Landroid/net/INetworkPolicyListener$Stub$Proxy;
 
@@ -102,7 +92,6 @@
     .registers 1
 
     .prologue
-    .line 35
     return-object p0
 .end method
 
@@ -121,10 +110,8 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 39
     sparse-switch p1, :sswitch_data_40
 
-    .line 73
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -132,7 +119,6 @@
     :goto_8
     return v2
 
-    .line 43
     :sswitch_9
     const-string v3, "android.net.INetworkPolicyListener"
 
@@ -140,30 +126,25 @@
 
     goto :goto_8
 
-    .line 48
     :sswitch_f
     const-string v3, "android.net.INetworkPolicyListener"
 
     invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 50
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 52
     .local v0, _arg0:I
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 53
     .local v1, _arg1:I
     invoke-virtual {p0, v0, v1}, Landroid/net/INetworkPolicyListener$Stub;->onUidRulesChanged(II)V
 
     goto :goto_8
 
-    .line 58
     .end local v0           #_arg0:I
     .end local v1           #_arg1:I
     :sswitch_20
@@ -171,25 +152,21 @@
 
     invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 60
     invoke-virtual {p2}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 61
     .local v0, _arg0:[Ljava/lang/String;
     invoke-virtual {p0, v0}, Landroid/net/INetworkPolicyListener$Stub;->onMeteredIfacesChanged([Ljava/lang/String;)V
 
     goto :goto_8
 
-    .line 66
     .end local v0           #_arg0:[Ljava/lang/String;
     :sswitch_2d
     const-string v3, "android.net.INetworkPolicyListener"
 
     invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 68
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
@@ -198,21 +175,18 @@
 
     move v0, v2
 
-    .line 69
     .local v0, _arg0:Z
     :goto_39
     invoke-virtual {p0, v0}, Landroid/net/INetworkPolicyListener$Stub;->onRestrictBackgroundChanged(Z)V
 
     goto :goto_8
 
-    .line 68
     .end local v0           #_arg0:Z
     :cond_3d
     const/4 v0, 0x0
 
     goto :goto_39
 
-    .line 39
     nop
 
     :sswitch_data_40

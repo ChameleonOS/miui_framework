@@ -13,10 +13,8 @@
     .parameter "fd"
 
     .prologue
-    .line 68
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
     if-nez p1, :cond_b
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -25,7 +23,6 @@
 
     throw v0
 
-    .line 70
     :cond_b
     invoke-static {p1}, Landroid/app/backup/BackupDataOutput;->ctor(Ljava/io/FileDescriptor;)I
 
@@ -33,12 +30,10 @@
 
     iput v0, p0, Landroid/app/backup/BackupDataOutput;->mBackupWriter:I
 
-    .line 71
     iget v0, p0, Landroid/app/backup/BackupDataOutput;->mBackupWriter:I
 
     if-nez v0, :cond_2e
 
-    .line 72
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -63,7 +58,6 @@
 
     throw v0
 
-    .line 74
     :cond_2e
     return-void
 .end method
@@ -94,7 +88,6 @@
     .end annotation
 
     .prologue
-    .line 118
     :try_start_0
     iget v0, p0, Landroid/app/backup/BackupDataOutput;->mBackupWriter:I
 
@@ -102,13 +95,10 @@
     :try_end_5
     .catchall {:try_start_0 .. :try_end_5} :catchall_9
 
-    .line 120
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 122
     return-void
 
-    .line 120
     :catchall_9
     move-exception v0
 
@@ -122,12 +112,10 @@
     .parameter "keyPrefix"
 
     .prologue
-    .line 112
     iget v0, p0, Landroid/app/backup/BackupDataOutput;->mBackupWriter:I
 
     invoke-static {v0, p1}, Landroid/app/backup/BackupDataOutput;->setKeyPrefix_native(ILjava/lang/String;)V
 
-    .line 113
     return-void
 .end method
 
@@ -142,21 +130,17 @@
     .end annotation
 
     .prologue
-    .line 102
     iget v1, p0, Landroid/app/backup/BackupDataOutput;->mBackupWriter:I
 
     invoke-static {v1, p1, p2}, Landroid/app/backup/BackupDataOutput;->writeEntityData_native(I[BI)I
 
     move-result v0
 
-    .line 103
     .local v0, result:I
     if-ltz v0, :cond_9
 
-    .line 104
     return v0
 
-    .line 106
     :cond_9
     new-instance v1, Ljava/io/IOException;
 
@@ -198,21 +182,17 @@
     .end annotation
 
     .prologue
-    .line 86
     iget v1, p0, Landroid/app/backup/BackupDataOutput;->mBackupWriter:I
 
     invoke-static {v1, p1, p2}, Landroid/app/backup/BackupDataOutput;->writeEntityHeader_native(ILjava/lang/String;I)I
 
     move-result v0
 
-    .line 87
     .local v0, result:I
     if-ltz v0, :cond_9
 
-    .line 88
     return v0
 
-    .line 90
     :cond_9
     new-instance v1, Ljava/io/IOException;
 

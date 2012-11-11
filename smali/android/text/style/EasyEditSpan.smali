@@ -11,10 +11,8 @@
     .registers 1
 
     .prologue
-    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     return-void
 .end method
 
@@ -24,7 +22,6 @@
     .registers 2
 
     .prologue
-    .line 38
     const/4 v0, 0x0
 
     return v0
@@ -34,7 +31,6 @@
     .registers 2
 
     .prologue
-    .line 48
     const/16 v0, 0x16
 
     return v0
@@ -46,6 +42,5 @@
     .parameter "flags"
 
     .prologue
-    .line 44
     return-void
 .end method

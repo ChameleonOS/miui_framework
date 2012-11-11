@@ -19,16 +19,12 @@
     .parameter "mutable"
 
     .prologue
-    .line 30
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     iput-boolean p2, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mMutable:Z
 
-    .line 32
     iput-object p1, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
-    .line 33
     return-void
 .end method
 
@@ -38,7 +34,6 @@
     .registers 2
 
     .prologue
-    .line 106
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0}, Landroid/view/inputmethod/InputConnection;->beginBatchEdit()Z
@@ -53,7 +48,6 @@
     .parameter "states"
 
     .prologue
-    .line 118
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->clearMetaKeyStates(I)Z
@@ -68,7 +62,6 @@
     .parameter "text"
 
     .prologue
-    .line 86
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->commitCompletion(Landroid/view/inputmethod/CompletionInfo;)Z
@@ -83,7 +76,6 @@
     .parameter "correctionInfo"
 
     .prologue
-    .line 90
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->commitCorrection(Landroid/view/inputmethod/CorrectionInfo;)Z
@@ -99,7 +91,6 @@
     .parameter "newCursorPosition"
 
     .prologue
-    .line 82
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->commitText(Ljava/lang/CharSequence;I)Z
@@ -115,7 +106,6 @@
     .parameter "afterLength"
 
     .prologue
-    .line 66
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->deleteSurroundingText(II)Z
@@ -129,7 +119,6 @@
     .registers 2
 
     .prologue
-    .line 110
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0}, Landroid/view/inputmethod/InputConnection;->endBatchEdit()Z
@@ -143,7 +132,6 @@
     .registers 2
 
     .prologue
-    .line 78
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0}, Landroid/view/inputmethod/InputConnection;->finishComposingText()Z
@@ -158,7 +146,6 @@
     .parameter "reqModes"
 
     .prologue
-    .line 58
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->getCursorCapsMode(I)I
@@ -174,7 +161,6 @@
     .parameter "flags"
 
     .prologue
-    .line 62
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->getExtractedText(Landroid/view/inputmethod/ExtractedTextRequest;I)Landroid/view/inputmethod/ExtractedText;
@@ -189,7 +175,6 @@
     .parameter "flags"
 
     .prologue
-    .line 54
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->getSelectedText(I)Ljava/lang/CharSequence;
@@ -205,7 +190,6 @@
     .parameter "flags"
 
     .prologue
-    .line 50
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->getTextAfterCursor(II)Ljava/lang/CharSequence;
@@ -221,7 +205,6 @@
     .parameter "flags"
 
     .prologue
-    .line 46
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->getTextBeforeCursor(II)Ljava/lang/CharSequence;
@@ -236,7 +219,6 @@
     .parameter "id"
 
     .prologue
-    .line 102
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->performContextMenuAction(I)Z
@@ -251,7 +233,6 @@
     .parameter "editorAction"
 
     .prologue
-    .line 98
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->performEditorAction(I)Z
@@ -267,7 +248,6 @@
     .parameter "data"
 
     .prologue
-    .line 126
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->performPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)Z
@@ -282,7 +262,6 @@
     .parameter "enabled"
 
     .prologue
-    .line 122
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->reportFullscreenMode(Z)Z
@@ -297,7 +276,6 @@
     .parameter "event"
 
     .prologue
-    .line 114
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1}, Landroid/view/inputmethod/InputConnection;->sendKeyEvent(Landroid/view/KeyEvent;)Z
@@ -313,7 +291,6 @@
     .parameter "end"
 
     .prologue
-    .line 74
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->setComposingRegion(II)Z
@@ -329,7 +306,6 @@
     .parameter "newCursorPosition"
 
     .prologue
-    .line 70
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->setComposingText(Ljava/lang/CharSequence;I)Z
@@ -345,7 +321,6 @@
     .parameter "end"
 
     .prologue
-    .line 94
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     invoke-interface {v0, p1, p2}, Landroid/view/inputmethod/InputConnection;->setSelection(II)Z
@@ -360,7 +335,6 @@
     .parameter "target"
 
     .prologue
-    .line 39
     iget-object v0, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
     if-eqz v0, :cond_11
@@ -369,7 +343,6 @@
 
     if-nez v0, :cond_11
 
-    .line 40
     new-instance v0, Ljava/lang/SecurityException;
 
     const-string/jumbo v1, "not mutable"
@@ -378,10 +351,8 @@
 
     throw v0
 
-    .line 42
     :cond_11
     iput-object p1, p0, Landroid/view/inputmethod/InputConnectionWrapper;->mTarget:Landroid/view/inputmethod/InputConnection;
 
-    .line 43
     return-void
 .end method

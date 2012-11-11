@@ -14,7 +14,6 @@
     .registers 1
 
     .prologue
-    .line 28
     invoke-direct {p0}, Landroid/view/IWindow$Stub;-><init>()V
 
     return-void
@@ -27,7 +26,6 @@
     .parameter "reason"
 
     .prologue
-    .line 62
     return-void
 .end method
 
@@ -36,7 +34,6 @@
     .parameter "visible"
 
     .prologue
-    .line 47
     return-void
 .end method
 
@@ -45,7 +42,6 @@
     .parameter "event"
 
     .prologue
-    .line 74
     return-void
 .end method
 
@@ -53,7 +49,6 @@
     .registers 1
 
     .prologue
-    .line 50
     return-void
 .end method
 
@@ -62,7 +57,6 @@
     .parameter "on"
 
     .prologue
-    .line 53
     return-void
 .end method
 
@@ -74,10 +68,8 @@
     .parameter "localChanges"
 
     .prologue
-    .line 78
     iput p1, p0, Lcom/android/internal/view/BaseIWindow;->mSeq:I
 
-    .line 79
     return-void
 .end method
 
@@ -91,10 +83,8 @@
     .parameter "sync"
 
     .prologue
-    .line 83
     if-eqz p6, :cond_c
 
-    .line 85
     :try_start_2
     iget-object v0, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
@@ -108,12 +98,10 @@
     :try_end_c
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_c} :catch_d
 
-    .line 89
     :cond_c
     :goto_c
     return-void
 
-    .line 86
     :catch_d
     move-exception v0
 
@@ -129,10 +117,8 @@
     .parameter "sync"
 
     .prologue
-    .line 65
     if-eqz p5, :cond_b
 
-    .line 67
     :try_start_2
     iget-object v0, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
@@ -144,12 +130,10 @@
     :try_end_b
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_b} :catch_c
 
-    .line 71
     :cond_b
     :goto_b
     return-void
 
-    .line 68
     :catch_c
     move-exception v0
 
@@ -160,7 +144,6 @@
     .registers 1
 
     .prologue
-    .line 92
     return-void
 .end method
 
@@ -171,7 +154,6 @@
     .parameter "out"
 
     .prologue
-    .line 59
     return-void
 .end method
 
@@ -185,10 +167,8 @@
     .parameter "newConfig"
 
     .prologue
-    .line 38
     if-eqz p5, :cond_7
 
-    .line 40
     :try_start_2
     iget-object v0, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
@@ -196,12 +176,10 @@
     :try_end_7
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_7} :catch_8
 
-    .line 44
     :cond_7
     :goto_7
     return-void
 
-    .line 41
     :catch_8
     move-exception v0
 
@@ -213,10 +191,8 @@
     .parameter "session"
 
     .prologue
-    .line 33
     iput-object p1, p0, Lcom/android/internal/view/BaseIWindow;->mSession:Landroid/view/IWindowSession;
 
-    .line 34
     return-void
 .end method
 
@@ -226,6 +202,5 @@
     .parameter "touchEnabled"
 
     .prologue
-    .line 56
     return-void
 .end method

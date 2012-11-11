@@ -33,20 +33,15 @@
     .parameter "column"
 
     .prologue
-    .line 44
     iput-object p1, p0, Landroid/mtp/MtpPropertyGroup$Property;->this$0:Landroid/mtp/MtpPropertyGroup;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     iput p2, p0, Landroid/mtp/MtpPropertyGroup$Property;->code:I
 
-    .line 46
     iput p3, p0, Landroid/mtp/MtpPropertyGroup$Property;->type:I
 
-    .line 47
     iput p4, p0, Landroid/mtp/MtpPropertyGroup$Property;->column:I
 
-    .line 48
     return-void
 .end method

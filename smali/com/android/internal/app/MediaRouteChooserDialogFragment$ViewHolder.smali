@@ -35,7 +35,6 @@
     .registers 1
 
     .prologue
-    .line 199
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +45,6 @@
     .parameter "x0"
 
     .prologue
-    .line 199
     invoke-direct {p0}, Lcom/android/internal/app/MediaRouteChooserDialogFragment$ViewHolder;-><init>()V
 
     return-void

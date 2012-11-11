@@ -39,7 +39,6 @@
     .registers 1
 
     .prologue
-    .line 40
     const-string v0, "[\\w\\.\\-]+@[\\w\\.\\-]+"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -56,20 +55,16 @@
     .parameter "other"
 
     .prologue
-    .line 118
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
-    .line 119
     if-nez p1, :cond_15
 
-    .line 120
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "other must not be null."
@@ -78,21 +73,17 @@
 
     throw v0
 
-    .line 123
     :cond_15
     iget-object v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
-    .line 124
     iget-object v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->label:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->label:Ljava/lang/String;
 
-    .line 125
     invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->updateParametersFrom(Landroid/database/sqlite/SQLiteDatabaseConfiguration;)V
 
-    .line 126
     return-void
 .end method
 
@@ -102,20 +93,16 @@
     .parameter "openFlags"
 
     .prologue
-    .line 99
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
-    .line 100
     if-nez p1, :cond_15
 
-    .line 101
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "path must not be null."
@@ -124,33 +111,27 @@
 
     throw v0
 
-    .line 104
     :cond_15
     iput-object p1, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
-    .line 105
     invoke-static {p1}, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->stripPathForLogs(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->label:Ljava/lang/String;
 
-    .line 106
     iput p2, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
 
-    .line 109
     const/16 v0, 0x19
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->maxSqlCacheSize:I
 
-    .line 110
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->locale:Ljava/util/Locale;
 
-    .line 111
     return-void
 .end method
 
@@ -159,7 +140,6 @@
     .parameter "path"
 
     .prologue
-    .line 160
     const/16 v0, 0x40
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(I)I
@@ -170,7 +150,6 @@
 
     if-ne v0, v1, :cond_a
 
-    .line 163
     .end local p0
     :goto_9
     return-object p0
@@ -198,7 +177,6 @@
     .registers 3
 
     .prologue
-    .line 156
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
     const-string v1, ":memory:"
@@ -215,10 +193,8 @@
     .parameter "other"
 
     .prologue
-    .line 135
     if-nez p1, :cond_b
 
-    .line 136
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "other must not be null."
@@ -227,7 +203,6 @@
 
     throw v0
 
-    .line 138
     :cond_b
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->path:Ljava/lang/String;
 
@@ -239,7 +214,6 @@
 
     if-nez v0, :cond_1e
 
-    .line 139
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "other configuration must refer to the same database."
@@ -248,39 +222,32 @@
 
     throw v0
 
-    .line 143
     :cond_1e
     iget v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->openFlags:I
 
-    .line 144
     iget v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->maxSqlCacheSize:I
 
     iput v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->maxSqlCacheSize:I
 
-    .line 145
     iget-object v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->locale:Ljava/util/Locale;
 
     iput-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->locale:Ljava/util/Locale;
 
-    .line 146
     iget-boolean v0, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->foreignKeyConstraintsEnabled:Z
 
     iput-boolean v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->foreignKeyConstraintsEnabled:Z
 
-    .line 147
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 148
     iget-object v0, p0, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
     iget-object v1, p1, Landroid/database/sqlite/SQLiteDatabaseConfiguration;->customFunctions:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 149
     return-void
 .end method

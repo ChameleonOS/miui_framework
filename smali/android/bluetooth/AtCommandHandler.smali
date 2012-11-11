@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 25
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +19,6 @@
     .registers 3
 
     .prologue
-    .line 48
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -35,7 +33,6 @@
     .parameter "arg"
 
     .prologue
-    .line 38
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -49,7 +46,6 @@
     .registers 3
 
     .prologue
-    .line 58
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -64,7 +60,6 @@
     .parameter "args"
 
     .prologue
-    .line 78
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x1
@@ -78,7 +73,6 @@
     .registers 3
 
     .prologue
-    .line 91
     new-instance v0, Landroid/bluetooth/AtCommandResult;
 
     const/4 v1, 0x0

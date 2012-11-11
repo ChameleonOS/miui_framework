@@ -24,10 +24,8 @@
     .parameter "context"
 
     .prologue
-    .line 114
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 115
     return-void
 .end method
 
@@ -37,9 +35,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 118
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 119
     return-void
 .end method

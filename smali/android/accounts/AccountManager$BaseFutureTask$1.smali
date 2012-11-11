@@ -35,7 +35,6 @@
     .parameter
 
     .prologue
-    .line 1469
     .local p0, this:Landroid/accounts/AccountManager$BaseFutureTask$1;,"Landroid/accounts/AccountManager$BaseFutureTask.1;"
     iput-object p1, p0, Landroid/accounts/AccountManager$BaseFutureTask$1;->val$this$0:Landroid/accounts/AccountManager;
 
@@ -61,7 +60,6 @@
     .end annotation
 
     .prologue
-    .line 1471
     .local p0, this:Landroid/accounts/AccountManager$BaseFutureTask$1;,"Landroid/accounts/AccountManager$BaseFutureTask.1;"
     new-instance v0, Ljava/lang/IllegalStateException;
 

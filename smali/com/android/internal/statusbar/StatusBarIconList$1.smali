@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 78
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "parcel"
 
     .prologue
-    .line 81
     new-instance v0, Lcom/android/internal/statusbar/StatusBarIconList;
 
     invoke-direct {v0, p1}, Lcom/android/internal/statusbar/StatusBarIconList;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +56,6 @@
     .parameter "x0"
 
     .prologue
-    .line 78
     invoke-virtual {p0, p1}, Lcom/android/internal/statusbar/StatusBarIconList$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/internal/statusbar/StatusBarIconList;
 
     move-result-object v0
@@ -71,7 +68,6 @@
     .parameter "size"
 
     .prologue
-    .line 86
     new-array v0, p1, [Lcom/android/internal/statusbar/StatusBarIconList;
 
     return-object v0
@@ -82,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 78
     invoke-virtual {p0, p1}, Lcom/android/internal/statusbar/StatusBarIconList$1;->newArray(I)[Lcom/android/internal/statusbar/StatusBarIconList;
 
     move-result-object v0

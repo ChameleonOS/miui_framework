@@ -48,7 +48,6 @@
 
     const/4 v2, 0x0
 
-    .line 294
     new-instance v0, Landroid/graphics/Paint$Join;
 
     const-string v1, "MITER"
@@ -57,7 +56,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
-    .line 298
     new-instance v0, Landroid/graphics/Paint$Join;
 
     const-string v1, "ROUND"
@@ -66,7 +64,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
-    .line 302
     new-instance v0, Landroid/graphics/Paint$Join;
 
     const-string v1, "BEVEL"
@@ -75,7 +72,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Join;->BEVEL:Landroid/graphics/Paint$Join;
 
-    .line 290
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/Paint$Join;
@@ -109,13 +105,10 @@
     .end annotation
 
     .prologue
-    .line 304
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 305
     iput p3, p0, Landroid/graphics/Paint$Join;->nativeInt:I
 
-    .line 306
     return-void
 .end method
 
@@ -124,7 +117,6 @@
     .parameter "name"
 
     .prologue
-    .line 290
     const-class v0, Landroid/graphics/Paint$Join;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +132,6 @@
     .registers 1
 
     .prologue
-    .line 290
     sget-object v0, Landroid/graphics/Paint$Join;->$VALUES:[Landroid/graphics/Paint$Join;
 
     invoke-virtual {v0}, [Landroid/graphics/Paint$Join;->clone()Ljava/lang/Object;

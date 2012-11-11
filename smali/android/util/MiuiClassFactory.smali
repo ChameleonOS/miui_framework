@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 10
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +19,6 @@
     .parameter "packageName"
 
     .prologue
-    .line 12
     new-instance v0, Landroid/app/MiuiDownloadManager;
 
     invoke-direct {v0, p0, p1}, Landroid/app/MiuiDownloadManager;-><init>(Landroid/content/ContentResolver;Ljava/lang/String;)V

@@ -22,10 +22,8 @@
     .registers 1
 
     .prologue
-    .line 105
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 253
     return-void
 .end method
 
@@ -33,7 +31,6 @@
     .registers 1
 
     .prologue
-    .line 105
     invoke-static {}, Landroid/net/VpnService;->getService()Landroid/net/IConnectivityManager;
 
     move-result-object v0
@@ -45,7 +42,6 @@
     .registers 1
 
     .prologue
-    .line 119
     const-string v0, "connectivity"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -66,7 +62,6 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 143
     :try_start_1
     invoke-static {}, Landroid/net/VpnService;->getService()Landroid/net/IConnectivityManager;
 
@@ -86,15 +81,12 @@
 
     if-eqz v1, :cond_12
 
-    .line 149
     :goto_10
     return-object v0
 
-    .line 146
     :catch_11
     move-exception v0
 
-    .line 149
     :cond_12
     invoke-static {}, Lcom/android/internal/net/VpnConfig;->getIntentForConfirmation()Landroid/content/Intent;
 
@@ -112,7 +104,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 212
     if-eqz p1, :cond_15
 
     const-string v0, "android.net.VpnService"
@@ -127,12 +118,10 @@
 
     if-eqz v0, :cond_15
 
-    .line 213
     new-instance v0, Landroid/net/VpnService$Callback;
 
     invoke-direct {v0, p0, v1}, Landroid/net/VpnService$Callback;-><init>(Landroid/net/VpnService;Landroid/net/VpnService$1;)V
 
-    .line 215
     :goto_14
     return-object v0
 
@@ -146,10 +135,8 @@
     .registers 1
 
     .prologue
-    .line 230
     invoke-virtual {p0}, Landroid/net/VpnService;->stopSelf()V
 
-    .line 231
     return-void
 .end method
 
@@ -158,17 +145,14 @@
     .parameter "socket"
 
     .prologue
-    .line 166
     const/4 v0, 0x0
 
-    .line 168
     .local v0, dup:Landroid/os/ParcelFileDescriptor;
     :try_start_1
     invoke-static {p1}, Landroid/os/ParcelFileDescriptor;->fromFd(I)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
-    .line 169
     invoke-static {}, Landroid/net/VpnService;->getService()Landroid/net/IConnectivityManager;
 
     move-result-object v2
@@ -180,51 +164,41 @@
 
     move-result v2
 
-    .line 174
     :try_start_d
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    .line 171
     :goto_10
     return v2
 
-    .line 170
     :catch_11
     move-exception v1
 
-    .line 171
     .local v1, e:Ljava/lang/Exception;
     const/4 v2, 0x0
 
-    .line 174
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_16
     .catch Ljava/lang/Exception; {:try_start_d .. :try_end_16} :catch_17
 
     goto :goto_10
 
-    .line 175
     .end local v1           #e:Ljava/lang/Exception;
     :catch_17
     move-exception v3
 
     goto :goto_10
 
-    .line 173
     :catchall_19
     move-exception v2
 
-    .line 174
     :try_start_1a
     invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_1d
     .catch Ljava/lang/Exception; {:try_start_1a .. :try_end_1d} :catch_1e
 
-    .line 173
     :goto_1d
     throw v2
 
-    .line 175
     :catch_1e
     move-exception v3
 
@@ -236,7 +210,6 @@
     .parameter "socket"
 
     .prologue
-    .line 199
     invoke-virtual {p1}, Ljava/net/DatagramSocket;->getFileDescriptor$()Ljava/io/FileDescriptor;
 
     move-result-object v0
@@ -257,7 +230,6 @@
     .parameter "socket"
 
     .prologue
-    .line 188
     invoke-virtual {p1}, Ljava/net/Socket;->getFileDescriptor$()Ljava/io/FileDescriptor;
 
     move-result-object v0

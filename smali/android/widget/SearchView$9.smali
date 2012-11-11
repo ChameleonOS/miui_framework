@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 1320
     iput-object p1, p0, Landroid/widget/SearchView$9;->this$0:Landroid/widget/SearchView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +53,6 @@
     .end annotation
 
     .prologue
-    .line 1327
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Landroid/widget/SearchView$9;->this$0:Landroid/widget/SearchView;
 
@@ -65,6 +63,5 @@
     #calls: Landroid/widget/SearchView;->onItemClicked(IILjava/lang/String;)Z
     invoke-static {v0, p3, v1, v2}, Landroid/widget/SearchView;->access$1800(Landroid/widget/SearchView;IILjava/lang/String;)Z
 
-    .line 1328
     return-void
 .end method

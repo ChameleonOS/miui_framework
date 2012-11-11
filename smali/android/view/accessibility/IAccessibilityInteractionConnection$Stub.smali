@@ -44,15 +44,12 @@
     .registers 2
 
     .prologue
-    .line 20
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 21
     const-string v0, "android.view.accessibility.IAccessibilityInteractionConnection"
 
     invoke-virtual {p0, p0, v0}, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 22
     return-void
 .end method
 
@@ -61,17 +58,13 @@
     .parameter "obj"
 
     .prologue
-    .line 29
     if-nez p0, :cond_4
 
-    .line 30
     const/4 v0, 0x0
 
-    .line 36
     :goto_3
     return-object v0
 
-    .line 32
     :cond_4
     const-string v1, "android.view.accessibility.IAccessibilityInteractionConnection"
 
@@ -79,7 +72,6 @@
 
     move-result-object v0
 
-    .line 33
     .local v0, iin:Landroid/os/IInterface;
     if-eqz v0, :cond_13
 
@@ -87,12 +79,10 @@
 
     if-eqz v1, :cond_13
 
-    .line 34
     check-cast v0, Landroid/view/accessibility/IAccessibilityInteractionConnection;
 
     goto :goto_3
 
-    .line 36
     :cond_13
     new-instance v0, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub$Proxy;
 
@@ -108,7 +98,6 @@
     .registers 1
 
     .prologue
-    .line 40
     return-object p0
 .end method
 
@@ -125,10 +114,8 @@
     .end annotation
 
     .prologue
-    .line 44
     sparse-switch p1, :sswitch_data_198
 
-    .line 197
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
@@ -136,7 +123,6 @@
     :goto_7
     return v1
 
-    .line 48
     :sswitch_8
     const-string v1, "android.view.accessibility.IAccessibilityInteractionConnection"
 
@@ -144,12 +130,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 49
     const/4 v1, 0x1
 
     goto :goto_7
 
-    .line 53
     :sswitch_11
     const-string v1, "android.view.accessibility.IAccessibilityInteractionConnection"
 
@@ -157,30 +141,25 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 55
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
-    .line 57
     .local v2, _arg0:J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 59
     .local v4, _arg1:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 61
     .local v5, _arg2:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 63
     .local v6, _arg3:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -190,19 +169,16 @@
 
     move-result-object v7
 
-    .line 65
     .local v7, _arg4:Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
-    .line 67
     .local v8, _arg5:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 69
     .local v9, _arg6:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
@@ -211,15 +187,12 @@
     .local v10, _arg7:J
     move-object/from16 v1, p0
 
-    .line 70
     invoke-virtual/range {v1 .. v11}, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub;->findAccessibilityNodeInfoByAccessibilityId(JIIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;IIJ)V
 
-    .line 71
     const/4 v1, 0x1
 
     goto :goto_7
 
-    .line 75
     .end local v2           #_arg0:J
     .end local v4           #_arg1:I
     .end local v5           #_arg2:I
@@ -235,36 +208,30 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 77
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
-    .line 79
     .restart local v2       #_arg0:J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 81
     .restart local v4       #_arg1:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 83
     .restart local v5       #_arg2:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 85
     .restart local v6       #_arg3:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 87
     .local v7, _arg4:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -274,19 +241,16 @@
 
     move-result-object v8
 
-    .line 89
     .local v8, _arg5:Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 91
     .restart local v9       #_arg6:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
-    .line 93
     .local v10, _arg7:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
@@ -311,15 +275,12 @@
 
     move/from16 v21, v10
 
-    .line 94
     invoke-virtual/range {v12 .. v23}, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub;->findAccessibilityNodeInfoByViewId(JIIIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;IIJ)V
 
-    .line 95
     const/4 v1, 0x1
 
     goto :goto_7
 
-    .line 99
     .end local v2           #_arg0:J
     .end local v4           #_arg1:I
     .end local v5           #_arg2:I
@@ -336,36 +297,30 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 101
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
-    .line 103
     .restart local v2       #_arg0:J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 105
     .local v4, _arg1:Ljava/lang/String;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 107
     .restart local v5       #_arg2:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 109
     .restart local v6       #_arg3:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 111
     .restart local v7       #_arg4:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -375,19 +330,16 @@
 
     move-result-object v8
 
-    .line 113
     .restart local v8       #_arg5:Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 115
     .restart local v9       #_arg6:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
-    .line 117
     .restart local v10       #_arg7:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
@@ -412,15 +364,12 @@
 
     move/from16 v21, v10
 
-    .line 118
     invoke-virtual/range {v12 .. v23}, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub;->findAccessibilityNodeInfosByText(JLjava/lang/String;IIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;IIJ)V
 
-    .line 119
     const/4 v1, 0x1
 
     goto/16 :goto_7
 
-    .line 123
     .end local v2           #_arg0:J
     .end local v4           #_arg1:Ljava/lang/String;
     .end local v5           #_arg2:I
@@ -437,36 +386,30 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 125
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
-    .line 127
     .restart local v2       #_arg0:J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 129
     .local v4, _arg1:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 131
     .restart local v5       #_arg2:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 133
     .restart local v6       #_arg3:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 135
     .restart local v7       #_arg4:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -476,19 +419,16 @@
 
     move-result-object v8
 
-    .line 137
     .restart local v8       #_arg5:Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 139
     .restart local v9       #_arg6:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
-    .line 141
     .restart local v10       #_arg7:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
@@ -513,15 +453,12 @@
 
     move/from16 v21, v10
 
-    .line 142
     invoke-virtual/range {v12 .. v23}, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub;->findFocus(JIIIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;IIJ)V
 
-    .line 143
     const/4 v1, 0x1
 
     goto/16 :goto_7
 
-    .line 147
     .end local v2           #_arg0:J
     .end local v4           #_arg1:I
     .end local v5           #_arg2:I
@@ -538,36 +475,30 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 149
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
-    .line 151
     .restart local v2       #_arg0:J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 153
     .restart local v4       #_arg1:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v5
 
-    .line 155
     .restart local v5       #_arg2:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 157
     .restart local v6       #_arg3:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v7
 
-    .line 159
     .restart local v7       #_arg4:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -577,19 +508,16 @@
 
     move-result-object v8
 
-    .line 161
     .restart local v8       #_arg5:Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 163
     .restart local v9       #_arg6:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
-    .line 165
     .restart local v10       #_arg7:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
@@ -614,15 +542,12 @@
 
     move/from16 v21, v10
 
-    .line 166
     invoke-virtual/range {v12 .. v23}, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub;->focusSearch(JIIIILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;IIJ)V
 
-    .line 167
     const/4 v1, 0x1
 
     goto/16 :goto_7
 
-    .line 171
     .end local v2           #_arg0:J
     .end local v4           #_arg1:I
     .end local v5           #_arg2:I
@@ -639,18 +564,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 173
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v2
 
-    .line 175
     .restart local v2       #_arg0:J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v4
 
-    .line 177
     .restart local v4       #_arg1:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
@@ -658,7 +580,6 @@
 
     if-eqz v1, :cond_195
 
-    .line 178
     sget-object v1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     move-object/from16 v0, p2
@@ -669,14 +590,12 @@
 
     check-cast v5, Landroid/os/Bundle;
 
-    .line 184
     .local v5, _arg2:Landroid/os/Bundle;
     :goto_175
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 186
     .restart local v6       #_arg3:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -686,19 +605,16 @@
 
     move-result-object v7
 
-    .line 188
     .local v7, _arg4:Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v8
 
-    .line 190
     .local v8, _arg5:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v9
 
-    .line 192
     .restart local v9       #_arg6:I
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
@@ -707,15 +623,12 @@
     .local v10, _arg7:J
     move-object/from16 v1, p0
 
-    .line 193
     invoke-virtual/range {v1 .. v11}, Landroid/view/accessibility/IAccessibilityInteractionConnection$Stub;->performAccessibilityAction(JILandroid/os/Bundle;ILandroid/view/accessibility/IAccessibilityInteractionConnectionCallback;IIJ)V
 
-    .line 194
     const/4 v1, 0x1
 
     goto/16 :goto_7
 
-    .line 181
     .end local v5           #_arg2:Landroid/os/Bundle;
     .end local v6           #_arg3:I
     .end local v7           #_arg4:Landroid/view/accessibility/IAccessibilityInteractionConnectionCallback;
@@ -728,7 +641,6 @@
     .restart local v5       #_arg2:Landroid/os/Bundle;
     goto :goto_175
 
-    .line 44
     nop
 
     :sswitch_data_198

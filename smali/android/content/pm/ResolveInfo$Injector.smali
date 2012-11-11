@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 39
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,14 +37,12 @@
     .parameter "ai"
 
     .prologue
-    .line 41
     iget-object v0, p0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     if-eqz v0, :cond_15
 
     iget-object v4, p0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 42
     .local v4, ci:Landroid/content/pm/ComponentInfo;
     :goto_6
     iget-object v0, p0, Landroid/content/pm/ResolveInfo;->filter:Landroid/content/IntentFilter;
@@ -68,7 +65,6 @@
 
     return-object v0
 
-    .line 41
     .end local v4           #ci:Landroid/content/pm/ComponentInfo;
     :cond_15
     iget-object v4, p0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;

@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 1432
     iput-object p1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
     invoke-direct {p0}, Landroid/accounts/IAccountManagerResponse$Stub;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 1432
     invoke-direct {p0, p1}, Landroid/accounts/AccountManager$AmsTask$Response;-><init>(Landroid/accounts/AccountManager$AmsTask;)V
 
     return-void
@@ -52,23 +50,19 @@
     .parameter "message"
 
     .prologue
-    .line 1453
     const/4 v0, 0x4
 
     if-ne p1, v0, :cond_a
 
-    .line 1455
     iget-object v0, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/accounts/AccountManager$AmsTask;->cancel(Z)Z
 
-    .line 1459
     :goto_9
     return-void
 
-    .line 1458
     :cond_a
     iget-object v0, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
@@ -92,7 +86,6 @@
     .parameter "bundle"
 
     .prologue
-    .line 1434
     const-string v1, "intent"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -101,7 +94,6 @@
 
     check-cast v0, Landroid/content/Intent;
 
-    .line 1435
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_18
 
@@ -111,18 +103,15 @@
 
     if-eqz v1, :cond_18
 
-    .line 1438
     iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
     iget-object v1, v1, Landroid/accounts/AccountManager$AmsTask;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1450
     :goto_17
     return-void
 
-    .line 1440
     :cond_18
     const-string/jumbo v1, "retry"
 
@@ -132,7 +121,6 @@
 
     if-eqz v1, :cond_29
 
-    .line 1442
     :try_start_21
     iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 
@@ -142,13 +130,11 @@
 
     goto :goto_17
 
-    .line 1443
     :catch_27
     move-exception v1
 
     goto :goto_17
 
-    .line 1448
     :cond_29
     iget-object v1, p0, Landroid/accounts/AccountManager$AmsTask$Response;->this$1:Landroid/accounts/AccountManager$AmsTask;
 

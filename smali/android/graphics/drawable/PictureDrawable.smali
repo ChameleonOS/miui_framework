@@ -13,13 +13,10 @@
     .parameter "picture"
 
     .prologue
-    .line 44
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 45
     iput-object p1, p0, Landroid/graphics/drawable/PictureDrawable;->mPicture:Landroid/graphics/Picture;
 
-    .line 46
     return-void
 .end method
 
@@ -30,24 +27,19 @@
     .parameter "canvas"
 
     .prologue
-    .line 68
     iget-object v1, p0, Landroid/graphics/drawable/PictureDrawable;->mPicture:Landroid/graphics/Picture;
 
     if-eqz v1, :cond_1f
 
-    .line 69
     invoke-virtual {p0}, Landroid/graphics/drawable/PictureDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 70
     .local v0, bounds:Landroid/graphics/Rect;
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 71
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 72
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     int-to-float v1, v1
@@ -58,15 +50,12 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 73
     iget-object v1, p0, Landroid/graphics/drawable/PictureDrawable;->mPicture:Landroid/graphics/Picture;
 
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->drawPicture(Landroid/graphics/Picture;)V
 
-    .line 74
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 76
     .end local v0           #bounds:Landroid/graphics/Rect;
     :cond_1f
     return-void
@@ -76,7 +65,6 @@
     .registers 2
 
     .prologue
-    .line 85
     iget-object v0, p0, Landroid/graphics/drawable/PictureDrawable;->mPicture:Landroid/graphics/Picture;
 
     if-eqz v0, :cond_b
@@ -100,7 +88,6 @@
     .registers 2
 
     .prologue
-    .line 80
     iget-object v0, p0, Landroid/graphics/drawable/PictureDrawable;->mPicture:Landroid/graphics/Picture;
 
     if-eqz v0, :cond_b
@@ -124,7 +111,6 @@
     .registers 2
 
     .prologue
-    .line 91
     const/4 v0, -0x3
 
     return v0
@@ -134,7 +120,6 @@
     .registers 2
 
     .prologue
-    .line 54
     iget-object v0, p0, Landroid/graphics/drawable/PictureDrawable;->mPicture:Landroid/graphics/Picture;
 
     return-object v0
@@ -145,7 +130,6 @@
     .parameter "alpha"
 
     .prologue
-    .line 104
     return-void
 .end method
 
@@ -154,7 +138,6 @@
     .parameter "colorFilter"
 
     .prologue
-    .line 101
     return-void
 .end method
 
@@ -163,7 +146,6 @@
     .parameter "dither"
 
     .prologue
-    .line 98
     return-void
 .end method
 
@@ -172,7 +154,6 @@
     .parameter "filter"
 
     .prologue
-    .line 95
     return-void
 .end method
 
@@ -181,9 +162,7 @@
     .parameter "picture"
 
     .prologue
-    .line 63
     iput-object p1, p0, Landroid/graphics/drawable/PictureDrawable;->mPicture:Landroid/graphics/Picture;
 
-    .line 64
     return-void
 .end method

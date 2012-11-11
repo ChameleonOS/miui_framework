@@ -22,9 +22,7 @@
     .parameter "message"
 
     .prologue
-    .line 796
     invoke-direct {p0, p1, p2, p3}, Ldalvik/system/BlockGuard$BlockGuardPolicyException;-><init>(IILjava/lang/String;)V
 
-    .line 797
     return-void
 .end method

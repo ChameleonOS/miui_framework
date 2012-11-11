@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 884
     iput-object p1, p0, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;->this$0:Lcom/android/internal/telephony/sip/SipPhone;
 
     invoke-direct {p0}, Landroid/net/sip/SipAudioCall$Listener;-><init>()V
@@ -38,7 +37,6 @@
     .parameter "x1"
 
     .prologue
-    .line 884
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;-><init>(Lcom/android/internal/telephony/sip/SipPhone;)V
 
     return-void
@@ -51,12 +49,10 @@
     .parameter "call"
 
     .prologue
-    .line 897
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->BUSY:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;->onCallEnded(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
-    .line 898
     return-void
 .end method
 
@@ -65,7 +61,6 @@
     .parameter "call"
 
     .prologue
-    .line 890
     invoke-virtual {p1}, Landroid/net/sip/SipAudioCall;->isInCall()Z
 
     move-result v0
@@ -77,10 +72,8 @@
     :goto_8
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;->onCallEnded(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
-    .line 893
     return-void
 
-    .line 890
     :cond_c
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INCOMING_MISSED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -97,10 +90,8 @@
     .parameter "errorMessage"
 
     .prologue
-    .line 903
     packed-switch p2, :pswitch_data_60
 
-    .line 932
     :pswitch_3
     const-string v0, "SipPhone"
 
@@ -138,16 +129,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 934
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->ERROR_UNSPECIFIED:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/sip/SipPhone$SipAudioCallAdapter;->onError(Lcom/android/internal/telephony/Connection$DisconnectCause;)V
 
-    .line 936
     :goto_2e
     return-void
 
-    .line 905
     :pswitch_2f
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->SERVER_UNREACHABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -155,7 +143,6 @@
 
     goto :goto_2e
 
-    .line 908
     :pswitch_35
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->NUMBER_UNREACHABLE:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -163,7 +150,6 @@
 
     goto :goto_2e
 
-    .line 911
     :pswitch_3b
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_NUMBER:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -171,7 +157,6 @@
 
     goto :goto_2e
 
-    .line 915
     :pswitch_41
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->TIMED_OUT:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -179,7 +164,6 @@
 
     goto :goto_2e
 
-    .line 918
     :pswitch_47
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->LOST_SIGNAL:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -187,7 +171,6 @@
 
     goto :goto_2e
 
-    .line 921
     :pswitch_4d
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->INVALID_CREDENTIALS:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -195,7 +178,6 @@
 
     goto :goto_2e
 
-    .line 924
     :pswitch_53
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->OUT_OF_NETWORK:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -203,7 +185,6 @@
 
     goto :goto_2e
 
-    .line 927
     :pswitch_59
     sget-object v0, Lcom/android/internal/telephony/Connection$DisconnectCause;->SERVER_ERROR:Lcom/android/internal/telephony/Connection$DisconnectCause;
 
@@ -211,7 +192,6 @@
 
     goto :goto_2e
 
-    .line 903
     nop
 
     :pswitch_data_60

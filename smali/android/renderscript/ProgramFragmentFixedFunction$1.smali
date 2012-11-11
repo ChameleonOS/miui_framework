@@ -25,7 +25,6 @@
     .registers 3
 
     .prologue
-    .line 184
     invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;->values()[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$EnvMode;
 
     move-result-object v0
@@ -83,7 +82,6 @@
     :try_end_2a
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_2a} :catch_68
 
-    .line 186
     :goto_2a
     invoke-static {}, Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;->values()[Landroid/renderscript/ProgramFragmentFixedFunction$Builder$Format;
 
@@ -181,7 +179,6 @@
 
     goto :goto_3e
 
-    .line 184
     :catch_68
     move-exception v0
 

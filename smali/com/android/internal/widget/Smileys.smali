@@ -46,7 +46,6 @@
     .registers 1
 
     .prologue
-    .line 25
     const/16 v0, 0x11
 
     new-array v0, v0, [I
@@ -55,94 +54,76 @@
 
     sput-object v0, Lcom/android/internal/widget/Smileys;->sIconIds:[I
 
-    .line 45
     const/4 v0, 0x0
 
     sput v0, Lcom/android/internal/widget/Smileys;->HAPPY:I
 
-    .line 46
     const/4 v0, 0x1
 
     sput v0, Lcom/android/internal/widget/Smileys;->SAD:I
 
-    .line 47
     const/4 v0, 0x2
 
     sput v0, Lcom/android/internal/widget/Smileys;->WINKING:I
 
-    .line 48
     const/4 v0, 0x3
 
     sput v0, Lcom/android/internal/widget/Smileys;->TONGUE_STICKING_OUT:I
 
-    .line 49
     const/4 v0, 0x4
 
     sput v0, Lcom/android/internal/widget/Smileys;->SURPRISED:I
 
-    .line 50
     const/4 v0, 0x5
 
     sput v0, Lcom/android/internal/widget/Smileys;->KISSING:I
 
-    .line 51
     const/4 v0, 0x6
 
     sput v0, Lcom/android/internal/widget/Smileys;->YELLING:I
 
-    .line 52
     const/4 v0, 0x7
 
     sput v0, Lcom/android/internal/widget/Smileys;->COOL:I
 
-    .line 53
     const/16 v0, 0x8
 
     sput v0, Lcom/android/internal/widget/Smileys;->MONEY_MOUTH:I
 
-    .line 54
     const/16 v0, 0x9
 
     sput v0, Lcom/android/internal/widget/Smileys;->FOOT_IN_MOUTH:I
 
-    .line 55
     const/16 v0, 0xa
 
     sput v0, Lcom/android/internal/widget/Smileys;->EMBARRASSED:I
 
-    .line 56
     const/16 v0, 0xb
 
     sput v0, Lcom/android/internal/widget/Smileys;->ANGEL:I
 
-    .line 57
     const/16 v0, 0xc
 
     sput v0, Lcom/android/internal/widget/Smileys;->UNDECIDED:I
 
-    .line 58
     const/16 v0, 0xd
 
     sput v0, Lcom/android/internal/widget/Smileys;->CRYING:I
 
-    .line 59
     const/16 v0, 0xe
 
     sput v0, Lcom/android/internal/widget/Smileys;->LIPS_ARE_SEALED:I
 
-    .line 60
     const/16 v0, 0xf
 
     sput v0, Lcom/android/internal/widget/Smileys;->LAUGHING:I
 
-    .line 61
     const/16 v0, 0x10
 
     sput v0, Lcom/android/internal/widget/Smileys;->WTF:I
 
     return-void
 
-    .line 25
     :array_46
     .array-data 0x4
         0x63t 0x2t 0x8t 0x1t
@@ -169,7 +150,6 @@
     .registers 1
 
     .prologue
-    .line 24
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -180,7 +160,6 @@
     .parameter "which"
 
     .prologue
-    .line 64
     sget-object v0, Lcom/android/internal/widget/Smileys;->sIconIds:[I
 
     aget v0, v0, p0

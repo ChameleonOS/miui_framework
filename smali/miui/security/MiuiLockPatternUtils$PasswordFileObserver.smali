@@ -21,10 +21,8 @@
     .parameter "mask"
 
     .prologue
-    .line 34
     invoke-direct {p0, p1, p2}, Landroid/os/FileObserver;-><init>(Ljava/lang/String;I)V
 
-    .line 35
     return-void
 .end method
 
@@ -36,7 +34,6 @@
     .parameter "path"
 
     .prologue
-    .line 39
     const-string v0, "access_control.key"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -45,14 +42,12 @@
 
     if-eqz v0, :cond_2a
 
-    .line 40
     const-string v0, "MiuiLockPatternUtils"
 
     const-string v1, "access control password file changed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 41
     invoke-static {}, Lmiui/security/MiuiLockPatternUtils;->access$100()Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object v1
@@ -80,11 +75,9 @@
     :goto_27
     invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 43
     :cond_2a
     return-void
 
-    .line 41
     :cond_2b
     const/4 v0, 0x0
 

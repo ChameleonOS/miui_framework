@@ -24,13 +24,10 @@
     .parameter "proxy"
 
     .prologue
-    .line 267
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
-    .line 268
     iput-object p1, p0, Landroid/webkit/HTML5VideoView$TimeupdateTask;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
-    .line 269
     return-void
 .end method
 
@@ -40,11 +37,9 @@
     .registers 2
 
     .prologue
-    .line 273
     iget-object v0, p0, Landroid/webkit/HTML5VideoView$TimeupdateTask;->mProxy:Landroid/webkit/HTML5VideoViewProxy;
 
     invoke-virtual {v0}, Landroid/webkit/HTML5VideoViewProxy;->onTimeupdate()V
 
-    .line 274
     return-void
 .end method

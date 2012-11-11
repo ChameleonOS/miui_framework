@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 188
     iput-object p1, p0, Landroid/content/SyncManager$2;->this$0:Landroid/content/SyncManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "intent"
 
     .prologue
-    .line 190
     iget-object v0, p0, Landroid/content/SyncManager$2;->this$0:Landroid/content/SyncManager;
 
     #getter for: Landroid/content/SyncManager;->mSyncHandler:Landroid/content/SyncManager$SyncHandler;
@@ -50,6 +48,5 @@
 
     invoke-virtual {v0}, Landroid/content/SyncManager$SyncHandler;->onBootCompleted()V
 
-    .line 191
     return-void
 .end method

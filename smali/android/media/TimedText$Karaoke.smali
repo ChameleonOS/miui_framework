@@ -33,21 +33,15 @@
     .parameter "endChar"
 
     .prologue
-    .line 303
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 304
     iput p1, p0, Landroid/media/TimedText$Karaoke;->startTimeMs:I
 
-    .line 305
     iput p2, p0, Landroid/media/TimedText$Karaoke;->endTimeMs:I
 
-    .line 306
     iput p3, p0, Landroid/media/TimedText$Karaoke;->startChar:I
 
-    .line 307
     iput p4, p0, Landroid/media/TimedText$Karaoke;->endChar:I
 
-    .line 308
     return-void
 .end method

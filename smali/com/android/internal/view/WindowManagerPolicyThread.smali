@@ -14,7 +14,6 @@
     .registers 1
 
     .prologue
-    .line 25
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 39
     sget-object v0, Lcom/android/internal/view/WindowManagerPolicyThread;->mLooper:Landroid/os/Looper;
 
     return-object v0
@@ -34,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 35
     sget-object v0, Lcom/android/internal/view/WindowManagerPolicyThread;->mThread:Ljava/lang/Thread;
 
     return-object v0
@@ -46,12 +43,9 @@
     .parameter "looper"
 
     .prologue
-    .line 30
     sput-object p0, Lcom/android/internal/view/WindowManagerPolicyThread;->mThread:Ljava/lang/Thread;
 
-    .line 31
     sput-object p1, Lcom/android/internal/view/WindowManagerPolicyThread;->mLooper:Landroid/os/Looper;
 
-    .line 32
     return-void
 .end method

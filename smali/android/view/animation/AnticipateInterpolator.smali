@@ -15,15 +15,12 @@
     .registers 2
 
     .prologue
-    .line 29
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     const/high16 v0, 0x4000
 
     iput v0, p0, Landroid/view/animation/AnticipateInterpolator;->mTension:F
 
-    .line 31
     return-void
 .end method
 
@@ -32,13 +29,10 @@
     .parameter "tension"
 
     .prologue
-    .line 38
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     iput p1, p0, Landroid/view/animation/AnticipateInterpolator;->mTension:F
 
-    .line 40
     return-void
 .end method
 
@@ -48,17 +42,14 @@
     .parameter "attrs"
 
     .prologue
-    .line 42
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
     sget-object v1, Lcom/android/internal/R$styleable;->AnticipateInterpolator:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 46
     .local v0, a:Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
@@ -70,10 +61,8 @@
 
     iput v1, p0, Landroid/view/animation/AnticipateInterpolator;->mTension:F
 
-    .line 49
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 50
     return-void
 .end method
 
@@ -84,7 +73,6 @@
     .parameter "t"
 
     .prologue
-    .line 54
     mul-float v0, p1, p1
 
     iget v1, p0, Landroid/view/animation/AnticipateInterpolator;->mTension:F

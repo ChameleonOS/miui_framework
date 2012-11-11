@@ -29,7 +29,6 @@
     .registers 1
 
     .prologue
-    .line 335
     const-class v0, Landroid/hardware/GeomagneticField;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -61,10 +60,8 @@
 
     const/4 v8, 0x0
 
-    .line 351
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 356
     float-to-double v5, p2
 
     invoke-static {v5, v6}, Ljava/lang/Math;->cos(D)D
@@ -73,7 +70,6 @@
 
     double-to-float v0, v5
 
-    .line 357
     .local v0, cos:F
     float-to-double v5, p2
 
@@ -83,7 +79,6 @@
 
     double-to-float v4, v5
 
-    .line 359
     .local v4, sin:F
     add-int/lit8 v5, p1, 0x1
 
@@ -91,14 +86,12 @@
 
     iput-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mP:[[F
 
-    .line 360
     add-int/lit8 v5, p1, 0x1
 
     new-array v5, v5, [[F
 
     iput-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mPDeriv:[[F
 
-    .line 361
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mP:[[F
 
     new-array v6, v9, [F
@@ -109,7 +102,6 @@
 
     aput-object v6, v5, v8
 
-    .line 362
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mPDeriv:[[F
 
     new-array v6, v9, [F
@@ -120,14 +112,12 @@
 
     aput-object v6, v5, v8
 
-    .line 363
     const/4 v3, 0x1
 
     .local v3, n:I
     :goto_31
     if-gt v3, p1, :cond_111
 
-    .line 364
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mP:[[F
 
     add-int/lit8 v6, v3, 0x1
@@ -136,7 +126,6 @@
 
     aput-object v6, v5, v3
 
-    .line 365
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mPDeriv:[[F
 
     add-int/lit8 v6, v3, 0x1
@@ -145,17 +134,14 @@
 
     aput-object v6, v5, v3
 
-    .line 366
     const/4 v2, 0x0
 
     .local v2, m:I
     :goto_44
     if-gt v2, v3, :cond_10d
 
-    .line 367
     if-ne v3, v2, :cond_79
 
-    .line 368
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mP:[[F
 
     aget-object v5, v5, v3
@@ -174,7 +160,6 @@
 
     aput v6, v5, v2
 
-    .line 369
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mPDeriv:[[F
 
     aget-object v5, v5, v3
@@ -207,13 +192,11 @@
 
     aput v6, v5, v2
 
-    .line 366
     :goto_76
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_44
 
-    .line 371
     :cond_79
     if-eq v3, v9, :cond_7f
 
@@ -221,7 +204,6 @@
 
     if-ne v2, v5, :cond_a9
 
-    .line 372
     :cond_7f
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mP:[[F
 
@@ -239,7 +221,6 @@
 
     aput v6, v5, v2
 
-    .line 373
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mPDeriv:[[F
 
     aget-object v5, v5, v3
@@ -272,7 +253,6 @@
 
     goto :goto_76
 
-    .line 376
     :cond_a9
     sget-boolean v5, Landroid/hardware/GeomagneticField$LegendreTable;->$assertionsDisabled:Z
 
@@ -291,7 +271,6 @@
 
     throw v5
 
-    .line 377
     :cond_b9
     add-int/lit8 v5, v3, -0x1
 
@@ -319,7 +298,6 @@
 
     div-float v1, v5, v6
 
-    .line 379
     .local v1, k:F
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mP:[[F
 
@@ -349,7 +327,6 @@
 
     aput v6, v5, v2
 
-    .line 380
     iget-object v5, p0, Landroid/hardware/GeomagneticField$LegendreTable;->mPDeriv:[[F
 
     aget-object v5, v5, v3
@@ -394,14 +371,12 @@
 
     goto/16 :goto_76
 
-    .line 363
     .end local v1           #k:F
     :cond_10d
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_31
 
-    .line 385
     .end local v2           #m:I
     :cond_111
     return-void

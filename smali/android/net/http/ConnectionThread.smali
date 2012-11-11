@@ -38,18 +38,14 @@
     .parameter "requestFeeder"
 
     .prologue
-    .line 51
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 39
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/http/ConnectionThread;->mRunning:Z
 
-    .line 52
     iput-object p1, p0, Landroid/net/http/ConnectionThread;->mContext:Landroid/content/Context;
 
-    .line 53
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,16 +66,12 @@
 
     invoke-virtual {p0, v0}, Landroid/net/http/ConnectionThread;->setName(Ljava/lang/String;)V
 
-    .line 54
     iput p2, p0, Landroid/net/http/ConnectionThread;->mId:I
 
-    .line 55
     iput-object p3, p0, Landroid/net/http/ConnectionThread;->mConnectionManager:Landroid/net/http/RequestQueue$ConnectionManager;
 
-    .line 56
     iput-object p4, p0, Landroid/net/http/ConnectionThread;->mRequestFeeder:Landroid/net/http/RequestFeeder;
 
-    .line 57
     return-void
 .end method
 
@@ -89,29 +81,23 @@
     .registers 3
 
     .prologue
-    .line 60
     iget-object v1, p0, Landroid/net/http/ConnectionThread;->mRequestFeeder:Landroid/net/http/RequestFeeder;
 
     monitor-enter v1
 
-    .line 61
     const/4 v0, 0x0
 
     :try_start_4
     iput-boolean v0, p0, Landroid/net/http/ConnectionThread;->mRunning:Z
 
-    .line 62
     iget-object v0, p0, Landroid/net/http/ConnectionThread;->mRequestFeeder:Landroid/net/http/RequestFeeder;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 63
     monitor-exit v1
 
-    .line 64
     return-void
 
-    .line 63
     :catchall_d
     move-exception v0
 
@@ -130,23 +116,18 @@
 
     const-wide/16 v7, 0x0
 
-    .line 71
     invoke-static {v3}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 79
     iput-wide v7, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
-    .line 80
     iput-wide v7, p0, Landroid/net/http/ConnectionThread;->mTotalThreadTime:J
 
-    .line 82
     :cond_a
     :goto_a
     iget-boolean v3, p0, Landroid/net/http/ConnectionThread;->mRunning:Z
 
     if-eqz v3, :cond_8b
 
-    .line 83
     iget-wide v3, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
     const-wide/16 v5, -0x1
@@ -155,14 +136,12 @@
 
     if-nez v3, :cond_1c
 
-    .line 84
     invoke-static {}, Landroid/os/SystemClock;->currentThreadTimeMillis()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
-    .line 90
     :cond_1c
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mRequestFeeder:Landroid/net/http/RequestFeeder;
 
@@ -170,16 +149,13 @@
 
     move-result-object v0
 
-    .line 93
     .local v0, request:Landroid/net/http/Request;
     if-nez v0, :cond_43
 
-    .line 94
     iget-object v4, p0, Landroid/net/http/ConnectionThread;->mRequestFeeder:Landroid/net/http/RequestFeeder;
 
     monitor-enter v4
 
-    .line 96
     const/4 v3, 0x1
 
     :try_start_28
@@ -187,7 +163,6 @@
     :try_end_2a
     .catchall {:try_start_28 .. :try_end_2a} :catchall_40
 
-    .line 98
     :try_start_2a
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mRequestFeeder:Landroid/net/http/RequestFeeder;
 
@@ -196,28 +171,24 @@
     .catchall {:try_start_2a .. :try_end_2f} :catchall_40
     .catch Ljava/lang/InterruptedException; {:try_start_2a .. :try_end_2f} :catch_8c
 
-    .line 101
     :goto_2f
     const/4 v3, 0x0
 
     :try_start_30
     iput-boolean v3, p0, Landroid/net/http/ConnectionThread;->mWaiting:Z
 
-    .line 102
     iget-wide v5, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
     cmp-long v3, v5, v7
 
     if-eqz v3, :cond_3e
 
-    .line 103
     invoke-static {}, Landroid/os/SystemClock;->currentThreadTimeMillis()J
 
     move-result-wide v5
 
     iput-wide v5, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
-    .line 106
     :cond_3e
     monitor-exit v4
 
@@ -232,7 +203,6 @@
 
     throw v3
 
-    .line 111
     :cond_43
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnectionManager:Landroid/net/http/RequestQueue$ConnectionManager;
 
@@ -246,12 +216,10 @@
 
     iput-object v3, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
 
-    .line 113
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
 
     invoke-virtual {v3, v0}, Landroid/net/http/Connection;->processRequests(Landroid/net/http/Request;)V
 
-    .line 114
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
 
     invoke-virtual {v3}, Landroid/net/http/Connection;->getCanPersist()Z
@@ -260,7 +228,6 @@
 
     if-eqz v3, :cond_85
 
-    .line 115
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnectionManager:Landroid/net/http/RequestQueue$ConnectionManager;
 
     iget-object v4, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
@@ -271,29 +238,24 @@
 
     if-nez v3, :cond_6b
 
-    .line 116
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
 
     invoke-virtual {v3}, Landroid/net/http/Connection;->closeConnection()V
 
-    .line 121
     :cond_6b
     :goto_6b
     const/4 v3, 0x0
 
     iput-object v3, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
 
-    .line 123
     iget-wide v3, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
     cmp-long v3, v3, v7
 
     if-lez v3, :cond_a
 
-    .line 124
     iget-wide v1, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
-    .line 125
     .local v1, start:J
     invoke-static {}, Landroid/os/SystemClock;->currentThreadTimeMillis()J
 
@@ -301,7 +263,6 @@
 
     iput-wide v3, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
 
-    .line 126
     iget-wide v3, p0, Landroid/net/http/ConnectionThread;->mTotalThreadTime:J
 
     iget-wide v5, p0, Landroid/net/http/ConnectionThread;->mCurrentThreadTime:J
@@ -314,7 +275,6 @@
 
     goto :goto_a
 
-    .line 119
     .end local v1           #start:J
     :cond_85
     iget-object v3, p0, Landroid/net/http/ConnectionThread;->mConnection:Landroid/net/http/Connection;
@@ -323,12 +283,10 @@
 
     goto :goto_6b
 
-    .line 131
     .end local v0           #request:Landroid/net/http/Request;
     :cond_8b
     return-void
 
-    .line 99
     .restart local v0       #request:Landroid/net/http/Request;
     :catch_8c
     move-exception v3
@@ -340,7 +298,6 @@
     .registers 5
 
     .prologue
-    .line 134
     monitor-enter p0
 
     :try_start_1
@@ -350,7 +307,6 @@
 
     const-string v1, ""
 
-    .line 135
     .local v1, con:Ljava/lang/String;
     :goto_7
     iget-boolean v2, p0, Landroid/net/http/ConnectionThread;->mWaiting:Z
@@ -359,7 +315,6 @@
 
     const-string/jumbo v0, "w"
 
-    .line 136
     .local v0, active:Ljava/lang/String;
     :goto_e
     new-instance v2, Ljava/lang/StringBuilder;
@@ -408,7 +363,6 @@
 
     return-object v2
 
-    .line 134
     .end local v0           #active:Ljava/lang/String;
     .end local v1           #con:Ljava/lang/String;
     :cond_39
@@ -421,7 +375,6 @@
 
     goto :goto_7
 
-    .line 135
     .restart local v1       #con:Ljava/lang/String;
     :cond_40
     const-string v0, "a"
@@ -430,7 +383,6 @@
 
     goto :goto_e
 
-    .line 134
     .end local v1           #con:Ljava/lang/String;
     :catchall_43
     move-exception v2

@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 323
     iput-object p1, p0, Landroid/net/wifi/SupplicantStateTracker$DormantState;->this$0:Landroid/net/wifi/SupplicantStateTracker;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,6 +37,5 @@
     .registers 1
 
     .prologue
-    .line 327
     return-void
 .end method

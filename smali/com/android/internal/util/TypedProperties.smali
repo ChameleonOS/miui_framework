@@ -59,7 +59,6 @@
     .registers 2
 
     .prologue
-    .line 88
     new-instance v0, Ljava/lang/String;
 
     const-string v1, "<TypedProperties:NULL_STRING>"
@@ -75,10 +74,8 @@
     .registers 1
 
     .prologue
-    .line 343
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 344
     return-void
 .end method
 
@@ -97,100 +94,81 @@
 
     const/4 v3, 0x1
 
-    .line 39
     new-instance v0, Ljava/io/StreamTokenizer;
 
     invoke-direct {v0, p0}, Ljava/io/StreamTokenizer;-><init>(Ljava/io/Reader;)V
 
-    .line 42
     .local v0, st:Ljava/io/StreamTokenizer;
     invoke-virtual {v0}, Ljava/io/StreamTokenizer;->resetSyntax()V
 
-    .line 50
     const/16 v1, 0x30
 
     const/16 v2, 0x39
 
     invoke-virtual {v0, v1, v2}, Ljava/io/StreamTokenizer;->wordChars(II)V
 
-    .line 51
     const/16 v1, 0x41
 
     const/16 v2, 0x5a
 
     invoke-virtual {v0, v1, v2}, Ljava/io/StreamTokenizer;->wordChars(II)V
 
-    .line 52
     const/16 v1, 0x61
 
     const/16 v2, 0x7a
 
     invoke-virtual {v0, v1, v2}, Ljava/io/StreamTokenizer;->wordChars(II)V
 
-    .line 53
     const/16 v1, 0x5f
 
     const/16 v2, 0x5f
 
     invoke-virtual {v0, v1, v2}, Ljava/io/StreamTokenizer;->wordChars(II)V
 
-    .line 54
     const/16 v1, 0x24
 
     const/16 v2, 0x24
 
     invoke-virtual {v0, v1, v2}, Ljava/io/StreamTokenizer;->wordChars(II)V
 
-    .line 55
     const/16 v1, 0x2e
 
     const/16 v2, 0x2e
 
     invoke-virtual {v0, v1, v2}, Ljava/io/StreamTokenizer;->wordChars(II)V
 
-    .line 56
     const/16 v1, 0x2d
 
     const/16 v2, 0x2d
 
     invoke-virtual {v0, v1, v2}, Ljava/io/StreamTokenizer;->wordChars(II)V
 
-    .line 57
     const/16 v1, 0x2b
 
     const/16 v2, 0x2b
 
     invoke-virtual {v0, v1, v2}, Ljava/io/StreamTokenizer;->wordChars(II)V
 
-    .line 60
     const/16 v1, 0x3d
 
     invoke-virtual {v0, v1}, Ljava/io/StreamTokenizer;->ordinaryChar(I)V
 
-    .line 63
     invoke-virtual {v0, v7, v7}, Ljava/io/StreamTokenizer;->whitespaceChars(II)V
 
-    .line 64
     invoke-virtual {v0, v4, v4}, Ljava/io/StreamTokenizer;->whitespaceChars(II)V
 
-    .line 65
     invoke-virtual {v0, v5, v5}, Ljava/io/StreamTokenizer;->whitespaceChars(II)V
 
-    .line 66
     invoke-virtual {v0, v6, v6}, Ljava/io/StreamTokenizer;->whitespaceChars(II)V
 
-    .line 67
     const/16 v1, 0x22
 
     invoke-virtual {v0, v1}, Ljava/io/StreamTokenizer;->quoteChar(I)V
 
-    .line 70
     invoke-virtual {v0, v3}, Ljava/io/StreamTokenizer;->slashStarComments(Z)V
 
-    .line 71
     invoke-virtual {v0, v3}, Ljava/io/StreamTokenizer;->slashSlashComments(Z)V
 
-    .line 73
     return-object v0
 .end method
 
@@ -199,7 +177,6 @@
     .parameter "typeName"
 
     .prologue
-    .line 111
     const-string/jumbo v0, "unset"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -208,14 +185,11 @@
 
     if-eqz v0, :cond_c
 
-    .line 112
     const/16 v0, 0x78
 
-    .line 130
     :goto_b
     return v0
 
-    .line 113
     :cond_c
     const-string v0, "boolean"
 
@@ -225,12 +199,10 @@
 
     if-eqz v0, :cond_17
 
-    .line 114
     const/16 v0, 0x5a
 
     goto :goto_b
 
-    .line 115
     :cond_17
     const-string v0, "byte"
 
@@ -240,12 +212,10 @@
 
     if-eqz v0, :cond_22
 
-    .line 116
     const/16 v0, 0x149
 
     goto :goto_b
 
-    .line 117
     :cond_22
     const-string/jumbo v0, "short"
 
@@ -255,12 +225,10 @@
 
     if-eqz v0, :cond_2e
 
-    .line 118
     const/16 v0, 0x249
 
     goto :goto_b
 
-    .line 119
     :cond_2e
     const-string v0, "int"
 
@@ -270,12 +238,10 @@
 
     if-eqz v0, :cond_39
 
-    .line 120
     const/16 v0, 0x449
 
     goto :goto_b
 
-    .line 121
     :cond_39
     const-string v0, "long"
 
@@ -285,12 +251,10 @@
 
     if-eqz v0, :cond_44
 
-    .line 122
     const/16 v0, 0x849
 
     goto :goto_b
 
-    .line 123
     :cond_44
     const-string v0, "float"
 
@@ -300,12 +264,10 @@
 
     if-eqz v0, :cond_4f
 
-    .line 124
     const/16 v0, 0x446
 
     goto :goto_b
 
-    .line 125
     :cond_4f
     const-string v0, "double"
 
@@ -315,12 +277,10 @@
 
     if-eqz v0, :cond_5a
 
-    .line 126
     const/16 v0, 0x846
 
     goto :goto_b
 
-    .line 127
     :cond_5a
     const-string v0, "String"
 
@@ -330,12 +290,10 @@
 
     if-eqz v0, :cond_65
 
-    .line 128
     const/16 v0, 0x734c
 
     goto :goto_b
 
-    .line 130
     :cond_65
     const/4 v0, -0x1
 
@@ -375,16 +333,13 @@
 
     const/4 v10, -0x3
 
-    .line 142
     invoke-static {p0}, Lcom/android/internal/util/TypedProperties;->initTokenizer(Ljava/io/Reader;)Ljava/io/StreamTokenizer;
 
     move-result-object v4
 
-    .line 147
     .local v4, st:Ljava/io/StreamTokenizer;
     const-string v0, "[a-zA-Z_$][0-9a-zA-Z_$]*"
 
-    .line 148
     .local v0, identifierPattern:Ljava/lang/String;
     const-string v8, "([a-zA-Z_$][0-9a-zA-Z_$]*\\.)*[a-zA-Z_$][0-9a-zA-Z_$]*"
 
@@ -392,25 +347,20 @@
 
     move-result-object v3
 
-    .line 156
     .local v3, propertyNamePattern:Ljava/util/regex/Pattern;
     :cond_11
     invoke-virtual {v4}, Ljava/io/StreamTokenizer;->nextToken()I
 
     move-result v5
 
-    .line 157
     .local v5, token:I
     if-ne v5, v11, :cond_18
 
-    .line 222
     return-void
 
-    .line 160
     :cond_18
     if-eq v5, v10, :cond_23
 
-    .line 161
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string/jumbo v9, "type name"
@@ -419,7 +369,6 @@
 
     throw v8
 
-    .line 163
     :cond_23
     iget-object v8, v4, Ljava/io/StreamTokenizer;->sval:Ljava/lang/String;
 
@@ -427,11 +376,9 @@
 
     move-result v6
 
-    .line 164
     .local v6, type:I
     if-ne v6, v11, :cond_34
 
-    .line 165
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string/jumbo v9, "valid type name"
@@ -440,24 +387,19 @@
 
     throw v8
 
-    .line 167
     :cond_34
     iput-object v13, v4, Ljava/io/StreamTokenizer;->sval:Ljava/lang/String;
 
-    .line 169
     if-ne v6, v12, :cond_48
 
-    .line 171
     invoke-virtual {v4}, Ljava/io/StreamTokenizer;->nextToken()I
 
     move-result v5
 
-    .line 172
     const/16 v8, 0x28
 
     if-eq v5, v8, :cond_48
 
-    .line 173
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string v9, "\'(\'"
@@ -466,16 +408,13 @@
 
     throw v8
 
-    .line 178
     :cond_48
     invoke-virtual {v4}, Ljava/io/StreamTokenizer;->nextToken()I
 
     move-result v5
 
-    .line 179
     if-eq v5, v10, :cond_57
 
-    .line 180
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string/jumbo v9, "property name"
@@ -484,11 +423,9 @@
 
     throw v8
 
-    .line 182
     :cond_57
     iget-object v2, v4, Ljava/io/StreamTokenizer;->sval:Ljava/lang/String;
 
-    .line 183
     .local v2, propertyName:Ljava/lang/String;
     invoke-virtual {v3, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
@@ -500,7 +437,6 @@
 
     if-nez v8, :cond_6c
 
-    .line 184
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string/jumbo v9, "valid property name"
@@ -509,24 +445,19 @@
 
     throw v8
 
-    .line 186
     :cond_6c
     iput-object v13, v4, Ljava/io/StreamTokenizer;->sval:Ljava/lang/String;
 
-    .line 188
     if-ne v6, v12, :cond_93
 
-    .line 190
     invoke-virtual {v4}, Ljava/io/StreamTokenizer;->nextToken()I
 
     move-result v5
 
-    .line 191
     const/16 v8, 0x29
 
     if-eq v5, v8, :cond_80
 
-    .line 192
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string v9, "\')\'"
@@ -535,22 +466,18 @@
 
     throw v8
 
-    .line 194
     :cond_80
     invoke-interface {p1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 217
     :goto_83
     invoke-virtual {v4}, Ljava/io/StreamTokenizer;->nextToken()I
 
     move-result v5
 
-    .line 218
     const/16 v8, 0x3b
 
     if-eq v5, v8, :cond_11
 
-    .line 219
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string v9, "\';\'"
@@ -559,18 +486,15 @@
 
     throw v8
 
-    .line 197
     :cond_93
     invoke-virtual {v4}, Ljava/io/StreamTokenizer;->nextToken()I
 
     move-result v5
 
-    .line 198
     const/16 v8, 0x3d
 
     if-eq v5, v8, :cond_a3
 
-    .line 199
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string v9, "\'=\'"
@@ -579,23 +503,19 @@
 
     throw v8
 
-    .line 203
     :cond_a3
     invoke-static {v4, v6}, Lcom/android/internal/util/TypedProperties;->parseValue(Ljava/io/StreamTokenizer;I)Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 204
     .local v7, value:Ljava/lang/Object;
     invoke-interface {p1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 205
     .local v1, oldValue:Ljava/lang/Object;
     if-eqz v1, :cond_bf
 
-    .line 208
     invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v8
@@ -606,7 +526,6 @@
 
     if-eq v8, v9, :cond_bf
 
-    .line 209
     new-instance v8, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string v9, "(property previously declared as a different type)"
@@ -615,7 +534,6 @@
 
     throw v8
 
-    .line 213
     :cond_bf
     invoke-interface {p1, v2, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -635,21 +553,17 @@
     .prologue
     const/4 v9, -0x3
 
-    .line 234
     invoke-virtual {p0}, Ljava/io/StreamTokenizer;->nextToken()I
 
     move-result v3
 
-    .line 236
     .local v3, token:I
     const/16 v7, 0x5a
 
     if-ne p1, v7, :cond_36
 
-    .line 237
     if-eq v3, v9, :cond_13
 
-    .line 238
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string v8, "boolean constant"
@@ -658,7 +572,6 @@
 
     throw v7
 
-    .line 241
     :cond_13
     const-string/jumbo v7, "true"
 
@@ -670,14 +583,11 @@
 
     if-eqz v7, :cond_21
 
-    .line 242
     sget-object v7, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    .line 330
     :goto_20
     return-object v7
 
-    .line 243
     :cond_21
     const-string v7, "false"
 
@@ -689,12 +599,10 @@
 
     if-eqz v7, :cond_2e
 
-    .line 244
     sget-object v7, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     goto :goto_20
 
-    .line 247
     :cond_2e
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -704,7 +612,6 @@
 
     throw v7
 
-    .line 248
     :cond_36
     and-int/lit16 v7, p1, 0xff
 
@@ -712,10 +619,8 @@
 
     if-ne v7, v8, :cond_ee
 
-    .line 249
     if-eq v3, v9, :cond_46
 
-    .line 250
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string v8, "integer constant"
@@ -724,7 +629,6 @@
 
     throw v7
 
-    .line 259
     :cond_46
     :try_start_46
     iget-object v7, p0, Ljava/io/StreamTokenizer;->sval:Ljava/lang/String;
@@ -739,17 +643,14 @@
 
     move-result-wide v4
 
-    .line 265
     .local v4, value:J
     shr-int/lit8 v7, p1, 0x8
 
     and-int/lit16 v6, v7, 0xff
 
-    .line 266
     .local v6, width:I
     packed-switch v6, :pswitch_data_18e
 
-    .line 288
     :pswitch_57
     new-instance v7, Ljava/lang/IllegalStateException;
 
@@ -775,13 +676,11 @@
 
     throw v7
 
-    .line 260
     .end local v4           #value:J
     .end local v6           #width:I
     :catch_70
     move-exception v2
 
-    .line 261
     .local v2, ex:Ljava/lang/NumberFormatException;
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -791,7 +690,6 @@
 
     throw v7
 
-    .line 268
     .end local v2           #ex:Ljava/lang/NumberFormatException;
     .restart local v4       #value:J
     .restart local v6       #width:I
@@ -808,7 +706,6 @@
 
     if-lez v7, :cond_8d
 
-    .line 269
     :cond_85
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -818,7 +715,6 @@
 
     throw v7
 
-    .line 271
     :cond_8d
     new-instance v7, Ljava/lang/Byte;
 
@@ -830,7 +726,6 @@
 
     goto :goto_20
 
-    .line 273
     :pswitch_95
     const-wide/16 v7, -0x8000
 
@@ -844,7 +739,6 @@
 
     if-lez v7, :cond_a9
 
-    .line 274
     :cond_a1
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -854,7 +748,6 @@
 
     throw v7
 
-    .line 276
     :cond_a9
     new-instance v7, Ljava/lang/Short;
 
@@ -866,7 +759,6 @@
 
     goto/16 :goto_20
 
-    .line 278
     :pswitch_b2
     const-wide/32 v7, -0x80000000
 
@@ -880,7 +772,6 @@
 
     if-lez v7, :cond_c8
 
-    .line 279
     :cond_c0
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -890,7 +781,6 @@
 
     throw v7
 
-    .line 281
     :cond_c8
     new-instance v7, Ljava/lang/Integer;
 
@@ -900,7 +790,6 @@
 
     goto/16 :goto_20
 
-    .line 283
     :pswitch_d0
     const-wide/high16 v7, -0x8000
 
@@ -914,7 +803,6 @@
 
     if-lez v7, :cond_e7
 
-    .line 284
     :cond_df
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -924,7 +812,6 @@
 
     throw v7
 
-    .line 286
     :cond_e7
     new-instance v7, Ljava/lang/Long;
 
@@ -932,7 +819,6 @@
 
     goto/16 :goto_20
 
-    .line 291
     .end local v4           #value:J
     .end local v6           #width:I
     :cond_ee
@@ -942,10 +828,8 @@
 
     if-ne v7, v8, :cond_150
 
-    .line 292
     if-eq v3, v9, :cond_fe
 
-    .line 293
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
     const-string v8, "float constant"
@@ -954,7 +838,6 @@
 
     throw v7
 
-    .line 306
     :cond_fe
     :try_start_fe
     iget-object v7, p0, Ljava/io/StreamTokenizer;->sval:Ljava/lang/String;
@@ -965,7 +848,6 @@
 
     move-result-wide v4
 
-    .line 312
     .local v4, value:D
     shr-int/lit8 v7, p1, 0x8
 
@@ -975,12 +857,10 @@
 
     if-ne v7, v8, :cond_149
 
-    .line 314
     invoke-static {v4, v5}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v0
 
-    .line 315
     .local v0, absValue:D
     const-wide/16 v7, 0x0
 
@@ -1000,7 +880,6 @@
 
     if-nez v7, :cond_141
 
-    .line 316
     const-wide/high16 v7, 0x36a0
 
     cmpg-double v7, v0, v7
@@ -1013,7 +892,6 @@
 
     if-lez v7, :cond_141
 
-    .line 317
     :cond_130
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -1023,13 +901,11 @@
 
     throw v7
 
-    .line 307
     .end local v0           #absValue:D
     .end local v4           #value:D
     :catch_138
     move-exception v2
 
-    .line 308
     .restart local v2       #ex:Ljava/lang/NumberFormatException;
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -1039,7 +915,6 @@
 
     throw v7
 
-    .line 320
     .end local v2           #ex:Ljava/lang/NumberFormatException;
     .restart local v0       #absValue:D
     .restart local v4       #value:D
@@ -1052,7 +927,6 @@
 
     goto/16 :goto_20
 
-    .line 323
     .end local v0           #absValue:D
     :cond_149
     new-instance v7, Ljava/lang/Double;
@@ -1061,24 +935,20 @@
 
     goto/16 :goto_20
 
-    .line 325
     .end local v4           #value:D
     :cond_150
     const/16 v7, 0x734c
 
     if-ne p1, v7, :cond_175
 
-    .line 327
     const/16 v7, 0x22
 
     if-ne v3, v7, :cond_15c
 
-    .line 328
     iget-object v7, p0, Ljava/io/StreamTokenizer;->sval:Ljava/lang/String;
 
     goto/16 :goto_20
 
-    .line 329
     :cond_15c
     if-ne v3, v9, :cond_16d
 
@@ -1092,12 +962,10 @@
 
     if-eqz v7, :cond_16d
 
-    .line 330
     sget-object v7, Lcom/android/internal/util/TypedProperties;->NULL_STRING:Ljava/lang/String;
 
     goto/16 :goto_20
 
-    .line 332
     :cond_16d
     new-instance v7, Lcom/android/internal/util/TypedProperties$ParseException;
 
@@ -1107,7 +975,6 @@
 
     throw v7
 
-    .line 335
     :cond_175
     new-instance v7, Ljava/lang/IllegalStateException;
 
@@ -1133,7 +1000,6 @@
 
     throw v7
 
-    .line 266
     :pswitch_data_18e
     .packed-switch 0x1
         :pswitch_79
@@ -1154,21 +1020,17 @@
     .parameter "key"
 
     .prologue
-    .line 403
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 404
     .local v0, value:Ljava/lang/Object;
     sget-object v1, Lcom/android/internal/util/TypedProperties;->NULL_STRING:Ljava/lang/String;
 
     if-ne v0, v1, :cond_9
 
-    .line 405
     const/4 v0, 0x0
 
-    .line 407
     .end local v0           #value:Ljava/lang/Object;
     :cond_9
     return-object v0
@@ -1179,7 +1041,6 @@
     .parameter "property"
 
     .prologue
-    .line 600
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/TypedProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -1195,22 +1056,18 @@
     .parameter "def"
 
     .prologue
-    .line 435
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 436
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_7
 
-    .line 440
     .end local v0           #value:Ljava/lang/Object;
     .end local p2
     :goto_6
     return p2
 
-    .line 439
     .restart local v0       #value:Ljava/lang/Object;
     .restart local p2
     :cond_7
@@ -1218,7 +1075,6 @@
 
     if-eqz v1, :cond_12
 
-    .line 440
     check-cast v0, Ljava/lang/Boolean;
 
     .end local v0           #value:Ljava/lang/Object;
@@ -1228,7 +1084,6 @@
 
     goto :goto_6
 
-    .line 442
     .restart local v0       #value:Ljava/lang/Object;
     :cond_12
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
@@ -1245,7 +1100,6 @@
     .parameter "property"
 
     .prologue
-    .line 612
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/TypedProperties;->getByte(Ljava/lang/String;B)B
@@ -1261,22 +1115,18 @@
     .parameter "def"
 
     .prologue
-    .line 455
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 456
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_7
 
-    .line 460
     .end local v0           #value:Ljava/lang/Object;
     .end local p2
     :goto_6
     return p2
 
-    .line 459
     .restart local v0       #value:Ljava/lang/Object;
     .restart local p2
     :cond_7
@@ -1284,7 +1134,6 @@
 
     if-eqz v1, :cond_12
 
-    .line 460
     check-cast v0, Ljava/lang/Byte;
 
     .end local v0           #value:Ljava/lang/Object;
@@ -1294,7 +1143,6 @@
 
     goto :goto_6
 
-    .line 462
     .restart local v0       #value:Ljava/lang/Object;
     :cond_12
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
@@ -1311,7 +1159,6 @@
     .parameter "property"
 
     .prologue
-    .line 672
     const-wide/16 v0, 0x0
 
     invoke-virtual {p0, p1, v0, v1}, Lcom/android/internal/util/TypedProperties;->getDouble(Ljava/lang/String;D)D
@@ -1327,22 +1174,18 @@
     .parameter "def"
 
     .prologue
-    .line 555
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 556
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_7
 
-    .line 560
     .end local v0           #value:Ljava/lang/Object;
     .end local p2
     :goto_6
     return-wide p2
 
-    .line 559
     .restart local v0       #value:Ljava/lang/Object;
     .restart local p2
     :cond_7
@@ -1350,7 +1193,6 @@
 
     if-eqz v1, :cond_12
 
-    .line 560
     check-cast v0, Ljava/lang/Double;
 
     .end local v0           #value:Ljava/lang/Object;
@@ -1360,7 +1202,6 @@
 
     goto :goto_6
 
-    .line 562
     .restart local v0       #value:Ljava/lang/Object;
     :cond_12
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
@@ -1377,7 +1218,6 @@
     .parameter "property"
 
     .prologue
-    .line 660
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/TypedProperties;->getFloat(Ljava/lang/String;F)F
@@ -1393,22 +1233,18 @@
     .parameter "def"
 
     .prologue
-    .line 535
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 536
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_7
 
-    .line 540
     .end local v0           #value:Ljava/lang/Object;
     .end local p2
     :goto_6
     return p2
 
-    .line 539
     .restart local v0       #value:Ljava/lang/Object;
     .restart local p2
     :cond_7
@@ -1416,7 +1252,6 @@
 
     if-eqz v1, :cond_12
 
-    .line 540
     check-cast v0, Ljava/lang/Float;
 
     .end local v0           #value:Ljava/lang/Object;
@@ -1426,7 +1261,6 @@
 
     goto :goto_6
 
-    .line 542
     .restart local v0       #value:Ljava/lang/Object;
     :cond_12
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
@@ -1443,7 +1277,6 @@
     .parameter "property"
 
     .prologue
-    .line 636
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/TypedProperties;->getInt(Ljava/lang/String;I)I
@@ -1459,22 +1292,18 @@
     .parameter "def"
 
     .prologue
-    .line 495
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 496
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_7
 
-    .line 500
     .end local v0           #value:Ljava/lang/Object;
     .end local p2
     :goto_6
     return p2
 
-    .line 499
     .restart local v0       #value:Ljava/lang/Object;
     .restart local p2
     :cond_7
@@ -1482,7 +1311,6 @@
 
     if-eqz v1, :cond_12
 
-    .line 500
     check-cast v0, Ljava/lang/Integer;
 
     .end local v0           #value:Ljava/lang/Object;
@@ -1492,7 +1320,6 @@
 
     goto :goto_6
 
-    .line 502
     .restart local v0       #value:Ljava/lang/Object;
     :cond_12
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
@@ -1509,7 +1336,6 @@
     .parameter "property"
 
     .prologue
-    .line 648
     const-wide/16 v0, 0x0
 
     invoke-virtual {p0, p1, v0, v1}, Lcom/android/internal/util/TypedProperties;->getLong(Ljava/lang/String;J)J
@@ -1525,22 +1351,18 @@
     .parameter "def"
 
     .prologue
-    .line 515
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 516
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_7
 
-    .line 520
     .end local v0           #value:Ljava/lang/Object;
     .end local p2
     :goto_6
     return-wide p2
 
-    .line 519
     .restart local v0       #value:Ljava/lang/Object;
     .restart local p2
     :cond_7
@@ -1548,7 +1370,6 @@
 
     if-eqz v1, :cond_12
 
-    .line 520
     check-cast v0, Ljava/lang/Long;
 
     .end local v0           #value:Ljava/lang/Object;
@@ -1558,7 +1379,6 @@
 
     goto :goto_6
 
-    .line 522
     .restart local v0       #value:Ljava/lang/Object;
     :cond_12
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
@@ -1575,7 +1395,6 @@
     .parameter "property"
 
     .prologue
-    .line 624
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/TypedProperties;->getShort(Ljava/lang/String;S)S
@@ -1591,22 +1410,18 @@
     .parameter "def"
 
     .prologue
-    .line 475
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 476
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_7
 
-    .line 480
     .end local v0           #value:Ljava/lang/Object;
     .end local p2
     :goto_6
     return p2
 
-    .line 479
     .restart local v0       #value:Ljava/lang/Object;
     .restart local p2
     :cond_7
@@ -1614,7 +1429,6 @@
 
     if-eqz v1, :cond_12
 
-    .line 480
     check-cast v0, Ljava/lang/Short;
 
     .end local v0           #value:Ljava/lang/Object;
@@ -1624,7 +1438,6 @@
 
     goto :goto_6
 
-    .line 482
     .restart local v0       #value:Ljava/lang/Object;
     :cond_12
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
@@ -1641,7 +1454,6 @@
     .parameter "property"
 
     .prologue
-    .line 684
     const-string v0, ""
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/util/TypedProperties;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1657,22 +1469,18 @@
     .parameter "def"
 
     .prologue
-    .line 575
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 576
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_7
 
-    .line 582
     .end local v0           #value:Ljava/lang/Object;
     .end local p2
     :goto_6
     return-object p2
 
-    .line 579
     .restart local v0       #value:Ljava/lang/Object;
     .restart local p2
     :cond_7
@@ -1680,18 +1488,15 @@
 
     if-ne v0, v1, :cond_d
 
-    .line 580
     const/4 p2, 0x0
 
     goto :goto_6
 
-    .line 581
     :cond_d
     instance-of v1, v0, Ljava/lang/String;
 
     if-eqz v1, :cond_15
 
-    .line 582
     check-cast v0, Ljava/lang/String;
 
     .end local v0           #value:Ljava/lang/Object;
@@ -1699,7 +1504,6 @@
 
     goto :goto_6
 
-    .line 584
     .restart local v0       #value:Ljava/lang/Object;
     :cond_15
     new-instance v1, Lcom/android/internal/util/TypedProperties$TypeException;
@@ -1716,45 +1520,36 @@
     .parameter "property"
 
     .prologue
-    .line 703
     invoke-super {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 704
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_8
 
-    .line 705
     const/4 v1, -0x1
 
-    .line 712
     :goto_7
     return v1
 
-    .line 707
     :cond_8
     sget-object v1, Lcom/android/internal/util/TypedProperties;->NULL_STRING:Ljava/lang/String;
 
     if-ne v0, v1, :cond_e
 
-    .line 708
     const/4 v1, 0x0
 
     goto :goto_7
 
-    .line 709
     :cond_e
     instance-of v1, v0, Ljava/lang/String;
 
     if-eqz v1, :cond_14
 
-    .line 710
     const/4 v1, 0x1
 
     goto :goto_7
 
-    .line 712
     :cond_14
     const/4 v1, -0x2
 
@@ -1771,9 +1566,7 @@
     .end annotation
 
     .prologue
-    .line 398
     invoke-static {p1, p0}, Lcom/android/internal/util/TypedProperties;->parse(Ljava/io/Reader;Ljava/util/Map;)V
 
-    .line 399
     return-void
 .end method

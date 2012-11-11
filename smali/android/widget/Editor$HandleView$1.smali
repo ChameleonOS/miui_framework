@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 2981
     iput-object p1, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +40,11 @@
     .registers 2
 
     .prologue
-    .line 2983
     iget-object v0, p0, Landroid/widget/Editor$HandleView$1;->this$1:Landroid/widget/Editor$HandleView;
 
     iget-object v0, v0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/Editor$ActionPopupWindow;->show()V
 
-    .line 2984
     return-void
 .end method

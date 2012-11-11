@@ -27,16 +27,12 @@
     .parameter "level"
 
     .prologue
-    .line 347
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 348
     iput-object p1, p0, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->tag:Ljava/lang/String;
 
-    .line 349
     iput p2, p0, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->level:I
 
-    .line 350
     return-void
 .end method
 
@@ -47,7 +43,6 @@
     .parameter "x2"
 
     .prologue
-    .line 342
     invoke-direct {p0, p1, p2}, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -58,7 +53,6 @@
     .parameter "x0"
 
     .prologue
-    .line 342
     invoke-direct {p0}, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->isLoggable()Z
 
     move-result v0
@@ -72,7 +66,6 @@
     .parameter "x1"
 
     .prologue
-    .line 342
     invoke-direct {p0, p1}, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->println(Ljava/lang/String;)V
 
     return-void
@@ -82,7 +75,6 @@
     .registers 3
 
     .prologue
-    .line 356
     iget-object v0, p0, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->tag:Ljava/lang/String;
 
     iget v1, p0, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->level:I
@@ -99,13 +91,11 @@
     .parameter "message"
 
     .prologue
-    .line 363
     iget v0, p0, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->level:I
 
     iget-object v1, p0, Landroid/net/http/AndroidHttpClient$LoggingConfiguration;->tag:Ljava/lang/String;
 
     invoke-static {v0, v1, p1}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
 
-    .line 364
     return-void
 .end method

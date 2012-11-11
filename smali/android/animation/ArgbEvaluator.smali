@@ -11,7 +11,6 @@
     .registers 1
 
     .prologue
-    .line 23
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
     .parameter "endValue"
 
     .prologue
-    .line 42
     check-cast p2, Ljava/lang/Integer;
 
     .end local p2
@@ -34,27 +32,22 @@
 
     move-result v8
 
-    .line 43
     .local v8, startInt:I
     shr-int/lit8 v5, v8, 0x18
 
-    .line 44
     .local v5, startA:I
     shr-int/lit8 v10, v8, 0x10
 
     and-int/lit16 v9, v10, 0xff
 
-    .line 45
     .local v9, startR:I
     shr-int/lit8 v10, v8, 0x8
 
     and-int/lit16 v7, v10, 0xff
 
-    .line 46
     .local v7, startG:I
     and-int/lit16 v6, v8, 0xff
 
-    .line 48
     .local v6, startB:I
     check-cast p3, Ljava/lang/Integer;
 
@@ -63,27 +56,22 @@
 
     move-result v3
 
-    .line 49
     .local v3, endInt:I
     shr-int/lit8 v0, v3, 0x18
 
-    .line 50
     .local v0, endA:I
     shr-int/lit8 v10, v3, 0x10
 
     and-int/lit16 v4, v10, 0xff
 
-    .line 51
     .local v4, endR:I
     shr-int/lit8 v10, v3, 0x8
 
     and-int/lit16 v2, v10, 0xff
 
-    .line 52
     .local v2, endG:I
     and-int/lit16 v1, v3, 0xff
 
-    .line 54
     .local v1, endB:I
     sub-int v10, v0, v5
 

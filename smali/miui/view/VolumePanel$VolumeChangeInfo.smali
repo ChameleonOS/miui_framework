@@ -27,15 +27,11 @@
     .parameter "to"
 
     .prologue
-    .line 997
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 998
     iput p1, p0, Lmiui/view/VolumePanel$VolumeChangeInfo;->mFromVolume:I
 
-    .line 999
     iput p2, p0, Lmiui/view/VolumePanel$VolumeChangeInfo;->mToVolume:I
 
-    .line 1000
     return-void
 .end method

@@ -30,7 +30,6 @@
     .registers 1
 
     .prologue
-    .line 341
     .local p0, this:Lmiui/telephony/ExtraTelephonyManager$AsyncFuture$1;,"Lmiui/telephony/ExtraTelephonyManager$AsyncFuture.1;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
@@ -54,7 +53,6 @@
     .end annotation
 
     .prologue
-    .line 344
     .local p0, this:Lmiui/telephony/ExtraTelephonyManager$AsyncFuture$1;,"Lmiui/telephony/ExtraTelephonyManager$AsyncFuture.1;"
     new-instance v0, Ljava/lang/IllegalStateException;
 

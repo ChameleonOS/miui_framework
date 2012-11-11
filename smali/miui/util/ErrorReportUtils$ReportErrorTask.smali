@@ -35,13 +35,10 @@
     .parameter "jsPost"
 
     .prologue
-    .line 96
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 97
     iput-object p1, p0, Lmiui/util/ErrorReportUtils$ReportErrorTask;->mJsPost:Lorg/json/JSONObject;
 
-    .line 98
     return-void
 .end method
 
@@ -52,7 +49,6 @@
     .parameter "x0"
 
     .prologue
-    .line 91
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -68,7 +64,6 @@
     .parameter "params"
 
     .prologue
-    .line 103
     :try_start_0
     new-instance v4, Lorg/apache/http/client/methods/HttpPost;
 
@@ -76,7 +71,6 @@
 
     invoke-direct {v4, v9}, Lorg/apache/http/client/methods/HttpPost;-><init>(Ljava/lang/String;)V
 
-    .line 104
     .local v4, httpPost:Lorg/apache/http/client/methods/HttpPost;
     const-string v9, "Content-Type"
 
@@ -84,12 +78,10 @@
 
     invoke-virtual {v4, v9, v10}, Lorg/apache/http/client/methods/HttpPost;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 106
     new-instance v5, Ljava/util/LinkedList;
 
     invoke-direct {v5}, Ljava/util/LinkedList;-><init>()V
 
-    .line 107
     .local v5, list:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lorg/apache/http/NameValuePair;>;"
     new-instance v9, Lorg/apache/http/message/BasicNameValuePair;
 
@@ -105,13 +97,11 @@
 
     invoke-virtual {v5, v9}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 108
     #calls: Lmiui/util/ErrorReportUtils;->getKeyFromParams(Ljava/util/List;)Ljava/lang/String;
     invoke-static {v5}, Lmiui/util/ErrorReportUtils;->access$000(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 109
     .local v6, md5:Ljava/lang/String;
     new-instance v9, Lorg/apache/http/message/BasicNameValuePair;
 
@@ -121,45 +111,37 @@
 
     invoke-virtual {v5, v9}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 111
     new-instance v2, Lorg/apache/http/client/entity/UrlEncodedFormEntity;
 
     const-string v9, "UTF-8"
 
     invoke-direct {v2, v5, v9}, Lorg/apache/http/client/entity/UrlEncodedFormEntity;-><init>(Ljava/util/List;Ljava/lang/String;)V
 
-    .line 112
     .local v2, entity:Lorg/apache/http/client/entity/UrlEncodedFormEntity;
     invoke-virtual {v4, v2}, Lorg/apache/http/client/methods/HttpPost;->setEntity(Lorg/apache/http/HttpEntity;)V
 
-    .line 115
     new-instance v3, Lorg/apache/http/params/BasicHttpParams;
 
     invoke-direct {v3}, Lorg/apache/http/params/BasicHttpParams;-><init>()V
 
-    .line 116
     .local v3, httpParameters:Lorg/apache/http/params/HttpParams;
     const/16 v9, 0xbb8
 
     invoke-static {v3, v9}, Lorg/apache/http/params/HttpConnectionParams;->setConnectionTimeout(Lorg/apache/http/params/HttpParams;I)V
 
-    .line 117
     const/16 v9, 0x1388
 
     invoke-static {v3, v9}, Lorg/apache/http/params/HttpConnectionParams;->setSoTimeout(Lorg/apache/http/params/HttpParams;I)V
 
-    .line 118
     new-instance v0, Lorg/apache/http/impl/client/DefaultHttpClient;
 
     invoke-direct {v0, v3}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>(Lorg/apache/http/params/HttpParams;)V
 
-    .line 119
     .local v0, client:Lorg/apache/http/client/HttpClient;
     invoke-interface {v0, v4}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
 
     move-result-object v7
 
-    .line 120
     .local v7, response:Lorg/apache/http/HttpResponse;
     invoke-interface {v7}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
@@ -169,13 +151,11 @@
 
     move-result v8
 
-    .line 121
     .local v8, status:I
     const/16 v9, 0xc8
 
     if-eq v8, v9, :cond_7c
 
-    .line 122
     const-class v9, Lmiui/util/ErrorReportUtils$ReportErrorTask;
 
     invoke-virtual {v9}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -206,7 +186,6 @@
     .catch Lorg/apache/http/client/ClientProtocolException; {:try_start_0 .. :try_end_7c} :catch_83
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_7c} :catch_88
 
-    .line 133
     .end local v0           #client:Lorg/apache/http/client/HttpClient;
     .end local v2           #entity:Lorg/apache/http/client/entity/UrlEncodedFormEntity;
     .end local v3           #httpParameters:Lorg/apache/http/params/HttpParams;
@@ -221,33 +200,27 @@
 
     return-object v9
 
-    .line 125
     :catch_7e
     move-exception v1
 
-    .line 126
     .local v1, e:Ljava/io/UnsupportedEncodingException;
     invoke-virtual {v1}, Ljava/io/UnsupportedEncodingException;->printStackTrace()V
 
     goto :goto_7c
 
-    .line 127
     .end local v1           #e:Ljava/io/UnsupportedEncodingException;
     :catch_83
     move-exception v1
 
-    .line 128
     .local v1, e:Lorg/apache/http/client/ClientProtocolException;
     invoke-virtual {v1}, Lorg/apache/http/client/ClientProtocolException;->printStackTrace()V
 
     goto :goto_7c
 
-    .line 129
     .end local v1           #e:Lorg/apache/http/client/ClientProtocolException;
     :catch_88
     move-exception v1
 
-    .line 130
     .local v1, e:Ljava/io/IOException;
     invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
 

@@ -39,33 +39,26 @@
     .parameter "si"
 
     .prologue
-    .line 158
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
     iput-object p2, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaNumberInfoRec;->number:Ljava/lang/String;
 
-    .line 160
     int-to-byte v0, p3
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaNumberInfoRec;->numberType:B
 
-    .line 161
     int-to-byte v0, p4
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaNumberInfoRec;->numberPlan:B
 
-    .line 162
     int-to-byte v0, p5
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaNumberInfoRec;->pi:B
 
-    .line 163
     int-to-byte v0, p6
 
     iput-byte v0, p0, Lcom/android/internal/telephony/cdma/CdmaInformationRecords$CdmaNumberInfoRec;->si:B
 
-    .line 164
     return-void
 .end method
 
@@ -75,7 +68,6 @@
     .registers 3
 
     .prologue
-    .line 168
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

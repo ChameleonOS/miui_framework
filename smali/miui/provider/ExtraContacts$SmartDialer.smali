@@ -74,7 +74,6 @@
     .registers 2
 
     .prologue
-    .line 22
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "search_t9"
@@ -85,7 +84,6 @@
 
     sput-object v0, Lmiui/provider/ExtraContacts$SmartDialer;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 23
     sget-object v0, Landroid/provider/ContactsContract;->AUTHORITY_URI:Landroid/net/Uri;
 
     const-string/jumbo v1, "rebuild_t9_index"
@@ -103,7 +101,6 @@
     .registers 1
 
     .prologue
-    .line 21
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void

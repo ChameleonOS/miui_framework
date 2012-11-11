@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 374
     iput-object p1, p0, Landroid/widget/ZoomButtonsController$5;->this$0:Landroid/widget/ZoomButtonsController;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +40,11 @@
     .registers 3
 
     .prologue
-    .line 376
     iget-object v0, p0, Landroid/widget/ZoomButtonsController$5;->this$0:Landroid/widget/ZoomButtonsController;
 
     #calls: Landroid/widget/ZoomButtonsController;->refreshPositioningVariables()V
     invoke-static {v0}, Landroid/widget/ZoomButtonsController;->access$700(Landroid/widget/ZoomButtonsController;)V
 
-    .line 378
     iget-object v0, p0, Landroid/widget/ZoomButtonsController$5;->this$0:Landroid/widget/ZoomButtonsController;
 
     #getter for: Landroid/widget/ZoomButtonsController;->mCallback:Landroid/widget/ZoomButtonsController$OnZoomListener;
@@ -57,7 +54,6 @@
 
     if-eqz v0, :cond_17
 
-    .line 379
     iget-object v0, p0, Landroid/widget/ZoomButtonsController$5;->this$0:Landroid/widget/ZoomButtonsController;
 
     #getter for: Landroid/widget/ZoomButtonsController;->mCallback:Landroid/widget/ZoomButtonsController$OnZoomListener;
@@ -69,7 +65,6 @@
 
     invoke-interface {v0, v1}, Landroid/widget/ZoomButtonsController$OnZoomListener;->onVisibilityChanged(Z)V
 
-    .line 381
     :cond_17
     return-void
 .end method

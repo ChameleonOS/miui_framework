@@ -23,7 +23,6 @@
     .registers 3
 
     .prologue
-    .line 414
     invoke-static {}, Landroid/graphics/Bitmap$Config;->values()[Landroid/graphics/Bitmap$Config;
 
     move-result-object v0

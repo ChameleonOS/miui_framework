@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 333
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "x0"
 
     .prologue
-    .line 333
     invoke-virtual {p0, p1}, Lmiui/provider/MusicSearchProvider$MusicMeta$1;->createFromParcel(Landroid/os/Parcel;)Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     move-result-object v0
@@ -58,7 +56,6 @@
     .parameter "source"
 
     .prologue
-    .line 337
     new-instance v0, Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     invoke-direct {v0, p1}, Lmiui/provider/MusicSearchProvider$MusicMeta;-><init>(Landroid/os/Parcel;)V
@@ -71,7 +68,6 @@
     .parameter "x0"
 
     .prologue
-    .line 333
     invoke-virtual {p0, p1}, Lmiui/provider/MusicSearchProvider$MusicMeta$1;->newArray(I)[Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     move-result-object v0
@@ -84,7 +80,6 @@
     .parameter "size"
 
     .prologue
-    .line 342
     new-array v0, p1, [Lmiui/provider/MusicSearchProvider$MusicMeta;
 
     return-object v0

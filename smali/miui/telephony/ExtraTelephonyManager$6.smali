@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 303
     iput-object p1, p0, Lmiui/telephony/ExtraTelephonyManager$6;->val$future:Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +39,6 @@
     .parameter "intent"
 
     .prologue
-    .line 306
     const-string v1, "IMSI"
 
     const-string/jumbo v2, "ss"
@@ -55,7 +53,6 @@
 
     if-eqz v1, :cond_21
 
-    .line 308
     const-string/jumbo v1, "phone"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -64,7 +61,6 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 310
     .local v0, tm:Landroid/telephony/TelephonyManager;
     iget-object v1, p0, Lmiui/telephony/ExtraTelephonyManager$6;->val$future:Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;
 
@@ -74,7 +70,6 @@
 
     invoke-virtual {v1, v2}, Lmiui/telephony/ExtraTelephonyManager$AsyncFuture;->setResult(Ljava/lang/Object;)V
 
-    .line 312
     .end local v0           #tm:Landroid/telephony/TelephonyManager;
     :cond_21
     return-void

@@ -42,63 +42,54 @@
 
     const/4 v1, 0x7
 
-    .line 17
     new-array v0, v4, [J
 
     fill-array-data v0, :array_52
 
     sput-object v0, Lmiui/util/LunarDate;->luYearData:[J
 
-    .line 37
     new-array v0, v4, [C
 
     fill-array-data v0, :array_2ae
 
     sput-object v0, Lmiui/util/LunarDate;->iSolarLunarOffsetTable:[C
 
-    .line 55
     new-array v0, v1, [I
 
     fill-array-data v0, :array_348
 
     sput-object v0, Lmiui/util/LunarDate;->lunarHolidaysTable:[I
 
-    .line 65
     new-array v0, v3, [I
 
     fill-array-data v0, :array_35a
 
     sput-object v0, Lmiui/util/LunarDate;->solarHolidaysTable:[I
 
-    .line 81
     new-array v0, v2, [I
 
     fill-array-data v0, :array_378
 
     sput-object v0, Lmiui/util/LunarDate;->solarHolidaysTable_TW:[I
 
-    .line 94
     new-array v0, v1, [I
 
     fill-array-data v0, :array_390
 
     sput-object v0, Lmiui/util/LunarDate;->lunarHolidays:[I
 
-    .line 104
     new-array v0, v3, [I
 
     fill-array-data v0, :array_3a2
 
     sput-object v0, Lmiui/util/LunarDate;->solarHolidays:[I
 
-    .line 120
     new-array v0, v2, [I
 
     fill-array-data v0, :array_3c0
 
     sput-object v0, Lmiui/util/LunarDate;->solarHolidays_TW:[I
 
-    .line 133
     const/16 v0, 0x18
 
     new-array v0, v0, [I
@@ -107,7 +98,6 @@
 
     sput-object v0, Lmiui/util/LunarDate;->solarTerms:[I
 
-    .line 167
     const/16 v0, 0x708
 
     new-array v0, v0, [C
@@ -118,7 +108,6 @@
 
     return-void
 
-    .line 17
     :array_52
     .array-data 0x8
         0xd8t 0x4bt 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t
@@ -273,7 +262,6 @@
         0xa0t 0xadt 0x0t 0x0t 0x0t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 37
     :array_2ae
     .array-data 0x2
         0x31t 0x0t
@@ -428,7 +416,6 @@
         0x16t 0x0t
     .end array-data
 
-    .line 55
     :array_348
     .array-data 0x4
         0x65t 0x0t 0x0t 0x0t
@@ -440,7 +427,6 @@
         0xb8t 0x4t 0x0t 0x0t
     .end array-data
 
-    .line 65
     :array_35a
     .array-data 0x4
         0x65t 0x0t 0x0t 0x0t
@@ -458,7 +444,6 @@
         0xc9t 0x4t 0x0t 0x0t
     .end array-data
 
-    .line 81
     :array_378
     .array-data 0x4
         0x65t 0x0t 0x0t 0x0t
@@ -473,7 +458,6 @@
         0xc9t 0x4t 0x0t 0x0t
     .end array-data
 
-    .line 94
     :array_390
     .array-data 0x4
         0x58t 0x0t 0xct 0x6t
@@ -485,7 +469,6 @@
         0x5et 0x0t 0xct 0x6t
     .end array-data
 
-    .line 104
     :array_3a2
     .array-data 0x4
         0x5ft 0x0t 0xct 0x6t
@@ -503,7 +486,6 @@
         0x6bt 0x0t 0xct 0x6t
     .end array-data
 
-    .line 120
     :array_3c0
     .array-data 0x4
         0x5ft 0x0t 0xct 0x6t
@@ -518,7 +500,6 @@
         0x6bt 0x0t 0xct 0x6t
     .end array-data
 
-    .line 133
     :array_3d8
     .array-data 0x4
         0x6ct 0x0t 0xct 0x6t
@@ -547,7 +528,6 @@
         0x83t 0x0t 0xct 0x6t
     .end array-data
 
-    .line 167
     :array_40c
     .array-data 0x2
         0x96t 0x0t
@@ -2357,7 +2337,6 @@
     .registers 1
 
     .prologue
-    .line 15
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -2370,12 +2349,10 @@
     .parameter "d"
 
     .prologue
-    .line 487
     const/4 v6, 0x7
 
     new-array v2, v6, [J
 
-    .line 488
     .local v2, lunar_date:[J
     const/4 v0, 0x0
 
@@ -2385,7 +2362,6 @@
     .local v5, temp:I
     const/4 v1, 0x0
 
-    .line 489
     .local v1, leap:I
     invoke-static {p0, p1, p2}, Lmiui/util/LunarDate;->getDayOffset(III)I
 
@@ -2393,7 +2369,6 @@
 
     int-to-long v3, v6
 
-    .line 490
     .local v3, offset:J
     const/4 v6, 0x5
 
@@ -2403,14 +2378,12 @@
 
     aput-wide v7, v2, v6
 
-    .line 491
     const/4 v6, 0x4
 
     const-wide/16 v7, 0xe
 
     aput-wide v7, v2, v6
 
-    .line 493
     const/16 v0, 0x76c
 
     :goto_18
@@ -2424,17 +2397,14 @@
 
     if-lez v6, :cond_33
 
-    .line 494
     invoke-static {v0}, Lmiui/util/LunarDate;->yrDays(I)I
 
     move-result v5
 
-    .line 495
     int-to-long v6, v5
 
     sub-long/2addr v3, v6
 
-    .line 496
     const/4 v6, 0x4
 
     aget-wide v7, v2, v6
@@ -2445,12 +2415,10 @@
 
     aput-wide v7, v2, v6
 
-    .line 493
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_18
 
-    .line 498
     :cond_33
     const-wide/16 v6, 0x0
 
@@ -2458,15 +2426,12 @@
 
     if-gez v6, :cond_45
 
-    .line 499
     int-to-long v6, v5
 
     add-long/2addr v3, v6
 
-    .line 500
     add-int/lit8 v0, v0, -0x1
 
-    .line 501
     const/4 v6, 0x4
 
     aget-wide v7, v2, v6
@@ -2477,7 +2442,6 @@
 
     aput-wide v7, v2, v6
 
-    .line 503
     :cond_45
     const/4 v6, 0x0
 
@@ -2485,7 +2449,6 @@
 
     aput-wide v7, v2, v6
 
-    .line 504
     const/4 v6, 0x3
 
     add-int/lit16 v7, v0, -0x748
@@ -2494,19 +2457,16 @@
 
     aput-wide v7, v2, v6
 
-    .line 505
     invoke-static {v0}, Lmiui/util/LunarDate;->rMonth(I)I
 
     move-result v1
 
-    .line 506
     const/4 v6, 0x6
 
     const-wide/16 v7, 0x0
 
     aput-wide v7, v2, v6
 
-    .line 508
     const/4 v0, 0x1
 
     :goto_59
@@ -2520,7 +2480,6 @@
 
     if-lez v6, :cond_b2
 
-    .line 509
     if-lez v1, :cond_a9
 
     add-int/lit8 v6, v1, 0x1
@@ -2537,17 +2496,14 @@
 
     if-nez v6, :cond_a9
 
-    .line 510
     add-int/lit8 v0, v0, -0x1
 
-    .line 511
     const/4 v6, 0x6
 
     const-wide/16 v7, 0x1
 
     aput-wide v7, v2, v6
 
-    .line 512
     const/4 v6, 0x0
 
     aget-wide v6, v2, v6
@@ -2558,7 +2514,6 @@
 
     move-result v5
 
-    .line 517
     :goto_81
     const/4 v6, 0x6
 
@@ -2574,20 +2529,17 @@
 
     if-ne v0, v6, :cond_93
 
-    .line 518
     const/4 v6, 0x6
 
     const-wide/16 v7, 0x0
 
     aput-wide v7, v2, v6
 
-    .line 519
     :cond_93
     int-to-long v6, v5
 
     sub-long/2addr v3, v6
 
-    .line 520
     const/4 v6, 0x6
 
     aget-wide v6, v2, v6
@@ -2598,7 +2550,6 @@
 
     if-nez v6, :cond_a6
 
-    .line 521
     const/4 v6, 0x4
 
     aget-wide v7, v2, v6
@@ -2609,13 +2560,11 @@
 
     aput-wide v7, v2, v6
 
-    .line 508
     :cond_a6
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_59
 
-    .line 514
     :cond_a9
     const/4 v6, 0x0
 
@@ -2629,7 +2578,6 @@
 
     goto :goto_81
 
-    .line 524
     :cond_b2
     const-wide/16 v6, 0x0
 
@@ -2643,7 +2591,6 @@
 
     if-ne v0, v6, :cond_cc
 
-    .line 525
     const/4 v6, 0x6
 
     aget-wide v6, v2, v6
@@ -2654,14 +2601,12 @@
 
     if-nez v6, :cond_e9
 
-    .line 526
     const/4 v6, 0x6
 
     const-wide/16 v7, 0x0
 
     aput-wide v7, v2, v6
 
-    .line 533
     :cond_cc
     :goto_cc
     const-wide/16 v6, 0x0
@@ -2670,15 +2615,12 @@
 
     if-gez v6, :cond_de
 
-    .line 534
     int-to-long v6, v5
 
     add-long/2addr v3, v6
 
-    .line 535
     add-int/lit8 v0, v0, -0x1
 
-    .line 536
     const/4 v6, 0x4
 
     aget-wide v7, v2, v6
@@ -2689,7 +2631,6 @@
 
     aput-wide v7, v2, v6
 
-    .line 538
     :cond_de
     const/4 v6, 0x1
 
@@ -2697,7 +2638,6 @@
 
     aput-wide v7, v2, v6
 
-    .line 539
     const/4 v6, 0x2
 
     const-wide/16 v7, 0x1
@@ -2706,10 +2646,8 @@
 
     aput-wide v7, v2, v6
 
-    .line 540
     return-object v2
 
-    .line 528
     :cond_e9
     const/4 v6, 0x6
 
@@ -2717,10 +2655,8 @@
 
     aput-wide v7, v2, v6
 
-    .line 529
     add-int/lit8 v0, v0, -0x1
 
-    .line 530
     const/4 v6, 0x4
 
     aget-wide v7, v2, v6
@@ -2741,38 +2677,30 @@
     .parameter "dayOfMonth"
 
     .prologue
-    .line 816
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 818
     .local v0, sb:Ljava/lang/StringBuilder;
     if-lez p0, :cond_f
 
-    .line 819
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 820
     const-string v1, "-"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 823
     :cond_f
     add-int/lit8 v1, p1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 824
     const-string v1, "-"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 825
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 827
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -2789,10 +2717,8 @@
     .prologue
     const/4 v6, 0x6
 
-    .line 552
     const/4 v1, 0x0
 
-    .line 554
     .local v1, dayOffset:I
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
@@ -2800,51 +2726,42 @@
 
     check-cast v0, Ljava/util/GregorianCalendar;
 
-    .line 555
     .local v0, cal:Ljava/util/GregorianCalendar;
     invoke-virtual {v0}, Ljava/util/GregorianCalendar;->clear()V
 
-    .line 557
     const/16 v2, 0x76c
 
     .local v2, i:I
     :goto_d
     if-ge v2, p0, :cond_1d
 
-    .line 558
     invoke-virtual {v0, v2}, Ljava/util/GregorianCalendar;->isLeapYear(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_1a
 
-    .line 559
     add-int/lit16 v1, v1, 0x16e
 
-    .line 557
     :goto_17
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_d
 
-    .line 561
     :cond_1a
     add-int/lit16 v1, v1, 0x16d
 
     goto :goto_17
 
-    .line 565
     :cond_1d
     invoke-virtual {v0, p0, p1, p2}, Ljava/util/GregorianCalendar;->set(III)V
 
-    .line 566
     invoke-virtual {v0, v6}, Ljava/util/GregorianCalendar;->get(I)I
 
     move-result v3
 
     add-int/2addr v1, v3
 
-    .line 568
     const/16 v3, 0x76c
 
     const/4 v4, 0x0
@@ -2853,14 +2770,12 @@
 
     invoke-virtual {v0, v3, v4, v5}, Ljava/util/GregorianCalendar;->set(III)V
 
-    .line 569
     invoke-virtual {v0, v6}, Ljava/util/GregorianCalendar;->get(I)I
 
     move-result v3
 
     sub-int/2addr v1, v3
 
-    .line 571
     return v1
 .end method
 
@@ -2872,33 +2787,27 @@
     .prologue
     const v4, 0x60c0047
 
-    .line 575
     const-string v0, ""
 
-    .line 576
     .local v0, a:Ljava/lang/String;
     const/16 v3, 0xa
 
     if-ne p1, v3, :cond_11
 
-    .line 577
     const v3, 0x60c0051
 
     invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 621
     :goto_10
     return-object v3
 
-    .line 578
     :cond_11
     const/16 v3, 0x14
 
     if-ne p1, v3, :cond_1d
 
-    .line 579
     const v3, 0x60c0052
 
     invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -2907,13 +2816,11 @@
 
     goto :goto_10
 
-    .line 580
     :cond_1d
     const/16 v3, 0x1e
 
     if-ne p1, v3, :cond_29
 
-    .line 581
     const v3, 0x60c0053
 
     invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -2922,73 +2829,60 @@
 
     goto :goto_10
 
-    .line 582
     :cond_29
     div-int/lit8 v2, p1, 0xa
 
-    .line 583
     .local v2, two:I
     if-nez v2, :cond_34
 
-    .line 584
     const v3, 0x60c0054
 
     invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 585
     :cond_34
     const/4 v3, 0x1
 
     if-ne v2, v3, :cond_3e
 
-    .line 586
     const v3, 0x60c004e
 
     invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 587
     :cond_3e
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_48
 
-    .line 588
     const v3, 0x60c0055
 
     invoke-virtual {p0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 589
     :cond_48
     const/4 v3, 0x3
 
     if-ne v2, v3, :cond_4f
 
-    .line 590
     invoke-virtual {p0, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 591
     :cond_4f
     rem-int/lit8 v1, p1, 0xa
 
-    .line 592
     .local v1, one:I
     packed-switch v1, :pswitch_data_138
 
     :goto_54
     move-object v3, v0
 
-    .line 621
     goto :goto_10
 
-    .line 594
     :pswitch_56
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3012,10 +2906,8 @@
 
     move-result-object v0
 
-    .line 595
     goto :goto_54
 
-    .line 597
     :pswitch_6f
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3039,10 +2931,8 @@
 
     move-result-object v0
 
-    .line 598
     goto :goto_54
 
-    .line 600
     :pswitch_88
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3064,10 +2954,8 @@
 
     move-result-object v0
 
-    .line 601
     goto :goto_54
 
-    .line 603
     :pswitch_9e
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3091,10 +2979,8 @@
 
     move-result-object v0
 
-    .line 604
     goto :goto_54
 
-    .line 606
     :pswitch_b7
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3118,10 +3004,8 @@
 
     move-result-object v0
 
-    .line 607
     goto :goto_54
 
-    .line 609
     :pswitch_d0
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3145,10 +3029,8 @@
 
     move-result-object v0
 
-    .line 610
     goto/16 :goto_54
 
-    .line 612
     :pswitch_ea
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3172,10 +3054,8 @@
 
     move-result-object v0
 
-    .line 613
     goto/16 :goto_54
 
-    .line 615
     :pswitch_104
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3199,10 +3079,8 @@
 
     move-result-object v0
 
-    .line 616
     goto/16 :goto_54
 
-    .line 618
     :pswitch_11e
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -3228,7 +3106,6 @@
 
     goto/16 :goto_54
 
-    .line 592
     :pswitch_data_138
     .packed-switch 0x1
         :pswitch_56
@@ -3249,16 +3126,13 @@
     .parameter "digit"
 
     .prologue
-    .line 756
     packed-switch p1, :pswitch_data_56
 
-    .line 778
     const-string v0, ""
 
     :goto_5
     return-object v0
 
-    .line 758
     :pswitch_6
     const v0, 0x60c0044
 
@@ -3268,7 +3142,6 @@
 
     goto :goto_5
 
-    .line 760
     :pswitch_e
     const v0, 0x60c0045
 
@@ -3278,7 +3151,6 @@
 
     goto :goto_5
 
-    .line 762
     :pswitch_16
     const v0, 0x60c0046
 
@@ -3288,7 +3160,6 @@
 
     goto :goto_5
 
-    .line 764
     :pswitch_1e
     const v0, 0x60c0047
 
@@ -3298,7 +3169,6 @@
 
     goto :goto_5
 
-    .line 766
     :pswitch_26
     const v0, 0x60c0048
 
@@ -3308,7 +3178,6 @@
 
     goto :goto_5
 
-    .line 768
     :pswitch_2e
     const v0, 0x60c0049
 
@@ -3318,7 +3187,6 @@
 
     goto :goto_5
 
-    .line 770
     :pswitch_36
     const v0, 0x60c004a
 
@@ -3328,7 +3196,6 @@
 
     goto :goto_5
 
-    .line 772
     :pswitch_3e
     const v0, 0x60c004b
 
@@ -3338,7 +3205,6 @@
 
     goto :goto_5
 
-    .line 774
     :pswitch_46
     const v0, 0x60c004c
 
@@ -3348,7 +3214,6 @@
 
     goto :goto_5
 
-    .line 776
     :pswitch_4e
     const v0, 0x60c004d
 
@@ -3358,7 +3223,6 @@
 
     goto :goto_5
 
-    .line 756
     :pswitch_data_56
     .packed-switch 0x0
         :pswitch_6
@@ -3382,7 +3246,6 @@
     .parameter "countryOfLocale"
 
     .prologue
-    .line 711
     const/4 v8, 0x2
 
     :try_start_1
@@ -3392,7 +3255,6 @@
 
     add-int/lit8 v7, v8, 0x1
 
-    .line 712
     .local v7, solarMonth:I
     const/4 v8, 0x5
 
@@ -3400,31 +3262,24 @@
 
     move-result v4
 
-    .line 714
     .local v4, solarDay:I
     const/4 v5, 0x0
 
-    .line 715
     .local v5, solarHolidayDates:[I
     const/4 v6, 0x0
 
-    .line 716
     .local v6, solarHolidayStrings:[I
     sget-boolean v8, Lmiui/os/Build;->IS_TW_BUILD:Z
 
     if-eqz v8, :cond_2d
 
-    .line 717
     sget-object v5, Lmiui/util/LunarDate;->solarHolidaysTable_TW:[I
 
-    .line 718
     sget-object v6, Lmiui/util/LunarDate;->solarHolidays_TW:[I
 
-    .line 723
     :goto_16
     array-length v1, v5
 
-    .line 724
     .local v1, length:I
     const/4 v0, 0x0
 
@@ -3432,7 +3287,6 @@
     :goto_18
     if-ge v0, v1, :cond_35
 
-    .line 725
     aget v8, v5, v0
 
     div-int/lit8 v8, v8, 0x64
@@ -3445,29 +3299,24 @@
 
     if-ne v8, v4, :cond_32
 
-    .line 728
     aget v8, v6, v0
 
     invoke-virtual {p0, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 752
     :goto_2c
     return-object v8
 
-    .line 720
     .end local v0           #i:I
     .end local v1           #length:I
     :cond_2d
     sget-object v5, Lmiui/util/LunarDate;->solarHolidaysTable:[I
 
-    .line 721
     sget-object v6, Lmiui/util/LunarDate;->solarHolidays:[I
 
     goto :goto_16
 
-    .line 724
     .restart local v0       #i:I
     .restart local v1       #length:I
     :cond_32
@@ -3475,7 +3324,6 @@
 
     goto :goto_18
 
-    .line 733
     :cond_35
     const/4 v8, 0x6
 
@@ -3487,12 +3335,10 @@
 
     if-nez v8, :cond_40
 
-    .line 734
     const/4 v8, 0x0
 
     goto :goto_2c
 
-    .line 737
     :cond_40
     const/4 v8, 0x1
 
@@ -3500,7 +3346,6 @@
 
     long-to-int v3, v8
 
-    .line 738
     .local v3, lunarMonth:I
     const/4 v8, 0x2
 
@@ -3508,19 +3353,16 @@
 
     long-to-int v2, v8
 
-    .line 740
     .local v2, lunarDay:I
     sget-object v8, Lmiui/util/LunarDate;->lunarHolidaysTable:[I
 
     array-length v1, v8
 
-    .line 741
     const/4 v0, 0x0
 
     :goto_4c
     if-ge v0, v1, :cond_6c
 
-    .line 742
     sget-object v8, Lmiui/util/LunarDate;->lunarHolidaysTable:[I
 
     aget v8, v8, v0
@@ -3537,7 +3379,6 @@
 
     if-ne v8, v2, :cond_67
 
-    .line 745
     sget-object v8, Lmiui/util/LunarDate;->lunarHolidays:[I
 
     aget v8, v8, v0
@@ -3550,13 +3391,11 @@
 
     goto :goto_2c
 
-    .line 741
     :cond_67
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4c
 
-    .line 748
     .end local v0           #i:I
     .end local v1           #length:I
     .end local v2           #lunarDay:I
@@ -3570,7 +3409,6 @@
 
     throw v8
 
-    .line 752
     .restart local v0       #i:I
     .restart local v1       #length:I
     .restart local v2       #lunarDay:I
@@ -3602,15 +3440,12 @@
 
     const/4 v5, 0x1
 
-    .line 877
     add-int/lit8 p1, p1, 0x1
 
-    .line 880
     const/16 v3, 0xc
 
     if-le p1, v3, :cond_65
 
-    .line 881
     add-int/lit8 v3, p1, -0xc
 
     invoke-static {p0}, Lmiui/util/LunarDate;->rMonth(I)I
@@ -3619,10 +3454,8 @@
 
     if-ne v3, v6, :cond_62
 
-    .line 882
     new-array v2, v8, [[I
 
-    .line 885
     .local v2, results:[[I
     invoke-static {p0}, Lmiui/util/LunarDate;->rMthDays(I)I
 
@@ -3632,13 +3465,11 @@
 
     move-result v0
 
-    .line 886
     .local v0, day:I
     invoke-static {p0, p1, v0}, Lmiui/util/LunarDate;->lunarToSolar(III)[I
 
     move-result-object v1
 
-    .line 887
     .local v1, lunarParts:[I
     new-array v6, v7, [I
 
@@ -3665,13 +3496,11 @@
 
     aput-object v6, v2, v4
 
-    .line 894
     .end local v0           #day:I
     .end local v1           #lunarParts:[I
     :goto_38
     add-int/lit8 p1, p1, -0xc
 
-    .line 901
     :goto_3a
     invoke-static {p0, p1}, Lmiui/util/LunarDate;->mthDays(II)I
 
@@ -3681,13 +3510,11 @@
 
     move-result v0
 
-    .line 902
     .restart local v0       #day:I
     invoke-static {p0, p1, v0}, Lmiui/util/LunarDate;->lunarToSolar(III)[I
 
     move-result-object v1
 
-    .line 903
     .restart local v1       #lunarParts:[I
     array-length v3, v2
 
@@ -3716,16 +3543,13 @@
 
     aput-object v6, v2, v3
 
-    .line 907
     return-object v2
 
     :cond_60
     move v3, v5
 
-    .line 887
     goto :goto_34
 
-    .line 891
     .end local v0           #day:I
     .end local v1           #lunarParts:[I
     .end local v2           #results:[[I
@@ -3735,7 +3559,6 @@
     .restart local v2       #results:[[I
     goto :goto_38
 
-    .line 896
     .end local v2           #results:[[I
     :cond_65
     new-array v2, v5, [[I
@@ -3748,7 +3571,6 @@
     :cond_68
     move v4, v5
 
-    .line 903
     goto :goto_5b
 .end method
 
@@ -3759,16 +3581,13 @@
     .parameter "d"
 
     .prologue
-    .line 452
     const/4 v2, 0x0
 
-    .line 453
     .local v2, iOffsetDays:I
     invoke-static {p0}, Lmiui/util/LunarDate;->rMonth(I)I
 
     move-result v1
 
-    .line 455
     .local v1, iLeapMonth:I
     if-lez v1, :cond_11
 
@@ -3776,17 +3595,14 @@
 
     if-ne v1, v3, :cond_11
 
-    .line 456
     move p1, v1
 
-    .line 457
     invoke-static {p0, p1}, Lmiui/util/LunarDate;->mthDays(II)I
 
     move-result v3
 
     add-int/2addr v2, v3
 
-    .line 460
     :cond_11
     const/4 v0, 0x1
 
@@ -3794,36 +3610,30 @@
     :goto_12
     if-ge v0, p1, :cond_23
 
-    .line 461
     invoke-static {p0, v0}, Lmiui/util/LunarDate;->mthDays(II)I
 
     move-result v3
 
     add-int/2addr v2, v3
 
-    .line 462
     if-ne v0, v1, :cond_20
 
-    .line 463
     invoke-static {p0}, Lmiui/util/LunarDate;->rMthDays(I)I
 
     move-result v3
 
     add-int/2addr v2, v3
 
-    .line 460
     :cond_20
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_12
 
-    .line 466
     :cond_23
     add-int/lit8 v3, p2, -0x1
 
     add-int/2addr v2, v3
 
-    .line 468
     return v2
 .end method
 
@@ -3835,16 +3645,13 @@
     .parameter "day"
 
     .prologue
-    .line 792
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 794
     .local v0, sb:Ljava/lang/StringBuilder;
     if-lez p1, :cond_19
 
-    .line 795
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -3861,13 +3668,11 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 797
     :cond_19
     const/16 v1, 0xc
 
     if-lt p2, v1, :cond_29
 
-    .line 798
     const v1, 0x60c0043
 
     invoke-virtual {p0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -3876,10 +3681,8 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 799
     add-int/lit8 p2, p2, -0xc
 
-    .line 801
     :cond_29
     add-int/lit8 v1, p2, 0x1
 
@@ -3889,7 +3692,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 802
     const v1, 0x60c0056
 
     invoke-virtual {p0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -3898,14 +3700,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 803
     invoke-static {p0, p3}, Lmiui/util/LunarDate;->getDayString(Landroid/content/res/Resources;I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 805
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -3921,28 +3721,23 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 625
     const/16 v1, 0xc
 
     if-le p1, v1, :cond_6
 
-    .line 657
     :goto_5
     return-object v0
 
-    .line 628
     :cond_6
     packed-switch p1, :pswitch_data_6e
 
     goto :goto_5
 
-    .line 630
     :pswitch_a
     const-string v0, ""
 
     goto :goto_5
 
-    .line 632
     :pswitch_d
     const v0, 0x60c0042
 
@@ -3952,7 +3747,6 @@
 
     goto :goto_5
 
-    .line 634
     :pswitch_15
     const v0, 0x60c0046
 
@@ -3962,7 +3756,6 @@
 
     goto :goto_5
 
-    .line 636
     :pswitch_1d
     const v0, 0x60c0047
 
@@ -3972,7 +3765,6 @@
 
     goto :goto_5
 
-    .line 638
     :pswitch_25
     const v0, 0x60c0048
 
@@ -3982,7 +3774,6 @@
 
     goto :goto_5
 
-    .line 640
     :pswitch_2d
     const v0, 0x60c0049
 
@@ -3992,7 +3783,6 @@
 
     goto :goto_5
 
-    .line 642
     :pswitch_35
     const v0, 0x60c004a
 
@@ -4002,7 +3792,6 @@
 
     goto :goto_5
 
-    .line 644
     :pswitch_3d
     const v0, 0x60c004b
 
@@ -4012,7 +3801,6 @@
 
     goto :goto_5
 
-    .line 646
     :pswitch_45
     const v0, 0x60c004c
 
@@ -4022,7 +3810,6 @@
 
     goto :goto_5
 
-    .line 648
     :pswitch_4d
     const v0, 0x60c004d
 
@@ -4032,7 +3819,6 @@
 
     goto :goto_5
 
-    .line 650
     :pswitch_55
     const v0, 0x60c004e
 
@@ -4042,7 +3828,6 @@
 
     goto :goto_5
 
-    .line 652
     :pswitch_5d
     const v0, 0x60c004f
 
@@ -4052,7 +3837,6 @@
 
     goto :goto_5
 
-    .line 654
     :pswitch_65
     const v0, 0x60c0050
 
@@ -4062,7 +3846,6 @@
 
     goto :goto_5
 
-    .line 628
     nop
 
     :pswitch_data_6e
@@ -4089,16 +3872,13 @@
     .parameter "lunarDay"
 
     .prologue
-    .line 918
     new-instance v10, Landroid/text/format/Time;
 
     invoke-direct {v10}, Landroid/text/format/Time;-><init>()V
 
-    .line 919
     .local v10, time:Landroid/text/format/Time;
     invoke-virtual {v10}, Landroid/text/format/Time;->setToNow()V
 
-    .line 921
     iget v0, v10, Landroid/text/format/Time;->year:I
 
     move/from16 v17, v0
@@ -4115,7 +3895,6 @@
 
     move-result-object v8
 
-    .line 922
     .local v8, lunarParts:[J
     const/16 v17, 0x0
 
@@ -4125,7 +3904,6 @@
 
     long-to-int v9, v0
 
-    .line 924
     .local v9, lunarYear:I
     const/16 v17, 0x0
 
@@ -4141,7 +3919,6 @@
 
     iput v0, v10, Landroid/text/format/Time;->hour:I
 
-    .line 925
     const/16 v17, 0x0
 
     move/from16 v0, v17
@@ -4150,11 +3927,9 @@
 
     move-result-wide v13
 
-    .line 926
     .local v13, timeNow:J
     const-wide v15, 0x7fffffffffffffffL
 
-    .line 929
     .local v15, timeResult:J
     :goto_3a
     const-wide v17, 0x7fffffffffffffffL
@@ -4175,7 +3950,6 @@
 
     if-ge v9, v0, :cond_8a
 
-    .line 930
     move/from16 v0, p0
 
     move/from16 v1, p1
@@ -4184,7 +3958,6 @@
 
     move-result-object v5
 
-    .line 931
     .local v5, birthdays:[[I
     move-object v3, v5
 
@@ -4200,7 +3973,6 @@
 
     aget-object v4, v3, v6
 
-    .line 932
     .local v4, birthday:[I
     const/16 v17, 0x2
 
@@ -4222,7 +3994,6 @@
 
     invoke-virtual {v10, v0, v1, v2}, Landroid/text/format/Time;->set(III)V
 
-    .line 933
     const/16 v17, 0x0
 
     move/from16 v0, v17
@@ -4231,35 +4002,29 @@
 
     move-result-wide v11
 
-    .line 934
     .local v11, timeInMillis:J
     cmp-long v17, v11, v13
 
     if-ltz v17, :cond_84
 
-    .line 935
     move-wide v0, v15
 
     invoke-static {v0, v1, v11, v12}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v15
 
-    .line 931
     :cond_84
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_5a
 
-    .line 939
     .end local v4           #birthday:[I
     .end local v11           #timeInMillis:J
     :cond_87
     add-int/lit8 v9, v9, 0x1
 
-    .line 940
     goto :goto_3a
 
-    .line 942
     .end local v3           #arr$:[[I
     .end local v5           #birthdays:[[I
     .end local v6           #i$:I
@@ -4271,10 +4036,8 @@
 
     if-nez v17, :cond_95
 
-    .line 943
     const-wide/16 v15, 0x0
 
-    .line 946
     :cond_95
     return-wide v15
 .end method
@@ -4285,14 +4048,12 @@
     .parameter "c"
 
     .prologue
-    .line 324
     const/4 v5, 0x1
 
     invoke-virtual {p1, v5}, Ljava/util/Calendar;->get(I)I
 
     move-result v4
 
-    .line 325
     .local v4, year:I
     const/4 v5, 0x2
 
@@ -4300,7 +4061,6 @@
 
     move-result v2
 
-    .line 326
     .local v2, month:I
     const/4 v5, 0x5
 
@@ -4308,11 +4068,9 @@
 
     move-result v0
 
-    .line 328
     .local v0, day:I
     const/4 v1, 0x0
 
-    .line 329
     .local v1, flag:C
     sget-object v5, Lmiui/util/LunarDate;->solarTermsTable:[C
 
@@ -4324,16 +4082,13 @@
 
     aget-char v1, v5, v6
 
-    .line 331
     rem-int/lit8 v5, v1, 0x10
 
     add-int/lit8 v3, v5, 0xf
 
-    .line 333
     .local v3, termDay:I
     if-ne v0, v3, :cond_2c
 
-    .line 334
     sget-object v5, Lmiui/util/LunarDate;->solarTerms:[I
 
     mul-int/lit8 v6, v2, 0x2
@@ -4346,20 +4101,16 @@
 
     move-result-object v5
 
-    .line 343
     :goto_2b
     return-object v5
 
-    .line 337
     :cond_2c
     div-int/lit8 v5, v1, 0x10
 
     rsub-int/lit8 v3, v5, 0xf
 
-    .line 339
     if-ne v0, v3, :cond_3d
 
-    .line 340
     sget-object v5, Lmiui/util/LunarDate;->solarTerms:[I
 
     mul-int/lit8 v6, v2, 0x2
@@ -4372,7 +4123,6 @@
 
     goto :goto_2b
 
-    .line 343
     :cond_3d
     const/4 v5, 0x0
 
@@ -4385,7 +4135,6 @@
     .parameter "iMonth"
 
     .prologue
-    .line 397
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_18
@@ -4414,15 +4163,12 @@
 
     if-ne p1, v0, :cond_1b
 
-    .line 399
     :cond_18
     const/16 v0, 0x1f
 
-    .line 408
     :goto_1a
     return v0
 
-    .line 400
     :cond_1b
     const/4 v0, 0x4
 
@@ -4440,37 +4186,31 @@
 
     if-ne p1, v0, :cond_2c
 
-    .line 401
     :cond_29
     const/16 v0, 0x1e
 
     goto :goto_1a
 
-    .line 402
     :cond_2c
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_3b
 
-    .line 403
     invoke-static {p0}, Lmiui/util/LunarDate;->isSolarLeapYear(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_38
 
-    .line 404
     const/16 v0, 0x1d
 
     goto :goto_1a
 
-    .line 406
     :cond_38
     const/16 v0, 0x1c
 
     goto :goto_1a
 
-    .line 408
     :cond_3b
     const/4 v0, 0x0
 
@@ -4483,7 +4223,6 @@
     .parameter "c"
 
     .prologue
-    .line 681
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Ljava/util/Calendar;->get(I)I
@@ -4515,28 +4254,22 @@
     .parameter "year"
 
     .prologue
-    .line 662
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 663
     .local v2, sb:Ljava/lang/StringBuffer;
     const/4 v1, 0x0
 
-    .line 664
     .local v1, n:I
     move v0, p1
 
-    .line 666
     .local v0, k:I
     :cond_7
     rem-int/lit8 v1, v0, 0xa
 
-    .line 667
     div-int/lit8 v0, v0, 0xa
 
-    .line 668
     const/4 v3, 0x0
 
     invoke-static {p0, v1}, Lmiui/util/LunarDate;->getDigitString(Landroid/content/res/Resources;I)Ljava/lang/String;
@@ -4545,10 +4278,8 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuffer;->insert(ILjava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 669
     if-gtz v0, :cond_7
 
-    .line 671
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -4561,7 +4292,6 @@
     .parameter "iYear"
 
     .prologue
-    .line 392
     rem-int/lit8 v0, p0, 0x4
 
     if-nez v0, :cond_8
@@ -4594,12 +4324,10 @@
     .parameter "d"
 
     .prologue
-    .line 424
     const/4 v6, 0x3
 
     new-array v5, v6, [I
 
-    .line 426
     .local v5, solar_date:[I
     invoke-static {p0, p1, p2}, Lmiui/util/LunarDate;->getLunarNewYearOffsetDays(III)I
 
@@ -4613,7 +4341,6 @@
 
     add-int v0, v6, v7
 
-    .line 429
     .local v0, iOffsetDays:I
     invoke-static {p0}, Lmiui/util/LunarDate;->isSolarLeapYear(I)Z
 
@@ -4623,23 +4350,18 @@
 
     const/16 v4, 0x16e
 
-    .line 431
     .local v4, iYearDays:I
     :goto_17
     if-lt v0, v4, :cond_2e
 
-    .line 432
     add-int/lit8 v3, p0, 0x1
 
-    .line 433
     .local v3, iSYear:I
     sub-int/2addr v0, v4
 
-    .line 437
     :goto_1c
     add-int/lit8 v1, v0, 0x1
 
-    .line 438
     .local v1, iSDay:I
     const/4 v2, 0x1
 
@@ -4647,22 +4369,18 @@
     :goto_1f
     if-ltz v0, :cond_30
 
-    .line 439
     add-int/lit8 v1, v0, 0x1
 
-    .line 440
     invoke-static {v3, v2}, Lmiui/util/LunarDate;->getSolarYearMonthDays(II)I
 
     move-result v6
 
     sub-int/2addr v0, v6
 
-    .line 438
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1f
 
-    .line 429
     .end local v1           #iSDay:I
     .end local v2           #iSMonth:I
     .end local v3           #iSYear:I
@@ -4672,7 +4390,6 @@
 
     goto :goto_17
 
-    .line 435
     .restart local v4       #iYearDays:I
     :cond_2e
     move v3, p0
@@ -4680,28 +4397,23 @@
     .restart local v3       #iSYear:I
     goto :goto_1c
 
-    .line 442
     .restart local v1       #iSDay:I
     .restart local v2       #iSMonth:I
     :cond_30
     add-int/lit8 v2, v2, -0x1
 
-    .line 444
     const/4 v6, 0x0
 
     aput v3, v5, v6
 
-    .line 445
     const/4 v6, 0x1
 
     aput v2, v5, v6
 
-    .line 446
     const/4 v6, 0x2
 
     aput v1, v5, v6
 
-    .line 447
     return-object v5
 .end method
 
@@ -4711,7 +4423,6 @@
     .parameter "m"
 
     .prologue
-    .line 384
     sget-object v0, Lmiui/util/LunarDate;->luYearData:[J
 
     add-int/lit16 v1, p0, -0x76c
@@ -4732,10 +4443,8 @@
 
     if-nez v0, :cond_14
 
-    .line 385
     const/16 v0, 0x1d
 
-    .line 387
     :goto_13
     return v0
 
@@ -4754,25 +4463,20 @@
 
     const/4 v4, 0x2
 
-    .line 838
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-eqz v3, :cond_a
 
-    .line 839
     const/4 v2, 0x0
 
-    .line 862
     :goto_9
     return-object v2
 
-    .line 842
     :cond_a
     new-array v2, v5, [I
 
-    .line 845
     .local v2, result:[I
     :try_start_c
     const-string v3, "-"
@@ -4781,13 +4485,11 @@
 
     move-result-object v0
 
-    .line 846
     .local v0, date:[Ljava/lang/String;
     array-length v3, v0
 
     if-ne v3, v4, :cond_3e
 
-    .line 847
     const/4 v3, 0x0
 
     const/4 v4, 0x1
@@ -4804,7 +4506,6 @@
 
     aput v4, v2, v3
 
-    .line 848
     const/4 v3, 0x1
 
     const/4 v4, 0x0
@@ -4823,7 +4524,6 @@
 
     aput v4, v2, v3
 
-    .line 849
     const/4 v3, 0x2
 
     const/4 v4, 0x0
@@ -4834,21 +4534,17 @@
 
     goto :goto_9
 
-    .line 857
     .end local v0           #date:[Ljava/lang/String;
     :catch_38
     move-exception v1
 
-    .line 858
     .local v1, e:Ljava/lang/NumberFormatException;
     invoke-virtual {v1}, Ljava/lang/NumberFormatException;->printStackTrace()V
 
-    .line 859
     const/4 v2, 0x0
 
     goto :goto_9
 
-    .line 850
     .end local v1           #e:Ljava/lang/NumberFormatException;
     .restart local v0       #date:[Ljava/lang/String;
     :cond_3e
@@ -4857,7 +4553,6 @@
 
     if-ne v3, v5, :cond_6e
 
-    .line 851
     const/4 v3, 0x0
 
     const/4 v4, 0x2
@@ -4874,7 +4569,6 @@
 
     aput v4, v2, v3
 
-    .line 852
     const/4 v3, 0x1
 
     const/4 v4, 0x1
@@ -4893,7 +4587,6 @@
 
     aput v4, v2, v3
 
-    .line 853
     const/4 v3, 0x2
 
     const/4 v4, 0x0
@@ -4914,7 +4607,6 @@
 
     goto :goto_9
 
-    .line 855
     :cond_6e
     const/4 v2, 0x0
 
@@ -4926,7 +4618,6 @@
     .parameter "y"
 
     .prologue
-    .line 379
     sget-object v0, Lmiui/util/LunarDate;->luYearData:[J
 
     add-int/lit16 v1, p0, -0x76c
@@ -4947,14 +4638,12 @@
     .parameter "y"
 
     .prologue
-    .line 368
     invoke-static {p0}, Lmiui/util/LunarDate;->rMonth(I)I
 
     move-result v0
 
     if-eqz v0, :cond_1c
 
-    .line 369
     sget-object v0, Lmiui/util/LunarDate;->luYearData:[J
 
     add-int/lit16 v1, p0, -0x76c
@@ -4971,20 +4660,16 @@
 
     if-eqz v0, :cond_19
 
-    .line 370
     const/16 v0, 0x1e
 
-    .line 374
     :goto_18
     return v0
 
-    .line 372
     :cond_19
     const/16 v0, 0x1d
 
     goto :goto_18
 
-    .line 374
     :cond_1c
     const/4 v0, 0x0
 
@@ -4999,18 +4684,15 @@
     .parameter "day"
 
     .prologue
-    .line 694
     invoke-static {p1, p2, p3}, Lmiui/util/LunarDate;->calLunar(III)[J
 
     move-result-object v0
 
-    .line 695
     .local v0, l:[J
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 697
     .local v1, sLunar:Ljava/lang/StringBuffer;
     const/4 v2, 0x6
 
@@ -5023,7 +4705,6 @@
 
     if-nez v2, :cond_1c
 
-    .line 698
     const v2, 0x60c0043
 
     invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -5032,7 +4713,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 699
     :cond_1c
     const/4 v2, 0x1
 
@@ -5046,7 +4726,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 700
     const v2, 0x60c0056
 
     invoke-virtual {p0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -5055,7 +4734,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 701
     const/4 v2, 0x2
 
     aget-wide v2, v0, v2
@@ -5068,20 +4746,16 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 702
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
     :try_end_3f
     .catchall {:try_start_a .. :try_end_3f} :catchall_42
 
     move-result-object v2
 
-    .line 704
     const/4 v1, 0x0
 
-    .line 702
     return-object v2
 
-    .line 704
     :catchall_42
     move-exception v2
 
@@ -5095,10 +4769,8 @@
     .parameter "y"
 
     .prologue
-    .line 359
     const/16 v1, 0x15c
 
-    .line 360
     .local v1, sum:I
     const v0, 0x8000
 
@@ -5108,7 +4780,6 @@
 
     if-le v0, v2, :cond_1c
 
-    .line 361
     sget-object v2, Lmiui/util/LunarDate;->luYearData:[J
 
     add-int/lit16 v3, p0, -0x76c
@@ -5125,16 +4796,13 @@
 
     if-eqz v2, :cond_19
 
-    .line 362
     add-int/lit8 v1, v1, 0x1
 
-    .line 360
     :cond_19
     shr-int/lit8 v0, v0, 0x1
 
     goto :goto_5
 
-    .line 364
     :cond_1c
     invoke-static {p0}, Lmiui/util/LunarDate;->rMthDays(I)I
 

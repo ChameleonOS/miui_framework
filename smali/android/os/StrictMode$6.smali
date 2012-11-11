@@ -19,7 +19,6 @@
     .registers 1
 
     .prologue
-    .line 1765
     invoke-direct {p0}, Landroid/os/StrictMode$Span;-><init>()V
 
     return-void
@@ -31,6 +30,5 @@
     .registers 1
 
     .prologue
-    .line 1768
     return-void
 .end method

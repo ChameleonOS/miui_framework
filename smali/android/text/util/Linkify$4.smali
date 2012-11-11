@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 502
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,19 +49,16 @@
 
     const/4 v0, -0x1
 
-    .line 504
     iget v2, p1, Landroid/text/util/Linkify$LinkSpec;->start:I
 
     iget v3, p2, Landroid/text/util/Linkify$LinkSpec;->start:I
 
     if-ge v2, v3, :cond_9
 
-    .line 520
     :cond_8
     :goto_8
     return v0
 
-    .line 508
     :cond_9
     iget v2, p1, Landroid/text/util/Linkify$LinkSpec;->start:I
 
@@ -72,10 +68,8 @@
 
     move v0, v1
 
-    .line 509
     goto :goto_8
 
-    .line 512
     :cond_11
     iget v2, p1, Landroid/text/util/Linkify$LinkSpec;->end:I
 
@@ -85,10 +79,8 @@
 
     move v0, v1
 
-    .line 513
     goto :goto_8
 
-    .line 516
     :cond_19
     iget v1, p1, Landroid/text/util/Linkify$LinkSpec;->end:I
 
@@ -96,7 +88,6 @@
 
     if-gt v1, v2, :cond_8
 
-    .line 520
     const/4 v0, 0x0
 
     goto :goto_8
@@ -108,7 +99,6 @@
     .parameter "x1"
 
     .prologue
-    .line 502
     check-cast p1, Landroid/text/util/Linkify$LinkSpec;
 
     .end local p1
@@ -127,7 +117,6 @@
     .parameter "o"
 
     .prologue
-    .line 524
     const/4 v0, 0x0
 
     return v0

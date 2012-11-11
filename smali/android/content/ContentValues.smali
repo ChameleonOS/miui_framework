@@ -40,7 +40,6 @@
     .registers 1
 
     .prologue
-    .line 460
     new-instance v0, Landroid/content/ContentValues$1;
 
     invoke-direct {v0}, Landroid/content/ContentValues$1;-><init>()V
@@ -54,10 +53,8 @@
     .registers 3
 
     .prologue
-    .line 41
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     new-instance v0, Ljava/util/HashMap;
 
     const/16 v1, 0x8
@@ -66,7 +63,6 @@
 
     iput-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
-    .line 45
     return-void
 .end method
 
@@ -75,10 +71,8 @@
     .parameter "size"
 
     .prologue
-    .line 52
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
     new-instance v0, Ljava/util/HashMap;
 
     const/high16 v1, 0x3f80
@@ -87,7 +81,6 @@
 
     iput-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
-    .line 54
     return-void
 .end method
 
@@ -96,10 +89,8 @@
     .parameter "from"
 
     .prologue
-    .line 61
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
     new-instance v0, Ljava/util/HashMap;
 
     iget-object v1, p1, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
@@ -108,7 +99,6 @@
 
     iput-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
-    .line 63
     return-void
 .end method
 
@@ -127,14 +117,11 @@
     .end annotation
 
     .prologue
-    .line 72
     .local p1, values:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
     iput-object p1, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
-    .line 74
     return-void
 .end method
 
@@ -144,7 +131,6 @@
     .parameter "x1"
 
     .prologue
-    .line 32
     invoke-direct {p0, p1}, Landroid/content/ContentValues;-><init>(Ljava/util/HashMap;)V
 
     return-void
@@ -156,12 +142,10 @@
     .registers 2
 
     .prologue
-    .line 219
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 220
     return-void
 .end method
 
@@ -170,7 +154,6 @@
     .parameter "key"
 
     .prologue
-    .line 229
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -184,7 +167,6 @@
     .registers 2
 
     .prologue
-    .line 475
     const/4 v0, 0x0
 
     return v0
@@ -195,15 +177,12 @@
     .parameter "object"
 
     .prologue
-    .line 78
     instance-of v0, p1, Landroid/content/ContentValues;
 
     if-nez v0, :cond_6
 
-    .line 79
     const/4 v0, 0x0
 
-    .line 81
     .end local p1
     :goto_5
     return v0
@@ -229,7 +208,6 @@
     .parameter "key"
 
     .prologue
-    .line 240
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -244,37 +222,31 @@
     .parameter "key"
 
     .prologue
-    .line 411
     iget-object v2, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 413
     .local v1, value:Ljava/lang/Object;
     :try_start_6
     check-cast v1, Ljava/lang/Boolean;
     :try_end_8
     .catch Ljava/lang/ClassCastException; {:try_start_6 .. :try_end_8} :catch_9
 
-    .line 421
     .end local v1           #value:Ljava/lang/Object;
     :goto_8
     return-object v1
 
-    .line 414
     .restart local v1       #value:Ljava/lang/Object;
     :catch_9
     move-exception v0
 
-    .line 415
     .local v0, e:Ljava/lang/ClassCastException;
     instance-of v2, v1, Ljava/lang/CharSequence;
 
     if-eqz v2, :cond_17
 
-    .line 416
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -285,13 +257,11 @@
 
     goto :goto_8
 
-    .line 417
     :cond_17
     instance-of v2, v1, Ljava/lang/Number;
 
     if-eqz v2, :cond_2b
 
-    .line 418
     check-cast v1, Ljava/lang/Number;
 
     .end local v1           #value:Ljava/lang/Object;
@@ -315,7 +285,6 @@
 
     goto :goto_24
 
-    .line 420
     .restart local v1       #value:Ljava/lang/Object;
     :cond_2b
     const-string v2, "ContentValues"
@@ -350,7 +319,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 421
     const/4 v1, 0x0
 
     goto :goto_8
@@ -363,14 +331,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 336
     iget-object v4, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 338
     .local v3, value:Ljava/lang/Object;
     if-eqz v3, :cond_17
 
@@ -394,27 +360,22 @@
     :goto_15
     move-object v5, v4
 
-    .line 349
     :goto_16
     return-object v5
 
     :cond_17
     move-object v4, v5
 
-    .line 338
     goto :goto_15
 
-    .line 339
     :catch_19
     move-exception v1
 
-    .line 340
     .local v1, e:Ljava/lang/ClassCastException;
     instance-of v4, v3, Ljava/lang/CharSequence;
 
     if-eqz v4, :cond_4b
 
-    .line 342
     :try_start_1e
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -428,11 +389,9 @@
 
     goto :goto_16
 
-    .line 343
     :catch_27
     move-exception v2
 
-    .line 344
     .local v2, e2:Ljava/lang/NumberFormatException;
     const-string v4, "ContentValues"
 
@@ -468,7 +427,6 @@
 
     goto :goto_16
 
-    .line 348
     .end local v2           #e2:Ljava/lang/NumberFormatException;
     :cond_4b
     const-string v4, "ContentValues"
@@ -511,26 +469,22 @@
     .parameter "key"
 
     .prologue
-    .line 434
     iget-object v1, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 435
     .local v0, value:Ljava/lang/Object;
     instance-of v1, v0, [B
 
     if-eqz v1, :cond_f
 
-    .line 436
     check-cast v0, [B
 
     .end local v0           #value:Ljava/lang/Object;
     check-cast v0, [B
 
-    .line 438
     :goto_e
     return-object v0
 
@@ -548,14 +502,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 361
     iget-object v4, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 363
     .local v3, value:Ljava/lang/Object;
     if-eqz v3, :cond_17
 
@@ -579,27 +531,22 @@
     :goto_15
     move-object v5, v4
 
-    .line 374
     :goto_16
     return-object v5
 
     :cond_17
     move-object v4, v5
 
-    .line 363
     goto :goto_15
 
-    .line 364
     :catch_19
     move-exception v1
 
-    .line 365
     .local v1, e:Ljava/lang/ClassCastException;
     instance-of v4, v3, Ljava/lang/CharSequence;
 
     if-eqz v4, :cond_4b
 
-    .line 367
     :try_start_1e
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -613,11 +560,9 @@
 
     goto :goto_16
 
-    .line 368
     :catch_27
     move-exception v2
 
-    .line 369
     .local v2, e2:Ljava/lang/NumberFormatException;
     const-string v4, "ContentValues"
 
@@ -653,7 +598,6 @@
 
     goto :goto_16
 
-    .line 373
     .end local v2           #e2:Ljava/lang/NumberFormatException;
     :cond_4b
     const-string v4, "ContentValues"
@@ -698,14 +642,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 386
     iget-object v4, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 388
     .local v3, value:Ljava/lang/Object;
     if-eqz v3, :cond_17
 
@@ -729,27 +671,22 @@
     :goto_15
     move-object v5, v4
 
-    .line 399
     :goto_16
     return-object v5
 
     :cond_17
     move-object v4, v5
 
-    .line 388
     goto :goto_15
 
-    .line 389
     :catch_19
     move-exception v1
 
-    .line 390
     .local v1, e:Ljava/lang/ClassCastException;
     instance-of v4, v3, Ljava/lang/CharSequence;
 
     if-eqz v4, :cond_4b
 
-    .line 392
     :try_start_1e
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -763,11 +700,9 @@
 
     goto :goto_16
 
-    .line 393
     :catch_27
     move-exception v2
 
-    .line 394
     .local v2, e2:Ljava/lang/NumberFormatException;
     const-string v4, "ContentValues"
 
@@ -803,7 +738,6 @@
 
     goto :goto_16
 
-    .line 398
     .end local v2           #e2:Ljava/lang/NumberFormatException;
     :cond_4b
     const-string v4, "ContentValues"
@@ -848,14 +782,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 286
     iget-object v4, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 288
     .local v3, value:Ljava/lang/Object;
     if-eqz v3, :cond_17
 
@@ -879,27 +811,22 @@
     :goto_15
     move-object v5, v4
 
-    .line 299
     :goto_16
     return-object v5
 
     :cond_17
     move-object v4, v5
 
-    .line 288
     goto :goto_15
 
-    .line 289
     :catch_19
     move-exception v1
 
-    .line 290
     .local v1, e:Ljava/lang/ClassCastException;
     instance-of v4, v3, Ljava/lang/CharSequence;
 
     if-eqz v4, :cond_4b
 
-    .line 292
     :try_start_1e
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -913,11 +840,9 @@
 
     goto :goto_16
 
-    .line 293
     :catch_27
     move-exception v2
 
-    .line 294
     .local v2, e2:Ljava/lang/NumberFormatException;
     const-string v4, "ContentValues"
 
@@ -953,7 +878,6 @@
 
     goto :goto_16
 
-    .line 298
     .end local v2           #e2:Ljava/lang/NumberFormatException;
     :cond_4b
     const-string v4, "ContentValues"
@@ -998,14 +922,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 261
     iget-object v4, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 263
     .local v3, value:Ljava/lang/Object;
     if-eqz v3, :cond_17
 
@@ -1029,27 +951,22 @@
     :goto_15
     move-object v5, v4
 
-    .line 274
     :goto_16
     return-object v5
 
     :cond_17
     move-object v4, v5
 
-    .line 263
     goto :goto_15
 
-    .line 264
     :catch_19
     move-exception v1
 
-    .line 265
     .local v1, e:Ljava/lang/ClassCastException;
     instance-of v4, v3, Ljava/lang/CharSequence;
 
     if-eqz v4, :cond_4b
 
-    .line 267
     :try_start_1e
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -1063,11 +980,9 @@
 
     goto :goto_16
 
-    .line 268
     :catch_27
     move-exception v2
 
-    .line 269
     .local v2, e2:Ljava/lang/NumberFormatException;
     const-string v4, "ContentValues"
 
@@ -1103,7 +1018,6 @@
 
     goto :goto_16
 
-    .line 273
     .end local v2           #e2:Ljava/lang/NumberFormatException;
     :cond_4b
     const-string v4, "ContentValues"
@@ -1148,14 +1062,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 311
     iget-object v4, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 313
     .local v3, value:Ljava/lang/Object;
     if-eqz v3, :cond_17
 
@@ -1179,27 +1091,22 @@
     :goto_15
     move-object v5, v4
 
-    .line 324
     :goto_16
     return-object v5
 
     :cond_17
     move-object v4, v5
 
-    .line 313
     goto :goto_15
 
-    .line 314
     :catch_19
     move-exception v1
 
-    .line 315
     .local v1, e:Ljava/lang/ClassCastException;
     instance-of v4, v3, Ljava/lang/CharSequence;
 
     if-eqz v4, :cond_4b
 
-    .line 317
     :try_start_1e
     invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -1213,11 +1120,9 @@
 
     goto :goto_16
 
-    .line 318
     :catch_27
     move-exception v2
 
-    .line 319
     .local v2, e2:Ljava/lang/NumberFormatException;
     const-string v4, "ContentValues"
 
@@ -1253,7 +1158,6 @@
 
     goto :goto_16
 
-    .line 323
     .end local v2           #e2:Ljava/lang/NumberFormatException;
     :cond_4b
     const-string v4, "ContentValues"
@@ -1296,14 +1200,12 @@
     .parameter "key"
 
     .prologue
-    .line 250
     iget-object v1, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 251
     .local v0, value:Ljava/lang/Object;
     if-eqz v0, :cond_d
 
@@ -1339,7 +1241,6 @@
     .end annotation
 
     .prologue
-    .line 499
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1355,7 +1256,6 @@
     .registers 2
 
     .prologue
-    .line 86
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->hashCode()I
@@ -1378,7 +1278,6 @@
     .end annotation
 
     .prologue
-    .line 457
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -1394,12 +1293,10 @@
     .parameter "value"
 
     .prologue
-    .line 175
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 176
     return-void
 .end method
 
@@ -1409,12 +1306,10 @@
     .parameter "value"
 
     .prologue
-    .line 115
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 116
     return-void
 .end method
 
@@ -1424,12 +1319,10 @@
     .parameter "value"
 
     .prologue
-    .line 165
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 166
     return-void
 .end method
 
@@ -1439,12 +1332,10 @@
     .parameter "value"
 
     .prologue
-    .line 155
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 156
     return-void
 .end method
 
@@ -1454,12 +1345,10 @@
     .parameter "value"
 
     .prologue
-    .line 135
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 136
     return-void
 .end method
 
@@ -1469,12 +1358,10 @@
     .parameter "value"
 
     .prologue
-    .line 145
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 146
     return-void
 .end method
 
@@ -1484,12 +1371,10 @@
     .parameter "value"
 
     .prologue
-    .line 125
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 126
     return-void
 .end method
 
@@ -1499,12 +1384,10 @@
     .parameter "value"
 
     .prologue
-    .line 96
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 97
     return-void
 .end method
 
@@ -1514,12 +1397,10 @@
     .parameter "value"
 
     .prologue
-    .line 185
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 186
     return-void
 .end method
 
@@ -1528,14 +1409,12 @@
     .parameter "other"
 
     .prologue
-    .line 105
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     iget-object v1, p1, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    .line 106
     return-void
 .end method
 
@@ -1544,14 +1423,12 @@
     .parameter "key"
 
     .prologue
-    .line 194
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 195
     return-void
 .end method
 
@@ -1574,13 +1451,11 @@
     .end annotation
 
     .prologue
-    .line 489
     .local p2, value:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 490
     return-void
 .end method
 
@@ -1589,12 +1464,10 @@
     .parameter "key"
 
     .prologue
-    .line 212
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 213
     return-void
 .end method
 
@@ -1602,7 +1475,6 @@
     .registers 2
 
     .prologue
-    .line 203
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
@@ -1616,12 +1488,10 @@
     .registers 7
 
     .prologue
-    .line 508
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 509
     .local v2, sb:Ljava/lang/StringBuilder;
     iget-object v4, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
@@ -1647,13 +1517,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 510
     .local v1, name:Ljava/lang/String;
     invoke-virtual {p0, v1}, Landroid/content/ContentValues;->getAsString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 511
     .local v3, value:Ljava/lang/String;
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
@@ -1665,7 +1533,6 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 512
     :cond_2a
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1693,7 +1560,6 @@
 
     goto :goto_f
 
-    .line 514
     .end local v1           #name:Ljava/lang/String;
     .end local v3           #value:Ljava/lang/String;
     :cond_45
@@ -1720,7 +1586,6 @@
     .end annotation
 
     .prologue
-    .line 448
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -1736,11 +1601,9 @@
     .parameter "flags"
 
     .prologue
-    .line 480
     iget-object v0, p0, Landroid/content/ContentValues;->mValues:Ljava/util/HashMap;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeMap(Ljava/util/Map;)V
 
-    .line 481
     return-void
 .end method

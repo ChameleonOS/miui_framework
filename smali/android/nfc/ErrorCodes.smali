@@ -56,7 +56,6 @@
     .registers 1
 
     .prologue
-    .line 26
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -67,148 +66,123 @@
     .parameter "code"
 
     .prologue
-    .line 37
     packed-switch p0, :pswitch_data_48
 
-    .line 61
     const-string v0, "UNKNOWN ERROR"
 
     :goto_5
     return-object v0
 
-    .line 38
     :pswitch_6
     const-string v0, "SUCCESS"
 
     goto :goto_5
 
-    .line 39
     :pswitch_9
     const-string v0, "IO"
 
     goto :goto_5
 
-    .line 40
     :pswitch_c
     const-string v0, "CANCELLED"
 
     goto :goto_5
 
-    .line 41
     :pswitch_f
     const-string v0, "TIMEOUT"
 
     goto :goto_5
 
-    .line 42
     :pswitch_12
     const-string v0, "BUSY"
 
     goto :goto_5
 
-    .line 43
     :pswitch_15
     const-string v0, "CONNECT/DISCONNECT"
 
     goto :goto_5
 
-    .line 45
     :pswitch_18
     const-string v0, "READ"
 
     goto :goto_5
 
-    .line 46
     :pswitch_1b
     const-string v0, "WRITE"
 
     goto :goto_5
 
-    .line 47
     :pswitch_1e
     const-string v0, "INVALID_PARAM"
 
     goto :goto_5
 
-    .line 48
     :pswitch_21
     const-string v0, "INSUFFICIENT_RESOURCES"
 
     goto :goto_5
 
-    .line 49
     :pswitch_24
     const-string v0, "SOCKET_CREATION"
 
     goto :goto_5
 
-    .line 50
     :pswitch_27
     const-string v0, "SOCKET_NOT_CONNECTED"
 
     goto :goto_5
 
-    .line 51
     :pswitch_2a
     const-string v0, "BUFFER_TO_SMALL"
 
     goto :goto_5
 
-    .line 52
     :pswitch_2d
     const-string v0, "SAP_USED"
 
     goto :goto_5
 
-    .line 53
     :pswitch_30
     const-string v0, "SERVICE_NAME_USED"
 
     goto :goto_5
 
-    .line 54
     :pswitch_33
     const-string v0, "SOCKET_OPTIONS"
 
     goto :goto_5
 
-    .line 55
     :pswitch_36
     const-string v0, "NFC_ON"
 
     goto :goto_5
 
-    .line 56
     :pswitch_39
     const-string v0, "NOT_INITIALIZED"
 
     goto :goto_5
 
-    .line 57
     :pswitch_3c
     const-string v0, "SE_ALREADY_SELECTED"
 
     goto :goto_5
 
-    .line 58
     :pswitch_3f
     const-string v0, "SE_CONNECTED"
 
     goto :goto_5
 
-    .line 59
     :pswitch_42
     const-string v0, "NO_SE_CONNECTED"
 
     goto :goto_5
 
-    .line 60
     :pswitch_45
     const-string v0, "NOT_SUPPORTED"
 
     goto :goto_5
 
-    .line 37
     :pswitch_data_48
     .packed-switch -0x15
         :pswitch_45
@@ -241,13 +215,10 @@
     .parameter "code"
 
     .prologue
-    .line 29
     if-gez p0, :cond_4
 
-    .line 30
     const/4 v0, 0x1
 
-    .line 32
     :goto_3
     return v0
 

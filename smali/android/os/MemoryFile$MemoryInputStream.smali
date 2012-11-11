@@ -32,15 +32,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 256
     iput-object p1, p0, Landroid/os/MemoryFile$MemoryInputStream;->this$0:Landroid/os/MemoryFile;
 
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 258
     iput v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mMark:I
 
-    .line 259
     iput v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mOffset:I
 
     return-void
@@ -52,7 +49,6 @@
     .parameter "x1"
 
     .prologue
-    .line 256
     invoke-direct {p0, p1}, Landroid/os/MemoryFile$MemoryInputStream;-><init>(Landroid/os/MemoryFile;)V
 
     return-void
@@ -69,7 +65,6 @@
     .end annotation
 
     .prologue
-    .line 264
     iget v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mOffset:I
 
     iget-object v1, p0, Landroid/os/MemoryFile$MemoryInputStream;->this$0:Landroid/os/MemoryFile;
@@ -81,10 +76,8 @@
 
     if-lt v0, v1, :cond_c
 
-    .line 265
     const/4 v0, 0x0
 
-    .line 267
     :goto_b
     return v0
 
@@ -108,12 +101,10 @@
     .parameter "readlimit"
 
     .prologue
-    .line 277
     iget v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mOffset:I
 
     iput v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mMark:I
 
-    .line 278
     return-void
 .end method
 
@@ -121,7 +112,6 @@
     .registers 2
 
     .prologue
-    .line 272
     const/4 v0, 0x1
 
     return v0
@@ -140,17 +130,14 @@
 
     const/4 v2, 0x1
 
-    .line 287
     iget-object v1, p0, Landroid/os/MemoryFile$MemoryInputStream;->mSingleByte:[B
 
     if-nez v1, :cond_a
 
-    .line 288
     new-array v1, v2, [B
 
     iput-object v1, p0, Landroid/os/MemoryFile$MemoryInputStream;->mSingleByte:[B
 
-    .line 290
     :cond_a
     iget-object v1, p0, Landroid/os/MemoryFile$MemoryInputStream;->mSingleByte:[B
 
@@ -158,14 +145,11 @@
 
     move-result v0
 
-    .line 291
     .local v0, result:I
     if-eq v0, v2, :cond_14
 
-    .line 292
     const/4 v1, -0x1
 
-    .line 294
     :goto_13
     return v1
 
@@ -189,7 +173,6 @@
     .end annotation
 
     .prologue
-    .line 299
     if-ltz p2, :cond_9
 
     if-ltz p3, :cond_9
@@ -200,7 +183,6 @@
 
     if-le v1, v2, :cond_f
 
-    .line 302
     :cond_9
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
@@ -208,7 +190,6 @@
 
     throw v1
 
-    .line 304
     :cond_f
     invoke-virtual {p0}, Landroid/os/MemoryFile$MemoryInputStream;->available()I
 
@@ -218,20 +199,16 @@
 
     move-result p3
 
-    .line 305
     const/4 v1, 0x1
 
     if-ge p3, v1, :cond_1c
 
-    .line 306
     const/4 v0, -0x1
 
-    .line 312
     :cond_1b
     :goto_1b
     return v0
 
-    .line 308
     :cond_1c
     iget-object v1, p0, Landroid/os/MemoryFile$MemoryInputStream;->this$0:Landroid/os/MemoryFile;
 
@@ -241,11 +218,9 @@
 
     move-result v0
 
-    .line 309
     .local v0, result:I
     if-lez v0, :cond_1b
 
-    .line 310
     iget v1, p0, Landroid/os/MemoryFile$MemoryInputStream;->mOffset:I
 
     add-int/2addr v1, v0
@@ -264,12 +239,10 @@
     .end annotation
 
     .prologue
-    .line 282
     iget v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mMark:I
 
     iput v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mOffset:I
 
-    .line 283
     return-void
 .end method
 
@@ -283,7 +256,6 @@
     .end annotation
 
     .prologue
-    .line 317
     iget v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mOffset:I
 
     int-to-long v0, v0
@@ -303,7 +275,6 @@
 
     if-lez v0, :cond_19
 
-    .line 318
     iget-object v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->this$0:Landroid/os/MemoryFile;
 
     #getter for: Landroid/os/MemoryFile;->mLength:I
@@ -317,7 +288,6 @@
 
     int-to-long p1, v0
 
-    .line 320
     :cond_19
     iget v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mOffset:I
 
@@ -329,6 +299,5 @@
 
     iput v0, p0, Landroid/os/MemoryFile$MemoryInputStream;->mOffset:I
 
-    .line 321
     return-wide p1
 .end method

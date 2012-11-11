@@ -39,7 +39,6 @@
     .registers 2
 
     .prologue
-    .line 51
     const-class v0, Landroid/accessibilityservice/UiTestAutomationBridge;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -48,7 +47,6 @@
 
     sput-object v0, Landroid/accessibilityservice/UiTestAutomationBridge;->LOG_TAG:Ljava/lang/String;
 
-    .line 57
     sget-wide v0, Landroid/view/accessibility/AccessibilityNodeInfo;->ROOT_NODE_ID:J
 
     sput-wide v0, Landroid/accessibilityservice/UiTestAutomationBridge;->ROOT_NODE_ID:J
@@ -60,17 +58,14 @@
     .registers 2
 
     .prologue
-    .line 49
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
 
-    .line 68
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
@@ -83,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 49
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -95,7 +89,6 @@
     .parameter "x1"
 
     .prologue
-    .line 49
     iput-object p1, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLastEvent:Landroid/view/accessibility/AccessibilityEvent;
 
     return-object p1
@@ -106,7 +99,6 @@
     .parameter "x0"
 
     .prologue
-    .line 49
     iget-boolean v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mWaitingForEventDelivery:Z
 
     return v0
@@ -117,7 +109,6 @@
     .parameter "x0"
 
     .prologue
-    .line 49
     iget-boolean v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mUnprocessedEventAvailable:Z
 
     return v0
@@ -129,7 +120,6 @@
     .parameter "x1"
 
     .prologue
-    .line 49
     iput-boolean p1, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mUnprocessedEventAvailable:Z
 
     return p1
@@ -141,7 +131,6 @@
     .parameter "x1"
 
     .prologue
-    .line 49
     iput p1, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
 
     return p1
@@ -152,12 +141,10 @@
     .parameter "connectionId"
 
     .prologue
-    .line 491
     const/4 v0, -0x1
 
     if-ne p1, v0, :cond_b
 
-    .line 492
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "UiAutomationService not connected. Did you call #register()?"
@@ -166,7 +153,6 @@
 
     throw v0
 
-    .line 495
     :cond_b
     return-void
 .end method
@@ -177,14 +163,12 @@
     .registers 15
 
     .prologue
-    .line 119
     invoke-virtual {p0}, Landroid/accessibilityservice/UiTestAutomationBridge;->isConnected()Z
 
     move-result v10
 
     if-eqz v10, :cond_e
 
-    .line 120
     new-instance v10, Ljava/lang/IllegalStateException;
 
     const-string v11, "Already connected."
@@ -193,7 +177,6 @@
 
     throw v10
 
-    .line 132
     :cond_e
     new-instance v10, Landroid/os/HandlerThread;
 
@@ -203,26 +186,22 @@
 
     iput-object v10, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mHandlerThread:Landroid/os/HandlerThread;
 
-    .line 133
     iget-object v10, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mHandlerThread:Landroid/os/HandlerThread;
 
     const/4 v11, 0x1
 
     invoke-virtual {v10, v11}, Landroid/os/HandlerThread;->setDaemon(Z)V
 
-    .line 134
     iget-object v10, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v10}, Landroid/os/HandlerThread;->start()V
 
-    .line 135
     iget-object v10, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v10}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v3
 
-    .line 137
     .local v3, looper:Landroid/os/Looper;
     new-instance v10, Landroid/accessibilityservice/AccessibilityService$IAccessibilityServiceClientWrapper;
 
@@ -236,7 +215,6 @@
 
     iput-object v10, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mListener:Landroid/accessibilityservice/AccessibilityService$IAccessibilityServiceClientWrapper;
 
-    .line 186
     const-string v10, "accessibility"
 
     invoke-static {v10}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -247,31 +225,26 @@
 
     move-result-object v4
 
-    .line 189
     .local v4, manager:Landroid/view/accessibility/IAccessibilityManager;
     new-instance v2, Landroid/accessibilityservice/AccessibilityServiceInfo;
 
     invoke-direct {v2}, Landroid/accessibilityservice/AccessibilityServiceInfo;-><init>()V
 
-    .line 190
     .local v2, info:Landroid/accessibilityservice/AccessibilityServiceInfo;
     const/4 v10, -0x1
 
     iput v10, v2, Landroid/accessibilityservice/AccessibilityServiceInfo;->eventTypes:I
 
-    .line 191
     const/16 v10, 0x10
 
     iput v10, v2, Landroid/accessibilityservice/AccessibilityServiceInfo;->feedbackType:I
 
-    .line 192
     iget v10, v2, Landroid/accessibilityservice/AccessibilityServiceInfo;->flags:I
 
     or-int/lit8 v10, v10, 0x2
 
     iput v10, v2, Landroid/accessibilityservice/AccessibilityServiceInfo;->flags:I
 
-    .line 195
     :try_start_51
     iget-object v10, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mListener:Landroid/accessibilityservice/AccessibilityService$IAccessibilityServiceClientWrapper;
 
@@ -279,18 +252,15 @@
     :try_end_56
     .catch Landroid/os/RemoteException; {:try_start_51 .. :try_end_56} :catch_65
 
-    .line 200
     iget-object v11, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
 
     monitor-enter v11
 
-    .line 201
     :try_start_59
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v8
 
-    .line 203
     .local v8, startTimeMillis:J
     :goto_5d
     invoke-virtual {p0}, Landroid/accessibilityservice/UiTestAutomationBridge;->isConnected()Z
@@ -299,19 +269,16 @@
 
     if-eqz v10, :cond_6e
 
-    .line 204
     monitor-exit v11
     :try_end_64
     .catchall {:try_start_59 .. :try_end_64} :catchall_86
 
     return-void
 
-    .line 196
     .end local v8           #startTimeMillis:J
     :catch_65
     move-exception v5
 
-    .line 197
     .local v5, re:Landroid/os/RemoteException;
     new-instance v10, Ljava/lang/IllegalStateException;
 
@@ -321,7 +288,6 @@
 
     throw v10
 
-    .line 206
     .end local v5           #re:Landroid/os/RemoteException;
     .restart local v8       #startTimeMillis:J
     :cond_6e
@@ -332,13 +298,11 @@
 
     sub-long v0, v12, v8
 
-    .line 207
     .local v0, elapsedTimeMillis:J
     const-wide/16 v12, 0x1388
 
     sub-long v6, v12, v0
 
-    .line 208
     .local v6, remainingTimeMillis:J
     const-wide/16 v12, 0x0
 
@@ -346,7 +310,6 @@
 
     if-gtz v10, :cond_89
 
-    .line 209
     new-instance v10, Ljava/lang/IllegalStateException;
 
     const-string v12, "Cound not register UiAutomationService."
@@ -355,7 +318,6 @@
 
     throw v10
 
-    .line 217
     .end local v0           #elapsedTimeMillis:J
     .end local v6           #remainingTimeMillis:J
     .end local v8           #startTimeMillis:J
@@ -368,7 +330,6 @@
 
     throw v10
 
-    .line 212
     .restart local v0       #elapsedTimeMillis:J
     .restart local v6       #remainingTimeMillis:J
     .restart local v8       #startTimeMillis:J
@@ -383,7 +344,6 @@
 
     goto :goto_5d
 
-    .line 213
     :catch_8f
     move-exception v10
 
@@ -394,14 +354,12 @@
     .registers 5
 
     .prologue
-    .line 226
     invoke-virtual {p0}, Landroid/accessibilityservice/UiTestAutomationBridge;->isConnected()Z
 
     move-result v2
 
     if-nez v2, :cond_e
 
-    .line 227
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v3, "Already disconnected."
@@ -410,13 +368,11 @@
 
     throw v2
 
-    .line 230
     :cond_e
     iget-object v2, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v2}, Landroid/os/HandlerThread;->quit()Z
 
-    .line 232
     const-string v2, "accessibility"
 
     invoke-static {v2}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -427,7 +383,6 @@
 
     move-result-object v0
 
-    .line 236
     .local v0, manager:Landroid/view/accessibility/IAccessibilityManager;
     :try_start_1d
     iget-object v2, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mListener:Landroid/accessibilityservice/AccessibilityService$IAccessibilityServiceClientWrapper;
@@ -436,15 +391,12 @@
     :try_end_22
     .catch Landroid/os/RemoteException; {:try_start_1d .. :try_end_22} :catch_23
 
-    .line 240
     :goto_22
     return-void
 
-    .line 237
     :catch_23
     move-exception v1
 
-    .line 238
     .local v1, re:Landroid/os/RemoteException;
     sget-object v2, Landroid/accessibilityservice/UiTestAutomationBridge;->LOG_TAG:Ljava/lang/String;
 
@@ -480,48 +432,39 @@
     .end annotation
 
     .prologue
-    .line 263
     .local p2, predicate:Lcom/android/internal/util/Predicate;,"Lcom/android/internal/util/Predicate<Landroid/view/accessibility/AccessibilityEvent;>;"
     iget-object v7, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
 
     monitor-enter v7
 
-    .line 265
     const/4 v6, 0x1
 
     :try_start_4
     iput-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mWaitingForEventDelivery:Z
 
-    .line 266
     const/4 v6, 0x0
 
     iput-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mUnprocessedEventAvailable:Z
 
-    .line 267
     iget-object v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLastEvent:Landroid/view/accessibility/AccessibilityEvent;
 
     if-eqz v6, :cond_15
 
-    .line 268
     iget-object v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLastEvent:Landroid/view/accessibility/AccessibilityEvent;
 
     invoke-virtual {v6}, Landroid/view/accessibility/AccessibilityEvent;->recycle()V
 
-    .line 269
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLastEvent:Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 272
     :cond_15
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 274
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v4
 
-    .line 277
     .local v4, startTimeMillis:J
     :goto_1c
     iget-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mUnprocessedEventAvailable:Z
@@ -536,56 +479,46 @@
 
     if-eqz v6, :cond_37
 
-    .line 278
     const/4 v6, 0x0
 
     iput-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mWaitingForEventDelivery:Z
 
-    .line 279
     const/4 v6, 0x0
 
     iput-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mUnprocessedEventAvailable:Z
 
-    .line 280
     iget-object v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
 
     invoke-virtual {v6}, Ljava/lang/Object;->notifyAll()V
 
-    .line 281
     iget-object v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLastEvent:Landroid/view/accessibility/AccessibilityEvent;
 
     monitor-exit v7
 
     return-object v6
 
-    .line 284
     :cond_37
     const/4 v6, 0x1
 
     iput-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mWaitingForEventDelivery:Z
 
-    .line 285
     const/4 v6, 0x0
 
     iput-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mUnprocessedEventAvailable:Z
 
-    .line 286
     iget-object v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
 
     invoke-virtual {v6}, Ljava/lang/Object;->notifyAll()V
 
-    .line 288
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v8
 
     sub-long v0, v8, v4
 
-    .line 289
     .local v0, elapsedTimeMillis:J
     sub-long v2, p3, v0
 
-    .line 290
     .local v2, remainingTimeMillis:J
     const-wide/16 v8, 0x0
 
@@ -593,22 +526,18 @@
 
     if-gtz v6, :cond_7d
 
-    .line 291
     const/4 v6, 0x0
 
     iput-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mWaitingForEventDelivery:Z
 
-    .line 292
     const/4 v6, 0x0
 
     iput-boolean v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mUnprocessedEventAvailable:Z
 
-    .line 293
     iget-object v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
 
     invoke-virtual {v6}, Ljava/lang/Object;->notifyAll()V
 
-    .line 294
     new-instance v6, Ljava/util/concurrent/TimeoutException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -639,7 +568,6 @@
 
     throw v6
 
-    .line 303
     .end local v0           #elapsedTimeMillis:J
     .end local v2           #remainingTimeMillis:J
     .end local v4           #startTimeMillis:J
@@ -652,7 +580,6 @@
 
     throw v6
 
-    .line 298
     .restart local v0       #elapsedTimeMillis:J
     .restart local v2       #remainingTimeMillis:J
     .restart local v4       #startTimeMillis:J
@@ -667,7 +594,6 @@
 
     goto :goto_1c
 
-    .line 299
     :catch_83
     move-exception v6
 
@@ -680,14 +606,11 @@
     .parameter "accessibilityNodeId"
 
     .prologue
-    .line 368
     iget v6, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
 
-    .line 369
     .local v6, connectionId:I
     invoke-direct {p0, v6}, Landroid/accessibilityservice/UiTestAutomationBridge;->ensureValidConnection(I)V
 
-    .line 370
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v0
@@ -712,7 +635,6 @@
     .parameter "accessibilityNodeId"
 
     .prologue
-    .line 353
     const/4 v0, -0x1
 
     invoke-virtual {p0, v0, p1, p2}, Landroid/accessibilityservice/UiTestAutomationBridge;->findAccessibilityNodeInfoByAccessibilityId(IJ)Landroid/view/accessibility/AccessibilityNodeInfo;
@@ -729,14 +651,11 @@
     .parameter "viewId"
 
     .prologue
-    .line 402
     iget v1, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
 
-    .line 403
     .local v1, connectionId:I
     invoke-direct {p0, v1}, Landroid/accessibilityservice/UiTestAutomationBridge;->ensureValidConnection(I)V
 
-    .line 404
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v0
@@ -759,7 +678,6 @@
     .parameter "viewId"
 
     .prologue
-    .line 384
     const/4 v0, -0x1
 
     sget-wide v1, Landroid/accessibilityservice/UiTestAutomationBridge;->ROOT_NODE_ID:J
@@ -789,14 +707,11 @@
     .end annotation
 
     .prologue
-    .line 436
     iget v1, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
 
-    .line 437
     .local v1, connectionId:I
     invoke-direct {p0, v1}, Landroid/accessibilityservice/UiTestAutomationBridge;->ensureValidConnection(I)V
 
-    .line 438
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v0
@@ -830,7 +745,6 @@
     .end annotation
 
     .prologue
-    .line 417
     const/4 v0, -0x1
 
     sget-wide v1, Landroid/accessibilityservice/UiTestAutomationBridge;->ROOT_NODE_ID:J
@@ -846,7 +760,6 @@
     .registers 2
 
     .prologue
-    .line 86
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLastEvent:Landroid/view/accessibility/AccessibilityEvent;
 
     return-object v0
@@ -856,14 +769,11 @@
     .registers 7
 
     .prologue
-    .line 483
     iget v1, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
 
-    .line 484
     .local v1, connectionId:I
     invoke-direct {p0, v1}, Landroid/accessibilityservice/UiTestAutomationBridge;->ensureValidConnection(I)V
 
-    .line 485
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v0
@@ -885,7 +795,6 @@
     .registers 3
 
     .prologue
-    .line 248
     iget v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
 
     const/4 v1, -0x1
@@ -908,7 +817,6 @@
     .parameter "event"
 
     .prologue
-    .line 100
     return-void
 .end method
 
@@ -916,7 +824,6 @@
     .registers 1
 
     .prologue
-    .line 111
     return-void
 .end method
 
@@ -928,14 +835,11 @@
     .parameter "arguments"
 
     .prologue
-    .line 470
     iget v1, p0, Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
 
-    .line 471
     .local v1, connectionId:I
     invoke-direct {p0, v1}, Landroid/accessibilityservice/UiTestAutomationBridge;->ensureValidConnection(I)V
 
-    .line 472
     invoke-static {}, Landroid/view/accessibility/AccessibilityInteractionClient;->getInstance()Landroid/view/accessibility/AccessibilityInteractionClient;
 
     move-result-object v0
@@ -962,7 +866,6 @@
     .parameter "arguments"
 
     .prologue
-    .line 454
     const/4 v1, -0x1
 
     move-object v0, p0
@@ -986,12 +889,10 @@
     .parameter "globalTimeout"
 
     .prologue
-    .line 316
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v12
 
-    .line 317
     .local v12, startTimeMillis:J
     move-object/from16 v0, p0
 
@@ -1007,7 +908,6 @@
 
     move-result-wide v6
 
-    .line 319
     .local v6, lastEventTime:J
     :goto_12
     move-object/from16 v0, p0
@@ -1016,33 +916,27 @@
 
     monitor-enter v15
 
-    .line 321
     :goto_17
     :try_start_17
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 322
     .local v2, currentTimeMillis:J
     sub-long v10, v2, v6
 
-    .line 323
     .local v10, sinceLastEventTimeMillis:J
     cmp-long v14, v10, p1
 
     if-lez v14, :cond_28
 
-    .line 324
     monitor-exit v15
     :try_end_22
     .catchall {:try_start_17 .. :try_end_22} :catchall_46
 
-    .line 332
     :goto_22
     return-void
 
-    .line 317
     .end local v2           #currentTimeMillis:J
     .end local v6           #lastEventTime:J
     .end local v10           #sinceLastEventTimeMillis:J
@@ -1053,7 +947,6 @@
 
     goto :goto_12
 
-    .line 326
     .restart local v2       #currentTimeMillis:J
     .restart local v6       #lastEventTime:J
     .restart local v10       #sinceLastEventTimeMillis:J
@@ -1065,7 +958,6 @@
 
     if-eqz v14, :cond_36
 
-    .line 327
     move-object/from16 v0, p0
 
     iget-object v14, v0, Landroid/accessibilityservice/UiTestAutomationBridge;->mLastEvent:Landroid/view/accessibility/AccessibilityEvent;
@@ -1074,7 +966,6 @@
 
     move-result-wide v6
 
-    .line 329
     :cond_36
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1082,11 +973,9 @@
 
     sub-long v4, v16, v12
 
-    .line 330
     .local v4, elapsedTimeMillis:J
     sub-long v8, p3, v4
 
-    .line 331
     .local v8, remainingTimeMillis:J
     const-wide/16 v16, 0x0
 
@@ -1094,12 +983,10 @@
 
     if-gtz v14, :cond_49
 
-    .line 332
     monitor-exit v15
 
     goto :goto_22
 
-    .line 340
     .end local v2           #currentTimeMillis:J
     .end local v4           #elapsedTimeMillis:J
     .end local v8           #remainingTimeMillis:J
@@ -1113,7 +1000,6 @@
 
     throw v14
 
-    .line 335
     .restart local v2       #currentTimeMillis:J
     .restart local v4       #elapsedTimeMillis:J
     .restart local v8       #remainingTimeMillis:J
@@ -1133,7 +1019,6 @@
 
     goto :goto_17
 
-    .line 336
     :catch_53
     move-exception v14
 

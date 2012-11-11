@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 193
     iput-object p1, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -48,13 +47,11 @@
 
     const/4 v4, 0x0
 
-    .line 195
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     #calls: Landroid/widget/TimePicker;->updateInputState()V
     invoke-static {v5}, Landroid/widget/TimePicker;->access$000(Landroid/widget/TimePicker;)V
 
-    .line 196
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     #getter for: Landroid/widget/TimePicker;->mMinuteSpinner:Landroid/widget/NumberPicker;
@@ -66,7 +63,6 @@
 
     move-result v1
 
-    .line 197
     .local v1, minValue:I
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
@@ -79,13 +75,11 @@
 
     move-result v0
 
-    .line 198
     .local v0, maxValue:I
     if-ne p2, v0, :cond_5a
 
     if-ne p3, v1, :cond_5a
 
-    .line 199
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     #getter for: Landroid/widget/TimePicker;->mHourSpinner:Landroid/widget/NumberPicker;
@@ -99,7 +93,6 @@
 
     add-int/lit8 v2, v5, 0x1
 
-    .line 200
     .local v2, newHour:I
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
@@ -113,7 +106,6 @@
 
     if-ne v2, v5, :cond_49
 
-    .line 201
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     iget-object v6, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
@@ -129,13 +121,11 @@
     #setter for: Landroid/widget/TimePicker;->mIsAm:Z
     invoke-static {v5, v3}, Landroid/widget/TimePicker;->access$102(Landroid/widget/TimePicker;Z)Z
 
-    .line 202
     iget-object v3, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     #calls: Landroid/widget/TimePicker;->updateAmPmControl()V
     invoke-static {v3}, Landroid/widget/TimePicker;->access$200(Landroid/widget/TimePicker;)V
 
-    .line 204
     :cond_49
     iget-object v3, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
@@ -146,7 +136,6 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/NumberPicker;->setValue(I)V
 
-    .line 213
     .end local v2           #newHour:I
     :cond_52
     :goto_52
@@ -155,24 +144,20 @@
     #calls: Landroid/widget/TimePicker;->onTimeChanged()V
     invoke-static {v3}, Landroid/widget/TimePicker;->access$300(Landroid/widget/TimePicker;)V
 
-    .line 214
     return-void
 
     .restart local v2       #newHour:I
     :cond_58
     move v3, v4
 
-    .line 201
     goto :goto_41
 
-    .line 205
     .end local v2           #newHour:I
     :cond_5a
     if-ne p2, v1, :cond_52
 
     if-ne p3, v0, :cond_52
 
-    .line 206
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     #getter for: Landroid/widget/TimePicker;->mHourSpinner:Landroid/widget/NumberPicker;
@@ -186,7 +171,6 @@
 
     add-int/lit8 v2, v5, -0x1
 
-    .line 207
     .restart local v2       #newHour:I
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
@@ -200,7 +184,6 @@
 
     if-ne v2, v5, :cond_88
 
-    .line 208
     iget-object v5, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     iget-object v6, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
@@ -216,13 +199,11 @@
     #setter for: Landroid/widget/TimePicker;->mIsAm:Z
     invoke-static {v5, v3}, Landroid/widget/TimePicker;->access$102(Landroid/widget/TimePicker;Z)Z
 
-    .line 209
     iget-object v3, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
     #calls: Landroid/widget/TimePicker;->updateAmPmControl()V
     invoke-static {v3}, Landroid/widget/TimePicker;->access$200(Landroid/widget/TimePicker;)V
 
-    .line 211
     :cond_88
     iget-object v3, p0, Landroid/widget/TimePicker$3;->this$0:Landroid/widget/TimePicker;
 
@@ -238,6 +219,5 @@
     :cond_92
     move v3, v4
 
-    .line 208
     goto :goto_80
 .end method

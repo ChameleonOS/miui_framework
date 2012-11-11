@@ -82,20 +82,16 @@
     .parameter "conn"
 
     .prologue
-    .line 81
     invoke-direct {p0}, Lcom/android/internal/view/IInputContext$Stub;-><init>()V
 
-    .line 82
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
 
-    .line 83
     iput-object p1, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mMainLooper:Landroid/os/Looper;
 
-    .line 84
     new-instance v0, Lcom/android/internal/view/IInputConnectionWrapper$MyHandler;
 
     iget-object v1, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mMainLooper:Landroid/os/Looper;
@@ -104,7 +100,6 @@
 
     iput-object v0, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
-    .line 85
     return-void
 .end method
 
@@ -114,7 +109,6 @@
     .registers 2
 
     .prologue
-    .line 163
     const/16 v0, 0x5a
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessage(I)Landroid/os/Message;
@@ -123,7 +117,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 164
     return-void
 .end method
 
@@ -132,7 +125,6 @@
     .parameter "states"
 
     .prologue
-    .line 154
     const/16 v0, 0x82
 
     const/4 v1, 0x0
@@ -143,7 +135,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 155
     return-void
 .end method
 
@@ -152,7 +143,6 @@
     .parameter "text"
 
     .prologue
-    .line 118
     const/16 v0, 0x37
 
     invoke-virtual {p0, v0, p1}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageO(ILjava/lang/Object;)Landroid/os/Message;
@@ -161,7 +151,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 119
     return-void
 .end method
 
@@ -170,7 +159,6 @@
     .parameter "info"
 
     .prologue
-    .line 122
     const/16 v0, 0x38
 
     invoke-virtual {p0, v0, p1}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageO(ILjava/lang/Object;)Landroid/os/Message;
@@ -179,7 +167,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 123
     return-void
 .end method
 
@@ -189,7 +176,6 @@
     .parameter "newCursorPosition"
 
     .prologue
-    .line 114
     const/16 v0, 0x32
 
     invoke-virtual {p0, v0, p2, p1}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageIO(IILjava/lang/Object;)Landroid/os/Message;
@@ -198,7 +184,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 115
     return-void
 .end method
 
@@ -208,7 +193,6 @@
     .parameter "rightLength"
 
     .prologue
-    .line 158
     const/16 v0, 0x50
 
     invoke-virtual {p0, v0, p1, p2}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageII(III)Landroid/os/Message;
@@ -217,7 +201,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 160
     return-void
 .end method
 
@@ -226,7 +209,6 @@
     .parameter "msg"
 
     .prologue
-    .line 182
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -235,17 +217,13 @@
 
     if-ne v0, v1, :cond_f
 
-    .line 183
     invoke-virtual {p0, p1}, Lcom/android/internal/view/IInputConnectionWrapper;->executeMessage(Landroid/os/Message;)V
 
-    .line 184
     invoke-virtual {p1}, Landroid/os/Message;->recycle()V
 
-    .line 189
     :goto_e
     return-void
 
-    .line 188
     :cond_f
     iget-object v0, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
@@ -258,7 +236,6 @@
     .registers 2
 
     .prologue
-    .line 167
     const/16 v0, 0x5f
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessage(I)Landroid/os/Message;
@@ -267,7 +244,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 168
     return-void
 .end method
 
@@ -280,12 +256,10 @@
 
     const/4 v4, 0x0
 
-    .line 192
     iget v5, p1, Landroid/os/Message;->what:I
 
     sparse-switch v5, :sswitch_data_378
 
-    .line 424
     const-string v3, "IInputConnectionWrapper"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -310,17 +284,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 425
     :goto_21
     return-void
 
-    .line 194
     :sswitch_22
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
-    .line 196
     .local v0, args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     :try_start_26
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -331,7 +302,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 197
     .local v2, ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_36
 
@@ -341,7 +311,6 @@
 
     if-nez v3, :cond_4f
 
-    .line 198
     :cond_36
     const-string v3, "IInputConnectionWrapper"
 
@@ -349,7 +318,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 199
     iget-object v3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->callback:Lcom/android/internal/view/IInputContextCallback;
 
     const/4 v4, 0x0
@@ -362,12 +330,10 @@
 
     goto :goto_21
 
-    .line 204
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :catch_46
     move-exception v1
 
-    .line 205
     .local v1, e:Landroid/os/RemoteException;
     const-string v3, "IInputConnectionWrapper"
 
@@ -377,7 +343,6 @@
 
     goto :goto_21
 
-    .line 202
     .end local v1           #e:Landroid/os/RemoteException;
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     :cond_4f
@@ -400,7 +365,6 @@
 
     goto :goto_21
 
-    .line 210
     .end local v0           #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_5f
@@ -408,7 +372,6 @@
 
     check-cast v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
-    .line 212
     .restart local v0       #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     :try_start_63
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -419,7 +382,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 213
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_73
 
@@ -429,7 +391,6 @@
 
     if-nez v3, :cond_8c
 
-    .line 214
     :cond_73
     const-string v3, "IInputConnectionWrapper"
 
@@ -437,7 +398,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 215
     iget-object v3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->callback:Lcom/android/internal/view/IInputContextCallback;
 
     const/4 v4, 0x0
@@ -450,12 +410,10 @@
 
     goto :goto_21
 
-    .line 220
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :catch_83
     move-exception v1
 
-    .line 221
     .restart local v1       #e:Landroid/os/RemoteException;
     const-string v3, "IInputConnectionWrapper"
 
@@ -465,7 +423,6 @@
 
     goto :goto_21
 
-    .line 218
     .end local v1           #e:Landroid/os/RemoteException;
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     :cond_8c
@@ -488,7 +445,6 @@
 
     goto :goto_21
 
-    .line 226
     .end local v0           #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_9c
@@ -496,7 +452,6 @@
 
     check-cast v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
-    .line 228
     .restart local v0       #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     :try_start_a0
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -507,7 +462,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 229
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_b0
 
@@ -517,7 +471,6 @@
 
     if-nez v3, :cond_cb
 
-    .line 230
     :cond_b0
     const-string v3, "IInputConnectionWrapper"
 
@@ -525,7 +478,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
     iget-object v3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->callback:Lcom/android/internal/view/IInputContextCallback;
 
     const/4 v4, 0x0
@@ -538,12 +490,10 @@
 
     goto/16 :goto_21
 
-    .line 236
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :catch_c1
     move-exception v1
 
-    .line 237
     .restart local v1       #e:Landroid/os/RemoteException;
     const-string v3, "IInputConnectionWrapper"
 
@@ -553,7 +503,6 @@
 
     goto/16 :goto_21
 
-    .line 234
     .end local v1           #e:Landroid/os/RemoteException;
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     :cond_cb
@@ -574,7 +523,6 @@
 
     goto/16 :goto_21
 
-    .line 242
     .end local v0           #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_da
@@ -582,7 +530,6 @@
 
     check-cast v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
-    .line 244
     .restart local v0       #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     :try_start_de
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -593,7 +540,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 245
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_ee
 
@@ -603,7 +549,6 @@
 
     if-nez v3, :cond_109
 
-    .line 246
     :cond_ee
     const-string v3, "IInputConnectionWrapper"
 
@@ -611,7 +556,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 247
     iget-object v3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->callback:Lcom/android/internal/view/IInputContextCallback;
 
     const/4 v4, 0x0
@@ -624,12 +568,10 @@
 
     goto/16 :goto_21
 
-    .line 252
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :catch_ff
     move-exception v1
 
-    .line 253
     .restart local v1       #e:Landroid/os/RemoteException;
     const-string v3, "IInputConnectionWrapper"
 
@@ -639,7 +581,6 @@
 
     goto/16 :goto_21
 
-    .line 250
     .end local v1           #e:Landroid/os/RemoteException;
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     :cond_109
@@ -660,7 +601,6 @@
 
     goto/16 :goto_21
 
-    .line 258
     .end local v0           #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_118
@@ -668,7 +608,6 @@
 
     check-cast v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
-    .line 260
     .restart local v0       #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     :try_start_11c
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -679,7 +618,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 261
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_12c
 
@@ -689,7 +627,6 @@
 
     if-nez v3, :cond_147
 
-    .line 262
     :cond_12c
     const-string v3, "IInputConnectionWrapper"
 
@@ -697,7 +634,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 263
     iget-object v3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->callback:Lcom/android/internal/view/IInputContextCallback;
 
     const/4 v4, 0x0
@@ -710,12 +646,10 @@
 
     goto/16 :goto_21
 
-    .line 268
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :catch_13d
     move-exception v1
 
-    .line 269
     .restart local v1       #e:Landroid/os/RemoteException;
     const-string v3, "IInputConnectionWrapper"
 
@@ -725,7 +659,6 @@
 
     goto/16 :goto_21
 
-    .line 266
     .end local v1           #e:Landroid/os/RemoteException;
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     :cond_147
@@ -750,7 +683,6 @@
 
     goto/16 :goto_21
 
-    .line 274
     .end local v0           #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_15a
@@ -762,7 +694,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 275
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_16a
 
@@ -772,7 +703,6 @@
 
     if-nez v3, :cond_173
 
-    .line 276
     :cond_16a
     const-string v3, "IInputConnectionWrapper"
 
@@ -782,7 +712,6 @@
 
     goto/16 :goto_21
 
-    .line 279
     :cond_173
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -794,7 +723,6 @@
 
     goto/16 :goto_21
 
-    .line 283
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_17e
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -805,7 +733,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 284
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_18e
 
@@ -815,7 +742,6 @@
 
     if-nez v3, :cond_198
 
-    .line 285
     :cond_18e
     const-string v3, "IInputConnectionWrapper"
 
@@ -825,7 +751,6 @@
 
     goto/16 :goto_21
 
-    .line 288
     :cond_198
     iget v3, p1, Landroid/os/Message;->arg1:I
 
@@ -835,7 +760,6 @@
 
     goto/16 :goto_21
 
-    .line 292
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_1a1
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -846,7 +770,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 293
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_1b1
 
@@ -856,7 +779,6 @@
 
     if-nez v3, :cond_1bb
 
-    .line 294
     :cond_1b1
     const-string v3, "IInputConnectionWrapper"
 
@@ -866,7 +788,6 @@
 
     goto/16 :goto_21
 
-    .line 297
     :cond_1bb
     iget v3, p1, Landroid/os/Message;->arg1:I
 
@@ -874,7 +795,6 @@
 
     goto/16 :goto_21
 
-    .line 301
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_1c2
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -885,7 +805,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 302
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_1d2
 
@@ -895,7 +814,6 @@
 
     if-nez v3, :cond_1dc
 
-    .line 303
     :cond_1d2
     const-string v3, "IInputConnectionWrapper"
 
@@ -905,7 +823,6 @@
 
     goto/16 :goto_21
 
-    .line 306
     :cond_1dc
     iget v3, p1, Landroid/os/Message;->arg1:I
 
@@ -913,7 +830,6 @@
 
     goto/16 :goto_21
 
-    .line 310
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_1e3
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -924,7 +840,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 311
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_1f3
 
@@ -934,7 +849,6 @@
 
     if-nez v3, :cond_1fc
 
-    .line 312
     :cond_1f3
     const-string v3, "IInputConnectionWrapper"
 
@@ -944,7 +858,6 @@
 
     goto/16 :goto_21
 
-    .line 315
     :cond_1fc
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -954,7 +867,6 @@
 
     goto/16 :goto_21
 
-    .line 319
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_205
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -965,7 +877,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 320
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_215
 
@@ -975,7 +886,6 @@
 
     if-nez v3, :cond_21e
 
-    .line 321
     :cond_215
     const-string v3, "IInputConnectionWrapper"
 
@@ -985,7 +895,6 @@
 
     goto/16 :goto_21
 
-    .line 324
     :cond_21e
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -995,7 +904,6 @@
 
     goto/16 :goto_21
 
-    .line 328
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_227
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1006,7 +914,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 329
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_237
 
@@ -1016,7 +923,6 @@
 
     if-nez v3, :cond_241
 
-    .line 330
     :cond_237
     const-string v3, "IInputConnectionWrapper"
 
@@ -1026,7 +932,6 @@
 
     goto/16 :goto_21
 
-    .line 333
     :cond_241
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -1038,7 +943,6 @@
 
     goto/16 :goto_21
 
-    .line 337
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_24c
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1049,7 +953,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 338
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_25c
 
@@ -1059,7 +962,6 @@
 
     if-nez v3, :cond_266
 
-    .line 339
     :cond_25c
     const-string v3, "IInputConnectionWrapper"
 
@@ -1069,7 +971,6 @@
 
     goto/16 :goto_21
 
-    .line 342
     :cond_266
     iget v3, p1, Landroid/os/Message;->arg1:I
 
@@ -1079,7 +980,6 @@
 
     goto/16 :goto_21
 
-    .line 346
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_26f
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1090,11 +990,9 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 351
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-nez v2, :cond_282
 
-    .line 352
     const-string v3, "IInputConnectionWrapper"
 
     const-string v4, "finishComposingText on inactive InputConnection"
@@ -1103,13 +1001,11 @@
 
     goto/16 :goto_21
 
-    .line 355
     :cond_282
     invoke-interface {v2}, Landroid/view/inputmethod/InputConnection;->finishComposingText()Z
 
     goto/16 :goto_21
 
-    .line 359
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_287
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1120,7 +1016,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 360
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_297
 
@@ -1130,7 +1025,6 @@
 
     if-nez v3, :cond_2a1
 
-    .line 361
     :cond_297
     const-string v3, "IInputConnectionWrapper"
 
@@ -1140,7 +1034,6 @@
 
     goto/16 :goto_21
 
-    .line 364
     :cond_2a1
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -1150,7 +1043,6 @@
 
     goto/16 :goto_21
 
-    .line 368
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_2aa
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1161,7 +1053,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 369
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_2ba
 
@@ -1171,7 +1062,6 @@
 
     if-nez v3, :cond_2c3
 
-    .line 370
     :cond_2ba
     const-string v3, "IInputConnectionWrapper"
 
@@ -1181,7 +1071,6 @@
 
     goto/16 :goto_21
 
-    .line 373
     :cond_2c3
     iget v3, p1, Landroid/os/Message;->arg1:I
 
@@ -1189,7 +1078,6 @@
 
     goto/16 :goto_21
 
-    .line 377
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_2ca
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1200,7 +1088,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 378
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_2da
 
@@ -1210,7 +1097,6 @@
 
     if-nez v3, :cond_2e3
 
-    .line 379
     :cond_2da
     const-string v3, "IInputConnectionWrapper"
 
@@ -1220,7 +1106,6 @@
 
     goto/16 :goto_21
 
-    .line 382
     :cond_2e3
     iget v3, p1, Landroid/os/Message;->arg1:I
 
@@ -1230,7 +1115,6 @@
 
     goto/16 :goto_21
 
-    .line 386
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_2ec
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1241,7 +1125,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 387
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_2fc
 
@@ -1251,7 +1134,6 @@
 
     if-nez v3, :cond_305
 
-    .line 388
     :cond_2fc
     const-string v3, "IInputConnectionWrapper"
 
@@ -1261,13 +1143,11 @@
 
     goto/16 :goto_21
 
-    .line 391
     :cond_305
     invoke-interface {v2}, Landroid/view/inputmethod/InputConnection;->beginBatchEdit()Z
 
     goto/16 :goto_21
 
-    .line 395
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_30a
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1278,7 +1158,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 396
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_31a
 
@@ -1288,7 +1167,6 @@
 
     if-nez v3, :cond_323
 
-    .line 397
     :cond_31a
     const-string v3, "IInputConnectionWrapper"
 
@@ -1298,13 +1176,11 @@
 
     goto/16 :goto_21
 
-    .line 400
     :cond_323
     invoke-interface {v2}, Landroid/view/inputmethod/InputConnection;->endBatchEdit()Z
 
     goto/16 :goto_21
 
-    .line 404
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_328
     iget-object v5, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1315,7 +1191,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 405
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_338
 
@@ -1325,7 +1200,6 @@
 
     if-nez v5, :cond_342
 
-    .line 406
     :cond_338
     const-string v3, "IInputConnectionWrapper"
 
@@ -1335,7 +1209,6 @@
 
     goto/16 :goto_21
 
-    .line 409
     :cond_342
     iget v5, p1, Landroid/os/Message;->arg1:I
 
@@ -1351,7 +1224,6 @@
 
     goto :goto_346
 
-    .line 413
     .end local v2           #ic:Landroid/view/inputmethod/InputConnection;
     :sswitch_34d
     iget-object v3, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mInputConnection:Ljava/lang/ref/WeakReference;
@@ -1362,7 +1234,6 @@
 
     check-cast v2, Landroid/view/inputmethod/InputConnection;
 
-    .line 414
     .restart local v2       #ic:Landroid/view/inputmethod/InputConnection;
     if-eqz v2, :cond_35d
 
@@ -1372,7 +1243,6 @@
 
     if-nez v3, :cond_367
 
-    .line 415
     :cond_35d
     const-string v3, "IInputConnectionWrapper"
 
@@ -1382,13 +1252,11 @@
 
     goto/16 :goto_21
 
-    .line 418
     :cond_367
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
-    .line 419
     .restart local v0       #args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     iget-object v3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->arg1:Ljava/lang/Object;
 
@@ -1402,7 +1270,6 @@
 
     goto/16 :goto_21
 
-    .line 192
     :sswitch_data_378
     .sparse-switch
         0xa -> :sswitch_22
@@ -1433,7 +1300,6 @@
     .registers 2
 
     .prologue
-    .line 146
     const/16 v0, 0x41
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessage(I)Landroid/os/Message;
@@ -1442,7 +1308,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 147
     return-void
 .end method
 
@@ -1453,7 +1318,6 @@
     .parameter "callback"
 
     .prologue
-    .line 104
     const/16 v0, 0x1e
 
     invoke-virtual {p0, v0, p1, p2, p3}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageISC(IIILcom/android/internal/view/IInputContextCallback;)Landroid/os/Message;
@@ -1462,7 +1326,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 105
     return-void
 .end method
 
@@ -1474,7 +1337,6 @@
     .parameter "callback"
 
     .prologue
-    .line 109
     const/16 v1, 0x28
 
     move-object v0, p0
@@ -1493,7 +1355,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 111
     return-void
 .end method
 
@@ -1504,7 +1365,6 @@
     .parameter "callback"
 
     .prologue
-    .line 100
     const/16 v0, 0x19
 
     invoke-virtual {p0, v0, p1, p2, p3}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageISC(IIILcom/android/internal/view/IInputContextCallback;)Landroid/os/Message;
@@ -1513,7 +1373,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 101
     return-void
 .end method
 
@@ -1525,7 +1384,6 @@
     .parameter "callback"
 
     .prologue
-    .line 92
     const/16 v1, 0xa
 
     move-object v0, p0
@@ -1544,7 +1402,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 93
     return-void
 .end method
 
@@ -1556,7 +1413,6 @@
     .parameter "callback"
 
     .prologue
-    .line 96
     const/16 v1, 0x14
 
     move-object v0, p0
@@ -1575,7 +1431,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 97
     return-void
 .end method
 
@@ -1583,7 +1438,6 @@
     .registers 2
 
     .prologue
-    .line 88
     const/4 v0, 0x1
 
     return v0
@@ -1594,7 +1448,6 @@
     .parameter "what"
 
     .prologue
-    .line 428
     iget-object v0, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -1611,7 +1464,6 @@
     .parameter "arg2"
 
     .prologue
-    .line 432
     iget-object v0, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
@@ -1630,19 +1482,15 @@
     .parameter "callback"
 
     .prologue
-    .line 447
     new-instance v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
     invoke-direct {v0}, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;-><init>()V
 
-    .line 448
     .local v0, args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     iput-object p5, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->callback:Lcom/android/internal/view/IInputContextCallback;
 
-    .line 449
     iput p4, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->seq:I
 
-    .line 450
     iget-object v1, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
     invoke-virtual {v1, p1, p2, p3, v0}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -1659,7 +1507,6 @@
     .parameter "arg2"
 
     .prologue
-    .line 463
     iget-object v0, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
     const/4 v1, 0x0
@@ -1680,22 +1527,17 @@
     .parameter "callback"
 
     .prologue
-    .line 455
     new-instance v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
     invoke-direct {v0}, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;-><init>()V
 
-    .line 456
     .local v0, args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     iput-object p3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 457
     iput-object p5, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->callback:Lcom/android/internal/view/IInputContextCallback;
 
-    .line 458
     iput p4, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->seq:I
 
-    .line 459
     iget-object v1, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
     const/4 v2, 0x0
@@ -1715,19 +1557,15 @@
     .parameter "callback"
 
     .prologue
-    .line 440
     new-instance v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
     invoke-direct {v0}, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;-><init>()V
 
-    .line 441
     .local v0, args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     iput-object p4, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->callback:Lcom/android/internal/view/IInputContextCallback;
 
-    .line 442
     iput p3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->seq:I
 
-    .line 443
     iget-object v1, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
     const/4 v2, 0x0
@@ -1747,7 +1585,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 436
     iget-object v0, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
     invoke-virtual {v0, p1, v1, v1, p2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -1766,19 +1603,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 467
     new-instance v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
 
     invoke-direct {v0}, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;-><init>()V
 
-    .line 468
     .local v0, args:Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;
     iput-object p2, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 469
     iput-object p3, v0, Lcom/android/internal/view/IInputConnectionWrapper$SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 470
     iget-object v1, p0, Lcom/android/internal/view/IInputConnectionWrapper;->mH:Landroid/os/Handler;
 
     invoke-virtual {v1, p1, v2, v2, v0}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
@@ -1793,7 +1626,6 @@
     .parameter "id"
 
     .prologue
-    .line 134
     const/16 v0, 0x3b
 
     const/4 v1, 0x0
@@ -1804,7 +1636,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 135
     return-void
 .end method
 
@@ -1813,7 +1644,6 @@
     .parameter "id"
 
     .prologue
-    .line 130
     const/16 v0, 0x3a
 
     const/4 v1, 0x0
@@ -1824,7 +1654,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 131
     return-void
 .end method
 
@@ -1834,7 +1663,6 @@
     .parameter "data"
 
     .prologue
-    .line 175
     const/16 v0, 0x78
 
     invoke-virtual {p0, v0, p1, p2}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageOO(ILjava/lang/Object;Ljava/lang/Object;)Landroid/os/Message;
@@ -1843,7 +1671,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 176
     return-void
 .end method
 
@@ -1854,7 +1681,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 171
     const/16 v2, 0x64
 
     if-eqz p1, :cond_e
@@ -1868,13 +1694,11 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 172
     return-void
 
     :cond_e
     move v0, v1
 
-    .line 171
     goto :goto_6
 .end method
 
@@ -1883,7 +1707,6 @@
     .parameter "event"
 
     .prologue
-    .line 150
     const/16 v0, 0x46
 
     invoke-virtual {p0, v0, p1}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageO(ILjava/lang/Object;)Landroid/os/Message;
@@ -1892,7 +1715,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 151
     return-void
 .end method
 
@@ -1902,7 +1724,6 @@
     .parameter "end"
 
     .prologue
-    .line 138
     const/16 v0, 0x3f
 
     invoke-virtual {p0, v0, p1, p2}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageII(III)Landroid/os/Message;
@@ -1911,7 +1732,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 139
     return-void
 .end method
 
@@ -1921,7 +1741,6 @@
     .parameter "newCursorPosition"
 
     .prologue
-    .line 142
     const/16 v0, 0x3c
 
     invoke-virtual {p0, v0, p2, p1}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageIO(IILjava/lang/Object;)Landroid/os/Message;
@@ -1930,7 +1749,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 143
     return-void
 .end method
 
@@ -1940,7 +1758,6 @@
     .parameter "end"
 
     .prologue
-    .line 126
     const/16 v0, 0x39
 
     invoke-virtual {p0, v0, p1, p2}, Lcom/android/internal/view/IInputConnectionWrapper;->obtainMessageII(III)Landroid/os/Message;
@@ -1949,6 +1766,5 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/view/IInputConnectionWrapper;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 127
     return-void
 .end method

@@ -28,7 +28,6 @@
     .registers 1
 
     .prologue
-    .line 69
     new-instance v0, Landroid/accounts/AccountManagerResponse$1;
 
     invoke-direct {v0}, Landroid/accounts/AccountManagerResponse$1;-><init>()V
@@ -43,13 +42,10 @@
     .parameter "response"
 
     .prologue
-    .line 32
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     iput-object p1, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
-    .line 34
     return-void
 .end method
 
@@ -58,10 +54,8 @@
     .parameter "parcel"
 
     .prologue
-    .line 37
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -72,7 +66,6 @@
 
     iput-object v0, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
-    .line 40
     return-void
 .end method
 
@@ -82,7 +75,6 @@
     .registers 2
 
     .prologue
-    .line 60
     const/4 v0, 0x0
 
     return v0
@@ -94,7 +86,6 @@
     .parameter "errorMessage"
 
     .prologue
-    .line 52
     :try_start_0
     iget-object v0, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
@@ -102,11 +93,9 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 56
     :goto_5
     return-void
 
-    .line 53
     :catch_6
     move-exception v0
 
@@ -118,7 +107,6 @@
     .parameter "result"
 
     .prologue
-    .line 44
     :try_start_0
     iget-object v0, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
@@ -126,11 +114,9 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 48
     :goto_5
     return-void
 
-    .line 45
     :catch_6
     move-exception v0
 
@@ -143,7 +129,6 @@
     .parameter "flags"
 
     .prologue
-    .line 65
     iget-object v0, p0, Landroid/accounts/AccountManagerResponse;->mResponse:Landroid/accounts/IAccountManagerResponse;
 
     invoke-interface {v0}, Landroid/accounts/IAccountManagerResponse;->asBinder()Landroid/os/IBinder;
@@ -152,6 +137,5 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 66
     return-void
 .end method

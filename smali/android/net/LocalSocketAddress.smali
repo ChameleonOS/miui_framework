@@ -23,12 +23,10 @@
     .parameter "name"
 
     .prologue
-    .line 80
     sget-object v0, Landroid/net/LocalSocketAddress$Namespace;->ABSTRACT:Landroid/net/LocalSocketAddress$Namespace;
 
     invoke-direct {p0, p1, v0}, Landroid/net/LocalSocketAddress;-><init>(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V
 
-    .line 81
     return-void
 .end method
 
@@ -38,16 +36,12 @@
     .parameter "namespace"
 
     .prologue
-    .line 68
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
     iput-object p1, p0, Landroid/net/LocalSocketAddress;->name:Ljava/lang/String;
 
-    .line 70
     iput-object p2, p0, Landroid/net/LocalSocketAddress;->namespace:Landroid/net/LocalSocketAddress$Namespace;
 
-    .line 71
     return-void
 .end method
 
@@ -57,7 +51,6 @@
     .registers 2
 
     .prologue
-    .line 89
     iget-object v0, p0, Landroid/net/LocalSocketAddress;->name:Ljava/lang/String;
 
     return-object v0
@@ -67,7 +60,6 @@
     .registers 2
 
     .prologue
-    .line 98
     iget-object v0, p0, Landroid/net/LocalSocketAddress;->namespace:Landroid/net/LocalSocketAddress$Namespace;
 
     return-object v0

@@ -44,7 +44,6 @@
 
     const/4 v2, 0x0
 
-    .line 374
     new-instance v0, Landroid/graphics/Path$Direction;
 
     const-string v1, "CW"
@@ -53,7 +52,6 @@
 
     sput-object v0, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
-    .line 376
     new-instance v0, Landroid/graphics/Path$Direction;
 
     const-string v1, "CCW"
@@ -62,7 +60,6 @@
 
     sput-object v0, Landroid/graphics/Path$Direction;->CCW:Landroid/graphics/Path$Direction;
 
-    .line 372
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/graphics/Path$Direction;
@@ -92,13 +89,10 @@
     .end annotation
 
     .prologue
-    .line 378
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 379
     iput p3, p0, Landroid/graphics/Path$Direction;->nativeInt:I
 
-    .line 380
     return-void
 .end method
 
@@ -107,7 +101,6 @@
     .parameter "name"
 
     .prologue
-    .line 372
     const-class v0, Landroid/graphics/Path$Direction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -123,7 +116,6 @@
     .registers 1
 
     .prologue
-    .line 372
     sget-object v0, Landroid/graphics/Path$Direction;->$VALUES:[Landroid/graphics/Path$Direction;
 
     invoke-virtual {v0}, [Landroid/graphics/Path$Direction;->clone()Ljava/lang/Object;

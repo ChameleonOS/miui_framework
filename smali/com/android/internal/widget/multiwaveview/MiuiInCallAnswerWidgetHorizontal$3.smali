@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 518
     iput-object p1, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "animation"
 
     .prologue
-    .line 522
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 
     invoke-virtual {v3}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->getVisibility()I
@@ -51,7 +49,6 @@
 
     if-eqz v3, :cond_20
 
-    .line 523
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 
     #getter for: Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
@@ -61,7 +58,6 @@
 
     if-eqz v3, :cond_1f
 
-    .line 524
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 
     #getter for: Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
@@ -69,7 +65,6 @@
 
     move-result-object v0
 
-    .line 525
     .local v0, a:Landroid/animation/Animator;
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 
@@ -78,16 +73,13 @@
     #setter for: Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->mHintAnimation:Landroid/animation/ValueAnimator;
     invoke-static {v3, v4}, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;->access$102(Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 526
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->end()V
 
-    .line 533
     .end local v0           #a:Landroid/animation/Animator;
     :cond_1f
     :goto_1f
     return-void
 
-    .line 530
     :cond_20
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 
@@ -100,7 +92,6 @@
 
     move-result v2
 
-    .line 531
     .local v2, value:F
     const/high16 v3, 0x42c8
 
@@ -112,7 +103,6 @@
 
     float-to-int v1, v3
 
-    .line 532
     .local v1, i:I
     iget-object v3, p0, Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal$3;->this$0:Lcom/android/internal/widget/multiwaveview/MiuiInCallAnswerWidgetHorizontal;
 

@@ -14,7 +14,6 @@
     .registers 1
 
     .prologue
-    .line 19
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
@@ -28,7 +27,6 @@
     .registers 1
 
     .prologue
-    .line 16
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,22 +38,18 @@
     .parameter "account"
 
     .prologue
-    .line 29
     sget-object v3, Lmiui/provider/GalleryCloudSyncTagUtils;->sSyncTagLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 31
     const/4 v0, 0x0
 
-    .line 33
     .local v0, cursor:Landroid/database/Cursor;
     :try_start_4
     invoke-static {p0, p1}, Lmiui/provider/GalleryCloudSyncTagUtils;->getSyncTagCursorByAccount(Landroid/content/Context;Landroid/accounts/Account;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 34
     if-eqz v0, :cond_1c
 
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
@@ -64,7 +58,6 @@
 
     if-eqz v1, :cond_1c
 
-    .line 35
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -73,37 +66,29 @@
 
     move-result-wide v1
 
-    .line 41
     if-eqz v0, :cond_1a
 
-    .line 42
     :try_start_17
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 35
     :cond_1a
     monitor-exit v3
 
-    .line 38
     :goto_1b
     return-wide v1
 
     :cond_1c
     const-wide/16 v1, 0x1
 
-    .line 41
     if-eqz v0, :cond_23
 
-    .line 42
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 38
     :cond_23
     monitor-exit v3
 
     goto :goto_1b
 
-    .line 45
     :catchall_25
     move-exception v1
 
@@ -113,17 +98,14 @@
 
     throw v1
 
-    .line 41
     :catchall_28
     move-exception v1
 
     if-eqz v0, :cond_2e
 
-    .line 42
     :try_start_2b
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 41
     :cond_2e
     throw v1
     :try_end_2f
@@ -138,7 +120,6 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 98
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -220,18 +201,15 @@
     .parameter "account"
 
     .prologue
-    .line 63
     sget-object v2, Lmiui/provider/GalleryCloudSyncTagUtils;->sSyncTagLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 64
     :try_start_3
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 65
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "accountName"
 
@@ -239,23 +217,18 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 66
     const-string v1, "accountType"
 
     iget-object v3, p1, Landroid/accounts/Account;->type:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 67
     invoke-static {p0, p1, v0}, Lmiui/provider/GalleryCloudSyncTagUtils;->internalUpdateAccount(Landroid/content/Context;Landroid/accounts/Account;Landroid/content/ContentValues;)V
 
-    .line 68
     monitor-exit v2
 
-    .line 69
     return-void
 
-    .line 68
     .end local v0           #values:Landroid/content/ContentValues;
     :catchall_1b
     move-exception v1
@@ -274,23 +247,19 @@
     .parameter "values"
 
     .prologue
-    .line 73
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 74
     .local v1, resolver:Landroid/content/ContentResolver;
     const/4 v0, 0x0
 
-    .line 76
     .local v0, cursor:Landroid/database/Cursor;
     :try_start_5
     invoke-static {p0, p1}, Lmiui/provider/GalleryCloudSyncTagUtils;->getSyncTagCursorByAccount(Landroid/content/Context;Landroid/accounts/Account;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 77
     if-eqz v0, :cond_11
 
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
@@ -299,7 +268,6 @@
 
     if-nez v2, :cond_27
 
-    .line 79
     :cond_11
     const-string/jumbo v2, "syncTag"
 
@@ -311,27 +279,22 @@
 
     invoke-virtual {p2, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 81
     sget-object v2, Lmiui/provider/GalleryCloudUtils;->CLOUD_SETTING_URI:Landroid/net/Uri;
 
     invoke-virtual {v1, v2, p2}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
     :try_end_21
     .catchall {:try_start_5 .. :try_end_21} :catchall_4f
 
-    .line 91
     :cond_21
     :goto_21
     if-eqz v0, :cond_26
 
-    .line 92
     :goto_23
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 95
     :cond_26
     return-void
 
-    .line 83
     :cond_27
     :try_start_27
     const-string/jumbo v2, "syncTag"
@@ -342,12 +305,10 @@
 
     if-nez v2, :cond_33
 
-    .line 91
     if-eqz v0, :cond_26
 
     goto :goto_23
 
-    .line 86
     :cond_33
     const/4 v2, 0x0
 
@@ -369,7 +330,6 @@
 
     if-eqz v2, :cond_21
 
-    .line 87
     sget-object v2, Lmiui/provider/GalleryCloudUtils;->CLOUD_SETTING_URI:Landroid/net/Uri;
 
     const/4 v3, 0x0
@@ -382,16 +342,13 @@
 
     goto :goto_21
 
-    .line 91
     :catchall_4f
     move-exception v2
 
     if-eqz v0, :cond_55
 
-    .line 92
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 91
     :cond_55
     throw v2
 .end method
@@ -403,33 +360,26 @@
     .parameter "syncTag"
 
     .prologue
-    .line 55
     sget-object v2, Lmiui/provider/GalleryCloudSyncTagUtils;->sSyncTagLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 56
     :try_start_3
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 57
     .local v0, values:Landroid/content/ContentValues;
     const-string/jumbo v1, "syncTag"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 58
     invoke-static {p0, p1, v0}, Lmiui/provider/GalleryCloudSyncTagUtils;->internalUpdateAccount(Landroid/content/Context;Landroid/accounts/Account;Landroid/content/ContentValues;)V
 
-    .line 59
     monitor-exit v2
 
-    .line 60
     return-void
 
-    .line 59
     .end local v0           #values:Landroid/content/ContentValues;
     :catchall_13
     move-exception v1

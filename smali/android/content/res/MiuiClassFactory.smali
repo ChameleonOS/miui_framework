@@ -8,10 +8,8 @@
     .registers 1
 
     .prologue
-    .line 10
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
     return-void
 .end method
 
@@ -19,7 +17,6 @@
     .registers 1
 
     .prologue
-    .line 23
     new-instance v0, Landroid/content/res/MiuiResources;
 
     invoke-direct {v0}, Landroid/content/res/MiuiResources;-><init>()V
@@ -34,7 +31,6 @@
     .parameter "config"
 
     .prologue
-    .line 14
     new-instance v0, Landroid/content/res/MiuiResources;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/content/res/MiuiResources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V
@@ -50,7 +46,6 @@
     .parameter "compInfo"
 
     .prologue
-    .line 19
     new-instance v0, Landroid/content/res/MiuiResources;
 
     invoke-direct {v0, p0, p1, p2, p3}, Landroid/content/res/MiuiResources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;Landroid/content/res/CompatibilityInfo;)V
@@ -66,7 +61,6 @@
     .parameter "len"
 
     .prologue
-    .line 27
     new-instance v0, Landroid/content/res/MiuiTypedArray;
 
     invoke-direct {v0, p0, p1, p2, p3}, Landroid/content/res/MiuiTypedArray;-><init>(Landroid/content/res/Resources;[I[II)V

@@ -48,7 +48,6 @@
 
     const/4 v2, 0x0
 
-    .line 318
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string v1, "LEFT"
@@ -57,7 +56,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
 
-    .line 322
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string v1, "CENTER"
@@ -66,7 +64,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
-    .line 326
     new-instance v0, Landroid/graphics/Paint$Align;
 
     const-string v1, "RIGHT"
@@ -75,7 +72,6 @@
 
     sput-object v0, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
 
-    .line 314
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/Paint$Align;
@@ -109,13 +105,10 @@
     .end annotation
 
     .prologue
-    .line 328
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 329
     iput p3, p0, Landroid/graphics/Paint$Align;->nativeInt:I
 
-    .line 330
     return-void
 .end method
 
@@ -124,7 +117,6 @@
     .parameter "name"
 
     .prologue
-    .line 314
     const-class v0, Landroid/graphics/Paint$Align;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +132,6 @@
     .registers 1
 
     .prologue
-    .line 314
     sget-object v0, Landroid/graphics/Paint$Align;->$VALUES:[Landroid/graphics/Paint$Align;
 
     invoke-virtual {v0}, [Landroid/graphics/Paint$Align;->clone()Ljava/lang/Object;

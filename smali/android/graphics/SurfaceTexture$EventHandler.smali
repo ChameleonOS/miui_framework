@@ -25,13 +25,10 @@
     .parameter "looper"
 
     .prologue
-    .line 272
     iput-object p1, p0, Landroid/graphics/SurfaceTexture$EventHandler;->this$0:Landroid/graphics/SurfaceTexture;
 
-    .line 273
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 274
     return-void
 .end method
 
@@ -42,7 +39,6 @@
     .parameter "msg"
 
     .prologue
-    .line 278
     iget-object v0, p0, Landroid/graphics/SurfaceTexture$EventHandler;->this$0:Landroid/graphics/SurfaceTexture;
 
     #getter for: Landroid/graphics/SurfaceTexture;->mOnFrameAvailableListener:Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
@@ -52,7 +48,6 @@
 
     if-eqz v0, :cond_13
 
-    .line 279
     iget-object v0, p0, Landroid/graphics/SurfaceTexture$EventHandler;->this$0:Landroid/graphics/SurfaceTexture;
 
     #getter for: Landroid/graphics/SurfaceTexture;->mOnFrameAvailableListener:Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
@@ -64,7 +59,6 @@
 
     invoke-interface {v0, v1}, Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;->onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
 
-    .line 281
     :cond_13
     return-void
 .end method

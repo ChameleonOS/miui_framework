@@ -30,12 +30,9 @@
     .parameter "hash"
 
     .prologue
-    .line 93
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/sax/Element;-><init>(Landroid/sax/Element;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 94
     iput p5, p0, Landroid/sax/Children$Child;->hash:I
 
-    .line 95
     return-void
 .end method

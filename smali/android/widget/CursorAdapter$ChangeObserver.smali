@@ -24,17 +24,14 @@
     .parameter
 
     .prologue
-    .line 448
     iput-object p1, p0, Landroid/widget/CursorAdapter$ChangeObserver;->this$0:Landroid/widget/CursorAdapter;
 
-    .line 449
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 450
     return-void
 .end method
 
@@ -44,7 +41,6 @@
     .registers 2
 
     .prologue
-    .line 454
     const/4 v0, 0x1
 
     return v0
@@ -55,11 +51,9 @@
     .parameter "selfChange"
 
     .prologue
-    .line 459
     iget-object v0, p0, Landroid/widget/CursorAdapter$ChangeObserver;->this$0:Landroid/widget/CursorAdapter;
 
     invoke-virtual {v0}, Landroid/widget/CursorAdapter;->onContentChanged()V
 
-    .line 460
     return-void
 .end method

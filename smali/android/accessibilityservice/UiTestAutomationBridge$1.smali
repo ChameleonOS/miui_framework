@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 137
     iput-object p1, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "event"
 
     .prologue
-    .line 150
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     #getter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
@@ -52,7 +50,6 @@
 
     monitor-enter v1
 
-    .line 152
     :goto_7
     :try_start_7
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
@@ -64,7 +61,6 @@
     #setter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mLastEvent:Landroid/view/accessibility/AccessibilityEvent;
     invoke-static {v0, v2}, Landroid/accessibilityservice/UiTestAutomationBridge;->access$102(Landroid/accessibilityservice/UiTestAutomationBridge;Landroid/view/accessibility/AccessibilityEvent;)Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 153
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     #getter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mWaitingForEventDelivery:Z
@@ -74,7 +70,6 @@
 
     if-nez v0, :cond_28
 
-    .line 154
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     #getter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
@@ -84,21 +79,17 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 168
     :goto_21
     monitor-exit v1
     :try_end_22
     .catchall {:try_start_7 .. :try_end_22} :catchall_40
 
-    .line 169
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     invoke-virtual {v0, p1}, Landroid/accessibilityservice/UiTestAutomationBridge;->onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 170
     return-void
 
-    .line 157
     :cond_28
     :try_start_28
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
@@ -110,7 +101,6 @@
 
     if-nez v0, :cond_43
 
-    .line 158
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     const/4 v2, 0x1
@@ -118,7 +108,6 @@
     #setter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mUnprocessedEventAvailable:Z
     invoke-static {v0, v2}, Landroid/accessibilityservice/UiTestAutomationBridge;->access$302(Landroid/accessibilityservice/UiTestAutomationBridge;Z)Z
 
-    .line 159
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     #getter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
@@ -130,7 +119,6 @@
 
     goto :goto_21
 
-    .line 168
     :catchall_40
     move-exception v0
 
@@ -140,7 +128,6 @@
 
     throw v0
 
-    .line 163
     :cond_43
     :try_start_43
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
@@ -157,7 +144,6 @@
 
     goto :goto_7
 
-    .line 164
     :catch_4d
     move-exception v0
 
@@ -169,7 +155,6 @@
     .parameter "gestureId"
 
     .prologue
-    .line 182
     const/4 v0, 0x0
 
     return v0
@@ -179,12 +164,10 @@
     .registers 2
 
     .prologue
-    .line 145
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     invoke-virtual {v0}, Landroid/accessibilityservice/UiTestAutomationBridge;->onInterrupt()V
 
-    .line 146
     return-void
 .end method
 
@@ -192,7 +175,6 @@
     .registers 1
 
     .prologue
-    .line 141
     return-void
 .end method
 
@@ -201,7 +183,6 @@
     .parameter "connectionId"
 
     .prologue
-    .line 174
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     #getter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
@@ -211,14 +192,12 @@
 
     monitor-enter v1
 
-    .line 175
     :try_start_7
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     #setter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mConnectionId:I
     invoke-static {v0, p1}, Landroid/accessibilityservice/UiTestAutomationBridge;->access$402(Landroid/accessibilityservice/UiTestAutomationBridge;I)I
 
-    .line 176
     iget-object v0, p0, Landroid/accessibilityservice/UiTestAutomationBridge$1;->this$0:Landroid/accessibilityservice/UiTestAutomationBridge;
 
     #getter for: Landroid/accessibilityservice/UiTestAutomationBridge;->mLock:Ljava/lang/Object;
@@ -228,13 +207,10 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 177
     monitor-exit v1
 
-    .line 178
     return-void
 
-    .line 177
     :catchall_17
     move-exception v0
 

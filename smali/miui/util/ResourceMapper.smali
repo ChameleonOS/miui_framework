@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 6
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,12 +19,10 @@
     .parameter "id"
 
     .prologue
-    .line 8
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 9
     .local v0, outValue:Landroid/util/TypedValue;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -35,7 +32,6 @@
 
     invoke-virtual {v1, p1, v0, v2}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 10
     iget v1, v0, Landroid/util/TypedValue;->resourceId:I
 
     if-nez v1, :cond_12

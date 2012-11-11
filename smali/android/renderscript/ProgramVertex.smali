@@ -18,10 +18,8 @@
     .parameter "rs"
 
     .prologue
-    .line 55
     invoke-direct {p0, p1, p2}, Landroid/renderscript/Program;-><init>(ILandroid/renderscript/RenderScript;)V
 
-    .line 56
     return-void
 .end method
 
@@ -32,7 +30,6 @@
     .parameter "slot"
 
     .prologue
-    .line 72
     if-ltz p1, :cond_7
 
     iget-object v0, p0, Landroid/renderscript/Program;->mInputs:[Landroid/renderscript/Element;
@@ -41,7 +38,6 @@
 
     if-lt p1, v0, :cond_f
 
-    .line 73
     :cond_7
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -51,7 +47,6 @@
 
     throw v0
 
-    .line 75
     :cond_f
     iget-object v0, p0, Landroid/renderscript/Program;->mInputs:[Landroid/renderscript/Element;
 
@@ -64,7 +59,6 @@
     .registers 2
 
     .prologue
-    .line 63
     iget-object v0, p0, Landroid/renderscript/Program;->mInputs:[Landroid/renderscript/Element;
 
     if-eqz v0, :cond_8

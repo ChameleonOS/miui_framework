@@ -16,16 +16,12 @@
     .parameter "userId"
 
     .prologue
-    .line 28
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     iput-object p1, p0, Landroid/accounts/AccountAndUser;->account:Landroid/accounts/Account;
 
-    .line 30
     iput p2, p0, Landroid/accounts/AccountAndUser;->userId:I
 
-    .line 31
     return-void
 .end method
 
@@ -40,15 +36,12 @@
 
     const/4 v2, 0x0
 
-    .line 34
     if-ne p0, p1, :cond_5
 
-    .line 37
     :cond_4
     :goto_4
     return v1
 
-    .line 35
     :cond_5
     instance-of v3, p1, Landroid/accounts/AccountAndUser;
 
@@ -61,10 +54,8 @@
     :cond_b
     move-object v0, p1
 
-    .line 36
     check-cast v0, Landroid/accounts/AccountAndUser;
 
-    .line 37
     .local v0, other:Landroid/accounts/AccountAndUser;
     iget-object v3, p0, Landroid/accounts/AccountAndUser;->account:Landroid/accounts/Account;
 
@@ -92,7 +83,6 @@
     .registers 3
 
     .prologue
-    .line 43
     iget-object v0, p0, Landroid/accounts/AccountAndUser;->account:Landroid/accounts/Account;
 
     invoke-virtual {v0}, Landroid/accounts/Account;->hashCode()I
@@ -110,7 +100,6 @@
     .registers 3
 
     .prologue
-    .line 47
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

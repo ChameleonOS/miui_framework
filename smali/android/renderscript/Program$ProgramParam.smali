@@ -52,7 +52,6 @@
 
     const/4 v2, 0x0
 
-    .line 57
     new-instance v0, Landroid/renderscript/Program$ProgramParam;
 
     const-string v1, "INPUT"
@@ -61,7 +60,6 @@
 
     sput-object v0, Landroid/renderscript/Program$ProgramParam;->INPUT:Landroid/renderscript/Program$ProgramParam;
 
-    .line 58
     new-instance v0, Landroid/renderscript/Program$ProgramParam;
 
     const-string v1, "OUTPUT"
@@ -70,7 +68,6 @@
 
     sput-object v0, Landroid/renderscript/Program$ProgramParam;->OUTPUT:Landroid/renderscript/Program$ProgramParam;
 
-    .line 59
     new-instance v0, Landroid/renderscript/Program$ProgramParam;
 
     const-string v1, "CONSTANT"
@@ -79,7 +76,6 @@
 
     sput-object v0, Landroid/renderscript/Program$ProgramParam;->CONSTANT:Landroid/renderscript/Program$ProgramParam;
 
-    .line 60
     new-instance v0, Landroid/renderscript/Program$ProgramParam;
 
     const-string v1, "TEXTURE_TYPE"
@@ -88,7 +84,6 @@
 
     sput-object v0, Landroid/renderscript/Program$ProgramParam;->TEXTURE_TYPE:Landroid/renderscript/Program$ProgramParam;
 
-    .line 56
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/renderscript/Program$ProgramParam;
@@ -126,13 +121,10 @@
     .end annotation
 
     .prologue
-    .line 63
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 64
     iput p3, p0, Landroid/renderscript/Program$ProgramParam;->mID:I
 
-    .line 65
     return-void
 .end method
 
@@ -141,7 +133,6 @@
     .parameter "name"
 
     .prologue
-    .line 56
     const-class v0, Landroid/renderscript/Program$ProgramParam;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -157,7 +148,6 @@
     .registers 1
 
     .prologue
-    .line 56
     sget-object v0, Landroid/renderscript/Program$ProgramParam;->$VALUES:[Landroid/renderscript/Program$ProgramParam;
 
     invoke-virtual {v0}, [Landroid/renderscript/Program$ProgramParam;->clone()Ljava/lang/Object;

@@ -35,26 +35,20 @@
     .parameter "npp"
 
     .prologue
-    .line 47
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 133
     new-instance v0, Landroid/webkit/PluginFullScreenHolder$1;
 
     invoke-direct {v0, p0}, Landroid/webkit/PluginFullScreenHolder$1;-><init>(Landroid/webkit/PluginFullScreenHolder;)V
 
     iput-object v0, p0, Landroid/webkit/PluginFullScreenHolder;->mCallback:Landroid/webkit/WebChromeClient$CustomViewCallback;
 
-    .line 48
     iput-object p1, p0, Landroid/webkit/PluginFullScreenHolder;->mWebView:Landroid/webkit/WebViewClassic;
 
-    .line 49
     iput p3, p0, Landroid/webkit/PluginFullScreenHolder;->mNpp:I
 
-    .line 50
     iput p2, p0, Landroid/webkit/PluginFullScreenHolder;->mOrientation:I
 
-    .line 51
     return-void
 .end method
 
@@ -63,7 +57,6 @@
     .parameter "x0"
 
     .prologue
-    .line 36
     iget-object v0, p0, Landroid/webkit/PluginFullScreenHolder;->mWebView:Landroid/webkit/WebViewClassic;
 
     return-object v0
@@ -74,7 +67,6 @@
     .parameter "x0"
 
     .prologue
-    .line 36
     iget v0, p0, Landroid/webkit/PluginFullScreenHolder;->mNpp:I
 
     return v0
@@ -85,7 +77,6 @@
     .parameter "x0"
 
     .prologue
-    .line 36
     iget-object v0, p0, Landroid/webkit/PluginFullScreenHolder;->mContentView:Landroid/view/View;
 
     return-object v0
@@ -95,7 +86,6 @@
     .registers 1
 
     .prologue
-    .line 36
     sget-object v0, Landroid/webkit/PluginFullScreenHolder;->mLayout:Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;
 
     return-object v0
@@ -106,7 +96,6 @@
     .parameter "x0"
 
     .prologue
-    .line 36
     sput-object p0, Landroid/webkit/PluginFullScreenHolder;->mLayout:Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;
 
     return-object p0
@@ -118,18 +107,15 @@
     .registers 3
 
     .prologue
-    .line 89
     iget-object v1, p0, Landroid/webkit/PluginFullScreenHolder;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v1}, Landroid/webkit/WebViewClassic;->getWebChromeClient()Landroid/webkit/WebChromeClient;
 
     move-result-object v0
 
-    .line 90
     .local v0, client:Landroid/webkit/WebChromeClient;
     invoke-virtual {v0}, Landroid/webkit/WebChromeClient;->onHideCustomView()V
 
-    .line 91
     return-void
 .end method
 
@@ -140,7 +126,6 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 56
     new-instance v2, Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;
 
     iget-object v3, p0, Landroid/webkit/PluginFullScreenHolder;->mWebView:Landroid/webkit/WebViewClassic;
@@ -153,37 +138,31 @@
 
     sput-object v2, Landroid/webkit/PluginFullScreenHolder;->mLayout:Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;
 
-    .line 57
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     const/16 v2, 0x11
 
     invoke-direct {v0, v4, v4, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    .line 62
     .local v0, layoutParams:Landroid/widget/FrameLayout$LayoutParams;
     sget-object v2, Landroid/webkit/PluginFullScreenHolder;->mLayout:Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;
 
     invoke-virtual {v2, p1, v0}, Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 63
     sget-object v2, Landroid/webkit/PluginFullScreenHolder;->mLayout:Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;->setVisibility(I)V
 
-    .line 69
     instance-of v2, p1, Landroid/view/SurfaceView;
 
     if-eqz v2, :cond_34
 
     move-object v1, p1
 
-    .line 70
     check-cast v1, Landroid/view/SurfaceView;
 
-    .line 71
     .local v1, sView:Landroid/view/SurfaceView;
     invoke-virtual {v1}, Landroid/view/SurfaceView;->isFixedSize()Z
 
@@ -191,19 +170,16 @@
 
     if-eqz v2, :cond_34
 
-    .line 72
     invoke-virtual {v1}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v2
 
     invoke-interface {v2}, Landroid/view/SurfaceHolder;->setSizeFromLayout()V
 
-    .line 76
     .end local v1           #sView:Landroid/view/SurfaceView;
     :cond_34
     iput-object p1, p0, Landroid/webkit/PluginFullScreenHolder;->mContentView:Landroid/view/View;
 
-    .line 77
     return-void
 .end method
 
@@ -211,7 +187,6 @@
     .registers 5
 
     .prologue
-    .line 81
     iget-object v1, p0, Landroid/webkit/PluginFullScreenHolder;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v1}, Landroid/webkit/WebViewClassic;->getViewManager()Landroid/webkit/ViewManager;
@@ -220,7 +195,6 @@
 
     if-eqz v1, :cond_11
 
-    .line 82
     iget-object v1, p0, Landroid/webkit/PluginFullScreenHolder;->mWebView:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v1}, Landroid/webkit/WebViewClassic;->getViewManager()Landroid/webkit/ViewManager;
@@ -229,7 +203,6 @@
 
     invoke-virtual {v1}, Landroid/webkit/ViewManager;->hideAll()V
 
-    .line 84
     :cond_11
     iget-object v1, p0, Landroid/webkit/PluginFullScreenHolder;->mWebView:Landroid/webkit/WebViewClassic;
 
@@ -237,7 +210,6 @@
 
     move-result-object v0
 
-    .line 85
     .local v0, client:Landroid/webkit/WebChromeClient;
     sget-object v1, Landroid/webkit/PluginFullScreenHolder;->mLayout:Landroid/webkit/PluginFullScreenHolder$CustomFrameLayout;
 
@@ -247,6 +219,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/webkit/WebChromeClient;->onShowCustomView(Landroid/view/View;ILandroid/webkit/WebChromeClient$CustomViewCallback;)V
 
-    .line 86
     return-void
 .end method

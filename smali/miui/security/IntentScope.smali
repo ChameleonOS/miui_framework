@@ -12,7 +12,6 @@
     .registers 1
 
     .prologue
-    .line 6
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,13 +24,10 @@
     .parameter "packageName"
 
     .prologue
-    .line 20
     if-eqz p1, :cond_5
 
-    .line 21
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 23
     :cond_5
     return-object p1
 .end method

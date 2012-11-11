@@ -55,16 +55,12 @@
     .parameter "header"
 
     .prologue
-    .line 116
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 117
     if-eqz p1, :cond_8
 
-    .line 118
     invoke-direct {p0, p1}, Landroid/net/http/HttpAuthHeader;->parseHeader(Ljava/lang/String;)V
 
-    .line 120
     :cond_8
     return-void
 .end method
@@ -74,27 +70,21 @@
     .parameter "header"
 
     .prologue
-    .line 265
     if-eqz p1, :cond_f
 
-    .line 266
     invoke-direct {p0, p1}, Landroid/net/http/HttpAuthHeader;->parseScheme(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 267
     .local v0, parameters:Ljava/lang/String;
     if-eqz v0, :cond_f
 
-    .line 269
     iget v1, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
     if-eqz v1, :cond_f
 
-    .line 270
     invoke-direct {p0, v0}, Landroid/net/http/HttpAuthHeader;->parseParameters(Ljava/lang/String;)V
 
-    .line 274
     .end local v0           #parameters:Ljava/lang/String;
     :cond_f
     return-void
@@ -105,21 +95,17 @@
     .parameter "parameter"
 
     .prologue
-    .line 336
     if-eqz p1, :cond_2c
 
-    .line 338
     const/16 v3, 0x3d
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
-    .line 339
     .local v0, i:I
     if-ltz v0, :cond_2c
 
-    .line 340
     const/4 v3, 0x0
 
     invoke-virtual {p1, v3, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -130,7 +116,6 @@
 
     move-result-object v1
 
-    .line 341
     .local v1, token:Ljava/lang/String;
     add-int/lit8 v3, v0, 0x1
 
@@ -146,7 +131,6 @@
 
     move-result-object v2
 
-    .line 350
     .local v2, value:Ljava/lang/String;
     const-string/jumbo v3, "realm"
 
@@ -156,10 +140,8 @@
 
     if-eqz v3, :cond_2d
 
-    .line 351
     iput-object v2, p0, Landroid/net/http/HttpAuthHeader;->mRealm:Ljava/lang/String;
 
-    .line 359
     .end local v0           #i:I
     .end local v1           #token:Ljava/lang/String;
     .end local v2           #value:Ljava/lang/String;
@@ -167,7 +149,6 @@
     :goto_2c
     return-void
 
-    .line 353
     .restart local v0       #i:I
     .restart local v1       #token:Ljava/lang/String;
     .restart local v2       #value:Ljava/lang/String;
@@ -178,7 +159,6 @@
 
     if-ne v3, v4, :cond_2c
 
-    .line 354
     invoke-direct {p0, v1, v2}, Landroid/net/http/HttpAuthHeader;->parseParameter(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_2c
@@ -190,12 +170,10 @@
     .parameter "value"
 
     .prologue
-    .line 366
     if-eqz p1, :cond_f
 
     if-eqz p2, :cond_f
 
-    .line 367
     const-string/jumbo v0, "nonce"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -204,15 +182,12 @@
 
     if-eqz v0, :cond_10
 
-    .line 368
     iput-object p2, p0, Landroid/net/http/HttpAuthHeader;->mNonce:Ljava/lang/String;
 
-    .line 392
     :cond_f
     :goto_f
     return-void
 
-    .line 372
     :cond_10
     const-string/jumbo v0, "stale"
 
@@ -222,12 +197,10 @@
 
     if-eqz v0, :cond_1d
 
-    .line 373
     invoke-direct {p0, p2}, Landroid/net/http/HttpAuthHeader;->parseStale(Ljava/lang/String;)V
 
     goto :goto_f
 
-    .line 377
     :cond_1d
     const-string/jumbo v0, "opaque"
 
@@ -237,12 +210,10 @@
 
     if-eqz v0, :cond_29
 
-    .line 378
     iput-object p2, p0, Landroid/net/http/HttpAuthHeader;->mOpaque:Ljava/lang/String;
 
     goto :goto_f
 
-    .line 382
     :cond_29
     const-string/jumbo v0, "qop"
 
@@ -252,7 +223,6 @@
 
     if-eqz v0, :cond_39
 
-    .line 383
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -261,7 +231,6 @@
 
     goto :goto_f
 
-    .line 387
     :cond_39
     const-string v0, "algorithm"
 
@@ -271,7 +240,6 @@
 
     if-eqz v0, :cond_f
 
-    .line 388
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -286,10 +254,8 @@
     .parameter "parameters"
 
     .prologue
-    .line 316
     if-eqz p1, :cond_f
 
-    .line 319
     :cond_2
     const/16 v1, 0x2c
 
@@ -297,23 +263,18 @@
 
     move-result v0
 
-    .line 320
     .local v0, i:I
     if-gez v0, :cond_10
 
-    .line 322
     invoke-direct {p0, p1}, Landroid/net/http/HttpAuthHeader;->parseParameter(Ljava/lang/String;)V
 
-    .line 327
     :goto_d
     if-gez v0, :cond_2
 
-    .line 329
     .end local v0           #i:I
     :cond_f
     return-void
 
-    .line 324
     .restart local v0       #i:I
     :cond_10
     const/4 v1, 0x0
@@ -324,7 +285,6 @@
 
     invoke-direct {p0, v1}, Landroid/net/http/HttpAuthHeader;->parseParameter(Ljava/lang/String;)V
 
-    .line 325
     add-int/lit8 v1, v0, 0x1
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -339,21 +299,17 @@
     .parameter "header"
 
     .prologue
-    .line 284
     if-eqz p1, :cond_36
 
-    .line 285
     const/16 v2, 0x20
 
     invoke-virtual {p1, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
-    .line 286
     .local v0, i:I
     if-ltz v0, :cond_36
 
-    .line 287
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -364,7 +320,6 @@
 
     move-result-object v1
 
-    .line 288
     .local v1, scheme:Ljava/lang/String;
     const-string v2, "Digest"
 
@@ -374,17 +329,14 @@
 
     if-eqz v2, :cond_2a
 
-    .line 289
     const/4 v2, 0x2
 
     iput v2, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
-    .line 292
     const-string/jumbo v2, "md5"
 
     iput-object v2, p0, Landroid/net/http/HttpAuthHeader;->mAlgorithm:Ljava/lang/String;
 
-    .line 299
     :cond_23
     :goto_23
     add-int/lit8 v2, v0, 0x1
@@ -393,13 +345,11 @@
 
     move-result-object v2
 
-    .line 303
     .end local v0           #i:I
     .end local v1           #scheme:Ljava/lang/String;
     :goto_29
     return-object v2
 
-    .line 294
     .restart local v0       #i:I
     .restart local v1       #scheme:Ljava/lang/String;
     :cond_2a
@@ -411,14 +361,12 @@
 
     if-eqz v2, :cond_23
 
-    .line 295
     const/4 v2, 0x1
 
     iput v2, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
     goto :goto_23
 
-    .line 303
     .end local v0           #i:I
     .end local v1           #scheme:Ljava/lang/String;
     :cond_36
@@ -432,10 +380,8 @@
     .parameter "value"
 
     .prologue
-    .line 399
     if-eqz p1, :cond_e
 
-    .line 400
     const-string/jumbo v0, "true"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -444,12 +390,10 @@
 
     if-eqz v0, :cond_e
 
-    .line 401
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/http/HttpAuthHeader;->mStale:Z
 
-    .line 404
     :cond_e
     return-void
 .end method
@@ -461,15 +405,12 @@
     .prologue
     const/16 v2, 0x22
 
-    .line 412
     if-eqz p0, :cond_21
 
-    .line 413
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 414
     .local v0, len:I
     const/4 v1, 0x2
 
@@ -491,7 +432,6 @@
 
     if-ne v1, v2, :cond_21
 
-    .line 416
     const/4 v1, 0x1
 
     add-int/lit8 v2, v0, -0x1
@@ -500,7 +440,6 @@
 
     move-result-object p0
 
-    .line 420
     .end local v0           #len:I
     .end local p0
     :cond_21
@@ -513,7 +452,6 @@
     .registers 2
 
     .prologue
-    .line 230
     iget-object v0, p0, Landroid/net/http/HttpAuthHeader;->mAlgorithm:Ljava/lang/String;
 
     return-object v0
@@ -523,7 +461,6 @@
     .registers 2
 
     .prologue
-    .line 207
     iget-object v0, p0, Landroid/net/http/HttpAuthHeader;->mNonce:Ljava/lang/String;
 
     return-object v0
@@ -533,7 +470,6 @@
     .registers 2
 
     .prologue
-    .line 214
     iget-object v0, p0, Landroid/net/http/HttpAuthHeader;->mOpaque:Ljava/lang/String;
 
     return-object v0
@@ -543,7 +479,6 @@
     .registers 2
 
     .prologue
-    .line 154
     iget-object v0, p0, Landroid/net/http/HttpAuthHeader;->mPassword:Ljava/lang/String;
 
     return-object v0
@@ -553,7 +488,6 @@
     .registers 2
 
     .prologue
-    .line 222
     iget-object v0, p0, Landroid/net/http/HttpAuthHeader;->mQop:Ljava/lang/String;
 
     return-object v0
@@ -563,7 +497,6 @@
     .registers 2
 
     .prologue
-    .line 200
     iget-object v0, p0, Landroid/net/http/HttpAuthHeader;->mRealm:Ljava/lang/String;
 
     return-object v0
@@ -573,7 +506,6 @@
     .registers 2
 
     .prologue
-    .line 185
     iget v0, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
     return v0
@@ -583,7 +515,6 @@
     .registers 2
 
     .prologue
-    .line 193
     iget-boolean v0, p0, Landroid/net/http/HttpAuthHeader;->mStale:Z
 
     return v0
@@ -593,7 +524,6 @@
     .registers 2
 
     .prologue
-    .line 140
     iget-object v0, p0, Landroid/net/http/HttpAuthHeader;->mUsername:Ljava/lang/String;
 
     return-object v0
@@ -605,7 +535,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 168
     iget v1, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
     if-ne v1, v0, :cond_6
@@ -623,7 +552,6 @@
     .registers 3
 
     .prologue
-    .line 175
     iget v0, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
     const/4 v1, 0x2
@@ -645,7 +573,6 @@
     .registers 2
 
     .prologue
-    .line 126
     iget-boolean v0, p0, Landroid/net/http/HttpAuthHeader;->mIsProxy:Z
 
     return v0
@@ -659,22 +586,18 @@
 
     const/4 v0, 0x1
 
-    .line 241
     iget-object v2, p0, Landroid/net/http/HttpAuthHeader;->mRealm:Ljava/lang/String;
 
     if-eqz v2, :cond_2b
 
-    .line 242
     iget v2, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
     if-ne v2, v0, :cond_b
 
-    .line 253
     :cond_a
     :goto_a
     return v0
 
-    .line 245
     :cond_b
     iget v2, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
@@ -682,7 +605,6 @@
 
     if-ne v2, v3, :cond_2b
 
-    .line 246
     iget-object v2, p0, Landroid/net/http/HttpAuthHeader;->mAlgorithm:Ljava/lang/String;
 
     const-string/jumbo v3, "md5"
@@ -715,7 +637,6 @@
     :cond_2b
     move v0, v1
 
-    .line 253
     goto :goto_a
 .end method
 
@@ -724,10 +645,8 @@
     .parameter "password"
 
     .prologue
-    .line 161
     iput-object p1, p0, Landroid/net/http/HttpAuthHeader;->mPassword:Ljava/lang/String;
 
-    .line 162
     return-void
 .end method
 
@@ -735,12 +654,10 @@
     .registers 2
 
     .prologue
-    .line 133
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/http/HttpAuthHeader;->mIsProxy:Z
 
-    .line 134
     return-void
 .end method
 
@@ -749,9 +666,7 @@
     .parameter "username"
 
     .prologue
-    .line 147
     iput-object p1, p0, Landroid/net/http/HttpAuthHeader;->mUsername:Ljava/lang/String;
 
-    .line 148
     return-void
 .end method

@@ -98,20 +98,16 @@
 
     const/4 v3, 0x0
 
-    .line 129
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 102
     iput-boolean v3, p0, Lcom/android/internal/view/menu/IconMenuView;->mMenuBeingLongpressed:Z
 
-    .line 131
     sget-object v1, Lcom/android/internal/R$styleable;->IconMenuView:[I
 
     invoke-virtual {p1, p2, v1, v3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 133
     .local v0, a:Landroid/content/res/TypedArray;
     const/16 v1, 0x40
 
@@ -121,14 +117,12 @@
 
     iput v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mRowHeight:I
 
-    .line 134
     invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mMaxRows:I
 
-    .line 135
     const/4 v1, 0x4
 
     const/4 v2, 0x6
@@ -139,31 +133,26 @@
 
     iput v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mMaxItems:I
 
-    .line 136
     invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mMaxItemsPerRow:I
 
-    .line 137
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mMoreIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 138
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 140
     sget-object v1, Lcom/android/internal/R$styleable;->MenuView:[I
 
     invoke-virtual {p1, p2, v1, v3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 141
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -172,50 +161,42 @@
 
     iput-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mItemBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 142
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDivider:Landroid/graphics/drawable/Drawable;
 
-    .line 143
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDividerRects:Ljava/util/ArrayList;
 
-    .line 144
     invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDivider:Landroid/graphics/drawable/Drawable;
 
-    .line 145
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDividerRects:Ljava/util/ArrayList;
 
-    .line 146
     invoke-virtual {v0, v3, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     iput v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mAnimations:I
 
-    .line 147
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 149
     iget-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDivider:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_77
 
-    .line 150
     iget-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDivider:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -224,20 +205,17 @@
 
     iput v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDividerHeight:I
 
-    .line 152
     iget v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDividerHeight:I
 
     if-ne v1, v7, :cond_77
 
     iput v4, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDividerHeight:I
 
-    .line 155
     :cond_77
     iget-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDivider:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_89
 
-    .line 156
     iget-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDivider:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -246,14 +224,12 @@
 
     iput v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDividerWidth:I
 
-    .line 158
     iget v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDividerWidth:I
 
     if-ne v1, v7, :cond_89
 
     iput v4, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDividerWidth:I
 
-    .line 161
     :cond_89
     iget v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mMaxRows:I
 
@@ -261,18 +237,14 @@
 
     iput-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayout:[I
 
-    .line 164
     invoke-virtual {p0, v3}, Lcom/android/internal/view/menu/IconMenuView;->setWillNotDraw(Z)V
 
-    .line 167
     invoke-virtual {p0, v4}, Lcom/android/internal/view/menu/IconMenuView;->setFocusableInTouchMode(Z)V
 
-    .line 169
     const/high16 v1, 0x4
 
     invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/IconMenuView;->setDescendantFocusability(I)V
 
-    .line 170
     return-void
 .end method
 
@@ -281,7 +253,6 @@
     .parameter "x0"
 
     .prologue
-    .line 51
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
     return-object v0
@@ -292,16 +263,13 @@
     .parameter "width"
 
     .prologue
-    .line 658
     iget v3, p0, Lcom/android/internal/view/menu/IconMenuView;->mMaxItemsPerRow:I
 
-    .line 659
     .local v3, maxNumItemsPerRow:I
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
 
     move-result v4
 
-    .line 660
     .local v4, numItems:I
     const/4 v1, 0x0
 
@@ -309,7 +277,6 @@
     :goto_7
     if-ge v1, v4, :cond_27
 
-    .line 661
     invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
@@ -320,42 +287,35 @@
 
     check-cast v2, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
 
-    .line 663
     .local v2, lp:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
     const/4 v5, 0x1
 
     iput v5, v2, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->maxNumItemsOnRow:I
 
-    .line 664
     move v0, v3
 
     .local v0, curNumItemsPerRow:I
     :goto_17
     if-lez v0, :cond_21
 
-    .line 667
     iget v5, v2, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->desiredWidth:I
 
     div-int v6, p1, v0
 
     if-ge v5, v6, :cond_24
 
-    .line 669
     iput v0, v2, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->maxNumItemsOnRow:I
 
-    .line 660
     :cond_21
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_7
 
-    .line 665
     :cond_24
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_17
 
-    .line 674
     .end local v0           #curNumItemsPerRow:I
     .end local v2           #lp:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
     :cond_27
@@ -368,18 +328,14 @@
     .prologue
     const/4 v9, 0x1
 
-    .line 252
     const/4 v1, 0x0
 
-    .line 254
     .local v1, itemPos:I
     iget-object v4, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayout:[I
 
-    .line 255
     .local v4, layout:[I
     iget v7, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayoutNumRows:I
 
-    .line 256
     .local v7, numRows:I
     const/4 v8, 0x0
 
@@ -387,23 +343,18 @@
     :goto_7
     if-ge v8, v7, :cond_27
 
-    .line 257
     aget v6, v4, v8
 
-    .line 263
     .local v6, numItemsOnRow:I
     if-ne v6, v9, :cond_12
 
-    .line 264
     add-int/lit8 v1, v1, 0x1
 
-    .line 256
     :goto_f
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_7
 
-    .line 268
     :cond_12
     move v3, v6
 
@@ -415,7 +366,6 @@
     :goto_14
     if-lez v3, :cond_2c
 
-    .line 270
     add-int/lit8 v1, v2, 0x1
 
     .end local v2           #itemPos:I
@@ -424,7 +374,6 @@
 
     move-result-object v0
 
-    .line 271
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -432,16 +381,13 @@
 
     check-cast v5, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
 
-    .line 272
     .local v5, lp:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
     iget v10, v5, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->maxNumItemsOnRow:I
 
     if-ge v10, v6, :cond_28
 
-    .line 273
     const/4 v9, 0x0
 
-    .line 278
     .end local v0           #child:Landroid/view/View;
     .end local v3           #itemsOnRowCounter:I
     .end local v5           #lp:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
@@ -449,7 +395,6 @@
     :cond_27
     return v9
 
-    .line 269
     .restart local v0       #child:Landroid/view/View;
     .restart local v3       #itemsOnRowCounter:I
     .restart local v5       #lp:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
@@ -478,25 +423,20 @@
     .parameter "width"
 
     .prologue
-    .line 182
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
 
     move-result v1
 
-    .line 183
     .local v1, numItems:I
     if-nez v1, :cond_a
 
-    .line 184
     const/4 v2, 0x0
 
     iput v2, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayoutNumRows:I
 
-    .line 209
     :cond_9
     return-void
 
-    .line 189
     :cond_a
     int-to-float v2, v1
 
@@ -520,27 +460,22 @@
 
     move-result v0
 
-    .line 196
     .local v0, curNumRows:I
     :goto_1b
     iget v2, p0, Lcom/android/internal/view/menu/IconMenuView;->mMaxRows:I
 
     if-gt v0, v2, :cond_9
 
-    .line 197
     invoke-direct {p0, v0, v1}, Lcom/android/internal/view/menu/IconMenuView;->layoutItemsUsingGravity(II)V
 
-    .line 199
     if-ge v0, v1, :cond_9
 
-    .line 204
     invoke-direct {p0}, Lcom/android/internal/view/menu/IconMenuView;->doItemsFit()Z
 
     move-result v2
 
     if-nez v2, :cond_9
 
-    .line 196
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1b
@@ -552,22 +487,17 @@
     .parameter "numItems"
 
     .prologue
-    .line 221
     div-int v2, p2, p1
 
-    .line 222
     .local v2, numBaseItemsPerRow:I
     rem-int v3, p2, p1
 
-    .line 229
     .local v3, numLeftoverItems:I
     sub-int v4, p1, v3
 
-    .line 231
     .local v4, rowsThatGetALeftoverItem:I
     iget-object v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayout:[I
 
-    .line 232
     .local v1, layout:[I
     const/4 v0, 0x0
 
@@ -575,30 +505,24 @@
     :goto_9
     if-ge v0, p1, :cond_18
 
-    .line 233
     aput v2, v1, v0
 
-    .line 236
     if-lt v0, v4, :cond_15
 
-    .line 237
     aget v5, v1, v0
 
     add-int/lit8 v5, v5, 0x1
 
     aput v5, v1, v0
 
-    .line 232
     :cond_15
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_9
 
-    .line 241
     :cond_18
     iput p1, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayoutNumRows:I
 
-    .line 242
     return-void
 .end method
 
@@ -608,7 +532,6 @@
     .parameter "menuHeight"
 
     .prologue
-    .line 327
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDivider:Landroid/graphics/drawable/Drawable;
@@ -625,7 +548,6 @@
 
     invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->clear()V
 
-    .line 328
     :cond_11
     move-object/from16 v0, p0
 
@@ -643,35 +565,28 @@
 
     invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->clear()V
 
-    .line 331
     :cond_22
     move-object/from16 v0, p0
 
     iget v14, v0, Lcom/android/internal/view/menu/IconMenuView;->mLayoutNumRows:I
 
-    .line 332
     .local v14, numRows:I
     add-int/lit8 v15, v14, -0x1
 
-    .line 333
     .local v15, numRowsMinus1:I
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/internal/view/menu/IconMenuView;->mLayout:[I
 
-    .line 336
     .local v13, numItemsForRow:[I
     const/4 v9, 0x0
 
-    .line 338
     .local v9, itemPos:I
     const/4 v6, 0x0
 
-    .line 343
     .local v6, childLayoutParams:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
     const/4 v11, 0x0
 
-    .line 347
     .local v11, itemTop:F
     move-object/from16 v0, p0
 
@@ -697,7 +612,6 @@
 
     div-float v7, v17, v18
 
-    .line 350
     .local v7, itemHeight:F
     const/16 v16, 0x0
 
@@ -707,10 +621,8 @@
 
     if-ge v0, v14, :cond_154
 
-    .line 352
     const/4 v8, 0x0
 
-    .line 355
     .local v8, itemLeft:F
     move-object/from16 v0, p0
 
@@ -742,7 +654,6 @@
 
     div-float v12, v17, v18
 
-    .line 358
     .local v12, itemWidth:F
     const/4 v10, 0x0
 
@@ -754,14 +665,12 @@
 
     if-ge v10, v0, :cond_101
 
-    .line 360
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v9}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 361
     .local v5, child:Landroid/view/View;
     float-to-int v0, v12
 
@@ -789,7 +698,6 @@
 
     invoke-virtual {v5, v0, v1}, Landroid/view/View;->measure(II)V
 
-    .line 365
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
@@ -797,7 +705,6 @@
     .end local v6           #childLayoutParams:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
     check-cast v6, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
 
-    .line 366
     .restart local v6       #childLayoutParams:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
     float-to-int v0, v8
 
@@ -807,7 +714,6 @@
 
     iput v0, v6, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->left:I
 
-    .line 367
     add-float v17, v8, v12
 
     move/from16 v0, v17
@@ -820,7 +726,6 @@
 
     iput v0, v6, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->right:I
 
-    .line 368
     float-to-int v0, v11
 
     move/from16 v17, v0
@@ -829,7 +734,6 @@
 
     iput v0, v6, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->top:I
 
-    .line 369
     add-float v17, v11, v7
 
     move/from16 v0, v17
@@ -842,13 +746,10 @@
 
     iput v0, v6, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->bottom:I
 
-    .line 372
     add-float/2addr v8, v12
 
-    .line 373
     add-int/lit8 v9, v9, 0x1
 
-    .line 376
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDivider:Landroid/graphics/drawable/Drawable;
@@ -857,7 +758,6 @@
 
     if-eqz v17, :cond_f0
 
-    .line 377
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDividerRects:Ljava/util/ArrayList;
@@ -906,7 +806,6 @@
 
     invoke-virtual/range {v17 .. v18}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 385
     :cond_f0
     move-object/from16 v0, p0
 
@@ -922,26 +821,21 @@
 
     add-float v8, v8, v17
 
-    .line 358
     add-int/lit8 v10, v10, 0x1
 
     goto/16 :goto_69
 
-    .line 389
     .end local v5           #child:Landroid/view/View;
     :cond_101
     if-eqz v6, :cond_107
 
-    .line 390
     move/from16 v0, p1
 
     iput v0, v6, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->right:I
 
-    .line 393
     :cond_107
     add-float/2addr v11, v7
 
-    .line 396
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDivider:Landroid/graphics/drawable/Drawable;
@@ -954,7 +848,6 @@
 
     if-ge v0, v15, :cond_150
 
-    .line 397
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDividerRects:Ljava/util/ArrayList;
@@ -1003,7 +896,6 @@
 
     invoke-virtual/range {v17 .. v18}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 400
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDividerHeight:I
@@ -1018,13 +910,11 @@
 
     add-float v11, v11, v17
 
-    .line 350
     :cond_150
     add-int/lit8 v16, v16, 0x1
 
     goto/16 :goto_47
 
-    .line 403
     .end local v8           #itemLeft:F
     .end local v10           #itemPosOnRow:I
     .end local v12           #itemWidth:F
@@ -1037,10 +927,8 @@
     .parameter "shortcut"
 
     .prologue
-    .line 644
     iput-boolean p1, p0, Lcom/android/internal/view/menu/IconMenuView;->mLastChildrenCaptionMode:Z
 
-    .line 646
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
 
     move-result v1
@@ -1051,7 +939,6 @@
     :goto_8
     if-ltz v0, :cond_16
 
-    .line 647
     invoke-virtual {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -1060,12 +947,10 @@
 
     invoke-virtual {v1, p1}, Lcom/android/internal/view/menu/IconMenuItemView;->setCaptionMode(Z)V
 
-    .line 646
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_8
 
-    .line 649
     :cond_16
     return-void
 .end method
@@ -1077,23 +962,17 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 593
     if-nez p1, :cond_c
 
-    .line 598
     invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/IconMenuView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 599
     invoke-direct {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->setChildrenCaptionMode(Z)V
 
-    .line 600
     iput-boolean v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mMenuBeingLongpressed:Z
 
-    .line 608
     :goto_b
     return-void
 
-    .line 605
     :cond_c
     const/4 v0, 0x1
 
@@ -1109,7 +988,6 @@
     .parameter "p"
 
     .prologue
-    .line 479
     instance-of v0, p1, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
 
     return v0
@@ -1119,18 +997,15 @@
     .registers 7
 
     .prologue
-    .line 292
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 293
     .local v0, context:Landroid/content/Context;
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 295
     .local v1, inflater:Landroid/view/LayoutInflater;
     const v4, 0x1090045
 
@@ -1142,13 +1017,11 @@
 
     check-cast v2, Lcom/android/internal/view/menu/IconMenuItemView;
 
-    .line 298
     .local v2, itemView:Lcom/android/internal/view/menu/IconMenuItemView;
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 299
     .local v3, r:Landroid/content/res/Resources;
     const v4, 0x1040397
 
@@ -1160,14 +1033,12 @@
 
     invoke-virtual {v2, v4, v5}, Lcom/android/internal/view/menu/IconMenuItemView;->initialize(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
 
-    .line 303
     new-instance v4, Lcom/android/internal/view/menu/IconMenuView$1;
 
     invoke-direct {v4, p0}, Lcom/android/internal/view/menu/IconMenuView$1;-><init>(Lcom/android/internal/view/menu/IconMenuView;)V
 
     invoke-virtual {v2, v4}, Lcom/android/internal/view/menu/IconMenuItemView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 311
     return-object v2
 .end method
 
@@ -1178,7 +1049,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 538
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v1
@@ -1187,7 +1057,6 @@
 
     if-ne v1, v2, :cond_20
 
-    .line 539
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v1
@@ -1200,10 +1069,8 @@
 
     if-nez v1, :cond_25
 
-    .line 540
     invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/IconMenuView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 541
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v0
@@ -1212,7 +1079,6 @@
 
     invoke-virtual {p0, p0, v0, v1}, Lcom/android/internal/view/menu/IconMenuView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 558
     :cond_20
     :goto_20
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
@@ -1222,7 +1088,6 @@
     :goto_24
     return v0
 
-    .line 542
     :cond_25
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
@@ -1230,19 +1095,16 @@
 
     if-ne v1, v0, :cond_20
 
-    .line 544
     iget-boolean v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mMenuBeingLongpressed:Z
 
     if-eqz v1, :cond_34
 
-    .line 547
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Lcom/android/internal/view/menu/IconMenuView;->setCycleShortcutCaptionMode(Z)V
 
     goto :goto_24
 
-    .line 552
     :cond_34
     invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/IconMenuView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
@@ -1254,7 +1116,6 @@
     .parameter "x0"
 
     .prologue
-    .line 51
     invoke-virtual {p0, p1}, Lcom/android/internal/view/menu/IconMenuView;->generateLayoutParams(Landroid/util/AttributeSet;)Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
 
     move-result-object v0
@@ -1267,7 +1128,6 @@
     .parameter "attrs"
 
     .prologue
-    .line 473
     new-instance v0, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
 
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getContext()Landroid/content/Context;
@@ -1283,7 +1143,6 @@
     .registers 3
 
     .prologue
-    .line 282
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mItemBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
@@ -1309,7 +1168,6 @@
     .registers 2
 
     .prologue
-    .line 519
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayout:[I
 
     return-object v0
@@ -1319,7 +1177,6 @@
     .registers 2
 
     .prologue
-    .line 532
     iget v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayoutNumRows:I
 
     return v0
@@ -1329,7 +1186,6 @@
     .registers 2
 
     .prologue
-    .line 173
     iget v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mMaxItems:I
 
     return v0
@@ -1339,7 +1195,6 @@
     .registers 2
 
     .prologue
-    .line 498
     iget v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mNumActualItemsShown:I
 
     return v0
@@ -1349,7 +1204,6 @@
     .registers 2
 
     .prologue
-    .line 506
     iget v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mAnimations:I
 
     return v0
@@ -1360,10 +1214,8 @@
     .parameter "menu"
 
     .prologue
-    .line 316
     iput-object p1, p0, Lcom/android/internal/view/menu/IconMenuView;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
-    .line 317
     return-void
 .end method
 
@@ -1372,7 +1224,6 @@
     .parameter "item"
 
     .prologue
-    .line 468
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
     const/4 v1, 0x0
@@ -1388,20 +1239,16 @@
     .registers 2
 
     .prologue
-    .line 486
     iget-boolean v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mHasStaleChildren:Z
 
     if-nez v0, :cond_a
 
-    .line 487
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mHasStaleChildren:Z
 
-    .line 488
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->requestLayout()V
 
-    .line 490
     :cond_a
     return-void
 .end method
@@ -1410,13 +1257,10 @@
     .registers 1
 
     .prologue
-    .line 563
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
-    .line 565
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->requestFocus()Z
 
-    .line 566
     return-void
 .end method
 
@@ -1424,15 +1268,12 @@
     .registers 2
 
     .prologue
-    .line 570
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->setCycleShortcutCaptionMode(Z)V
 
-    .line 571
     invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
 
-    .line 572
     return-void
 .end method
 
@@ -1441,17 +1282,13 @@
     .parameter "canvas"
 
     .prologue
-    .line 446
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDivider:Landroid/graphics/drawable/Drawable;
 
-    .line 447
     .local v0, drawable:Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_1d
 
-    .line 449
     iget-object v2, p0, Lcom/android/internal/view/menu/IconMenuView;->mHorizontalDividerRects:Ljava/util/ArrayList;
 
-    .line 450
     .local v2, rects:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/graphics/Rect;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1463,7 +1300,6 @@
     :goto_c
     if-ltz v1, :cond_1d
 
-    .line 451
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1472,27 +1308,21 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 452
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 450
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_c
 
-    .line 456
     .end local v1           #i:I
     .end local v2           #rects:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/graphics/Rect;>;"
     :cond_1d
     iget-object v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDivider:Landroid/graphics/drawable/Drawable;
 
-    .line 457
     if-eqz v0, :cond_3a
 
-    .line 459
     iget-object v2, p0, Lcom/android/internal/view/menu/IconMenuView;->mVerticalDividerRects:Ljava/util/ArrayList;
 
-    .line 460
     .restart local v2       #rects:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/graphics/Rect;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1504,7 +1334,6 @@
     :goto_29
     if-ltz v1, :cond_3a
 
-    .line 461
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1513,15 +1342,12 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 462
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 460
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_29
 
-    .line 465
     .end local v1           #i:I
     .end local v2           #rects:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/graphics/Rect;>;"
     :cond_3a
@@ -1537,7 +1363,6 @@
     .parameter "b"
 
     .prologue
-    .line 433
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
 
     move-result v3
@@ -1548,12 +1373,10 @@
     :goto_6
     if-ltz v2, :cond_20
 
-    .line 434
     invoke-virtual {p0, v2}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 435
     .local v0, child:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -1561,7 +1384,6 @@
 
     check-cast v1, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
 
-    .line 439
     .local v1, childLayoutParams:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
     iget v3, v1, Lcom/android/internal/view/menu/IconMenuView$LayoutParams;->left:I
 
@@ -1573,12 +1395,10 @@
 
     invoke-virtual {v0, v3, v4, v5, v6}, Landroid/view/View;->layout(IIII)V
 
-    .line 433
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_6
 
-    .line 442
     .end local v0           #child:Landroid/view/View;
     .end local v1           #childLayoutParams:Lcom/android/internal/view/menu/IconMenuView$LayoutParams;
     :cond_20
@@ -1591,24 +1411,19 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 407
     const v3, 0x7fffffff
 
     invoke-static {v3, p1}, Lcom/android/internal/view/menu/IconMenuView;->resolveSize(II)I
 
     move-result v2
 
-    .line 408
     .local v2, measuredWidth:I
     invoke-direct {p0, v2}, Lcom/android/internal/view/menu/IconMenuView;->calculateItemFittingMetadata(I)V
 
-    .line 409
     invoke-direct {p0, v2}, Lcom/android/internal/view/menu/IconMenuView;->layoutItems(I)V
 
-    .line 413
     iget v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mLayoutNumRows:I
 
-    .line 414
     .local v1, layoutNumRows:I
     iget v3, p0, Lcom/android/internal/view/menu/IconMenuView;->mRowHeight:I
 
@@ -1622,7 +1437,6 @@
 
     sub-int v0, v3, v4
 
-    .line 418
     .local v0, desiredHeight:I
     invoke-static {v0, p2}, Lcom/android/internal/view/menu/IconMenuView;->resolveSize(II)I
 
@@ -1630,10 +1444,8 @@
 
     invoke-virtual {p0, v2, v3}, Lcom/android/internal/view/menu/IconMenuView;->setMeasuredDimension(II)V
 
-    .line 422
     if-lez v1, :cond_2d
 
-    .line 423
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getMeasuredWidth()I
 
     move-result v3
@@ -1644,7 +1456,6 @@
 
     invoke-direct {p0, v3, v4}, Lcom/android/internal/view/menu/IconMenuView;->positionChildren(II)V
 
-    .line 425
     :cond_2d
     return-void
 .end method
@@ -1654,12 +1465,10 @@
     .parameter "state"
 
     .prologue
-    .line 693
     move-object v0, p1
 
     check-cast v0, Lcom/android/internal/view/menu/IconMenuView$SavedState;
 
-    .line 694
     .local v0, ss:Lcom/android/internal/view/menu/IconMenuView$SavedState;
     invoke-virtual {v0}, Lcom/android/internal/view/menu/IconMenuView$SavedState;->getSuperState()Landroid/os/Parcelable;
 
@@ -1667,7 +1476,6 @@
 
     invoke-super {p0, v2}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 696
     iget v2, v0, Lcom/android/internal/view/menu/IconMenuView$SavedState;->focusedPosition:I
 
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
@@ -1676,12 +1484,10 @@
 
     if-lt v2, v3, :cond_13
 
-    .line 704
     :cond_12
     :goto_12
     return-void
 
-    .line 700
     :cond_13
     iget v2, v0, Lcom/android/internal/view/menu/IconMenuView$SavedState;->focusedPosition:I
 
@@ -1689,11 +1495,9 @@
 
     move-result-object v1
 
-    .line 701
     .local v1, v:Landroid/view/View;
     if-eqz v1, :cond_12
 
-    .line 702
     invoke-virtual {v1}, Landroid/view/View;->requestFocus()Z
 
     goto :goto_12
@@ -1703,18 +1507,15 @@
     .registers 6
 
     .prologue
-    .line 678
     invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v2
 
-    .line 680
     .local v2, superState:Landroid/os/Parcelable;
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getFocusedChild()Landroid/view/View;
 
     move-result-object v0
 
-    .line 682
     .local v0, focusedView:Landroid/view/View;
     invoke-virtual {p0}, Lcom/android/internal/view/menu/IconMenuView;->getChildCount()I
 
@@ -1726,29 +1527,24 @@
     :goto_e
     if-ltz v1, :cond_1f
 
-    .line 683
     invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/IconMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     if-ne v3, v0, :cond_1c
 
-    .line 684
     new-instance v3, Lcom/android/internal/view/menu/IconMenuView$SavedState;
 
     invoke-direct {v3, v2, v1}, Lcom/android/internal/view/menu/IconMenuView$SavedState;-><init>(Landroid/os/Parcelable;I)V
 
-    .line 688
     :goto_1b
     return-object v3
 
-    .line 682
     :cond_1c
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_e
 
-    .line 688
     :cond_1f
     new-instance v3, Lcom/android/internal/view/menu/IconMenuView$SavedState;
 
@@ -1764,19 +1560,15 @@
     .parameter "hasWindowFocus"
 
     .prologue
-    .line 577
     if-nez p1, :cond_6
 
-    .line 578
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->setCycleShortcutCaptionMode(Z)V
 
-    .line 581
     :cond_6
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowFocusChanged(Z)V
 
-    .line 582
     return-void
 .end method
 
@@ -1786,12 +1578,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 618
     iget-boolean v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mMenuBeingLongpressed:Z
 
     if-eqz v1, :cond_14
 
-    .line 621
     iget-boolean v1, p0, Lcom/android/internal/view/menu/IconMenuView;->mLastChildrenCaptionMode:Z
 
     if-nez v1, :cond_12
@@ -1799,26 +1589,21 @@
     :goto_9
     invoke-direct {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->setChildrenCaptionMode(Z)V
 
-    .line 631
     :goto_c
     const-wide/16 v0, 0x3e8
 
     invoke-virtual {p0, p0, v0, v1}, Lcom/android/internal/view/menu/IconMenuView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 632
     return-void
 
-    .line 621
     :cond_12
     const/4 v0, 0x0
 
     goto :goto_9
 
-    .line 626
     :cond_14
     iput-boolean v0, p0, Lcom/android/internal/view/menu/IconMenuView;->mMenuBeingLongpressed:Z
 
-    .line 627
     invoke-direct {p0, v0}, Lcom/android/internal/view/menu/IconMenuView;->setCycleShortcutCaptionMode(Z)V
 
     goto :goto_c
@@ -1829,9 +1614,7 @@
     .parameter "count"
 
     .prologue
-    .line 502
     iput p1, p0, Lcom/android/internal/view/menu/IconMenuView;->mNumActualItemsShown:I
 
-    .line 503
     return-void
 .end method

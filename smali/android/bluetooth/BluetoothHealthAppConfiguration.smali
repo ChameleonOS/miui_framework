@@ -34,7 +34,6 @@
     .registers 1
 
     .prologue
-    .line 141
     new-instance v0, Landroid/bluetooth/BluetoothHealthAppConfiguration$1;
 
     invoke-direct {v0}, Landroid/bluetooth/BluetoothHealthAppConfiguration$1;-><init>()V
@@ -50,26 +49,20 @@
     .parameter "dataType"
 
     .prologue
-    .line 43
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     iput-object p1, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mName:Ljava/lang/String;
 
-    .line 45
     iput p2, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mDataType:I
 
-    .line 46
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mRole:I
 
-    .line 47
     const/16 v0, 0xc
 
     iput v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mChannelType:I
 
-    .line 48
     return-void
 .end method
 
@@ -81,22 +74,16 @@
     .parameter "channelType"
 
     .prologue
-    .line 60
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     iput-object p1, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mName:Ljava/lang/String;
 
-    .line 62
     iput p2, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mDataType:I
 
-    .line 63
     iput p3, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mRole:I
 
-    .line 64
     iput p4, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mChannelType:I
 
-    .line 65
     return-void
 .end method
 
@@ -106,7 +93,6 @@
     .registers 2
 
     .prologue
-    .line 98
     const/4 v0, 0x0
 
     return v0
@@ -119,17 +105,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 69
     instance-of v2, p1, Landroid/bluetooth/BluetoothHealthAppConfiguration;
 
     if-eqz v2, :cond_2d
 
     move-object v0, p1
 
-    .line 70
     check-cast v0, Landroid/bluetooth/BluetoothHealthAppConfiguration;
 
-    .line 72
     .local v0, config:Landroid/bluetooth/BluetoothHealthAppConfiguration;
     iget-object v2, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mName:Ljava/lang/String;
 
@@ -169,7 +152,6 @@
 
     const/4 v1, 0x1
 
-    .line 77
     .end local v0           #config:Landroid/bluetooth/BluetoothHealthAppConfiguration;
     :cond_2d
     return v1
@@ -179,7 +161,6 @@
     .registers 2
 
     .prologue
-    .line 138
     iget v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mChannelType:I
 
     return v0
@@ -189,7 +170,6 @@
     .registers 2
 
     .prologue
-    .line 107
     iget v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mDataType:I
 
     return v0
@@ -199,7 +179,6 @@
     .registers 2
 
     .prologue
-    .line 116
     iget-object v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mName:Ljava/lang/String;
 
     return-object v0
@@ -209,7 +188,6 @@
     .registers 2
 
     .prologue
-    .line 126
     iget v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mRole:I
 
     return v0
@@ -219,10 +197,8 @@
     .registers 4
 
     .prologue
-    .line 82
     const/16 v0, 0x11
 
-    .line 83
     .local v0, result:I
     iget-object v1, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mName:Ljava/lang/String;
 
@@ -237,31 +213,26 @@
     :goto_c
     add-int/lit16 v0, v1, 0x20f
 
-    .line 84
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mDataType:I
 
     add-int v0, v1, v2
 
-    .line 85
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mRole:I
 
     add-int v0, v1, v2
 
-    .line 86
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mChannelType:I
 
     add-int v0, v1, v2
 
-    .line 87
     return v0
 
-    .line 83
     :cond_21
     const/4 v1, 0x0
 
@@ -272,7 +243,6 @@
     .registers 3
 
     .prologue
-    .line 92
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -344,26 +314,21 @@
     .parameter "flags"
 
     .prologue
-    .line 160
     iget-object v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 161
     iget v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mDataType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 162
     iget v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mRole:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 163
     iget v0, p0, Landroid/bluetooth/BluetoothHealthAppConfiguration;->mChannelType:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 164
     return-void
 .end method

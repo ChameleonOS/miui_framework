@@ -22,7 +22,6 @@
     .registers 1
 
     .prologue
-    .line 131
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
     .parameter "child"
 
     .prologue
-    .line 134
     check-cast p1, Landroid/widget/AbsListView;
 
     .end local p1
@@ -61,12 +59,10 @@
     .parameter "child"
 
     .prologue
-    .line 139
     move-object v0, p1
 
     check-cast v0, Landroid/widget/AbsListView;
 
-    .line 140
     .local v0, list:Landroid/widget/AbsListView;
     iget v1, v0, Landroid/widget/AdapterView;->mFirstPosition:I
 

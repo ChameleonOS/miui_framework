@@ -12,15 +12,12 @@
     .registers 1
 
     .prologue
-    .line 87
     const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 88
     invoke-static {}, Landroid/media/MediaCrypto;->native_init()V
 
-    .line 89
     return-void
 .end method
 
@@ -35,17 +32,14 @@
     .end annotation
 
     .prologue
-    .line 62
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
     invoke-static {p1}, Landroid/media/MediaCrypto;->getByteArrayFromUUID(Ljava/util/UUID;)[B
 
     move-result-object v0
 
     invoke-direct {p0, v0, p2}, Landroid/media/MediaCrypto;->native_setup([B[B)V
 
-    .line 64
     return-void
 .end method
 
@@ -54,24 +48,20 @@
     .parameter "uuid"
 
     .prologue
-    .line 42
     invoke-virtual {p0}, Ljava/util/UUID;->getMostSignificantBits()J
 
     move-result-wide v3
 
-    .line 43
     .local v3, msb:J
     invoke-virtual {p0}, Ljava/util/UUID;->getLeastSignificantBits()J
 
     move-result-wide v1
 
-    .line 45
     .local v1, lsb:J
     const/16 v6, 0x10
 
     new-array v5, v6, [B
 
-    .line 46
     .local v5, uuidBytes:[B
     const/4 v0, 0x0
 
@@ -81,7 +71,6 @@
 
     if-ge v0, v6, :cond_2a
 
-    .line 47
     rsub-int/lit8 v6, v0, 0x7
 
     mul-int/lit8 v6, v6, 0x8
@@ -94,7 +83,6 @@
 
     aput-byte v6, v5, v0
 
-    .line 48
     add-int/lit8 v6, v0, 0x8
 
     rsub-int/lit8 v7, v0, 0x7
@@ -109,12 +97,10 @@
 
     aput-byte v7, v5, v6
 
-    .line 46
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_d
 
-    .line 51
     :cond_2a
     return-object v5
 .end method
@@ -124,7 +110,6 @@
     .parameter "uuid"
 
     .prologue
-    .line 38
     invoke-static {p0}, Landroid/media/MediaCrypto;->getByteArrayFromUUID(Ljava/util/UUID;)[B
 
     move-result-object v0
@@ -159,10 +144,8 @@
     .registers 1
 
     .prologue
-    .line 75
     invoke-direct {p0}, Landroid/media/MediaCrypto;->native_finalize()V
 
-    .line 76
     return-void
 .end method
 

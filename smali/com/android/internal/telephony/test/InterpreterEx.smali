@@ -13,12 +13,9 @@
     .parameter "result"
 
     .prologue
-    .line 127
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 128
     iput-object p1, p0, Lcom/android/internal/telephony/test/InterpreterEx;->result:Ljava/lang/String;
 
-    .line 129
     return-void
 .end method

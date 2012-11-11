@@ -17,10 +17,8 @@
     .parameter "table"
 
     .prologue
-    .line 126
     invoke-direct {p0, p1}, Lcom/android/internal/telephony/IccServiceTable;-><init>([B)V
 
-    .line 127
     return-void
 .end method
 
@@ -30,7 +28,6 @@
     .registers 2
 
     .prologue
-    .line 135
     const-string v0, "UsimServiceTable"
 
     return-object v0
@@ -40,7 +37,6 @@
     .registers 2
 
     .prologue
-    .line 140
     invoke-static {}, Lcom/android/internal/telephony/gsm/UsimServiceTable$UsimService;->values()[Lcom/android/internal/telephony/gsm/UsimServiceTable$UsimService;
 
     move-result-object v0
@@ -53,7 +49,6 @@
     .parameter "service"
 
     .prologue
-    .line 130
     invoke-virtual {p1}, Lcom/android/internal/telephony/gsm/UsimServiceTable$UsimService;->ordinal()I
 
     move-result v0

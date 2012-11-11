@@ -27,13 +27,10 @@
     .parameter "remote"
 
     .prologue
-    .line 70
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 71
     iput-object p1, p0, Landroid/media/IMediaScannerListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 72
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .registers 2
 
     .prologue
-    .line 75
     iget-object v0, p0, Landroid/media/IMediaScannerListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -53,7 +49,6 @@
     .registers 2
 
     .prologue
-    .line 79
     const-string v0, "android.media.IMediaScannerListener"
 
     return-object v0
@@ -70,35 +65,28 @@
     .end annotation
 
     .prologue
-    .line 89
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 91
     .local v0, _data:Landroid/os/Parcel;
     :try_start_4
     const-string v1, "android.media.IMediaScannerListener"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 92
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 93
     if-eqz p2, :cond_22
 
-    .line 94
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 95
     const/4 v1, 0x0
 
     invoke-virtual {p2, v0, v1}, Landroid/net/Uri;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 100
     :goto_16
     iget-object v1, p0, Landroid/media/IMediaScannerListener$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -112,13 +100,10 @@
     :try_end_1e
     .catchall {:try_start_4 .. :try_end_1e} :catchall_27
 
-    .line 103
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 105
     return-void
 
-    .line 98
     :cond_22
     const/4 v1, 0x0
 
@@ -129,7 +114,6 @@
 
     goto :goto_16
 
-    .line 103
     :catchall_27
     move-exception v1
 

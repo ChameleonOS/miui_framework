@@ -27,12 +27,10 @@
     .parameter
 
     .prologue
-    .line 191
     iput-object p1, p0, Landroid/media/audiofx/PresetReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/PresetReverb;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 193
     return-void
 .end method
 
@@ -42,7 +40,6 @@
     .parameter "x1"
 
     .prologue
-    .line 190
     invoke-direct {p0, p1}, Landroid/media/audiofx/PresetReverb$BaseParameterListener;-><init>(Landroid/media/audiofx/PresetReverb;)V
 
     return-void
@@ -62,10 +59,8 @@
 
     const/4 v5, -0x1
 
-    .line 195
     const/4 v0, 0x0
 
-    .line 197
     .local v0, l:Landroid/media/audiofx/PresetReverb$OnParameterChangeListener;
     iget-object v3, p0, Landroid/media/audiofx/PresetReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/PresetReverb;
 
@@ -76,7 +71,6 @@
 
     monitor-enter v4
 
-    .line 198
     :try_start_a
     iget-object v3, p0, Landroid/media/audiofx/PresetReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/PresetReverb;
 
@@ -87,7 +81,6 @@
 
     if-eqz v3, :cond_18
 
-    .line 199
     iget-object v3, p0, Landroid/media/audiofx/PresetReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/PresetReverb;
 
     #getter for: Landroid/media/audiofx/PresetReverb;->mParamListener:Landroid/media/audiofx/PresetReverb$OnParameterChangeListener;
@@ -95,23 +88,18 @@
 
     move-result-object v0
 
-    .line 201
     :cond_18
     monitor-exit v4
     :try_end_19
     .catchall {:try_start_a .. :try_end_19} :catchall_3b
 
-    .line 202
     if-eqz v0, :cond_3a
 
-    .line 203
     const/4 v1, -0x1
 
-    .line 204
     .local v1, p:I
     const/4 v2, -0x1
 
-    .line 206
     .local v2, v:S
     array-length v3, p3
 
@@ -119,14 +107,12 @@
 
     if-ne v3, v4, :cond_27
 
-    .line 207
     iget-object v3, p0, Landroid/media/audiofx/PresetReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/PresetReverb;
 
     invoke-virtual {v3, p3, v6}, Landroid/media/audiofx/PresetReverb;->byteArrayToInt([BI)I
 
     move-result v1
 
-    .line 209
     :cond_27
     array-length v3, p4
 
@@ -134,31 +120,26 @@
 
     if-ne v3, v4, :cond_31
 
-    .line 210
     iget-object v3, p0, Landroid/media/audiofx/PresetReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/PresetReverb;
 
     invoke-virtual {v3, p4, v6}, Landroid/media/audiofx/PresetReverb;->byteArrayToShort([BI)S
 
     move-result v2
 
-    .line 212
     :cond_31
     if-eq v1, v5, :cond_3a
 
     if-eq v2, v5, :cond_3a
 
-    .line 213
     iget-object v3, p0, Landroid/media/audiofx/PresetReverb$BaseParameterListener;->this$0:Landroid/media/audiofx/PresetReverb;
 
     invoke-interface {v0, v3, p2, v1, v2}, Landroid/media/audiofx/PresetReverb$OnParameterChangeListener;->onParameterChange(Landroid/media/audiofx/PresetReverb;IIS)V
 
-    .line 216
     .end local v1           #p:I
     .end local v2           #v:S
     :cond_3a
     return-void
 
-    .line 201
     :catchall_3b
     move-exception v3
 

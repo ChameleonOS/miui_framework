@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 82
     iput-object p1, p0, Landroid/content/res/MiuiResources$MIUITheme;->this$0:Landroid/content/res/MiuiResources;
 
     invoke-direct {p0, p1}, Landroid/content/res/Resources$Theme;-><init>(Landroid/content/res/Resources;)V
@@ -45,7 +44,6 @@
     .end annotation
 
     .prologue
-    .line 91
     iget-object v0, p0, Landroid/content/res/MiuiResources$MIUITheme;->this$0:Landroid/content/res/MiuiResources;
 
     invoke-super {p0, p1, p2}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
@@ -68,7 +66,6 @@
     .parameter "defStyleRes"
 
     .prologue
-    .line 96
     iget-object v0, p0, Landroid/content/res/MiuiResources$MIUITheme;->this$0:Landroid/content/res/MiuiResources;
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
@@ -88,7 +85,6 @@
     .parameter "attrs"
 
     .prologue
-    .line 86
     iget-object v0, p0, Landroid/content/res/MiuiResources$MIUITheme;->this$0:Landroid/content/res/MiuiResources;
 
     invoke-super {p0, p1}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;

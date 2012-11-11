@@ -27,13 +27,10 @@
     .parameter "where"
 
     .prologue
-    .line 44
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     iput p1, p0, Landroid/text/style/TabStopSpan$Standard;->mTab:I
 
-    .line 46
     return-void
 .end method
 
@@ -43,7 +40,6 @@
     .registers 2
 
     .prologue
-    .line 49
     iget v0, p0, Landroid/text/style/TabStopSpan$Standard;->mTab:I
 
     return v0

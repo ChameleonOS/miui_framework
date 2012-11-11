@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 64
     iput-object p1, p0, Landroid/webkit/WebStorageClassic$1;->this$0:Landroid/webkit/WebStorageClassic;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,22 +38,18 @@
     .parameter "msg"
 
     .prologue
-    .line 67
     iget v4, p1, Landroid/os/Message;->what:I
 
     packed-switch v4, :pswitch_data_52
 
-    .line 87
     :goto_5
     return-void
 
-    .line 69
     :pswitch_6
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v3, Ljava/util/Map;
 
-    .line 70
     .local v3, values:Ljava/util/Map;
     const-string/jumbo v4, "origins"
 
@@ -64,7 +59,6 @@
 
     check-cast v2, Ljava/util/Map;
 
-    .line 71
     .local v2, origins:Ljava/util/Map;
     const-string v4, "callback"
 
@@ -74,13 +68,11 @@
 
     check-cast v1, Landroid/webkit/ValueCallback;
 
-    .line 72
     .local v1, callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/util/Map;>;"
     invoke-interface {v1, v2}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
 
     goto :goto_5
 
-    .line 76
     .end local v1           #callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/util/Map;>;"
     .end local v2           #origins:Ljava/util/Map;
     .end local v3           #values:Ljava/util/Map;
@@ -89,7 +81,6 @@
 
     check-cast v3, Ljava/util/Map;
 
-    .line 77
     .restart local v3       #values:Ljava/util/Map;
     const-string v4, "callback"
 
@@ -99,7 +90,6 @@
 
     check-cast v0, Landroid/webkit/ValueCallback;
 
-    .line 78
     .local v0, callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/lang/Long;>;"
     const-string/jumbo v4, "usage"
 
@@ -113,7 +103,6 @@
 
     goto :goto_5
 
-    .line 82
     .end local v0           #callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/lang/Long;>;"
     .end local v3           #values:Ljava/util/Map;
     :pswitch_38
@@ -121,7 +110,6 @@
 
     check-cast v3, Ljava/util/Map;
 
-    .line 83
     .restart local v3       #values:Ljava/util/Map;
     const-string v4, "callback"
 
@@ -131,7 +119,6 @@
 
     check-cast v0, Landroid/webkit/ValueCallback;
 
-    .line 84
     .restart local v0       #callback:Landroid/webkit/ValueCallback;,"Landroid/webkit/ValueCallback<Ljava/lang/Long;>;"
     const-string/jumbo v4, "quota"
 
@@ -145,7 +132,6 @@
 
     goto :goto_5
 
-    .line 67
     nop
 
     :pswitch_data_52

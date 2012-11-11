@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 79
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,31 +34,25 @@
     .parameter "priority"
 
     .prologue
-    .line 88
     and-int/lit8 v0, p0, 0x1
 
     if-nez v0, :cond_a
 
-    .line 89
     const/16 v0, 0x3e8
 
     if-lt p1, v0, :cond_b
 
-    .line 90
     const/16 p1, 0x3e7
 
-    .line 95
     :cond_a
     :goto_a
     return p1
 
-    .line 91
     :cond_b
     const/16 v0, -0x3e8
 
     if-gt p1, v0, :cond_a
 
-    .line 92
     const/16 p1, -0x3e7
 
     goto :goto_a
@@ -71,7 +64,6 @@
     .parameter "nameError"
 
     .prologue
-    .line 81
     const-string/jumbo v0, "miui"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -80,10 +72,8 @@
 
     if-eqz v0, :cond_a
 
-    .line 82
     const/4 p1, 0x0
 
-    .line 84
     .end local p1
     :cond_a
     return-object p1

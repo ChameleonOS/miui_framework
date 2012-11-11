@@ -33,7 +33,6 @@
     .parameter
 
     .prologue
-    .line 1209
     iput-object p1, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy$1;->this$0:Landroid/os/StrictMode$AndroidBlockGuardPolicy;
 
     iput-object p2, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy$1;->val$windowManager:Landroid/view/IWindowManager;
@@ -51,18 +50,15 @@
     .registers 7
 
     .prologue
-    .line 1211
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 1217
     .local v0, loopFinishTime:J
     iget-object v4, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy$1;->val$windowManager:Landroid/view/IWindowManager;
 
     if-eqz v4, :cond_e
 
-    .line 1219
     :try_start_8
     iget-object v4, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy$1;->val$windowManager:Landroid/view/IWindowManager;
 
@@ -72,7 +68,6 @@
     :try_end_e
     .catch Landroid/os/RemoteException; {:try_start_8 .. :try_end_e} :catch_38
 
-    .line 1224
     :cond_e
     :goto_e
     const/4 v2, 0x0
@@ -87,7 +82,6 @@
 
     if-ge v2, v4, :cond_32
 
-    .line 1225
     iget-object v4, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy$1;->val$records:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -96,13 +90,11 @@
 
     check-cast v3, Landroid/os/StrictMode$ViolationInfo;
 
-    .line 1226
     .local v3, v:Landroid/os/StrictMode$ViolationInfo;
     add-int/lit8 v4, v2, 0x1
 
     iput v4, v3, Landroid/os/StrictMode$ViolationInfo;->violationNumThisLoop:I
 
-    .line 1227
     iget-wide v4, v3, Landroid/os/StrictMode$ViolationInfo;->violationUptimeMillis:J
 
     sub-long v4, v0, v4
@@ -111,27 +103,22 @@
 
     iput v4, v3, Landroid/os/StrictMode$ViolationInfo;->durationMillis:I
 
-    .line 1229
     iget-object v4, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy$1;->this$0:Landroid/os/StrictMode$AndroidBlockGuardPolicy;
 
     invoke-virtual {v4, v3}, Landroid/os/StrictMode$AndroidBlockGuardPolicy;->handleViolation(Landroid/os/StrictMode$ViolationInfo;)V
 
-    .line 1224
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_f
 
-    .line 1231
     .end local v3           #v:Landroid/os/StrictMode$ViolationInfo;
     :cond_32
     iget-object v4, p0, Landroid/os/StrictMode$AndroidBlockGuardPolicy$1;->val$records:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 1232
     return-void
 
-    .line 1220
     .end local v2           #n:I
     :catch_38
     move-exception v4

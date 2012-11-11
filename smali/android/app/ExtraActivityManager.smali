@@ -8,7 +8,6 @@
     .registers 1
 
     .prologue
-    .line 11
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,7 +18,6 @@
     .parameter "display"
 
     .prologue
-    .line 14
     const-string v0, "crespo"
 
     sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
@@ -30,10 +28,8 @@
 
     if-eqz v0, :cond_c
 
-    .line 15
     const/4 v0, 0x1
 
-    .line 18
     :goto_b
     return v0
 
@@ -48,7 +44,6 @@
     .parameter "context"
 
     .prologue
-    .line 23
     const-string/jumbo v0, "window"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;

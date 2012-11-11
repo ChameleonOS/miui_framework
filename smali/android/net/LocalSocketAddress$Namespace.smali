@@ -48,7 +48,6 @@
 
     const/4 v2, 0x0
 
-    .line 34
     new-instance v0, Landroid/net/LocalSocketAddress$Namespace;
 
     const-string v1, "ABSTRACT"
@@ -57,7 +56,6 @@
 
     sput-object v0, Landroid/net/LocalSocketAddress$Namespace;->ABSTRACT:Landroid/net/LocalSocketAddress$Namespace;
 
-    .line 39
     new-instance v0, Landroid/net/LocalSocketAddress$Namespace;
 
     const-string v1, "RESERVED"
@@ -66,7 +64,6 @@
 
     sput-object v0, Landroid/net/LocalSocketAddress$Namespace;->RESERVED:Landroid/net/LocalSocketAddress$Namespace;
 
-    .line 43
     new-instance v0, Landroid/net/LocalSocketAddress$Namespace;
 
     const-string v1, "FILESYSTEM"
@@ -75,7 +72,6 @@
 
     sput-object v0, Landroid/net/LocalSocketAddress$Namespace;->FILESYSTEM:Landroid/net/LocalSocketAddress$Namespace;
 
-    .line 32
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/net/LocalSocketAddress$Namespace;
@@ -109,13 +105,10 @@
     .end annotation
 
     .prologue
-    .line 47
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 48
     iput p3, p0, Landroid/net/LocalSocketAddress$Namespace;->id:I
 
-    .line 49
     return-void
 .end method
 
@@ -124,7 +117,6 @@
     .parameter "name"
 
     .prologue
-    .line 32
     const-class v0, Landroid/net/LocalSocketAddress$Namespace;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -140,7 +132,6 @@
     .registers 1
 
     .prologue
-    .line 32
     sget-object v0, Landroid/net/LocalSocketAddress$Namespace;->$VALUES:[Landroid/net/LocalSocketAddress$Namespace;
 
     invoke-virtual {v0}, [Landroid/net/LocalSocketAddress$Namespace;->clone()Ljava/lang/Object;
@@ -158,7 +149,6 @@
     .registers 2
 
     .prologue
-    .line 55
     iget v0, p0, Landroid/net/LocalSocketAddress$Namespace;->id:I
 
     return v0

@@ -38,7 +38,6 @@
     .registers 1
 
     .prologue
-    .line 77
     new-instance v0, Landroid/net/wifi/WpsResult$1;
 
     invoke-direct {v0}, Landroid/net/wifi/WpsResult$1;-><init>()V
@@ -52,20 +51,16 @@
     .registers 2
 
     .prologue
-    .line 38
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
     sget-object v0, Landroid/net/wifi/WpsResult$Status;->FAILURE:Landroid/net/wifi/WpsResult$Status;
 
     iput-object v0, p0, Landroid/net/wifi/WpsResult;->status:Landroid/net/wifi/WpsResult$Status;
 
-    .line 40
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/wifi/WpsResult;->pin:Ljava/lang/String;
 
-    .line 41
     return-void
 .end method
 
@@ -74,18 +69,14 @@
     .parameter "s"
 
     .prologue
-    .line 43
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     iput-object p1, p0, Landroid/net/wifi/WpsResult;->status:Landroid/net/wifi/WpsResult$Status;
 
-    .line 45
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/wifi/WpsResult;->pin:Ljava/lang/String;
 
-    .line 46
     return-void
 .end method
 
@@ -94,23 +85,18 @@
     .parameter "source"
 
     .prologue
-    .line 63
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
     if-eqz p1, :cond_d
 
-    .line 65
     iget-object v0, p1, Landroid/net/wifi/WpsResult;->status:Landroid/net/wifi/WpsResult$Status;
 
     iput-object v0, p0, Landroid/net/wifi/WpsResult;->status:Landroid/net/wifi/WpsResult$Status;
 
-    .line 66
     iget-object v0, p1, Landroid/net/wifi/WpsResult;->pin:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/wifi/WpsResult;->pin:Ljava/lang/String;
 
-    .line 68
     :cond_d
     return-void
 .end method
@@ -121,7 +107,6 @@
     .registers 2
 
     .prologue
-    .line 59
     const/4 v0, 0x0
 
     return v0
@@ -131,12 +116,10 @@
     .registers 4
 
     .prologue
-    .line 49
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 50
     .local v0, sbuf:Ljava/lang/StringBuffer;
     const-string v1, " status: "
 
@@ -152,12 +135,10 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 51
     const/16 v1, 0xa
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 52
     const-string v1, " pin: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
@@ -168,12 +149,10 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 53
     const-string v1, "\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 54
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -187,7 +166,6 @@
     .parameter "flags"
 
     .prologue
-    .line 72
     iget-object v0, p0, Landroid/net/wifi/WpsResult;->status:Landroid/net/wifi/WpsResult$Status;
 
     invoke-virtual {v0}, Landroid/net/wifi/WpsResult$Status;->name()Ljava/lang/String;
@@ -196,11 +174,9 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 73
     iget-object v0, p0, Landroid/net/wifi/WpsResult;->pin:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 74
     return-void
 .end method

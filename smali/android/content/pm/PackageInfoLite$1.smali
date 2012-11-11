@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 73
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "source"
 
     .prologue
-    .line 75
     new-instance v0, Landroid/content/pm/PackageInfoLite;
 
     const/4 v1, 0x0
@@ -60,7 +58,6 @@
     .parameter "x0"
 
     .prologue
-    .line 73
     invoke-virtual {p0, p1}, Landroid/content/pm/PackageInfoLite$1;->createFromParcel(Landroid/os/Parcel;)Landroid/content/pm/PackageInfoLite;
 
     move-result-object v0
@@ -73,7 +70,6 @@
     .parameter "size"
 
     .prologue
-    .line 79
     new-array v0, p1, [Landroid/content/pm/PackageInfoLite;
 
     return-object v0
@@ -84,7 +80,6 @@
     .parameter "x0"
 
     .prologue
-    .line 73
     invoke-virtual {p0, p1}, Landroid/content/pm/PackageInfoLite$1;->newArray(I)[Landroid/content/pm/PackageInfoLite;
 
     move-result-object v0

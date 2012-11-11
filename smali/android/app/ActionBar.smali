@@ -38,10 +38,8 @@
     .registers 1
 
     .prologue
-    .line 61
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 919
     return-void
 .end method
 
@@ -96,7 +94,6 @@
     .registers 2
 
     .prologue
-    .line 691
     const/4 v0, 0x0
 
     return-object v0
@@ -167,7 +164,6 @@
     .parameter "enabled"
 
     .prologue
-    .line 671
     return-void
 .end method
 
@@ -203,7 +199,6 @@
     .parameter "d"
 
     .prologue
-    .line 448
     return-void
 .end method
 
@@ -212,7 +207,6 @@
     .parameter "d"
 
     .prologue
-    .line 438
     return-void
 .end method
 

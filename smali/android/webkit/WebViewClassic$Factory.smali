@@ -23,7 +23,6 @@
     .registers 1
 
     .prologue
-    .line 1305
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
     .parameter "privateAccess"
 
     .prologue
-    .line 1324
     new-instance v0, Landroid/webkit/WebViewClassic;
 
     invoke-direct {v0, p1, p2}, Landroid/webkit/WebViewClassic;-><init>(Landroid/webkit/WebView;Landroid/webkit/WebView$PrivateAccess;)V
@@ -50,7 +48,6 @@
     .parameter "addr"
 
     .prologue
-    .line 1308
     invoke-static {p1}, Landroid/webkit/WebViewClassic;->findAddress(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -62,7 +59,6 @@
     .registers 2
 
     .prologue
-    .line 1334
     invoke-static {}, Landroid/webkit/CookieManagerClassic;->getInstance()Landroid/webkit/CookieManagerClassic;
 
     move-result-object v0
@@ -74,7 +70,6 @@
     .registers 2
 
     .prologue
-    .line 1329
     invoke-static {}, Landroid/webkit/GeolocationPermissionsClassic;->getInstance()Landroid/webkit/GeolocationPermissionsClassic;
 
     move-result-object v0
@@ -86,7 +81,6 @@
     .registers 1
 
     .prologue
-    .line 1320
     return-object p0
 .end method
 
@@ -94,7 +88,6 @@
     .registers 2
 
     .prologue
-    .line 1339
     invoke-static {}, Landroid/webkit/WebIconDatabaseClassic;->getInstance()Landroid/webkit/WebIconDatabaseClassic;
 
     move-result-object v0
@@ -106,7 +99,6 @@
     .registers 2
 
     .prologue
-    .line 1344
     invoke-static {}, Landroid/webkit/WebStorageClassic;->getInstance()Landroid/webkit/WebStorageClassic;
 
     move-result-object v0
@@ -119,7 +111,6 @@
     .parameter "context"
 
     .prologue
-    .line 1349
     invoke-static {p1}, Landroid/webkit/WebViewDatabaseClassic;->getInstance(Landroid/content/Context;)Landroid/webkit/WebViewDatabaseClassic;
 
     move-result-object v0
@@ -132,17 +123,13 @@
     .parameter "enable"
 
     .prologue
-    .line 1312
     if-eqz p1, :cond_6
 
-    .line 1313
     invoke-static {}, Landroid/webkit/WebViewClassic;->enablePlatformNotifications()V
 
-    .line 1317
     :goto_5
     return-void
 
-    .line 1315
     :cond_6
     invoke-static {}, Landroid/webkit/WebViewClassic;->disablePlatformNotifications()V
 

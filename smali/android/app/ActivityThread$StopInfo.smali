@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 2880
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +42,6 @@
     .parameter "x0"
 
     .prologue
-    .line 2880
     invoke-direct {p0}, Landroid/app/ActivityThread$StopInfo;-><init>()V
 
     return-void
@@ -55,7 +53,6 @@
     .registers 6
 
     .prologue
-    .line 2890
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -75,11 +72,9 @@
     :try_end_11
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_11} :catch_12
 
-    .line 2894
     :goto_11
     return-void
 
-    .line 2892
     :catch_12
     move-exception v0
 

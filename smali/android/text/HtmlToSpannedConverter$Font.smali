@@ -27,15 +27,11 @@
     .parameter "face"
 
     .prologue
-    .line 824
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 825
     iput-object p1, p0, Landroid/text/HtmlToSpannedConverter$Font;->mColor:Ljava/lang/String;
 
-    .line 826
     iput-object p2, p0, Landroid/text/HtmlToSpannedConverter$Font;->mFace:Ljava/lang/String;
 
-    .line 827
     return-void
 .end method

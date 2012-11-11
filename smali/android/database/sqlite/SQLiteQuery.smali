@@ -19,15 +19,12 @@
     .parameter "cancellationSignal"
 
     .prologue
-    .line 37
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0, p3}, Landroid/database/sqlite/SQLiteProgram;-><init>(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;[Ljava/lang/Object;Landroid/os/CancellationSignal;)V
 
-    .line 39
     iput-object p3, p0, Landroid/database/sqlite/SQLiteQuery;->mCancellationSignal:Landroid/os/CancellationSignal;
 
-    .line 40
     return-void
 .end method
 
@@ -41,16 +38,13 @@
     .parameter "countAllRows"
 
     .prologue
-    .line 58
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteQuery;->acquireReference()V
 
-    .line 60
     :try_start_3
     invoke-virtual {p1}, Landroid/database/CursorWindow;->acquireReference()V
     :try_end_6
     .catchall {:try_start_3 .. :try_end_6} :catchall_31
 
-    .line 62
     :try_start_6
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteQuery;->getSession()Landroid/database/sqlite/SQLiteSession;
 
@@ -86,34 +80,28 @@
 
     move-result v10
 
-    .line 73
     .local v10, numRows:I
     :try_start_20
     invoke-virtual {p1}, Landroid/database/CursorWindow;->releaseReference()V
     :try_end_23
     .catchall {:try_start_20 .. :try_end_23} :catchall_31
 
-    .line 76
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteQuery;->releaseReference()V
 
     return v10
 
-    .line 66
     .end local v10           #numRows:I
     :catch_27
     move-exception v9
 
-    .line 67
     .local v9, ex:Landroid/database/sqlite/SQLiteDatabaseCorruptException;
     :try_start_28
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteQuery;->onCorruption()V
 
-    .line 68
     throw v9
     :try_end_2c
     .catchall {:try_start_28 .. :try_end_2c} :catchall_2c
 
-    .line 73
     .end local v9           #ex:Landroid/database/sqlite/SQLiteDatabaseCorruptException;
     :catchall_2c
     move-exception v0
@@ -125,7 +113,6 @@
     :try_end_31
     .catchall {:try_start_2d .. :try_end_31} :catchall_31
 
-    .line 76
     :catchall_31
     move-exception v0
 
@@ -133,11 +120,9 @@
 
     throw v0
 
-    .line 69
     :catch_36
     move-exception v9
 
-    .line 70
     .local v9, ex:Landroid/database/sqlite/SQLiteException;
     :try_start_37
     const-string v0, "SQLiteQuery"
@@ -180,7 +165,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     throw v9
     :try_end_62
     .catchall {:try_start_37 .. :try_end_62} :catchall_2c
@@ -190,7 +174,6 @@
     .registers 3
 
     .prologue
-    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -61,38 +61,28 @@
     .parameter "title"
 
     .prologue
-    .line 60
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIconResId:I
 
-    .line 52
     const/16 v0, 0x10
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
-    .line 61
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mContext:Landroid/content/Context;
 
-    .line 62
     iput p3, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mId:I
 
-    .line 63
     iput p2, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mGroup:I
 
-    .line 64
     iput p4, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mCategoryOrder:I
 
-    .line 65
     iput p5, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mOrdering:I
 
-    .line 66
     iput-object p6, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
 
-    .line 67
     return-void
 .end method
 
@@ -102,7 +92,6 @@
     .registers 2
 
     .prologue
-    .line 264
     const/4 v0, 0x0
 
     return v0
@@ -112,7 +101,6 @@
     .registers 2
 
     .prologue
-    .line 259
     const/4 v0, 0x0
 
     return v0
@@ -122,7 +110,6 @@
     .registers 2
 
     .prologue
-    .line 243
     const/4 v0, 0x0
 
     return-object v0
@@ -132,7 +119,6 @@
     .registers 2
 
     .prologue
-    .line 233
     const/4 v0, 0x0
 
     return-object v0
@@ -142,7 +128,6 @@
     .registers 2
 
     .prologue
-    .line 70
     iget-char v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mShortcutAlphabeticChar:C
 
     return v0
@@ -152,7 +137,6 @@
     .registers 2
 
     .prologue
-    .line 74
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mGroup:I
 
     return v0
@@ -162,7 +146,6 @@
     .registers 2
 
     .prologue
-    .line 78
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIconDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -172,7 +155,6 @@
     .registers 2
 
     .prologue
-    .line 82
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIntent:Landroid/content/Intent;
 
     return-object v0
@@ -182,7 +164,6 @@
     .registers 2
 
     .prologue
-    .line 86
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mId:I
 
     return v0
@@ -192,7 +173,6 @@
     .registers 2
 
     .prologue
-    .line 90
     const/4 v0, 0x0
 
     return-object v0
@@ -202,7 +182,6 @@
     .registers 2
 
     .prologue
-    .line 94
     iget-char v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mShortcutNumericChar:C
 
     return v0
@@ -212,7 +191,6 @@
     .registers 2
 
     .prologue
-    .line 98
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mOrdering:I
 
     return v0
@@ -222,7 +200,6 @@
     .registers 2
 
     .prologue
-    .line 102
     const/4 v0, 0x0
 
     return-object v0
@@ -232,7 +209,6 @@
     .registers 2
 
     .prologue
-    .line 106
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
 
     return-object v0
@@ -242,7 +218,6 @@
     .registers 2
 
     .prologue
-    .line 110
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mTitleCondensed:Ljava/lang/CharSequence;
 
     return-object v0
@@ -252,7 +227,6 @@
     .registers 2
 
     .prologue
-    .line 114
     const/4 v0, 0x0
 
     return v0
@@ -264,7 +238,6 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 212
     iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mClickListener:Landroid/view/MenuItem$OnMenuItemClickListener;
 
     if-eqz v1, :cond_e
@@ -277,17 +250,14 @@
 
     if-eqz v1, :cond_e
 
-    .line 221
     :goto_d
     return v0
 
-    .line 216
     :cond_e
     iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIntent:Landroid/content/Intent;
 
     if-eqz v1, :cond_1a
 
-    .line 217
     iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIntent:Landroid/content/Intent;
@@ -296,7 +266,6 @@
 
     goto :goto_d
 
-    .line 221
     :cond_1a
     const/4 v0, 0x0
 
@@ -307,7 +276,6 @@
     .registers 2
 
     .prologue
-    .line 269
     const/4 v0, 0x0
 
     return v0
@@ -317,7 +285,6 @@
     .registers 2
 
     .prologue
-    .line 118
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, 0x1
@@ -339,7 +306,6 @@
     .registers 2
 
     .prologue
-    .line 122
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -361,7 +327,6 @@
     .registers 2
 
     .prologue
-    .line 126
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, 0x10
@@ -383,7 +348,6 @@
     .registers 2
 
     .prologue
-    .line 130
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v0, v0, 0x8
@@ -406,7 +370,6 @@
     .parameter "actionProvider"
 
     .prologue
-    .line 248
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -419,7 +382,6 @@
     .parameter "resId"
 
     .prologue
-    .line 238
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -432,7 +394,6 @@
     .parameter "actionView"
 
     .prologue
-    .line 229
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -445,10 +406,8 @@
     .parameter "alphaChar"
 
     .prologue
-    .line 134
     iput-char p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mShortcutAlphabeticChar:C
 
-    .line 135
     return-object p0
 .end method
 
@@ -457,7 +416,6 @@
     .parameter "checkable"
 
     .prologue
-    .line 139
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v1, v0, -0x2
@@ -471,10 +429,8 @@
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
-    .line 140
     return-object p0
 
-    .line 139
     :cond_b
     const/4 v0, 0x0
 
@@ -486,7 +442,6 @@
     .parameter "checked"
 
     .prologue
-    .line 149
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v1, v0, -0x3
@@ -500,10 +455,8 @@
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
-    .line 150
     return-object p0
 
-    .line 149
     :cond_b
     const/4 v0, 0x0
 
@@ -515,7 +468,6 @@
     .parameter "enabled"
 
     .prologue
-    .line 154
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v1, v0, -0x11
@@ -529,10 +481,8 @@
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
-    .line 155
     return-object p0
 
-    .line 154
     :cond_c
     const/4 v0, 0x0
 
@@ -544,7 +494,6 @@
     .parameter "exclusive"
 
     .prologue
-    .line 144
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v1, v0, -0x5
@@ -558,10 +507,8 @@
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
-    .line 145
     return-object p0
 
-    .line 144
     :cond_b
     const/4 v0, 0x0
 
@@ -573,10 +520,8 @@
     .parameter "iconRes"
 
     .prologue
-    .line 165
     iput p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIconResId:I
 
-    .line 166
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -589,7 +534,6 @@
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIconDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 167
     return-object p0
 .end method
 
@@ -598,15 +542,12 @@
     .parameter "icon"
 
     .prologue
-    .line 159
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIconDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 160
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIconResId:I
 
-    .line 161
     return-object p0
 .end method
 
@@ -615,10 +556,8 @@
     .parameter "intent"
 
     .prologue
-    .line 171
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mIntent:Landroid/content/Intent;
 
-    .line 172
     return-object p0
 .end method
 
@@ -627,10 +566,8 @@
     .parameter "numericChar"
 
     .prologue
-    .line 176
     iput-char p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mShortcutNumericChar:C
 
-    .line 177
     return-object p0
 .end method
 
@@ -639,7 +576,6 @@
     .parameter "listener"
 
     .prologue
-    .line 275
     return-object p0
 .end method
 
@@ -648,10 +584,8 @@
     .parameter "menuItemClickListener"
 
     .prologue
-    .line 181
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mClickListener:Landroid/view/MenuItem$OnMenuItemClickListener;
 
-    .line 182
     return-object p0
 .end method
 
@@ -661,13 +595,10 @@
     .parameter "alphaChar"
 
     .prologue
-    .line 186
     iput-char p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mShortcutNumericChar:C
 
-    .line 187
     iput-char p2, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mShortcutAlphabeticChar:C
 
-    .line 188
     return-object p0
 .end method
 
@@ -676,7 +607,6 @@
     .parameter "show"
 
     .prologue
-    .line 226
     return-void
 .end method
 
@@ -685,10 +615,8 @@
     .parameter "actionEnum"
 
     .prologue
-    .line 253
     invoke-virtual {p0, p1}, Lcom/android/internal/view/menu/ActionMenuItem;->setShowAsAction(I)V
 
-    .line 254
     return-object p0
 .end method
 
@@ -697,7 +625,6 @@
     .parameter "title"
 
     .prologue
-    .line 197
     iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -710,7 +637,6 @@
 
     iput-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
 
-    .line 198
     return-object p0
 .end method
 
@@ -719,10 +645,8 @@
     .parameter "title"
 
     .prologue
-    .line 192
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mTitle:Ljava/lang/CharSequence;
 
-    .line 193
     return-object p0
 .end method
 
@@ -731,10 +655,8 @@
     .parameter "title"
 
     .prologue
-    .line 202
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mTitleCondensed:Ljava/lang/CharSequence;
 
-    .line 203
     return-object p0
 .end method
 
@@ -743,7 +665,6 @@
     .parameter "visible"
 
     .prologue
-    .line 207
     iget v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
     and-int/lit8 v1, v0, 0x8
@@ -757,10 +678,8 @@
 
     iput v0, p0, Lcom/android/internal/view/menu/ActionMenuItem;->mFlags:I
 
-    .line 208
     return-object p0
 
-    .line 207
     :cond_b
     const/16 v0, 0x8
 

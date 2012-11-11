@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 1223
     iput-object p1, p0, Landroid/widget/Gallery$2;->this$0:Landroid/widget/Gallery;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +40,10 @@
     .registers 2
 
     .prologue
-    .line 1226
     iget-object v0, p0, Landroid/widget/Gallery$2;->this$0:Landroid/widget/Gallery;
 
     #calls: Landroid/widget/Gallery;->dispatchUnpress()V
     invoke-static {v0}, Landroid/widget/Gallery;->access$300(Landroid/widget/Gallery;)V
 
-    .line 1227
     return-void
 .end method

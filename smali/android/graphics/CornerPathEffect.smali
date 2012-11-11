@@ -9,17 +9,14 @@
     .parameter "radius"
 
     .prologue
-    .line 27
     invoke-direct {p0}, Landroid/graphics/PathEffect;-><init>()V
 
-    .line 28
     invoke-static {p1}, Landroid/graphics/CornerPathEffect;->nativeCreate(F)I
 
     move-result v0
 
     iput v0, p0, Landroid/graphics/PathEffect;->native_instance:I
 
-    .line 29
     return-void
 .end method
 

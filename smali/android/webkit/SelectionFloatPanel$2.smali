@@ -30,7 +30,6 @@
     .parameter
 
     .prologue
-    .line 46
     iput-object p1, p0, Landroid/webkit/SelectionFloatPanel$2;->val$wvclassic:Landroid/webkit/WebViewClassic;
 
     iput-object p2, p0, Landroid/webkit/SelectionFloatPanel$2;->val$instance:Landroid/webkit/SelectionFloatPanel;
@@ -47,18 +46,15 @@
     .parameter "v"
 
     .prologue
-    .line 49
     iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$2;->val$wvclassic:Landroid/webkit/WebViewClassic;
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->selectAll()V
 
-    .line 50
     iget-object v0, p0, Landroid/webkit/SelectionFloatPanel$2;->val$instance:Landroid/webkit/SelectionFloatPanel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/webkit/SelectionFloatPanel;->setVisibility(I)V
 
-    .line 51
     return-void
 .end method

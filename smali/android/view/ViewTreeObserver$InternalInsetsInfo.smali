@@ -39,24 +39,20 @@
     .registers 2
 
     .prologue
-    .line 144
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 149
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->contentInsets:Landroid/graphics/Rect;
 
-    .line 155
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->visibleInsets:Landroid/graphics/Rect;
 
-    .line 162
     new-instance v0, Landroid/graphics/Region;
 
     invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
@@ -77,15 +73,12 @@
 
     const/4 v2, 0x0
 
-    .line 217
     if-ne p0, p1, :cond_5
 
-    .line 221
     :cond_4
     :goto_4
     return v1
 
-    .line 218
     :cond_5
     if-eqz p1, :cond_11
 
@@ -107,10 +100,8 @@
     :cond_13
     move-object v0, p1
 
-    .line 220
     check-cast v0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;
 
-    .line 221
     .local v0, other:Landroid/view/ViewTreeObserver$InternalInsetsInfo;
     iget v3, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->mTouchableInsets:I
 
@@ -160,7 +151,6 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 208
     iget-object v2, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->contentInsets:Landroid/graphics/Rect;
 
     if-eqz v2, :cond_2e
@@ -171,7 +161,6 @@
 
     move-result v0
 
-    .line 209
     .local v0, result:I
     :goto_b
     mul-int/lit8 v3, v0, 0x1f
@@ -189,7 +178,6 @@
     :goto_17
     add-int v0, v3, v2
 
-    .line 210
     mul-int/lit8 v2, v0, 0x1f
 
     iget-object v3, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->touchableRegion:Landroid/graphics/Region;
@@ -205,28 +193,24 @@
     :cond_25
     add-int v0, v2, v1
 
-    .line 211
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->mTouchableInsets:I
 
     add-int v0, v1, v2
 
-    .line 212
     return v0
 
     .end local v0           #result:I
     :cond_2e
     move v0, v1
 
-    .line 208
     goto :goto_b
 
     .restart local v0       #result:I
     :cond_30
     move v2, v1
 
-    .line 209
     goto :goto_17
 .end method
 
@@ -234,27 +218,22 @@
     .registers 2
 
     .prologue
-    .line 200
     iget-object v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->contentInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 201
     iget-object v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->visibleInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 202
     iget-object v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->touchableRegion:Landroid/graphics/Region;
 
     invoke-virtual {v0}, Landroid/graphics/Region;->setEmpty()V
 
-    .line 203
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->mTouchableInsets:I
 
-    .line 204
     return-void
 .end method
 
@@ -263,33 +242,28 @@
     .parameter "other"
 
     .prologue
-    .line 228
     iget-object v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->contentInsets:Landroid/graphics/Rect;
 
     iget-object v1, p1, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->contentInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 229
     iget-object v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->visibleInsets:Landroid/graphics/Rect;
 
     iget-object v1, p1, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->visibleInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 230
     iget-object v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->touchableRegion:Landroid/graphics/Region;
 
     iget-object v1, p1, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->touchableRegion:Landroid/graphics/Region;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Region;->set(Landroid/graphics/Region;)Z
 
-    .line 231
     iget v0, p1, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->mTouchableInsets:I
 
     iput v0, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->mTouchableInsets:I
 
-    .line 232
     return-void
 .end method
 
@@ -298,9 +272,7 @@
     .parameter "val"
 
     .prologue
-    .line 194
     iput p1, p0, Landroid/view/ViewTreeObserver$InternalInsetsInfo;->mTouchableInsets:I
 
-    .line 195
     return-void
 .end method

@@ -30,15 +30,12 @@
     .parameter "b"
 
     .prologue
-    .line 4861
     iput-object p1, p0, Landroid/media/AudioService$RcDisplayDeathHandler;->this$0:Landroid/media/AudioService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4863
     iput-object p2, p0, Landroid/media/AudioService$RcDisplayDeathHandler;->mCb:Landroid/os/IBinder;
 
-    .line 4864
     return-void
 .end method
 
@@ -48,7 +45,6 @@
     .registers 4
 
     .prologue
-    .line 4867
     iget-object v0, p0, Landroid/media/AudioService$RcDisplayDeathHandler;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mRCStack:Ljava/util/Stack;
@@ -58,7 +54,6 @@
 
     monitor-enter v1
 
-    .line 4868
     :try_start_7
     const-string v0, "AudioService"
 
@@ -66,7 +61,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4869
     iget-object v0, p0, Landroid/media/AudioService$RcDisplayDeathHandler;->this$0:Landroid/media/AudioService;
 
     const/4 v2, 0x0
@@ -74,13 +68,10 @@
     #setter for: Landroid/media/AudioService;->mRcDisplay:Landroid/media/IRemoteControlDisplay;
     invoke-static {v0, v2}, Landroid/media/AudioService;->access$8402(Landroid/media/AudioService;Landroid/media/IRemoteControlDisplay;)Landroid/media/IRemoteControlDisplay;
 
-    .line 4870
     monitor-exit v1
 
-    .line 4871
     return-void
 
-    .line 4870
     :catchall_16
     move-exception v0
 
@@ -95,7 +86,6 @@
     .registers 5
 
     .prologue
-    .line 4876
     :try_start_0
     iget-object v1, p0, Landroid/media/AudioService$RcDisplayDeathHandler;->mCb:Landroid/os/IBinder;
 
@@ -105,15 +95,12 @@
     :try_end_6
     .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_6} :catch_7
 
-    .line 4882
     :goto_6
     return-void
 
-    .line 4877
     :catch_7
     move-exception v0
 
-    .line 4879
     .local v0, e:Ljava/util/NoSuchElementException;
     const-string v1, "AudioService"
 
@@ -143,7 +130,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4880
     invoke-virtual {v0}, Ljava/util/NoSuchElementException;->printStackTrace()V
 
     goto :goto_6

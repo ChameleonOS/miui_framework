@@ -24,12 +24,10 @@
     .parameter
 
     .prologue
-    .line 376
     iput-object p1, p0, Landroid/service/dreams/Dream$IDreamServiceWrapper;->this$0:Landroid/service/dreams/Dream;
 
     invoke-direct {p0}, Landroid/service/dreams/IDreamService$Stub;-><init>()V
 
-    .line 377
     return-void
 .end method
 
@@ -40,11 +38,9 @@
     .parameter "windowToken"
 
     .prologue
-    .line 380
     iget-object v0, p0, Landroid/service/dreams/Dream$IDreamServiceWrapper;->this$0:Landroid/service/dreams/Dream;
 
     invoke-virtual {v0, p1}, Landroid/service/dreams/Dream;->attach(Landroid/os/IBinder;)V
 
-    .line 381
     return-void
 .end method

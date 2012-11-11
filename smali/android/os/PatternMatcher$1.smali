@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 99
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
     .parameter "source"
 
     .prologue
-    .line 101
     new-instance v0, Landroid/os/PatternMatcher;
 
     invoke-direct {v0, p1}, Landroid/os/PatternMatcher;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +56,6 @@
     .parameter "x0"
 
     .prologue
-    .line 99
     invoke-virtual {p0, p1}, Landroid/os/PatternMatcher$1;->createFromParcel(Landroid/os/Parcel;)Landroid/os/PatternMatcher;
 
     move-result-object v0
@@ -71,7 +68,6 @@
     .parameter "size"
 
     .prologue
-    .line 105
     new-array v0, p1, [Landroid/os/PatternMatcher;
 
     return-object v0
@@ -82,7 +78,6 @@
     .parameter "x0"
 
     .prologue
-    .line 99
     invoke-virtual {p0, p1}, Landroid/os/PatternMatcher$1;->newArray(I)[Landroid/os/PatternMatcher;
 
     move-result-object v0

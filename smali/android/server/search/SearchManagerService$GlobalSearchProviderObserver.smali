@@ -27,18 +27,14 @@
     .parameter "resolver"
 
     .prologue
-    .line 124
     iput-object p1, p0, Landroid/server/search/SearchManagerService$GlobalSearchProviderObserver;->this$0:Landroid/server/search/SearchManagerService;
 
-    .line 125
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 126
     iput-object p2, p0, Landroid/server/search/SearchManagerService$GlobalSearchProviderObserver;->mResolver:Landroid/content/ContentResolver;
 
-    .line 127
     iget-object v0, p0, Landroid/server/search/SearchManagerService$GlobalSearchProviderObserver;->mResolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v1, "search_global_search_activity"
@@ -51,7 +47,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 131
     return-void
 .end method
 
@@ -62,7 +57,6 @@
     .parameter "selfChange"
 
     .prologue
-    .line 135
     iget-object v1, p0, Landroid/server/search/SearchManagerService$GlobalSearchProviderObserver;->this$0:Landroid/server/search/SearchManagerService;
 
     #calls: Landroid/server/search/SearchManagerService;->getSearchables()Landroid/server/search/Searchables;
@@ -72,20 +66,17 @@
 
     invoke-virtual {v1}, Landroid/server/search/Searchables;->buildSearchableList()V
 
-    .line 136
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.search.action.GLOBAL_SEARCH_ACTIVITY_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 137
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x2000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 138
     iget-object v1, p0, Landroid/server/search/SearchManagerService$GlobalSearchProviderObserver;->this$0:Landroid/server/search/SearchManagerService;
 
     #getter for: Landroid/server/search/SearchManagerService;->mContext:Landroid/content/Context;
@@ -95,6 +86,5 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 139
     return-void
 .end method

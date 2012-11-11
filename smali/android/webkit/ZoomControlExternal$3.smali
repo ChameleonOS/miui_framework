@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 105
     iput-object p1, p0, Landroid/webkit/ZoomControlExternal$3;->this$0:Landroid/webkit/ZoomControlExternal;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +41,6 @@
     .parameter "v"
 
     .prologue
-    .line 108
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal$3;->this$0:Landroid/webkit/ZoomControlExternal;
 
     #getter for: Landroid/webkit/ZoomControlExternal;->mPrivateHandler:Landroid/os/Handler;
@@ -59,7 +57,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 109
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal$3;->this$0:Landroid/webkit/ZoomControlExternal;
 
     #getter for: Landroid/webkit/ZoomControlExternal;->mPrivateHandler:Landroid/os/Handler;
@@ -80,7 +77,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 110
     iget-object v0, p0, Landroid/webkit/ZoomControlExternal$3;->this$0:Landroid/webkit/ZoomControlExternal;
 
     #getter for: Landroid/webkit/ZoomControlExternal;->mWebView:Landroid/webkit/WebViewClassic;
@@ -90,6 +86,5 @@
 
     invoke-virtual {v0}, Landroid/webkit/WebViewClassic;->zoomOut()Z
 
-    .line 111
     return-void
 .end method

@@ -42,15 +42,12 @@
     .parameter "resolveInfo"
 
     .prologue
-    .line 881
     iput-object p1, p0, Landroid/widget/ActivityChooserModel$ActivityResolveInfo;->this$0:Landroid/widget/ActivityChooserModel;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 882
     iput-object p2, p0, Landroid/widget/ActivityChooserModel$ActivityResolveInfo;->resolveInfo:Landroid/content/pm/ResolveInfo;
 
-    .line 883
     return-void
 .end method
 
@@ -61,7 +58,6 @@
     .parameter "another"
 
     .prologue
-    .line 909
     iget v0, p1, Landroid/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
     invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
@@ -84,7 +80,6 @@
     .parameter "x0"
 
     .prologue
-    .line 864
     check-cast p1, Landroid/widget/ActivityChooserModel$ActivityResolveInfo;
 
     .end local p1
@@ -104,24 +99,19 @@
 
     const/4 v2, 0x0
 
-    .line 892
     if-ne p0, p1, :cond_5
 
-    .line 905
     :cond_4
     :goto_4
     return v1
 
-    .line 895
     :cond_5
     if-nez p1, :cond_9
 
     move v1, v2
 
-    .line 896
     goto :goto_4
 
-    .line 898
     :cond_9
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -135,16 +125,13 @@
 
     move v1, v2
 
-    .line 899
     goto :goto_4
 
     :cond_15
     move-object v0, p1
 
-    .line 901
     check-cast v0, Landroid/widget/ActivityChooserModel$ActivityResolveInfo;
 
-    .line 902
     .local v0, other:Landroid/widget/ActivityChooserModel$ActivityResolveInfo;
     iget v3, p0, Landroid/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
@@ -162,7 +149,6 @@
 
     move v1, v2
 
-    .line 903
     goto :goto_4
 .end method
 
@@ -170,7 +156,6 @@
     .registers 2
 
     .prologue
-    .line 887
     iget v0, p0, Landroid/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
     invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
@@ -186,18 +171,15 @@
     .registers 6
 
     .prologue
-    .line 914
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 915
     .local v0, builder:Ljava/lang/StringBuilder;
     const-string v1, "["
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 916
     const-string/jumbo v1, "resolveInfo:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -212,7 +194,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 917
     const-string v1, "; weight:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -229,12 +210,10 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 918
     const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 919
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

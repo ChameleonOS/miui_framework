@@ -27,7 +27,6 @@
     .parameter
 
     .prologue
-    .line 243
     iput-object p1, p0, Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable$3;->this$1:Landroid/webkit/WebCoreThreadWatchdog$PageNotRespondingRunnable;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -43,13 +42,11 @@
     .parameter "which"
 
     .prologue
-    .line 247
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v0
 
     invoke-static {v0}, Landroid/os/Process;->killProcess(I)V
 
-    .line 248
     return-void
 .end method

@@ -32,7 +32,6 @@
     .registers 1
 
     .prologue
-    .line 79
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +42,6 @@
     .parameter "x0"
 
     .prologue
-    .line 79
     invoke-direct {p0}, Landroid/accounts/AccountAuthenticatorCache$MySerializer;-><init>()V
 
     return-void
@@ -62,7 +60,6 @@
     .end annotation
 
     .prologue
-    .line 87
     const/4 v0, 0x0
 
     const-string/jumbo v1, "type"
@@ -89,7 +86,6 @@
     .end annotation
 
     .prologue
-    .line 79
     invoke-virtual {p0, p1}, Landroid/accounts/AccountAuthenticatorCache$MySerializer;->createFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/accounts/AuthenticatorDescription;
 
     move-result-object v0
@@ -108,7 +104,6 @@
     .end annotation
 
     .prologue
-    .line 82
     const/4 v0, 0x0
 
     const-string/jumbo v1, "type"
@@ -117,7 +112,6 @@
 
     invoke-interface {p2, v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 83
     return-void
 .end method
 
@@ -132,7 +126,6 @@
     .end annotation
 
     .prologue
-    .line 79
     check-cast p1, Landroid/accounts/AuthenticatorDescription;
 
     .end local p1

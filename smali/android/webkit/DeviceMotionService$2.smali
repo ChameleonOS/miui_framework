@@ -30,7 +30,6 @@
     .registers 1
 
     .prologue
-    .line 99
     const-class v0, Landroid/webkit/DeviceMotionService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -57,7 +56,6 @@
     .parameter
 
     .prologue
-    .line 99
     iput-object p1, p0, Landroid/webkit/DeviceMotionService$2;->this$0:Landroid/webkit/DeviceMotionService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +71,6 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 102
     sget-boolean v0, Landroid/webkit/DeviceMotionService$2;->$assertionsDisabled:Z
 
     if-nez v0, :cond_13
@@ -93,7 +90,6 @@
 
     throw v0
 
-    .line 103
     :cond_13
     iget-object v0, p0, Landroid/webkit/DeviceMotionService$2;->this$0:Landroid/webkit/DeviceMotionService;
 
@@ -155,7 +151,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/webkit/DeviceMotionAndOrientationManager;->onMotionChange(Ljava/lang/Double;Ljava/lang/Double;Ljava/lang/Double;D)V
 
-    .line 106
     iget-object v0, p0, Landroid/webkit/DeviceMotionService$2;->this$0:Landroid/webkit/DeviceMotionService;
 
     #getter for: Landroid/webkit/DeviceMotionService;->mHandler:Landroid/os/Handler;
@@ -174,12 +169,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 108
     iget-object v0, p0, Landroid/webkit/DeviceMotionService$2;->this$0:Landroid/webkit/DeviceMotionService;
 
     #setter for: Landroid/webkit/DeviceMotionService;->mHaveSentErrorEvent:Z
     invoke-static {v0, v6}, Landroid/webkit/DeviceMotionService;->access$502(Landroid/webkit/DeviceMotionService;Z)Z
 
-    .line 109
     return-void
 .end method

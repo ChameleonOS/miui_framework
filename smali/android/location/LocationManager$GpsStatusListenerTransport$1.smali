@@ -24,7 +24,6 @@
     .parameter
 
     .prologue
-    .line 1423
     iput-object p1, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,14 +38,12 @@
     .parameter "msg"
 
     .prologue
-    .line 1426
     iget v3, p1, Landroid/os/Message;->what:I
 
     const/16 v4, 0x3e8
 
     if-ne v3, v4, :cond_44
 
-    .line 1427
     iget-object v3, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
 
     #getter for: Landroid/location/LocationManager$GpsStatusListenerTransport;->mNmeaBuffer:Ljava/util/ArrayList;
@@ -56,7 +53,6 @@
 
     monitor-enter v4
 
-    .line 1428
     :try_start_d
     iget-object v3, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
 
@@ -69,7 +65,6 @@
 
     move-result v1
 
-    .line 1429
     .local v1, length:I
     const/4 v0, 0x0
 
@@ -77,7 +72,6 @@
     :goto_18
     if-ge v0, v1, :cond_36
 
-    .line 1430
     iget-object v3, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
 
     #getter for: Landroid/location/LocationManager$GpsStatusListenerTransport;->mNmeaBuffer:Ljava/util/ArrayList;
@@ -91,7 +85,6 @@
 
     check-cast v2, Landroid/location/LocationManager$GpsStatusListenerTransport$Nmea;
 
-    .line 1431
     .local v2, nmea:Landroid/location/LocationManager$GpsStatusListenerTransport$Nmea;
     iget-object v3, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
 
@@ -106,12 +99,10 @@
 
     invoke-interface {v3, v5, v6, v7}, Landroid/location/GpsStatus$NmeaListener;->onNmeaReceived(JLjava/lang/String;)V
 
-    .line 1429
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_18
 
-    .line 1433
     .end local v2           #nmea:Landroid/location/LocationManager$GpsStatusListenerTransport$Nmea;
     :cond_36
     iget-object v3, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
@@ -123,16 +114,13 @@
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 1434
     monitor-exit v4
 
-    .line 1441
     .end local v0           #i:I
     .end local v1           #length:I
     :goto_40
     return-void
 
-    .line 1434
     :catchall_41
     move-exception v3
 
@@ -142,7 +130,6 @@
 
     throw v3
 
-    .line 1437
     :cond_44
     iget-object v3, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
 
@@ -155,7 +142,6 @@
 
     monitor-enter v4
 
-    .line 1438
     :try_start_4d
     iget-object v3, p0, Landroid/location/LocationManager$GpsStatusListenerTransport$1;->this$1:Landroid/location/LocationManager$GpsStatusListenerTransport;
 
@@ -168,7 +154,6 @@
 
     invoke-interface {v3, v5}, Landroid/location/GpsStatus$Listener;->onGpsStatusChanged(I)V
 
-    .line 1439
     monitor-exit v4
 
     goto :goto_40

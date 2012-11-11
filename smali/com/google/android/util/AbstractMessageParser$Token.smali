@@ -33,16 +33,12 @@
     .parameter "text"
 
     .prologue
-    .line 686
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 687
     iput-object p1, p0, Lcom/google/android/util/AbstractMessageParser$Token;->type:Lcom/google/android/util/AbstractMessageParser$Token$Type;
 
-    .line 688
     iput-object p2, p0, Lcom/google/android/util/AbstractMessageParser$Token;->text:Ljava/lang/String;
 
-    .line 689
     return-void
 .end method
 
@@ -52,7 +48,6 @@
     .registers 2
 
     .prologue
-    .line 716
     const/4 v0, 0x0
 
     return v0
@@ -71,12 +66,10 @@
     .end annotation
 
     .prologue
-    .line 701
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 702
     .local v0, info:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p0}, Lcom/google/android/util/AbstractMessageParser$Token;->getType()Lcom/google/android/util/AbstractMessageParser$Token$Type;
 
@@ -88,7 +81,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 703
     return-object v0
 .end method
 
@@ -96,7 +88,6 @@
     .registers 2
 
     .prologue
-    .line 707
     iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Token;->text:Ljava/lang/String;
 
     return-object v0
@@ -106,7 +97,6 @@
     .registers 2
 
     .prologue
-    .line 692
     iget-object v0, p0, Lcom/google/android/util/AbstractMessageParser$Token;->type:Lcom/google/android/util/AbstractMessageParser$Token$Type;
 
     return-object v0
@@ -116,7 +106,6 @@
     .registers 2
 
     .prologue
-    .line 711
     invoke-virtual {p0}, Lcom/google/android/util/AbstractMessageParser$Token;->isHtml()Z
 
     move-result v0
@@ -141,7 +130,6 @@
     .registers 2
 
     .prologue
-    .line 709
     const/4 v0, 0x0
 
     return v0
@@ -151,7 +139,6 @@
     .registers 2
 
     .prologue
-    .line 717
     const/4 v0, 0x0
 
     return v0
@@ -162,7 +149,6 @@
     .parameter "caps"
 
     .prologue
-    .line 713
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string/jumbo v1, "not html"
